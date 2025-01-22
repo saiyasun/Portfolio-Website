@@ -13,3 +13,8 @@ a {
 ul {
     list-style-type: none;
 }
+
+ul li {
+    display: inline-block;
+    padding: 5px;
+}
