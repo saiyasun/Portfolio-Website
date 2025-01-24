@@ -78,11 +78,14 @@ ul {
     justify-content: center;
     border: 5px solid black;
     padding: 10px;
+    margin: 1.5% 15% 5% 15%;
 }
 
 #about img {
     max-width: 30%; /* Image takes up 30% of the space */
-    margin-right: 20px; /* Space between the image and text */
+    margin-right: 1%; /* Space between the image and text */
+    margin-left: 1%;
+    padding: 0%;
 }
 
 .description {
@@ -93,6 +96,7 @@ ul {
     justify-content: center;
     border: 5px solid black;
     width: 50%;
+    height: 90%;
     border: 5px dotted black;
 }
 
