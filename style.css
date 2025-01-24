@@ -1,3 +1,4 @@
+/*Universal*/
 h1 {
     text-align: center;
 }
@@ -16,6 +17,69 @@ ul {
     margin: 0;
     display: flex; /* Use flexbox for layout */
 }
+
+#navigation {
+    display: flex;
+    align-items: center;
+}
+
+#navigation ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25%;
+    width: 70vh;
+    justify-content: space-evenly;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20%;
+    height: 10vh;
+    width: 25%;
+}
+
+/*index*/
+.intro {
+    display: flex;
+    height: 70vh;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+    flex-direction: column; /* Stacks child elements vertically */
+    text-align: center; /* Ensures both h1 and h3 are centered horizontally */
+    margin-top: 3%;
+    flex-wrap: wrap;
+}
+
+.intro h1 {
+    margin: -4% 0 0 0; /* Remove default top and bottom margin for h1 */
+    width: 50%;
+}
+
+.intro h3 {
+    margin: 0.5% 0 1% 0; /* Add space below h1 */
+    width: 50%;
+    font-size: 1.2rem; /* Adjust the size of h3 as needed */
+    color: #555; /* Optional: Style for h3, e.g., a softer color */\
+}
+
+.intro ul {
+    width: 50%;
+    margin: 0 0 0 0;
+    justify-content: space-evenly;
+}
+
+/*about*/
+#pro-pic {
+    
+}
+
+/*project*/
+
+/*contact*/
+
+/*references*/
 
 footer li {
     padding: 5px 20px;
@@ -37,41 +101,3 @@ footer nav {
     padding: 5px 15px;
 }
 
-#navigation {
-    display: flex;
-}
-
-#navigation ul {
-    border: 5px solid black;
-    justify-content: flex-end;
-    flex-direction: row;
-    margin-left: 30%;
-}
-
-#logo {
-   border: 5px solid black;
-}
-
-#pro-pic {
-    
-}
-
-#intro {
-    display: flex;
-    height: 70vh;
-    align-items: center; /* Centers horizontally */
-    justify-content: center; /* Centers vertically */
-    flex-direction: column; /* Stacks child elements vertically */
-    text-align: center; /* Ensures both h1 and h3 are centered horizontally */
-    margin-top: 3%;
-}
-
-#intro h1 {
-    margin: 0; /* Remove default top and bottom margin for h1 */
-}
-
-#intro h3 {
-    margin-top: 0.5%; /* Add space below h1 */
-    font-size: 1.2rem; /* Adjust the size of h3 as needed */
-    color: #555; /* Optional: Style for h3, e.g., a softer color */
-}
