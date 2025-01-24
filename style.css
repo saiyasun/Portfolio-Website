@@ -61,7 +61,7 @@ ul {
     margin: 0.5% 0 1% 0; /* Add space below h1 */
     width: 50%;
     font-size: 1.2rem; /* Adjust the size of h3 as needed */
-    color: #555; /* Optional: Style for h3, e.g., a softer color */\
+    color: #555; /* Optional: Style for h3, e.g., a softer color */
 }
 
 .intro ul {
@@ -71,8 +71,39 @@ ul {
 }
 
 /*about*/
-#pro-pic {
-    
+#about {
+    display: flex; /* Flexbox to arrange image and text side by side */
+    flex-direction: row; /* Image on the left, text on the right */
+    align-items: flex-start; /* Align both image and text to the top */
+    justify-content: center;
+    border: 5px solid black;
+    padding: 10px;
+}
+
+#about img {
+    max-width: 30%; /* Image takes up 30% of the space */
+    margin-right: 20px; /* Space between the image and text */
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    width: 50%;
+    border: 5px dotted black;
+}
+
+.description p {
+    border: 5px dotted red;
+    width: 70%;
+    overflow-y: auto;
+}
+
+#bio {
+    border: 5px dotted green;
 }
 
 /*project*/
