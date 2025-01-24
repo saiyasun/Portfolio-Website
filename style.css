@@ -12,9 +12,66 @@ a {
 
 ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox for layout */
 }
 
-ul li {
-    display: inline-block;
-    padding: 5px;
+footer li {
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+footer ul {
+    border: 1px solid black;
+    margin: 5px;
+    justify-content: center;
+}
+
+footer nav {
+    border: 1px solid black; 
+    margin-top: 34%;
+}
+
+#navigation ul li {
+    padding: 5px 15px;
+}
+
+#navigation {
+    display: flex;
+}
+
+#navigation ul {
+    border: 5px solid black;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-left: 30%;
+}
+
+#logo {
+   border: 5px solid black;
+}
+
+#pro-pic {
+    
+}
+
+#intro {
+    display: flex;
+    height: 70vh;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+    flex-direction: column; /* Stacks child elements vertically */
+    text-align: center; /* Ensures both h1 and h3 are centered horizontally */
+    margin-top: 3%;
+}
+
+#intro h1 {
+    margin: 0; /* Remove default top and bottom margin for h1 */
+}
+
+#intro h3 {
+    margin-top: 0.5%; /* Add space below h1 */
+    font-size: 1.2rem; /* Adjust the size of h3 as needed */
+    color: #555; /* Optional: Style for h3, e.g., a softer color */
 }
