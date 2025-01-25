@@ -1,14 +1,72 @@
 /*Universal*/
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
 }
 
-/*Index*/
 
+/*Index*/
+#homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative;
+    border: 5px solid black;
+}
+
+
+.intro {
+    display: flex;
+    border: 5px solid black;
+    width: 90vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#logo {
+    border: 5px solid black;
+    position: absolute;
+    top: 5vh;
+    left: 10vh;
+    width: auto;
+    padding: 0 2vw;
+}
+
+#name {
+    border: 5px solid blue;
+    width: auto;
+    padding: 0 1%;
+    font-size: 7rem;
+}
+
+#tagline {
+    border: 5px solid purple;
+    width: auto;
+    padding: 0 2%;
+}
+
+#navi {
+    display: flex;
+    border: 5px dotted red;
+    width: 20vw;
+    margin: 0 0 0.5% 0;
+    padding: 0 2% 0 2%;
+    justify-content: center;
+}
+
+#navi li {
+    display: inline;
+    padding: 0 2%;
 
 /*About*/
 /*Project*/
