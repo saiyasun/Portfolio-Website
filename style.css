@@ -90,7 +90,7 @@ a {
 
     .intro {
         width: 100%; /* Full width on smaller screens */
-        border: none;
+        border: 5px solid black;
         padding: 1px;
     }
 
@@ -109,13 +109,11 @@ a {
 
     #name {
         font-size: 3rem; /* Smaller font for smaller screens */
-        padding: 0 10%;
         text-align: center;
         width: auto;
         margin: 0 auto;
         max-width: 90%;
         word-wrap: break-word; /* Forces long words to wrap */
-        padding: 0 9px; /* Padding is now part of the width */
     }
 
     #tagline {
