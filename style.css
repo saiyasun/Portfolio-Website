@@ -26,47 +26,102 @@ a {
 
 .intro {
     display: flex;
-    border: 5px solid black;
-    width: 90vw;
+    border: 5px solid blue;
+    width: 90%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
 #logo {
-    border: 5px solid black;
+    border: 5px solid orange;
     position: absolute;
-    top: 5vh;
-    left: 10vh;
+    top: 5%;
+    left: 10%;
     width: auto;
     padding: 0 2vw;
 }
 
 #name {
-    border: 5px solid blue;
-    width: auto;
+    border: 5px solid green;
+    width: 80%;
     padding: 0 1%;
     font-size: 7rem;
+    text-align: center;
+    margin-bottom: 1%;
 }
 
 #tagline {
     border: 5px solid purple;
     width: auto;
     padding: 0 2%;
+    margin: 0 0 2.5% 0;
+    font-size: 1.5rem;
 }
 
 #navi {
     display: flex;
     border: 5px dotted red;
-    width: 20vw;
-    margin: 0 0 0.5% 0;
+    width: 50%;
     padding: 0 2% 0 2%;
     justify-content: center;
+    margin-bottom: 3%;
 }
 
 #navi li {
     display: inline;
-    padding: 0 2%;
+    padding: 0 3%;
+}
+
+@media only screen and (max-width: 768px) {
+    #homepage {
+        flex-direction: column; /* Stack elements vertically */
+        min-height: 100dvh; /* Allow natural height */
+        width: 100dvw;
+        padding: 10px;
+        position: relative;
+    }
+
+    #logo {
+        position: static;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .intro {
+        width: 100%; /* Full width on smaller screens */
+        border: none;
+        padding: 1px;
+    }
+
+    #navi {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: auto; /* Full width */
+        text-align: center;
+    }
+
+    #navi li {
+        padding: 5px;
+    }
+
+    #name {
+        font-size: 3rem; /* Smaller font for smaller screens */
+        padding: 0 10%;
+        text-align: center;
+        width: auto;
+        margin: 0 auto;
+        max-width: 90%;
+        word-wrap: break-word; /* Forces long words to wrap */
+        padding: 0 9px; /* Padding is now part of the width */
+    }
+
+    #tagline {
+        text-align: center;
+    }
+}
 
 /*About*/
 /*Project*/
