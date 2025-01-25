@@ -56,16 +56,17 @@ a {
     width: auto;
     padding: 0 2%;
     margin: 0 0 2.5% 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 #navi {
     display: flex;
     border: 5px dotted red;
-    width: 50%;
-    padding: 0 2% 0 2%;
+    width: 40%;
+    padding: 3% 3% 3% 3%;
     justify-content: center;
     margin-bottom: 3%;
+    font-size: 1.5rem;
 }
 
 #navi li {
@@ -76,22 +77,22 @@ a {
 @media only screen and (max-width: 768px) {
     #homepage {
         flex-direction: column; /* Stack elements vertically */
-        min-height: 100dvh; /* Allow natural height */
-        width: 100dvw;
+        min-height: 100vh; /* Allow natural height */
+        width: 100vw;
         padding: 10px;
         position: relative;
     }
 
     #logo {
-        position: static;
-        margin: 0 auto;
-        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
     }
 
     .intro {
         width: 100%; /* Full width on smaller screens */
         border: 5px solid black;
-        padding: 1px;
+        padding: 30px 1px 1px 1px;
     }
 
     #navi {
@@ -118,6 +119,7 @@ a {
 
     #tagline {
         text-align: center;
+        margin-top: 7px;
     }
 }
 
