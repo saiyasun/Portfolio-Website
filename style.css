@@ -33,7 +33,7 @@ a {
     flex-direction: column;
 }
 
-#logo {
+#logo-home {
     border: 5px solid orange;
     position: absolute;
     top: 5%;
@@ -84,7 +84,7 @@ a {
         position: relative;
     }
 
-    #logo {
+    #logo-home {
         position: relative;
         left: 30%;
 
