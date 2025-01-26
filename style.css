@@ -11,12 +11,20 @@ a {
 
 .navigation {
     display: flex;
+    width: 100%;
+    margin-top: 0.5%;
+    margin-bottom: 1rem;
+    justify-content: space-between;
     border: 5px solid red;
 }
 
-.navigation {
-    display: flex;
-    align-items: flex-end;
+.navigation #logo {
+    align-items: flex-start;
+}
+
+.navigation ul {
+    align-items: center;
+    justify-content: center;
 }
 
 .navigation li {
@@ -139,26 +147,44 @@ a {
 }
 
 /*About*/
-.bio {
-    border: 5px solid blue;
+#body-about {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid gold;
+    margin: 0;
+} 
+
+.bio {
     align-items: center;
     justify-content: center;
+    width: auto;
+    border: 5px solid blue;
 }
 
 #bio-title {
     border: 5px dotted green;
+    text-align: center;
 }
 
 #bio-p {
     border: 5px dotted purple;
+    justify-content: center;
 }
 
 #bio-essay {
-    border: 5px solid orange;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack the content */
+    max-width: 700px; /* Prevent essay from being too wide */
+    align-items: center;
+    justify-content: center; /* Align content within the essay section */
+    border: 5px solid orange;
+}
+
+#bio-img {
+    width: 25%; /* Image width */
+    max-width: 500px; /* Prevent the image from growing too large */
+    /* border-radius: 50%;  /*Optional: Make the image circular */\
 }
 
 /*Project*/
