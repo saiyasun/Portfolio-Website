@@ -11,9 +11,10 @@ a {
 
 .navigation {
     display: flex;
-    width: 100%;
+    width: 80%;
     margin-top: 0.5%;
     margin-bottom: 1rem;
+    padding: 1rem 2rem;
     justify-content: space-between;
     border: 5px solid red;
 }
@@ -29,6 +30,7 @@ a {
 
 .navigation li {
     display: inline;
+    padding: 1.5rem;
 }
 
 /*Index*/
@@ -153,38 +155,54 @@ a {
     flex-direction: column;
     border: 5px solid gold;
     margin: 0;
+    padding: 1%;
+    height: 100vh;
 } 
 
 .bio {
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
+    width: 80%;
+    height: 80%;
+    padding: 1%;
+    margin: 0 auto;
+    gap: 2rem;
     border: 5px solid blue;
 }
 
 #bio-title {
     border: 5px dotted green;
     text-align: center;
+    padding: 1rem 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 #bio-p {
     border: 5px dotted purple;
     justify-content: center;
+    padding: 0.5% 2%;
+    width: 70%;
+    height: 70%;
+    margin-bottom: 2rem;
+    overflow: auto;
 }
 
 #bio-essay {
     display: flex;
     flex-direction: column; /* Stack the content */
-    max-width: 700px; /* Prevent essay from being too wide */
     align-items: center;
+    width: 50%;
+    height: 90%;
     justify-content: center; /* Align content within the essay section */
     border: 5px solid orange;
 }
 
 #bio-img {
-    width: 25%; /* Image width */
+    width: 35%; /* Image width */
     max-width: 500px; /* Prevent the image from growing too large */
-    /* border-radius: 50%;  /*Optional: Make the image circular */\
+    /* border-radius: 50%;  /*Optional: Make the image circular */
 }
 
 /*Project*/
