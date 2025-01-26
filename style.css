@@ -9,6 +9,19 @@ a {
     text-decoration: none;
 }
 
+.navigation {
+    display: flex;
+    border: 5px solid red;
+}
+
+.navigation {
+    display: flex;
+    align-items: flex-end;
+}
+
+.navigation li {
+    display: inline;
+}
 
 /*Index*/
 #homepage {
@@ -126,6 +139,28 @@ a {
 }
 
 /*About*/
+.bio {
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#bio-title {
+    border: 5px dotted green;
+}
+
+#bio-p {
+    border: 5px dotted purple;
+}
+
+#bio-essay {
+    border: 5px solid orange;
+    display: flex;
+    flex-direction: column;
+}
+
 /*Project*/
 /*Contact*/
 /*Blog*/
