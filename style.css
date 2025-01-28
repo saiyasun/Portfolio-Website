@@ -171,11 +171,15 @@ a {
     height: 100dvh;
 } 
 
+#navigation-about {
+    margin-top: 1.5%;
+}
+
 .bio {
     border: 5px solid blue;
     display: grid;
     width: 80%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     margin: 0 auto;
     padding: 1%;
@@ -191,7 +195,7 @@ a {
     width: 100%;
     max-width: 350px;
     border: 5px solid brown;
-    margin: 0 auto;
+    margin: 0;
 }
 
 #bio-title {
@@ -200,7 +204,7 @@ a {
     border: 5px dotted green;
     text-align: center; /* Center text inside the element */
     font-size: 2rem;
-    padding: .5em .5em;
+    padding: .3em .3em;
 }
 
 #bio-p {
@@ -208,7 +212,7 @@ a {
     grid-row: 2;
     border: 5px dotted purple;
     overflow: auto;
-    width: 80%;
+    width: 75%;
     padding: .1em 2em;
     aspect-ratio: 2 / 1; /* Maintain width-to-height ratio */
     text-align: justify; /* Center text inside the element */
@@ -279,13 +283,14 @@ a {
         border: none;
     }
 
-    #body-about .navigation {
+    #navigation-about {
+        margin-top: 1%;
         width: 90%;
-        padding: .5em .5em;
+        padding: .5em .1%;
     }
 
     .navigation ul {
-        padding-top: 25px;
+        padding-top: 20px;
     }
 }
 
