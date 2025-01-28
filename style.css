@@ -314,10 +314,13 @@ a {
 .icons {
     border: 5px dotted red;
     display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 80%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*Project*/
 /*Blog*/
