@@ -314,11 +314,22 @@ a {
 .icons {
     border: 5px dotted red;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     width: 80%;
     height: 70%;
     align-items: center;
     justify-content: center;
+}
+
+#email {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons li {
+    justify-self: center;
 }
 
 
