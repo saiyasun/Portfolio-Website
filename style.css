@@ -374,7 +374,78 @@ a {
     font-size: 2em;
 }
 
-@media only screen and (width: )
+@media only screen and (max-width: 768px) {
+    #all-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid grey;
+        width: 90%;
+        height: 70%;
+        gap: 2em;
+        padding-top: 2em;
+    }
+
+    #navigation-contact {
+        margin-top: 7%;
+        margin-bottom: 3em;
+    }
+    
+    .icons {
+        border: 5px dotted red;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2em;
+        width: 90%;
+        height: 30%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10%;
+    }
+    
+    .icons#email {
+        width: 4em;
+    }
+    
+    #email-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 12em;
+        margin: 0 auto;
+        border: 5px dotted green;
+    }
+    
+    #social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        height: 13em;
+        margin-top: 3em;
+        margin-bottom: 5em;
+        border: 5px dotted yellow;
+    }
+    
+    #email {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 9%;
+        height: 15%;
+        padding: 1em;
+        margin-bottom: 1.5em;
+    }
+    
+    .icons li {
+        justify-self: center;
+        font-size: 2em;
+    }
+}
 
 
 /*Project*/
