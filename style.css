@@ -447,7 +447,67 @@ a {
     }
 }
 
-
 /*Project*/
+#body-project {
+    border: 5px solid gold;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Align children to the top */
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#navigation-project {
+    margin-top: 2em;
+}
+
+.projects {
+    border: 5px solid black;
+    display: flex; /* Use flexbox for the container */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 90%; /* Full width of the parent */
+    height: 50%;
+    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+    gap: 20px; /* Space between items */
+    margin-bottom: 3%;
+    overflow: auto;
+}
+
+.projects > div {
+    display: grid; /* Makes each div a grid container */
+    justify-items: center; /* Centers content horizontally inside each div */
+    align-items: center; /* Centers content vertically inside each div */
+    text-align: center; /* Centers text inside each div */
+    width: 15%; /* Fixed width for each item */
+    height: 92%; /* Ensures the div fills the parent .projects container */
+    padding: .5em;
+    background-color: #f4f4f4; /* Background for visibility */
+    border: 1px solid #ccc; /* Border for visibility */
+}
+
+.description {
+    border: 5px dotted blue;
+    width: 85%; /* Set the width of the description */
+    height: 80%;
+    padding: .2em;
+    overflow: auto;
+    display: flex;
+    text-align: justify;
+    justify-content: center; /* Centers the content horizontally inside .description */
+    align-items: center; /* Centers the content vertically inside .description */
+}
+
+.projects img {
+    max-width: 100px;
+    min-width: 25px;
+}
+
+#resume {
+    border: 5px dotted gray;
+}
+
 /*Blog*/
 /*References*/
