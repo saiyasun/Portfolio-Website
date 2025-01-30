@@ -610,6 +610,31 @@ a {
 
 }
 
+@media only screen and (max-width: 786px) { 
+    .posts {
+        width: 90%;
+        height: 60%;
+        overflow-x: auto;
+    }
+
+    .posts div {
+        display: grid;
+        grid-template-columns: 1fr; /* One column layout */
+        grid-template-rows: auto auto auto; /* Three rows with equal height */
+        max-height: 95%;
+        gap: 0; /* No gap between rows */
+    }
+
+    .posts img {
+        max-width: 100%; /* Ensure image fits inside the container */
+        grid-column: 1 / span 2;
+        grid-row: 2; /* Place image in the middle row */
+        justify-self: center; /* Center image in the row */
+    }
+}
+
+
+
 /*References*/
 #body-references {
     border: 5px solid gold;
