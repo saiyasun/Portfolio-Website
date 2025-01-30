@@ -120,7 +120,7 @@ a {
 
     #logo-home {
         position: relative;
-        left: 30%;
+        left: 1%;
 
     }
 
@@ -459,8 +459,13 @@ a {
     flex-direction: column;
 }
 
+#body-project h1 {
+    margin-top: .2em;
+}
+
 #navigation-project {
     margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .projects {
@@ -472,8 +477,9 @@ a {
     height: 50%;
     flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
     gap: 20px; /* Space between items */
-    margin-bottom: 3%;
-    overflow: auto;
+    margin-bottom: 1em;
+    overflow-x: auto;  /* Enables horizontal scrolling if needed */
+    overflow-y: hidden; /* Hides vertical overflow */
 }
 
 .projects > div {
@@ -482,6 +488,7 @@ a {
     align-items: center; /* Centers content vertically inside each div */
     text-align: center; /* Centers text inside each div */
     width: 15%; /* Fixed width for each item */
+    min-width: 200px;
     height: 92%; /* Ensures the div fills the parent .projects container */
     padding: .5em;
     background-color: #f4f4f4; /* Background for visibility */
@@ -492,7 +499,7 @@ a {
     border: 5px dotted blue;
     width: 85%; /* Set the width of the description */
     height: 80%;
-    padding: .2em;
+    padding: .2em .5em;
     overflow: auto;
     display: flex;
     text-align: justify;
@@ -507,6 +514,28 @@ a {
 
 #resume {
     border: 5px dotted gray;
+    font-size: 2rem;
+    padding: .5em;
+    width: 25%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    #resume {
+        border: 5px dotted gray;
+        font-size: 2rem;
+        padding: .5em;
+        width: 50%;
+        text-align: center;
+    }
+
+    #body-project h1 {
+        margin-top: 1em;
+    }
+
+    .projects {
+        margin-bottom: 4em;
+    }
 }
 
 /*Blog*/
