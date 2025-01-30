@@ -539,4 +539,106 @@ a {
 }
 
 /*Blog*/
+#body-blog {
+    border: 5px solid gold;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#navigation-blog {
+    margin-top: 1em;
+}
+
 /*References*/
+#body-references {
+    border: 5px solid gold;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#navigation-reference {
+    margin-top: 2em;
+}
+
+.references {
+    border: 5px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    height: 75%;
+    overflow-x: auto;
+}
+
+.references h1 {
+    width: 100%;
+    text-align: center;
+}
+
+/* Grid container for each reference */
+.references div {
+    width: 90%;
+    min-width: 300px;
+    min-height: 150px; /* Prevents the div from collapsing */
+    border: 5px dotted green;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr; /* Keeps image in two rows */
+    column-gap: .5em;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 2em;
+}
+
+/* Clickable image */
+.references a.image-link {
+    grid-row: 1 / span 2; /* Image spans two rows */
+    align-self: center;
+    justify-self: center;
+}
+
+.references img {
+    border: 5px solid black;
+    max-width: 120px;
+    border-radius: 100px;
+    margin: .5em .5em .2em .5em;
+}
+
+/* Name and paragraph styles */
+.references h2 {
+    margin-left: 3%;
+    padding: .1em .1em;
+}
+
+.references p {
+    grid-row: 2;
+    grid-column: 2;
+    padding: .1em .1em;
+    margin-left: 3%;
+    text-wrap: wrap;
+}
+
+/* Clickable elements */
+.references a {
+    text-decoration: none;
+    color: inherit;
+    display: inline; /* Ensures links don’t break spacing */
+}
+
+@media only screen and (max-width: 768px) {
+    .references {
+        width: 90%;
+        height: 80%;
+    }
+}
