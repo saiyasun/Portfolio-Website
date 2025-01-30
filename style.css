@@ -554,6 +554,62 @@ a {
     margin-top: 1em;
 }
 
+.posts {
+    border: 5px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    height: 70%;
+    overflow-x: auto;
+}
+
+.posts div {
+    width: 80%;
+    min-width: 300px;
+    min-height: 170px; 
+    border: 5px dotted green;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr; /* Keeps image in two rows */
+    column-gap: .5em;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.posts img {
+    max-width: 250px;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.blog-title {
+    margin-left: .5em;
+    padding: .5em;
+}
+
+.blog-description {
+    margin-left: .5em;
+    padding: .5em;
+    text-wrap: wrap;
+}
+
+.posts a.image-link {
+    grid-column: 2;
+    grid-row: 1 / span 2; /* Image spans two rows */
+    align-self: center;
+    justify-self: center;
+    padding: .5em;
+}
+
+#body-blog h1 {
+    margin-top: .2em;
+
+}
+
 /*References*/
 #body-references {
     border: 5px solid gold;
