@@ -233,53 +233,48 @@ a {
     .bio {
         border: 5px solid blue;
         display: grid;
-        width: 90%;
-        height: 70%;
-        grid-template-rows: auto auto auto;
-        grid-template-columns: none;
-        margin-top: 5%;
-        margin-bottom: 7%;
-        padding: 2%;
-        gap: 0;
-        align-items: center; /* Vertically centers items */
-        justify-items: center; /* Horizontally centers items */
-    }
-
-    #bio-essay {
-        display: flex;
-        flex-direction: row; /* Stack the content */
-        align-items: flex-start;
-        justify-content: center;
         width: 95%;
-        justify-content: center; /* Align content within the essay section */
-        border: 5px solid orange;
+        height: 80%;
+        grid-template-columns: 1fr; /* One column for mobile */
+        grid-template-rows: auto 80%; /* Two rows */
+        margin: 0 auto;
+        padding: 1%;
+        align-items: center;
+        justify-items: center; 
+        position: relative;
     }
 
-    #bio-p {
-        grid-row: 3;
-        border: 5px dotted purple;
-        text-align: justify;
-        padding: 0.5% 1.5em;
-        width: 80%;
-        height: 80%;
-        margin: 0;
-        align-self: center;
-        overflow: auto;
+    #bio-img {
+        grid-row: 1; /* Image in the first row */
+        max-width: 90%;
+        border: none;
+        z-index: -1; /* Move image behind other content */
+        opacity: 0.4; /* Optional: Add opacity for effect */
+        position: absolute;
+        top: 50%; /* Centers inside the container */
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     #bio-title {
-        grid-row: 1;
+        grid-row: 1; /* Title in the second row */
         border: 5px dotted green;
-        text-align: center; /* Center text inside the element */
+        text-align: center; /* Center text */
         font-size: 2rem;
         padding: .5em .5em;
     }
 
-    #bio-img {
-        grid-row: 2;
-        grid-column: none;
-        width: 250px;
-        border: none;
+    #bio-p {
+        grid-row: 2; /* Text in the third row */
+        border: 5px dotted purple;
+        text-align: justify;
+        padding: 0.5% 1.5em;
+        width: 80%;
+        height: 90%;
+        margin: 0;
+        align-self: center;
+        overflow: auto;
+        color: black;
     }
 
     #navigation-about {
@@ -292,6 +287,7 @@ a {
         padding-top: 20px;
     }
 }
+
 
 /*Contact*/
 #body-contact {
@@ -395,13 +391,15 @@ a {
     .icons {
         border: 5px dotted red;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Auto-fit icons */
         gap: 2em;
         width: 90%;
-        height: 30%;
+        height: auto;
         align-items: center;
         justify-content: center;
         margin-bottom: 10%;
+        margin-top: .5em;
+        padding: .5em 0;
     }
     
     .icons#email {
@@ -425,7 +423,7 @@ a {
         align-items: center;
         flex-direction: column;
         width: 90%;
-        height: 13em;
+        height: auto;
         margin-top: 3em;
         margin-bottom: 5em;
         border: 5px dotted yellow;
@@ -525,7 +523,7 @@ a {
         border: 5px dotted gray;
         font-size: 2rem;
         padding: .5em;
-        width: 50%;
+        width: 75%;
         text-align: center;
     }
 
@@ -618,22 +616,41 @@ a {
     }
 
     .posts div {
+        width: 80%;
+        min-width: 300px;
+        min-height: 170px; 
+        border: 5px dotted green;
         display: grid;
-        grid-template-columns: 1fr; /* One column layout */
-        grid-template-rows: auto auto auto; /* Three rows with equal height */
-        max-height: 95%;
-        gap: 0; /* No gap between rows */
+        grid-template-columns: 1fr; /* Force a single column */
+        grid-template-rows: 1fr 1fr; /* Define three rows */
+        column-gap: 0; /* Ensure no unwanted gaps */
+        padding: 10px;
+        overflow-y: auto;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        position: relative;
     }
 
-    .posts img {
-        max-width: 100%; /* Ensure image fits inside the container */
-        grid-column: 1 / span 2;
-        grid-row: 2; /* Place image in the middle row */
-        justify-self: center; /* Center image in the row */
+    .posts a.image-link {
+        grid-row: 1; /* Place image in the first row */
+        grid-column: 1; /* Ensure it stays in the single column */
+        justify-self: center; /* Center horizontally in the grid */
+        align-self: center; /* Center vertically in the first row */
+        max-width: 80%; /* Prevents full stretch */
+        height: auto; /* Maintain aspect ratio */
+        z-index: -1; /* Moves it behind other content */
+        opacity: 0.3; /* Optional: Reduce opacity for readability */
+        position: absolute; /* Removes it from grid's space but keeps it inside */
+        top: 50%; /* Centers inside the container */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .posts h2 {
+        justify-self: center;
+        align-self: center;
     }
 }
-
-
 
 /*References*/
 #body-references {
@@ -680,6 +697,10 @@ a {
     padding: 10px;
     overflow-y: auto;
     margin-bottom: 2em;
+}
+
+.back-arrow {
+    font-size: .5em;
 }
 
 /* Clickable image */
