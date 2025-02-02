@@ -44,6 +44,16 @@ a {
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .navigation {
+        width: 95%;
+    }
+    
+    .navigation {
+        padding: .5em;
+    }
+}
+
 /*Index*/
 #homepage {
     display: flex;
