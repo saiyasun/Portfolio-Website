@@ -1,6 +1,49 @@
-<<<<<<< HEAD
 /*Universal*/
     /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+        a {
+            text-decoration: none;
+        }
+        
+        .navigation {
+            border: 5px solid red;
+            display: grid;
+            width: 95%;
+            grid-template-columns: 30% 1fr;
+            justify-items: center;
+            align-items: center;
+            margin: .5em;
+        }
+
+        .navigation ul {
+            border: 5px solid blue;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: .4em;
+            width: 80%;
+            padding: .5em;
+            align-items: center;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .navigation li {
+            border: 5px dotted grey;
+            text-decoration: none;
+            list-style-type: none;
+            text-align: center;
+            width: 80%;
+            font-size: 2em;
+        }
+
+        .navigation #logo {
+            border: 5px dotted green;
+            width: 100%;
+            max-width: 120px;
+            margin: .5em;
+            padding: .5em;
+        }
+    }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
@@ -12,9 +55,10 @@
                 border: 5px solid red;
                 display: grid;
                 width: 95%;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 30% 1fr;
                 justify-items: center;
                 align-items: center;
+                margin: .5em;
             }
 
             .navigation ul {
@@ -22,12 +66,12 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
-                gap: .2em;
-                width: 85%;
+                gap: .4em;
+                width: 80%;
+                padding: .5em;
                 align-items: center;
                 justify-items: center;
                 align-items: center;
-                padding: .5em;
             }
 
             .navigation li {
@@ -35,34 +79,121 @@
                 text-decoration: none;
                 list-style-type: none;
                 text-align: center;
-                width: 85%;
+                width: 80%;
+                font-size: 1.5em;
             }
 
             .navigation #logo {
                 border: 5px dotted green;
                 width: 100%;
-                max-width: 150px;
+                max-width: 95px;
             }
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
+                a {
+                    text-decoration: none;
+                }
+                
+                .navigation {
+                    border: 5px solid red;
+                    display: grid;
+                    width: 95%;
+                    grid-template-columns: 30% 1fr;
+                    justify-items: center;
+                    align-items: center;
+                    margin: 1em;
+                }
+        
+                .navigation ul {
+                    border: 5px solid blue;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: .4em;
+                    width: 80%;
+                    padding: .5em;
+                    align-items: center;
+                    justify-items: center;
+                    align-items: center;
+                }
+        
+                .navigation li {
+                    border: 5px dotted grey;
+                    text-decoration: none;
+                    list-style-type: none;
+                    text-align: center;
+                    width: 80%;
+                    font-size: 5em;
+                }
+        
+                .navigation #logo {
+                    border: 5px dotted green;
+                    width: 100%;
+                    max-width: 250px;
+                    margin: .5em;
+                    padding: .5em;
+                }
+            }
 
 /*----------------------------------------*/
 
 /*Index*/
     /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+        #homepage {
+            border: 5px solid gold;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        #logo {
+            border: 5px dotted green;
+            width: 100%;
+            max-width: 60%;
+        }
+    }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            
+            #homepage {
+                border: 5px solid gold;
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+            }
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
+                #homepage {
+                    border: 5px solid gold;
+                    width: 100vw;
+                    height: 100vh;
+                    margin: 0;
+                }
+            }
 
 /*----------------------------------------*/
 
 /*About*/
     /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+        #body-about {
+            border: 5px solid gold;
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            justify-items: center;
+        }
+    }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
@@ -78,6 +209,17 @@
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
+                #body-about {
+                    border: 5px solid gold;
+                    width: 100vw;
+                    height: 100vh;
+                    padding: 0;
+                    margin: 0;
+                    align-items: center;
+                    justify-items: center;
+                }
+            }
 
 /*----------------------------------------*/
 
@@ -90,11 +232,17 @@
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
+
+            }
 
 /*----------------------------------------*/
 
 /*Project*/
     /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+    
+    }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
@@ -102,11 +250,17 @@
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
 
+            }
+            
 /*----------------------------------------*/
 
 /*Reference*/
     /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+    
+    }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
@@ -114,11 +268,17 @@
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
+
+            }
 
 /*----------------------------------------*/
 
 /*Blog*/
     /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+    
+    }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
@@ -126,7 +286,8 @@
         }
 
             /*Desktop design*/
+            @media only screen and (min-width: 2400px) {
+
+            }
 
 /*----------------------------------------*/
-=======
->>>>>>> 9b3201f4facaf7ddddf23a54f7b2711a25926b2a
