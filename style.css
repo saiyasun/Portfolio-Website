@@ -673,6 +673,10 @@
             height: 73%;
         }
 
+        hr {
+            display: none;
+        }
+
         #all-contact h2 {
             /*TEMPORARY STYLE*/
             border: 5px dotted grey;
@@ -709,6 +713,7 @@
                 /*TEMPORARY STYLE*/
                 width: 80%;
                 padding: 2em;
+                grid-column: 2;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -752,16 +757,15 @@
                 height: 100vh;
                 margin: 0;
                 padding: 0;
-                display: grid;
-                grid-template-rows: 20% 1fr;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-items: center;
             }
 
-
-           #navigation-contact {
-            margin: 1em .1em;
-           }
+            #navigation-contact {
+                margin-bottom: .5em;
+            }
 
             #all-contact {
                 /*TEMPORARY STYLE*/
@@ -771,9 +775,9 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 2em;
+                gap: 3.5em;
                 width: 95%;
-                height: 94%;
+                height: 90%;
             }
 
             #all-contact h2 {
@@ -1077,15 +1081,15 @@
             border: 5px solid black;
             /*TEMPORARY STYLE*/
             overflow-y: auto;
-            width: 95%;
-            height: 75%;
+            width: 90%;
+            height: 72%;
             gap: .7em;
             padding: 0 .5em;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: .3em;
+            margin-bottom: 1.2em;
             scroll-padding-left: 1em; /* Ensures the first item is fully visible */
             scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
         }
@@ -1163,17 +1167,18 @@
                 z-index: -1; /* Places background behind content */
             }
 
-        #resume {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted purple;
-            /*TEMPORARY STYLE*/
-            font-size: 2em;
-            text-align: center;
-        }
+            #resume {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted purple;
+                /*TEMPORARY STYLE*/
+                font-size: 2em;
+                text-align: center;
+                padding: .2em .5em;
+            }
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
+            @media only screen and (min-width: 1500px) and (min-height: 1024px) {
                 #body-project {
                     /*TEMPORARY STYLE*/
                     border: 5px solid gold;
@@ -1198,14 +1203,14 @@
                     /*TEMPORARY STYLE*/
                     overflow-x: auto;
                     width: 95%;
-                    height: 60%;
+                    height: 70%;
                     gap: .7em;
                     padding: 0 .5em;
                     display: flex;
                     justify-content: center;
                     align-content: center;
-                    margin-bottom: 2.5em;
-                    margin-top: 4em;
+                    margin-bottom: 1em;
+                    margin-top: 1em;
                     scroll-padding-left: 1em; /* Ensures the first item is fully visible */
                     scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
                 }
@@ -1248,7 +1253,7 @@
                         /*TEMPORARY STYLE*/
                         border: 5px dotted red;
                         /*TEMPORARY STYLE*/
-                        max-width: 350px;
+                        max-width: 200px;
                     }
         
         
@@ -1260,7 +1265,8 @@
                         grid-template-rows: 1fr 18% 1fr;
                         align-items: center;
                         justify-items: center;
-                        max-width: 400px;
+                        max-width: 350px;
+                        height: auto;
                         scroll-snap-align: start;
                     }
         
