@@ -115,7 +115,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
                 a {
                     text-decoration: none;
                 }
@@ -139,7 +139,7 @@
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr;
                     gap: .4em;
-                    width: 80%;
+                    width: 90%;
                     padding: .5em;
                     align-items: center;
                     justify-items: center;
@@ -153,8 +153,8 @@
                     text-decoration: none;
                     list-style-type: none;
                     text-align: center;
-                    width: 80%;
-                    font-size: 5em;
+                    width: 90%;
+                    font-size: 3em;
                 }
         
                 .navigation #logo {
@@ -162,7 +162,7 @@
                     border: 5px dotted green;
                     /*TEMPORARY STYLE*/
                     width: 100%;
-                    max-width: 250px;
+                    max-width: 200px;
                     margin: .5em;
                     padding: .5em;
                 }
@@ -344,7 +344,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) and (min-height: 1200px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
                 #homepage {
                     /*TEMPORARY STYLE*/
                     border: 5px solid gold;
@@ -575,13 +575,67 @@
                     /*TEMPORARY STYLE*/
                     border: 5px solid gold;
                     /*TEMPORARY STYLE*/
+                    display: flex;
+                    flex-direction: column;
                     width: 100vw;
                     height: 100vh;
-                    padding: 0;
+                    padding: .1em;
                     margin: 0;
                     align-items: center;
                     justify-items: center;
                 }
+        
+                #navigation-about {
+                    margin-bottom: 1em;
+                }
+        
+                .bio {
+                    /*TEMPORARY STYLE*/
+                    border: 5px solid black;
+                    /*TEMPORARY STYLE*/
+                    display: grid;
+                    grid-template-columns: 40% 1fr;
+                    align-items: center;
+                    justify-items: center;
+                    width: 95%;
+                    max-height: 99vh;
+                    margin: .1em .2em;
+                    overflow-y: auto;
+                }
+        
+                    #bio-p {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted purple;
+                        /*TEMPORARY STYLE*/
+                        grid-column: 2;
+                        width: 85%;
+                        height: 85%;
+                        overflow-y: auto;
+                        padding: 0 1em;
+                        margin: .1em;
+                        text-align: justify;
+                        text-wrap: wrap;
+                        font-size: 2em;
+                    }
+        
+                    #bio-title {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted green;
+                        /*TEMPORARY STYLE*/
+                        width: 95%;
+                        text-align: center;
+                        padding: .2em;
+                        font-size: 4em;
+                    }
+        
+                    #bio-img {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted red;
+                        /*TEMPORARY STYLE*/
+                        width: 100%;
+                        max-width: 550px;
+                        grid-row: 1 / span 2;
+                    }
             }
 
 /*----------------------------------------*/
@@ -603,7 +657,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
                /*TEMPORARY STYLE*/ 
 
                /*TEMPORARY STYLE*/ 
@@ -627,7 +681,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
                 /*TEMPORARY STYLE*/ 
 
                 /*TEMPORARY STYLE*/
@@ -647,7 +701,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
 
             }
 
@@ -665,7 +719,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
 
             }
 
