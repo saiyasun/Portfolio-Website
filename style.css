@@ -977,13 +977,16 @@
             border: 5px solid black;
             /*TEMPORARY STYLE*/
             overflow-x: auto;
-            width: 90%;
+            width: 95%;
             height: 70%;
-            gap: .3em;
+            gap: .7em;
+            padding: 0 .5em;
             display: flex;
             justify-content: center;
             align-content: center;
-
+            margin-bottom: .3em;
+            scroll-padding-left: 1em; /* Ensures the first item is fully visible */
+            scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
         }
 
             .projects ul {
@@ -1003,7 +1006,7 @@
                 /*TEMPORARY STYLE*/
                 border: 5px dotted green;
                 /*TEMPORARY STYLE*/
-                width: 60%;
+                width: 90%;
                 text-align: center;
                 padding: .1em;
                 font-size: 1.3em;
@@ -1013,6 +1016,10 @@
                 /*TEMPORARY STYLE*/
                 border: 5px dotted purple;
                 /*TEMPORARY STYLE*/
+                width: 90%;
+                height: 75%;
+                padding: .5em;
+                text-align: justify;
 
             }
 
@@ -1032,8 +1039,17 @@
                 grid-template-rows: 1fr 18% 1fr;
                 align-items: center;
                 justify-items: center;
-                width: 250px;
+                max-width: 250px;
+                scroll-snap-align: start;
             }
+
+            .projects div:first-child {
+                margin-left: 1em;
+            }
+
+        #resume {
+            font-size: 2em;
+        }
     }
 
         /*Mobile design*/
@@ -1051,6 +1067,109 @@
                 align-items: center;
                 justify-items: center;
             } 
+
+            #navigation-project {
+            margin: .5em;
+        }
+
+        .projects {
+            /*TEMPORARY STYLE*/
+            border: 5px solid black;
+            /*TEMPORARY STYLE*/
+            overflow-y: auto;
+            width: 95%;
+            height: 75%;
+            gap: .7em;
+            padding: 0 .5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: .3em;
+            scroll-padding-left: 1em; /* Ensures the first item is fully visible */
+            scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
+        }
+
+            .projects ul {
+                list-style: none; /* Removes default list styling */
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center; /* Centers the image inside */
+            }
+            
+            .projects li {
+                display: flex;
+                justify-content: center;
+            }   
+
+            .projects h3 {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted green;
+                /*TEMPORARY STYLE*/
+                grid-row: 1;
+                width: 90%;
+                text-align: center;
+                padding: .1em;
+                font-size: 1.3em;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                font-weight: bold;
+            }
+
+            .projects p {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted purple;
+                /*TEMPORARY STYLE*/
+                grid-row: 2;
+                width: 90%;
+                height: 75%;
+                padding: .5em;
+                text-align: justify;
+                overflow-y: auto;
+                color: black;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                font-weight: bold;
+            }
+
+            .projects img {
+                display: none;
+            }
+
+
+            .projects div {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted grey;
+                /*TEMPORARY STYLE*/
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                align-items: center;
+                justify-items: center;
+                width: 95%;
+                min-height: 175px;
+                padding: .3em;
+                scroll-snap-align: start;
+                position: relative
+            }
+
+            .projects div::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('images/placeholder.png') no-repeat center/cover;
+                opacity: 0.5; /* Adjust opacity as needed */
+                z-index: -1; /* Places background behind content */
+            }
+
+        #resume {
+            /*TEMPORARY STYLE*/
+            border: 5px dotted purple;
+            /*TEMPORARY STYLE*/
+            font-size: 2em;
+            text-align: center;
+        }
         }
 
             /*Desktop design*/
@@ -1068,6 +1187,90 @@
                     align-items: center;
                     justify-items: center;
                 } 
+        
+                #navigation-project {
+                    margin: .5em;
+                }
+        
+                .projects {
+                    /*TEMPORARY STYLE*/
+                    border: 5px solid black;
+                    /*TEMPORARY STYLE*/
+                    overflow-x: auto;
+                    width: 95%;
+                    height: 60%;
+                    gap: .7em;
+                    padding: 0 .5em;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    margin-bottom: 2.5em;
+                    margin-top: 4em;
+                    scroll-padding-left: 1em; /* Ensures the first item is fully visible */
+                    scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
+                }
+        
+                    .projects ul {
+                        list-style: none; /* Removes default list styling */
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        justify-content: center; /* Centers the image inside */
+                    }
+                    
+                    .projects li {
+                        display: flex;
+                        justify-content: center;
+                    }   
+        
+                    .projects h3 {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted green;
+                        /*TEMPORARY STYLE*/
+                        width: 90%;
+                        text-align: center;
+                        padding: .1em;
+                        font-size: 2em;
+                    }
+        
+                    .projects p {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted purple;
+                        /*TEMPORARY STYLE*/
+                        width: 90%;
+                        height: 75%;
+                        padding: .5em;
+                        text-align: justify;
+                        font-size: 2em;
+                    }
+        
+                    .projects img {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted red;
+                        /*TEMPORARY STYLE*/
+                        max-width: 350px;
+                    }
+        
+        
+                    .projects div {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted grey;
+                        /*TEMPORARY STYLE*/
+                        display: grid;
+                        grid-template-rows: 1fr 18% 1fr;
+                        align-items: center;
+                        justify-items: center;
+                        max-width: 400px;
+                        scroll-snap-align: start;
+                    }
+        
+                    .projects div:first-child {
+                        margin-left: 1em;
+                    }
+        
+                #resume {
+                    font-size: 4em;
+                }
             }
             
 /*----------------------------------------*/
