@@ -979,7 +979,10 @@
             overflow-x: auto;
             width: 90%;
             height: 70%;
+            gap: .3em;
             display: flex;
+            justify-content: center;
+            align-content: center;
 
         }
 
@@ -1000,6 +1003,10 @@
                 /*TEMPORARY STYLE*/
                 border: 5px dotted green;
                 /*TEMPORARY STYLE*/
+                width: 60%;
+                text-align: center;
+                padding: .1em;
+                font-size: 1.3em;
             }
 
             .projects p {
@@ -1022,9 +1029,10 @@
                 border: 5px dotted grey;
                 /*TEMPORARY STYLE*/
                 display: grid;
+                grid-template-rows: 1fr 18% 1fr;
                 align-items: center;
                 justify-items: center;
-                width: 300px;
+                width: 250px;
             }
     }
 
