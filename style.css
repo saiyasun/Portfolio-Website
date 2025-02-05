@@ -152,10 +152,15 @@
             justify-items: center;
         }
         
+        #homepage header a {
+            display: block;
+            text-align: center;
+        }
+
         #logo {
             border: 5px dotted green;
             width: 100%;
-            max-width: 60%;
+            max-width: 40%;
         }
     }
 
