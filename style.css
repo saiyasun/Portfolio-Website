@@ -14,7 +14,7 @@
             grid-template-columns: 30% 1fr;
             justify-items: center;
             align-items: center;
-            margin: .5em;
+            margin: .1em;
         }
 
         .navigation ul {
@@ -39,7 +39,7 @@
             list-style-type: none;
             text-align: center;
             width: 80%;
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
         .navigation #logo {
@@ -47,7 +47,7 @@
             border: 5px dotted green;
             /*TEMPORARY STYLE*/ 
             width: 100%;
-            max-width: 120px;
+            max-width: 50px;
             margin: .5em;
             padding: .5em;
         }
@@ -69,8 +69,8 @@
                 border: 5px solid red;
                 /*TEMPORARY STYLE*/ 
                 display: grid;
-                width: 95%;
-                grid-template-columns: 30% 1fr;
+                width: 97%;
+                grid-template-columns: 25% 1fr;
                 justify-items: center;
                 align-items: center;
                 margin: .5em;
@@ -84,8 +84,8 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
                 gap: .4em;
-                width: 80%;
-                padding: .5em;
+                width: 90%;
+                padding: .2em;
                 align-items: center;
                 justify-items: center;
                 align-items: center;
@@ -106,8 +106,11 @@
                 /*TEMPORARY STYLE*/ 
                 border: 5px dotted green;
                 /*TEMPORARY STYLE*/ 
-                width: 100%;
-                max-width: 95px;
+                width: auto;
+                height: auto;
+                max-width: 85px;
+                min-width: 50px;
+                justify-self: center;
             }
         }
 
@@ -433,33 +436,145 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-about {
+            /*TEMPORARY STYLE*/
             border: 5px solid gold;
+            /*TEMPORARY STYLE*/
+            display: flex;
+            flex-direction: column;
             width: 100vw;
             height: 100vh;
-            padding: 0;
+            padding: .1em;
             margin: 0;
             align-items: center;
             justify-items: center;
         }
+
+        #navigation-about {
+            margin-bottom: .9em;
+        }
+
+        .bio {
+            /*TEMPORARY STYLE*/
+            border: 5px solid black;
+            /*TEMPORARY STYLE*/
+            display: grid;
+            grid-template-columns: 40% 1fr;
+            align-items: center;
+            justify-items: center;
+            width: 99%;
+            max-height: 99vh;
+            margin: .1em .2em;
+            overflow-y: auto;
+        }
+
+            #bio-p {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted purple;
+                /*TEMPORARY STYLE*/
+                grid-column: 2;
+                width: 85%;
+                height: 85%;
+                overflow-y: auto;
+                padding: 0 1em;
+                margin: .1em;
+                text-align: justify;
+                text-wrap: wrap;
+                font-size: 1.2em;
+            }
+
+            #bio-title {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted green;
+                /*TEMPORARY STYLE*/
+                width: 85%;
+                text-align: center;
+                padding: .2em;
+            }
+
+            #bio-img {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted red;
+                /*TEMPORARY STYLE*/
+                width: 100%;
+                max-width: 310px;
+                grid-row: 1 / span 2;
+            }
     }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-about {
+                /*TEMPORARY STYLE*/
                 border: 5px solid gold;
-                width: 100vw;
-                height: 100vh;
+                /*TEMPORARY STYLE*/
                 padding: 0;
                 margin: 0;
                 align-items: center;
                 justify-items: center;
+                overflow-y: auto;
             }
+
+            .bio {
+                /*TEMPORARY STYLE*/
+                border: 5px solid black;
+                /*TEMPORARY STYLE*/
+                width: 99%;
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                overflow-y: scroll;
+                background: linear-gradient(
+              rgb(0, 0, 0, 0.1),  /* Semi-transparent black overlay */
+              rgba(0, 0, 0, 0.1)   /* Same overlay for smooth effect */
+        )       , url('images/profile_pic.jpg');
+                background-size: cover; /* Ensure the image covers the entire grid */
+                background-position: center; /* Center the image */
+                background-repeat: no-repeat; /* Prevent the image from repeating */
+            }
+            
+
+                #bio-title {
+                    /*TEMPORARY STYLE*/
+                    border: 5px dotted green;
+                    /*TEMPORARY STYLE*/
+                    width: 85%;
+                    margin-bottom: .4em;
+                    text-align: center;
+                    padding: .2em;
+                    grid-row: 1;
+                    color: white;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                    font-weight: bold;
+                }
+
+                #bio-p {
+                    /*TEMPORARY STYLE*/
+                    border: 5px dotted purple;
+                    /*TEMPORARY STYLE*/
+                    padding: 1em;
+                    grid-row: 2;
+                    text-justify: justify;
+                    text-align: justify;
+                    width: 85%;
+                    height: 60vh;
+                    font-size: 1.5em;
+                    overflow-y: auto;
+                    color: white;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                    font-weight: bold;
+                }
+
+                #bio-img {
+                    display: none; /* Hide the image for tablet and larger screens */
+                }
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2400px) {
+            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
                 #body-about {
+                    /*TEMPORARY STYLE*/
                     border: 5px solid gold;
+                    /*TEMPORARY STYLE*/
                     width: 100vw;
                     height: 100vh;
                     padding: 0;
