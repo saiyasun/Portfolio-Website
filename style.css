@@ -1045,6 +1045,7 @@
                 justify-items: center;
                 max-width: 250px;
                 scroll-snap-align: start;
+                overflow-x: auto;
             }
 
             .projects div:first-child {
@@ -1268,6 +1269,7 @@
                         max-width: 350px;
                         height: auto;
                         scroll-snap-align: start;
+                        overflow-x: auto;
                     }
         
                     .projects div:first-child {
