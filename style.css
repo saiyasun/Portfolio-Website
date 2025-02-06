@@ -1475,7 +1475,7 @@
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 1500px) and (min-height: 1024px) {
+            @media only screen and (min-width: 1500px) {
                 #body-project {
                     margin: 0;
                     padding: 0;
