@@ -80,8 +80,7 @@
                 border: 5px solid blue;
                 /*TEMPORARY STYLE*/ 
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
                 gap: .4em;
                 width: 90%;
                 padding: .2em;
@@ -212,9 +211,8 @@
             /*TEMPORARY STYLE*/
             border: 5px dotted green;
             /*TEMPORARY STYLE*/
-            display: grid;
+            display: flex;
             justify-items: center;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
             width: 80%;
             padding: .5em;
         }
@@ -297,8 +295,8 @@
                 /*TEMPORARY STYLE*/
                 border: 5px dotted green;
                 /*TEMPORARY STYLE*/
-                display: grid;
-                grid-template-rows: 1fr 1fr 1fr 1fr;
+                display: flex;
+                flex-direction: column;
                 width: 80%;
                 padding: 1em;
                 gap: .2em;
@@ -386,8 +384,7 @@
                     /*TEMPORARY STYLE*/
                     border: 5px dotted green;
                     /*TEMPORARY STYLE*/
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    display: flex;
                     width: 80%;
                     padding: 1em;
                     margin-top: 2em;
