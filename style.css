@@ -6,9 +6,6 @@
         }
         
         .navigation {
-            /*TEMPORARY STYLE*/ 
-            border: 5px solid red;
-            /*TEMPORARY STYLE*/ 
             display: grid;
             width: 95%;
             grid-template-columns: 30% 1fr;
@@ -17,10 +14,7 @@
             margin: .1em;
         }
 
-        .navigation ul {
-            /*TEMPORARY STYLE*/ 
-            border: 5px solid blue;
-            /*TEMPORARY STYLE*/ 
+        .navigation ul { 
             display: flex;
             justify-content: center;
             gap: .4em;
@@ -29,9 +23,6 @@
         }
 
         .navigation li {
-            /*TEMPORARY STYLE*/ 
-            border: 5px dotted grey;
-            /*TEMPORARY STYLE*/ 
             text-decoration: none;
             list-style-type: none;
             text-align: center;
@@ -40,9 +31,6 @@
         }
 
         .navigation #logo {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted green;
-            /*TEMPORARY STYLE*/ 
             width: auto;
             max-width: 50px;
             min-width: 25px;
@@ -64,9 +52,6 @@
             }
             
             .navigation {
-                /*TEMPORARY STYLE*/ 
-                border: 5px solid red;
-                /*TEMPORARY STYLE*/ 
                 display: grid;
                 width: 97%;
                 grid-template-columns: 25% 1fr;
@@ -76,9 +61,6 @@
             }
 
             .navigation ul {
-                /*TEMPORARY STYLE*/ 
-                border: 5px solid blue;
-                /*TEMPORARY STYLE*/ 
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
                 gap: .4em;
@@ -90,9 +72,6 @@
             }
 
             .navigation li {
-                /*TEMPORARY STYLE*/ 
-                border: 5px dotted grey;
-                /*TEMPORARY STYLE*/ 
                 text-decoration: none;
                 list-style-type: none;
                 text-align: center;
@@ -101,9 +80,6 @@
             }
 
             .navigation #logo {
-                /*TEMPORARY STYLE*/ 
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/ 
                 width: auto;
                 height: auto;
                 max-width: 75px;
@@ -118,10 +94,7 @@
                     text-decoration: none;
                 }
                 
-                .navigation {
-                    /*TEMPORARY STYLE*/ 
-                    border: 5px solid red;
-                    /*TEMPORARY STYLE*/ 
+                .navigation { 
                     display: grid;
                     width: 95%;
                     grid-template-columns: 30% 1fr;
@@ -131,9 +104,6 @@
                 }
         
                 .navigation ul {
-                    /*TEMPORARY STYLE*/ 
-                    border: 5px solid blue;
-                    /*TEMPORARY STYLE*/ 
                     display: flex;
                     justify-content: center; /* Centers items when some are removed */
                     gap: 0.4em;
@@ -145,9 +115,6 @@
                 }
         
                 .navigation li {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted grey;
-                    /*TEMPORARY STYLE*/
                     text-decoration: none;
                     list-style-type: none;
                     text-align: center;
@@ -156,9 +123,6 @@
                 }
         
                 .navigation #logo {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted green;
-                    /*TEMPORARY STYLE*/
                     width: 100%;
                     max-width: 200px;
                     margin: .5em;
@@ -172,9 +136,6 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #homepage {
-            /*TEMPORARY STYLE*/
-            border: 5px solid gold;
-            /*TEMPORARY STYLE*/
             width: 100vw;
             height: 100vh;
             margin: 0;
@@ -190,17 +151,11 @@
         }
 
         #logo {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted green;
-            /*TEMPORARY STYLE*/
             width: 100%;
             max-width: 30%;
         }
 
         .intro {
-            /*TEMPORARY STYLE*/
-            border: 5px solid red;
-            /*TEMPORARY STYLE*/
             display: grid;
             width: 95%;
             align-items: center;
@@ -208,9 +163,6 @@
         }
 
         #navi {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted green;
-            /*TEMPORARY STYLE*/
             display: flex;
             justify-items: center;
             width: 80%;
@@ -218,9 +170,6 @@
         }
 
         #navi li {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted grey;
-            /*TEMPORARY STYLE*/
             text-decoration: none;
             list-style-type: none;
             text-align: center;
@@ -230,9 +179,6 @@
         }
 
         #name {
-           /*TEMPORARY STYLE*/
-           border: 5px dotted black;
-           /*TEMPORARY STYLE*/ 
            text-align: center;
            width: 80%;
            font-size: 4em;
@@ -241,9 +187,6 @@
         }
 
         #tagline {
-           /*TEMPORARY STYLE*/
-           border: 5px dotted brown;
-           /*TEMPORARY STYLE*/
            width: 80%;
            text-align: center;
            font-size: 2em;
@@ -272,17 +215,11 @@
             }
     
             #logo {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 width: 100%;
                 max-width: 30%;
             }
     
             .intro {
-                /*TEMPORARY STYLE*/
-                border: 5px solid red;
-                /*TEMPORARY STYLE*/
                 display: grid;
                 width: 90%;
                 height: auto;
@@ -292,9 +229,6 @@
             }
     
             #navi {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 display: flex;
                 flex-direction: column;
                 width: 80%;
@@ -306,9 +240,6 @@
             }
     
             #navi li {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted grey;
-                /*TEMPORARY STYLE*/
                 text-decoration: none;
                 list-style-type: none;
                 text-align: center;
@@ -317,10 +248,7 @@
                 padding: .2em;
             }
     
-            #name {
-               /*TEMPORARY STYLE*/
-               border: 5px dotted black;
-               /*TEMPORARY STYLE*/ 
+            #name { 
                text-align: center;
                font-size: 2.5em;
                padding: .2em 1em;
@@ -328,9 +256,6 @@
             }
     
             #tagline {
-               /*TEMPORARY STYLE*/
-               border: 5px dotted brown;
-               /*TEMPORARY STYLE*/
                width: 70%;
                text-align: center;
                font-size: 1.5em;
@@ -343,9 +268,6 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #homepage {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid gold;
-                    /*TEMPORARY STYLE*/
                     width: 100vw;
                     height: 100vh;
                     margin: 0;
@@ -361,17 +283,11 @@
                 }
         
                 #logo {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted green;
-                    /*TEMPORARY STYLE*/
                     width: 100%;
                     max-width: 60%;
                 }
         
                 .intro {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid red;
-                    /*TEMPORARY STYLE*/
                     display: grid;
                     width: 95%;
                     height: auto;
@@ -381,9 +297,6 @@
                 }
         
                 #navi {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted green;
-                    /*TEMPORARY STYLE*/
                     display: flex;
                     width: 80%;
                     padding: 1em;
@@ -391,9 +304,6 @@
                 }
         
                 #navi li {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted grey;
-                    /*TEMPORARY STYLE*/
                     text-decoration: none;
                     list-style-type: none;
                     text-align: center;
@@ -403,9 +313,6 @@
                 }
         
                 #name {
-                   /*TEMPORARY STYLE*/
-                   border: 5px dotted black;
-                   /*TEMPORARY STYLE*/ 
                    text-align: center;
                    font-size: 8em;
                    padding: .2em .5em;
@@ -414,9 +321,6 @@
                 }
         
                 #tagline {
-                   /*TEMPORARY STYLE*/
-                   border: 5px dotted brown;
-                   /*TEMPORARY STYLE*/
                    width: 70%;
                    text-align: center;
                    font-size: 3.5em;
@@ -432,9 +336,6 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-about {
-            /*TEMPORARY STYLE*/
-            border: 5px solid gold;
-            /*TEMPORARY STYLE*/
             display: flex;
             flex-direction: column;
             width: 100vw;
@@ -450,9 +351,6 @@
         }
 
         .bio {
-            /*TEMPORARY STYLE*/
-            border: 5px solid black;
-            /*TEMPORARY STYLE*/
             display: grid;
             grid-template-columns: 40% 1fr;
             align-items: center;
@@ -464,9 +362,6 @@
         }
 
             #bio-p {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted purple;
-                /*TEMPORARY STYLE*/
                 grid-column: 2;
                 width: 85%;
                 height: 85%;
@@ -479,18 +374,12 @@
             }
 
             #bio-title {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 width: 85%;
                 text-align: center;
                 padding: .2em;
             }
 
             #bio-img {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted red;
-                /*TEMPORARY STYLE*/
                 width: 100%;
                 max-width: 310px;
                 grid-row: 1 / span 2;
@@ -500,9 +389,6 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-about {
-                /*TEMPORARY STYLE*/
-                border: 5px solid gold;
-                /*TEMPORARY STYLE*/
                 padding: 0;
                 margin: 0;
                 align-items: center;
@@ -511,9 +397,6 @@
             }
 
             .bio {
-                /*TEMPORARY STYLE*/
-                border: 5px solid black;
-                /*TEMPORARY STYLE*/
                 width: 99%;
                 display: grid;
                 align-items: center;
@@ -530,9 +413,6 @@
             
 
                 #bio-title {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted green;
-                    /*TEMPORARY STYLE*/
                     width: 85%;
                     margin-bottom: .4em;
                     text-align: center;
@@ -544,9 +424,6 @@
                 }
 
                 #bio-p {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted purple;
-                    /*TEMPORARY STYLE*/
                     padding: 1em;
                     grid-row: 2;
                     text-justify: justify;
@@ -568,9 +445,6 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #body-about {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid gold;
-                    /*TEMPORARY STYLE*/
                     display: flex;
                     flex-direction: column;
                     width: 100vw;
@@ -586,9 +460,6 @@
                 }
         
                 .bio {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid black;
-                    /*TEMPORARY STYLE*/
                     display: grid;
                     grid-template-columns: 40% 1fr;
                     align-items: center;
@@ -600,9 +471,6 @@
                 }
         
                     #bio-p {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted purple;
-                        /*TEMPORARY STYLE*/
                         grid-column: 2;
                         width: 85%;
                         height: 85%;
@@ -615,9 +483,6 @@
                     }
         
                     #bio-title {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted green;
-                        /*TEMPORARY STYLE*/
                         width: 95%;
                         text-align: center;
                         padding: .2em;
@@ -625,9 +490,6 @@
                     }
         
                     #bio-img {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted red;
-                        /*TEMPORARY STYLE*/
                         width: 100%;
                         max-width: 550px;
                         grid-row: 1 / span 2;
@@ -640,9 +502,6 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-contact {
-            /*TEMPORARY STYLE*/
-            border: 5px solid gold;
-            /*TEMPORARY STYLE*/
             width: 100vw;
             height: 100vh;
             margin: 0;
@@ -658,9 +517,6 @@
         }
 
         #all-contact {
-            /*TEMPORARY STYLE*/
-            border: 5px solid blue;
-            /*TEMPORARY STYLE*/
             display: grid;
             grid-template-columns: 30% 1fr;
             align-items: center;
@@ -674,18 +530,12 @@
         }
 
         #all-contact h2 {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted grey;
-            /*TEMPORARY STYLE*/
             text-align: center;
             padding: .2em;
             width: 90%;
         }
 
             #email-me {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 display: flex;
                 flex-direction: column;
                 width: 50%;
@@ -704,9 +554,6 @@
             }
 
             #social-media {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted red;
-                /*TEMPORARY STYLE*/
                 width: 80%;
                 padding: 2em;
                 grid-column: 2;
@@ -717,9 +564,6 @@
             }
 
                 #social-media ul {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted purple;
-                    /*TEMPORARY STYLE*/
                     display: flex;
                     gap: .2em;
                     flex-direction: row;
@@ -730,9 +574,6 @@
 
 
             #linkedin, #github, #x, #insta, #youtube, #email {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 width: 3em;
                 padding: .2em;
                 display: flex;
@@ -746,9 +587,6 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-contact {
-                /*TEMPORARY STYLE*/
-                border: 5px solid gold;
-                /*TEMPORARY STYLE*/
                 width: 100vw;
                 height: 100vh;
                 margin: 0;
@@ -764,9 +602,6 @@
             }
 
             #all-contact {
-                /*TEMPORARY STYLE*/
-                border: 5px solid blue;
-                /*TEMPORARY STYLE*/
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -776,9 +611,6 @@
             }
 
             #all-contact h2 {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted grey;
-                /*TEMPORARY STYLE*/
                 text-align: center;
                 padding: .2em;
                 margin-bottom: .2em;
@@ -790,9 +622,6 @@
             }
 
                 #email-me {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted green;
-                    /*TEMPORARY STYLE*/
                     display: flex;
                     flex-direction: column;
                     width: 70%;
@@ -811,9 +640,6 @@
                 }
 
                 #social-media {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted red;
-                    /*TEMPORARY STYLE*/
                     width: 90%;
                     padding: .5em;
                     display: flex;
@@ -823,9 +649,6 @@
                 }
 
                     #social-media ul {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted purple;
-                        /*TEMPORARY STYLE*/
                         display: flex;
                         gap: .2em;
                         flex-direction: row;
@@ -835,9 +658,6 @@
                     }
 
             #linkedin, #github, #x, #insta, #youtube, #email {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 width: 1.2em;
                 padding: .2em;
                 display: flex;
@@ -858,9 +678,6 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #body-contact {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid gold;
-                    /*TEMPORARY STYLE*/
                     width: 100vw;
                     height: 100vh;
                     margin: 0;
@@ -876,9 +693,6 @@
                 }
         
                 #all-contact {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid blue;
-                    /*TEMPORARY STYLE*/
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     align-items: center;
@@ -889,9 +703,6 @@
                 }
         
                 #all-contact h2 {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted grey;
-                    /*TEMPORARY STYLE*/
                     text-align: center;
                     padding: .2em;
                     width: 90%;
@@ -899,9 +710,6 @@
                 }
         
                     #email-me {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted green;
-                        /*TEMPORARY STYLE*/
                         display: flex;
                         flex-direction: column;
                         width: 70%;
@@ -921,9 +729,6 @@
                     }
         
                     #social-media {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted red;
-                        /*TEMPORARY STYLE*/
                         width: 80%;
                         height: 75%;
                         padding: 2em;
@@ -934,9 +739,6 @@
                     }
         
                         #social-media ul {
-                            /*TEMPORARY STYLE*/
-                            border: 5px dotted purple;
-                            /*TEMPORARY STYLE*/
                             display: flex;
                             gap: .2em;
                             flex-direction: row;
@@ -947,9 +749,6 @@
         
         
                     #linkedin, #github, #x, #insta, #youtube, #email {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted green;
-                        /*TEMPORARY STYLE*/
                         width: 3em;
                         padding: .2em;
                         display: flex;
@@ -965,9 +764,6 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-project {
-            /*TEMPORARY STYLE*/
-            border: 5px solid gold;
-            /*TEMPORARY STYLE*/
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -983,9 +779,6 @@
         }
 
         .projects {
-            /*TEMPORARY STYLE*/
-            border: 5px solid black;
-            /*TEMPORARY STYLE*/
             overflow-x: auto;
             width: 95%;
             height: 70%;
@@ -1013,9 +806,6 @@
             }   
 
             .projects h3 {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 width: 90%;
                 text-align: center;
                 padding: .1em;
@@ -1023,9 +813,6 @@
             }
 
             .projects p {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted purple;
-                /*TEMPORARY STYLE*/
                 width: 90%;
                 height: 75%;
                 padding: .5em;
@@ -1034,17 +821,11 @@
             }
 
             .projects img {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted red;
-                /*TEMPORARY STYLE*/
                 max-width: 50%;
             }
 
 
             .projects div {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted grey;
-                /*TEMPORARY STYLE*/
                 display: grid;
                 grid-template-rows: 1fr 18% 1fr;
                 align-items: center;
@@ -1062,9 +843,6 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-project {
-                /*TEMPORARY STYLE*/
-                border: 5px solid gold;
-                /*TEMPORARY STYLE*/
                 margin: 0;
                 padding: 0;
                 width: 100vw;
@@ -1080,9 +858,6 @@
         }
 
         .projects {
-            /*TEMPORARY STYLE*/
-            border: 5px solid black;
-            /*TEMPORARY STYLE*/
             overflow-y: auto;
             width: 90%;
             height: 72%;
@@ -1111,9 +886,6 @@
             }   
 
             .projects h3 {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 grid-row: 1;
                 width: 90%;
                 text-align: center;
@@ -1124,9 +896,6 @@
             }
 
             .projects p {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted purple;
-                /*TEMPORARY STYLE*/
                 grid-row: 2;
                 width: 90%;
                 height: 75%;
@@ -1144,9 +913,6 @@
 
 
             .projects div {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted grey;
-                /*TEMPORARY STYLE*/
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 align-items: center;
@@ -1171,9 +937,6 @@
             }
 
             #resume {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted purple;
-                /*TEMPORARY STYLE*/
                 font-size: 2em;
                 text-align: center;
                 padding: .2em .5em;
@@ -1183,9 +946,6 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) and (min-height: 1024px) {
                 #body-project {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid gold;
-                    /*TEMPORARY STYLE*/
                     margin: 0;
                     padding: 0;
                     width: 100vw;
@@ -1201,9 +961,6 @@
                 }
         
                 .projects {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid black;
-                    /*TEMPORARY STYLE*/
                     overflow-x: auto;
                     width: 95%;
                     height: 70%;
@@ -1232,9 +989,6 @@
                     }   
         
                     .projects h3 {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted green;
-                        /*TEMPORARY STYLE*/
                         width: 90%;
                         text-align: center;
                         padding: .1em;
@@ -1242,9 +996,6 @@
                     }
         
                     .projects p {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted purple;
-                        /*TEMPORARY STYLE*/
                         width: 90%;
                         height: 75%;
                         padding: .5em;
@@ -1253,17 +1004,11 @@
                     }
         
                     .projects img {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted red;
-                        /*TEMPORARY STYLE*/
                         max-width: 200px;
                     }
         
         
                     .projects div {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted grey;
-                        /*TEMPORARY STYLE*/
                         display: grid;
                         grid-template-rows: 1fr 18% 1fr;
                         align-items: center;
@@ -1289,9 +1034,6 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-references {
-            /*TEMPORARY STYLE*/
-            border: 5px solid gold;
-            /*TEMPORARY STYLE*/
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -1303,9 +1045,6 @@
         } 
 
         .references {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted black;
-            /*TEMPORARY STYLE*/
             margin-top: 1em;
             padding: 0;
             width: 95vw;  /* Set the container's width to 95% of the viewport */
@@ -1323,9 +1062,6 @@
         }
 
         .references div {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted yellow;
-            /*TEMPORARY STYLE*/
             display: grid;
             grid-template-columns: 30% 1fr;
             grid-template-rows: 1fr 1fr;
@@ -1348,9 +1084,6 @@
             }
 
             .references p {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted brown;
-                /*TEMPORARY STYLE*/
                 grid-row: 2;
                 grid-column: 2;
                 width: 90%;
@@ -1367,9 +1100,6 @@
             }
 
             .name-ref {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted blue;
-                /*TEMPORARY STYLE*/
                 display: block;
                 grid-row: 1;
                 grid-column: 2;
@@ -1383,9 +1113,6 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-references {
-                /*TEMPORARY STYLE*/
-                border: 5px solid gold;
-                /*TEMPORARY STYLE*/
                 margin-top: 1em;
                 padding: 0;
                 width: 100vw;
@@ -1397,9 +1124,6 @@
             } 
     
             .references {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted black;
-                /*TEMPORARY STYLE*/
                 margin: 0;
                 padding: 0;
                 width: 98%;  /* Set the container's width to 95% of the viewport */
@@ -1417,9 +1141,6 @@
             }
     
             .references div {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted yellow;
-                /*TEMPORARY STYLE*/
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 align-items: center;
@@ -1448,9 +1169,6 @@
                 }
     
                 .references p {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted brown;
-                    /*TEMPORARY STYLE*/
                     grid-row: 2;
                     width: 90%;
                     height: 80%;
@@ -1470,9 +1188,6 @@
                 }
 
                 .references h1 {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted blue;
-                    /*TEMPORARY STYLE*/
                     width: 90%;
                     text-align: center;
                     display: flex;
@@ -1484,9 +1199,6 @@
                 }
                 
                 .references i {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted yellow;
-                    /*TEMPORARY STYLE*/
                     display: inline;
                 }
                 
@@ -1496,9 +1208,6 @@
                 }
                 
                 .references .name-ref {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted blue;
-                    /*TEMPORARY STYLE*/
                     grid-row: 1;
                     width: 85%;
                     padding: .5em;
@@ -1512,9 +1221,6 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #body-references {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid gold;
-                    /*TEMPORARY STYLE*/
                     margin-top: 1em;
                     padding: 0;
                     width: 100vw;
@@ -1526,9 +1232,6 @@
                 } 
         
                 .references {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted black;
-                    /*TEMPORARY STYLE*/
                     margin: 0;
                     padding: 0;
                     width: 95vw;  /* Set the container's width to 95% of the viewport */
@@ -1546,9 +1249,6 @@
                 }
         
                 .references div {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted yellow;
-                    /*TEMPORARY STYLE*/
                     display: grid;
                     grid-template-columns: 30% 1fr;
                     grid-template-rows: 1fr 1fr;
@@ -1560,9 +1260,6 @@
                 }
         
                     .references img {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted red;
-                        /*TEMPORARY STYLE*/
                         display: block;
                         grid-column: 1;
                         grid-row: 1 / span 2;
@@ -1580,9 +1277,6 @@
                     }
         
                     .references p {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted brown;
-                        /*TEMPORARY STYLE*/
                         grid-row: 2;
                         grid-column: 2;
                         width: 90%;
@@ -1604,9 +1298,6 @@
                     }
         
                     .name-ref {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted blue;
-                        /*TEMPORARY STYLE*/
                         display: block;
                         grid-row: 1;
                         grid-column: 2;
@@ -1624,9 +1315,6 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-blog {
-            /*TEMPORARY STYLE*/
-            border: 5px solid gold;
-            /*TEMPORARY STYLE*/
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -1638,9 +1326,6 @@
         } 
 
         .posts {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted black;
-            /*TEMPORARY STYLE*/
             margin: 0;
             padding: 0;
             width: 95vw;  /* Set the container's width to 95% of the viewport */
@@ -1658,9 +1343,6 @@
         }
 
         .posts div {
-            /*TEMPORARY STYLE*/
-            border: 5px dotted yellow;
-            /*TEMPORARY STYLE*/
             display: grid;
             grid-template-columns: 1fr 40%;
             grid-template-rows: 1fr 1fr;
@@ -1679,16 +1361,10 @@
             }
 
             .posts img {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted green;
-                /*TEMPORARY STYLE*/
                 max-width: 200px;
             }
 
             .blog-description {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted brown;
-                /*TEMPORARY STYLE*/
                 grid-row: 2;
                 grid-column: 1;
                 width: 90%;
@@ -1704,9 +1380,6 @@
             }
 
             .blog-title {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted blue;
-                /*TEMPORARY STYLE*/
                 justify-self: flex-start;
                 width: 89%;
                 margin-left: .5em;
@@ -1717,9 +1390,6 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-blog {
-                /*TEMPORARY STYLE*/
-                border: 5px solid gold;
-                /*TEMPORARY STYLE*/
                 margin: 0;
                 padding: 0;
                 width: 100vw;
@@ -1731,9 +1401,6 @@
             } 
 
             .posts {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted black;
-                /*TEMPORARY STYLE*/
                 margin: 0;
                 padding: 0;
                 width: 95vw;  /* Set the container's width to 95% of the viewport */
@@ -1751,9 +1418,6 @@
             }
     
             .posts div {
-                /*TEMPORARY STYLE*/
-                border: 5px dotted yellow;
-                /*TEMPORARY STYLE*/
                 display: grid;
                 grid-template-rows: 1fr 1fr;
                 align-items: center;
@@ -1780,9 +1444,6 @@
                 }
     
                 .blog-description {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted brown;
-                    /*TEMPORARY STYLE*/
                     grid-row: 2;
                     width: 90%;
                     height: 70%;
@@ -1801,9 +1462,6 @@
                 }
     
                 .blog-title {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted blue;
-                    /*TEMPORARY STYLE*/
                     justify-self: flex-start;
                     width: 89%;
                     margin-left: .5em;
@@ -1819,9 +1477,6 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) and (min-height: 1024px) {
                 #body-project {
-                    /*TEMPORARY STYLE*/
-                    border: 5px solid gold;
-                    /*TEMPORARY STYLE*/
                     margin: 0;
                     padding: 0;
                     width: 100vw;
@@ -1833,9 +1488,6 @@
                 } 
 
                 .posts {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted black;
-                    /*TEMPORARY STYLE*/
                     margin: 0;
                     padding: 0;
                     width: 95vw;  /* Set the container's width to 95% of the viewport */
@@ -1853,9 +1505,6 @@
                 }
         
                 .posts div {
-                    /*TEMPORARY STYLE*/
-                    border: 5px dotted yellow;
-                    /*TEMPORARY STYLE*/
                     display: grid;
                     grid-template-columns: 1fr 40%;
                     grid-template-rows: 1fr 1fr;
@@ -1873,9 +1522,6 @@
                     }
         
                     .posts img {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted green;
-                        /*TEMPORARY STYLE*/
                         display: block;
                         max-width: 500px;
                         align-self: center; /* Vertically center the image within its grid area */
@@ -1883,9 +1529,6 @@
                     }
         
                     .blog-description {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted brown;
-                        /*TEMPORARY STYLE*/
                         grid-row: 2;
                         grid-column: 1;
                         width: 90%;
@@ -1902,9 +1545,6 @@
                     }
         
                     .blog-title {
-                        /*TEMPORARY STYLE*/
-                        border: 5px dotted blue;
-                        /*TEMPORARY STYLE*/
                         justify-self: flex-start;
                         width: 89%;
                         margin-left: .5em;
