@@ -62,6 +62,7 @@
         @media only screen and (max-width: 768px) {
             a {
                 text-decoration: none;
+                display: block;
             }
             
             .navigation {
@@ -108,7 +109,7 @@
                 /*TEMPORARY STYLE*/ 
                 width: auto;
                 height: auto;
-                max-width: 85px;
+                max-width: 75px;
                 min-width: 50px;
                 justify-self: center;
             }
@@ -984,9 +985,9 @@
             width: 95%;
             height: 70%;
             gap: .7em;
-            padding: 0 .5em;
+            padding: 0 1em;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-content: center;
             margin-bottom: .3em;
             scroll-padding-left: 1em; /* Ensures the first item is fully visible */
@@ -1046,10 +1047,6 @@
                 max-width: 250px;
                 scroll-snap-align: start;
                 overflow-x: auto;
-            }
-
-            .projects div:first-child {
-                margin-left: 1em;
             }
 
         #resume {
@@ -1304,17 +1301,305 @@
 /*Blog*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
-    
+        #body-blog {
+            /*TEMPORARY STYLE*/
+            border: 5px solid gold;
+            /*TEMPORARY STYLE*/
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        } 
+
+        .posts {
+            /*TEMPORARY STYLE*/
+            border: 5px dotted black;
+            /*TEMPORARY STYLE*/
+            margin: 0;
+            padding: 0;
+            width: 95vw;  /* Set the container's width to 95% of the viewport */
+            max-width: 95vw;
+            height: 75vh; /* Set a fixed height for the posts container */
+            max-height: 75vh;
+            padding: .5em;
+            display: flex;
+            flex-direction: column; /* Stack the posts vertically */
+            gap: 10px;  /* Add space between posts */
+            align-items: center; /* Center posts horizontally */
+            justify-content: flex-start; /* Stack from the top */
+            overflow-y: auto;  /* Enable scrolling when content overflows */
+            box-sizing: border-box;  /* Make sure padding is included in width and height calculation */
+        }
+
+        .posts div {
+            /*TEMPORARY STYLE*/
+            border: 5px dotted yellow;
+            /*TEMPORARY STYLE*/
+            display: grid;
+            grid-template-columns: 1fr 40%;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+            min-width: 560px;
+            max-height: 150px;
+            flex-wrap: wrap;
+        }
+
+            .image-link {
+                display: block;
+                max-width: 250px;
+                grid-row: 1 / span 2;
+                align-self: center;
+            }
+
+            .posts img {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted green;
+                /*TEMPORARY STYLE*/
+                max-width: 200px;
+            }
+
+            .blog-description {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted brown;
+                /*TEMPORARY STYLE*/
+                grid-row: 2;
+                grid-column: 1;
+                width: 90%;
+                height: 70%;
+                justify-self: flex-start;
+                margin-left: .5em;
+                padding: .1em .3em;
+            }
+
+            .blog-title h2 {
+                margin: 0; /* Remove extra margin on <h2> */
+                padding: 0; /* Remove extra padding */
+            }
+
+            .blog-title {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted blue;
+                /*TEMPORARY STYLE*/
+                justify-self: flex-start;
+                width: 89%;
+                margin-left: .5em;
+                padding: .1em .3em;
+            }
     }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            
+            #body-blog {
+                /*TEMPORARY STYLE*/
+                border: 5px solid gold;
+                /*TEMPORARY STYLE*/
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-items: center;
+            } 
+
+            .posts {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted black;
+                /*TEMPORARY STYLE*/
+                margin: 0;
+                padding: 0;
+                width: 95vw;  /* Set the container's width to 95% of the viewport */
+                max-width: 95vw;
+                height: 75vh; /* Set a fixed height for the posts container */
+                max-height: 75vh;
+                padding: .5em;
+                display: flex;
+                flex-direction: column; /* Stack the posts vertically */
+                gap: 10px;  /* Add space between posts */
+                align-items: center; /* Center posts horizontally */
+                justify-content: flex-start; /* Stack from the top */
+                overflow-y: auto;  /* Enable scrolling when content overflows */
+                box-sizing: border-box;  /* Make sure padding is included in width and height calculation */
+            }
+    
+            .posts div {
+                /*TEMPORARY STYLE*/
+                border: 5px dotted yellow;
+                /*TEMPORARY STYLE*/
+                display: grid;
+                grid-template-columns: 1fr 40%;
+                grid-template-rows: 1fr 1fr;
+                align-items: center;
+                justify-items: center;
+                width: 95%;
+                max-height: 150px;
+                flex-wrap: wrap;
+                position: relative;
+            }
+
+            .posts div::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('images/how-to-write-a-good-blog-post.png') no-repeat center/cover;
+                opacity: 0.5; /* Adjust opacity as needed */
+                z-index: -1; /* Places background behind content */
+            }
+    
+                .image-link {
+                    display: block;
+                    max-width: 250px;
+                    grid-row: 1 / span 2;
+                    align-self: center;
+                }
+    
+                .posts img {
+                    display: none;
+                }
+    
+                .blog-description {
+                    /*TEMPORARY STYLE*/
+                    border: 5px dotted brown;
+                    /*TEMPORARY STYLE*/
+                    grid-row: 2;
+                    grid-column: 1 / span 2;
+                    width: 90%;
+                    height: 70%;
+                    justify-self: flex-start;
+                    margin-left: .5em;
+                    padding: .1em .3em;
+                    text-align: justify;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                    font-weight: bold;
+                    overflow-y: auto;
+                }
+    
+                .blog-title h2 {
+                    margin: 0; /* Remove extra margin on <h2> */
+                    padding: 0; /* Remove extra padding */
+                }
+    
+                .blog-title {
+                    /*TEMPORARY STYLE*/
+                    border: 5px dotted blue;
+                    /*TEMPORARY STYLE*/
+                    justify-self: flex-start;
+                    width: 89%;
+                    margin-left: .5em;
+                    padding: .1em .3em;
+                    grid-row: 1;
+                    grid-column: 1 / span 2;
+                    text-align: center;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+                    font-weight: bold;
+                    color: black;
+                }
         }
 
             /*Desktop design*/
-            @media only screen and (min-width: 2000px) and (min-height: 1024px) {
+            @media only screen and (min-width: 1500px) and (min-height: 1024px) {
+                #body-project {
+                    /*TEMPORARY STYLE*/
+                    border: 5px solid gold;
+                    /*TEMPORARY STYLE*/
+                    margin: 0;
+                    padding: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-items: center;
+                } 
 
+                .posts {
+                    /*TEMPORARY STYLE*/
+                    border: 5px dotted black;
+                    /*TEMPORARY STYLE*/
+                    margin: 0;
+                    padding: 0;
+                    width: 95vw;  /* Set the container's width to 95% of the viewport */
+                    max-width: 95vw;
+                    height: 75vh; /* Set a fixed height for the posts container */
+                    max-height: 75vh;
+                    padding: .5em;
+                    display: flex;
+                    flex-direction: column; /* Stack the posts vertically */
+                    gap: 10px;  /* Add space between posts */
+                    align-items: center; /* Center posts horizontally */
+                    justify-content: flex-start; /* Stack from the top */
+                    overflow-y: auto;  /* Enable scrolling when content overflows */
+                    box-sizing: border-box;  /* Make sure padding is included in width and height calculation */
+                }
+        
+                .posts div {
+                    /*TEMPORARY STYLE*/
+                    border: 5px dotted yellow;
+                    /*TEMPORARY STYLE*/
+                    display: grid;
+                    grid-template-columns: 1fr 40%;
+                    grid-template-rows: 1fr 1fr;
+                    align-items: center;
+                    justify-items: center;
+                    width: 80%;
+                    min-height: 275px;
+                }
+        
+                    .image-link {
+                        display: block;
+                        grid-row: 1 / span 2;
+                        align-self: center;
+                        justify-self: center;
+                    }
+        
+                    .posts img {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted green;
+                        /*TEMPORARY STYLE*/
+                        display: block;
+                        max-width: 500px;
+                        align-self: center; /* Vertically center the image within its grid area */
+                        justify-self: center; /* Horizontally center the image within its grid area */
+                    }
+        
+                    .blog-description {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted brown;
+                        /*TEMPORARY STYLE*/
+                        grid-row: 2;
+                        grid-column: 1;
+                        width: 90%;
+                        height: 70%;
+                        justify-self: flex-start;
+                        margin-left: .5em;
+                        padding: .1em .3em;
+                        font-size: 1.75em;
+                    }
+        
+                    .blog-title h2 {
+                        margin: 0; /* Remove extra margin on <h2> */
+                        padding: 0; /* Remove extra padding */
+                    }
+        
+                    .blog-title {
+                        /*TEMPORARY STYLE*/
+                        border: 5px dotted blue;
+                        /*TEMPORARY STYLE*/
+                        justify-self: flex-start;
+                        width: 89%;
+                        margin-left: .5em;
+                        padding: .1em .3em;
+                        font-size: 2em;
+                    }
             }
 
 /*----------------------------------------*/
