@@ -203,10 +203,11 @@
                 width: 100vw;
                 height: 100vh;
                 margin: 0;
-                display: grid;
-                grid-template-rows: 25% auto;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-items: center;
+                justify-content: center;
+                gap: 1em;
             }
 
             #homepage header a {
@@ -217,6 +218,7 @@
             #logo {
                 width: 100%;
                 max-width: 30%;
+                margin-bottom: 2em;
             }
     
             .intro {
