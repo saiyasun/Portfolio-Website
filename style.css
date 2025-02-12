@@ -153,7 +153,8 @@
         }
 
         #logo {
-            width: 520px;
+            width: 100%;
+            max-width: 300px;
         }
 
         .intro {
@@ -242,12 +243,15 @@
             }
     
             #navi li {
-                text-decoration: none;
                 list-style-type: none;
                 text-align: center;
                 width: 80%;
                 font-size: 2em;
                 padding: .2em;
+            }
+
+            #navi li a {
+                text-decoration: none; /* Removes underline */
             }
     
             #name { 
@@ -275,6 +279,8 @@
                     margin: 0;
                     padding: 0;
                     display: grid;
+                    grid-template-columns: 30% 1fr;
+                    grid-template-rows: 80% auto;
                     align-items: center;
                     justify-items: center;
                 }
@@ -286,23 +292,26 @@
         
                 #logo {
                     width: 100%;
-                    max-width: 60%;
+                    max-width: 550px;
                 }
         
                 .intro {
                     display: grid;
-                    width: 95%;
-                    height: auto;
-                    align-items: center;
-                    justify-items: center;
-                    padding: .3em;
+                    width: 90%;
+                    padding: .5em;
                 }
         
                 #navi {
                     display: flex;
+                    justify-items: center;
                     width: 80%;
-                    padding: 1em;
-                    margin-top: 2em;
+                    padding: .5em;
+                    grid-row: 2;
+                    grid-column: 1 / span 2;
+                }
+
+                #navi li a {
+                    text-decoration: none; /* Removes underline */
                 }
         
                 #navi li {
@@ -310,25 +319,23 @@
                     list-style-type: none;
                     text-align: center;
                     width: 80%;
-                    font-size: 3.5em;
+                    font-size: 4.5em;
                     padding: .2em;
                 }
         
                 #name {
-                   text-align: center;
-                   font-size: 8em;
-                   padding: .2em .5em;
-                   margin-bottom: 0;
+                   text-align: start;
                    width: 80%;
+                   font-size: 6em;
+                   padding: .1em .3em;
+                   margin: .1em 0;
                 }
         
                 #tagline {
-                   width: 70%;
-                   text-align: center;
-                   font-size: 3.5em;
-                   padding: .2em 1em;
-                   margin-top: .1em;
-                   text-wrap: wrap;
+                   text-align: end;
+                   font-size: 4em;
+                   padding: .1em .3em;
+                   margin: .1em .5em;
                 }
             }
 
