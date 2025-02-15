@@ -84,6 +84,7 @@
                 max-width: 75px;
                 min-width: 50px;
                 justify-self: center;
+                align-self: center;
             }
         }
 
