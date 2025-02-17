@@ -80,9 +80,13 @@
 
             .navigation #logo {
                 width: auto;
-                height: auto;
                 max-width: 75px;
                 min-width: 50px;
+<<<<<<< HEAD
+=======
+                justify-self: center;
+                align-self: center;
+>>>>>>> edd26e84ab5d6bb16722e2c4ecd19383ae6b0a55
             }
         }
 
