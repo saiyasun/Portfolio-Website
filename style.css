@@ -218,13 +218,15 @@
             }
     
             #logo-home {
-                width: 250px;
-                margin-bottom: 2em;
-                border-radius: 50%;
+                width: 100%;
+                max-width: 170px;
+                margin-bottom: 1em;
+                margin-top: 3em;
             }
     
             .intro {
-                display: grid;
+                display: flex;
+                flex-direction: column;
                 width: 90%;
                 height: auto;
                 align-items: center;
@@ -238,7 +240,7 @@
                 width: 80%;
                 padding: 1em;
                 gap: .2em;
-                margin: 3em 0;
+                margin: .5em 0;
                 align-items: center;
                 justify-items: center;
             }
