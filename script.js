@@ -22,6 +22,25 @@
             emailMe.style.visibility = 'visible';
             emailForm.style.visibility = 'hidden';
         }
+
+        let emailSubmission = function(event) {
+            event.preventDefault();
+
+            let senderName = document.getElementById("email-name").value;
+            let senderSubject = document.getElementById("email-subject").value;
+            let senderMessage = document.getElementById("email-message").value;
+
+            if (!senderName || !senderSubject || !senderMessage) {
+                alert("Please fill in all fields.");
+                return;
+            }
+            
+            let emailSubject = `${senderSubject} [${senderName}]`;
+
+            let mailtoLink = `mailto:asiah@asiahcrutchfield.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(senderMessage)}`;
+
+            window.location.href = mailtoLink;
+        }
         // ----------------
 
 // Events
@@ -29,4 +48,5 @@
         // --Email--
         emailIcon.onclick = showEmailForm;
         formClose.onclick = hideEmailForm;
+        submitEmail.onclick = emailSubmission;
         // ----------------
