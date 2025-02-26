@@ -539,7 +539,7 @@
 
         #all-contact {
             display: grid;
-            grid-template-columns: 30% 1fr;
+            grid-template-columns: 50% 1fr;
             align-items: center;
             justify-items: center;
             width: 95%;
@@ -660,12 +660,12 @@
             }
 
             #all-contact {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-rows: 1fr 10% 1fr;
                 align-items: center;
-                justify-content: center;
-                width: 95%;
-                height: 90%;
+                justify-items: center;
+                width: 90%;
+                height: 80%;
             }
 
             #all-contact h2 {
@@ -686,6 +686,40 @@
                     padding: .5em;
                     align-items: center;
                     justify-items: center;
+                }
+
+                #email-form {
+                    grid-row: 1 / span 2;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8em; /* Adds space between form elements */
+                    width: 100%; /* Ensures full width */
+                    height: 70%;
+                    max-width: 90%; /* Prevents form from being too wide */
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute; /* Positions it inside #email-me */
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%); /* Center the form */
+                    z-index: -1; /* Lower z-index to position it behind #email-me */
+                    visibility: hidden;
+                }
+                
+                #email-form input,
+                #email-form textarea,
+                #email-form button {
+                    width: 100%; /* Makes form fields stretch to full width */
+                    padding: 10px;
+                    font-size: 1em;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                }
+                
+                textarea {
+                    resize: vertical; /* Allows resizing */
+                    height: 100px;
                 }
 
                 .icons {
@@ -777,6 +811,43 @@
                         justify-content: center;
                     }
         
+                    #email-form {
+                        grid-column: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.8em; /* Adds space between form elements */
+                        width: 100%; /* Ensures full width */
+                        height: 90%;
+                        max-width: 700px; /* Prevents form from being too wide */
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute; /* Positions it inside #email-me */
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%); /* Center the form */
+                        z-index: -1; /* Lower z-index to position it behind #email-me */
+                        visibility: hidden;
+                    }
+                    
+                    #email-form input,
+                    #email-form textarea,
+                    #email-form button {
+                        width: 100%; /* Makes form fields stretch to full width */
+                        padding: 10px;
+                        font-size: 1.8em;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                    }
+
+                        #email-name, #email-subject {
+                            height: 50px;
+                        }
+                    
+                    textarea {
+                        resize: vertical; /* Allows resizing */
+                        height: 300px;
+                    }       
+
                     .icons {
                         display: flex;               /* Set the container as flex */
                         flex-direction: column;      /* Stack icons vertically */
