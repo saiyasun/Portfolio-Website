@@ -25,12 +25,12 @@ app.post("/send-email", async (req, res) => {
 
     // Send the email to your email address (asiah@asiahcrutchfield.com)
     await transporter.sendMail({
-        from: `"${name}" <${process.env.SMTP_USER}>`, // Use your email as the sender
-        replyTo: email, // Use the user's email as the reply-to address
-        to: "asiah@asiahcrutchfield.com", // Your email address
-        subject: `Message from ${name}: ${subject}`, 
-        text: `You received a message from ${name} (${email}):\n\n${message}`,
-      });
+      from: `"${name}" <${process.env.SMTP_USER}>`, // Your email address as the sender
+      replyTo: email, // Use the user's email as the reply-to address
+      to: "asiah@asiahcrutchfield.com", // Your email address (recipient)
+      subject: `Message from ${name}: ${subject}`, 
+      text: `You received a message from ${name} (${email}):\n\n${message}`, // Email body
+    });
 
     // Send a success response to the client
     res.send({ success: true, message: "Email sent successfully!" });
