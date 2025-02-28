@@ -83,7 +83,7 @@
             submitEmail.innerText = "Sending...";
         
             try {
-                // Send a POST request to the Node.js backend
+                // Send a POST request to the Node.js backends
                 let response = await fetch('https://email-form.herokuapp.com/send-email', {
                     method: 'POST',
                     headers: {
