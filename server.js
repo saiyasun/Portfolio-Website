@@ -5,9 +5,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json()); // Parse JSON requests
-app.use(cors({
-    origin: 'https://asiahcrutchfield.com', // Replace with your website URL
-  })); // Allow cross-origin requests
+app.use(cors()); // This will allow requests from any origin
 
 // Create a Nodemailer transporter with your email settings
 const transporter = nodemailer.createTransport({
@@ -43,4 +41,7 @@ app.post("/send-email", async (req, res) => {
 });
 
 // Start the server on port 3000
-app.listen(3000, () => console.log("Server running on port 3000"));
+const port = process.env.PORT || 3000;  // Use Heroku's port or 3000 for local development
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
