@@ -23,13 +23,12 @@ app.post("/send-email", async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
 
-    // Send the email using Nodemailer
+    // Send the email to your email address (asiah@asiahcrutchfield.com)
     await transporter.sendMail({
-      from: `"${name}" <${email}>`, // Sender's email address
-      to: process.env.SMTP_USER, // Your email address (where the message will be sent)
-      replyTo: email, // If you reply, it will go to the sender's email
-      subject: subject,
-      text: message,
+      from: `"${name}" <${email}>`, // User's email address as sender
+      to: "asiah@asiahcrutchfield.com", // Your email address (always the recipient)
+      subject: `Message from ${name}: ${subject}`, // Subject of the email
+      text: `You received a message from ${name} (${email}):\n\n${message}`, // Email body
     });
 
     // Send a success response to the client
@@ -41,7 +40,7 @@ app.post("/send-email", async (req, res) => {
 });
 
 // Start the server on port 3000
-const port = process.env.PORT || 3000;  // Use Heroku's port or 3000 for local development
+const port = process.env.PORT || 3000; // Use Heroku's port or 3000 for local development
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
