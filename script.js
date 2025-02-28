@@ -47,24 +47,66 @@
             }
         }
 
-        let emailSubmission = function(event) {
+        // Validate email format using regex
+        const validateEmail = (email) => {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+
+        let emailSubmission = async function(event) {
             event.preventDefault();
-
-            let senderName = document.getElementById("email-name").value;
-            let senderSubject = document.getElementById("email-subject").value;
-            let senderMessage = document.getElementById("email-message").value;
-
-            if (!senderName || !senderSubject || !senderMessage) {
+        
+            const senderName = document.getElementById("email-name").value;
+            const senderEmail = document.getElementById("email-email").value;
+            const senderSubject = document.getElementById("email-subject").value;
+            const senderMessage = document.getElementById("email-message").value;
+        
+            if (!senderName || !senderEmail || !senderSubject || !senderMessage) {
                 alert("Please fill in all fields.");
                 return;
             }
-            
-            let emailSubject = `${senderSubject} [${senderName}]`;
-
-            let mailtoLink = `mailto:asiah@asiahcrutchfield.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(senderMessage)}`;
-
-            window.location.href = mailtoLink;
-        }     
+        
+            if (!validateEmail(senderEmail)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+        
+            const formData = {
+                name: senderName,
+                email: senderEmail,
+                subject: senderSubject,
+                message: senderMessage
+            };
+        
+            // Disable the submit button and show a loading message
+            submitEmail.disabled = true;
+            submitEmail.innerText = "Sending...";
+        
+            try {
+                // Send a POST request to the Node.js backend
+                let response = await fetch('https://email-form.herokuapp.com/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+        
+                if (response.ok) {
+                    alert('Your message has been sent successfully!');
+                    emailForm.reset(); // Reset the form
+                    hideEmailForm(); // Hide the form after successful submission
+                } else {
+                    alert('There was an error sending your message.');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        
+            // Re-enable the submit button after the process completes
+            submitEmail.disabled = false;
+            submitEmail.innerText = "Submit";
+        }
         // ----------------
 
 // Events
