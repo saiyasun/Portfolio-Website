@@ -28,8 +28,8 @@ app.post("/send-email", async (req, res) => {
       from: `"${name}" <${process.env.SMTP_USER}>`, // Your email address as the sender
       replyTo: email, // Use the user's email as the reply-to address
       to: "asiah@asiahcrutchfield.com", // Your email address (recipient)
-      subject: `Message from ${name}: ${subject}`, 
-      text: `You received a message from ${name} (${email}):\n\n${message}`, // Email body
+      subject: `${subject} [${name}]`, 
+      text: `${message}\n\n From ${name} (${email}):`, // Email body
     });
 
     // Send a success response to the client
