@@ -140,12 +140,18 @@
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            
+            #index {
+                padding: 0;
+                margin: 0;
+            }
         }
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
-                
+                #index {
+                    padding: 0;
+                    margin: 0;
+                }
             }
 
 /*----------------------------------------*/
@@ -1503,7 +1509,7 @@
 /*Blog*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
-        #body-blog {
+        #blog-section {
             /*TEMPORARY*/
             border: 5px solid black;
             /*TEMPORARY*/
@@ -1581,7 +1587,7 @@
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            #body-blog {
+            #blog-section {
                 /*TEMPORARY*/
                 border: 5px solid black;
                 /*TEMPORARY*/
@@ -1671,7 +1677,7 @@
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
-                #body-project {
+                #blog-section {
                     /*TEMPORARY*/
                     border: 5px solid black;
                     /*TEMPORARY*/
