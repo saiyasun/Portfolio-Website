@@ -82,11 +82,6 @@
                 width: auto;
                 max-width: 75px;
                 min-width: 50px;
-<<<<<<< HEAD
-=======
-                justify-self: center;
-                align-self: center;
->>>>>>> edd26e84ab5d6bb16722e2c4ecd19383ae6b0a55
             }
         }
 
@@ -134,12 +129,36 @@
 
 /*----------------------------------------*/
 
-/*Index*/
+/*Main/Index*/
+    /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+        #index {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+        /*Mobile design*/
+        @media only screen and (max-width: 768px) {
+            
+        }
+
+            /*Desktop design*/
+            @media only screen and (min-width: 1500px) {
+                
+            }
+
+/*----------------------------------------*/
+
+/*Title/Home Page*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #homepage {
-            width: 100vw;
-            height: 100vh;
+            /*TEMPORARY*/
+            border: 5px solid black;
+            /*TEMPORARY*/
+            width: auto;
+            height: auto;
             margin: 0;
             padding: 0;
             display: grid;
@@ -203,6 +222,9 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #homepage {
+                /*TEMPORARY*/
+                border: 5px solid black;
+                /*TEMPORARY*/
                 width: 100vw;
                 height: 100vh;
                 margin: 0;
@@ -279,6 +301,9 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #homepage {
+                    /*TEMPORARY*/
+                    border: 5px solid black;
+                    /*TEMPORARY*/
                     width: 100vw;
                     height: 100vh;
                     margin: 0;
@@ -352,12 +377,14 @@
 /*About*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
-        #body-about {
+        #about-section {
+            /*TEMPORARY*/
+            border: 5px solid black;
+            /*TEMPORARY*/
             display: flex;
             flex-direction: column;
-            width: 100vw;
-            height: 100vh;
-            padding: .1em;
+            width: auto;
+            height: auto;
             margin: 0;
             align-items: center;
             justify-items: center;
@@ -406,7 +433,10 @@
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            #body-about {
+            #about-section {
+                /*TEMPORARY*/
+                border: 5px solid black;
+                /*TEMPORARY*/
                 height: 100vh;
                 padding: 0;
                 margin: 0;
@@ -465,7 +495,10 @@
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
-                #body-about {
+                #about-section {
+                    /*TEMPORARY*/
+                    border: 5px solid black;
+                    /*TEMPORARY*/
                     display: flex;
                     flex-direction: column;
                     width: 100vw;
@@ -522,9 +555,12 @@
 /*Contact*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
-        #body-contact {
-            width: 100vw;
-            height: 100vh;
+        #contact-section {
+            /*TEMPORARY*/
+            border: 5px solid black;
+            /*TEMPORARY*/
+            width: auto;
+            height: auto;
             margin: 0;
             padding: 0;
             display: flex;
@@ -644,7 +680,10 @@
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            #body-contact {
+            #contact-section {
+                /*TEMPORARY*/
+                border: 5px solid black;
+                /*TEMPORARY*/
                 width: 100vw;
                 height: 100vh;
                 margin: 0;
@@ -769,7 +808,10 @@
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
-                #body-contact {
+                #contact-section {
+                    /*TEMPORARY*/
+                    border: 5px solid black;
+                    /*TEMPORARY*/
                     width: 100vw;
                     height: 100vh;
                     margin: 0;
@@ -892,11 +934,14 @@
 /*Project*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
-        #body-project {
+        #project-section {
+            /*TEMPORARY*/
+            border: 5px solid black;
+            /*TEMPORARY*/
             margin: 0;
             padding: 0;
-            width: 100vw;
-            height: 100vh;
+            width: auto;
+            height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -971,7 +1016,10 @@
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            #body-project {
+            #project-section {
+                /*TEMPORARY*/
+                border: 5px solid black;
+                /*TEMPORARY*/
                 margin: 0;
                 padding: 0;
                 width: 100vw;
@@ -1074,7 +1122,10 @@
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) and (min-height: 1024px) {
-                #body-project {
+                #project-section {
+                    /*TEMPORARY*/
+                    border: 5px solid black;
+                    /*TEMPORARY*/
                     margin: 0;
                     padding: 0;
                     width: 100vw;
@@ -1162,7 +1213,10 @@
 /*Reference*/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
-        #body-references {
+        #reference-section {
+            /*TEMPORARY*/
+            border: 5px solid black;
+            /*TEMPORARY*/
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -1241,7 +1295,10 @@
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
-            #body-references {
+            #reference-section {
+                /*TEMPORARY*/
+                border: 5px solid black;
+                /*TEMPORARY*/
                 margin-top: 1em;
                 padding: 0;
                 width: 100vw;
@@ -1349,7 +1406,10 @@
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
-                #body-references {
+                #reference-section {
+                    /*TEMPORARY*/
+                    border: 5px solid black;
+                    /*TEMPORARY*/
                     margin-top: 1em;
                     padding: 0;
                     width: 100vw;
@@ -1444,6 +1504,9 @@
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #body-blog {
+            /*TEMPORARY*/
+            border: 5px solid black;
+            /*TEMPORARY*/
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -1519,6 +1582,9 @@
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #body-blog {
+                /*TEMPORARY*/
+                border: 5px solid black;
+                /*TEMPORARY*/
                 margin: 0;
                 padding: 0;
                 width: 100vw;
@@ -1606,6 +1672,9 @@
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #body-project {
+                    /*TEMPORARY*/
+                    border: 5px solid black;
+                    /*TEMPORARY*/
                     margin: 0;
                     padding: 0;
                     width: 100vw;
