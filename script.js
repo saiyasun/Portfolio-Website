@@ -10,6 +10,9 @@
         let contactMe = document.getElementById('all-contact')
         // ----------------
 
+    // Main.html
+    const pages = ["index.html", "about_me.html", "contact.html", "project.html",];
+
 // Functions
     // Contact page
         // --Email--
