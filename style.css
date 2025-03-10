@@ -945,9 +945,6 @@ html {
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #project-section {
-            /*TEMPORARY*/
-            border: 5px solid black;
-            /*TEMPORARY*/
             margin: 0;
             padding: 2em;
             width: auto;
@@ -963,11 +960,9 @@ html {
         }
 
         .projects {
-             /*TEMPORARY*/
-             border: 5px solid black;
-             /*TEMPORARY*/
+            border: 5px solid black;
             overflow-x: auto;
-            width: 97%;
+            width: 98%;
             height: auto;
             gap: .7em;
             padding: 0 1em;
