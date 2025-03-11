@@ -1,5 +1,5 @@
-// Contact page
-    // Variables
+// *** Contact page ***
+    // ~Variables~
         // --Email--
         let emailForm = document.getElementById('email-form');
         let emailIcon = document.querySelector('#email a');
@@ -9,7 +9,7 @@
         let hrLine = document.getElementById('separator');
         let contactMe = document.getElementById('all-contact')
 
-    // Functions
+    // ~Functions~
         // --Email--
         let showEmailForm = function() {
             if (window.matchMedia("(max-width: 768px)").matches) {
@@ -106,7 +106,7 @@
                 submitEmail.innerText = "Submit";
         }
 
-    // Events
+    // ~Events~
         // --Email--
         emailIcon.onclick = showEmailForm;
         formClose.onclick = hideEmailForm;
