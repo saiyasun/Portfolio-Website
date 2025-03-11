@@ -1064,8 +1064,8 @@ html {
                 /*TEMPORARY*/
                 margin: 0;
                 padding: 0;
-                width: 100vw;
-                height: 100vh;
+                width: auto;
+                height: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -1077,6 +1077,7 @@ html {
         }
 
         .projects {
+            border: 5px dotted green;
             overflow-y: auto;
             width: 90%;
             height: 72%;
@@ -1086,10 +1087,17 @@ html {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 1.2em;
             scroll-padding-left: 1em; /* Ensures the first item is fully visible */
             scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
         }
+
+            #project-title {
+                border: 5px dotted red;
+                padding: .3em;
+                font-size: 2.5em;
+                margin-top: 0;
+                margin-bottom: .5em;
+            }
 
             .projects ul {
                 list-style: none; /* Removes default list styling */
