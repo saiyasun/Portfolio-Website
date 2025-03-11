@@ -384,7 +384,7 @@ html {
 
 /*----------------------------------------*/
 
-/*About*/
+/*About*/gg
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #about-section {
@@ -463,34 +463,51 @@ html {
 
             #interests {
                 border: 5px dotted blue;
-                padding: 1em;
+                padding: 1em 3em;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
+                width: 50%;
             }
 
-                #interests-list {
+                #interests-title {
+                    font-size: 2em;
+                }
+            
+                #all-interests {
                     border: 5px dotted orange;
-                    display: flex;
-                    align-content: center;
-                    justify-content: center;
-                }
-
-                #interests-list ul {
                     display: grid;
-                    grid-template-columns: repeat(3, 1fr); /* Cleaner syntax */
-                    justify-items: center; /* Centers items inside the grid */
-                    list-style-type: none; /* Removes bullets */
-                    padding: 0; /* Removes default padding */
-                    margin: 0 auto; /* Centers the list */
-                    gap: 1em; /* Adds spacing between items */
+                    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                    gap: 1.5em;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: .5em;
                 }
-
-                .interests-separator {
-                    writing-mode: vertical-lr;
-                    transform: rotate(180deg);
+                
+                #interests-list {
+                    display: contents; /* Make <ul> disappear from layout */
+                    padding: 0;
+                    margin: 0;
+                }
+                
+                #interests-list li {
+                    padding: .5em;
+                    background-color: lightgray; /* For visualization */
+                    text-align: center;
+                    font-size: 1.5em; /* Increase text size */
+                    position: relative;
+                }
+                
+                /* Add vertical dividers */
+                #interests-list li:not(:nth-child(4n))::after { 
+                    content: "";
+                    position: absolute;
+                    right: -0.55em;
+                    top: 50%;
+                    transform: translateY(-50%);
                     width: 2px;
-                    height: 100px;
-                    border: none;
+                    height: 70%;
                     background-color: black;
                 }
     }
