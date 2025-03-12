@@ -111,4 +111,8 @@
         emailIcon.onclick = showEmailForm;
         formClose.onclick = hideEmailForm;
         submitEmail.onclick = emailSubmission;
+        formClose.addEventListener("click", function(event) {
+            event.preventDefault();  // Prevents the button from acting like a form submission
+            hideEmailForm();
+        });
 // <---------------->

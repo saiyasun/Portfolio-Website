@@ -677,34 +677,32 @@ html {
 
 /*----------------------------------------*/
 
-/*Contact*/
+/*** Contact ***/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #contact-section {
-            /*TEMPORARY*/
-            border: 5px solid black;
-            /*TEMPORARY*/
             width: auto;
             height: auto;
             margin: 0;
-            padding: 0;
+            padding: 1em .5em;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-items: center;
+            justify-content: center;
         }
 
-        #navigation-contact {
-            margin: 1em .1em;
+        #contact-title {
+            font-size: 2.5em;
         }
 
         #all-contact {
-            display: grid;
-            grid-template-columns: 50% 1fr;
-            align-items: center;
+            display: flex;
+            align-content: center;
             justify-items: center;
-            width: 95%;
-            height: 73%;
+            width: 90%;
+            padding: 1em;
+            gap: 1.5em;
+            margin: 1em 0;
         }
 
         #separator {
@@ -715,7 +713,26 @@ html {
             text-align: center;
             padding: .2em;
             width: 90%;
+            font-size: 2em;
         }
+
+            #email a {
+                display: flex;  /* Allows centering */
+                align-items: center;  /* Centers vertically */
+                justify-content: center;  /* Centers horizontally */
+                width: 3em;  /* Adjust size to fit the icon */
+                height: 3em; /* Make it a square */
+                text-decoration: none; /* Remove underline */
+                margin: .5em;
+                padding: .3em;
+            }
+
+            #email i {
+                font-size: 2em; /* Adjust icon size */
+                color: black; /* Make sure it's visible */
+                padding: .1em;
+                margin: 1em;
+            }
 
             #email-me {
                 display: flex;
@@ -770,11 +787,16 @@ html {
                 justify-content: center;      /* Remove default list styling */
                 padding: 0;  
                 font-size: 2em;
+                width: 60%;
             }
 
+                .icons i {
+                    font-size: 2em;
+                }
+
             #social-media {
-                width: 80%;
-                padding: 2em;
+                width: 95%;
+                padding: 1em;
                 grid-column: 2;
                 display: flex;
                 flex-direction: column;
@@ -793,13 +815,19 @@ html {
                 }
 
 
-            #linkedin, #github, #x, #insta, #youtube, #email {
+            #linkedin, #github, #x, #insta, #youtube, #bluesky {
                 width: 3em;
                 padding: .2em;
                 display: flex;
                 align-content: center;
                 justify-content: center;
                 flex-wrap: wrap;
+            }
+
+            #resume {
+                padding: .5em;
+                font-size: 3em;
+                margin-top: .5em .2em;
             }
         }
 
@@ -934,104 +962,128 @@ html {
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #contact-section {
-                    /*TEMPORARY*/
-                    border: 5px solid black;
-                    /*TEMPORARY*/
-                    width: 100vw;
-                    height: 100vh;
+                    width: auto;
+                    height: auto;
                     margin: 0;
-                    padding: 0;
+                    padding: 1em .5em;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-items: center;
+                    justify-content: center;
                 }
         
-                #navigation-contact {
-                    margin: 1em .1em;
+                #contact-title {
+                    font-size: 3.5em;
                 }
         
                 #all-contact {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    align-items: center;
+                    display: flex;
+                    align-content: center;
                     justify-items: center;
-                    width: 95%;
-                    height: 70%;
-                    overflow-y: auto;
+                    width: 90%;
+                    padding: 1em;
+                    gap: 1.5em;
+                    margin: 1em 0;
+                }
+        
+                #separator {
+                    display: none;
                 }
         
                 #all-contact h2 {
                     text-align: center;
                     padding: .2em;
                     width: 90%;
-                    font-size: 4em;
+                    font-size: 3em;
                 }
+        
+                    #email a {
+                        display: flex;  /* Allows centering */
+                        align-items: center;  /* Centers vertically */
+                        justify-content: center;  /* Centers horizontally */
+                        width: 3em;  /* Adjust size to fit the icon */
+                        height: 3em; /* Make it a square */
+                        text-decoration: none; /* Remove underline */
+                        margin: .5em;
+                        padding: .3em;
+                    }
+        
+                    #email i {
+                        font-size: 1.5em; /* Adjust icon size */
+                        color: black; /* Make sure it's visible */
+                        padding: .1em;
+                        margin: 1em;
+                    }
         
                     #email-me {
                         display: flex;
                         flex-direction: column;
-                        width: 70%;
-                        height: 80%;
+                        width: 50%;
                         padding: 1em;
-                        align-content: center;
-                        justify-content: center;
+                        align-items: center;
+                        justify-items: center;
+                        grid-column: 1;
+                        position: relative; /* Needed for absolute positioning inside */
+                        z-index: 1; /* Higher z-index */
                     }
         
-                    #email-form {
-                        grid-column: 1;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 0.8em; /* Adds space between form elements */
-                        width: 100%; /* Ensures full width */
-                        height: 90%;
-                        max-width: 700px; /* Prevents form from being too wide */
-                        align-items: center;
-                        justify-content: center;
-                        position: absolute; /* Positions it inside #email-me */
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%); /* Center the form */
-                        z-index: -1; /* Lower z-index to position it behind #email-me */
-                        visibility: hidden;
-                    }
-                    
-                    #email-form input,
-                    #email-form textarea,
-                    #email-form button {
-                        width: 100%; /* Makes form fields stretch to full width */
-                        padding: 10px;
-                        font-size: 1.8em;
-                        border: 1px solid #ccc;
-                        border-radius: 5px;
-                    }
-
-                        #email-name, #email-subject {
-                            height: 50px;
+                        #email-form {
+                            grid-column: 1;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.8em; /* Adds space between form elements */
+                            width: 100%; /* Ensures full width */
+                            height: 85%;
+                            max-width: 600px; /* Prevents form from being too wide */
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute; /* Positions it inside #email-me */
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%); /* Center the form */
+                            z-index: -1; /* Lower z-index to position it behind #email-me */
+                            visibility: hidden;
                         }
-                    
-                    textarea {
-                        resize: vertical; /* Allows resizing */
-                        height: 300px;
-                    }       
-
+                        
+                        #email-form input,
+                        #email-form textarea,
+                        #email-form button {
+                            width: 100%; /* Makes form fields stretch to full width */
+                            padding: 10px;
+                            font-size: 1.7em;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            box-sizing: border-box;
+                        }
+                        
+                        textarea {
+                            resize: vertical; /* Allows resizing */
+                            height: 150px;
+                        }
+        
                     .icons {
                         display: flex;               /* Set the container as flex */
                         flex-direction: column;      /* Stack icons vertically */
                         align-items: center;         /* Center icons horizontally */
                         justify-content: center;      /* Remove default list styling */
                         padding: 0;  
-                        font-size: 4em;
+                        font-size: 3em;
+                        width: 60%;
                     }
         
+                        .icons i {
+                            font-size: 2em;
+                        }
+        
                     #social-media {
-                        width: 80%;
-                        height: 75%;
-                        padding: 2em;
+                        width: 95%;
+                        padding: 1em;
+                        grid-column: 2;
                         display: flex;
                         flex-direction: column;
-                        align-content: center;
-                        justify-content: center;
+                        align-items: center;
+                        justify-items: center;
+                        grid-column: 2;
                     }
         
                         #social-media ul {
@@ -1044,7 +1096,7 @@ html {
                         }
         
         
-                    #linkedin, #github, #x, #insta, #youtube, #email {
+                    #linkedin, #github, #x, #insta, #youtube, #bluesky {
                         width: 3em;
                         padding: .2em;
                         display: flex;
@@ -1052,10 +1104,12 @@ html {
                         justify-content: center;
                         flex-wrap: wrap;
                     }
-
-                #resume {
-                    font-size: 4em;
-                }
+        
+                    #resume {
+                        padding: .5em;
+                        font-size: 3.5em;
+                        margin-top: .5em .2em;
+                    }
             }
 
 /*----------------------------------------*/
