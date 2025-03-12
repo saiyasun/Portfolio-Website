@@ -723,8 +723,6 @@ html {
                 width: 3em;  /* Adjust size to fit the icon */
                 height: 3em; /* Make it a square */
                 text-decoration: none; /* Remove underline */
-                margin: .5em;
-                padding: .3em;
             }
 
             #email i {
@@ -1004,8 +1002,6 @@ html {
                         width: 3em;  /* Adjust size to fit the icon */
                         height: 3em; /* Make it a square */
                         text-decoration: none; /* Remove underline */
-                        margin: .5em;
-                        padding: .3em;
                     }
         
                     #email i {
