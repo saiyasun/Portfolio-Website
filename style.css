@@ -1,4 +1,4 @@
-/*Universal*/
+/*** Universal ***/
 html {
     scroll-behavior: smooth;
 }
@@ -133,7 +133,7 @@ html {
 
 /*----------------------------------------*/
 
-/*Main/Index*/
+/*** Main/Index ***/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #index {
@@ -160,7 +160,7 @@ html {
 
 /*----------------------------------------*/
 
-/*Title/Home Page*/
+/*** Title/Home Page ***/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #homepage {
@@ -384,13 +384,10 @@ html {
 
 /*----------------------------------------*/
 
-/*About*/
+/*** About ***/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #about-section {
-            /*TEMPORARY*/
-            border: 5px solid black;
-            /*TEMPORARY*/
             display: flex;
             flex-direction: column;
             width: auto;
@@ -407,7 +404,6 @@ html {
         }
 
         .bio {
-            border: 5px dotted green;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -424,7 +420,6 @@ html {
             }
 
             #total-bio-p {
-                border: 5px dotted red;
                 width: auto;
                 display: flex;
                 flex-direction: column;
@@ -433,7 +428,6 @@ html {
             }
 
                 #bio-p {
-                    border: 5px dotted yellow;
                     grid-column: 2;
                     width: 90%;
                     height: 85%;
@@ -446,7 +440,6 @@ html {
                 }
 
             #bio-title {
-                border: 5px dotted black;
                 width: auto;
                 text-align: center;
                 padding: .2em .5em;
@@ -462,12 +455,11 @@ html {
             }
 
             #interests {
-                border: 5px dotted blue;
                 padding: 1em 3em;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 50%;
+                width: 55%;
             }
 
                 #interests-title {
@@ -475,7 +467,6 @@ html {
                 }
             
                 #all-interests {
-                    border: 5px dotted orange;
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
                     gap: 1.5em;
@@ -577,58 +568,123 @@ html {
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #about-section {
-                    /*TEMPORARY*/
-                    border: 5px solid black;
-                    /*TEMPORARY*/
                     display: flex;
                     flex-direction: column;
-                    width: 100vw;
-                    height: 100vh;
-                    padding: .1em;
+                    width: auto;
+                    height: auto;
+                    padding: 1em;
+                    gap: 1.5em;
                     margin: 0;
                     align-items: center;
                     justify-items: center;
                 }
         
                 #navigation-about {
-                    margin-bottom: 1em;
+                    margin-bottom: .9em;
                 }
         
                 .bio {
-                    display: grid;
-                    grid-template-columns: 40% 1fr;
+                    display: flex;
                     align-items: center;
-                    justify-items: center;
-                    width: 95%;
-                    max-height: 99vh;
-                    margin: .1em .2em;
-                    overflow-y: auto;
+                    justify-content: center;
+                    padding: 1.2em;
+                    width: auto;
+                    height: 800px;
+                    gap: 1.5em;
                 }
         
-                    #bio-p {
-                        grid-column: 2;
-                        width: 85%;
-                        height: 85%;
-                        overflow-y: auto;
-                        padding: 0 1em;
-                        margin: .1em;
-                        text-align: justify;
-                        text-wrap: wrap;
-                        font-size: 2em;
+                    .bio-separator {
+                        height: 2px;
+                        width: 100px;
+                        background-color: #000; /* Ensure color contrast */
+                        margin: 1em 0; /* Adjust margin to create space above and below */
                     }
         
-                    #bio-title {
-                        width: 95%;
-                        text-align: center;
+                    #total-bio-p {
+                        max-width: 1100px;
+                        height: 90%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
                         padding: .2em;
-                        font-size: 4em;
+                    }
+        
+                        #bio-p {
+                            grid-column: 2;
+                            width: 80%;
+                            height: 85%;
+                            overflow-y: auto;
+                            padding: 0 1em;
+                            text-align: justify;
+                            text-wrap: wrap;
+                            font-size: 1.7em;
+                            margin: 0;
+                        }
+        
+                    #bio-title {
+                        width: auto;
+                        text-align: center;
+                        padding: .2em .5em;
+                        margin: 0;
+                        font-size: 3.5em;
                     }
         
                     #bio-img {
                         width: 100%;
-                        max-width: 550px;
-                        grid-row: 1 / span 2;
+                        max-width: 600px;
+                        border: 5px solid black;
+                        border-radius: 50%;
                     }
+        
+                    #interests {
+                        padding: 1em 3em;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 70%;
+                    }
+        
+                        #interests-title {
+                            font-size: 3em;
+                        }
+                    
+                        #all-interests {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                            gap: 1.5em;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
+                            padding: .5em;
+                        }
+                        
+                        #interests-list {
+                            display: contents; /* Make <ul> disappear from layout */
+                            padding: 0;
+                            margin: 0;
+                            font-size: 1.5em;
+                        }
+                        
+                        #interests-list li {
+                            padding: .5em;
+                            background-color: lightgray; /* For visualization */
+                            text-align: center;
+                            font-size: 1.5em; /* Increase text size */
+                            position: relative;
+                        }
+                        
+                        /* Add vertical dividers */
+                        #interests-list li:not(:nth-child(4n))::after { 
+                            content: "";
+                            position: absolute;
+                            right: -0.40em;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 2px;
+                            height: 70%;
+                            background-color: black;
+                        }
             }
 
 /*----------------------------------------*/
