@@ -44,6 +44,7 @@
                 emailForm.style.visibility = 'hidden';
             }
         }
+        
 
             // Validate email format using regex
             const validateEmail = (email) => {

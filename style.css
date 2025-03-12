@@ -229,79 +229,66 @@ html {
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #homepage {
-                /*TEMPORARY*/
-                border: 5px solid black;
-                /*TEMPORARY*/
-                width: 100vw;
                 height: 100vh;
                 margin: 0;
+                padding: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 1em;
             }
-
-            #homepage header a {
-                display: block;
-                text-align: center;
-            }
-    
-            #logo-home {
-                border: 5px solid black;
-                width: 100%;
-                max-width: 250px;
-                margin-bottom: 1em;
-                margin-top: 3em;
-            }
     
             .intro {
                 display: flex;
                 flex-direction: column;
-                width: 90%;
-                height: auto;
                 align-items: center;
-                justify-items: center;
-                padding: .3em;
+                justify-content: space-between;
+                margin-top: 6.5em;
+                padding: .7em;
+                width: 90%;
             }
+    
+                #name {
+                    font-size: 2.7em;
+                    margin: .2em .5em;
+                    padding: .3em;
+                    width: 90%;
+                    text-align: center;
+                }
+        
+                .homepage-separator {
+                    height: 2px;
+                    background-color: black;
+                    width: 50%;
+                    margin: .5em 0;
+                }
+    
+                #tagline {
+                    text-align: center;
+                    font-size: 2em;
+                    margin: .2em .5em;
+                    padding: .3em;
+                    width: 90%;
+                }
     
             #navi {
                 display: flex;
-                flex-direction: column;
-                width: 80%;
-                padding: 1em;
-                gap: .2em;
-                margin: .5em 0;
-                align-items: center;
                 justify-items: center;
+                align-items: center;
+                gap: 1em;
+                width: 60%;
+                padding: 1em;
+                flex-direction: column;
             }
     
             #navi li {
+                text-decoration: none;
                 list-style-type: none;
                 text-align: center;
-                width: 80%;
+                width: 90%;
                 font-size: 2em;
                 padding: .2em;
-            }
-
-            #navi li a {
-                text-decoration: none; /* Removes underline */
-            }
-    
-            #name { 
-               text-align: center;
-               font-size: 2.5em;
-               padding: .2em 1em;
-               margin: .2em 0;
-            }
-    
-            #tagline {
-               width: 70%;
-               text-align: center;
-               font-size: 1.5em;
-               padding: .2em 1em;
-               margin: 0;
-               text-wrap: wrap;
             }
         }
 
@@ -435,13 +422,6 @@ html {
                 font-size: 2.5em;
             }
 
-            #bio-img {
-                width: 100%;
-                max-width: 400px;
-                border: 5px solid black;
-                border-radius: 50%;
-            }
-
             #interests {
                 padding: 1em 3em;
                 display: flex;
@@ -494,63 +474,108 @@ html {
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #about-section {
-                /*TEMPORARY*/
-                border: 5px solid black;
-                /*TEMPORARY*/
-                height: 100vh;
                 padding: 0;
                 margin: 0;
                 align-items: center;
                 justify-items: center;
-                overflow-y: auto;
             }
 
             .bio {
-                height: 98%;
-                width: 99%;
-                display: grid;
-                grid-template-rows: 10% 1fr;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-items: center;
-                overflow-y: scroll;
-                background: linear-gradient(
-              rgb(0, 0, 0, 0.1),  /* Semi-transparent black overlay */
-              rgba(0, 0, 0, 0.1)   /* Same overlay for smooth effect */
-        )       , url('images/profile_pic.jpg');
-                background-size: cover; /* Ensure the image covers the entire grid */
-                background-position: center; /* Center the image */
-                background-repeat: no-repeat; /* Prevent the image from repeating */
+                padding: .5em .1em;
+                gap: 1em;
             }
             
+            #bio-img {
+                width: 100%;
+                max-width: 300px;
+                border: 5px solid black;
+            }
+
 
                 #bio-title {
                     width: 85%;
-                    margin-bottom: .4em;
+                    margin-bottom: 1em;
                     text-align: center;
                     padding: .2em;
-                    grid-row: 1;
-                    color: white;
-                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-                    font-weight: bold;
+                    font-size: 2em;
+                }
+
+                .bio-separator {
+                    height: 2px;
+                    width: 100px;
+                    background-color: #000; /* Ensure color contrast */
+                    margin: .5em 0; /* Adjust margin to create space above and below */
+                }
+
+                #total-bio-p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                 }
 
                 #bio-p {
-                    padding: 1em;
+                    padding: .5em;
                     grid-row: 2;
                     text-justify: justify;
                     text-align: justify;
                     width: 85%;
-                    height: 90%;
                     font-size: 1.5em;
-                    overflow-y: auto;
-                    color: white;
-                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-                    font-weight: bold;
                 }
 
-                #bio-img {
-                    display: none; /* Hide the image for tablet and larger screens */
+                #interests {
+                    padding: .5em 1em;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 90%;
+                    margin: .8em .2em;
                 }
+    
+                    #interests-title {
+                        font-size: 1.5em;
+                    }
+                
+                    #all-interests {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: auto;
+                        flex-wrap: wrap;
+                        padding: .5em;
+                        gap: .6em;
+                    }
+                    
+                    #interests-list {
+                        display: contents; /* Make <ul> disappear from layout */
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    #interests-list li {
+                        padding: .5em;
+                        background-color: lightgray; /* For visualization */
+                        text-align: center;
+                        font-size: 1.5em; /* Increase text size */
+                        position: relative;
+                        list-style-type: none;
+                    }
+
+                    #interests-list li:not(:nth-child(4n))::after { 
+                        content: "";
+                        position: absolute;
+                        right: -0.24em;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 2px;
+                        height: 70%;
+                        background-color: black;
+                    }
         }
 
             /*Desktop design*/
@@ -832,13 +857,9 @@ html {
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #contact-section {
-                /*TEMPORARY*/
-                border: 5px solid black;
-                /*TEMPORARY*/
-                width: 100vw;
-                height: 100vh;
+                height: auto;
                 margin: 0;
-                padding: 0;
+                padding: .7em 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -876,6 +897,7 @@ html {
                     padding: .5em;
                     align-items: center;
                     justify-items: center;
+                    position: relative;
                 }
 
                 #email-form {
@@ -889,7 +911,7 @@ html {
                     align-items: center;
                     justify-content: center;
                     position: absolute; /* Positions it inside #email-me */
-                    top: 50%;
+                    top: 100%;
                     left: 50%;
                     transform: translate(-50%, -50%); /* Center the form */
                     z-index: -1; /* Lower z-index to position it behind #email-me */
@@ -939,7 +961,7 @@ html {
                         flex-wrap: wrap;
                     }
 
-            #linkedin, #github, #x, #insta, #youtube, #email {
+            #linkedin, #github, #x, #insta, #youtube, #email, #bluesky {
                 width: 1.2em;
                 padding: .2em;
                 display: flex;
@@ -954,6 +976,24 @@ html {
                 width: 70%;
                 background-color: #000; /* Black line, you can change the color */
                 margin: 50px 0; /* Add space above and below */
+            }
+
+            #resume {
+                border: 5px solid black;
+                width: 80%;
+                font-size: 2em;
+                text-align: center;
+                padding: .2em .5em;
+                margin: .5em;
+            }
+
+            #resume a {
+                display: inline; /* Ensures links stay on the same line */
+                white-space: nowrap; /* Prevents wrapping */
+            }
+
+            #contact-title {
+                font-size: 2em;
             }
         }
 
@@ -1218,17 +1258,15 @@ html {
                         justify-content: center;
                         width: 100%; /* Ensures it fills its container */
                     }
+                    
 
     }
 
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #project-section {
-                /*TEMPORARY*/
-                border: 5px solid black;
-                /*TEMPORARY*/
                 margin: 0;
-                padding: 0;
+                padding: 1em 0;
                 width: auto;
                 height: auto;
                 display: flex;
@@ -1237,102 +1275,94 @@ html {
                 justify-items: center;
             } 
 
-            #navigation-project {
-            margin: .5em;
-        }
-
-        .projects {
-            border: 5px dotted green;
-            overflow-y: auto;
-            width: 90%;
-            height: 72%;
-            gap: .7em;
-            padding: 0 .5em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            scroll-padding-left: 1em; /* Ensures the first item is fully visible */
-            scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
-        }
-
-            #project-title {
-                border: 5px dotted red;
-                padding: .3em;
-                font-size: 2.5em;
-                margin-top: 0;
-                margin-bottom: .5em;
-            }
-
-            .projects ul {
-                list-style: none; /* Removes default list styling */
-                padding: 0;
-                margin: 0;
-                display: flex;
-                justify-content: center; /* Centers the image inside */
-            }
-            
-            .projects li {
-                display: flex;
-                justify-content: center;
-            }   
-
-            .projects h3 {
-                grid-row: 1;
-                width: 90%;
-                text-align: center;
-                padding: .1em;
-                font-size: 1.3em;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-                font-weight: bold;
-            }
-
-            .projects p {
-                grid-row: 2;
-                width: 90%;
-                height: 75%;
-                padding: .5em;
-                text-align: justify;
+            .projects {
                 overflow-y: auto;
-                color: black;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-                font-weight: bold;
-            }
-
-            .projects img {
-                display: none;
-            }
-
-
-            .projects div {
-                display: grid;
-                grid-template-rows: 1fr 1fr;
+                width: 90%;
+                gap: .7em;
+                padding: .5em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                justify-items: center;
-                width: 95%;
-                min-height: 175px;
-                padding: .3em;
-                scroll-snap-align: start;
-                position: relative
+                scroll-padding-left: 1em; /* Ensures the first item is fully visible */
+                scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
             }
 
-            .projects div::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: url('images/placeholder.png') no-repeat center/cover;
-                opacity: 0.5; /* Adjust opacity as needed */
-                z-index: -1; /* Places background behind content */
-            }
+                .project-item {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto;
+                    align-items: center;
+                    justify-items: center;
+                    width: 95%;
+                    min-height: 175px;
+                    padding: .3em;
+                    scroll-snap-align: start;
+                    position: relative;
+                    border: 5px solid black;
+                }
 
-            #resume {
-                font-size: 2em;
-                text-align: center;
-                padding: .2em .5em;
-            }
+                    .project-img {
+                        border: 5px solid blue;
+                        width: 100%;
+                        max-width: 70%;
+                        width: auto;
+                        height: auto; /* Ensures aspect ratio is maintained */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        grid-row: 1 / span 2;
+                        padding: .5em;
+                    }
+
+                    .project-img a {
+                        display: block; /* Ensures it takes up the full container */
+                        width: 100%;
+                        height: 100%;
+                        max-width: 80%;
+                    }
+
+                    .img-preview {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    
+
+                    #project-title {
+                        padding: .3em;
+                        font-size: 2em;
+                        margin-top: 0;
+                        margin-bottom: .5em;
+                    }
+                    
+                    .projects li {
+                        display: flex;
+                        justify-content: center;
+                    }   
+
+                    .projects h3 {
+                        grid-column: 2;
+                        width: 90%;
+                        text-align: center;
+                        padding: .1em;
+                        font-size: 1.3em;
+                    }
+
+                    .projects p {
+                        grid-column: 2;
+                        width: 90%;
+                        height: 75%;
+                        padding: .5em;
+                        text-align: justify;
+                        overflow-y: auto;
+                        color: black;
+                    }
+
+                    .project-separator {
+                        display: none;
+                        grid-column: span 2;
+                    }
         }
 
             /*Desktop design*/
