@@ -1182,13 +1182,6 @@ html {
             scroll-snap-type: x mandatory;
         }
 
-            #project-title {
-                padding: .3em;
-                font-size: 2.5em;
-                margin-top: 0;
-                margin-bottom: .5em;
-            }
-
             .project-item {
                 border: 5px solid blue;
                 display: flex;
@@ -1274,6 +1267,14 @@ html {
                 align-items: center;
                 justify-items: center;
             } 
+
+            .exp-title {
+                border: 5px solid black;
+                padding: .3em;
+                font-size: 2.5em;
+                margin-top: 0;
+                margin-bottom: .5em;
+            }
 
             .projects {
                 overflow-y: auto;
