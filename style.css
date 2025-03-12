@@ -164,36 +164,49 @@ html {
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #homepage {
-            /*TEMPORARY*/
             border: 5px solid black;
-            /*TEMPORARY*/
             width: auto;
-            height: auto;
+            height: 99vh;
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: 40% 1fr;
-            grid-template-rows: 80% auto;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-items: center;
-        }
-        
-        #homepage header a {
-            display: block;
-            text-align: center;
-        }
-
-        #logo-home {
-            border: 5px solid black;
-            max-width: 350px;
-            border-radius: 50%;
+            justify-content: center;
+            gap: 1em;
         }
 
         .intro {
-            display: grid;
-            width: 90%;
-            padding: .5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            width: 95%;
         }
+
+            #name {
+                font-size: 5.5em;
+                margin: .2em .5em;
+                padding: .1em .2em;
+                width: 90%;
+                text-align: start;
+            }
+    
+            .homepage-separator {
+                height: 2px;
+                background-color: black;
+                width: 50%;
+                margin: .8em 0;
+            }
+
+            #tagline {
+                text-align: end;
+                font-size: 4em;
+                margin: .2em .5em;
+                padding: .1em .2em;
+                width: 90%;
+            }
 
         #navi {
             display: flex;
@@ -211,21 +224,6 @@ html {
             width: 80%;
             font-size: 2.5em;
             padding: .2em;
-        }
-
-        #name {
-           text-align: start;
-           width: 80%;
-           font-size: 4em;
-           padding: .1em .3em;
-           margin: .1em 0;
-        }
-
-        #tagline {
-           text-align: start;
-           font-size: 2.3em;
-           padding: .1em 0 .1em 7em;
-           margin: .1em .5em;
         }
     }
 
@@ -311,39 +309,48 @@ html {
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #homepage {
-                    /*TEMPORARY*/
-                    border: 5px solid black;
-                    /*TEMPORARY*/
-                    width: 100vw;
-                    height: 100vh;
+                    width: auto;
+                    height: 99vh;
                     margin: 0;
                     padding: 0;
-                    display: grid;
-                    grid-template-columns: 35% 1fr;
-                    grid-template-rows: 80% auto;
+                    display: flex;
+                    flex-direction: column;
                     align-items: center;
-                    justify-items: center;
-                }
-                
-                #homepage header a {
-                    display: block;
-                    text-align: center;
-                }
-        
-                #logo-home {
-                    border: 5px solid black;
-                    width: 100%;
-                    max-width: 450px;
-                    border-radius: 50%;
-                    margin-left: 1em;
+                    justify-content: center;
+                    gap: 5em;
                 }
         
                 .intro {
                     display: flex;
                     flex-direction: column;
-                    width: 90%;
-                    padding: .5em;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0;
+                    width: 95%;
                 }
+        
+                    #name {
+                        font-size: 10.5em;
+                        margin: .2em .5em;
+                        padding: .1em .2em;
+                        width: 90%;
+                        text-align: start;
+                    }
+            
+                    .homepage-separator {
+                        height: 2px;
+                        background-color: black;
+                        width: 50%;
+                        margin: .8em 0;
+                    }
+        
+                    #tagline {
+                        text-align: end;
+                        font-size: 5.5em;
+                        margin: .2em .5em;
+                        padding: .1em .2em;
+                        width: 90%;
+                    }
         
                 #navi {
                     display: flex;
@@ -353,32 +360,14 @@ html {
                     grid-row: 2;
                     grid-column: 1 / span 2;
                 }
-
-                #navi li a {
-                    text-decoration: none; /* Removes underline */
-                }
         
                 #navi li {
                     text-decoration: none;
                     list-style-type: none;
                     text-align: center;
                     width: 80%;
-                    font-size: 4.5em;
+                    font-size: 5.5em;
                     padding: .2em;
-                }
-        
-                #name {
-                   text-align: start;
-                   width: 80%;
-                   font-size: 5em;
-                   padding: .1em .3em;
-                   margin: .1em 0;
-                }
-        
-                #tagline {
-                   text-align: start;
-                   font-size: 3em;
-                   padding: .1em 0 .1em 7em;
                 }
             }
 
@@ -584,7 +573,6 @@ html {
                 }
         
                 .bio {
-                    border: 5px dotted black;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -602,7 +590,6 @@ html {
                     }
         
                     #total-bio-p {
-                        border: 5px dotted red;
                         max-width: 1100px;
                         height: 90%;
                         display: flex;
@@ -613,7 +600,6 @@ html {
                     }
         
                         #bio-p {
-                            border: 5px dotted yellow;
                             grid-column: 2;
                             width: 90%;
                             height: 90%;
