@@ -416,7 +416,7 @@ html {
                     position: relative;
                     width: 100%;
                     max-width: 450px; /* Adjust as needed */
-                    height: 500px;
+                    height: 700px;
                     padding: .7em;
                 }
                 
@@ -580,7 +580,7 @@ html {
                     position: relative;
                     width: 98%;
                     max-width: 400px; /* Adjust as needed */
-                    height: 530px;
+                    height: 650px;
                     padding: .7em;
                 }
                 
@@ -746,13 +746,14 @@ html {
                 }
 
                     .slideshow-container {
+                        border: 5px dotted red;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         position: relative;
                         width: 100%;
-                        max-width: 530px; /* Adjust as needed */
-                        height: 650px;
+                        max-width: 580px; /* Adjust as needed */
+                        height: 850px;
                         padding: .7em;
                     }
                     
