@@ -140,6 +140,14 @@ html {
             padding: 0;
             margin: 0;
         }
+
+        .index-separator {
+            height: 2px;
+            width: 10%;
+            background-color: black;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
     }
 
         /*Mobile design*/
@@ -155,6 +163,14 @@ html {
                 #index {
                     padding: 0;
                     margin: 0;
+                }
+
+                .index-separator {
+                    height: 2px;
+                    width: 10%;
+                    background-color: black;
+                    margin-top: 2em;
+                    margin-bottom: 2em;
                 }
             }
 
@@ -399,26 +415,25 @@ html {
                     justify-content: center;
                     position: relative;
                     width: 100%;
-                    max-width: 600px; /* Adjust as needed */
-                    height: 450px;
-                    padding: 1em;
-                    overflow: hidden;
+                    max-width: 450px; /* Adjust as needed */
+                    height: 500px;
+                    padding: .7em;
                 }
                 
-                .slideshow-container img {
+                .slideshow-img {
+                    border: 5px solid black;
                     display: none; /* Hide all images initially */
                     width: 100%;
-                    max-width: 400px;
+                    height: auto;
+                    max-width: 410px;
                     object-fit: border-box; /* Ensure full image is visible */
                     position: absolute; /* Stacks images on top of each other */
-                    border: 5px solid black;
                 }
                 
                 .slideshow-container img.active {
                     display: block; /* Only show the active image */
                 }
             
-                
                 .prev, .next {
                     position: absolute;
                     top: 50%;
@@ -457,7 +472,8 @@ html {
             }
 
             #total-bio-p {
-                width: auto;
+                width: 100%;
+                max-width: 70%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -556,6 +572,69 @@ html {
                 max-width: 300px;
                 border: 5px solid black;
             }
+
+                .slideshow-container {
+                    border: 5px dotted black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    width: 98%;
+                    max-width: 400px; /* Adjust as needed */
+                    height: 530px;
+                    padding: .7em;
+                }
+                
+                .slideshow-img {
+                    border: 5px solid black;
+                    display: none; /* Hide all images initially */
+                    width: 100%;
+                    height: auto;
+                    max-width: 390px;
+                    object-fit: border-box; /* Ensure full image is visible */
+                    position: absolute; /* Stacks images on top of each other */
+                }
+                
+                .slideshow-container img.active {
+                    display: block; /* Only show the active image */
+                }
+            
+                .prev, .next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 24px;
+                    cursor: pointer;
+                    padding: 10px;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border: none;
+                    border-radius: 5px;
+                }
+                
+                .prev {
+                    left: 0;
+                }
+                
+                .next {
+                    right: 0;
+                }
+                
+                .fade {
+                    animation: fadeEffect 1s;
+                }
+                
+                @keyframes fadeEffect {
+                    from { opacity: 0.4; }
+                    to { opacity: 1; }
+                }
+
+                .bio-separator {
+                    height: 2px;
+                    width: 100px;
+                    background-color: #000; /* Ensure color contrast */
+                    margin: 1em 0; /* Adjust margin to create space above and below */
+                }
 
 
                 #bio-title {
@@ -663,10 +742,63 @@ html {
                     align-items: center;
                     justify-content: center;
                     padding: 1.2em;
-                    width: auto;
-                    height: 800px;
+                    width: 95%;
                     gap: 1.5em;
                 }
+
+                    .slideshow-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        width: 100%;
+                        max-width: 530px; /* Adjust as needed */
+                        height: 650px;
+                        padding: .7em;
+                    }
+                    
+                    .slideshow-img {
+                        display: none; /* Hide all images initially */
+                        width: 100%;
+                        height: auto;
+                        max-width: 500px;
+                        object-fit: border-box; /* Ensure full image is visible */
+                        position: absolute; /* Stacks images on top of each other */
+                    }
+                    
+                    .slideshow-container img.active {
+                        display: block; /* Only show the active image */
+                    }
+                
+                    .prev, .next {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 24px;
+                        cursor: pointer;
+                        padding: 10px;
+                        color: white;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        border: none;
+                        border-radius: 5px;
+                    }
+                    
+                    .prev {
+                        left: 0;
+                    }
+                    
+                    .next {
+                        right: 0;
+                    }
+                    
+                    .fade {
+                        animation: fadeEffect 1s;
+                    }
+                    
+                    @keyframes fadeEffect {
+                        from { opacity: 0.4; }
+                        to { opacity: 1; }
+                    }
         
                     .bio-separator {
                         height: 2px;
@@ -676,8 +808,9 @@ html {
                     }
         
                     #total-bio-p {
-                        max-width: 1100px;
-                        height: 90%;
+                        max-width: 70%;
+                        height: 100%;
+                        max-height: 50%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -693,7 +826,7 @@ html {
                             padding: 0 1em;
                             text-align: justify;
                             text-wrap: wrap;
-                            font-size: 1.9em;
+                            font-size: 1.6em;
                             margin: 0;
                         }
         
@@ -1225,6 +1358,13 @@ html {
             align-items: center;
             justify-items: center;
         } 
+
+        #project-title {
+            padding: .3em;
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: .5em;
+        }
 
         #navigation-project {
             margin: .5em;
