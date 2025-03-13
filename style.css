@@ -379,6 +379,7 @@ html {
         }
 
         .bio {
+            border: 5px solid black;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -386,6 +387,68 @@ html {
             width: auto;
             gap: 1.5em;
         }
+
+            .bio-img {
+                width: 100%;
+                max-width: 400px;
+                border: 5px solid black;
+            }
+
+                .slideshow-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    width: 100%;
+                    max-width: 600px; /* Adjust as needed */
+                    height: 450px;
+                    padding: 1em;
+                    overflow: hidden;
+                }
+                
+                .slideshow-container img {
+                    display: none; /* Hide all images initially */
+                    width: 100%;
+                    max-width: 400px;
+                    object-fit: border-box; /* Ensure full image is visible */
+                    position: absolute; /* Stacks images on top of each other */
+                    border: 5px solid black;
+                }
+                
+                .slideshow-container img.active {
+                    display: block; /* Only show the active image */
+                }
+            
+                
+                .prev, .next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 24px;
+                    cursor: pointer;
+                    padding: 10px;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border: none;
+                    border-radius: 5px;
+                }
+                
+                .prev {
+                    left: 0;
+                }
+                
+                .next {
+                    right: 0;
+                }
+                
+                .fade {
+                    animation: fadeEffect 1s;
+                }
+                
+                @keyframes fadeEffect {
+                    from { opacity: 0.4; }
+                    to { opacity: 1; }
+                }
 
             .bio-separator {
                 height: 2px;
