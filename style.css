@@ -379,7 +379,6 @@ html {
         }
 
         .bio {
-            border: 5px solid black;
             display: flex;
             align-items: center;
             justify-content: center;
