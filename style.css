@@ -574,7 +574,6 @@ html {
             }
 
                 .slideshow-container {
-                    border: 5px dotted black;
                     display: flex;
                     align-items: center;
                     justify-content: center;
