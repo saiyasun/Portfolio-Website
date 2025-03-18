@@ -1436,8 +1436,6 @@ html {
                     top: .4em;
                     font-size: 1.5em;
                     background-color: black;
-                    border-bottom-right-radius: 5%;
-                    border-bottom-left-radius: 5%;
                 }
 
                 #mobile-nav-links a {
@@ -1611,7 +1609,6 @@ html {
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #project-section {
-                border: 5px solid black;
                 margin: 0;
                 padding: 1em 0;
                 width: auto;
