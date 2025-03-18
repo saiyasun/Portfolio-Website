@@ -1365,6 +1365,7 @@ html {
             justify-content: center;
             gap: 1em;
             font-size: 1.5em;
+            margin: .5em .5em 1em .5em;
         }
 
         #mobile-projects-nav {
@@ -1517,10 +1518,6 @@ html {
             scroll-padding-left: 1em; /* Ensures the first item is fully visible */
             scroll-snap-type: x mandatory;
         }
-
-            #experience-section {
-                display: none;
-            }
 
             #skills-section {
                 display: none;
@@ -1845,6 +1842,403 @@ html {
                                 justify-content: center;
                                 width: 100%; /* Ensures it fills its container */
                             }
+            }
+            
+/*----------------------------------------*/
+
+/*** Experiences ***/
+    /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+        #experience-section {
+            padding: .5em;
+            display: none;
+        }
+
+        #navigation-experience {
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+        
+        .experiences {
+            display: flex; /* Use flexbox for the container */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            flex-direction: column;
+            width: 95%; /* Full width of the parent */
+            gap: 3em;
+            padding: 1em;
+            height: auto;
+            flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+            gap: 20px; /* Space between items */
+            margin-bottom: 1em;
+        }
+        
+        .exp {
+            padding: 1em;
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            gap: .2em;
+            align-items: center;
+        }
+
+        .position {
+            font-weight: bold;
+            color: black;
+            font-size: .8em;
+        }
+        
+        #other-exp {
+            width: 95%;
+            display: flex;
+            padding: 1em;
+            margin-bottom: 2em;
+        }
+
+        .duty-separator {
+            display: none;
+        }
+
+        .experience-separator {
+            display: block;
+            height: 2px;
+            width: 90%;
+            background-color: black;
+            margin: 20px;
+        }
+        
+        .exp-title {
+            padding: .3em;
+            font-size: 2.5em;
+            text-align: center;
+            width: 60%;
+            align-self: center;
+            justify-self: center;
+            margin: .5em .2em;
+        }
+        
+        .school {
+            color: red;
+        }
+        
+        .lang {
+            color: green;
+        }
+        
+        .fluency {
+            color: black;
+            font-style: italic;
+        }
+
+        .location {
+            grid-row: 2;
+            text-align: center;
+            justify-self: center;
+            align-self: flex-start;
+            font-size: 1.5em;
+            margin: .2em 0;
+        }
+        
+        .degree {
+            text-decoration: underline;
+        }
+        
+        .work {
+            border: 5px solid black;
+            display: grid;
+            grid-template-rows: auto auto auto;
+            grid-template-columns: 60% auto;
+            padding: 0 .5em;
+            width: 98%;
+        }
+        
+        .work-name {
+            color: blue;
+            padding: 0 .5em;
+            text-align: center;
+            align-self: flex-end;
+            justify-self: center;
+            margin-bottom: .5em;
+            font-size: 2em;
+        }
+        
+        .date {
+            padding: 0 .5em;
+            grid-row: 3;
+            text-align: center;
+            margin: 1em;
+        }
+        
+        .duties {
+            padding: 1em .5em;
+            list-style-type: disc;
+            list-style-position: inside;
+            grid-row: 1 / span 3;
+            align-self: center;
+            justify-self: center;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+        
+        .duties li {
+            padding: .2em;
+        }
+        
+        #resume {
+            font-size: 2rem;
+            width: auto;
+            padding: 0 .5em;
+            text-align: center;
+            margin-bottom: .5em;
+        }
+    }
+
+        /*Mobile design*/
+        @media only screen and (max-width: 768px) {
+            #experience-section {
+                width: auto; /* Adjust width to 100% for smaller screens */
+                height: auto;
+                padding: .5em; /* Add padding for smaller screens */
+                flex-direction: column; /* Stack elements vertically */
+            }
+
+            #resume {
+                border: 5px solid black;
+                width: 90%;
+                font-size: 1.5em;
+                text-align: center;
+                padding: .2em .5em;
+                margin: 1em 0;
+            }
+    
+            #resume a {
+                display: inline; /* Ensures links stay on the same line */
+                white-space: nowrap; /* Prevents wrapping */
+            }
+
+            .exp-title {
+                padding: .3em;
+                font-size: 2em;
+                margin-top: 0;
+                margin-bottom: .5em;
+                text-align: center;
+            }
+
+            .experiences {
+                margin-bottom: 1em;
+            }
+
+            .work {
+                border: 5px solid black;
+                display: flex;
+                flex-direction: column;
+                padding: .5em;
+                height: auto;
+            }
+
+            .duties {
+                font-size: 1.5em;
+                margin-top: .5em;
+            }
+
+                .duties li {
+                    margin-bottom: 0.5em;
+                }
+            
+            .date {
+                padding: 0 .5em;
+                text-align: center;
+                margin-top: 1.2em;
+            }
+
+            .work-name {
+                text-align: center;
+                align-self: flex-end;
+                color: blue;
+                margin-bottom: .1em;
+                font-size: 1.7em;
+            }
+
+            .duty-separator {
+                height: 2px;
+                background-color: black;
+                width: 50px;
+            }
+
+            .experience-separator {
+                border: 0; /* Remove default border */
+                border-top: 2px solid black; /* Create a solid black line */
+                width: 80%; /* Set the width of the line */
+                margin: 20px auto; /* Add margin to center the line and space it out */
+            }
+
+            .fluency {
+                color: black;
+                font-style: italic;
+            }
+
+            .position {
+                font-size: .8em;
+                color: black;
+                font-weight: bold;
+            }
+
+            .location {
+                text-align: center;
+                justify-self: center;
+                font-size: 1.3em;
+                margin: .1em 0;
+            }
+
+            #other-exp {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .school {
+                color: red;
+            }
+            
+            .lang {
+                color: green;
+            }
+        }
+
+            /*Desktop design*/
+            @media only screen and (min-width: 1500px) {
+                #experience-section {
+                    padding: .5em;
+                    display: none;
+                }
+        
+                #navigation-experience {
+                    margin-top: 2em;
+                    margin-bottom: 1em;
+                }
+                
+                .experiences {
+                    display: flex; /* Use flexbox for the container */
+                    justify-content: center; /* Center items horizontally */
+                    align-items: center; /* Center items vertically */
+                    flex-direction: column;
+                    width: 95%; /* Full width of the parent */
+                    gap: 3em;
+                    padding: 1em;
+                    height: auto;
+                    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+                    gap: 20px; /* Space between items */
+                    margin-bottom: 1em;
+                }
+                
+                .exp {
+                    padding: 1em;
+                    width: 95%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .2em;
+                    align-items: center;
+                }
+        
+                .position {
+                    font-weight: bold;
+                    color: black;
+                    font-size: .8em;
+                }
+                
+                #other-exp {
+                    width: 95%;
+                    display: flex;
+                    padding: 1em;
+                    margin-bottom: 2em;
+                }
+
+                .duty-separator {
+                    display: none;
+                }
+        
+                .experience-separator {
+                    display: block;
+                    height: 2px;
+                    width: 90%;
+                    background-color: black;
+                    margin: 20px;
+                }
+                
+                .exp-title {
+                    padding: .3em;
+                    font-size: 3.5em;
+                    text-align: center;
+                    width: 60%;
+                    align-self: center;
+                    justify-self: center;
+                    margin: .5em .2em;
+                }
+                
+                .school {
+                    color: red;
+                }
+                
+                .lang {
+                    color: green;
+                }
+                
+                .fluency {
+                    color: black;
+                    font-style: italic;
+                }
+        
+                .location {
+                    grid-row: 2;
+                    text-align: center;
+                    justify-self: center;
+                    align-self: flex-start;
+                    font-size: 2.2em;
+                    margin: .2em 0;
+                }
+                
+                .degree {
+                    text-decoration: underline;
+                }
+                
+                .work {
+                    border: 5px solid black;
+                    display: grid;
+                    grid-template-rows: auto auto auto;
+                    grid-template-columns: 60% auto;
+                    padding: 0 .5em;
+                    width: 98%;
+                }
+                
+                .work-name {
+                    color: blue;
+                    padding: 0 .5em;
+                    text-align: center;
+                    margin-bottom: .3em;
+                    font-size: 3em;
+                }
+                
+                .date {
+                    padding: 0 .5em;
+                    grid-row: 3;
+                    text-align: center;
+                    margin: 1em;
+                    font-size: 1.7em;
+                }
+                
+                .duties {
+                    padding: 1em .5em;
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    grid-row: 1 / span 3;
+                    align-self: center;
+                    justify-self: center;
+                    text-align: justify;
+                    font-size: 1.7em;
+                }
+                
+                .duties li {
+                    padding: .2em;
+                }
             }
             
 /*----------------------------------------*/
@@ -2485,340 +2879,4 @@ html {
                     }
             }
 
-/*----------------------------------------*/
-
-/*** Experiences ***/
-    /*Laptop design*/
-    @media only screen and (min-width: 769px) {
-        #navigation-experience {
-            margin-top: 2em;
-            margin-bottom: 1em;
-        }
-        
-        .experiences {
-            display: flex; /* Use flexbox for the container */
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
-            flex-direction: column;
-            width: 95%; /* Full width of the parent */
-            gap: 3em;
-            padding: 1em;
-            height: auto;
-            flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-            gap: 20px; /* Space between items */
-            margin-bottom: 1em;
-        }
-        
-        .exp {
-            padding: .5em 1em;
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            gap: .2em;
-        }
-        
-        #other-exp {
-            width: 95%;
-            display: flex;
-            padding: 1em;
-            margin-bottom: 2em;
-        }
-
-        .experience-separator {
-            display: block;
-            height: 2px;
-            width: 90%;
-            background-color: black;
-            margin: 20px auto;
-        }
-        
-        .exp-title {
-            padding: .3em;
-            font-size: 2.5em;
-            margin-top: 0;
-            margin-bottom: .5em;
-            text-align: center;
-        }
-        
-        .school {
-            color: red;
-        }
-        
-        .lang {
-            color: green;
-        }
-        
-        .location, .fluency, .position {
-            color: black;
-            font-style: italic;
-        }
-        
-        .degree {
-            text-decoration: underline;
-        }
-        
-        .work {
-            display: grid;
-            grid-template-rows: repeat(2, auto);
-            grid-template-columns: 60% auto;
-            column-gap: .5em;
-        }
-        
-        .work-name {
-            color: blue;
-            padding: 0 .5em;
-        }
-        
-        .date {
-            padding: 0 .5em;
-            grid-row: 2;
-            text-align: center;
-        }
-        
-        .duties {
-            padding: 1em .5em;
-            list-style-type: disc;
-            list-style-position: inside;
-            grid-row: 1 / span 2;
-            align-self: center;
-            justify-self: center;
-            text-align: justify;
-            font-size: 1.1em;
-        }
-        
-        .duties li {
-            padding: .2em;
-        }
-        
-        #resume {
-            font-size: 2rem;
-            width: auto;
-            padding: 0 .5em;
-            text-align: center;
-            margin-bottom: .5em;
-        }
-    }
-
-        /*Mobile design*/
-        @media only screen and (max-width: 768px) {
-            #experience-section {
-                width: auto; /* Adjust width to 100% for smaller screens */
-                height: auto;
-                padding: 1em; /* Add padding for smaller screens */
-                flex-direction: column; /* Stack elements vertically */
-            }
-
-            #resume {
-                border: 5px solid black;
-                width: 90%;
-                font-size: 1.5em;
-                text-align: center;
-                padding: .2em .5em;
-                margin: 1em 0;
-            }
-    
-            #resume a {
-                display: inline; /* Ensures links stay on the same line */
-                white-space: nowrap; /* Prevents wrapping */
-            }
-
-            .exp-title {
-                padding: .3em;
-                font-size: 2em;
-                margin-top: 0;
-                margin-bottom: .5em;
-                text-align: center;
-            }
-
-            #body-experience h1 {
-                margin-top: 1em;
-                width: 100vw;
-            }
-
-            .experiences {
-                margin-bottom: 1em;
-            }
-
-            .work {
-                display: grid;
-                grid-template-rows: repeat(3, auto);
-                grid-template-columns: 60% auto;
-                column-gap: .5em;
-            }
-
-            .duties {
-                padding: 1em .5em;
-                list-style-type: disc;
-                list-style-position: inside;
-                grid-row: 3;
-                grid-column: 1 / span 2;
-                align-self: center;
-                justify-self: center;
-                text-align: justify;
-            }
-            
-            .date {
-                padding: 0 .5em;
-                grid-row: 2;
-                grid-column: 1 / span 2;
-                text-align: center;
-            }
-
-            .work-name {
-                grid-column: 1 / span 2;
-                text-align: center;
-                color: blue;
-            }
-
-            .experience-separator {
-                border: 0; /* Remove default border */
-                border-top: 2px solid black; /* Create a solid black line */
-                width: 80%; /* Set the width of the line */
-                margin: 20px auto; /* Add margin to center the line and space it out */
-            }
-
-            .location, .fluency, .position {
-                color: black;
-                font-style: italic;
-            }
-
-            #other-exp {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .school {
-                color: red;
-            }
-            
-            .lang {
-                color: green;
-            }
-        }
-
-            /*Desktop design*/
-            @media only screen and (min-width: 1500px) {
-                #experience-section {
-                    width: auto;
-                    height: auto;
-                    margin: 0 auto;
-                    display: flex;
-                    padding-bottom: 2em;
-                    align-items: center; /* Align children to the top */
-                    justify-content: flex-start;
-                    flex-direction: column;
-                }
-                
-                #navigation-experience {
-                    margin-top: 2em;
-                    margin-bottom: 1em;
-                }
-                
-                .experiences {
-                    display: flex; /* Use flexbox for the container */
-                    justify-content: center; /* Center items horizontally */
-                    align-items: center; /* Center items vertically */
-                    flex-direction: column;
-                    width: 95%; /* Full width of the parent */
-                    gap: 3em;
-                    padding: 1em;
-                    height: auto;
-                    flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
-                    gap: 20px; /* Space between items */
-                    margin-bottom: 1em;
-                }
-                
-                .exp {
-                    padding: .5em 1em;
-                    width: 95%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: .2em;
-                }
-                
-                #other-exp {
-                    width: 95%;
-                    display: flex;
-                    padding: 1em;
-                    margin-bottom: 2em;
-                }
-                
-                .experience-separator {
-                    display: block;
-                    height: .5px;
-                    width: 90%;
-                    background-color: black;
-                    margin: 20px auto;
-                }
-
-                .cert-name {
-                    font-size: 2.2em;
-                }
-
-                .exp-title {
-                    text-decoration: underline;
-                    font-size: 3em;
-                }
-                
-                .school {
-                    color: red;
-                    font-size: 2em;
-                }
-                
-                .lang {
-                    color: green;
-                    font-size: 1.7em;
-                }
-                
-                .fluency {
-                    color: black;
-                    font-style: italic;
-                    font-size: 1.5em;
-                }
-
-                .position, .location {
-                    font-size: 1.2em;
-                }
-                
-                .degree {
-                    text-decoration: underline;
-                    font-size: 1.7em;
-                }
-                
-                .work {
-                    display: grid;
-                    grid-template-rows: repeat(2, auto);
-                    grid-template-columns: 60% auto;
-                    column-gap: .5em;
-                }
-                
-                .work-name {
-                    color: blue;
-                    padding: 0 .5em;
-                    font-size: 2.3em;
-                }
-                
-                .date {
-                    padding: 0 .5em;
-                    grid-row: 2;
-                    text-align: center;
-                    font-size: 1.5em;
-                }
-                
-                .duties {
-                    padding: 1em .5em;
-                    list-style-type: disc;
-                    list-style-position: inside;
-                    grid-row: 1 / span 2;
-                    align-self: center;
-                    justify-self: center;
-                    text-align: justify;
-                    font-size: 1.8em;
-                }
-                
-                .duties li {
-                    padding: .2em;
-                }
-            }
-            
 /*----------------------------------------*/
