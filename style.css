@@ -746,7 +746,6 @@ html {
                 }
 
                     .slideshow-container {
-                        border: 5px dotted red;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1385,6 +1384,7 @@ html {
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+                position: relative;
             }
     
             #project-nav {
@@ -1402,31 +1402,53 @@ html {
                 border: 5px solid red;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
-                gap: .3em;
-                width: 200px;
+                justify-content: center;
+                width: 90%;
                 padding: .5em;
+                margin: .3em .5em 1em .5em;
+                position: relative;
             }
 
                 #menu-toggle {
                     border: 5px solid black;
                     padding: .5em;
-                    margin-bottom: .5em;
-                    position: relative;
+                    width: 95%;
+                    font-size: 1.3em;
                 }
 
+                /*#menu-toggle::before {
+                    content: "☰";
+                    font-size: 2em;
+                    margin-right: 5px;
+                }*/
+
                 #mobile-nav-links {
-                    border: 5px dotted blue;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-items: center;
                     align-items: center;
-                    gap: .3em;
-                    padding: .3em;
-                    width: 125px;
+                    gap: .7em;
+                    padding: .5em;
+                    width: 88%;
+                    height: auto;
                     position: absolute;
-                    display: none;
+                    visibility: hidden;
+                    top: .4em;
+                    font-size: 1.5em;
+                    background-color: black;
+                    border-bottom-right-radius: 5%;
+                    border-bottom-left-radius: 5%;
+                }
+
+                #mobile-nav-links a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 5px solid white;
+                    padding: .5em;
+                    color: white;
+                    width: 70%;
                 }
         }
 
@@ -1447,7 +1469,10 @@ html {
                     align-items: center;
                     justify-content: center;
                     gap: 1em;
-                    font-size: 2.5em;
+                }
+
+                #project-nav a {
+                    font-size: 2em; 
                 }
 
                 #mobile-projects-nav {
@@ -1587,6 +1612,7 @@ html {
         /*Mobile design*/
         @media only screen and (max-width: 768px) {
             #project-section {
+                border: 5px solid black;
                 margin: 0;
                 padding: 1em 0;
                 width: auto;
@@ -1606,6 +1632,7 @@ html {
             }
 
             .projects {
+                border: 5px dotted blue;
                 overflow-y: auto;
                 width: 90%;
                 gap: .7em;
@@ -1617,6 +1644,22 @@ html {
                 scroll-padding-left: 1em; /* Ensures the first item is fully visible */
                 scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
             }
+
+                #experience-section {
+                    display: none;
+                }
+
+                #skills-section {
+                    display: none;
+                }
+
+                #education-section {
+                    display: none;
+                }
+
+                #all-experience-section {
+                    display: none;
+                }
 
                 .project-item {
                     display: grid;
@@ -1660,7 +1703,8 @@ html {
                     
 
                     #project-title {
-                        padding: .3em;
+                        border: 5px dotted red;
+                        padding: .1em .3em;
                         font-size: 2em;
                         margin-top: 0;
                         margin-bottom: .5em;
@@ -1690,8 +1734,7 @@ html {
                     }
 
                     .project-separator {
-                        display: none;
-                        grid-column: span 2;
+                        
                     }
         }
 

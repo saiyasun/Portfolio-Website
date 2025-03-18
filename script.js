@@ -171,7 +171,8 @@
         let mobileAllLink = document.getElementById('mobile-all-link');
         let mobileSkillsLink = document.getElementById('mobile-skills-link');
         let mobileEducationLink = document.getElementById('mobile-education-link');
-        let allMobileLinks = document.getElementById('mobile-nav-bar');
+        let allMobileLinks = document.getElementById('mobile-nav-links');
+        let mobileNavLinks = document.querySelectorAll('#mobile-nav-links a'); // Get all links inside mobile nav
 
     // ~Functions~
         // Skills, Education, Project and All sections 
@@ -231,15 +232,23 @@
         };
 
         // Mobile nav bar
-        let showMobileNavBar = function() {
-            allMobileLinks.style.display = 'block';
-            mobileSandwichMenu.style.display = 'none';
-        }
+        let toggleMobileNavBar = function(event) {
+            event.preventDefault(); // Prevent click from bubbling to the document
+            if (allMobileLinks.style.visibility === 'hidden' || allMobileLinks.style.visibility === '') {
+                allMobileLinks.style.visibility = 'visible';
+                allMobileLinks.style.opacity = '1'; // Smooth transition if needed
+                allMobileLinks.style.zIndex = '1000';
+            } else {
+                allMobileLinks.style.visibility = 'hidden';
+                allMobileLinks.style.opacity = '0';
+                allMobileLinks.style.zIndex = '-1';
+            }
+        };
 
         let hideMobileNavBar = function() {
-            allMobileLinks.style.display = 'none';
-            mobileSandwichMenu.style.display = 'block';
-        }
+            allMobileLinks.style.visibility = 'hidden';
+            allMobileLinks.style.opacity = '0';
+        };
 
     // ~Events~
         // Skills, Education, Project and All sections 
@@ -250,6 +259,23 @@
         projectLink.addEventListener('click', showProjectsSection);
 
         // Mobile nav bar
+        mobileSandwichMenu.addEventListener('click', toggleMobileNavBar); // Event listener for the menu button
+        document.addEventListener('click', function(event) {
+            let isClickInsideNav = allMobileLinks.contains(event.target) || mobileSandwichMenu.contains(event.target);
+            if (!isClickInsideNav) {
+                hideMobileNavBar();
+            }
+        }); // Close menu when clicking outside
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', hideMobileNavBar);
+        }); // Close menu when clicking outside
+
+        mobileProjectLink.addEventListener('click', showProjectsSection);
+        mobileExperienceLink.addEventListener('click', showExperienceSection);
+        mobileAllLink.addEventListener('click', showAllSections);
+        mobileSkillsLink.addEventListener('click', showSkillsSection);
+        mobileEducationLink.addEventListener('click', showEducationSection);
+
 // <---------------->
 
 // *** Homepage section ***
