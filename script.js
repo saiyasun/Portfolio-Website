@@ -177,59 +177,60 @@
     // ~Functions~
         // Skills, Education, Project and All sections 
         let showProjectsSection = function(event) {
-            event.preventDefault();  // Prevent the default click behavior (e.g., following the link)
-        
-            allSection.style.display = 'none';
-            educationSection.style.display = 'none';
-            experienceSection.style.display = 'none';
-            skillsSection.style.display = 'none';
-        
-            projectSection.style.display = 'block';
+            event.preventDefault();
+            hideAllSections();
+            projectSection.style.visibility = 'visible';
+            projectSection.style.opacity = '1';
+            projectSection.style.position = 'relative';  // Keeps the section in place visually
+            projectSection.style.zIndex = '1'; // Makes sure it's above hidden sections
         };
         
         let showExperienceSection = function(event) {
-            event.preventDefault();  // Prevent the default click behavior
-        
-            allSection.style.display = 'none';
-            educationSection.style.display = 'none';
-            projectSection.style.display = 'none';
-            skillsSection.style.display = 'none';
-        
-            experienceSection.style.display = 'block';
+            event.preventDefault();
+            hideAllSections();
+            experienceSection.style.visibility = 'visible';
+            experienceSection.style.opacity = '1';
+            experienceSection.style.position = 'relative';
+            experienceSection.style.zIndex = '1';
         };
         
         let showSkillsSection = function(event) {
-            event.preventDefault();  // Prevent the default click behavior
-        
-            allSection.style.display = 'none';
-            educationSection.style.display = 'none';
-            experienceSection.style.display = 'none';
-            projectSection.style.display = 'none';
-            
-            skillsSection.style.display = 'block';
+            event.preventDefault();
+            hideAllSections();
+            skillsSection.style.visibility = 'visible';
+            skillsSection.style.opacity = '1';
+            skillsSection.style.position = 'relative';
+            skillsSection.style.zIndex = '1';
         };
         
         let showEducationSection = function(event) {
-            event.preventDefault();  // Prevent the default click behavior
-        
-            allSection.style.display = 'none';
-            projectSection.style.display = 'none';
-            experienceSection.style.display = 'none';
-            skillsSection.style.display = 'none';
-            
-            educationSection.style.display = 'block';
+            event.preventDefault();
+            hideAllSections();
+            educationSection.style.visibility = 'visible';
+            educationSection.style.opacity = '1';
+            educationSection.style.position = 'relative';
+            educationSection.style.zIndex = '1';
         };
         
         let showAllSections = function(event) {
-            event.preventDefault();  // Prevent the default click behavior
-        
-            projectSection.style.display = 'none';
-            educationSection.style.display = 'none';
-            experienceSection.style.display = 'none';
-            skillsSection.style.display = 'none';
-            
-            allSection.style.display = 'block';
+            event.preventDefault();
+            hideAllSections();
+            allSection.style.visibility = 'visible';
+            allSection.style.opacity = '1';
+            allSection.style.position = 'relative';
+            allSection.style.zIndex = '1';
         };
+        
+        let hideAllSections = function() {
+            let sections = [skillsSection, educationSection, allSection, experienceSection, projectSection];
+            sections.forEach(sec => {
+                sec.style.visibility = 'hidden';
+                sec.style.opacity = '0';
+                sec.style.position = 'absolute'; // Removes section from flow but keeps space
+                sec.style.zIndex = '-1'; // Keeps it behind other sections
+            });
+        };
+        
 
         // Mobile nav bar
         let toggleMobileNavBar = function(event) {

@@ -1519,16 +1519,9 @@ html {
             scroll-snap-type: x mandatory;
         }
 
-            #skills-section {
-                display: none;
-            }
-
-            #education-section {
-                display: none;
-            }
-
             #all-experience-section {
-                display: none;
+                visibility: hidden;
+                transition: height 0.3s ease, visibility 0.3s ease;
             }
 
             .project-item {
@@ -1637,20 +1630,9 @@ html {
                 scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
             }
 
-                #experience-section {
-                    display: none;
-                }
-
-                #skills-section {
-                    display: none;
-                }
-
-                #education-section {
-                    display: none;
-                }
-
                 #all-experience-section {
-                    display: none;
+                    visibility: hidden;
+                    transition: height 0.3s ease, visibility 0.3s ease;
                 }
 
                 .project-item {
@@ -1846,12 +1828,162 @@ html {
             
 /*----------------------------------------*/
 
+/*** Skills ***/
+    /*Laptop design*/
+    #skills-section {
+        display: flex;
+        border: 5px solid black;
+        margin: 0;
+        visibility: hidden;
+        transition: height 0.3s ease, visibility 0.3s ease;
+    }
+
+    .lang {
+        color: green;
+    }
+
+        .progress-container {
+            border: 5px solid black;
+            width: 100%;  /* Set the width of the container */
+            height: 35px;  /* Height of the bar */
+            background-color: #f3f3f3;  /* Light grey background for the empty part of the bar */
+            border-radius: 5px;  /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: for a slight shadow effect */
+           
+        }
+        
+        .progress-bar {
+            height: 100%;  /* Fill the container */
+            background-color: #4caf50;  /* Green color for the filled part */
+            border-radius: 5px;  /* Match the rounded corners of the container */
+        }
+
+        #mandarin {
+            width: 90%;  /* Set the width to 80% */
+        }
+
+        .percentage-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: 70px;
+            gap: 1em;
+        }
+    
+    .fluency {
+        color: black;
+        font-style: italic;
+    }
+
+    #other-exp {
+        width: 95%;
+        display: flex;
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+
+    .languages {
+        border: 5px solid red;
+        padding: .5em 1em;
+    }
+
+        /*Mobile design*/
+        #skills-section {
+            visibility: hidden;
+            transition: height 0.3s ease, visibility 0.3s ease;
+        }
+
+        .fluency {
+            color: black;
+            font-style: italic;
+        }
+
+        .lang {
+            color: green;
+        }
+
+            /*Desktop design*/
+            #skills-section {
+                visibility: hidden;
+                transition: height 0.3s ease, visibility 0.3s ease;
+            }
+
+            .lang {
+                color: green;
+            }
+            
+            .fluency {
+                color: black;
+                font-style: italic;
+            }
+
+/*----------------------------------------*/
+
+/*** Education ***/
+    /*Laptop design*/
+    #education-section {
+        visibility: hidden;
+        transition: height 0.3s ease, visibility 0.3s ease;
+    }
+
+    .school {
+        color: red;
+    }
+
+    .degree {
+        text-decoration: underline;
+    }
+
+        /*Mobile design*/
+        #education-section {
+            visibility: hidden;
+            overflow: hidden;
+            transition: height 0.3s ease, visibility 0.3s ease;
+        }
+
+        .school {
+            color: red;
+        }
+
+        
+        #other-exp {
+            flex-direction: column;
+            align-items: center;
+        }
+
+            /*Desktop design*/
+            #education-section {
+                visibility: hidden;
+                overflow: hidden;
+                transition: height 0.3s ease, visibility 0.3s ease;
+            }
+
+            .school {
+                color: red;
+            }
+
+            .degree {
+                text-decoration: underline;
+            }
+
+            #other-exp {
+                width: 95%;
+                display: flex;
+                padding: 1em;
+                margin-bottom: 2em;
+            }
+
+/*----------------------------------------*/
+
 /*** Experiences ***/
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #experience-section {
             padding: .5em;
-            display: none;
+            visibility: hidden;
+            overflow: hidden;
+            transition: height 0.3s ease, visibility 0.3s ease;
         }
 
         #navigation-experience {
@@ -1888,13 +2020,6 @@ html {
             font-size: .8em;
         }
         
-        #other-exp {
-            width: 95%;
-            display: flex;
-            padding: 1em;
-            margin-bottom: 2em;
-        }
-
         .duty-separator {
             display: none;
         }
@@ -1916,19 +2041,6 @@ html {
             justify-self: center;
             margin: .5em .2em;
         }
-        
-        .school {
-            color: red;
-        }
-        
-        .lang {
-            color: green;
-        }
-        
-        .fluency {
-            color: black;
-            font-style: italic;
-        }
 
         .location {
             grid-row: 2;
@@ -1937,10 +2049,6 @@ html {
             align-self: flex-start;
             font-size: 1.5em;
             margin: .2em 0;
-        }
-        
-        .degree {
-            text-decoration: underline;
         }
         
         .work {
@@ -2000,6 +2108,9 @@ html {
                 height: auto;
                 padding: .5em; /* Add padding for smaller screens */
                 flex-direction: column; /* Stack elements vertically */
+                visibility: hidden;
+                overflow: hidden;
+                transition: height 0.3s ease, visibility 0.3s ease;
             }
 
             #resume {
@@ -2072,11 +2183,6 @@ html {
                 margin: 20px auto; /* Add margin to center the line and space it out */
             }
 
-            .fluency {
-                color: black;
-                font-style: italic;
-            }
-
             .position {
                 font-size: .8em;
                 color: black;
@@ -2089,26 +2195,15 @@ html {
                 font-size: 1.3em;
                 margin: .1em 0;
             }
-
-            #other-exp {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .school {
-                color: red;
-            }
-            
-            .lang {
-                color: green;
-            }
         }
 
             /*Desktop design*/
             @media only screen and (min-width: 1500px) {
                 #experience-section {
                     padding: .5em;
-                    display: none;
+                    visibility: hidden;
+                    overflow: hidden;
+                    transition: height 0.3s ease, visibility 0.3s ease;
                 }
         
                 #navigation-experience {
@@ -2144,13 +2239,6 @@ html {
                     color: black;
                     font-size: .8em;
                 }
-                
-                #other-exp {
-                    width: 95%;
-                    display: flex;
-                    padding: 1em;
-                    margin-bottom: 2em;
-                }
 
                 .duty-separator {
                     display: none;
@@ -2173,20 +2261,7 @@ html {
                     justify-self: center;
                     margin: .5em .2em;
                 }
-                
-                .school {
-                    color: red;
-                }
-                
-                .lang {
-                    color: green;
-                }
-                
-                .fluency {
-                    color: black;
-                    font-style: italic;
-                }
-        
+
                 .location {
                     grid-row: 2;
                     text-align: center;
@@ -2194,10 +2269,6 @@ html {
                     align-self: flex-start;
                     font-size: 2.2em;
                     margin: .2em 0;
-                }
-                
-                .degree {
-                    text-decoration: underline;
                 }
                 
                 .work {
