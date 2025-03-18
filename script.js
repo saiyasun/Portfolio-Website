@@ -163,6 +163,16 @@
         let skillsLink = document.getElementById('skills-link');
         let educationLink = document.getElementById('education-link');
 
+        // Mobile nav bar
+        let mobileSandwichMenu = document.getElementById('menu-toggle');
+
+        let mobileProjectLink = document.getElementById('mobile-projects-link');
+        let mobileExperienceLink = document.getElementById('mobile-experience-link');
+        let mobileAllLink = document.getElementById('mobile-all-link');
+        let mobileSkillsLink = document.getElementById('mobile-skills-link');
+        let mobileEducationLink = document.getElementById('mobile-education-link');
+        let allMobileLinks = document.getElementById('mobile-nav-bar');
+
     // ~Functions~
         // Skills, Education, Project and All sections 
         let showProjectsSection = function(event) {
@@ -220,6 +230,17 @@
             allSection.style.display = 'block';
         };
 
+        // Mobile nav bar
+        let showMobileNavBar = function() {
+            allMobileLinks.style.display = 'block';
+            mobileSandwichMenu.style.display = 'none';
+        }
+
+        let hideMobileNavBar = function() {
+            allMobileLinks.style.display = 'none';
+            mobileSandwichMenu.style.display = 'block';
+        }
+
     // ~Events~
         // Skills, Education, Project and All sections 
         skillsLink.addEventListener('click', showSkillsSection);
@@ -227,6 +248,8 @@
         allLink.addEventListener('click', showAllSections);
         educationLink.addEventListener('click', showEducationSection);
         projectLink.addEventListener('click', showProjectsSection);
+
+        // Mobile nav bar
 // <---------------->
 
 // *** Homepage section ***
