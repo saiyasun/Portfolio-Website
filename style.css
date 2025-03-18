@@ -1664,7 +1664,7 @@ html {
                 .project-item {
                     display: grid;
                     grid-template-columns: auto auto;
-                    grid-template-rows: auto auto;
+                    grid-template-rows: 30% auto auto auto;
                     align-items: center;
                     justify-items: center;
                     width: 95%;
@@ -1679,12 +1679,13 @@ html {
                         border: 5px solid blue;
                         width: 100%;
                         max-width: 70%;
+                        min-width: 75px;
                         width: auto;
                         height: auto; /* Ensures aspect ratio is maintained */
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        grid-row: 1 / span 2;
+                        grid-row: 1 / span 4;
                         padding: .5em;
                     }
 
@@ -1734,7 +1735,11 @@ html {
                     }
 
                     .project-separator {
-                        
+                        height: 2px;
+                        width: 100px;
+                        background-color: #000; /* Ensure color contrast */
+                        margin: .3em 0;
+                        grid-column: 2;
                     }
         }
 
