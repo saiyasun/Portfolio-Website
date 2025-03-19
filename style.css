@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         a {
@@ -900,8 +901,8 @@ html {
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #contact-section {
+            border: 5px solid black;
             width: auto;
-            height: auto;
             margin: 0;
             padding: 1em .5em;
             display: flex;
@@ -1040,13 +1041,6 @@ html {
                 justify-content: center;
                 flex-wrap: wrap;
             }
-
-            #resume {
-                padding: .5em;
-                font-size: 3em;
-                margin-top: .5em .2em;
-                border: 5px solid black;
-            }
         }
 
         /*Mobile design*/
@@ -1171,20 +1165,6 @@ html {
                 width: 70%;
                 background-color: #000; /* Black line, you can change the color */
                 margin: 50px 0; /* Add space above and below */
-            }
-
-            #resume {
-                border: 5px solid black;
-                width: 80%;
-                font-size: 2em;
-                text-align: center;
-                padding: .2em .5em;
-                margin: .5em;
-            }
-
-            #resume a {
-                display: inline; /* Ensures links stay on the same line */
-                white-space: nowrap; /* Prevents wrapping */
             }
 
             #contact-title {
@@ -1335,13 +1315,7 @@ html {
                         justify-content: center;
                         flex-wrap: wrap;
                     }
-        
-                    #resume {
-                        padding: .5em;
-                        font-size: 3.5em;
-                        margin-top: .5em .2em;
-                        border: 5px solid black;
-                    }
+                    
             }
 
 /*----------------------------------------*/
@@ -1352,6 +1326,7 @@ html {
         #advertise-me-section {
             width: auto;
             height: auto;
+            max-height: 3000px; /* Set a reasonable height limit */
             padding: 1em .3em;
             margin: 0;
             border: 5px solid black;
@@ -1609,14 +1584,6 @@ html {
                 justify-items: center;
             } 
 
-            .exp-title {
-                border: 5px solid black;
-                padding: .3em;
-                font-size: 2.5em;
-                margin-top: 0;
-                margin-bottom: .5em;
-            }
-
             .projects {
                 overflow-y: auto;
                 width: 90%;
@@ -1830,148 +1797,732 @@ html {
 
 /*** Skills ***/
     /*Laptop design*/
-    #skills-section {
-        display: flex;
-        border: 5px solid black;
-        margin: 0;
-        visibility: hidden;
-        transition: height 0.3s ease, visibility 0.3s ease;
-    }
-
-    .lang {
-        color: green;
-    }
-
-        .progress-container {
-            border: 5px solid black;
-            width: 100%;  /* Set the width of the container */
-            height: 35px;  /* Height of the bar */
-            background-color: #f3f3f3;  /* Light grey background for the empty part of the bar */
-            border-radius: 5px;  /* Rounded corners */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: for a slight shadow effect */
-           
-        }
-        
-        .progress-bar {
-            height: 100%;  /* Fill the container */
-            background-color: #4caf50;  /* Green color for the filled part */
-            border-radius: 5px;  /* Match the rounded corners of the container */
-        }
-
-        #mandarin {
-            width: 90%;  /* Set the width to 80% */
-        }
-
-        .percentage-container {
+    @media only screen and (min-width: 769px) {
+        #skills-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: auto;
-            height: 70px;
+            padding: 1em .5em;
+            margin: 0;
             gap: 1em;
-        }
-    
-    .fluency {
-        color: black;
-        font-style: italic;
-    }
-
-    #other-exp {
-        width: 95%;
-        display: flex;
-        padding: 1em;
-        margin-bottom: 2em;
-    }
-
-    .languages {
-        border: 5px solid red;
-        padding: .5em 1em;
-    }
-
-        /*Mobile design*/
-        #skills-section {
             visibility: hidden;
             transition: height 0.3s ease, visibility 0.3s ease;
         }
 
-        .fluency {
-            color: black;
-            font-style: italic;
+        .language-div {
+            border: 5px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 55%;
+            padding: .5em;
         }
 
-        .lang {
-            color: green;
-        }
+            #language-title {
+                border: 5px solid black;
+                width: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .3em ;
+                font-size: 2.5em;
+                margin-top: .3em;
+                margin-bottom: .5em;
+            }
 
-            /*Desktop design*/
-            #skills-section {
-                visibility: hidden;
-                transition: height 0.3s ease, visibility 0.3s ease;
+            #all-languages {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                padding: .5em;
+                gap: 1em;
+                width: 95%;
+            }
+
+            .fluency {
+                color: black;
+                font-style: italic;
             }
 
             .lang {
                 color: green;
             }
+        
+            .languages {
+                padding: .5em 1em;
+                width: 90%;
+                height: auto;
+                max-height: 250px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .progress-container {
+                border: 5px solid black;
+                width: 100%;  /* Set the width of the container */
+                height: 35px;  /* Height of the bar */
+                background-color: #f3f3f3;  /* Light grey background for the empty part of the bar */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: for a slight shadow effect */
             
-            .fluency {
-                color: black;
-                font-style: italic;
+            }
+            
+            .progress-bar {
+                height: 100%;  /* Fill the container */
+                background-color: #4caf50;  /* Green color for the filled part */
+                border-radius: 5px;  /* Match the rounded corners of the container */
+            }
+
+                #mandarin {
+                    width: 90%;  /* Set the width to 90% */
+                }
+
+                #cantonese {
+                    width: 90%;  /* Set the width to 90% */
+                }
+
+            .percentage-container {
+                padding: .5em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 97%;
+                height: 70px;
+                gap: 1em;
+            }
+
+        #certifications {
+            border: 5px solid black;
+            width: 100%;
+            max-width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-self: flex-start;
+            padding: .5em;
+        }
+
+            #certification-title {
+                border: 5px solid black;
+                padding: .3em;
+                font-size: 2.5em;
+                width: auto;
+                margin-top: 0;
+                margin-bottom: .5em;
+            }
+
+            .certs {
+                width: 90%;
+                padding: .5em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .certification-div {
+                padding: 1em;
+                width: 95%;
+                display: flex;
+                flex-direction: column;
+                gap: .2em;
+                align-items: center;
+            }
+
+            .cert-separator {
+                height: 2px;
+                background-color: black;
+                width: 200px;
+                margin: .5em 0;
+            }
+        }
+            /*Mobile design*/
+            @media only screen and (max-width: 768px) {
+                #skills-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 1em .5em;
+                    margin: 0;
+                    gap: 1em;
+                    width: 95%;
+                    visibility: hidden;
+                    transition: height 0.3s ease, visibility 0.3s ease;
+                }
+        
+                .language-div {
+                    border: 5px solid black;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 95%;
+                    padding: .5em;
+                }
+        
+                    #language-title {
+                        border: 5px solid black;
+                        width: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .3em ;
+                        font-size: 2.5em;
+                        margin-top: .3em;
+                        margin-bottom: .5em;
+                    }
+        
+                    #all-languages {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .5em;
+                        gap: 1em;
+                        width: 95%;
+                    }
+        
+                    .fluency {
+                        color: black;
+                        font-style: italic;
+                    }
+        
+                    .lang {
+                        color: green;
+                    }
+                
+                    .languages {
+                        padding: .5em 1em;
+                        width: 92%;
+                        height: auto;
+                        max-height: 250px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+        
+                    .progress-container {
+                        border: 5px solid black;
+                        width: 100%;  /* Set the width of the container */
+                        height: 35px;  /* Height of the bar */
+                        background-color: #f3f3f3;  /* Light grey background for the empty part of the bar */
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: for a slight shadow effect */
+                    }
+                    
+                    .progress-bar {
+                        height: 100%;  /* Fill the container */
+                        background-color: #4caf50;  /* Green color for the filled part */
+                        border-radius: 5px;  /* Match the rounded corners of the container */
+                    }
+        
+                        #mandarin {
+                            width: 90%;  /* Set the width to 90% */
+                        }
+        
+                        #cantonese {
+                            width: 90%;  /* Set the width to 90% */
+                        }
+        
+                    .percentage-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%; /* Ensures it takes full width of its parent */
+                        max-width: 95%; /* Prevents it from exceeding the parent's width */
+                        height: 70px;
+                        gap: 1em;
+                        padding: .5em;
+                    }
+        
+                #certifications {
+                    border: 5px solid black;
+                    width: 100%;
+                    max-width: 95%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    align-self: center;
+                    padding: .5em;
+                }
+        
+                    #certification-title {
+                        border: 5px solid black;
+                        padding: .3em;
+                        font-size: 2.5em;
+                        width: auto;
+                        margin-top: 0;
+                        margin-bottom: .5em;
+                    }
+        
+                    .certs {
+                        width: 90%;
+                        padding: .5em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+        
+                    .certification-div {
+                        padding: 1em;
+                        width: 95%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: .2em;
+                        align-items: center;
+                        justify-content: center;
+                    }
+        
+                    .cert-separator {
+                        height: 2px;
+                        background-color: black;
+                        width: 200px;
+                        margin: .5em 0;
+                    }
+            }
+
+            /*Desktop design*/
+            @media only screen and (min-width: 1500px) {
+                #skills-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1em .5em;
+                    margin: 0;
+                    gap: 1em;
+                    visibility: hidden;
+                    transition: height 0.3s ease, visibility 0.3s ease;
+                }
+        
+                .language-div {
+                    border: 5px solid black;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 55%;
+                    padding: .5em;
+                }
+        
+                    #language-title {
+                        border: 5px solid black;
+                        width: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .3em ;
+                        font-size: 3em;
+                        margin-top: .1em;
+                        margin-bottom: .5em;
+                    }
+        
+                    #all-languages {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .5em;
+                        gap: 1em;
+                        width: 95%;
+                    }
+        
+                    .fluency {
+                        color: black;
+                        font-style: italic;
+                        font-size: 1.2em;
+                    }
+        
+                    .lang {
+                        color: green;
+                        font-size: 1.5em;
+                    }
+
+                    .lang-percent {
+                        font-size: 1.8em;
+                    }
+                
+                    .languages {
+                        padding: .5em 1em;
+                        width: 90%;
+                        height: auto;
+                        max-height: 250px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+        
+                    .progress-container {
+                        border: 5px solid black;
+                        width: 100%;  /* Set the width of the container */
+                        height: 55px;  /* Height of the bar */
+                        background-color: #f3f3f3;  /* Light grey background for the empty part of the bar */
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: for a slight shadow effect */
+                    
+                    }
+                    
+                    .progress-bar {
+                        height: 100%;  /* Fill the container */
+                        background-color: #4caf50;  /* Green color for the filled part */
+                        border-radius: 5px;  /* Match the rounded corners of the container */
+                    }
+        
+                        #mandarin {
+                            width: 90%;  /* Set the width to 90% */
+                        }
+        
+                        #cantonese {
+                            width: 90%;  /* Set the width to 90% */
+                        }
+        
+                    .percentage-container {
+                        padding: .5em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 97%;
+                        height: 70px;
+                        gap: 1em;
+                    }
+        
+                #certifications {
+                    border: 5px solid black;
+                    width: 100%;
+                    max-width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    align-self: flex-start;
+                    padding: .5em;
+                }
+        
+                    #certification-title {
+                        border: 5px solid black;
+                        padding: .3em;
+                        font-size: 3em;
+                        width: auto;
+                        margin-top: 0;
+                        margin-bottom: .5em;
+                    }
+        
+                    .certs {
+                        width: 90%;
+                        padding: .5em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+        
+                    .certification-div {
+                        padding: 1em;
+                        width: 95%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: .2em;
+                        align-items: center;
+                    }
+
+                    .cert-name {
+                        font-size: 2.5em;
+                        text-align: center;
+                    }
+        
+                    .cert-separator {
+                        height: 2px;
+                        background-color: black;
+                        width: 200px;
+                        margin: .5em 0;
+                    }
             }
 
 /*----------------------------------------*/
 
 /*** Education ***/
     /*Laptop design*/
-    #education-section {
-        visibility: hidden;
-        transition: height 0.3s ease, visibility 0.3s ease;
-    }
-
-    .school {
-        color: red;
-    }
-
-    .degree {
-        text-decoration: underline;
-    }
-
-        /*Mobile design*/
+    @media only screen and (min-width: 769px) {
         #education-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1em;
+            margin: 0;
             visibility: hidden;
-            overflow: hidden;
             transition: height 0.3s ease, visibility 0.3s ease;
         }
 
-        .school {
-            color: red;
+        .education-div {
+            padding: .5em 1em;
+            display: flex;
+            flex-direction: column;
+            width: 99%;
+            gap: 1em;
         }
 
-        
-        #other-exp {
-            flex-direction: column;
+        .education {
+            border: 5px solid black;
+            padding: .5em;
+            display: grid;
+            grid-template-columns: 45% auto 40%;
+            grid-template-rows: 50% auto auto;
             align-items: center;
+            justify-items: center;
+            font-size: 2em;
+        }
+
+        #education-title {
+            font-size: 2.5em;
+        }
+
+        .education-location {
+            padding: .5em;
+            font-size: 1.2em;
+            text-align: end;
+            grid-row: 3;
+            grid-column: 1;
+            width: 90%;
+            justify-self: flex-end;
+        }
+
+        .school {
+            border: 5px solid black;
+            color: red;
+            text-align: center;
+            padding: .5em;
+            font-weight: bold;
+            grid-row: 1;
+            grid-column: 1 /span 3;
+        }
+
+        .education-date {
+            grid-row: 4;
+            grid-column: 1 / span 3;
+            padding: .5em;
+        }
+
+        .education-separator {
+            height: 2px;
+            background-color: black;
+            width: 200px;
+            grid-row: 2;
+            grid-column: 1 / span 3;
+        }
+
+        .education-separator2 {
+            height: 50px;
+            background-color: black;
+            width: 2px;
+            grid-row: 3;
+            grid-column: 2;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        .degree {
+            color: blue;
+            text-align: start;
+            padding: .5em;
+            text-decoration: underline;
+            grid-column: 3;
+            grid-row: 3;
+            width: 83%;
+            font-size: 1em;
+            justify-self: flex-start;
+        }
+    }
+        /*Mobile design*/
+        @media only screen and (max-width: 768px) {
+            #education-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: .5em;
+                margin: 0;
+                visibility: hidden;
+                transition: height 0.3s ease, visibility 0.3s ease;
+            }
+    
+            .education-div {
+                padding: .5em 1em;
+                display: flex;
+                flex-direction: column;
+                width: 99%;
+                gap: 1em;
+            }
+    
+            .education {
+                border: 5px solid black;
+                padding: .5em;
+                display: grid;
+                grid-template-columns: 45% auto 40%;
+                grid-template-rows: 50% auto auto;
+                align-items: center;
+                justify-items: center;
+                font-size: 1em;
+            }
+    
+            #education-title {
+                font-size: 2.5em;
+            }
+    
+            .education-location {
+                padding: .5em;
+                font-size: 1.3em;
+                text-align: end;
+                grid-row: 3;
+                grid-column: 1;
+                width: 90%;
+                justify-self: flex-end;
+            }
+    
+            .school {
+                border: 5px solid black;
+                color: red;
+                text-align: center;
+                padding: .5em;
+                font-weight: bold;
+                font-size: 1.7em;
+                grid-row: 1;
+                grid-column: 1 /span 3;
+            }
+    
+            .education-date {
+                grid-row: 4;
+                grid-column: 1 / span 3;
+                padding: .5em;
+            }
+    
+            .education-separator {
+                height: 2px;
+                background-color: black;
+                width: 200px;
+                grid-row: 2;
+                grid-column: 1 / span 3;
+            }
+    
+            .education-separator2 {
+                height: 50px;
+                background-color: black;
+                width: 2px;
+                grid-row: 3;
+                grid-column: 2;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+    
+            .degree {
+                color: blue;
+                text-align: start;
+                padding: .5em;
+                text-decoration: underline;
+                grid-column: 3;
+                grid-row: 3;
+                width: 83%;
+                font-size: 1.2em;
+                justify-self: flex-start;
+            }
         }
 
             /*Desktop design*/
-            #education-section {
-                visibility: hidden;
-                overflow: hidden;
-                transition: height 0.3s ease, visibility 0.3s ease;
-            }
-
-            .school {
-                color: red;
-            }
-
-            .degree {
-                text-decoration: underline;
-            }
-
-            #other-exp {
-                width: 95%;
-                display: flex;
-                padding: 1em;
-                margin-bottom: 2em;
+            @media only screen and (min-width: 1500px) {
+                #education-section {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1em;
+                    margin: 0;
+                    visibility: hidden;
+                    transition: height 0.3s ease, visibility 0.3s ease;
+                }
+        
+                .education-div {
+                    padding: .5em 1em;
+                    display: flex;
+                    flex-direction: column;
+                    width: 99%;
+                    gap: 1em;
+                }
+        
+                .education {
+                    border: 5px solid black;
+                    padding: .5em;
+                    display: grid;
+                    grid-template-columns: 45% auto 40%;
+                    grid-template-rows: 50% auto auto
+                    5;
+                    align-items: center;
+                    justify-items: center;
+                    font-size: 2em;
+                }
+        
+                #education-title {
+                    font-size: 3.5em;
+                }
+        
+                .education-location {
+                    padding: .5em;
+                    font-size: 1.2em;
+                    text-align: end;
+                    grid-row: 3;
+                    grid-column: 1;
+                    width: 90%;
+                    justify-self: flex-end;
+                }
+        
+                .school {
+                    border: 5px solid black;
+                    color: red;
+                    text-align: center;
+                    padding: .5em;
+                    font-weight: bold;
+                    font-weight: 3em;
+                    grid-row: 1;
+                    grid-column: 1 /span 3;
+                }
+        
+                .education-date {
+                    grid-row: 4;
+                    grid-column: 1 / span 3;
+                    padding: .5em;
+                }
+        
+                .education-separator {
+                    height: 2px;
+                    background-color: black;
+                    width: 200px;
+                    grid-row: 2;
+                    grid-column: 1 / span 3;
+                }
+        
+                .education-separator2 {
+                    height: 50px;
+                    background-color: black;
+                    width: 2px;
+                    grid-row: 3;
+                    grid-column: 2;
+                    margin-left: 1em;
+                    margin-right: 1em;
+                }
+        
+                .degree {
+                    color: blue;
+                    text-align: start;
+                    padding: .5em;
+                    text-decoration: underline;
+                    grid-column: 3;
+                    grid-row: 3;
+                    width: 83%;
+                    font-size: 1em;
+                    justify-self: flex-start;
+                }
             }
 
 /*----------------------------------------*/
@@ -1983,6 +2534,10 @@ html {
             padding: .5em;
             visibility: hidden;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             transition: height 0.3s ease, visibility 0.3s ease;
         }
 
@@ -2004,15 +2559,6 @@ html {
             gap: 20px; /* Space between items */
             margin-bottom: 1em;
         }
-        
-        .exp {
-            padding: 1em;
-            width: 95%;
-            display: flex;
-            flex-direction: column;
-            gap: .2em;
-            align-items: center;
-        }
 
         .position {
             font-weight: bold;
@@ -2030,16 +2576,6 @@ html {
             width: 90%;
             background-color: black;
             margin: 20px;
-        }
-        
-        .exp-title {
-            padding: .3em;
-            font-size: 2.5em;
-            text-align: center;
-            width: 60%;
-            align-self: center;
-            justify-self: center;
-            margin: .5em .2em;
         }
 
         .location {
@@ -2069,6 +2605,11 @@ html {
             margin-bottom: .5em;
             font-size: 2em;
         }
+
+        .exp-title {
+            font-size: 2.5em;
+            padding: .3em;
+        }
         
         .date {
             padding: 0 .5em;
@@ -2093,7 +2634,8 @@ html {
         }
         
         #resume {
-            font-size: 2rem;
+            border: 5px solid black;
+            font-size: 2.5em;
             width: auto;
             padding: 0 .5em;
             text-align: center;
@@ -2107,36 +2649,22 @@ html {
                 width: auto; /* Adjust width to 100% for smaller screens */
                 height: auto;
                 padding: .5em; /* Add padding for smaller screens */
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 flex-direction: column; /* Stack elements vertically */
                 visibility: hidden;
                 overflow: hidden;
                 transition: height 0.3s ease, visibility 0.3s ease;
             }
 
-            #resume {
-                border: 5px solid black;
-                width: 90%;
-                font-size: 1.5em;
-                text-align: center;
-                padding: .2em .5em;
-                margin: 1em 0;
-            }
-    
-            #resume a {
-                display: inline; /* Ensures links stay on the same line */
-                white-space: nowrap; /* Prevents wrapping */
+            .experiences {
+                margin-bottom: 1em;
             }
 
             .exp-title {
-                padding: .3em;
                 font-size: 2em;
-                margin-top: 0;
-                margin-bottom: .5em;
-                text-align: center;
-            }
-
-            .experiences {
-                margin-bottom: 1em;
+                padding: .3em;
             }
 
             .work {
@@ -2164,7 +2692,6 @@ html {
 
             .work-name {
                 text-align: center;
-                align-self: flex-end;
                 color: blue;
                 margin-bottom: .1em;
                 font-size: 1.7em;
@@ -2194,6 +2721,20 @@ html {
                 justify-self: center;
                 font-size: 1.3em;
                 margin: .1em 0;
+            }
+
+            #resume {
+                border: 5px solid black;
+                width: 80%;
+                font-size: 2em;
+                text-align: center;
+                padding: .2em .5em;
+                margin: .5em;
+            }
+
+            #resume a {
+                display: inline; /* Ensures links stay on the same line */
+                white-space: nowrap; /* Prevents wrapping */
             }
         }
 
@@ -2225,14 +2766,11 @@ html {
                     margin-bottom: 1em;
                 }
                 
-                .exp {
-                    padding: 1em;
-                    width: 95%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: .2em;
-                    align-items: center;
+                .exp-title {
+                    font-size: 3em;
+                    padding: .3em;
                 }
+    
         
                 .position {
                     font-weight: bold;
@@ -2250,16 +2788,6 @@ html {
                     width: 90%;
                     background-color: black;
                     margin: 20px;
-                }
-                
-                .exp-title {
-                    padding: .3em;
-                    font-size: 3.5em;
-                    text-align: center;
-                    width: 60%;
-                    align-self: center;
-                    justify-self: center;
-                    margin: .5em .2em;
                 }
 
                 .location {
@@ -2309,6 +2837,13 @@ html {
                 
                 .duties li {
                     padding: .2em;
+                }
+
+                #resume {
+                    padding: .5em;
+                    font-size: 3.5em;
+                    margin-top: .5em .2em;
+                    border: 5px solid black;
                 }
             }
             

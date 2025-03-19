@@ -126,13 +126,12 @@
             <!--\ Navigation /-->
                 <!--\ *Mobile navigation* /-->
                 <div id="mobile-projects-nav">
-                    <button id="menu-toggle">☰ Menu</button>
+                    <button id="menu-toggle">☰</button>
                     <div id="mobile-nav-links">
                         <a href="#project-section" id="mobile-projects-link">Projects</a>
                         <a href="#experience-section" id="mobile-experience-link">Experience</a>
                         <a href="#education-section" id="mobile-education-link">Education</a>
                         <a href="#skills-section" id="mobile-skills-link">Skills & Certs</a>
-                        <a href="#all-experience-section" id="mobile-all-link">ALL</a>
                     </div>
                 </div>
 
@@ -141,8 +140,7 @@
                     <a href="#project-section" id="projects-link">Projects</a> • 
                     <a href="#experience-section" id="experience-link">Experience</a> • 
                     <a href="#education-section" id="education-link">Education</a> • 
-                    <a href="#skills-section" id="skills-link">Skills & Certs</a> • 
-                    <a href="#all-experience-section" id="all-link">ALL</a>
+                    <a href="#skills-section" id="skills-link">Skills & Certs</a>
                 </nav>
 
             <!--\ Projects section /-->
@@ -191,7 +189,6 @@
 
                         <hr class = "experience-separator">
                         
-
                     </div>
                 </div>
             </section>
@@ -199,78 +196,119 @@
             <!--\ Skills and language section /-->
             <section id="skills-section">
                 <!--Languages-->
-                <div class="exp" class="languages">
-                    <h1 class="exp-title">Languages</h1>
-                    <div class="languages">
-                        <h2><span class="lang">English: </span>
-                            <span class="fluency"> Fluent (Written & Spoken)</span></h2>
-                            <p class="cert-name"><strong><a target="_blank" href="docs/linguaskill.pdf">(Linguaskill English test result : 176/180+ B2)</a></strong></p>
-                    </div>
-                    <div class="languages">
-                        <h2><span class="lang">Chinese Mandarin: </span>
-                            <span class="fluency"> Fluent (Written & Spoken)</span></h2>
-                            <div class="percentage-container">
-                                <div class="progress-container">
-                                    <div class="progress-bar" id="mandarin"></div>
+                <div class="language-div">
+                    <h1 id="language-title">Languages</h1>
+
+                    <div id="all-languages">
+
+                        <div class="languages">
+                            <h2><span class="lang" id="english-lang">English: </span>
+                                <span class="fluency"> Fluent (Written & Spoken)</span></h2>
+                                <div class="percentage-container">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="english"></div>
+                                    </div>
+                                    <h2 class="lang-percent">90%</h2> <!--Percentage-->
                                 </div>
-                                <h2>90%</h2>
-                            </div>
-                    </div>
-                    <div class="languages">
-                        <h2><span class="lang">Cantonese: </span>
-                            <span class="fluency"> Fluent (Spoken)</span></h2>
-                    </div>
-                    <div class="languages">
-                        <h2><span class="lang">Hokkien/Minnan: </span>
-                            <span class="fluency"> Conversational (Spoken)</span></h2>
-                    </div>
-                    <div class="languages">
-                        <h2><span class="lang">Malay: </span>
-                            <span class="fluency"> Conversational (Spoken)</span></h2>
+                        </div>
+                        <div class="languages">
+                            <h2><span class="lang" id="mandarin-lang">Chinese Mandarin: </span>
+                                <span class="fluency"> Fluent (Written & Spoken)</span></h2>
+                                <div class="percentage-container">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="mandarin"></div>
+                                    </div>
+                                    <h2 class="lang-percent">90%</h2> <!--Percentage-->
+                                </div>
+                        </div>
+                        <div class="languages">
+                            <h2><span class="lang" id="cantonese-lang">Cantonese: </span>
+                                <span class="fluency"> Fluent (Spoken)</span></h2>
+                                <div class="percentage-container">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="cantonese"></div>
+                                    </div>
+                                    <h2 class="lang-percent">90%</h2> <!--Percentage-->
+                                </div>
+                        </div>
+                        <div class="languages">
+                            <h2><span class="lang" id="hokkien-lang">Hokkien/Minnan: </span>
+                                <span class="fluency"> Conversational (Spoken)</span></h2>
+                                <div class="percentage-container">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="hokkien"></div>
+                                    </div>
+                                    <h2 class="lang-percent">90%</h2> <!--Percentage-->
+                                </div>
+                        </div>
+                        <div class="languages">
+                            <h2><span class="lang" id="malay-lang">Malay: </span>
+                                <span class="fluency"> Conversational (Spoken)</span></h2>
+                                <div class="percentage-container">
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="malay"></div>
+                                    </div>
+                                    <h2 class="lang-percent">90%</h2> <!--Percentage-->
+                                </div>
+                        </div>
+                        
                     </div>
                 </div>
 
-                <div id="other-exp">
+                <div id="certifications">
+                    <h1 id="certification-title">Certifications</h1>
                     <!--Certifications-->
-                    <div class="exp">
-                        <h1 class="exp-title">Certifications</h1>
+                    <div class="certification-div">
+                        
                         <div class="certs">
-                            <h2 class="cert-name"><a href="docs/TESOL.pdf">TESOL</a></h2>
+                            <h2 class="cert-name"><a target="_blank" href="docs/TESOL.pdf">TESOL</a></h2>
                         </div>
+                        <hr class="cert-separator">
                         <div class="certs">
-                            <h2 class="cert-name"><a href="docs/TEFL.pdf">TEFL</a></h2>
+                            <h2 class="cert-name"><a target="_blank" href="docs/TEFL.pdf">TEFL</a></h2>
                         </div>
+                        <hr class="cert-separator">
+                        <div class="certs">
+                            <h2 class="cert-name"><a target="_blank" href="docs/linguaskill.pdf">Linguaskill (176/180+ B2)</a></h2>
+                        </div>
+                        <hr class="cert-separator">
                         <div class="certs">
                             <h2 class="cert-name">Grade 5 Violin Level 2 Certificate</h2>
                         </div>
+
                     </div>
                 </div>
             </section>
 
-            <!--\ Skills and language section /-->
+            <!--\ Education section /-->
             <section id="education-section">
+                <h1 id="education-title">Education</h1>
+
                 <!--Education-->
-                <div class="exp">
-                    <h1 class="exp-title">Education</h1>
-                    <div  class="education">
-                        <h2 class="school">National Ilan University, 
-                            <span class="location"> <em>- Yilan, Taiwan</em></span>
-                        </h2>
+                <div class="education-div">
+
+                    <div class="education">
+                        <h2 class="school">National Ilan University</h2>
+
+                        <hr class="education-separator">
+
+                            <h3 class="education-location"><em>|Yilan, Taiwan|</em></h3> <hr class="education-separator2">
                         <h3 class="degree"><a href="docs/diploma.pdf">Bachelor of Arts in Foreign Language and Literature</a></h3>
                     </div>
                     <div  class="education">
-                        <h2 class="school">Jit Sin Independent High School,
-                            <span class="location"> <em>-  Bukit Mertajam, Malaysia</em></span>
-                        </h2>
+                        <h2 class="school">Jit Sin Independent High School</h2>
+
+                        <hr class="education-separator">
+
+                            <h3 class="education-location"><em>|Bukit Mertajam, Malaysia|</em></h3> <hr class="education-separator2">
                         <h3 class="degree">High School Diploma</h3>
                     </div>
+
                 </div>
             </section>
 
-            <!--\ Skills and language section /-->
-            <section id="all-experience-section">
-                <h1>Everything</h1>
-            </section>
+            <!--\ Everything section /-->
+            
 
         </section>
         
