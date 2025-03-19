@@ -1877,11 +1877,23 @@ html {
             }
 
                 #mandarin {
-                    width: 90%;  /* Set the width to 90% */
+                    width: 100%;  /* Set the width to 90% */
                 }
 
                 #cantonese {
-                    width: 90%;  /* Set the width to 90% */
+                    width: 100%;  /* Set the width to 90% */
+                }
+
+                #malay {
+                    width: 50%;  /* Set the width to 90% */
+                }
+
+                #hokkien {
+                    width: 80%;  /* Set the width to 90% */
+                }
+
+                #english {
+                    width: 95%;  /* Set the width to 90% */
                 }
 
             .percentage-container {
@@ -1965,7 +1977,6 @@ html {
                 }
         
                     #language-title {
-                        border: 5px solid black;
                         width: auto;
                         display: flex;
                         align-items: center;
@@ -2020,13 +2031,25 @@ html {
                         border-radius: 5px;  /* Match the rounded corners of the container */
                     }
         
-                        #mandarin {
-                            width: 90%;  /* Set the width to 90% */
-                        }
-        
-                        #cantonese {
-                            width: 90%;  /* Set the width to 90% */
-                        }
+                    #mandarin {
+                        width: 100%;  /* Set the width to 90% */
+                    }
+    
+                    #cantonese {
+                        width: 100%;  /* Set the width to 90% */
+                    }
+    
+                    #malay {
+                        width: 50%;  /* Set the width to 90% */
+                    }
+    
+                    #hokkien {
+                        width: 80%;  /* Set the width to 90% */
+                    }
+    
+                    #english {
+                        width: 95%;  /* Set the width to 90% */
+                    }
         
                     .percentage-container {
                         display: flex;
@@ -2052,11 +2075,10 @@ html {
                 }
         
                     #certification-title {
-                        border: 5px solid black;
                         padding: .3em;
                         font-size: 2.5em;
                         width: auto;
-                        margin-top: 0;
+                        margin-top: .3em;
                         margin-bottom: .5em;
                     }
         
@@ -2172,13 +2194,25 @@ html {
                         border-radius: 5px;  /* Match the rounded corners of the container */
                     }
         
-                        #mandarin {
-                            width: 90%;  /* Set the width to 90% */
-                        }
-        
-                        #cantonese {
-                            width: 90%;  /* Set the width to 90% */
-                        }
+                    #mandarin {
+                        width: 100%;  /* Set the width to 90% */
+                    }
+    
+                    #cantonese {
+                        width: 100%;  /* Set the width to 90% */
+                    }
+    
+                    #malay {
+                        width: 50%;  /* Set the width to 90% */
+                    }
+    
+                    #hokkien {
+                        width: 80%;  /* Set the width to 90% */
+                    }
+    
+                    #english {
+                        width: 95%;  /* Set the width to 90% */
+                    }
         
                     .percentage-container {
                         padding: .5em;
