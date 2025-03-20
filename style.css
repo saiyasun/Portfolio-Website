@@ -909,7 +909,6 @@ html {
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
         #contact-section {
-            border: 5px solid black;
             width: auto;
             margin: 0;
             padding: 1em .5em;
@@ -1508,7 +1507,7 @@ html {
         }
 
         #project-container {
-            border: 5px dotted blue;
+            border: 5px solid black;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1529,7 +1528,6 @@ html {
         }
 
         .project-percentage-container {
-            border: 5px solid green;
             margin: 0 .5em 1em .5em;
             padding: .1em .5em;
             box-sizing: content-box;
@@ -1550,7 +1548,6 @@ html {
         }
 
         .project-tools-title {
-            border: 5px dotted yellow;
             padding: .2em .3em;
             margin: 0;
             width: 40%;
@@ -1558,7 +1555,6 @@ html {
         }
 
         .project-tools {
-            border: 5px dotted purple;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1570,7 +1566,7 @@ html {
         }
 
         .project-tools li {
-            border: 5px dotted blue;
+            border: 5px solid black;
             display: inline-flex;
             padding: .3em;
             text-align: center;
@@ -1599,8 +1595,8 @@ html {
                 margin-bottom: 1em;
                 height: 700px;
                 width: 85%;
-                min-width: 450px;
                 scroll-snap-align: start;
+                flex-shrink: 0;
             }
 
                 .projects h3 {
@@ -1675,8 +1671,6 @@ html {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                scroll-padding-left: 1em; /* Ensures the first item is fully visible */
-                scroll-snap-type: x mandatory; /* Optional: makes scrolling snap to items */
             }
 
                 #all-experience-section {
@@ -1725,6 +1719,75 @@ html {
                         object-fit: cover;
                     }
                     
+                    #project-container {
+                        border: 5px dotted black;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .5em;
+                        width: 99%;
+                    }
+
+                    .project-tools-container {
+                        border: 5px dotted blue;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        width: 90%;
+                        gap: 1em;
+                        padding: .5em;
+                        box-sizing: border-box;
+                    }
+
+                    .project-tools {
+                        border: 5px dotted red;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .5em;
+                        width: 90%;
+                        margin: 0;
+                        overflow-x: auto;
+                        gap: .5em;
+                    }
+
+                    .project-tools-title {
+                        border: 5px dotted green;
+                        margin: 0;
+                        padding: .3em .5em;
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.5em;
+                    }
+
+                    .project-tools li {
+                        border: 5px dotted purple;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .5em;
+                        font-size: 1.2em;
+                        border-radius: 50%;
+                        height: 30px;
+                        width: 30px;
+                        white-space: nowrap; /* Keeps text inside */
+                    }
+
+                    .project-percentage-container {
+                        margin: 0 .5em 1em .5em;
+                        padding: .1em .5em;
+                        box-sizing: content-box;
+                        width: 90%;
+                    }
+
+                    #name-guesser-progress {
+                        width: 1%;
+                        background-color: red;
+                    }
 
                     #project-title {
                         padding: .1em .3em;
@@ -1778,11 +1841,20 @@ html {
                     justify-items: center;
                 } 
         
-                #project-title {
+                .project-item h3 {
                     padding: .3em;
                     font-size: 2.5em;
-                    margin-top: 0;
                     margin-bottom: .5em;
+                }
+
+                .project-name {
+                    width: 80%;
+                    text-align: center;
+                    align-content: center;
+                    padding: .5em 1em;
+                    text-wrap: wrap;
+                    text-decoration: underline;
+                    font-size: 2em;
                 }
         
                 #navigation-project {
@@ -1804,7 +1876,6 @@ html {
                 }
         
                 #project-container {
-                    border: 5px dotted blue;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1825,12 +1896,12 @@ html {
                 }
         
                 .project-percentage-container {
-                    border: 5px solid green;
                     margin: 0 .5em 1em .5em;
                     padding: .1em .5em;
                     width: 95%;
                     max-width: 90%;
                 }
+                
                 .project-tools-container {
                     border: 5px solid black;
                     display: flex;
@@ -1844,7 +1915,6 @@ html {
                 }
         
                 .project-tools-title {
-                    border: 5px dotted yellow;
                     padding: .2em .3em;
                     margin: 0;
                     width: 40%;
@@ -1853,7 +1923,6 @@ html {
                 }
         
                 .project-tools {
-                    border: 5px dotted purple;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -1865,7 +1934,7 @@ html {
                 }
         
                 .project-tools li {
-                    border: 5px dotted blue;
+                    border: 5px solid black;
                     display: inline-flex;
                     padding: .3em;
                     text-align: center;
@@ -1899,23 +1968,13 @@ html {
                         scroll-snap-align: start;
                     }
 
-                        .project-name {
-                            border: 5px solid black;
-                            width: 80%;
-                            text-align: center;
-                            align-content: center;
-                            padding: .5em 1em;
-                            text-wrap: wrap;
-                            text-decoration: underline;
-                            font-size: 2em;
-                        }
         
-                            .project-separator {
-                                height: 2px;
-                                width: 100px;
-                                background-color: #000; /* Ensure color contrast */
-                                margin: .3em 0; /* Adjust margin to create space above and below */
-                            }
+                        .project-separator {
+                            height: 2px;
+                            width: 100px;
+                            background-color: #000; /* Ensure color contrast */
+                            margin: .3em 0; /* Adjust margin to create space above and below */
+                        }
         
                         .projects p {
                             width: 80%;
@@ -2176,23 +2235,10 @@ html {
                     }
         
                     #mandarin {
-                        width: 100%;  /* Set the width to 90% */
+                        width: 10%;  /* Set the width to 90% */
                     }
-    
-                    #cantonese {
-                        width: 100%;  /* Set the width to 90% */
-                    }
-    
-                    #malay {
-                        width: 50%;  /* Set the width to 90% */
-                    }
-    
-                    #hokkien {
-                        width: 80%;  /* Set the width to 90% */
-                    }
-    
                     #english {
-                        width: 95%;  /* Set the width to 90% */
+                        width: 100%;  /* Set the width to 90% */
                     }
         
                     .percentage-container {
@@ -2539,7 +2585,7 @@ html {
                 border: 5px solid black;
                 padding: .5em;
                 display: grid;
-                grid-template-rows: 30% auto auto auto auto;
+                grid-template-rows: 30% auto auto auto auto auto;
                 align-items: center;
                 justify-items: center;
                 font-size: 1em;
@@ -2572,8 +2618,9 @@ html {
             }
     
             .education-date {
-                grid-row: 4;
+                grid-row: 6;
                 padding: .5em;
+                font-size: 1.2em;
             }
     
             .education-separator {
