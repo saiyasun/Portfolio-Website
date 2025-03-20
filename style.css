@@ -1720,7 +1720,7 @@ html {
                     }
                     
                     #project-container {
-                        border: 5px dotted black;
+                        border: 5px solid black;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -1730,7 +1730,7 @@ html {
                     }
 
                     .project-tools-container {
-                        border: 5px dotted blue;
+                        border: 5px solid black;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1742,7 +1742,6 @@ html {
                     }
 
                     .project-tools {
-                        border: 5px dotted red;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1754,7 +1753,6 @@ html {
                     }
 
                     .project-tools-title {
-                        border: 5px dotted green;
                         margin: 0;
                         padding: .3em .5em;
                         width: 50%;
@@ -1765,7 +1763,7 @@ html {
                     }
 
                     .project-tools li {
-                        border: 5px dotted purple;
+                        border: 5px solid black;
                         display: flex;
                         align-items: center;
                         justify-content: center;
