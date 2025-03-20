@@ -1534,37 +1534,39 @@ html {
             padding: .1em .5em;
             box-sizing: content-box;
             width: 90%;
+            max-width: 90%;
         }
 
         .project-tools-container {
             border: 5px solid black;
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
-            width: 100%;
+            width: 95%;
             box-sizing: border-box;
             padding: .5em;
-            gap: .5em;
+            gap: .1em;
         }
 
         .project-tools-title {
             border: 5px dotted yellow;
             padding: .2em .3em;
             margin: 0;
+            width: 40%;
             text-align: center;
         }
 
         .project-tools {
-            border: 5px dotted green;
-            padding: .5em;
-        }
-
-        .project-tools ul {
             border: 5px dotted purple;
             display: flex;
-            padding: .2em;
-            margin: 0;
+            justify-content: center;
+            align-items: center;
+            padding: .5em;
+            margin: .7em 0 .2em 0;
+            width: 90%;
             gap: .5em;
-            flex-wrap: wrap;
+            overflow-y: auto;
         }
 
         .project-tools li {
@@ -1574,8 +1576,10 @@ html {
             text-align: center;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
         }
 
             #all-experience-section {
@@ -1627,7 +1631,7 @@ html {
                 .projects p {
                     width: 80%;
                     height: auto;
-                    max-height: 350px;
+                    max-height: 600px;
                     padding: .5em 1em;
                     text-align: justify;
                     font-size: 1.5em;

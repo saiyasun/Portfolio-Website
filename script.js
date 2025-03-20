@@ -174,6 +174,9 @@
         let allMobileLinks = document.getElementById('mobile-nav-links');
         let mobileNavLinks = document.querySelectorAll('#mobile-nav-links a'); // Get all links inside mobile nav
 
+        // Project section tools 
+        const ul = document.querySelector(".project-tools");
+
     // ~Functions~
         // Skills, Education, Project and All sections 
         let showProjectsSection = function(event) {
@@ -274,6 +277,13 @@
         mobileExperienceLink.addEventListener('click', showExperienceSection);
         mobileSkillsLink.addEventListener('click', showSkillsSection);
         mobileEducationLink.addEventListener('click', showEducationSection);
+
+        // Project section tools
+        document.addEventListener("DOMContentLoaded", function () {
+            if (ul.children.length >= 6) {
+                ul.style.justifyContent = "flex-start";
+            }
+        });
 
 // <---------------->
 
