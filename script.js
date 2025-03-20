@@ -175,7 +175,8 @@
         let mobileNavLinks = document.querySelectorAll('#mobile-nav-links a'); // Get all links inside mobile nav
 
         // Project section tools 
-        const ul = document.querySelector(".project-tools");
+        const projectToolsUl = document.querySelector(".project-tools");
+        const projectContainer = document.querySelector(".projects");
 
     // ~Functions~
         // Skills, Education, Project and All sections 
@@ -280,8 +281,14 @@
 
         // Project section tools
         document.addEventListener("DOMContentLoaded", function () {
-            if (ul.children.length >= 6) {
-                ul.style.justifyContent = "flex-start";
+            if (projectToolsUl.children.length >= 6) {
+                projectToolsUl.style.justifyContent = "flex-start";
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (projectContainer.children.length >= 3) {
+                projectContainer.style.justifyContent = "flex-start";
             }
         });
 

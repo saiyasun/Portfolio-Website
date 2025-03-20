@@ -1599,16 +1599,8 @@ html {
                 margin-bottom: 1em;
                 height: 700px;
                 width: 85%;
-                min-width: 300px;
+                min-width: 450px;
                 scroll-snap-align: start;
-            }
-            
-            .project-item:only-child {
-                margin: 1em auto; /* Centers the single item */
-            }
-
-            .projects:has(.project-item:nth-child(4)) { 
-                justify-content: flex-start;
             }
 
                 .projects h3 {
@@ -1786,6 +1778,13 @@ html {
                     justify-items: center;
                 } 
         
+                #project-title {
+                    padding: .3em;
+                    font-size: 2.5em;
+                    margin-top: 0;
+                    margin-bottom: .5em;
+                }
+        
                 #navigation-project {
                     margin: .5em;
                 }
@@ -1804,11 +1803,86 @@ html {
                     scroll-snap-type: x mandatory;
                 }
         
-                    #project-title {
-                        padding: .3em;
-                        font-size: 2.5em;
-                        margin-top: 0;
-                        margin-bottom: .5em;
+                #project-container {
+                    border: 5px dotted blue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: .5em;
+                    padding: 1em;
+                    box-sizing: border-box;
+                    width: 45%;
+                }
+        
+                .project-percent {
+                    font-size: 2em;
+                }
+        
+                #name-guesser-progress {
+                    width: 1%;
+                    background-color: red;
+                }
+        
+                .project-percentage-container {
+                    border: 5px solid green;
+                    margin: 0 .5em 1em .5em;
+                    padding: .1em .5em;
+                    width: 95%;
+                    max-width: 90%;
+                }
+                .project-tools-container {
+                    border: 5px solid black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    width: 95%;
+                    box-sizing: border-box;
+                    padding: .5em;
+                    gap: .1em;
+                }
+        
+                .project-tools-title {
+                    border: 5px dotted yellow;
+                    padding: .2em .3em;
+                    margin: 0;
+                    width: 40%;
+                    font-size: 2em;
+                    text-align: center;
+                }
+        
+                .project-tools {
+                    border: 5px dotted purple;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: .5em;
+                    margin: .7em 0 .2em 0;
+                    width: 90%;
+                    gap: .5em;
+                    overflow-y: auto;
+                }
+        
+                .project-tools li {
+                    border: 5px dotted blue;
+                    display: inline-flex;
+                    padding: .3em;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    height: 100px;
+                    min-width: 50px;
+                    border-radius: 50%;
+                    font-size: 1.5em;
+                }
+        
+                    #all-experience-section {
+                        visibility: hidden;
+                        transition: height 0.3s ease, visibility 0.3s ease;
+                        display: flex;
+                        gap: .5em
                     }
         
                     .project-item {
@@ -1818,30 +1892,22 @@ html {
                         align-items: center;
                         justify-items: center;
                         padding: 1em;
-                        margin-top: 1em;
                         margin-bottom: 1em;
-                        height: 650px;
-                        width: 20%;
-                        min-width: 200px;
+                        height: 1000px;
+                        width: 85%;
+                        min-width: 450px;
                         scroll-snap-align: start;
                     }
-                    
-                    .project-item:only-child {
-                        margin: 1em auto; /* Centers the single item */
-                    }
-        
-                    .projects:has(.project-item:nth-child(4)) { 
-                        justify-content: flex-start;
-                    }
-        
-                        .projects h3 {
+
+                        .project-name {
+                            border: 5px solid black;
                             width: 80%;
                             text-align: center;
                             align-content: center;
                             padding: .5em 1em;
-                            font-size: 1.7em;
                             text-wrap: wrap;
                             text-decoration: underline;
+                            font-size: 2em;
                         }
         
                             .project-separator {
@@ -1854,10 +1920,10 @@ html {
                         .projects p {
                             width: 80%;
                             height: auto;
-                            max-height: 200px;
+                            max-height: 600px;
                             padding: .5em 1em;
                             text-align: justify;
-                            font-size: 1.1em;
+                            font-size: 2em;
                             margin: 0;
                             overflow-y: auto;
                         }
