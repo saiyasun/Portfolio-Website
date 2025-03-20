@@ -1507,6 +1507,77 @@ html {
             scroll-snap-type: x mandatory;
         }
 
+        #project-container {
+            border: 5px dotted blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: .5em;
+            padding: 1em;
+            box-sizing: border-box;
+            width: 45%;
+        }
+
+        .project-percent {
+            font-size: 1.5em;
+        }
+
+        #name-guesser-progress {
+            width: 1%;
+            background-color: red;
+        }
+
+        .project-percentage-container {
+            border: 5px solid green;
+            margin: 0 .5em 1em .5em;
+            padding: .1em .5em;
+            box-sizing: content-box;
+            width: 90%;
+        }
+
+        .project-tools-container {
+            border: 5px solid black;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+            padding: .5em;
+            gap: .5em;
+        }
+
+        .project-tools-title {
+            border: 5px dotted yellow;
+            padding: .2em .3em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .project-tools {
+            border: 5px dotted green;
+            padding: .5em;
+        }
+
+        .project-tools ul {
+            border: 5px dotted purple;
+            display: flex;
+            padding: .2em;
+            margin: 0;
+            gap: .5em;
+            flex-wrap: wrap;
+        }
+
+        .project-tools li {
+            border: 5px dotted blue;
+            display: inline-flex;
+            padding: .3em;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+        }
+
             #all-experience-section {
                 visibility: hidden;
                 transition: height 0.3s ease, visibility 0.3s ease;
@@ -1521,10 +1592,9 @@ html {
                 align-items: center;
                 justify-items: center;
                 padding: 1em;
-                margin-top: 1em;
                 margin-bottom: 1em;
-                height: 500px;
-                width: 25%;
+                height: 700px;
+                width: 85%;
                 min-width: 300px;
                 scroll-snap-align: start;
             }
@@ -1557,9 +1627,10 @@ html {
                 .projects p {
                     width: 80%;
                     height: auto;
-                    max-height: 200px;
+                    max-height: 350px;
                     padding: .5em 1em;
                     text-align: justify;
+                    font-size: 1.5em;
                     margin: 0;
                     overflow-y: auto;
                 }
@@ -1892,23 +1963,11 @@ html {
             }
 
                 #mandarin {
-                    width: 100%;  /* Set the width to 90% */
-                }
-
-                #cantonese {
-                    width: 100%;  /* Set the width to 90% */
-                }
-
-                #malay {
-                    width: 50%;  /* Set the width to 90% */
-                }
-
-                #hokkien {
-                    width: 80%;  /* Set the width to 90% */
+                    width: 10%;  /* Set the width to 90% */
                 }
 
                 #english {
-                    width: 95%;  /* Set the width to 90% */
+                    width: 100%;  /* Set the width to 90% */
                 }
 
             .percentage-container {
@@ -2319,7 +2378,7 @@ html {
             padding: .5em;
             display: grid;
             grid-template-columns: 45% auto 40%;
-            grid-template-rows: 50% auto auto;
+            grid-template-rows: 35% auto auto 20%;
             align-items: center;
             justify-items: center;
             font-size: 2em;
@@ -2580,6 +2639,7 @@ html {
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            visibility: hidden;
             transition: height 0.3s ease, visibility 0.3s ease;
         }
 
@@ -2696,6 +2756,7 @@ html {
                 justify-content: center;
                 flex-direction: column; /* Stack elements vertically */
                 transition: height 0.3s ease, visibility 0.3s ease;
+                visibility: hidden;
             }
 
             .experiences {
@@ -2784,6 +2845,7 @@ html {
                 #experience-section {
                     padding: .5em;
                     transition: height 0.3s ease, visibility 0.3s ease;
+                    visibility: hidden;
                 }
         
                 #navigation-experience {
