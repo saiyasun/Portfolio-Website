@@ -256,7 +256,6 @@
             });
         };
 
-
         // Mobile nav bar
         let toggleMobileNavBar = function(event) {
             event.preventDefault(); // Prevent click from bubbling to the document
