@@ -1660,7 +1660,6 @@ html {
             } 
 
             .projects {
-                overflow-y: auto;
                 width: 90%;
                 gap: .7em;
                 padding: .5em;
