@@ -799,6 +799,11 @@ html {
                         min-width: 80%;
                     }
 
+                    #interests-media video {
+                        max-width: 300px;
+                        max-height: 300px;
+                    }
+
                     #interests-list li:not(:nth-child(4n))::after { 
                         content: "";
                         position: absolute;
