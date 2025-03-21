@@ -18,11 +18,31 @@
         slides[slideIndex].classList.add("active");
     }
 
+    function adjustJustifyContent() {
+        const container = document.getElementById('interests-media-container');
+        const list = document.getElementById('interests-media');
+        const items = list.children;
+    
+        let totalWidth = 0;
+        for (let item of items) {
+            totalWidth += item.offsetWidth; // Get total width of items
+        }
+    
+        if (totalWidth > container.clientWidth) {
+            list.style.justifyContent = 'flex-start'; // Align left if overflowing
+        } else {
+            list.style.justifyContent = 'center'; // Keep centered if not overflowing
+        }
+    }
+    
     // Start slideshow
     slides[slideIndex].classList.add("active");
     setInterval(showSlides, slideInterval);
 
     // ~Events~
+        // Run on page load and resize
+        window.addEventListener('load', adjustJustifyContent);
+        window.addEventListener('resize', adjustJustifyContent);
 
 // <---------------->
 

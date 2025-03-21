@@ -518,11 +518,12 @@ html {
             }
 
             #interests {
-                padding: 1em 3em;
+                border: 5px solid black;
+                padding: 1em 2em;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 55%;
+                width: 90%;
             }
 
                 #interests-title {
@@ -537,6 +538,7 @@ html {
                     justify-content: center;
                     width: 100%;
                     padding: .5em;
+                    box-sizing: border-box;
                 }
                 
                 #interests-list {
@@ -551,6 +553,43 @@ html {
                     text-align: center;
                     font-size: 1.5em; /* Increase text size */
                     position: relative;
+                }
+
+                #interests-media-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .1em;
+                    margin: 1em;
+                    width: 99%;
+                }
+
+                #interests-media {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    list-style: none;
+                    padding: 1em;
+                    gap: 1em;
+                    width: 100%;
+                    max-width: 99%;
+                    box-sizing: border-box;
+                    overflow-y: auto;
+                }
+
+                #interests-media li {
+                    border: 5px solid black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .3em;
+                    flex-shrink: 0;
+                }
+
+                #interests-media img {
+                    width: 100%;
+                    max-width: 350px;
+                    min-width: 80%;
                 }
                 
                 /* Add vertical dividers */
@@ -721,6 +760,43 @@ html {
                         font-size: 1.5em; /* Increase text size */
                         position: relative;
                         list-style-type: none;
+                    }
+
+                    #interests-media-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .1em;
+                        margin: 1em;
+                        width: 99%;
+                    }
+    
+                    #interests-media {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        list-style: none;
+                        padding: 1em;
+                        gap: 1em;
+                        width: 100%;
+                        max-width: 99%;
+                        box-sizing: border-box;
+                        overflow-y: auto;
+                    }
+    
+                    #interests-media li {
+                        border: 5px solid black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: .3em;
+                        flex-shrink: 0;
+                    }
+    
+                    #interests-media img {
+                        width: 100%;
+                        max-width: 225px;
+                        min-width: 80%;
                     }
 
                     #interests-list li:not(:nth-child(4n))::after { 
@@ -896,6 +972,43 @@ html {
                             text-align: center;
                             font-size: 1.5em; /* Increase text size */
                             position: relative;
+                        }
+
+                        #interests-media-container {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: .1em;
+                            margin: 1em;
+                            width: 99%;
+                        }
+        
+                        #interests-media {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            list-style: none;
+                            padding: 1em;
+                            gap: 1em;
+                            width: 100%;
+                            max-width: 99%;
+                            box-sizing: border-box;
+                            overflow-y: auto;
+                        }
+        
+                        #interests-media li {
+                            border: 5px solid black;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: .3em;
+                            flex-shrink: 0;
+                        }
+        
+                        #interests-media img {
+                            width: 100%;
+                            max-width: 325px;
+                            min-width: 80%;
                         }
                         
                         /* Add vertical dividers */
