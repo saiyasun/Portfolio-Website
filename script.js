@@ -154,6 +154,9 @@
         let allSection = document.getElementById('all-experience-section');
         let experienceSection = document.getElementById('experience-section');
         let projectSection = document.getElementById('project-section');
+        let advertiseSection = document.getElementById('advertise-me-section');
+
+        let sections = [skillsSection, educationSection, experienceSection, projectSection];
 
         let projectsNavBar = document.getElementById('project-nav');
         // ----
@@ -181,59 +184,77 @@
     // ~Functions~
         // Skills, Education, Project and All sections 
         let showProjectsSection = function(event) {
-        event.preventDefault();
-        hideAllSections();
-        projectSection.style.visibility = 'visible';
-        projectSection.style.opacity = '1';
-        projectSection.style.position = 'relative';  // Keeps the section in place visually
-        projectSection.style.zIndex = '1'; // Makes sure it's above hidden sections
-    };
+            event.preventDefault();
+            hideAllSections();
+            projectSection.style.visibility = 'visible';
+            projectSection.style.opacity = '1';
+            projectSection.style.position = 'relative';  // Keeps the section in place visually
+            projectSection.style.zIndex = '1'; // Makes sure it's above hidden sections
+        };
 
-    let showExperienceSection = function(event) {
-        event.preventDefault();
-        hideAllSections();
-        experienceSection.style.visibility = 'visible';
-        experienceSection.style.opacity = '1';
-        experienceSection.style.position = 'relative';
-        experienceSection.style.zIndex = '1';
-    };
+        let showExperienceSection = function(event) {
+            event.preventDefault();
+            hideAllSections();
+            experienceSection.style.visibility = 'visible';
+            experienceSection.style.opacity = '1';
+            experienceSection.style.position = 'relative';
+            experienceSection.style.zIndex = '1';
+        };
 
-    let showSkillsSection = function(event) {
-        event.preventDefault();
-        hideAllSections();
-        skillsSection.style.visibility = 'visible';
-        skillsSection.style.opacity = '1';
-        skillsSection.style.position = 'relative';
-        skillsSection.style.zIndex = '1';
-    };
+        let showSkillsSection = function(event) {
+            event.preventDefault();
+            hideAllSections();
+            skillsSection.style.visibility = 'visible';
+            skillsSection.style.opacity = '1';
+            skillsSection.style.position = 'relative';
+            skillsSection.style.zIndex = '1';
+        };
 
-    let showEducationSection = function(event) {
-        event.preventDefault();
-        hideAllSections();
-        educationSection.style.visibility = 'visible';
-        educationSection.style.opacity = '1';
-        educationSection.style.position = 'relative';
-        educationSection.style.zIndex = '1';
-    };
+        let showEducationSection = function(event) {
+            event.preventDefault();
+            hideAllSections();
+            educationSection.style.visibility = 'visible';
+            educationSection.style.opacity = '1';
+            educationSection.style.position = 'relative';
+            educationSection.style.zIndex = '1';
+        };
 
-    let showAllSections = function(event) {
-        event.preventDefault();
-        hideAllSections();
-        allSection.style.visibility = 'visible';
-        allSection.style.opacity = '1';
-        allSection.style.position = 'relative';
-        allSection.style.zIndex = '1';
-    };
+        let showAllSections = function(event) {
+            event.preventDefault();
+            hideAllSections();
+            allSection.style.visibility = 'visible';
+            allSection.style.opacity = '1';
+            allSection.style.position = 'relative';
+            allSection.style.zIndex = '1';
+        };
+        
+        let defaultSection = function() {
+            hideAllSections();
+        
+            let visibleSection = sections.find(section => section.style.visibility === 'visible');
+        
+            if (visibleSection) {
+                visibleSection.style.opacity = '1';
+                visibleSection.style.position = 'relative';
+                visibleSection.style.zIndex = '1';
+            } else {
+                // Default to `allSection` if none are visible
+                projectSection.style.visibility = 'visible';
+                projectSection.style.opacity = '1';
+                projectSection.style.position = 'relative';
+                projectSection.style.zIndex = '1';
+            }
+        };
 
-    let hideAllSections = function() {
-        let sections = [skillsSection, educationSection, experienceSection, projectSection];
-        sections.forEach(sec => {
-            sec.style.visibility = 'hidden';
-            sec.style.opacity = '0';
-            sec.style.position = 'absolute'; // Removes section from flow but keeps space
-            sec.style.zIndex = '-1'; // Keeps it behind other sections
-        });
-    };
+        let hideAllSections = function() {
+            let sections = [skillsSection, educationSection, experienceSection, projectSection];
+            sections.forEach(sec => {
+                sec.style.visibility = 'hidden';
+                sec.style.opacity = '0';
+                sec.style.position = 'absolute'; // Removes section from flow but keeps space
+                sec.style.zIndex = '-1'; // Keeps it behind other sections
+            });
+        };
 
 
         // Mobile nav bar
@@ -261,6 +282,10 @@
         experienceLink.addEventListener('click', showExperienceSection);
         educationLink.addEventListener('click', showEducationSection);
         projectLink.addEventListener('click', showProjectsSection);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            defaultSection();
+        });
 
         // Mobile nav bar
         mobileSandwichMenu.addEventListener('click', toggleMobileNavBar); // Event listener for the menu button

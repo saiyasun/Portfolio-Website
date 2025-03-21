@@ -1743,13 +1743,15 @@ html {
 
                     .project-tools {
                         display: flex;
-                        align-items: center;
                         justify-content: center;
+                        align-items: center;
                         padding: .5em;
-                        width: 90%;
+                        width: 99%;
                         margin: 0;
-                        overflow-x: auto;
                         gap: .5em;
+                        box-sizing: border-box;
+                        flex-wrap: wrap;
+                        overflow-y: auto;
                     }
 
                     .project-tools-title {
@@ -1764,7 +1766,7 @@ html {
 
                     .project-tools li {
                         border: 5px solid black;
-                        display: flex;
+                        display: inline-flex;
                         align-items: center;
                         justify-content: center;
                         padding: .5em;
@@ -1772,7 +1774,6 @@ html {
                         border-radius: 50%;
                         height: 30px;
                         width: 30px;
-                        white-space: nowrap; /* Keeps text inside */
                     }
 
                     .project-percentage-container {
