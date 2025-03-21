@@ -316,6 +316,54 @@
             }
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all project progress containers
+            document.querySelectorAll(".project-percentage-container").forEach(project => {
+                let percentageText = project.querySelector(".project-percent").textContent.trim();
+                let progressBar = project.querySelector(".progress-bar");
+        
+                // Extract numeric value from percentage text
+                let percentage = parseInt(percentageText.replace("%", ""), 10);
+        
+                // Apply color based on percentage range
+                if (percentage >= 90) {
+                    progressBar.style.backgroundColor = "green"; // High completion
+                } else if (percentage >= 70) {
+                    progressBar.style.backgroundColor = "blue"; // Almost done
+                } else if (percentage >= 50) {
+                    progressBar.style.backgroundColor = "orange"; // Halfway done
+                } else {
+                    progressBar.style.backgroundColor = "red"; // Just started
+                }
+        
+                // Adjust width dynamically based on percentage
+                progressBar.style.width = percentage + "%";
+            });
+        });
+
+        // Languages
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all language sections
+            document.querySelectorAll(".languages").forEach(language => {
+                let percentageText = language.querySelector(".lang-percent").textContent.trim();
+                let progressBar = language.querySelector(".progress-bar");
+        
+                // Extract numeric value from percentage text
+                let percentage = parseInt(percentageText.replace("%", ""), 10);
+        
+                // Apply color based on percentage range
+                if (percentage >= 90) {
+                    progressBar.style.backgroundColor = "green"; // High fluency
+                } else if (percentage >= 70) {
+                    progressBar.style.backgroundColor = "blue"; // Proficient
+                } else if (percentage >= 50) {
+                    progressBar.style.backgroundColor = "orange"; // Conversational
+                } else {
+                    progressBar.style.backgroundColor = "red"; // Beginner
+                }
+            });
+        });
+
 // <---------------->
 
 // *** Homepage section ***
