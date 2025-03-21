@@ -3,6 +3,14 @@ html {
     scroll-behavior: smooth;
 }
 
+/* -- Languages -- */
+#mandarin {
+    width: 10%;  /* Set the width to 90% */
+}
+#english {
+    width: 100%;  /* Set the width to 90% */
+}
+
 
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
@@ -2086,14 +2094,6 @@ html {
                 border-radius: 5px;  /* Match the rounded corners of the container */
             }
 
-                #mandarin {
-                    width: 10%;  /* Set the width to 90% */
-                }
-
-                #english {
-                    width: 100%;  /* Set the width to 90% */
-                }
-
             .percentage-container {
                 padding: .5em;
                 display: flex;
@@ -2228,13 +2228,6 @@ html {
                         height: 100%;  /* Fill the container */
                         background-color: #4caf50;  /* Green color for the filled part */
                         border-radius: 5px;  /* Match the rounded corners of the container */
-                    }
-        
-                    #mandarin {
-                        width: 10%;  /* Set the width to 90% */
-                    }
-                    #english {
-                        width: 100%;  /* Set the width to 90% */
                     }
         
                     .percentage-container {
@@ -2379,27 +2372,7 @@ html {
                         background-color: #4caf50;  /* Green color for the filled part */
                         border-radius: 5px;  /* Match the rounded corners of the container */
                     }
-        
-                    #mandarin {
-                        width: 100%;  /* Set the width to 90% */
-                    }
-    
-                    #cantonese {
-                        width: 100%;  /* Set the width to 90% */
-                    }
-    
-                    #malay {
-                        width: 50%;  /* Set the width to 90% */
-                    }
-    
-                    #hokkien {
-                        width: 80%;  /* Set the width to 90% */
-                    }
-    
-                    #english {
-                        width: 95%;  /* Set the width to 90% */
-                    }
-        
+                    
                     .percentage-container {
                         padding: .5em;
                         display: flex;
