@@ -11,6 +11,11 @@ html {
     width: 100%;  /* Set the width to 90% */
 }
 
+/* -- Projects -- */
+#name-guesser-progress {
+    width: 1%;
+}
+
 
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
@@ -1645,11 +1650,6 @@ html {
             font-size: 1.5em;
         }
 
-        #name-guesser-progress {
-            width: 1%;
-            background-color: red;
-        }
-
         .project-percentage-container {
             margin: 0 .5em 1em .5em;
             padding: .1em .5em;
@@ -1905,11 +1905,6 @@ html {
                         width: 90%;
                     }
 
-                    #name-guesser-progress {
-                        width: 1%;
-                        background-color: red;
-                    }
-
                     #project-title {
                         padding: .1em .3em;
                         font-size: 2em;
@@ -2009,11 +2004,6 @@ html {
         
                 .project-percent {
                     font-size: 2em;
-                }
-        
-                #name-guesser-progress {
-                    width: 1%;
-                    background-color: red;
                 }
         
                 .project-percentage-container {
