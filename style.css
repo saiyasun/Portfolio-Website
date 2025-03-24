@@ -3781,3 +3781,177 @@ html {
             }
 
 /*----------------------------------------*/
+
+/*** Works Section ***/
+    /*Laptop design*/
+    @media only screen and (min-width: 769px) {
+        #works-section {
+            margin: 0;
+            padding: .5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #works-container {
+            box-sizing: border-box;
+            width: 100%;
+            padding: .5em;
+        }
+
+        .works-title {
+            box-sizing: border-box;
+            width: 100%;
+            padding: .3em;
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .works-category {
+            text-decoration: underline;
+            margin: 0;
+            padding: .3em;
+            font-size: 1.5em;
+            align-self: flex-start;
+
+        }
+
+        .works-item-container {
+            border: 5px solid black;
+            width: 65%;
+            box-sizing: border-box;
+            padding: .5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-shrink: 0;
+            gap: .3em;
+        }
+
+        .works-item-title {
+            box-sizing: border-box;
+            margin: 0;
+            padding: .2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            grid-row: 1;
+            grid-column: 1 / span 2;
+        }
+
+        .works-item-link {
+           padding: .3em;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+
+        .works-image-link {
+            border: 5px solid black;
+            box-sizing: border-box;
+            display: flex;
+            width: fit-content;
+            padding: .3em;
+            box-sizing: border-box;
+        }
+
+        .works-item-link, .works-image-link {
+        }
+
+        .works-separator {
+            height: 1px;
+            background-color: black;
+            width: 10%;
+            grid-column: 2;
+            margin: .2em;
+        }
+        
+        .works-description {
+            padding: .5em;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            grid-row: 2;
+            grid-column: 2;
+            font-size: 1.2em;
+            height: 150px;
+            overflow-y: auto;
+        }
+
+        .works {
+            box-sizing: border-box;
+            padding: .5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: .5em;
+        }
+
+        .works-item {
+            box-sizing: border-box;
+            padding: .5em;
+            display: grid;
+            grid-template-columns: 35% auto;
+            grid-template-rows: 15% auto 15% ;
+            width: 100%;
+            height: 300px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .works-image, .works-image-link {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-column: 1;
+            grid-row: 1 / span 3;
+        }
+
+        .scrolling-works-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            padding: .3em;
+            overflow-x: auto;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 1.5em;
+        }
+
+        .scrolling-works-separator {
+            height: 200px;
+            width: 2px;
+            background-color: black;
+            margin: .3em;
+            flex-shrink: 0;
+        }
+
+        .works-container-separator {
+            height: 3px;
+            width: 80%;
+            background-color: black;
+            margin: 1em;
+            flex-shrink: 0;
+        }
+        
+    }
+
+        /*Mobile design*/
+        @media only screen and (max-width: 768px) {
+            
+        }
+
+            /*Desktop design*/
+            @media only screen and (min-width: 1500px) {
+                
+            }
