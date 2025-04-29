@@ -1443,9 +1443,18 @@ html {
                             width: 99%;
                             flex-wrap: wrap;
                         }
+
+                        .icons img {
+                            display: flex;
+                            gap: .2em;
+                            flex-direction: row;
+                            padding: .2em;
+                            width: 99%;
+                            flex-wrap: wrap;
+                        }
         
         
-                    #linkedin, #github, #x, #insta, #youtube, #bluesky {
+                    #linkedin, #github, #x, #insta, #youtube, #bluesky, #rednote, #douyin {
                         width: 3em;
                         padding: .2em;
                         display: flex;
