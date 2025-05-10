@@ -16,6 +16,76 @@ html {
     width: 5%;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: #1d1d1d; /* Deep Forest Green */
+      color: #EDE6D3; /* Light Beige */
+    }
+  
+    a {
+      color: #C97B63; /* Muted Coral */
+    }
+
+    #interests-list li {
+        color: green;
+        background-color: silver !important; /* This works fine */
+    }
+
+    #interests-list {
+        background-color: purple;
+    }
+
+    .work .work-name {
+        color: rgb(179, 179, 0);
+    }
+
+    .work .position {
+        color: violet;
+    }
+  
+    .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
+    .slideshow-container img, .education, .school, .languages, .language-div, 
+    #certifications, #language-title, #certification-title, .projects, #project-container {
+        border: 5px solid silver !important; /* Darker border color */
+    }
+
+    .project-item {
+        border: 5px solid yellow !important;
+    }
+
+    #email i {
+        color: white !important;
+    }
+
+    header, footer {
+      background-color: #1F2A20; /* Slightly darker for contrast */
+      color: #EDE6D3;
+    }
+  
+    .button, button {
+      background-color: #C97B63;
+      color: #FAF9F6;
+      border: none;
+    }
+  
+    .card, .section {
+      background-color: #364636; /* Subtle card background */
+      color: #EDE6D3;
+      border: 1px solid #4A5C4A;
+    }
+  
+    input, textarea {
+      background-color: #2E3B2F;
+      color: #EDE6D3;
+      border: 1px solid #4A5C4A;
+    }
+  
+    ::selection {
+      background: #C97B63;
+      color: #FAF9F6;
+    }
+  }
+
 
     /*Laptop design*/
     @media only screen and (min-width: 769px) {
