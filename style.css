@@ -45,7 +45,8 @@ html {
   
     .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
     .slideshow-container img, .education, .school, .languages, .language-div, 
-    #certifications, #language-title, #certification-title, .projects, #project-container {
+    #certifications, #language-title, #certification-title, #project-container, 
+    .project-tools-container, .project-tools li {
         border: 5px solid silver !important; /* Darker border color */
     }
 
@@ -54,6 +55,10 @@ html {
     }
 
     #email i {
+        color: white !important;
+    }
+
+    .project-item p {
         color: white !important;
     }
 
