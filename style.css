@@ -54,6 +54,12 @@ html {
         border: 5px solid silver !important; /* Darker border color */
     }
 
+    @media only screen and (min-width: 769px) {
+        .projects {
+            border: 5px solid silver !important; /* Darker border color */
+        }
+    }
+
     .project-item {
         border: 5px solid yellow !important;
     }
