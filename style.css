@@ -43,6 +43,10 @@ html {
         color: violet;
     }
   
+    hr {
+        background-color: white !important;
+    }
+
     .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
     .slideshow-container img, .education, .school, .languages, .language-div, 
     #certifications, #language-title, #certification-title, #project-container, 
