@@ -3318,7 +3318,7 @@ html {
                     grid-row: 1 / span 2;
                     grid-column: 2;
                     width: 90%;
-                    max-height: 350px;
+                    max-height: 325px;
                     padding: .1em;
                     display: flex;
                     flex-direction: column;
@@ -3330,7 +3330,7 @@ html {
                         height: 2px;
                         background-color: black;
                         width: 100px;
-                        margin: 0;
+                        margin: .5em 0;
                     }
 
                     .referant-statment {
@@ -3365,13 +3365,12 @@ html {
             }
 
                 .contact-item-a {
-                    padding: .3em;
+                    padding: .5em;
                 }
 
                 .contact-item-a i {
                     padding: .1em;
-                    font-size: 2em;
-                    border: 5px solid black;
+                    font-size: 3em;
                 }
     }
 
@@ -3575,7 +3574,7 @@ html {
                             grid-row: 1 / span 2;
                             grid-column: 2;
                             width: 90%;
-                            max-height: 350px;
+                            max-height: 400px;
                             padding: .1em;
                             display: flex;
                             flex-direction: column;
@@ -3606,7 +3605,7 @@ html {
                         grid-row: 2;
                         grid-column: 1;
                         padding: .3em .2em;
-                        font-size: 2.5em;
+                        font-size: 3em;
                     }
         
                     .referant-contact {
@@ -3622,13 +3621,12 @@ html {
                     }
         
                         .contact-item-a {
-                            padding: .3em;
+                            padding: .5em;
                         }
         
                         .contact-item-a i {
                             padding: .1em;
-                            font-size: 3em;
-                            border: 5px solid black;
+                            font-size: 5em;
                         }
             }
 
