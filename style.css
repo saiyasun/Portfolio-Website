@@ -50,7 +50,7 @@ html {
     .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
     .slideshow-container img, .education, .school, .languages, .language-div, 
     #certifications, #language-title, #certification-title, #project-container, 
-    .project-tools-container, .project-tools li {
+    .project-tools-container, .project-tools li, .references {
         border: 5px solid silver !important; /* Darker border color */
     }
 
@@ -3433,7 +3433,7 @@ html {
                 .referant-img {
                     border: 5px solid black;
                     grid-row: 1;
-                    max-width: 150px;
+                    max-width: 200px;
                     margin: .2em;
                 }
     
@@ -3450,7 +3450,8 @@ html {
                     .total-referant-statment {
                         grid-row: 3;
                         width: 90%;
-                        max-height: 350px;
+                        height: 95%;
+                        max-height: 500px;
                         padding: .1em;
                         display: flex;
                         flex-direction: column;
@@ -3462,26 +3463,25 @@ html {
                             height: 2px;
                             background-color: black;
                             width: 100px;
-                            margin: 0;
+                            margin: .5em 0;
                         }
     
                         .referant-statment {
                             padding: .1em .3em;
                             overflow-y: auto;
-                            font-size: 1.5em;
+                            font-size: 1.75em;
                             width: 95%;
                             height: 95%;
                             max-height: 250px;
                             text-align: justify;
-                            margin-top: .3em;
-                            margin-bottom: .3em;
+                            margin: .2em 0;
                         }
     
                 .referant-name  {
                     text-decoration: underline;
                     grid-row: 2;
                     padding: .3em .2em;
-                    font-size: 1.7em;
+                    font-size: 2em;
                 }
     
                 .referant-contact {
@@ -3502,8 +3502,7 @@ html {
     
                     .contact-item-a i {
                         padding: .1em;
-                        font-size: 2em;
-                        border: 5px solid black;
+                        font-size: 3em;
                     }
         }
 
@@ -3586,7 +3585,7 @@ html {
                                 height: 2px;
                                 background-color: black;
                                 width: 100px;
-                                margin: 0;
+                                margin: .5em 0;
                             }
         
                             .referant-statment {
