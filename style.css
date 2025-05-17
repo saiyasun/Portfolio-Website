@@ -3,19 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* -- Languages -- */
-#mandarin {
-    width: 10%;  /* Set the width to 90% */
-}
-#english {
-    width: 100%;  /* Set the width to 90% */
-}
-
-/* -- Projects -- */
-#name-guesser-progress {
-    width: 5%;
-}
-
 @media (prefers-color-scheme: dark) {
     body {
       background-color: #1d1d1d; /* Deep Forest Green */
@@ -35,41 +22,42 @@ html {
         background-color: purple;
     }
 
-    .work .work-name {
-        color: rgb(179, 179, 0);
-    }
-
-    .work .position {
-        color: violet;
-    }
-  
     hr {
         background-color: white !important;
     }
 
+    .work .work-name, .education .school {
+        color: rgb(179, 179, 0);
+    }
+
+    .work .position, .languages .fluency, .education .degree {
+        color: violet;
+    }
+  
     .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
     .slideshow-container img, .education, .school, .languages, .language-div, 
-    #certifications, #language-title, #certification-title, #project-container, 
-    .project-tools-container, .project-tools li, .references {
-        border: 5px solid silver !important; /* Darker border color */
+    #certifications, #language-title, #certification-title, .references, 
+    .project-item, .project-tools, .project-tools-container, #project-container,
+    .project-tools li {
+        border: 5px solid silver !important; 
     }
 
     @media only screen and (min-width: 769px) {
         .projects {
-            border: 5px solid silver !important; /* Darker border color */
+            border: 5px solid silver !important;
         }
     }
 
-    .project-item {
-        border: 5px solid yellow !important;
+    .languages .progress-container, .projects .project-progress-container {
+        border: 5px solid grey ;
     }
 
     #email i {
         color: white !important;
     }
 
-    .project-item p {
-        color: white !important;
+    .projects .description {
+        color: white;
     }
 
     header, footer {
@@ -100,6 +88,27 @@ html {
       color: #FAF9F6;
     }
   }
+  
+/* -- Languages -- */
+#mandarin {
+    width: 10%;  
+}
+
+#english {
+    width: 95%;  
+}
+
+#malay {
+    width: 50%;  
+}
+
+#cantonese {
+    width: 100%; 
+}
+
+#hokkien {
+    width: 80%;  
+}
 
 
     /*Laptop design*/
@@ -359,6 +368,7 @@ html {
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
+                margin-top: 1.5em;
                 padding: .7em;
                 width: 90%;
             }
@@ -454,7 +464,7 @@ html {
         
                     #tagline {
                         text-align: end;
-                        font-size: 5.5em;
+                        font-size: 5em;
                         margin: .2em .5em;
                         padding: .1em .2em;
                         width: 90%;
@@ -734,7 +744,7 @@ html {
                     display: none; /* Hide all images initially */
                     width: 100%;
                     height: auto;
-                    max-width: 390px;
+                    max-width: 350px;
                     object-fit: border-box; /* Ensure full image is visible */
                     position: absolute; /* Stacks images on top of each other */
                 }
@@ -1012,7 +1022,7 @@ html {
                             padding: 0 1em;
                             text-align: justify;
                             text-wrap: wrap;
-                            font-size: 1.6em;
+                            font-size: 2.5em;
                             margin: 0;
                         }
         
@@ -1752,6 +1762,11 @@ html {
             font-size: 1.5em;
         }
 
+        #name-guesser-progress {
+            width: 1%;
+            background-color: red;
+        }
+
         .project-percentage-container {
             margin: 0 .5em 1em .5em;
             padding: .1em .5em;
@@ -1858,12 +1873,11 @@ html {
                     align-items: center;
                     justify-content: center;
                     width: 100%;
-                    max-width: 60%;
+                    max-width: 50%;
                 }
 
                     .img-preview {
-                        box-sizing: border-box;
-                        width: 100%;
+                        width: 90%;
                     }
 
                     .project-img a {
@@ -1889,6 +1903,7 @@ html {
             } 
 
             .projects {
+                overflow-y: auto;
                 width: 90%;
                 gap: .7em;
                 padding: .5em;
@@ -1920,27 +1935,28 @@ html {
                     .project-img {
                         border: 5px solid blue;
                         width: 100%;
-                        max-width: 65%;
-                        box-sizing: border-box;
+                        max-width: 70%;
                         min-width: 75px;
+                        width: auto;
+                        height: auto; /* Ensures aspect ratio is maintained */
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         grid-row: 1 / span 4;
+                        padding: .5em;
                     }
 
                     .project-img a {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        display: block; /* Ensures it takes up the full container */
                         width: 100%;
                         height: 100%;
-                        max-width: 100%;
+                        max-width: 80%;
                     }
 
                     .img-preview {
                         width: 100%;
-                        box-sizing: border-box;
+                        height: 100%;
+                        object-fit: cover;
                     }
                     
                     #project-container {
@@ -2005,6 +2021,11 @@ html {
                         padding: .1em .5em;
                         box-sizing: content-box;
                         width: 90%;
+                    }
+
+                    #name-guesser-progress {
+                        width: 1%;
+                        background-color: red;
                     }
 
                     #project-title {
@@ -2101,11 +2122,16 @@ html {
                     margin: .5em;
                     padding: 1em;
                     box-sizing: border-box;
-                    width: 40%;
+                    width: 45%;
                 }
         
                 .project-percent {
                     font-size: 2em;
+                }
+        
+                #name-guesser-progress {
+                    width: 1%;
+                    background-color: red;
                 }
         
                 .project-percentage-container {
@@ -2122,7 +2148,6 @@ html {
                     align-items: center;
                     flex-direction: column;
                     width: 95%;
-                    height: auto;
                     box-sizing: border-box;
                     padding: .5em;
                     gap: .1em;
@@ -2211,7 +2236,7 @@ html {
                         }
         
                             .img-preview {
-                                width: 100%;
+                                width: 90%;
                             }
         
                             .project-img a {
@@ -2303,7 +2328,7 @@ html {
                 height: 100%;  /* Fill the container */
                 background-color: #4caf50;  /* Green color for the filled part */
                 border-radius: 5px;  /* Match the rounded corners of the container */
-            }
+            } 
 
             .percentage-container {
                 padding: .5em;
@@ -2478,6 +2503,7 @@ html {
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        text-align: center;
                     }
         
                     .certification-div {
@@ -2765,21 +2791,21 @@ html {
                 border: 5px solid black;
                 padding: .5em;
                 display: grid;
-                grid-template-rows: 30% auto auto auto auto auto;
+                grid-template-rows: 40% auto auto auto auto auto;
                 align-items: center;
                 justify-items: center;
                 font-size: 1em;
             }
     
             #education-title {
-                font-size: 2.5em;
+                font-size: 3em;
                 margin-top: .1em;
                 padding: .3em;
             }
     
             .education-location {
                 padding: .5em;
-                font-size: 1.3em;
+                font-size: 1.5em;
                 text-align: center;
                 grid-row: 3;
                 width: 90%;
@@ -2793,7 +2819,7 @@ html {
                 text-align: center;
                 padding: .5em;
                 font-weight: bold;
-                font-size: 1.7em;
+                font-size: 2.3em;
                 grid-row: 1;
             }
     
@@ -2825,7 +2851,7 @@ html {
                 text-decoration: underline;
                 grid-row: 4;
                 width: 83%;
-                font-size: 1.2em;
+                font-size: 1.5em;
                 margin-top: .2em;
             }
         }
@@ -2856,11 +2882,11 @@ html {
                     padding: .5em;
                     display: grid;
                     grid-template-columns: 45% auto 40%;
-                    grid-template-rows: 50% auto auto
-                    5;
+                    grid-template-rows: 50% auto auto;
                     align-items: center;
                     justify-items: center;
                     font-size: 2em;
+                    height: 600px;
                 }
         
                 #education-title {
@@ -2869,8 +2895,8 @@ html {
         
                 .education-location {
                     padding: .5em;
-                    font-size: 1.2em;
-                    text-align: end;
+                    font-size: 1.7em;
+                    text-align: center;
                     grid-row: 3;
                     grid-column: 1;
                     width: 90%;
@@ -2884,6 +2910,7 @@ html {
                     padding: .5em;
                     font-weight: bold;
                     font-weight: 3em;
+                    font-size: 2.5em;
                     grid-row: 1;
                     grid-column: 1 /span 3;
                 }
@@ -2920,8 +2947,8 @@ html {
                     grid-column: 3;
                     grid-row: 3;
                     width: 83%;
-                    font-size: 1em;
-                    justify-self: flex-start;
+                    font-size: 1.5em;
+                    justify-self: center;
                 }
             }
 
@@ -2971,7 +2998,7 @@ html {
 
         .experience-separator {
             display: block;
-            height: 2px;
+            height: 1px;
             width: 50%;
             background-color: black;
             margin-top: 20px;
@@ -3364,11 +3391,11 @@ html {
                 width: auto;
             }
 
-                .contact-item-a {
+                .contact-item {
                     padding: .5em;
                 }
 
-                .contact-item-a i {
+                .contact-item i {
                     padding: .1em;
                     font-size: 3em;
                 }
@@ -3469,7 +3496,7 @@ html {
                         .referant-statment {
                             padding: .1em .3em;
                             overflow-y: auto;
-                            font-size: 1.75em;
+                            font-size: 1.5em;
                             width: 95%;
                             height: 95%;
                             max-height: 250px;
@@ -3496,11 +3523,11 @@ html {
                     width: auto;
                 }
     
-                    .contact-item-a {
+                    .contact-item {
                         padding: .3em;
                     }
     
-                    .contact-item-a i {
+                    .contact-item i {
                         padding: .1em;
                         font-size: 3em;
                     }
@@ -3619,11 +3646,11 @@ html {
                         width: auto;
                     }
         
-                        .contact-item-a {
+                        .contact-item {
                             padding: .5em;
                         }
         
-                        .contact-item-a i {
+                        .contact-item i {
                             padding: .1em;
                             font-size: 5em;
                         }
