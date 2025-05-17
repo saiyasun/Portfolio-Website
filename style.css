@@ -2791,10 +2791,11 @@ html {
                 border: 5px solid black;
                 padding: .5em;
                 display: grid;
-                grid-template-rows: 40% auto auto auto auto auto;
+                grid-template-rows: 38% 1fr 1fr 1fr 1fr 1fr;
                 align-items: center;
                 justify-items: center;
                 font-size: 1em;
+                max-height: 650px;
             }
     
             #education-title {
@@ -2828,6 +2829,7 @@ html {
                 padding: .5em;
                 font-size: 1.2em;
             }
+               
     
             .education-separator {
                 height: 2px;
