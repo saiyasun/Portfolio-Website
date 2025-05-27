@@ -70,6 +70,10 @@ html {
       color: #FAF9F6;
       border: none;
     }
+
+    .project-container .under-construction {
+        color: white;
+    }
   
     .card, .section {
       background-color: #364636; /* Subtle card background */
@@ -1756,7 +1760,6 @@ html {
         }
 
         .project-percentage-container {
-            border: 5px dotted blue;
             margin: 0 .5em 1em .5em;
             padding: .1em .5em;
             box-sizing: content-box;
@@ -1815,7 +1818,6 @@ html {
             }
 
             .project-item {
-                border: 5px solid blue;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -1869,7 +1871,6 @@ html {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        margin-top: 1em;
                     }
 
                     .img-preview {
@@ -1932,7 +1933,6 @@ html {
                 }
 
                     .project-img {
-                        border: 5px solid blue;
                         width: 100%;
                         max-width: 70%;
                         min-width: 75px;
@@ -1953,6 +1953,7 @@ html {
                     }
 
                     .img-preview {
+                        border: 5px solid black;
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
@@ -2011,8 +2012,8 @@ html {
                         padding: .5em;
                         font-size: 1.2em;
                         border-radius: 50%;
-                        height: 30px;
-                        width: 30px;
+                        height: 70px;
+                        width: 70px;
                     }
 
                     .project-percentage-container {
@@ -2055,6 +2056,12 @@ html {
                         text-align: justify;
                         overflow-y: auto;
                         color: black;
+                    }
+
+                    .under-construction {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
 
                     .project-separator {
@@ -2181,8 +2188,10 @@ html {
                     width: 100px;
                     height: 100px;
                     min-width: 50px;
+                    max-width: 250px;
                     border-radius: 50%;
                     font-size: 1.5em;
+                    text-wrap: wrap;
                 }
         
                     #all-experience-section {
@@ -2233,6 +2242,12 @@ html {
                             width: 100%;
                             max-width: 50%;
                         }
+                        
+                            .under-construction {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
         
                             .img-preview {
                                 width: 90%;
