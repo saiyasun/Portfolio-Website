@@ -2235,7 +2235,6 @@ html {
                         }
         
                         .project-img {
-                            border: 5px solid black;
                             display: flex;
                             align-items: center;
                             justify-content: center;
