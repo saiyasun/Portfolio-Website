@@ -37,7 +37,7 @@ html {
     .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
     .slideshow-container img, .education, .school, .languages, .language-div, 
     #certifications, #language-title, #certification-title, .references, 
-    .project-item, .project-tools, .project-tools-container, #project-container,
+    .project-item, .project-tools, .project-tools-container, .project-container,
     .project-tools li {
         border: 5px solid silver !important; 
     }
@@ -1734,7 +1734,7 @@ html {
             scroll-snap-type: x mandatory;
         }
 
-        #project-container {
+        .project-container {
             border: 5px solid black;
             display: flex;
             align-items: center;
@@ -1756,6 +1756,7 @@ html {
         }
 
         .project-percentage-container {
+            border: 5px dotted blue;
             margin: 0 .5em 1em .5em;
             padding: .1em .5em;
             box-sizing: content-box;
@@ -1856,16 +1857,25 @@ html {
                 }
 
                 .project-img {
-                    border: 5px solid black;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     width: 100%;
                     max-width: 50%;
+                    padding: .5em;
                 }
 
+                    .under-construction {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 1em;
+                    }
+
                     .img-preview {
+                        border: 5px solid black;
                         width: 90%;
+                        max-width: 200px;
                     }
 
                     .project-img a {
@@ -1873,6 +1883,7 @@ html {
                         align-items: center;
                         justify-content: center;
                         width: 100%; /* Ensures it fills its container */
+                        padding: .5em;
                     }
                     
     }
@@ -1947,7 +1958,7 @@ html {
                         object-fit: cover;
                     }
                     
-                    #project-container {
+                    .project-container {
                         border: 5px solid black;
                         display: flex;
                         flex-direction: column;
@@ -2102,7 +2113,7 @@ html {
                     scroll-snap-type: x mandatory;
                 }
         
-                #project-container {
+                .project-container {
                     display: flex;
                     align-items: center;
                     justify-content: center;
