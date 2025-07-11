@@ -9,500 +9,438 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
     <script src="script.js" defer></script>
 </head>
-    <body id="index">
-        <!-- TEMPORARY!!!
-        <div class="navigation" id="navigation-about">
-            <a href="./index.html"><img id="logo" src="images/logo-placeholder.jpg"></a> TEMPORARY!!!--> <!--This will be the logo-->
-<!-- TEMPORARY!!!   <ul>
-                    <li><a href="./about_me.html">About</a></li>
-                    <li><a href="./project.html">Projects</a></li> TEMPORARY!!! -->
-                    <!--<li><a href="./blog.html">Blog</a></li>-->
-<!--TEMPORARY!!!    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-        </div> TEMPORARY!!!-->
+<body>
 
-        <!--// Homepage //-->
-        <section id="homepage">
-            <!--Intro section-->
-            <div class="intro">
-                <!--Name-->
-                <h1 id="name">Asiah Crutchfield</h1>
+<!--// Homepage //-->
+<section id="homepage">
+    <!--Intro section-->
+    <div class="intro">
+        <!--Name-->
+        <h1 id="name">Asiah Crutchfield</h1>
 
-                <hr class="homepage-separator">
+        <hr class="homepage-separator">
 
-                <!--Tagline-->
-                <h3 id="tagline">Programmer | Student | Fitness enthusiast</h3>
-            </div>  
-            <!--Intro navigation-->
-            <ul id="navi">
-                <li><a href="#about-section">About</a></li>
-                <li><a href="#advertise-me-section">Projects</a></li>
-                <!--<li><a href="./blog.html">Blog</a></li>-->
-                <li><a href="#contact-section">Contact</a></li>
-            </ul> 
-        </section>
-        <!--// -------- //-->
+        <!--Tagline-->
+        <h3 id="tagline">Programmer | Student | Fitness enthusiast</h3>
+    </div>  
+    <!--Intro navigation-->
+    <ul id="navi">
+        <li><a href="#about-section">About</a></li>
+        <li><a href="#advertise-me-section">Projects</a></li>
+        <!--<li><a href="./blog.html">Blog</a></li>-->
+        <li><a href="#contact-section">Contact</a></li>
+    </ul> 
+</section>
+<!--// -------- //-->
 
-        <hr class="index-separator">
+<!--// About Page //-->
+<section id="about-section">
+    <!--Bio header-->
+    <h1 id="bio-title">About</h1>
+        <!--Biography-->
+        <div class="bio">
+            <!--Profile pic-->
+            <!--<img class="bio-img" src="images/profile_pic.jpg">-->
+            
+            <div class="slideshow-container">
+                <img class="slideshow-img" src="images/profile_pic.jpg" alt="Image 1">
+                <img class="slideshow-img" src="images/profile_pic_12.jpg" alt="Image 2">
+                <img class="slideshow-img" src="images/profile_pic_3.jpg" alt="Image 3">
+                <img class="slideshow-img" src="images/profile_pic_2.jpg" alt="Image 3">
+                <img class="slideshow-img" src="images/profile_pic_8.jpg" alt="Image 3">
+                <img class="slideshow-img" src="images/profile_pic_11.jpg" alt="Image 3">
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
 
-        <!--// About Page //-->
-        <section id="about-section">
-            <!--Bio header-->
-            <h1 id="bio-title">About</h1>
-                <!--Biography-->
-                <div class="bio">
-                    <!--Profile pic-->
-                    <!--<img class="bio-img" src="images/profile_pic.jpg">-->
-                    
-                    <div class="slideshow-container">
-                        <img class="slideshow-img" src="images/profile_pic.jpg" alt="Image 1">
-                        <img class="slideshow-img" src="images/profile_pic_12.jpg" alt="Image 2">
-                        <img class="slideshow-img" src="images/profile_pic_3.jpg" alt="Image 3">
-                        <img class="slideshow-img" src="images/profile_pic_2.jpg" alt="Image 3">
-                        <img class="slideshow-img" src="images/profile_pic_8.jpg" alt="Image 3">
-                        <img class="slideshow-img" src="images/profile_pic_11.jpg" alt="Image 3">
+            <!--Biography-->
+            <div id="total-bio-p">
+                <hr class="bio-separator">
+                <div id="bio-p">
+                    <p>
+                        My name is Asiah Crutchfield, also known as 孫塞亞. I'm 
+                        currently studying a CS degree in Taiwan with the  
+                        goal of being able to have a career in the semiconductor industry
+                        or working with AI. It's a challenge to be sure but I'm not afraid 
+                        of being uncomfortable and taking calculated risks to reach a goal 
+                        or get something that I think will benefit me and those I care about.
+                    </p>
+                    <p>
+                        When I'm not holed away in a library studying, I like to lift weights,
+                        go for walks and bike rides, study Mandarin Chinese, and look for
+                        cheap, delicious and (preferably) healthy food. I try to keep my mind 
+                        open to all the interesting things the world has to offer. 
+                    </p>
+                </div>
+                <hr class="bio-separator">
+            </div>
+        </div>
+        <!--Interest/Hobbies-->
+        <div id="interests">
+
+            <h2 id="interests-title">Interests and Hobbies</h2> 
+                <!--List of interests-->
+                <hr class="interests-separator">
+                <div id="all-interests">
+                    <ul id="interests-list">
                         
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-
-                    <!--Biography-->
-                    <div id="total-bio-p">
-                        <hr class="bio-separator">
-                        <div id="bio-p">
-                            <p>
-                                My name is Asiah Crutchfield, also known as 孫塞亞. I'm 
-                                currently studying a CS degree in Taiwan with the  
-                                goal of being able to have a career in the semiconductor industry
-                                or working with AI. It's a challenge to be sure but I'm not afraid 
-                                of being uncomfortable and taking calculated risks to reach a goal 
-                                or get something that I think will benefit me and those I care about.
-                            </p>
-                            <p>
-                                When I'm not holed away in a library studying, I like to lift weights,
-                                go for walks and bike rides, study Mandarin Chinese, and look for
-                                cheap, delicious and (preferably) healthy food. I try to keep my mind 
-                                open to all the interesting things the world has to offer. 
-                            </p>
-                        </div>
-                        <hr class="bio-separator">
-                    </div>
+                        <li>Fitness</li>
+                        <li>Hiking</li>
+                        <li>Language learning</li>
+                        <li>Gaming</li>
+                        
+                    </ul>
                 </div>
-                <!--Interest/Hobbies-->
-                <div id="interests">
+            <hr class="interests-separator">
 
-                    <h2 id="interests-title">Interests and Hobbies</h2> 
-                        <!--List of interests-->
-                        <hr class="interests-separator">
-                        <div id="all-interests">
-                            <ul id="interests-list">
-                                
-                                <li>Fitness</li>
-                                <li>Hiking</li>
-                                <li>Language learning</li>
-                                <li>Gaming</li>
-                                
+            <div id="interests-media-container">
+
+                <ul id="interests-media">
+                        
+                    <li><img src="images/profile_pic_7.jpg"></li>
+                    <li><video width="400" height="450" controls>
+                        <source src="videos/personal_vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.</video>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+</section>
+<!--// -------- //-->
+
+<!--// Projects Page //-->
+<section id="advertise-me-section">
+
+    <!--\ Navigation /-->
+        <!--\ *Mobile navigation* /-->
+        <div id="mobile-projects-nav">
+            <button id="menu-toggle">☰</button>
+            <div id="mobile-nav-links">
+                <a href="#project-section" id="mobile-projects-link">Projects</a>
+                <a href="#experience-section" id="mobile-experience-link">Experience</a>
+                <a href="#education-section" id="mobile-education-link">Education</a>
+                <a href="#skills-section" id="mobile-skills-link">Skills & Certs</a>
+            </div>
+        </div>
+
+        <!--\ *Desktop/Laptop navigation* /-->
+        <nav id="project-nav">
+            <a href="#project-section" id="projects-link">Projects</a> • 
+            <a href="#experience-section" id="experience-link">Experience</a> • 
+            <a href="#education-section" id="education-link">Education</a> • 
+            <a href="#skills-section" id="skills-link">Skills & Certs</a>
+        </nav>
+
+    <!--\ Projects section /-->
+    <section id="project-section">
+        <h1 id="project-title">Projects</h1>
+        <!--Project container-->
+        <div class="projects">
+            <!--A project-->
+            <div class="project-container">
+
+                <div class="project-item" id="name-guesser">
+                    <!--Project image-->
+                    <div class="project-img">
+                        <a href="https://github.com/asiahcrutchfield/name-guesser" target="_blank"><img class="img-preview" src="/images/project_images/name_guesser_logo.png" alt="placeholder"></a>
+                    </div>
+                    <!--Project name-->
+                    <h3 class="project-name">Name Guesser</h3>
+                    <!--Project description-->
+                    <hr class="project-separator">
+                    <p class="description">A game that asks for your name and attempts to guess whether you are lying or telling the truth.</p>
+                    <hr class="project-separator">
+                </div>
+                <div class="percentage-container project-percentage-container" id="name-guesser-bar">
+                    <div class="progress-container project-progress-container">
+                        <div class="progress-bar" id="name-guesser-progress"></div>
+                    </div>
+                    <h2 class="project-percent">2%</h2> <!--Percentage-->
+                </div>
+                <div class="project-tools-container">
+
+                    <h2 class="project-tools-title">Tools</h2>
+                            <ul class="project-tools">
+                                <li>C++</li>
                             </ul>
-                        </div>
-                    <hr class="interests-separator">
-
-                    <div id="interests-media-container">
-
-                        <ul id="interests-media">
-                                
-                            <li><img src="images/profile_pic_7.jpg"></li>
-                            <li><video width="400" height="450" controls>
-                                <source src="videos/personal_vid.mp4" type="video/mp4">
-                                Your browser does not support the video tag.</video>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
-        </section>
-        <!--// -------- //-->
-
-        <hr class="index-separator">
-
-        <!--// Projects Page //-->
-        <section id="advertise-me-section">
-
-            <!--\ Navigation /-->
-                <!--\ *Mobile navigation* /-->
-                <div id="mobile-projects-nav">
-                    <button id="menu-toggle">☰</button>
-                    <div id="mobile-nav-links">
-                        <a href="#project-section" id="mobile-projects-link">Projects</a>
-                        <a href="#experience-section" id="mobile-experience-link">Experience</a>
-                        <a href="#education-section" id="mobile-education-link">Education</a>
-                        <a href="#skills-section" id="mobile-skills-link">Skills & Certs</a>
-                    </div>
                 </div>
 
-                <!--\ *Desktop/Laptop navigation* /-->
-                <nav id="project-nav">
-                    <a href="#project-section" id="projects-link">Projects</a> • 
-                    <a href="#experience-section" id="experience-link">Experience</a> • 
-                    <a href="#education-section" id="education-link">Education</a> • 
-                    <a href="#skills-section" id="skills-link">Skills & Certs</a>
-                </nav>
+            </div>
 
-            <!--\ Projects section /-->
-            <section id="project-section">
-                <h1 id="project-title">Projects</h1>
-                <!--Project container-->
-                <div class="projects">
-                    <!--A project-->
-                    <div class="project-container">
+                
+                <div class="project-container">
 
-                        <div class="project-item" id="name-guesser">
+                        <div class="project-item" id="language-experiment">
                             <!--Project image-->
                             <div class="project-img">
-                                <a href="https://github.com/asiahcrutchfield/name-guesser" target="_blank"><img class="img-preview" src="/images/project_images/name_guesser_logo.png" alt="placeholder"></a>
+                                <img class="img-preview" src="/images/project_images/TEASER.png" alt="placeholder"> <!-- add link later -->
                             </div>
                             <!--Project name-->
-                            <h3 class="project-name">Name Guesser</h3>
+                            <h3 class="project-name">Language Experiment</h3>
                             <!--Project description-->
                             <hr class="project-separator">
-                            <p class="description">A game that asks for your name and attempts to guess whether you are lying or telling the truth.</p>
+                            <p class="description">A free, audio-based project that helps you train your ear to understand 
+                                fast, real-life speech — without relying on reading, grammar, or translation. It’s a 
+                                different kind of language learning experiment built for beginners who want to build a 
+                                solid foundation from the ground up.</p>
                             <hr class="project-separator">
                         </div>
-                        <div class="percentage-container project-percentage-container" id="name-guesser-bar">
-                            <div class="progress-container project-progress-container">
-                                <div class="progress-bar" id="name-guesser-progress"></div>
-                            </div>
-                            <h2 class="project-percent">2%</h2> <!--Percentage-->
-                        </div>
+                        
+                        <p class="under-construction">UNDER CONSTRUCTION</p>
                         <div class="project-tools-container">
 
                             <h2 class="project-tools-title">Tools</h2>
                                     <ul class="project-tools">
-                                        <li>C++</li>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
                                     </ul>
                         </div>
-
-                    </div>
-
                         
-                        <div class="project-container">
-
-                                <div class="project-item" id="language-experiment">
-                                    <!--Project image-->
-                                    <div class="project-img">
-                                        <img class="img-preview" src="/images/project_images/TEASER.png" alt="placeholder"> <!-- add link later -->
-                                    </div>
-                                    <!--Project name-->
-                                    <h3 class="project-name">Language Experiment</h3>
-                                    <!--Project description-->
-                                    <hr class="project-separator">
-                                    <p class="description">A free, audio-based project that helps you train your ear to understand 
-                                        fast, real-life speech — without relying on reading, grammar, or translation. It’s a 
-                                        different kind of language learning experiment built for beginners who want to build a 
-                                        solid foundation from the ground up.</p>
-                                    <hr class="project-separator">
-                                </div>
-                                
-                                <p class="under-construction">UNDER CONSTRUCTION</p>
-                                <div class="project-tools-container">
-
-                                    <h2 class="project-tools-title">Tools</h2>
-                                            <ul class="project-tools">
-                                                <li>HTML</li>
-                                                <li>CSS</li>
-                                            </ul>
-                                </div>
-                                
-
-                        </div>
-
-                    
-                </div>
-                
-                </div>
-            </section>
-
-            <!--\ Experience section /-->
-            <section id="experience-section">
-                <!--Experience header-->
-                <h1 class="exp-title">Experience</h1>
-                <!--Work experience-->
-                <div class="experiences">
-                    <div class="exp">
-                        <div class="work" id="technology-connection">
-                            <h2 class="work-name"><em>Tulane Technology Connection</em> 
-                                <span class="position">IT Specialist</span></h2>
-                            <h3 class="location"><em>|New Orleans, USA|</em></h3>
-                            <h3 class="date">October 2023 - August 2024</h3>
-
-                            <hr class="duty-separator">
-
-                            <ul class="duties">
-                                <li>Have solid comprehension of various Macintosh models and Dell laptops.</li>
-                                <li>Have experience guiding students and faculty in making a technology purchase decision for Mac, iPad and Dell products.</li>
-                                <li>Have experience using the PIMS POS system for sales, quotes receiving and creating purchase orders.</li>
-                                <li>Have experience in consumer electronic sales, product merchandising, and inventory management.</li>
-                                <li>Have experience counting and reconciling monthly inventories.</li>
-                                <li>Have experience gathering and submitting Excel reports to major companies such as Apple.</li>
-                            </ul>
-                        </div>
-
-                        <hr class = "experience-separator">
-
-                        <div class="work" id="ponchartrain-partners">
-                            <h2 class="work-name"><em>Pontchartrain Partners</em> 
-                                <span class="position">Maintenance</span></h2>
-                            <h3 class="location"><em>|New Orleans, USA|</em></h3>
-                            <h3 class="date">November 2017 - August 2022</h3>
-
-                            <hr class="duty-separator">
-
-                            <ul class="duties">
-                                <li>Maintaining cleanliness and orderliness of both inside and outside of building by cutting grass, collecting trash and debri around the building, cleaning restrooms, caring for plants, and mopping floors.</li>
-                                <li>Performing light maintenance such as fixing leaking toilets.</li>
-                            </ul>
-                        </div>
-
-                        <hr class = "experience-separator">
-
-                        <div class="work" id="canal-street">
-                            <h2 class="work-name"><em>Canal Street Veterinary Hospital</em> 
-                                <span class="position">Veterinary Assistant</span></h2>
-                            <h3 class="location"><em>|New Orleans, USA|</em></h3>
-                            <h3 class="date">August 2015 - April 2017</h3>
-
-                            <hr class="duty-separator">
-
-                            <ul class="duties">
-                                <li>Routine cleaning of hospital.</li>
-                                <li>Caring for sick and injured dogs and cats by feeding, walking, and bathing them.</li>
-                                <li>Assisting doctor in exams and surgeries.</li>
-                            </ul>
-                        </div>
-
-                        <hr class = "experience-separator">
-
-                        <div class="work" id="ikes-snowballs">
-                            <h2 class="work-name"><em>Ike's Snowballs</em> 
-                                <span class="position">Cashier</span></h2>
-                            <h3 class="location"><em>|New Orleans, USA|</em></h3>
-                            <h3 class="date">March 2014 - August 2015</h3>
-
-                            <hr class="duty-separator">
-
-                            <ul class="duties">
-                                <li>Opening and closing of snowcone stand.</li>
-                                <li>Making and serving frozen and hot treats to customers.</li>
-                                <li>Cleaning stand.</li>
-                                <li>Running end-of-day on cash register.</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
-
-            <!--\ Skills and language section /-->
-            <section id="skills-section">
-                <!--Languages-->
-                <div class="language-div">
-                    <h1 id="language-title">Languages</h1>
-
-                    <div id="all-languages">
-
-                        <div class="languages">
-                            <h2><span class="lang" id="english-lang">English: </span>
-                                <span class="fluency"> Native</span></h2>
-                                <div class="percentage-container">
-                                    <div class="progress-container">
-                                        <div class="progress-bar" id="english"></div>
-                                    </div>
-                                    <h2 class="lang-percent">100%</h2> <!--Percentage-->
-                                </div>
-                        </div>
-                        <div class="languages">
-                            <h2><span class="lang" id="mandarin-lang">Chinese Mandarin: </span>
-                                <span class="fluency"> Beginner (A1)</span></h2>
-                                <div class="percentage-container">
-                                    <div class="progress-container">
-                                        <div class="progress-bar" id="mandarin"></div>
-                                    </div>
-                                    <h2 class="lang-percent">10%</h2> <!--Percentage-->
-                                </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <div id="certifications">
-                    <h1 id="certification-title">Certifications</h1>
-                    <!--Certifications-->
-                    <div class="certification-div">
-                        
-                        <div class="certs">
-                            <h2 class="cert-name"><a target="_blank" href="docs/TOCFL_A1.pdf">TOCFL (A1)</a></h2>
-                        </div>
-                        <hr class="cert-separator">
-                        <div class="certs">
-                            <h2 class="cert-name"><a target="_blank" href="docs/wenzao_certificate.jpg">Wenzao Mandarin Language Certificate</a></h2>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!--\ Education section /-->
-            <section id="education-section">
-                <h1 id="education-title">Education</h1>
-
-                <!--Education-->
-                <div class="education-div">
-
-                    <div class="education" id="yuan-ze">
-                        <h2 class="school">Yuan Ze University</h2>
-
-                        <hr class="education-separator">
-
-                            <h3 class="education-location"><em>|Taoyuan, Taiwan|</em></h3> <hr class="education-separator2">
-                        <h3 class="degree">International Bachelor's in Informatics</h3>
-                        <h4 class="education-date">September 2024 - Present</h4>
-                    </div>
-                    <div  class="education" id="wenzao">
-                        <h2 class="school">Wenzao University of Languages</h2>
-
-                        <hr class="education-separator">
-
-                            <h3 class="education-location"><em>|Kaohsiung, Taiwan|</em></h3> <hr class="education-separator2">
-                        <h3 class="degree">Certificate of Chinese</h3>
-                        <h4 class="education-date">September 2022 - February 2023</h4>
-                    </div>
-                    <div  class="education" id="scihigh">
-                        <h2 class="school">New Orleans Science and Mathematics High School</h2>
-
-                        <hr class="education-separator">
-
-                            <h3 class="education-location"><em>|New Orleans, USA|</em></h3> <hr class="education-separator2">
-                        <h3 class="degree">High School Diploma</h3>
-                        <h4 class="education-date">August 2008 - May 2012</h4>
-                    </div>
-                    <div  class="education" id="nocca">
-                        <h2 class="school">New Orleans Center for Creative Arts (NOCCA)</h2>
-
-                        <hr class="education-separator">
-
-                            <h3 class="education-location"><em>|New Orleans, USA|</em></h3> <hr class="education-separator2">
-                        <h3 class="degree">Creative Writing Certificate</h3>
-                        <h4 class="education-date">August 2010 - May 2012</h4>
-                    </div>
 
                 </div>
-            </section>
-        </section>
+
+            
+        </div>
         
-        <!--// -------- //-->
+        </div>
+    </section>
 
-        <hr class="index-separator">
+    <!--\ Experience section /-->
+    <section id="experience-section">
+        <!--Experience header-->
+        <h1 class="exp-title">Experience</h1>
+        <!--Work experience-->
+        <div class="experiences">
+            <div class="exp">
+                <div class="work" id="technology-connection">
+                    <h2 class="work-name"><em>Tulane Technology Connection</em> 
+                        <span class="position">IT Specialist</span></h2>
+                    <h3 class="location"><em>|New Orleans, USA|</em></h3>
+                    <h3 class="date">October 2023 - August 2024</h3>
 
-        <!--// Contact Page //-->
-        <section id="contact-section">
-            <!--Contact header-->
-            <h1 id="contact-title">Contact</h1>
-            <!--Container for container including email-->
-            <div id="all-contact">
-                <!--Email-->
-                <div id="email-me">
-                    <h2>Get in touch</h2>
-                    <ul class="icons" id="email">
-                        <li><a><i class="fas fa-envelope"></i></a></li>
+                    <hr class="duty-separator">
+
+                    <ul class="duties">
+                        <li>Have solid comprehension of various Macintosh models and Dell laptops.</li>
+                        <li>Have experience guiding students and faculty in making a technology purchase decision for Mac, iPad and Dell products.</li>
+                        <li>Have experience using the PIMS POS system for sales, quotes receiving and creating purchase orders.</li>
+                        <li>Have experience in consumer electronic sales, product merchandising, and inventory management.</li>
+                        <li>Have experience counting and reconciling monthly inventories.</li>
+                        <li>Have experience gathering and submitting Excel reports to major companies such as Apple.</li>
                     </ul>
-                    <!--Email contact form-->
-                    <div id="email-form">
-                        <form class="contact-form">
-                            <button class="submit" id="email-close">Close</button>
-                            <input type="text" id="email-name" name="name" placeholder="Enter your full name">
-                            <input type="text" id="email-email" name="email" placeholder="Your email: example@email.com">
-                            <input type="text" id="email-subject" name="email" placeholder="What is this about?"> 
-                            <textarea id="email-message" name="message" placeholder="Type your message here..."></textarea>
-                            <button class="submit" id="email-submit" type="submit">Submit</button>
-                        </form>
-                    </div>
                 </div>
 
-                <hr id="separator">
+                <hr class = "experience-separator">
+
+                <div class="work" id="ponchartrain-partners">
+                    <h2 class="work-name"><em>Pontchartrain Partners</em> 
+                        <span class="position">Maintenance</span></h2>
+                    <h3 class="location"><em>|New Orleans, USA|</em></h3>
+                    <h3 class="date">November 2017 - August 2022</h3>
+
+                    <hr class="duty-separator">
+
+                    <ul class="duties">
+                        <li>Maintaining cleanliness and orderliness of both inside and outside of building by cutting grass, collecting trash and debri around the building, cleaning restrooms, caring for plants, and mopping floors.</li>
+                        <li>Performing light maintenance such as fixing leaking toilets.</li>
+                    </ul>
+                </div>
+
+                <hr class = "experience-separator">
+
+                <div class="work" id="canal-street">
+                    <h2 class="work-name"><em>Canal Street Veterinary Hospital</em> 
+                        <span class="position">Veterinary Assistant</span></h2>
+                    <h3 class="location"><em>|New Orleans, USA|</em></h3>
+                    <h3 class="date">August 2015 - April 2017</h3>
+
+                    <hr class="duty-separator">
+
+                    <ul class="duties">
+                        <li>Routine cleaning of hospital.</li>
+                        <li>Caring for sick and injured dogs and cats by feeding, walking, and bathing them.</li>
+                        <li>Assisting doctor in exams and surgeries.</li>
+                    </ul>
+                </div>
+
+                <hr class = "experience-separator">
+
+                <div class="work" id="ikes-snowballs">
+                    <h2 class="work-name"><em>Ike's Snowballs</em> 
+                        <span class="position">Cashier</span></h2>
+                    <h3 class="location"><em>|New Orleans, USA|</em></h3>
+                    <h3 class="date">March 2014 - August 2015</h3>
+
+                    <hr class="duty-separator">
+
+                    <ul class="duties">
+                        <li>Opening and closing of snowcone stand.</li>
+                        <li>Making and serving frozen and hot treats to customers.</li>
+                        <li>Cleaning stand.</li>
+                        <li>Running end-of-day on cash register.</li>
+                    </ul>
+                </div>
                 
-                <!--Container for all social platforms except email-->
-                <div id="social-media">
-                    <h2>Follow me</h2>
-                    <ul class="icons">
-                        <li id="linkedin"><a href="https://www.linkedin.com/in/asiahcrutchfield/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        <li id="github"><a href="https://github.com/asiahcrutchfield" target="_blank"><i class="fab fa-github"></i></a></li>
-                        <li id="x"><a href="https://x.com/AsiahCrutch" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li id="insta"><a href="https://www.instagram.com/asiahcrutchfield/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li id="youtube"><a href="https://www.youtube.com/@AsiahCrutchfield?sub_confirmation=1" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                        <li id="bluesky"><a href="https://bsky.app/profile/asiahcrutchfield.bsky.social" target="_blank"><i class="ti ti-brand-bluesky"></i></a></li>
-                        <li id="tiktok"><a href="https://www.tiktok.com/@asiah_crutchfield?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a></li>
-                        <!--<li id="reddit"><a href="https://www.reddit.com/user/asiah_crutchfield/" target="_blank"><i class="ti ti-brand-reddit"></i></a></li>-->
-                        <li><a href="https://www.xiaohongshu.com/user/profile/66dca99a000000001d03060f?xsec_token=YB6BgMtdPaCpwt2RTZmjILvAWq4hU-ZVtYEKB4tOqc3XU%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=66dca99a000000001d03060f&apptime=1745590028&share_
-                            id=51bcaee16cc94359b4272813d6ecf9de&share_channel=copy_link" target="_blank"><img  id="rednote" src="./images/logos_icons/xiaohongshu.png" alt="Xiaohongshu Logo"></a></li>
-                        <li><a href="https://v.douyin.com/aIyZKC4rXzI/" target="_blank"><img id="douyin" src="./images/logos_icons/douyin.png" alt="Douyin Logo"></a></li>
-                        <li><a href="https://linktr.ee/asiahcrutchfield" target="_blank"><img id="linktree" src="./images/logos_icons/linktree.png" alt="Linktree">
-</a>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--\ Skills and language section /-->
+    <section id="skills-section">
+        <!--Languages-->
+        <div class="language-div">
+            <h1 id="language-title">Languages</h1>
+
+            <div id="all-languages">
+
+                <div class="languages">
+                    <h2><span class="lang" id="english-lang">English: </span>
+                        <span class="fluency"> Native</span></h2>
+                        <div class="percentage-container">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="english"></div>
+                            </div>
+                            <h2 class="lang-percent">100%</h2> <!--Percentage-->
+                        </div>
                 </div>
+                <div class="languages">
+                    <h2><span class="lang" id="mandarin-lang">Chinese Mandarin: </span>
+                        <span class="fluency"> Beginner (A1)</span></h2>
+                        <div class="percentage-container">
+                            <div class="progress-container">
+                                <div class="progress-bar" id="mandarin"></div>
+                            </div>
+                            <h2 class="lang-percent">10%</h2> <!--Percentage-->
+                        </div>
+                </div>
+                
             </div>
-            <!--Resume & references-->
-            <div id="resume">
-                <a href="./docs/Asiah Crutchfield - Resume.pdf" target="_blank">Resume</a>
-                <a href="./references.html"> <!--| References</a>-->
+        </div>
+
+        <div id="certifications">
+            <h1 id="certification-title">Certifications</h1>
+            <!--Certifications-->
+            <div class="certification-div">
+                
+                <div class="certs">
+                    <h2 class="cert-name"><a target="_blank" href="docs/TOCFL_A1.pdf">TOCFL (A1)</a></h2>
+                </div>
+                <hr class="cert-separator">
+                <div class="certs">
+                    <h2 class="cert-name"><a target="_blank" href="docs/wenzao_certificate.jpg">Wenzao Mandarin Language Certificate</a></h2>
+                </div>
+
             </div>
-        </section>
-        <!--// -------- //-->
-        <!-- <section id="works-section">
+        </div>
+    </section>
 
-            <div id="works-container">
-                <h2 class="works-title">Works</h2>
+    <!--\ Education section /-->
+    <section id="education-section">
+        <h1 id="education-title">Education</h1>
 
-                    <div class="works">
-                        <h3 class="works-category">Example</h3>
+        <!--Education-->
+        <div class="education-div">
 
-                        <div class="scrolling-works-container">
+            <div class="education" id="yuan-ze">
+                <h2 class="school">Yuan Ze University</h2>
 
-                        <div class="works-item-container">
-                            <h4 class="works-item-title"><a href="#works-section" class="works-item-link">example</a></h4>
+                <hr class="education-separator">
 
-                                <div class="works-item">
-                                        <hr class="works-separator">
-                                            <p class="works-description">Lorem ipsum</p>
-                                        <hr class="works-separator">
-                                    <a class="works-image-link" href="#works-section"><img class="works-image" src="./images/logo-placeholder.jpg"></a>
-                                </div>
-                        </div> -->
-                            <!--<hr class="scrolling-works-separator">-->
-                        <!-- </div> -->
-                            <!-- <hr class="works-container-separator"> -->
+                    <h3 class="education-location"><em>|Taoyuan, Taiwan|</em></h3> <hr class="education-separator2">
+                <h3 class="degree">International Bachelor's in Informatics</h3>
+                <h4 class="education-date">September 2024 - Present</h4>
+            </div>
+            <div  class="education" id="wenzao">
+                <h2 class="school">Wenzao University of Languages</h2>
 
-                            <!-- <h3 class="works-category">Example</h3>
+                <hr class="education-separator">
 
-                            <div class="scrolling-works-container">
-    
-                            <div class="works-item-container works-item-container">
-                                <h4 class="works-item-title"><a href="#works-section" class="works-item-link">example</a></h4>
-    
-                                    <div class="works-item works-item-pics">
-                                        <img class="works-image works-image-pic" src="./images/logo-placeholder.jpg">
-                                        <div class="works-paragraph">
-                                            <hr class="works-separator">
-                                                <p class="works-description works-description-pics">Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-                                            <hr class="works-separator">
-                                        </div>
-                                    </div>
-                            </div> -->
-                                <!--<hr class="scrolling-works-separator">-->
-                            <!-- </div> -->
-                                <!-- <hr class="works-container-separator"> -->
-                    <!-- </div> 
+                    <h3 class="education-location"><em>|Kaohsiung, Taiwan|</em></h3> <hr class="education-separator2">
+                <h3 class="degree">Certificate of Chinese</h3>
+                <h4 class="education-date">September 2022 - February 2023</h4>
+            </div>
+            <div  class="education" id="scihigh">
+                <h2 class="school">New Orleans Science and Mathematics High School</h2>
 
-        </section> -->
-        <!--// -------- //-->
-    </body>
+                <hr class="education-separator">
+
+                    <h3 class="education-location"><em>|New Orleans, USA|</em></h3> <hr class="education-separator2">
+                <h3 class="degree">High School Diploma</h3>
+                <h4 class="education-date">August 2008 - May 2012</h4>
+            </div>
+            <div  class="education" id="nocca">
+                <h2 class="school">New Orleans Center for Creative Arts (NOCCA)</h2>
+
+                <hr class="education-separator">
+
+                    <h3 class="education-location"><em>|New Orleans, USA|</em></h3> <hr class="education-separator2">
+                <h3 class="degree">Creative Writing Certificate</h3>
+                <h4 class="education-date">August 2010 - May 2012</h4>
+            </div>
+
+        </div>
+    </section>
+</section>
+
+<!--// -------- //-->
+
+<!--// Contact Page //-->
+<section id="contact-section">
+    <!--Contact header-->
+    <h1 id="contact-title">Contact</h1>
+    <!--Container for container including email-->
+    <div id="all-contact">
+        <!--Email-->
+        <div id="email-me">
+            <h2>Get in touch</h2>
+            <ul class="icons" id="email">
+                <li><a><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            <!--Email contact form-->
+            <div id="email-form">
+                <form class="contact-form">
+                    <button class="submit" id="email-close">Close</button>
+                    <input type="text" id="email-name" name="name" placeholder="Enter your full name">
+                    <input type="text" id="email-email" name="email" placeholder="Your email: example@email.com">
+                    <input type="text" id="email-subject" name="email" placeholder="What is this about?"> 
+                    <textarea id="email-message" name="message" placeholder="Type your message here..."></textarea>
+                    <button class="submit" id="email-submit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <hr id="separator">
+        
+        <!--Container for all social platforms except email-->
+        <div id="social-media">
+            <h2>Follow me</h2>
+            <ul class="icons">
+                <li id="linkedin"><a href="https://www.linkedin.com/in/asiahcrutchfield/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li id="github"><a href="https://github.com/asiahcrutchfield" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li id="x"><a href="https://x.com/AsiahCrutch" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li id="insta"><a href="https://www.instagram.com/asiahcrutchfield/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li id="youtube"><a href="https://www.youtube.com/@AsiahCrutchfield?sub_confirmation=1" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li id="bluesky"><a href="https://bsky.app/profile/asiahcrutchfield.bsky.social" target="_blank"><i class="ti ti-brand-bluesky"></i></a></li>
+                <li id="tiktok"><a href="https://www.tiktok.com/@asiah_crutchfield?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                <!--<li id="reddit"><a href="https://www.reddit.com/user/asiah_crutchfield/" target="_blank"><i class="ti ti-brand-reddit"></i></a></li>-->
+                <li><a href="https://www.xiaohongshu.com/user/profile/66dca99a000000001d03060f?xsec_token=YB6BgMtdPaCpwt2RTZmjILvAWq4hU-ZVtYEKB4tOqc3XU%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=66dca99a000000001d03060f&apptime=1745590028&share_
+                    id=51bcaee16cc94359b4272813d6ecf9de&share_channel=copy_link" target="_blank"><img  id="rednote" src="./images/logos_icons/xiaohongshu.png" alt="Xiaohongshu Logo"></a></li>
+                <li><a href="https://v.douyin.com/aIyZKC4rXzI/" target="_blank"><img id="douyin" src="./images/logos_icons/douyin.png" alt="Douyin Logo"></a></li>
+                <li><a href="https://linktr.ee/asiahcrutchfield" target="_blank"><img id="linktree" src="./images/logos_icons/linktree.png" alt="Linktree">
+</a>
+            </ul>
+        </div>
+    </div>
+    <!--Resume & references-->
+    <div id="resume">
+        <a href="./docs/Asiah Crutchfield - Resume.pdf" target="_blank">Resume</a>
+        <a href="./references.html"> <!--| References</a>-->
+    </div>
+</section>
+<!--// -------- //-->
+  
+</body>
 </html>

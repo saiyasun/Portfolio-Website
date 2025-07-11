@@ -1,97 +1,18 @@
-/*** Universal ***/
+/*** UNIVERSAL ***/
 html {
     scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-      background-color: #1d1d1d; /* Deep Forest Green */
-      color: #EDE6D3; /* Light Beige */
-    }
-  
-    a {
-      color: #C97B63; /* Muted Coral */
-    }
+body {
+    margin: 0;
+    padding: 0;
+}
 
-    #interests-list li {
-        color: green;
-        background-color: silver !important; /* This works fine */
-    }
-
-    #interests-list {
-        background-color: purple;
-    }
-
-    hr {
-        background-color: white !important;
-    }
-
-    .work .work-name, .education .school {
-        color: rgb(179, 179, 0);
-    }
-
-    .work .position, .languages .fluency, .education .degree {
-        color: violet;
-    }
-  
-    .work, #interests-media li, #interests, #resume, #mobile-projects-nav, #project-nav,
-    .slideshow-container img, .education, .school, .languages, .language-div, 
-    #certifications, #language-title, #certification-title, .references, 
-    .project-item, .project-tools, .project-tools-container, .project-container,
-    .project-tools li {
-        border: 5px solid silver !important; 
-    }
-
-    @media only screen and (min-width: 769px) {
-        .projects {
-            border: 5px solid silver !important;
-        }
-    }
-
-    .languages .progress-container, .projects .project-progress-container {
-        border: 5px solid grey ;
-    }
-
-    #email i {
-        color: white !important;
-    }
-
-    .projects .description {
-        color: white;
-    }
-
-    header, footer {
-      background-color: #1F2A20; /* Slightly darker for contrast */
-      color: #EDE6D3;
-    }
-  
-    .button, button {
-      background-color: #C97B63;
-      color: #FAF9F6;
-      border: none;
-    }
-
-    .project-container .under-construction {
-        color: white;
-    }
-  
-    .card, .section {
-      background-color: #364636; /* Subtle card background */
-      color: #EDE6D3;
-      border: 1px solid #4A5C4A;
-    }
-  
-    input, textarea {
-      background-color: #2E3B2F;
-      color: #EDE6D3;
-      border: 1px solid #4A5C4A;
-    }
-  
-    ::selection {
-      background: #C97B63;
-      color: #FAF9F6;
-    }
-  }
+section {
+    border: 2px solid red;
+    padding: .2em .5em;
+}
+/*** UNIVERSAL ***/
   
 /* -- Languages -- */
 #mandarin {
