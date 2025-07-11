@@ -17,6 +17,17 @@ section {
 a {
     text-decoration: none;
 }
+
+hr {
+    border: 1px solid black;
+    background-color: black;
+    height: 5px;
+    width: 100px;
+}
+
+img {
+    max-width: 50px;
+}
 /*** UNIVERSAL ***/
   
 
@@ -26,12 +37,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: .5em;
     overflow: hidden;
     height: 99vh;
 }
 
 .intro {
     border: 5px solid black;
+    display: flex;
+    gap: .3em;
     border-radius: 25px;
     box-sizing: border-box;
     padding: .5em;
@@ -43,7 +57,7 @@ a {
         padding: .5em;
         align-items: center;
         justify-content: center;
-        gap: .5em;
+        gap: .3em;
     }
         #name-intro {
             border: 2px dashed green;
@@ -51,39 +65,86 @@ a {
             padding: 1em;
             display: inline-flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            justify-content: center;
             gap: .2em;
         }
             .name {
                 display: inline;
                 border: 2px dotted white;
                 font-weight: 900;
+                font-size: clamp(1vw, 4vw, 100px);
                 margin: 0;
-                padding: .3em;
+                padding: .1em .3em;
             }
-        #intro-contact-container {
-            border: 5px solid orange;
-            display: flex;
-            gap: .5em;
-            padding: .5em;
+        #intro-quick-info-container {
+            border: 3px dashed yellow;
+            display: inline-flex;
+            gap: .3em;
+            padding: .2em;
         }
-            .intro-contact {
-                border: 2px dashed grey;
+            #intro-contact-container {
+                border: 5px solid orange;
+                display: inline-flex;
+                gap: .5em;
+                padding: .5em;
+            }
+                .intro-contact {
+                    border: 2px dashed grey;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .3em;
+                }
+                .intro-icon {
+                    border: 3px solid brown;
+                    font-size: 25px;
+                    padding: .1em;
+                }
+            #intro-resume {
+                border: 5px dotted red;
                 display: flex;
-                flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                padding: .3em;
+                padding: .1em .5em;
+                gap: .2em;
             }
-            .intro-icon {
-                border: 3px solid brown;
-                font-size: 25px;
-                padding: .1em;
-            }
+                #resume-icon {
+                    border: 2px dotted red;
+                    max-width: 25px;
+                    padding: .2em;
+                }
+                #intro-resume p {
+                    border: 2px dotted black;
+                    padding: .2em;
+                }
     #tagline {
         border: 5px solid silver;
-        display: inline;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
         padding: .5em;
         font-weight: 100;
     }
+        #tagline p {
+            border: 5px solid white;
+            padding: .2em;
+            font-size: clamp(1vw, 2vw, 4vw);
+            margin: 0;
+        }
+
+    #intro-img-container {
+        border: 5px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        #intro-img {
+            border: 2px solid purple;
+            width: 100%;
+            max-width: 400px;
+            min-width: 200px;
+        }
 /* --------------- */
