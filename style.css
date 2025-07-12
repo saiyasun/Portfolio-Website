@@ -33,13 +33,13 @@ img {
 
 /* LANDING PAGE */
 #landing {
-    background-color: aqua;
+    background-color: #f7f7f7;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5em;
     overflow: hidden;
     height: 99vh;
+    padding: 0;
 }
 
 .intro {
@@ -73,7 +73,7 @@ img {
                 display: inline;
                 border: 2px dotted white;
                 font-weight: 900;
-                font-size: clamp(1vw, 4vw, 100px);
+                font-size: clamp(45px, 4.5vw, 100px);
                 margin: 0;
                 padding: .1em .3em;
             }
@@ -136,15 +136,36 @@ img {
         }
 
     #intro-img-container {
-        border: 5px solid white;
+        border: 5px solid green;
         display: flex;
         align-items: center;
         justify-content: center;
+        aspect-ratio: 1/1;
+        width: clamp(250px, 30vw, 500px); /* responsive width */
+        border-radius: 50%;
+        overflow: hidden; /* clip anything outside the circle */
     }
         #intro-img {
-            border: 2px solid purple;
-            width: 100%;
-            max-width: 400px;
-            min-width: 200px;
+            max-width: 100%;
+            border-radius: 50%;
         }
+    #intro-img-container, #intro-img {
+    }
+
+.intro-color {
+    border: 2px solid gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: auto;
+}
+    #intro-color1 {
+        flex: 1;
+    }
+    #intro-color2 {
+        width: 35%;
+        background-color: linear-gradient(#141e30, #243b55);
+    }
 /* --------------- */
