@@ -107,6 +107,11 @@ img {
                 width: 50%;
                 background-color: #a1d9ff;
             }
+                #intro-contact-container-separator {
+                    margin: 0 8px;
+                    color: gray;
+                    font-size: 1.2em;
+                }
                 .intro-contact {
                     border: 1px solid #d1d5db;
                     border-radius: 50%;
