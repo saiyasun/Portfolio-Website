@@ -1,6 +1,5 @@
 // || LANDING PAGE ||
 function separator(id, childElements, separator) { // "id", "childElements" and "separator" must be strings
-    console.log("Separator function running..."); 
     const container = document.getElementById(id);
     const children = container.querySelectorAll(childElements);
 
@@ -12,6 +11,4 @@ function separator(id, childElements, separator) { // "id", "childElements" and 
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    separator("tagline", "p", "✦");
-});
+separator("tagline", "p", "✦");
