@@ -17,7 +17,7 @@ separator("tagline", "p", "✦");
 // **UNIVERSAL**
 // Helper function for larger multilingual translation function
 function nameSwitch(nameContainer, nameClass) {
-    const container = document.getElementById(nameContainer);
+    const container = document.getElementsByClassName(nameContainer);
     const names = container.querySelectorAll(`.${nameClass}`);
 
     for (let i = 0; i < names.length-1; i++) {
