@@ -152,7 +152,7 @@ video {
             .name {
                 display: inline;
                 font-weight: 900;
-                font-size: clamp(40px, 8vw, 120px);
+                font-size: clamp(40px, 5vw, 120px);
                 margin: 0;
                 padding: .1em .3em;
 
@@ -202,7 +202,7 @@ video {
             }
             #tagline p {
                 padding: .2em;
-                font-size: clamp(15px, 4vw, 60px);
+                font-size: clamp(15px, 2vw, 60px);
                 margin: 0;
             }
         /* \            / */
@@ -256,7 +256,7 @@ video {
                         color: #2563eb;            
                     }
                 .intro-icon {
-                    font-size: clamp(10px, 5vw, 30px);
+                    font-size: clamp(10px, 1.5vw, 30px);
                     padding: .1em;
                 }
                     /* landscape style */
@@ -291,7 +291,7 @@ video {
                 }
                 #quick-resume p {
                     padding: .5em;
-                    font-size: clamp(10px, 4.5vw, 30px);
+                    font-size: clamp(10px, 1.5vw, 30px);
                     margin: 0;
                 }
                     @media (max-height: 800px) {
