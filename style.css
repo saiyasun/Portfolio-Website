@@ -107,7 +107,8 @@ img, i {
             }
         }
             /* landscape style */
-            @media (max-width: 1050px) and (max-height: 800px) {
+            @media (min-width: 650px) and (max-width: 1025px) and 
+                   (min-height: 340px) and (max-height: 650px) {
                 #name-intro {
                     flex-direction: row;
                     height: 50dvh;
@@ -130,7 +131,9 @@ img, i {
                     text-align: center;
                 }
             }
-                @media (max-width: 1050px) and (max-height: 800px) {
+                /* landscape style */
+                @media (min-width: 650px) and (max-width: 1025px) and 
+                       (min-height: 340px) and (max-height: 650px) {
                     .name-container {
                         flex-direction: row;
                         height: 100%;
@@ -143,6 +146,7 @@ img, i {
                             margin: 0 .5em;
                         }
                 }
+                /*               */
             .name {
                 display: inline;
                 font-weight: 900;
@@ -155,7 +159,8 @@ img, i {
                 }
             }
                 /* landscape style */
-                @media (max-width: 1050px) and (max-height: 800px) {
+                @media (min-width: 650px) and (max-width: 1025px) and 
+                       (min-height: 340px) and (max-height: 650px) {
                     .name {
                         font-size: clamp(15px, 5vw, 50px);
                     }
@@ -246,7 +251,8 @@ img, i {
                     padding: .1em;
                 }
                     /* landscape style */
-                    @media (max-width: 1050px) and (max-height: 800px) {
+                    @media (min-width: 650px) and (max-width: 1025px) and 
+                           (min-height: 340px) and (max-height: 650px) {
                             .intro-icon {
                                 font-size: clamp(2.5vw, 3vw, 5px);
                             }
@@ -349,7 +355,8 @@ img, i {
         }
     }
         /* landscape style */
-        @media (max-width: 1050px) and (max-height: 800px) {
+        @media (min-width: 650px) and (max-width: 1025px) and 
+               (min-height: 350px) and (max-height: 650px) {
             #intro-color-mobile {
                width: 40%;
             }
