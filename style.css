@@ -1,54 +1,113 @@
+/* UNIVERSAL */
+:root {
 
-.intro {
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+    aspect-ratio: 1/1;
+}
+section {
+    margin: 0;
+    padding: .5em;
+}
+/* UNIVERSAL */
+
+
+/* || HERO PAGE || */
+#hero-section {
+    border: 5px solid gold;
     display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: .7em;
-    padding: 0 0 .3em 0;
-        width: 100%;
-    box-sizing: border-box;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: 0;
+    overflow-x: hidden;
 }
-    #quick-intro-wrapper {
-        display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            gap: .3em;
-        width: 100%;
-            padding: 0 0 .5em 0;
-        background-color: #f8e597;
-
-        @media (min-width: 650px) and (min-height: 500px) {
-            height: 65dvh;
-        }
+    .hero_intro {
+        border: 5px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-        #quick-intro {
+        /* Name and tagline */
+        /* Name */
+        #hero_intro1 {
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 100%;
+        }
+            #quick-intro_wrapper {
+                border: 5px solid green;
+                width: 100%;
+            }
+                #quick-intro {
+                    border: 5px dashed red;
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                }
+                    #quick-intro_name-wrapper {
+                        border: 5px dashed blue;
+                        display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                    }
+                        .name_background {
+                            border: 5px dotted silver;
+                            display: flex;
+                                align-items: center;
+                                justify-content: center;
+                        }
+                            .name {
+                                margin: 0;
+                            }
+        /**/
+        /* Tagline */
+        #tagline {
+            border: 5px dashed orange;
             display: flex;
                 align-items: center;
                 justify-content: center;
-                flex-direction: column;
-            box-sizing: border-box;
-            width: 100%;
-            height: 100%;
-            
-            @media (orientation: landscape) {
-                flex-direction: row-reverse;
+        }
+        /**/
+        /*   */
+    
+    /* Resume and socials */
+    #quick-contact_wrapper {
+        border: 5px dashed purple;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+        /* Socials */
+        /**/
+        /* Resume */
+        #quick-resume {
+            border: 3px dotted green;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+            #quick-resume_icon-wrapper {
+                border: 3px solid brown;
             }
-          }
-            /* Name section */
-            #name-wrapper {
-                display: flex;
-                flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    box-sizing: border-box;
-                    gap: .2em;
-                width: 100%;
-                    padding: .5em 1em;
-                background-color: #ffe8e8;
-
-                @media (orientation: landscape) {
-                    flex-direction: row;
-                    height: 100%;
+                #quick-resume_icon {
+                    max-width: 30px;
+                }
+        /**/
+    /*   */
+/* ||   || */
