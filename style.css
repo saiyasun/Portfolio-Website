@@ -2,7 +2,7 @@
 :root {
     --header: clamp(25px, 5.5vw + 2vh, 125px);
     --subtitle: clamp(16px, 3vw + 1vh, 35px);
-    --icon: clamp(16px, 5.5vw, 25px);
+    --icon: clamp(16px, 2.5vw + 1vh, 30px);
     --round-border_small: clamp(35px, 11vw, 50px);
         --round-border_bg-pad-sm: 1em;
     --round-border_large: clamp(150px, 80vw, 350px);
@@ -139,7 +139,7 @@ section {
     /* Resume and socials */
     #hero_intro2 {
         flex-wrap: wrap;
-            gap: 1em;
+            gap: 1.5em;
         box-sizing: border-box;
             padding: .5em;
             width: 100%;
@@ -151,7 +151,7 @@ section {
         display: flex;
             align-items: center;
             justify-content: space-around;
-            gap: .5em;
+            gap: 1em;
         box-sizing: border-box;
             padding: .5em .7em;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -188,7 +188,7 @@ section {
             gap: .3em;
         box-sizing: border-box;
             padding: .5em .7em;
-        font-size: var(--subtitle);
+        font-size: clamp(16px, 2.5vw + 1vh, 25px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         background-color: #ffe2e2;
     }
@@ -200,7 +200,7 @@ section {
             box-sizing: border-box;
                 width: var(--round-border_small);
                 height: var(--round-border_small);
-                padding: var(--round-border_bg-pad-sm);
+                padding: .5em;
             background-color: #f89d9d;
         }
             #quick-resume_icon {
@@ -214,8 +214,8 @@ section {
         position: absolute;
         border-radius: 50%;
         background-color: #ffb3ba;
-        width: calc(40dvw + 40dvh);
-        height: calc(40dvw + 40dvh);
+        width: clamp(410px, 41dvw + 41dvh, 1200px);
+        height: clamp(410px, 41dvw + 41dvh, 1200px);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
