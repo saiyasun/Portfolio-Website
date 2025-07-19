@@ -1,8 +1,8 @@
 /* UNIVERSAL */
 :root {
-    --header: clamp(25px, 2.7rem, 75px);
-    --subtitle: clamp(16px, 1.1rem, 25px);
-    --icon: clamp(16px, 1.2rem, 25px);
+    --header: clamp(25px, 5.5vw + 2vh, 125px);
+    --subtitle: clamp(16px, 3vw + 1vh, 35px);
+    --icon: clamp(16px, 5.5vw, 25px);
     --round-border_small: clamp(35px, 11vw, 50px);
         --round-border_bg-pad-sm: 1em;
     --round-border_large: clamp(150px, 80vw, 350px);
@@ -46,11 +46,13 @@ section {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    position: relative;
     height: 100dvh;
     max-height: 100dvh;
     padding: 0;
     overflow: hidden;
-    background-color:  #FFF8E7;
+    background: linear-gradient(135deg, #ffd6a5, #ffc6ff);
+    z-index: 0;
 }
     .hero_intro {
         display: flex;
@@ -70,6 +72,7 @@ section {
                     align-items: center;
                     justify-content: center;
                     flex-direction: column;
+                box-sizing: border-box;
                 width: 100%;
             }
                 #quick-intro_name-wrapper {
@@ -81,9 +84,10 @@ section {
                     box-sizing: border-box;
                         width: 100%;
                         padding: .5em;
-                    background-color: rgb(228, 228, 145);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    background-color: #ffe3a3;
 
-                    @media (orientation: landscape) {
+                    @media (min-width: 600px) {
                         flex-direction: row;
                     }
                 }
@@ -119,7 +123,7 @@ section {
             box-sizing: border-box;
                 padding: .5em;
                 width: 100%;
-            background-color: rgb(201, 225, 233);
+            background-color: #dbe9f4;
         }
             .quick-intro_tagline_separator {
                 margin: 0;
@@ -150,7 +154,8 @@ section {
             gap: .5em;
         box-sizing: border-box;
             padding: .5em .7em;
-        background-color: rgb(253, 206, 120);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fcd8aa;
     }
         .quick-contact {
                 border-radius: 50%;
@@ -161,7 +166,7 @@ section {
                 padding: var(--round-border_bg-pad-sm);
                 width: var(--round-border_small);
                 height: var(--round-border_small);
-            background-color: silver;
+            background-color: #f2f2f2;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
             .quick-contact_intro-icon {
@@ -170,9 +175,8 @@ section {
                 transition: color 0.3s ease;
             }
                 .quick-contact:hover {
-                    background-color: rgb(255, 203, 92);
-                    background-color: rgb(255, 203, 92); /* warm yellow */
-                    color: rgb(98, 98, 252); /* vibrant blue */
+                    background-color: #ffcc80; /* warm peach */
+                    color: #5a63e0;            /* deep soft blue */
                 }
     /**/
     /* Resume */
@@ -181,11 +185,12 @@ section {
         display: flex;
             align-items: center;
             justify-content: center;
-            gap: .2em;
+            gap: .3em;
         box-sizing: border-box;
             padding: .5em .7em;
         font-size: var(--subtitle);
-        background-color: rgb(147, 255, 147);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffe2e2;
     }
         #quick-resume_icon-wrapper {
                 border-radius: 50%;
@@ -196,11 +201,25 @@ section {
                 width: var(--round-border_small);
                 height: var(--round-border_small);
                 padding: var(--round-border_bg-pad-sm);
-            background-color: rgb(243, 109, 109);
+            background-color: #f89d9d;
         }
             #quick-resume_icon {
                 max-width: var(--icon);
             }
     /**/
+    /*   */
+
+    /* Background circle  */
+    #hero_bg-circle {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #ffb3ba;
+        width: calc(40dvw + 40dvh);
+        height: calc(40dvw + 40dvh);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
     /*   */
 /* ||   || */
