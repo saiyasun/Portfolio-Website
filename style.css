@@ -36,17 +36,18 @@ section {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: .5em;
     height: 100dvh;
     max-height: 100dvh;
     padding: 0;
     overflow-x: hidden;
+    background-color:  #FFF8E7;
 }
     .hero_intro {
         border: 5px solid black;
         display: flex;
             align-items: center;
             justify-content: center;
+        background-color: #E6E0F8;
     }
         /* Name and tagline */
         /* Name */
@@ -55,22 +56,23 @@ section {
                 gap: 1em;
             box-sizing: border-box;
                 width: 100%;
+                height: 100%;
                 padding: .5em 0;
         }
             #quick-intro {
-                border: 5px dashed red;
+                outline: 2px solid black;
                     border-radius: 50%;
                     aspect-ratio: 1/1;
                 display: flex;
                     align-items: center;
                     justify-content: center;
                     flex-direction: column;
-                    gap: 1em;
+                    gap: .5em;
                 width: var(--round-border_large);
                 height: var(--round-border_large);
+                background-color: #D35400;
             }
                 .name_background {
-                    border: 5px dotted silver;
                     display: flex;
                         align-items: center;
                         justify-content: center;
@@ -78,12 +80,15 @@ section {
                     box-sizing: border-box;
                         width: 100%;
                         height: 50%;
+                    background-color: #F5F1E9;
                 }
                     #name_background1 {
                         border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+                        background-color: #f7dec1;
                     }
                     #name_background2 {
                         border-radius: 0 0 50% 50% / 0 0 100% 100%;
+                        background-color: #843cf7;
                     }
                         .name {
                             margin: 0;
@@ -92,10 +97,11 @@ section {
                             #name_eng {
                                 width: 80%;
                                 text-align: center;
+                                color: #000000;
                             }
                             #name_zh {
                                 writing-mode: vertical-lr;
-                                color: rgb(104, 104, 104);
+                                color: #ffffff;
                             }
     /**/
         /* Tagline */
@@ -134,9 +140,11 @@ section {
     
     /* Resume and socials */
     #hero_intro2 {
-        gap: 1em;
-        flex-direction: column;
-        padding: .5em;
+        flex-wrap: wrap;
+            gap: 1em;
+        box-sizing: border-box;
+            padding: .5em;
+            width: 100%;
     }
     /* Socials */
     #quick-contact_socials {
