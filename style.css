@@ -51,7 +51,7 @@ section {
     max-height: 100dvh;
     padding: 0;
     overflow: hidden;
-    background: linear-gradient(135deg, #ffd6a5, #ffc6ff);
+    background: linear-gradient(135deg, #2b5876, #4e4376);
     z-index: 0;
 }
     .hero_intro {
@@ -85,7 +85,7 @@ section {
                         width: 100%;
                         padding: .5em;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    background-color: #ffe3a3;
+                    background-color:  rgb(173, 173, 173);
 
                     @media (min-width: 600px) {
                         flex-direction: row;
@@ -102,12 +102,13 @@ section {
                     .name {
                         margin: 0;
                         font-size: var(--header);
+                        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
                     }
                         #name_eng {
                             
                         }
                         #name_zh {
-                            color: rgb(105, 105, 105);
+                            color: rgb(255, 255, 255);
 
                             @media (min-width: 600px) {
                                 writing-mode: vertical-lr;
@@ -155,7 +156,10 @@ section {
         box-sizing: border-box;
             padding: .5em .7em;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fcd8aa;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
         .quick-contact {
                 border-radius: 50%;
@@ -166,17 +170,20 @@ section {
                 padding: var(--round-border_bg-pad-sm);
                 width: var(--round-border_small);
                 height: var(--round-border_small);
-            background-color: #f2f2f2;
+            background-color: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: background-color 0.3s ease, color 0.3s ease;
         }
             .quick-contact_intro-icon {
                 font-size: var(--icon);
-                color: red;
+                color: rgb(255, 218, 138);
                 transition: color 0.3s ease;
             }
                 .quick-contact:hover {
-                    background-color: #ffcc80; /* warm peach */
-                    color: #5a63e0;            /* deep soft blue */
+                    background-color: rgba(255, 255, 255, 0.35);
+                    color: #e5c07b; /* soft gold */
+                    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
                 }
     /**/
     /* Resume */
@@ -190,7 +197,8 @@ section {
             padding: .5em .7em;
         font-size: clamp(16px, 2.5vw + 1vh, 25px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #ffe2e2;
+        background-color: #2c3e50;
+        color: #e0e7ff;
     }
         #quick-resume_icon-wrapper {
                 border-radius: 50%;
@@ -201,7 +209,7 @@ section {
                 width: var(--round-border_small);
                 height: var(--round-border_small);
                 padding: .5em;
-            background-color: #f89d9d;
+            background-color: #4a6fa5;
         }
             #quick-resume_icon {
                 max-width: var(--icon);
@@ -213,7 +221,8 @@ section {
     #hero_bg-circle {
         position: absolute;
         border-radius: 50%;
-        background-color: #ffb3ba;
+        background-color: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
         width: clamp(410px, 41dvw + 41dvh, 1200px);
         height: clamp(410px, 41dvw + 41dvh, 1200px);
         top: 50%;
