@@ -43,11 +43,10 @@ section {
     background-color:  #FFF8E7;
 }
     .hero_intro {
-        border: 5px solid black;
         display: flex;
             align-items: center;
             justify-content: center;
-        background-color: #E6E0F8;
+        background-color: #f4b0fd;
     }
         /* Name and tagline */
         /* Name */
@@ -56,7 +55,6 @@ section {
                 gap: 1em;
             box-sizing: border-box;
                 width: 100%;
-                height: 100%;
                 padding: .5em 0;
         }
             #quick-intro {
@@ -106,15 +104,15 @@ section {
     /**/
         /* Tagline */
         #tagline {
-            border: 5px dashed orange;
             display: inline-flex;
                 align-items: center;
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: .5em;
             box-sizing: border-box;
-                padding: .5em .3em;
-                max-width: 90%;
+                padding: .5em;
+                width: 100%;
+            background-color: rgb(201, 225, 233);
         }
             .tagline_separator {
                 border: 1px solid blue;
@@ -122,10 +120,11 @@ section {
                 display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                height: 1em;
-                width: 1em;
+                height: .7em;
+                width: .7em;
                 margin: 0;
                 padding: .2em;
+                background-color: #5e3afc;
             }
             .tagline_item {
                 border: 2px solid orange;
@@ -133,7 +132,7 @@ section {
                 font-size: var(--subtitle);
                 margin: 0;
                 padding: .3em .5em;
-                
+                background-color: rgb(255, 255, 107);
             }
         /**/
         /*   */
@@ -148,7 +147,7 @@ section {
     }
     /* Socials */
     #quick-contact_socials {
-        border: 5px solid rgb(177, 177, 0);
+        border: 2px solid rgb(177, 177, 0);
             border-radius: 999px;
         display: flex;
             align-items: center;
@@ -156,9 +155,9 @@ section {
             gap: .5em;
         box-sizing: border-box;
             padding: .5em .7em;
+        background-color: rgb(253, 206, 120);
     }
         .quick-contact {
-            border: 5px dotted violet;
                 border-radius: 50%;
             display: inline-flex;
                 align-items: center;
@@ -167,14 +166,22 @@ section {
                 padding: var(--round-border_bg-pad-sm);
                 width: var(--round-border_small);
                 height: var(--round-border_small);
+            background-color: silver;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
             .quick-contact_intro-icon {
                 font-size: var(--icon);
+                color: red;
+                transition: color 0.3s ease;
             }
+                .quick-contact:hover {
+                    background-color: rgb(255, 203, 92);
+                    background-color: rgb(255, 203, 92); /* warm yellow */
+                    color: rgb(98, 98, 252); /* vibrant blue */
+                }
     /**/
     /* Resume */
     #quick-resume {
-        border: 3px dotted green;
             border-radius: 999px;
         display: flex;
             align-items: center;
@@ -183,9 +190,9 @@ section {
         box-sizing: border-box;
             padding: .5em .7em;
         font-size: var(--subtitle);
+        background-color: rgb(147, 255, 147);
     }
         #quick-resume_icon-wrapper {
-            border: 3px solid brown;
                 border-radius: 50%;
             display: flex;
                 align-items: center;
@@ -194,6 +201,7 @@ section {
                 width: var(--round-border_small);
                 height: var(--round-border_small);
                 padding: var(--round-border_bg-pad-sm);
+            background-color: rgb(243, 109, 109);
         }
             #quick-resume_icon {
                 max-width: var(--icon);
