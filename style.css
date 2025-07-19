@@ -1,6 +1,7 @@
 /* UNIVERSAL */
 :root {
-
+    --header: clamp(25px, 2rem, 50px);
+    --subtitle: clamp(16px, 1.2rem, 25px);
 }
 html {
     scroll-behavior: smooth;
@@ -39,75 +40,105 @@ section {
     .hero_intro {
         border: 5px solid black;
         display: flex;
-        align-items: center;
-        justify-content: center;
+            align-items: center;
+            justify-content: center;
     }
         /* Name and tagline */
         /* Name */
         #hero_intro1 {
             flex-direction: column;
+                gap: 1em;
             box-sizing: border-box;
-            width: 100%;
-        }
-            #quick-intro_wrapper {
-                border: 5px solid green;
                 width: 100%;
+                padding: .5em 0;
+        }
+            #quick-intro {
+                border: 5px dashed red;
+                    border-radius: 50%;
+                    aspect-ratio: 1/1;
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 1em;
+                width: clamp(150px, 80vw, 350px);
+                height: clamp(150px, 80vw, 350px);
             }
-                #quick-intro {
-                    border: 5px dashed red;
+                .name_background {
+                    border: 5px dotted silver;
                     display: flex;
                         align-items: center;
                         justify-content: center;
+                        text-align: center;
+                    box-sizing: border-box;
+                        width: 100%;
+                        height: 50%;
                 }
-                    #quick-intro_name-wrapper {
-                        border: 5px dashed blue;
-                        display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
+                    #name_background1 {
+                        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
                     }
-                        .name_background {
-                            border: 5px dotted silver;
-                            display: flex;
-                                align-items: center;
-                                justify-content: center;
+                    #name_background2 {
+                        border-radius: 0 0 50% 50% / 0 0 100% 100%;
+                    }
+                        .name {
+                            margin: 0;
+                            font-size: var(--header);
                         }
-                            .name {
-                                margin: 0;
+                            #name_eng {
+                                width: 80%;
+                                text-align: center;
                             }
-        /**/
+                            #name_zh {
+                                writing-mode: vertical-lr;
+                            }
+    /**/
         /* Tagline */
         #tagline {
             border: 5px dashed orange;
-            display: flex;
+            display: inline-flex;
                 align-items: center;
                 justify-content: center;
+                flex-wrap: wrap;
+            box-sizing: border-box;
+                padding: .3em;
         }
+            .tagline_item {
+                font-size: var(--subtitle);
+                margin: 0;
+                padding: .3em;
+                line-height: .5;
+            }
         /**/
         /*   */
     
     /* Resume and socials */
-    #quick-contact_wrapper {
-        border: 5px dashed purple;
+    /* Socials */
+    #quick-contact_socials {
+        border: 5px solid rgb(177, 177, 0);
         display: flex;
             align-items: center;
             justify-content: center;
     }
-        /* Socials */
-        /**/
-        /* Resume */
-        #quick-resume {
-            border: 3px dotted green;
+        .quick-contact {
+            border: 5px dotted violet;
             display: flex;
-                align-items: center;
+                align-self: center;
                 justify-content: center;
         }
-            #quick-resume_icon-wrapper {
-                border: 3px solid brown;
+    /**/
+    /* Resume */
+    #quick-resume {
+        border: 3px dotted green;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+        #quick-resume_icon-wrapper {
+            border: 3px solid brown;
+        }
+            #quick-resume_icon {
+                max-width: 30px;
             }
-                #quick-resume_icon {
-                    max-width: 30px;
-                }
-        /**/
+    /**/
     /*   */
 /* ||   || */
