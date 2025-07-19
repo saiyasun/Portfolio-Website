@@ -8,10 +8,14 @@ function separator(id, childElements, separator) { // "id", "childElements" and 
         separation.textContent = separator;
         separation.classList.add(`${id}_separator`); // add class name to make it easier to style
         children[i].after(separation);
+
+        if (i == children.length-1) {
+            children[i].before(separation);
+        }
     }
 }
 
-separator("tagline", "p", "✦");
+separator("quick-intro_tagline", "p", "✦");
 
 
 // **UNIVERSAL**
