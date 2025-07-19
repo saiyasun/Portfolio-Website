@@ -4,9 +4,9 @@ function separator(id, childElements, separator) { // "id", "childElements" and 
     const children = container.querySelectorAll(childElements);
 
     for (let i = 0; i < children.length-1; i++) {
-        const separation = document.createElement('p'); // or 'p', 'div', etc.
+        const separation = document.createElement('span'); // or 'p', 'div', etc.
         separation.textContent = separator;
-        separation.classList.add(`${id}-separator`); // add class name to make it easier to style
+        separation.classList.add(`${id}_separator`); // add class name to make it easier to style
         children[i].after(separation);
     }
 }
