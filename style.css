@@ -43,7 +43,7 @@ section {
     background: linear-gradient(180deg, #1e1e2f, #5340a1, #7b5cd3);
 }
     .hero_name {
-        border: 5px solid black;
+        position: relative;
         display: flex;
             align-items: center;
             justify-content: center;
@@ -58,6 +58,10 @@ section {
             left: 50%;
             transform: translate(-50%, -50%);
         min-height: 30dvh;
+        opacity: 0.50;
+        z-index: 1;
+        mix-blend-mode: overlay;
+        color: white;
 
         @media (max-height: 650px) {
             min-height: 70dvh;
@@ -69,5 +73,7 @@ section {
             left: 50%;
             transform: translate(-50%, -50%);
         width: clamp(250px, 70dvw + 1dvh, 900px);
+        z-index: 1;
+        color: rgb(0, 0, 0);
     }
 /* ||   || */
