@@ -71,7 +71,7 @@ section {
             transform: translate(-50%, -50%);
         min-height: 30dvh;
         opacity: 0.50;
-        z-index: 1;
+        z-index: 0;
         mix-blend-mode: overlay;
         color: white;
 
