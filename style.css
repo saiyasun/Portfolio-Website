@@ -2,6 +2,9 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    --small-icons: clamp(20px, 5dvw + 1dvh, 30px);
+}
 html, body {
     height: 100%;
     margin: 0;
@@ -16,10 +19,18 @@ body {
     background-color: #8d8f93;
 }
 a {
-    display: flex;
+    display: inline-flex;
         align-items: center;
         justify-content: center;
         padding: .1em;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
 }
 section {
     margin: 0;
@@ -43,6 +54,7 @@ section {
     width: 100dvw;
     background: linear-gradient(180deg, #1e1e2f, #5340a1, #7b5cd3);
 }
+    /* Name */
     .hero_name {
         display: flex;
             align-items: center;
@@ -78,4 +90,69 @@ section {
         z-index: 1;
         color: rgb(0, 0, 0);
     }
+    /**/
+
+    /* Tagline */
+    #hero_tagline {
+        border: 5px solid black;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5em;
+        padding: .5em;
+        font-size: clamp(16px, 3dvw + 1dvh, 25px);
+            text-align: center;
+    }
+    .tagline-separator {
+        border: 1px solid black;
+        height: 10px;
+        width: 1px;
+        background-color: black;
+    }
+    /**/
+
+    /* Socials */
+    #hero_contact-wrapper {
+        border: 5px solid black;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+        padding: .3em;
+    } 
+        .hero_img {
+            border: 1px solid yellow;
+            border-radius: 10px;
+            width: var(--small-icons);
+            height: var(--small-icons);
+            padding: .1em;
+        }
+        .hero_contact-link {
+            border-radius: 10px;
+            border: 2px solid purple;
+            padding: .5em;
+            background-color: #000000;
+        }
+        #hero_resume-email {
+            border: 5px dotted green;
+        }
+            #hero_resume {
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .5em;
+            }
+        #hero_socials {
+            border: 5px dotted red;
+        } 
+            #hero_resume-email, #hero_socials {
+                display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    gap: 1em;
+                padding: .5em;
+            }
+    /**/
+
 /* ||   || */
