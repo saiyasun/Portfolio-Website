@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 :root {
-    --small-icons: clamp(20px, 5dvw + 1dvh, 30px);
+    --small-icons: clamp(20px, 2dvw + 1dvh, 30px);
 }
 html, body {
     height: 100%;
@@ -44,65 +44,78 @@ section {
 /* || HERO SECTION || */
 #hero-section {
     border: 5px solid red;
-    padding: .5em;
+    padding: 0;
     display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    position: relative;
+        gap: 1em;
     height: 100dvh;
     width: 100dvw;
-    background: linear-gradient(180deg, #1e1e2f, #5340a1, #7b5cd3);
+    background: linear-gradient(0deg, #598882, #f1eba5);
+
+    @media (min-width: 650px) {
+        flex-direction: row;
+    }
 }
+    #hero_intro-wrapper {
+        border: 5px solid gold;
+    }
     /* Name */
-    .hero_name {
+    #hero_name-wrapper {
+        border: 5px solid black;
+        position: relative;
         display: flex;
             align-items: center;
             justify-content: center;
-        transform: translate(-50%, -50%);
-            top: 20%;
-            left: 50%;
-        margin: 0;
-        padding: 0;
-        font-size: clamp(30px, 9dvw + 1dvh, 100px);
-        text-align: center;
+            flex-direction: column;
+    }
+        .hero_name {
+            border: 3px solid purple;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+            margin: 0;
+            font-size: clamp(30px, 8dvw + 1dvh, 50px);
+            text-align: center;
 
-        @media (min-width: 650px) {
-            top: 50%;
+            @media (min-width: 650px) {
+                top: 50%;
+            }
+        } 
+        #hero_zh-name {
+            writing-mode: vertical-rl;
+            min-height: max-content;
+            padding: .3em .1em;
+            opacity: 0.50;
+            z-index: 0;
+            mix-blend-mode: overlay;
+            color: white;
+            background-color: black;
         }
-    } 
-    #hero_zh-name {
-        writing-mode: vertical-rl;
-        position: absolute;
-        min-height: fit-content;
-        opacity: 0.50;
-        z-index: 0;
-        mix-blend-mode: overlay;
-        color: white;
-    }
-    #hero_en-name {
-        position: absolute;
-        min-width: 90%;
-        z-index: 1;
-        color: rgb(0, 0, 0);
-    }
+        #hero_en-name {
+            position: absolute;
+            transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            min-width: max-content;
+            padding: .1em .3em;
+            z-index: 1;
+            color: rgb(0, 0, 0);
+        }
     /**/
 
     /* Tagline */
     #hero_tagline {
         border: 5px solid black;
-        position: absolute;
-            transform: translate(-50%, -50%);
-            top: 43%;
-            left: 50%;
         display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            justify-content: flex-start;
+            flex: 1;
             gap: .5em;
-        padding: .5em;
-        font-size: clamp(16px, 3dvw + 1dvh, 25px);
-            text-align: center;
+        padding: .3em;
+        margin: 0;
+        font-size: clamp(12px, 2.5dvw + 1dvh, 20px);
     }
         #hero_tagline li {
             border: 5px dotted green;
@@ -119,21 +132,20 @@ section {
     /* Socials */
     #hero_contact-wrapper {
         border: 5px solid black;
-        position: absolute;
-            transform: translate(-50%, -50%);
-            top: 75%;
-            left: 50%;
         display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 1em;
         padding: .3em;
         min-width: max-content;
+
+        @media (min-width: 650px) {
+            flex-direction: column;
+        }
     } 
         .hero_img {
             border: 1px solid yellow;
-            border-radius: 10px;
+            border-radius: 5px;
             width: var(--small-icons);
             height: var(--small-icons);
             padding: .1em;
@@ -144,18 +156,26 @@ section {
             padding: .5em;
             background-color: #000000;
         }
+        #hero_socials {
+            border: 5px dotted red;
+            display: flex;
+        }
+        .hero_contact {
+            flex-direction: column;
+
+            @media (min-width: 650px) {
+                flex-direction: row;
+            }
+        }
         #hero_resume-email {
             border: 5px dotted green;
-        }
+        } 
             #hero_resume {
                 display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: .5em;
             }
-        #hero_socials {
-            border: 5px dotted red;
-        } 
             #hero_resume-email, #hero_socials {
                 display: flex;
                     align-items: center;
@@ -164,5 +184,4 @@ section {
                 padding: .5em;
             }
     /**/
-
 /* ||   || */
