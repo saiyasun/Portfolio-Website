@@ -57,13 +57,16 @@ section {
     @media (min-width: 650px) {
         flex-direction: row;
     }
+
+    @media (min-width: 750px) and (min-height: 600px) {
+        flex-direction: column;
+    }
 }
     #hero_intro-wrapper {
-        border: 5px solid gold;
+        
     }
     /* Name */
     #hero_name-wrapper {
-        border: 5px solid black;
         position: relative;
         display: flex;
             align-items: center;
@@ -71,12 +74,11 @@ section {
             flex-direction: column;
     }
         .hero_name {
-            border: 3px solid purple;
             display: flex;
                 align-items: center;
                 justify-content: center;
             margin: 0;
-            font-size: clamp(30px, 8dvw + 1dvh, 50px);
+            font-size: clamp(30px, 3.5dvw + 3dvh, 75px);
             text-align: center;
 
             @media (min-width: 650px) {
@@ -107,7 +109,6 @@ section {
 
     /* Tagline */
     #hero_tagline {
-        border: 5px solid black;
         display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -118,7 +119,6 @@ section {
         font-size: clamp(12px, 2.5dvw + 1dvh, 20px);
     }
         #hero_tagline li {
-            border: 5px dotted green;
             padding: .2em;
         }
     .tagline-separator {
@@ -131,20 +131,23 @@ section {
 
     /* Socials */
     #hero_contact-wrapper {
-        border: 5px solid black;
         display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             gap: 1em;
         padding: .3em;
         min-width: max-content;
 
         @media (min-width: 650px) {
-            flex-direction: column;
+            
+        }
+
+         @media (min-width: 750px) and (min-height: 600px) {
+            flex-direction: row-reverse;
         }
     } 
         .hero_img {
-            border: 1px solid yellow;
             border-radius: 5px;
             width: var(--small-icons);
             height: var(--small-icons);
@@ -152,23 +155,16 @@ section {
         }
         .hero_contact-link {
             border-radius: 10px;
-            border: 2px solid purple;
             padding: .5em;
             background-color: #000000;
         }
         #hero_socials {
-            border: 5px dotted red;
             display: flex;
         }
         .hero_contact {
-            flex-direction: column;
-
-            @media (min-width: 650px) {
-                flex-direction: row;
-            }
         }
         #hero_resume-email {
-            border: 5px dotted green;
+            
         } 
             #hero_resume {
                 display: flex;

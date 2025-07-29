@@ -13,6 +13,7 @@ function switchNames (lang) { // switch names when changing languages
             zhName.style.mixBlendMode = 'overlay';
                 zhName.style.backgroundColor = 'black';
             enName.style.mixBlendMode = 'normal';
+                enName.style.backgroundColor = 'transparent';
 
         zhName.style.opacity = 0.5;
         enName.style.opacity = 1;
@@ -25,6 +26,7 @@ function switchNames (lang) { // switch names when changing languages
             enName.style.mixBlendMode = 'overlay';
                 enName.style.backgroundColor = 'black';
             zhName.style.mixBlendMode = 'normal';
+                zhName.style.backgroundColor = 'transparent';
 
         enName.style.opacity = 0.5;
         zhName.style.opacity = 1;
