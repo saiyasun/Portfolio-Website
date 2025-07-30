@@ -12,6 +12,7 @@ html, body {
     scroll-behavior: smooth;
 }
 body {
+    position: relative;
     display: flex;
         align-items: center;
         justify-content: center;
@@ -32,6 +33,16 @@ ul {
     padding: 0;
     list-style-type: none;
 }
+button {
+    border-radius: 999px;
+    border: 1px solid transparent;
+        outline: 2px solid black;
+}
+    #button_translate {
+        position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+    }
 section {
     margin: 0;
     padding: 1em;
@@ -43,7 +54,6 @@ section {
 
 /* || HERO SECTION || */
 #hero-section {
-    border: 5px solid red;
     padding: 0;
     display: flex;
         align-items: center;
