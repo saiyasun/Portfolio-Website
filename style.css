@@ -75,7 +75,7 @@ section {
     }
 }
     #hero_intro-wrapper {
-        min-width: 45%;
+        
     }
     /* Name */
     #hero_name-wrapper {
@@ -176,7 +176,7 @@ section {
     #hero_tagline {
         display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             flex: 1;
             gap: .5em;
         padding: .3em;
