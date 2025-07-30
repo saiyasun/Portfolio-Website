@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root {
-    --small-icons: clamp(20px, 2dvw + 1dvh, 30px);
+    --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
 }
 html, body {
     height: 100%;
@@ -67,6 +67,7 @@ section {
 
     @media (min-width: 650px) {
         flex-direction: row;
+        gap: 5em;
     }
 
     @media (min-width: 750px) and (min-height: 600px) {
