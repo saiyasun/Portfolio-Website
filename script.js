@@ -52,9 +52,11 @@ translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
         translateBtn.textContent = "Hi!";
+        document.title = "孫賽亞"
     } else {
         defaultLang = 'en';
         translateBtn.textContent = "你好!";
+        document.title = "Asiah Crutchfield";
     }
 
     translateHero(defaultLang); 
