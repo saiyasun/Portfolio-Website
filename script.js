@@ -5,31 +5,17 @@ function switchNames (lang) { // switch names when changing languages
     const langName = lang.toLowerCase();
 
     if (langName == 'en' || langName == 'eng' || langName == 'english') {
-        enName.style.zIndex = 1;
-        zhName.style.zIndex = 0;
-
-        enName.style.color = 'black';
-        zhName.style.color = 'white';
-            zhName.style.mixBlendMode = 'overlay';
-                zhName.style.backgroundColor = 'black';
-            enName.style.mixBlendMode = 'normal';
-                enName.style.backgroundColor = 'transparent';
-
-        zhName.style.opacity = 0.5;
-        enName.style.opacity = 1;
+        enName.classList.add('name-active');
+        enName.classList.remove('name-inactive');
+        
+        zhName.classList.add('name-inactive');
+        zhName.classList.remove('name-active');
     } else if (langName == 'zh' || langName == 'chinese') {
-        zhName.style.zIndex = 1;
-        enName.style.zIndex = 0;
+        zhName.classList.add('name-active');
+        zhName.classList.remove('name-inactive');
 
-        zhName.style.color = 'black';
-        enName.style.color = 'white';
-            enName.style.mixBlendMode = 'overlay';
-                enName.style.backgroundColor = 'black';
-            zhName.style.mixBlendMode = 'normal';
-                zhName.style.backgroundColor = 'transparent';
-
-        enName.style.opacity = 0.5;
-        zhName.style.opacity = 1;
+        enName.classList.add('name-inactive');
+        enName.classList.remove('name-active');
     }
 }
 // ||   || 

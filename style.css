@@ -80,6 +80,7 @@ section {
             margin: 0;
             font-size: clamp(30px, 3.5dvw + 3dvh, 75px);
             text-align: center;
+            transition: all 0.3s ease-in-out;
 
             @media (min-width: 650px) {
                 top: 50%;
@@ -104,7 +105,59 @@ section {
             padding: .1em .3em;
             z-index: 1;
             color: rgb(0, 0, 0);
+            transform-origin: center center;
         }
+
+    /* ~Utiility classes~ */
+    #hero_en-name.name-active,
+    #hero_zh-name.name-active {
+        z-index: 1;
+        color: black;
+        mix-blend-mode: normal;
+        background-color: transparent;
+        opacity: 1;
+    }
+
+    #hero_en-name.name-inactive,
+    #hero_zh-name.name-inactive {
+        z-index: 0;
+        color: white;
+        mix-blend-mode: overlay;
+        background-color: black;
+        opacity: 0.5;
+    }
+    /**/
+    /* Animations */
+    @keyframes fadeInName {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fadeOutName {
+        from {
+            opacity: 1;
+            transform: scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: scale(1.05);
+        }
+    }
+
+    .name-fade-in {
+        animation: fadeInName 0.5s ease;
+    }
+
+    .name-fade-out {
+        animation: fadeOutName 0.5s ease;
+    }
+    /**/
     /**/
 
     /* Tagline */
@@ -135,12 +188,12 @@ section {
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            gap: 2em;
+            gap: .5em;
         padding: .3em;
         min-width: max-content;
 
-        @media (min-width: 650px) {
-            
+        @media (min-width: 750px) and (min-height: 550px) {
+            gap: 2em;
         }
 
          @media (min-width: 750px) and (min-height: 600px) {
