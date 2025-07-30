@@ -18,7 +18,7 @@ body {
         align-items: center;
         justify-content: center;
     overflow-y: auto;
-    background-color: #8d8f93;
+    background: linear-gradient(0deg, #598882, #f1eba5);
 }
 a {
     display: inline-flex;
@@ -63,7 +63,6 @@ section {
         gap: 1em;
     height: 100dvh;
     width: 100dvw;
-    background: linear-gradient(0deg, #598882, #f1eba5);
 
     @media (min-width: 650px) {
         flex-direction: row;
