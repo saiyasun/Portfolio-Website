@@ -138,37 +138,6 @@ section {
         opacity: 0.5;
     }
     /**/
-    /* Animations */
-    @keyframes fadeInName {
-        from {
-            opacity: 0;
-            transform: scale(0.95);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    @keyframes fadeOutName {
-        from {
-            opacity: 1;
-            transform: scale(1);
-        }
-        to {
-            opacity: 0;
-            transform: scale(1.05);
-        }
-    }
-
-    .name-fade-in {
-        animation: fadeInName 0.5s ease;
-    }
-
-    .name-fade-out {
-        animation: fadeOutName 0.5s ease;
-    }
-    /**/
     /**/
 
     /* Tagline */
@@ -234,7 +203,7 @@ section {
                 display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: .5em;
+                    gap: .3em;
             }
             #hero_resume-email, #hero_socials {
                 display: flex;
