@@ -5,6 +5,8 @@
 }
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
+    --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
+        --preview-bg: clamp(75px, 38dvw + 1dvh, 200px);
 }
 html, body {
     height: 100%;
@@ -224,9 +226,12 @@ section {
     border: 5px solid black;
     display: flex;
         gap: 1em;
+        align-items: center;
+    padding: .5em;
 }
     #body-div section {
         width: 100dvw;
+        height: 95%;
     }
 
     /* !! PROJECTS !! */
@@ -238,21 +243,64 @@ section {
             justify-content: flex-start;
 
     }
-        .projects_project {
-            border: 3px dotted green;
-            padding: 1em;
-            width: 100%;
+        .projects_projects-wrapper {
+            border: 5px solid gold;
             display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                gap: 1em;
+            width: 100%;
         }
-            .project-img {
-                max-width: 100%;
+            .projects_project {
+                border: 3px dotted green;
+                border-radius: 25px;
+                width: 100%;
+                display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
             }
-            .project-title {
-                border: 2px solid pink;
-            }
+                .projects_project-intro-wrapper {
+                    border: 5px solid purple;
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                    width: 100%;
+                }
+                    .project-img {
+                        background-image: url("images/placeholder.png");
+                            background-position: center;
+                            background-size: cover;
+                        width: 100%;
+                        height: var(--preview-bg);
+                    }
+                        .project_img-link {
+                            border: 3px dotted brown;
+                            width: 100%;
+                            padding: 0;
+                        }
+                    .project-title {
+                        border: 2px solid pink;
+                        text-align: center;
+                        padding: .2em;
+                    }
+                .project-description {
+                    border: 2px solid blue;
+                    display: flex;
+                        align-items: center;
+                    padding: .5em;
+                    text-align: justify;
+                }
+                .projects_project-status-wrapper {
+                    border: 2px solid orange;
+                    display: flex;
+                        align-items: center;
+                        gap: 1em;
+                    padding: .5em;
+                    text-align: justify;
+                }
     /* !!   !! */
 
 /* ^^   ^^ */
