@@ -15,9 +15,11 @@ html, body {
 body {
     position: relative;
     display: flex;
-        align-items: center;
-        justify-content: center;
-    overflow-y: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    height: 100dvh;
     background: linear-gradient(0deg, #598882, #f1eba5);
 }
 a {
@@ -49,6 +51,8 @@ section {
     padding: 1em;
     width: 100%;
     height: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 /* UNIVERSAL */
 
@@ -213,3 +217,42 @@ section {
             }
     /**/
 /* ||   || */
+
+
+/* ^^ BODY DIV ^^ */
+#body-div {
+    border: 5px solid black;
+    display: flex;
+        gap: 1em;
+}
+    #body-div section {
+        width: 100dvw;
+    }
+
+    /* !! PROJECTS !! */
+    #projects-section {
+        border: 5px solid red;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+    }
+        .projects_project {
+            border: 3px dotted green;
+            padding: 1em;
+            width: 100%;
+            display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+        }
+            .project-img {
+                max-width: 100%;
+            }
+            .project-title {
+                border: 2px solid pink;
+            }
+    /* !!   !! */
+
+/* ^^   ^^ */
