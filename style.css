@@ -18,13 +18,10 @@ html, body {
 }
 body {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
     height: 100dvh;
     background: linear-gradient(0deg, #598882, #f1eba5);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 }
 a {
     display: inline-flex;
@@ -233,8 +230,7 @@ section {
     padding: .5em;
 }
     #body-div section {
-        width: 95dvw;
-        height: 95%;
+        height: 100dvh;
     }
 
     /* !! PROJECTS !! */
@@ -245,15 +241,24 @@ section {
             align-items: center;
             justify-content: flex-start;
         background-color: #4d7c80;
+
+        @media (min-width: 650px) {
+            height: 100%;
+        }
     }
         .projects_projects-wrapper {
+            border: 5px solid gold;
             display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 1em;
-                
             width: 100%;
+
+            @media (min-width: 650px) {
+                flex-direction: row;
+                height: 80%;
+            }
         }
             .projects_project {
                 border: 3px dotted green;
@@ -265,6 +270,14 @@ section {
                     justify-content: center;
                 overflow: hidden;
                 background-color: #545a55;
+
+                @media (min-width: 650px) {
+                   height: 100%;
+                   width: 50%;
+                   background-image: url("images/placeholder.png");
+                        background-position: center;
+                        background-size: cover;
+                }
             }
                 .projects_project-intro-wrapper {
                     display: flex;
@@ -279,6 +292,10 @@ section {
                             background-size: cover;
                         width: 100%;
                         height: var(--preview-bg);
+
+                        @media (min-width: 650px) {
+                            display: none;
+                        }
                     }
                         .project-link.project_img-link {
                             border-radius: 0;
