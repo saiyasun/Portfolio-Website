@@ -7,8 +7,8 @@
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
         --preview-bg: clamp(75px, 38dvw + 1dvh, 200px);
-    --paragraph: clamp(12px, 3dvw + 1dvh, 24px);
-    --sub-title: clamp(16px, 4dvw + 1dvh, 28px);
+    --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 24px);
+    --sub-title: clamp(16px, 2dvw + 2dvh, 28px);
 }
 html, body {
     height: 100%;
@@ -243,7 +243,7 @@ section {
         background-color: #4d7c80;
 
         @media (min-width: 650px) {
-            height: 100%;
+            width: 50%;
         }
     }
         .projects_projects-wrapper {
@@ -256,7 +256,6 @@ section {
             width: 100%;
 
             @media (min-width: 650px) {
-                flex-direction: row;
                 height: 80%;
             }
         }
@@ -273,7 +272,6 @@ section {
 
                 @media (min-width: 650px) {
                    height: 100%;
-                   width: 50%;
                    background-image: url("images/placeholder.png");
                         background-position: center;
                         background-size: cover;
