@@ -243,7 +243,7 @@ section {
         background-color: #4d7c80;
 
         @media (min-width: 650px) {
-            width: 50%;
+            width: 40%;
         }
     }
         .projects_projects-wrapper {
@@ -251,12 +251,15 @@ section {
             display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
+                flex-shrink: 0;
                 gap: 1em;
             width: 100%;
+            max-height: 90%;
+            overflow-y: auto;
 
             @media (min-width: 650px) {
-                height: 80%;
+                max-height: 80%;
             }
         }
             .projects_project {
@@ -268,23 +271,16 @@ section {
                     align-items: flex-start;
                     justify-content: center;
                 overflow: hidden;
+                flex-shrink: 0;
                 background-color: #545a55;
 
                 @media (min-width: 650px) {
-                   height: 100%;
                    background-image: url("images/placeholder.png");
                         background-position: center;
                         background-size: cover;
                 }
             }
-                .projects_project-intro-wrapper {
-                    display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-direction: column;
-                    width: 100%;
-                }
-                    .project-img {
+                .project-img {
                         background-image: url("images/placeholder.png");
                             background-position: center;
                             background-size: cover;
@@ -301,21 +297,28 @@ section {
                             padding: 0;
                             overflow: hidden;
                         }
+                .projects_project-info-wrapper {
+                    border: 3px solid purple;
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                    width: 100%;
+                    padding: .5em;
+                }
                     .project-title {
                         border: 2px solid pink;
                         text-align: center;
-                        align-self: flex-start;
                         font-size: var(--sub-title);
                         padding: .2em;
-                        margin: .5em 1em;
+                        margin: 0 0 .5em 0;
                     }
                 .project-description {
                     border: 2px solid blue;
                     display: flex;
                         align-items: center;
                     padding: .5em;
-                    width: 90%;
-                    margin-left: 1em;
+                    margin: 0 0 .5em 0;
                     font-size: var(--paragraph);
                     text-align: justify;
                 }
@@ -324,9 +327,9 @@ section {
                     display: flex;
                         align-items: center;
                         gap: 1em;
-                    margin: 1em 1.5em;
                     padding: .5em;
                     text-align: justify;
+                    font-size: clamp(12px, 1.2dvw + 1.2dvh, 16px);
                 }
                     .project-link {
                         border-radius: 10%;
