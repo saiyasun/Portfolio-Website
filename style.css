@@ -6,9 +6,9 @@
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
-        --preview-bg: clamp(75px, 38dvw + 1dvh, 200px);
-    --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 24px);
-    --sub-title: clamp(16px, 2dvw + 2dvh, 28px);
+        --preview-bg: clamp(75px, 38dvw + 1dvh, 300px);
+    --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 18px);
+    --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
 }
 html, body {
     height: 100%;
@@ -253,10 +253,9 @@ section {
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-        background-color: #4d7c80;
+        background-color: #afbb6a;
     }
         .projects_projects-wrapper {
-            border: 5px solid gold;
             display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -267,7 +266,7 @@ section {
             max-height: 90%;
             overflow-y: auto;
 
-            @media (min-width: 650px) {
+            @media (max-height: 550px) {
                 max-height: 80%;
             }
         }
@@ -280,10 +279,20 @@ section {
                     justify-content: center;
                 overflow: hidden;
                 flex-shrink: 0;
-                background-color: #545a55;
+                background-color: #121312;
 
                 @media (min-width: 750px) {
-                    width: 50%;
+                    width: 45%;
+                    height: auto;
+                }
+
+                @media (min-width: 1100px) {
+                    width: 25%;
+                    height: auto;
+                }
+
+                @media (min-width: 1600px) {
+                    width: 20%;
                     height: auto;
                 }
             }
@@ -293,10 +302,10 @@ section {
                             background-size: cover;
                         width: 100%;
                         height: var(--preview-bg);
-                        max-height: 150px;
+                        max-height: 175px;
 
                         @media (min-width: 650px) {
-                            
+                            max-height: 250px;
                         }
                     }
                         .project-link.project_img-link {
@@ -308,15 +317,14 @@ section {
                 .projects_project-info-wrapper {
                     display: flex;
                         align-items: flex-start;
-                        justify-content: center;
+                        justify-content: flex-start;
                         flex-direction: column;
                     width: 100%;
-                    min-height: 100px;
+                    height: 300px;
                     padding: .5em;
 
                     @media (min-width: 750px) {
-                        width: 50%;
-                        height: auto;
+                        height: 350px;
                     }
                 }
                     .project-title {
@@ -324,30 +332,31 @@ section {
                         font-size: var(--sub-title);
                         padding: .2em;
                         margin: 0 0 .5em 0;
+                        color: white;
                     }
                 .project-description {
                     display: flex;
                         align-items: flex-start;
                     padding: .5em;
                     width: 100%;
-                    max-height: 150px;
+                    height: 100%;
                     overflow-y: auto;
                     margin: 0 0 .5em 0;
                     font-size: var(--paragraph);
                     text-align: justify;
+                    color: rgb(153, 146, 146);
                 }
                 .projects_project-status-wrapper {
                     display: flex;
                         align-items: center;
                         gap: 1em;
+                        justify-self: flex-end;
                     padding: .5em;
-                    text-align: justify;
                     font-size: clamp(12px, 1.2dvw + 1.2dvh, 16px);
                 }
                     .project-link {
                         border-radius: 10%;
                         padding: .5em;
-
                         color: white;
                         background-color: black;
                     }
