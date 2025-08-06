@@ -48,6 +48,17 @@ async function translateHero(lang) {
 }
 // ||   || 
 
+
+// !! PROJECTS SECTION !! 
+async function translateProjects() {
+    const wrapper = document.querySelector(".projects_projects-wrapper");
+    const template = document.getElementById("projects_template");
+    const cloneTemplate = template.content.cloneNode(true);
+
+    wrapper.appendChild(cloneTemplate);
+}
+// !!   !!
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';

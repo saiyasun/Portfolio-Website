@@ -1,0 +1,35 @@
+{
+    "en": [
+        {
+            "projectTitle": "Language Experiment", 
+            "projectDescription": "Discover a fresh way to learn languages with no written words, no grammar drills, and no translations. This free experiment focuses purely on listening—using real spoken audio loops to help you absorb natural rhythm and sounds. By training your ear first, you build intuitive understanding and pronunciation through immersive, auditory practice. Learn by hearing, not reading!",
+            "projectStatus": true
+        }
+    ],
+
+    "zh": [
+        {
+            "projectTitle": "語言實驗",
+            "projectDescription": "探索一種全新的語言學習方式，沒有書寫文字、沒有文法訓練，也沒有翻譯。這個免費實驗完全專注於聆聽，利用真實語音循環幫助你吸收自然的語音節奏和聲音。透過先訓練聽力，你能以直覺方式理解並提升發音，沉浸在純粹的聽覺練習中。學習靠聽，而非閱讀！",
+            "projectStatus": true
+        }
+    ],
+
+    "projectImgLinks": [ 
+        {
+            "projectImg": "images/project_images/language_experiment.png",
+            "projectLink": "https://www.instagram.com/p/DK4c44kyFKB/?utm_source=ig_web_copy_link&igsh=OHR3N3h5cG1tYTJ1"
+        }
+    ],
+
+    "projectStatusLang": 
+        {
+            "en": "under development",
+            "zh": "開發中"
+        },
+
+    "viewProjectLang": {
+        "en": "View Project",
+        "zh": "查看項目"
+    }
+}

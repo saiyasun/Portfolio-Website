@@ -36,10 +36,6 @@
     </div>
     <!-- -->
 
-    <!-- Socials -->
-    
-    <!---->
-
     <!-- Socials, resume and email -->
     <div id="hero_contact-wrapper">
         <!-- Socials -->
@@ -79,27 +75,29 @@
         <h2 class="section-title" id="projects-section_title">Projects</h2>
         <div class="projects_projects-wrapper">
 
-            <div class="projects_project">
-                <!-- Image -->
-                <a class="project-link project_img-link"> <div class="project-img" src="images/placeholder.png"></div> </a>
-                <!---->
-                <div class="projects_project-info-wrapper">
-                    <!-- Title -->
-                    <h3 class="project-title">Title</h3>
+            <template id="projects_template">
+                <div class="projects_project">
+                    <!-- Image -->
+                    <a class="project-link project_img-link"> <div class="project-img"></div> </a>
                     <!---->
-                    <!-- Description -->
-                    <p class="project-description">Description</p>
-                    <!---->
-                    <div class="projects_project-status-wrapper">
-                        <!-- Link -->
-                        <a class="project-link" href="#">link</a>
+                    <div class="projects_project-info-wrapper">
+                        <!-- Title -->
+                        <h3 class="project-title">Title</h3>
                         <!---->
-                        <!-- Status -->
-                        <span class="project-status">under development</span>
+                        <!-- Description -->
+                        <p class="project-description">Description</p>
                         <!---->
+                        <div class="projects_project-status-wrapper">
+                            <!-- Link -->
+                            <a class="project-link" href="#">link</a>
+                            <!---->
+                            <!-- Status -->
+                            <span class="project-status">under development</span>
+                            <!---->
+                        </div>
                     </div>
                 </div>
-            </div>
+            </template>
 
         </div>
     </section>
