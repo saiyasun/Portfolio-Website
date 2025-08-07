@@ -5,6 +5,11 @@
 }
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
+    --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
+        --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
+    --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 18px);
+    --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
+    --headers: clamp(16px, 2dvw + 2dvh, 36px);
 }
 html, body {
     height: 100%;
@@ -14,11 +19,10 @@ html, body {
 }
 body {
     position: relative;
-    display: flex;
-        align-items: center;
-        justify-content: center;
-    overflow-y: auto;
-    background-color: #8d8f93;
+    height: 100dvh;
+    background: linear-gradient(0deg, #598882, #f1eba5);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 }
 a {
     display: inline-flex;
@@ -49,6 +53,8 @@ section {
     padding: 1em;
     width: 100%;
     height: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 /* UNIVERSAL */
 
@@ -63,7 +69,6 @@ section {
         gap: 1em;
     height: 100dvh;
     width: 100dvw;
-    background: linear-gradient(0deg, #598882, #f1eba5);
 
     @media (min-width: 650px) {
         flex-direction: row;
@@ -139,37 +144,6 @@ section {
         opacity: 0.5;
     }
     /**/
-    /* Animations */
-    @keyframes fadeInName {
-        from {
-            opacity: 0;
-            transform: scale(0.95);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    @keyframes fadeOutName {
-        from {
-            opacity: 1;
-            transform: scale(1);
-        }
-        to {
-            opacity: 0;
-            transform: scale(1.05);
-        }
-    }
-
-    .name-fade-in {
-        animation: fadeInName 0.5s ease;
-    }
-
-    .name-fade-out {
-        animation: fadeOutName 0.5s ease;
-    }
-    /**/
     /**/
 
     /* Tagline */
@@ -235,7 +209,8 @@ section {
                 display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: .5em;
+                    gap: .3em;
+                color: white;
             }
             #hero_resume-email, #hero_socials {
                 display: flex;
@@ -246,3 +221,146 @@ section {
             }
     /**/
 /* ||   || */
+
+
+/* ^^ BODY DIV ^^ */
+#body-div {
+    display: flex;
+        gap: 1em;
+        align-items: center;
+    padding: .5em;
+
+    @media (min-width: 750px) {
+        flex-direction: column;
+    }
+}
+    #body-div section {
+        border-radius: 15px;
+
+        @media (max-width: 750px) {
+            min-height: 100dvh;
+        }
+    }
+    .section-title {
+        font-size: var(--headers);
+    }
+    /* !! PROJECTS !! */
+    #projects-section {
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        background-color: #535c77;
+    }
+        #projects-section_title {
+            color: white;
+        }
+        .projects_projects-wrapper {
+            display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                flex-shrink: 0;
+                gap: 1em;
+            width: 100%;
+            max-height: 90%;
+            overflow-y: auto;
+
+            @media (max-height: 550px) {
+                max-height: 80%;
+            }
+
+            @media (min-width: 750px) {
+                display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+                    justify-content: center;
+                    gap: 1.5em;
+            }
+
+            @media (min-width: 1100px) {
+                padding: 0 10rem;
+            }
+        }
+            .projects_project {
+                border-radius: 25px;
+                width: 100%;
+                display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                overflow: hidden;
+                flex-shrink: 0;
+                background-color: #121312;
+            }
+                .project-img {
+                        background-image: url("images/placeholder.png");
+                            background-position: center;
+                            background-size: cover;
+                        width: 100%;
+                        height: var(--preview-bg);
+                        max-height: 175px;
+
+                        @media (min-width: 650px) {
+                            max-height: 300px;
+                        }
+                    }
+                        .project-link.project_img-link {
+                            border-radius: 0;
+                            width: 100%;
+                            padding: 0;
+                            overflow: hidden;
+                        }
+                .projects_project-info-wrapper {
+                    display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                    width: 100%;
+                    padding: .5em;
+
+                    @media (min-width: 750px) {
+                    }
+                }
+                    .project-title {
+                        text-align: center;
+                        font-size: var(--sub-title);
+                        padding: .2em;
+                        margin: .5em 0;
+                        color: white;
+                    }
+                .project-description {
+                    display: flex;
+                        align-items: flex-start;
+                    padding: .5em;
+                    width: 100%;
+                    max-height: 350px;
+                    overflow-y: auto;
+                    margin: 0 0 1em 0;
+                    font-size: var(--paragraph);
+                    text-align: justify;
+                    color: rgb(153, 146, 146);
+                }
+                .projects_project-status-wrapper {
+                    display: flex;
+                        align-items: center;
+                        gap: .5em;
+                        justify-self: flex-end;
+                    padding: .5em;
+                    font-size: clamp(12px, 1.2dvw + 1.2dvh, 16px);
+                }
+                    .project-link {
+                        border-radius: 10%;
+                        padding: .5em;
+                        color: white;
+                        background-color: black;
+                    }
+                    .project-status {
+                        border: 1px solid red;
+                            border-radius: 999px;
+                        margin: .5em;
+                        padding: .3em;
+                        background-color: lightcoral;
+                    }
+    /* !!   !! */
+
+/* ^^   ^^ */

@@ -48,6 +48,55 @@ async function translateHero(lang) {
 }
 // ||   || 
 
+
+// !! PROJECTS SECTION !! 
+async function translateProjects(lang) {
+    const response = await fetch('translations/projects_section/projects.json');
+    const projects = await response.json();
+        const projectsList = projects[lang];
+        const linkText = projects.viewProjectLang[lang];
+        const statusText = projects.projectStatusLang[lang];
+        const sectionTitle = projects.projectSectionTitle[lang];
+            const mainTitle = document.querySelector("#projects-section_title")
+            mainTitle.textContent = sectionTitle;
+
+    const wrapper = document.querySelector(".projects_projects-wrapper");
+    const template = document.getElementById("projects_template");
+
+    wrapper.innerHTML = "";
+
+    projectsList.forEach(project => {
+        const clone = template.content.cloneNode(true);
+
+        const title = clone.querySelector(".project-title");
+        const desc = clone.querySelector(".project-description");
+        const img = clone.querySelector(".project-img");
+        const link = clone.querySelector(".project-link");
+        const status = clone.querySelector(".project-status");
+        const textLink = clone.querySelector(".projects_project-status-wrapper a.project-link");
+
+        title.textContent = project.projectTitle.toUpperCase();
+        desc.textContent = project.projectDescription;
+        img.style.backgroundImage = `url(${project.projectImg})`;
+        img.alt = project.projectTitle;
+        link.href = project.projectLink;
+        textLink.textContent = linkText;
+
+        if (project.projectStatus) {
+            status.textContent = statusText;
+            status.style.display = "block";
+        } else {
+            status.style.display = "none";
+        }
+
+        // Append updated node after populating
+        wrapper.appendChild(clone);
+    });
+
+}
+translateProjects(defaultLang);
+// !!   !!
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
@@ -59,6 +108,7 @@ translateBtn.addEventListener("click", function () {
         document.title = "Asiah Crutchfield";
     }
 
-    translateHero(defaultLang); 
+    translateHero(defaultLang);
+    translateProjects(defaultLang); 
         switchNames(defaultLang);
 })
