@@ -51,7 +51,7 @@ async function translateHero(lang) {
 
 // !! PROJECTS SECTION !! 
 async function translateProjects(lang) {
-    const response = await fetch('translations/projects_section/projects.json');
+    const response = await fetch('translations/projects.json');
     const projects = await response.json();
         const projectsList = projects[lang];
         const linkText = projects.viewProjectLang[lang];
