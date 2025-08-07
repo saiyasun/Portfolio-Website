@@ -75,7 +75,7 @@ async function translateProjects(lang) {
         const status = clone.querySelector(".project-status");
         const textLink = clone.querySelector(".projects_project-status-wrapper a.project-link");
 
-        title.textContent = project.projectTitle;
+        title.textContent = project.projectTitle.toUpperCase();
         desc.textContent = project.projectDescription;
         img.style.backgroundImage = `url(${project.projectImg})`;
         img.alt = project.projectTitle;

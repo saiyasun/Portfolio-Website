@@ -6,9 +6,10 @@
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
-        --preview-bg: clamp(75px, 38dvw + 1dvh, 300px);
+        --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
     --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 18px);
     --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
+    --headers: clamp(16px, 2dvw + 2dvh, 36px);
 }
 html, body {
     height: 100%;
@@ -223,7 +224,6 @@ section {
 
 /* ^^ BODY DIV ^^ */
 #body-div {
-    border: 5px solid black;
     display: flex;
         gap: 1em;
         align-items: center;
@@ -234,26 +234,26 @@ section {
     }
 }
     #body-div section {
-        height: 100dvh;
         border-radius: 15px;
 
-        @media (min-width: 650px) {
-            width: 50%;
-        }
-
-        @media (min-width: 750px) {
-            width: 100%;
+        @media (max-width: 750px) {
+            min-height: 100dvh;
         }
     }
-
+    .section-title {
+        font-size: var(--headers);
+    }
     /* !! PROJECTS !! */
     #projects-section {
         display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-        background-color: #afbb6a;
+        background-color: #535c77;
     }
+        #projects-section_title {
+            color: white;
+        }
         .projects_projects-wrapper {
             display: flex;
                 flex-direction: column;
@@ -269,10 +269,15 @@ section {
                 max-height: 80%;
             }
 
+            @media (min-width: 750px) {
+                display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+                    justify-content: center;
+                    gap: 1.5em;
+            }
+
             @media (min-width: 1100px) {
-                flex-direction: row;
-                align-items: center;
-                height: 100%;
+                padding: 0 10rem;
             }
         }
             .projects_project {
@@ -285,26 +290,8 @@ section {
                 overflow: hidden;
                 flex-shrink: 0;
                 background-color: #121312;
-
-                @media (min-width: 750px) {
-                    width: 45%;
-                    height: auto;
-                }
-
-                @media (min-width: 1100px) {
-                    width: 50%;
-                    height: auto;
-                    flex-direction: row;
-                        align-items: center;
-                }
-
-                @media (min-width: 1600px) {
-                    width: 20%;
-                    height: auto;
-                }
             }
                 .project-img {
-                        border: 5px solid gold;
                         background-image: url("images/placeholder.png");
                             background-position: center;
                             background-size: cover;
@@ -313,11 +300,7 @@ section {
                         max-height: 175px;
 
                         @media (min-width: 650px) {
-                            max-height: 250px;
-                        }
-
-                        @media (min-width: 1100px) {
-                            max-height: 100%;
+                            max-height: 300px;
                         }
                     }
                         .project-link.project_img-link {
@@ -332,41 +315,34 @@ section {
                         justify-content: flex-start;
                         flex-direction: column;
                     width: 100%;
-                    height: 300px;
                     padding: .5em;
 
                     @media (min-width: 750px) {
-                        height: 350px;
                     }
                 }
                     .project-title {
                         text-align: center;
                         font-size: var(--sub-title);
                         padding: .2em;
-                        margin: 0 0 .5em 0;
+                        margin: .5em 0;
                         color: white;
                     }
                 .project-description {
-                    border: 5px solid blue;
                     display: flex;
                         align-items: flex-start;
                     padding: .5em;
                     width: 100%;
-                    height: 100%;
+                    max-height: 350px;
                     overflow-y: auto;
-                    margin: 0 0 .5em 0;
+                    margin: 0 0 1em 0;
                     font-size: var(--paragraph);
                     text-align: justify;
                     color: rgb(153, 146, 146);
-
-                    @media (min-width: 1100px) {
-                        height: 500px;
-                    }
                 }
                 .projects_project-status-wrapper {
                     display: flex;
                         align-items: center;
-                        gap: 1em;
+                        gap: .5em;
                         justify-self: flex-end;
                     padding: .5em;
                     font-size: clamp(12px, 1.2dvw + 1.2dvh, 16px);
