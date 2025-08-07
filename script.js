@@ -94,6 +94,7 @@ async function translateProjects(lang) {
     });
 
 }
+translateProjects(defaultLang);
 // !!   !!
 
 translateBtn.addEventListener("click", function () {
