@@ -224,10 +224,12 @@ section {
 
 /* ^^ BODY DIV ^^ */
 #body-div {
+    border: 5px solid blue;
     display: flex;
         gap: 1em;
         align-items: center;
     padding: .5em;
+    overflow-x: auto;
 
     @media (min-width: 750px) {
         flex-direction: column;
@@ -235,6 +237,9 @@ section {
 }
     #body-div section {
         border-radius: 15px;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
 
         @media (max-width: 750px) {
             min-height: 100dvh;
@@ -245,10 +250,7 @@ section {
     }
     /* !! PROJECTS !! */
     #projects-section {
-        display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
+        justify-content: flex-start;
         background-color: #535c77;
     }
         #projects-section_title {
@@ -361,5 +363,66 @@ section {
                         background-color: lightcoral;
                     }
     /* !!   !! */
+
+    /* ++  SKILLS ++ */
+    #skills-section {
+        border: 5px solid black;
+        --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
+    }
+        #skills_languages-wrapper {
+            border: 5px solid pink;
+            display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: .5em;
+            width: 100%;
+        }
+            .skills_language {
+                border: 2px solid purple;
+                text-wrap: wrap;
+                width: fit-content;
+            }
+                .language-intro {
+                    border: 2px solid white;
+                    display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: .5em;
+                }
+                .language-img {
+                    border: 2px solid red;
+                    width: 50px;
+                }
+                .language-name {
+                    border: 2px solid yellow;
+                    margin: 0;
+                    padding: .2em;
+                }
+                .language-progress_container {
+                    border: 2px solid blue;
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    position: relative;
+                    margin: .5em 0;
+                    height: var(--bar-height);
+                    width: 175px;
+                }
+                    .language-progress {
+                        border: 2px dotted green;
+                        display: flex;
+                        height: 100%;
+                        width: 100%;
+                    }
+                        .language-progress_container, .language-progress {
+                            border-radius: 999px;
+                        }
+                    .language-fluency {
+                        border: 2px solid grey;
+                        position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                    }
+    /* ++   ++ */
 
 /* ^^   ^^ */
