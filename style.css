@@ -224,7 +224,6 @@ section {
 
 /* ^^ BODY DIV ^^ */
 #body-div {
-    border: 5px solid blue;
     display: flex;
         gap: 1em;
         align-items: center;
