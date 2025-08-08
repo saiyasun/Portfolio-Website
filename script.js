@@ -71,7 +71,7 @@ async function translateProjects(lang) {
         const title = clone.querySelector(".project-title");
         const desc = clone.querySelector(".project-description");
         const img = clone.querySelector(".project-img");
-        const link = clone.querySelector(".project-link");
+        const link = clone.querySelectorAll(".project-link");
         const status = clone.querySelector(".project-status");
         const textLink = clone.querySelector(".projects_project-status-wrapper a.project-link");
 
@@ -79,7 +79,10 @@ async function translateProjects(lang) {
         desc.textContent = project.projectDescription;
         img.style.backgroundImage = `url(${project.projectImg})`;
         img.alt = project.projectTitle;
-        link.href = project.projectLink;
+        // Set href on all links
+        link.forEach(link => {
+            link.href = project.projectLink;
+        });
         textLink.textContent = linkText;
 
         if (project.projectStatus) {
@@ -101,7 +104,7 @@ translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
         translateBtn.textContent = "Hi!";
-        document.title = "孫賽亞"
+        document.title = "孫賽亞";
     } else {
         defaultLang = 'en';
         translateBtn.textContent = "你好!";
