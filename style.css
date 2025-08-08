@@ -367,7 +367,62 @@ section {
     /* ++  SKILLS ++ */
     #skills-section {
         border: 5px solid black;
+        --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
+        #skills_languages-wrapper {
+            border: 5px solid pink;
+            display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: .5em;
+            width: 100%;
+        }
+            .skills_language {
+                border: 2px solid purple;
+                text-wrap: wrap;
+                width: fit-content;
+            }
+                .language-intro {
+                    border: 2px solid white;
+                    display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: .5em;
+                }
+                .language-img {
+                    border: 2px solid red;
+                    width: 50px;
+                }
+                .language-name {
+                    border: 2px solid yellow;
+                    margin: 0;
+                    padding: .2em;
+                }
+                .language-progress_container {
+                    border: 2px solid blue;
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    position: relative;
+                    margin: .5em 0;
+                    height: var(--bar-height);
+                    width: 175px;
+                }
+                    .language-progress {
+                        border: 2px dotted green;
+                        display: flex;
+                        height: 100%;
+                        width: 100%;
+                    }
+                        .language-progress_container, .language-progress {
+                            border-radius: 999px;
+                        }
+                    .language-fluency {
+                        border: 2px solid grey;
+                        position: absolute;
+                            left: 50%;
+                            transform: translate(-50%);
+                    }
     /* ++   ++ */
 
 /* ^^   ^^ */
