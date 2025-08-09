@@ -9,6 +9,7 @@
         --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
     --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 18px);
     --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
+        --captions: clamp(12px, 2.5dvw + 1dvh, 20px)
     --headers: clamp(16px, 2dvw + 2dvh, 36px);
 }
 html, body {
@@ -370,24 +371,28 @@ section {
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
         #skills_language-container {
-            border: 5px solid black;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
             width: 100%;
         }
             
             .skills_language {
-                border: 2px solid purple;
+                border-radius: 15px;
                 display: flex;
                     align-items: center;
                     justify-content: flex-start;
                     gap: .5em;
+                padding: .5em;
+                width: 100%;
+                background-color: silver;
             }
                 .language-img {
-                    border: 2px solid red;
                     width: 75px;
                     aspect-ratio: 1/1;
                 }
                 .language-name_wrapper {
-                    border: 2px solid white;
                     display: flex;
                         align-items: flex-start;
                         justify-content: center;
@@ -395,9 +400,9 @@ section {
                         width: 100%;
                 }
                     .language-name {
-                        border: 2px solid yellow;
                         margin: 0;
                         padding: .2em;
+                        font-size: var(--captions);
                     }
                     .language-progress_container {
                         border: 2px solid blue;
@@ -405,24 +410,23 @@ section {
                             align-items: center;
                             justify-content: center;
                         position: relative;
-                        margin: .5em 0 0 0;
-                        height: var(--bar-height);
+                        margin: .3em 0 0 0;
                         width: 100%;
                     }
                         .language-progress {
-                            border: 2px dotted green;
                             display: flex;
-                            height: 100%;
+                            height: var(--bar-height);
+                            padding: .5em;
                             width: 100%;
                         }
                             .language-progress_container, .language-progress {
                                 border-radius: 999px;
                             }
                         .language-fluency {
-                            border: 2px solid grey;
                             position: absolute;
                                 left: 50%;
                                 transform: translate(-50%);
+                            font-size: var(--captions);
                         }
     /* ++   ++ */
 
