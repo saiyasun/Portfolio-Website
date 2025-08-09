@@ -98,7 +98,48 @@ translateProjects(defaultLang);
 // !!   !!
 
 // ++ SKILLS SECTION ++
+    //Languages
+    async function translateLanguages(lang) {
+        const response = await fetch("translations/skills.json/languages.json");
+        const languages = await response.json();
+            const languageList = languages[lang];
+            const langSectionTitle = languages.languageSectionTitle[lang];
+            const zhLangFluency = ["初學者", "會話程度", "中級", "精通", "流利","母語者"];
+            const enLangFluency = ["beginner", "conversational", "intermediate", "proficient", "fluent", "native"];
+                const titleHTML = document.querySelector("#skills_language-title");
+                    titleHTML.textContent = langSectionTitle;
 
+        const wrapper = document.querySelector("#skills_language-container");
+        const languageTemplate = document.querySelector("#language-template")
+
+        wrapper.innerHTML = "";
+
+        languageList.forEach(language => {
+            const clone = languageTemplate.content.cloneNode(true);
+
+            const img = clone.querySelector(".language-img");
+            const languageName = clone.querySelector(".language-name");
+            const languageProgress = clone.querySelector(".language-progress");
+                const languageProgressPercent = [10, 25, 50, 65, 80, 100];
+            const fluency = clone.querySelector(".language-fluency");
+                const fluencyColors = ["red", "blue", "purple", "yellow", "green", "gold"];
+                const fluencyLevel = language.languageFluency - 1;
+            
+            img.src = language.languageImg;
+            languageName.textContent = language.languageName;
+            if (lang === 'zh') {
+                fluency.textContent = zhLangFluency[fluencyLevel]
+            } else {
+                fluency.textContent = enLangFluency[fluencyLevel]
+            }
+                languageProgress.style.backgroundColor = fluencyColors[fluencyLevel];
+                languageProgress.style.width = `${languageProgressPercent[fluencyLevel]}%`;
+            
+            wrapper.appendChild(clone);
+        })
+    }
+    translateLanguages(defaultLang)
+    //++++
 // ++   ++
 
 translateBtn.addEventListener("click", function () {
@@ -114,5 +155,8 @@ translateBtn.addEventListener("click", function () {
 
     translateHero(defaultLang);
     translateProjects(defaultLang); 
+    // Skills
+    translateLanguages(defaultLang);
+    // ++++
         switchNames(defaultLang);
 })

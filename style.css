@@ -10,7 +10,7 @@
     --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 18px);
     --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
         --captions: clamp(12px, 2.5dvw + 1dvh, 20px)
-    --headers: clamp(16px, 2dvw + 2dvh, 36px);
+    --headers: clamp(24px, 2dvw + 2dvh, 36px);
 }
 html, body {
     height: 100%;
@@ -247,7 +247,7 @@ section {
         }
     }
     .section-title {
-        font-size: var(--headers);
+        
     }
     /* !! PROJECTS !! */
     #projects-section {
@@ -370,64 +370,65 @@ section {
         border: 5px solid black;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
-        #skills_language-container {
-            display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
+        #skills_language-wrapper {
             width: 100%;
         }
-            
-            .skills_language {
-                border-radius: 15px;
+            #skills_language-container {
                 display: flex;
                     align-items: center;
-                    justify-content: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
                     gap: .5em;
-                padding: .5em;
                 width: 100%;
-                background-color: silver;
             }
-                .language-img {
-                    width: 75px;
-                    aspect-ratio: 1/1;
-                }
-                .language-name_wrapper {
+                .skills_language {
+                    border-radius: 15px;
                     display: flex;
-                        align-items: flex-start;
-                        justify-content: center;
-                        flex-direction: column;
-                        width: 100%;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: .5em;
+                    padding: .5em;
+                    width: 100%;
+                    background-color: silver;
                 }
-                    .language-name {
-                        margin: 0;
-                        padding: .2em;
-                        font-size: var(--captions);
+                    .language-img {
+                        width: 75px;
+                        aspect-ratio: 1/1;
                     }
-                    .language-progress_container {
-                        border: 2px solid blue;
+                    .language-name_wrapper {
                         display: flex;
-                            align-items: center;
+                            align-items: flex-start;
                             justify-content: center;
-                        position: relative;
-                        margin: .3em 0 0 0;
-                        width: 100%;
-                    }
-                        .language-progress {
-                            display: flex;
-                            height: var(--bar-height);
-                            padding: .5em;
+                            flex-direction: column;
                             width: 100%;
-                        }
-                            .language-progress_container, .language-progress {
-                                border-radius: 999px;
-                            }
-                        .language-fluency {
-                            position: absolute;
-                                left: 50%;
-                                transform: translate(-50%);
+                    }
+                        .language-name {
+                            margin: 0;
+                            padding: .2em;
                             font-size: var(--captions);
                         }
+                        .language-progress_container {
+                            outline: 2px solid black;
+                                border-radius: 999px;
+                            display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                            position: relative;
+                            margin: .3em 0 0 0;
+                            overflow: hidden;
+                            width: 100%;
+                        }
+                            .language-progress {
+                                display: flex;
+                                height: var(--bar-height);
+                                padding: .5em;
+                            }
+                            .language-fluency {
+                                position: absolute;
+                                    left: 50%;
+                                    transform: translate(-50%);
+                                font-size: var(--captions);
+                            }
     /* ++   ++ */
 
 /* ^^   ^^ */
