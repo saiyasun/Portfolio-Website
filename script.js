@@ -97,6 +97,10 @@ async function translateProjects(lang) {
 translateProjects(defaultLang);
 // !!   !!
 
+// ++ SKILLS SECTION ++
+
+// ++   ++
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
