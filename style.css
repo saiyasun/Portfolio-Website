@@ -369,60 +369,61 @@ section {
         border: 5px solid black;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
-        #skills_languages-wrapper {
-            border: 5px solid pink;
-            display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                gap: .5em;
+        #skills_language-container {
+            border: 5px solid black;
             width: 100%;
         }
+            
             .skills_language {
                 border: 2px solid purple;
-                text-wrap: wrap;
-                width: fit-content;
+                display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: .5em;
             }
-                .language-intro {
-                    border: 2px solid white;
-                    display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        gap: .5em;
-                }
                 .language-img {
                     border: 2px solid red;
-                    width: 50px;
+                    width: 75px;
+                    aspect-ratio: 1/1;
                 }
-                .language-name {
-                    border: 2px solid yellow;
-                    margin: 0;
-                    padding: .2em;
-                }
-                .language-progress_container {
-                    border: 2px solid blue;
+                .language-name_wrapper {
+                    border: 2px solid white;
                     display: flex;
-                        align-items: center;
+                        align-items: flex-start;
                         justify-content: center;
-                    position: relative;
-                    margin: .5em 0;
-                    height: var(--bar-height);
-                    width: 175px;
+                        flex-direction: column;
+                        width: 100%;
                 }
-                    .language-progress {
-                        border: 2px dotted green;
+                    .language-name {
+                        border: 2px solid yellow;
+                        margin: 0;
+                        padding: .2em;
+                    }
+                    .language-progress_container {
+                        border: 2px solid blue;
                         display: flex;
-                        height: 100%;
+                            align-items: center;
+                            justify-content: center;
+                        position: relative;
+                        margin: .5em 0 0 0;
+                        height: var(--bar-height);
                         width: 100%;
                     }
-                        .language-progress_container, .language-progress {
-                            border-radius: 999px;
+                        .language-progress {
+                            border: 2px dotted green;
+                            display: flex;
+                            height: 100%;
+                            width: 100%;
                         }
-                    .language-fluency {
-                        border: 2px solid grey;
-                        position: absolute;
-                            left: 50%;
-                            transform: translate(-50%);
-                    }
+                            .language-progress_container, .language-progress {
+                                border-radius: 999px;
+                            }
+                        .language-fluency {
+                            border: 2px solid grey;
+                            position: absolute;
+                                left: 50%;
+                                transform: translate(-50%);
+                        }
     /* ++   ++ */
 
 /* ^^   ^^ */
