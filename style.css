@@ -232,6 +232,10 @@ section {
     padding: .5em;
     overflow-x: auto;
 
+    @media (max-width: 750px) {
+        height: 100dvh;
+    }
+
     @media (min-width: 750px) {
         flex-direction: column;
     }
@@ -243,7 +247,7 @@ section {
             align-items: center;
 
         @media (max-width: 750px) {
-            min-height: 100dvh;
+            height: 100%;
         }
     }
     .section-title {
@@ -368,6 +372,7 @@ section {
     /* ++  SKILLS ++ */
     #skills-section {
         border: 5px solid black;
+        overflow-y: auto;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
         #skills_language-wrapper {
