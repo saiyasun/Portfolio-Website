@@ -375,10 +375,6 @@ section {
         overflow-y: auto;
         background-color: #9f75b8;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
-
-        @media (min-width: 1100px) {
-            padd
-        }
     }
         #skills-section_title {
             
