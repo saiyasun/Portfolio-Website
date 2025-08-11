@@ -193,4 +193,4 @@ translateBtn.addEventListener("click", function () {
     translateLanguages(defaultLang);
     // ++++
         switchNames(defaultLang);
-})// ++++
+})
