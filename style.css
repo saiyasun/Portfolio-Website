@@ -229,10 +229,7 @@ section {
         gap: 1em;
         align-items: stretch;
     padding: .5em;
-<<<<<<< HEAD
-=======
     height: 100dvh;
->>>>>>> new_site
     overflow-x: auto;
 
     @media (min-width: 750px) {
@@ -247,13 +244,6 @@ section {
             align-items: center;
 
         @media (max-width: 750px) {
-<<<<<<< HEAD
-            min-height: 100dvh;
-        }
-    }
-    .section-title {
-        font-size: var(--headers);
-=======
             height: 100%;
         }
 
@@ -263,7 +253,6 @@ section {
     }
     .section-title {
         
->>>>>>> new_site
     }
     /* !! PROJECTS !! */
     #projects-section {
@@ -379,10 +368,6 @@ section {
 
     /* ++  SKILLS ++ */
     #skills-section {
-<<<<<<< HEAD
-        border: 5px solid black;
-    }
-=======
         display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -524,7 +509,6 @@ section {
                                     .cert-link, .cert {
                                         border-radius: 15px;
                                     }
->>>>>>> new_site
     /* ++   ++ */
 
 /* ^^   ^^ */
