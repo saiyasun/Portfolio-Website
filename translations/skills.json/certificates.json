@@ -1,0 +1,21 @@
+{
+    "en": [
+        {
+            "certificate": "TOCFL (A1)",
+            "certificateLink": "docs/TOCFL_A1.pdf"
+        }
+    ],
+
+    "zh": [
+        {
+            "certificate": "TOCFL (A1)",
+            "certificateLink": "docs/TOCFL_A1.pdf"
+        }
+    ],
+
+    "certSectionTitle": 
+        {
+            "en": "Skills",
+            "zh": "證書" 
+        }
+}

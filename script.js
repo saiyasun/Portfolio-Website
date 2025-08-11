@@ -140,6 +140,40 @@ translateProjects(defaultLang);
     }
     translateLanguages(defaultLang)
     //++++
+
+    // Certifications
+    async function translateCerts(lang) {
+        const response = await fetch("translations/skills.json/certificates.json");
+        const certifications = await response.json();
+            const certs = certifications[lang];
+            const certTitle = certifications.certSectionTitle;
+                const sectionTitle = document.getElementById('skills-section_title');
+                    sectionTitle.textContent = certTitle[lang];
+        
+        const wrapper = document.getElementById('skills_certs-container');
+        const template = document.getElementById('cert-template');
+
+        wrapper.innerHTML = '';
+
+        certs.forEach(cert => {
+            const clone = template.content.cloneNode(true);
+
+            const certLink = clone.querySelector('.skills_cert');
+            const certification = clone.querySelector('.cert');
+
+            if (cert.certificateLink) {
+                certLink.href = cert.certificateLink;
+            } else {
+                certLink.style.display = 'none'
+            };
+
+            certification.textContent = cert.certificate;
+
+            wrapper.append(clone);
+        })
+    }
+    translateCerts(defaultLang);
+    //++++
 // ++   ++
 
 translateBtn.addEventListener("click", function () {

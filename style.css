@@ -372,6 +372,11 @@ section {
     /* ++  SKILLS ++ */
     #skills-section {
         border: 5px solid black;
+        display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1em;
+            flex-direction: column;
         overflow-y: auto;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
@@ -433,6 +438,43 @@ section {
                                     left: 50%;
                                     transform: translate(-50%);
                                 font-size: var(--captions);
+                            }
+
+        /* Certificates */
+        #skills_certs-wrapper {
+            border: 5px solid red;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            width: 100%;
+        }
+            #skills_certs-title {
+                border: 5px solid blue;
+                margin: .5em 0;
+            }
+                #skills_certs-container {
+                    border: 5px solid yellow;
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    width: 100%;
+                }
+                    .skills_cert {
+                        border: 5px solid green;
+                        display: flex;
+                            align-items: flex-start;
+                            justify-content: center;
+                            flex-direction: column;
+                            gap: .5em;
+                            width: 100%;
+                    }
+                        .cert-link {
+                            border: 3px solid purple;
+                        }
+                            .cert {
+                                border: 3px solid silver;
+                                margin: 0;
                             }
     /* ++   ++ */
 
