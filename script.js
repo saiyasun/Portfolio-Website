@@ -71,7 +71,7 @@ async function translateProjects(lang) {
         const title = clone.querySelector(".project-title");
         const desc = clone.querySelector(".project-description");
         const img = clone.querySelector(".project-img");
-        const link = clone.querySelector(".project-link");
+        const link = clone.querySelectorAll(".project-link");
         const status = clone.querySelector(".project-status");
         const textLink = clone.querySelector(".projects_project-status-wrapper a.project-link");
 
@@ -79,7 +79,11 @@ async function translateProjects(lang) {
         desc.textContent = project.projectDescription;
         img.style.backgroundImage = `url(${project.projectImg})`;
         img.alt = project.projectTitle;
-        link.href = project.projectLink;
+        link.forEach(a => {
+            a.href = project.projectLink;
+        })
+        
+
         textLink.textContent = linkText;
 
         if (project.projectStatus) {
@@ -184,6 +188,90 @@ translateProjects(defaultLang);
     //++++
 // ++   ++
 
+
+// $$ EXPERIENCE SECTION $$
+async function translateExperience(lang) {
+    const response = await fetch("translations/experience.json");
+    const experience = await response.json();
+        const xpLang = experience[lang];
+        const expTitle = experience.expSectionTitle[lang];
+            const htmlTitle = document.getElementById('experience-section_title');
+                htmlTitle.textContent = expTitle;
+    
+    const wrapper = document.getElementById('experience_exp-wrapper');
+    const template = document.getElementById('experience_template');
+
+    wrapper.innerHTML = '';
+
+    xpLang.forEach((exp, index) => {
+        const clone = template.content.cloneNode(true);
+
+        const expName = exp.expName;
+            const nameHTML = clone.querySelector('.exp_name')
+        const expPosition = exp.expPosition;
+            const positionHTML = clone.querySelector('.exp_position')
+        const expStartMonth = exp.expStartMonth;
+            const startMonthHTML = clone.querySelector('.start-month')
+            const expStartDate = exp.expStartDate;
+                const startDateHTML = clone.querySelector('.start-date')
+        const expEndMonth = exp.expEndMonth;
+            const endMonthHTML = clone.querySelector('.end-month')
+            const expEndDate = exp.expEndDate;
+                const endDateHTML = clone.querySelector('.end-date')
+        const expCity = exp.expCity;
+            const cityHTML = clone.querySelector('.exp_city')
+        const expCountry = exp.expCountry;
+            const countryHTML = clone.querySelector('.exp_country')
+        const expSummary = exp.expSummary;
+            const summaryHTML = clone.querySelector('.exp_summary')
+        const expDuties = exp.expDuties;
+            const dutiesHTML = clone.querySelector('.exp_duties')
+            dutiesHTML.innerHTML = '';
+
+        nameHTML.textContent = expName;
+        positionHTML.textContent = expPosition;
+        startMonthHTML.textContent = expStartMonth;
+        startDateHTML.textContent = expStartDate;
+        endMonthHTML.textContent = expEndMonth;
+        endDateHTML.textContent = expEndDate;
+        cityHTML.textContent = expCity;
+        countryHTML.textContent = expCountry;
+        summaryHTML.textContent = expSummary;
+        expDuties.forEach(dutyText => {
+            const li = document.createElement('li');
+            li.textContent = dutyText;
+            dutiesHTML.appendChild(li);
+        });
+
+        if (index === xpLang.length - 1) {
+            const separators = clone.querySelectorAll(".exp_separator");
+            separators[separators.length - 1].style.display = 'none'; // Hide the last separator in the clone
+        }
+
+        // Duty toggle button
+        const dutyButton = clone.querySelector('.exp_button')
+        const dutyButtonText = experience.expDutyButton[lang];
+        dutyButton.addEventListener("click", function() {
+            const card = dutyButton.closest('.experience'); // or whatever your card's class is
+            const dutyCard = card.querySelector('.exp_duties');
+            const currentDisplay = window.getComputedStyle(dutyCard).display;
+
+            if (currentDisplay === 'none') {
+                dutyCard.style.display = 'block';
+                dutyButton.textContent = dutyButtonText[1];
+            } else {
+                dutyCard.style.display = 'none';
+                dutyButton.textContent = dutyButtonText[0];
+            }
+        })
+        // $$$$
+
+        wrapper.appendChild(clone);
+    })
+}
+translateExperience(defaultLang)
+// $$   $$
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
@@ -202,5 +290,6 @@ translateBtn.addEventListener("click", function () {
     translateLanguages(defaultLang);
     translateCerts(defaultLang);
     // ++++
+    translateExperience(defaultLang);
         switchNames(defaultLang);
 })

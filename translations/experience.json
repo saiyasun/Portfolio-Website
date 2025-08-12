@@ -1,3 +1,51 @@
 {
-    
+    "en": [
+        {
+            "expName": "Tulane Technology Connection",
+            "expPosition": "IT Specialist",
+            "expStartMonth": "Oct",
+            "expEndMonth": "Aug",
+            "expStartDate": 2023,
+            "expEndDate": 2024,
+            "expCity": "New Orleans",
+            "expCountry": "USA",
+            "expSummary": "These are my duties",
+            "expDuties": ["Gathered and submitted Excel reports to major companies such as Apple.",
+                          "Used the PIMS POS system for sales, quotes receiving and creating purchase orders.",
+                          "Guided students and faculty in making technology purchase decisions for Mac, iPad and Dell products.",
+                          "Gained solid comprehension of various Macintosh models and Dell laptops."
+                         ]
+        }
+    ],
+
+    "zh": [
+        {
+            "expName": "Tulane Technology Connection",
+            "expPosition": "IT Specialist",
+            "expStartMonth": "Oct.",
+            "expEndMonth": "Aug.",
+            "expStartDate": 2023,
+            "expEndDate": 2024,
+            "expCity": "New Orleans",
+            "expCountry": "USA",
+            "expSummary": "These are my duties",
+            "expDuties": ["Gathered and submitted Excel reports to major companies such as Apple.",
+                          "Used the PIMS POS system for sales, quotes receiving and creating purchase orders.",
+                          "Guided students and faculty in making technology purchase decisions for Mac, iPad and Dell products.",
+                          "Gained solid comprehension of various Macintosh models and Dell laptops."
+                         ]
+        }
+    ],
+
+    "expSectionTitle": 
+        {
+            "en": "Experience",
+            "zh": "Experience-zh"
+        },
+
+    "expDutyButton": 
+        {
+            "en": ["Show button", "Hide button"],
+            "zh": ["Show button", "Hide button"]
+        }
 }

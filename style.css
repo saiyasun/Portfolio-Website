@@ -521,23 +521,30 @@ section {
                 .exp_namePosition-container {
                     border: 2px solid green;
                     display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
+                        align-items: flex-start;
+                        justify-content: center;
+                        flex-direction: column;
                         gap: .5em;
                 }
                     .exp_name {
-
+                        margin: 0;
                     }
                     .exp_position {
-                        
+                        margin: 0;
                     }
                 .exp_summary-container {
                     border: 3px dashed blue;
                     display: flex;
                         flex-direction: column;
                 }
+                    .exp_summary-container span {
+                        padding: .1em;
+                    }
                     .exp_dateTime {
                         border: 2px dotted orange;
+                        display: flex;
+                            align-items: center;
+                            justify-content: space-around;
                     }
                         .exp_date {
                             border: 2px dotted black;
@@ -566,6 +573,8 @@ section {
                     }
             .exp_duties {
                 border: 2px dotted red;
+                list-style-type: disc;
+                padding-left: 1em;
             }
             .exp_separator {
                 border: 3px dotted blue;
