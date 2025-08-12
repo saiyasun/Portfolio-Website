@@ -507,4 +507,88 @@ section {
                                     }
     /* ++   ++ */
 
+    /* $$ EXPERIENCE SECTION $$ */
+    #experience-section {
+        border: 5px solid black;
+    }
+        #experience_exp-wrapper {
+            border: 5px solid yellow;
+            width: 100%;
+        }
+            .experience {
+                border: 5px solid red;
+            }
+                .exp_namePosition-container {
+                    border: 2px solid green;
+                    display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: .5em;
+                }
+                    .exp_name {
+
+                    }
+                    .exp_position {
+                        
+                    }
+                .exp_summary-container {
+                    border: 3px dashed blue;
+                    display: flex;
+                        flex-direction: column;
+                }
+                    .exp_dateTime {
+                        border: 2px dotted orange;
+                    }
+                        .exp_date {
+                            border: 2px dotted black;
+                        }
+                            .start-date {
+                                border: 1px dotted silver;
+                            }
+                            .end_date {
+                                border: 1px dotted chartreuse
+                            }
+                        .exp_location {
+                            border: 2px solid brown;
+                            margin: 0;
+                        }
+                    .exp_summary {
+                        border: 1px dotted pink;
+                    }
+                    button.exp_button {
+                        display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                        border-radius: 0px;
+                        border: 1px solid transparent;
+                            outline: none;
+                        margin: .5em;
+                    }
+            .exp_duties {
+                border: 2px dotted red;
+            }
+            .exp_separator {
+                border: 3px dotted blue;
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+            }
+                .exp_line-separator {
+                    border: 1px solid black;
+                    display: inline;
+                    width: 15%;
+                    height: 1px;
+                    margin: 0;
+                    background-color: black;
+                }
+                .exp_circle-separator {
+                    border: 3px dashed silver;
+                    border-radius: 50%;
+                    display: inline;
+                    aspect-ratio: 1/1;
+                    margin: .5em;
+                    width: 30px;
+                }
+    /* $$   $$ */
+
 /* ^^   ^^ */
