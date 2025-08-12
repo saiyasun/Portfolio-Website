@@ -98,6 +98,14 @@ translateProjects(defaultLang);
 // !!   !!
 
 // ++ SKILLS SECTION ++
+    // Section title
+    async function translateSkillsTitle(lang) {
+        const response = await fetch('translations/skills.json/skills-title.json');
+        const title = await response.json();
+            const htmlTitle = document.getElementById('skills-section_title');
+            htmlTitle.textContent = title.skillsSectionTitle[lang];
+    }
+
     //Languages
     async function translateLanguages(lang) {
         const response = await fetch("translations/skills.json/languages.json");
@@ -147,7 +155,7 @@ translateProjects(defaultLang);
         const certifications = await response.json();
             const certs = certifications[lang];
             const certTitle = certifications.certSectionTitle;
-                const sectionTitle = document.getElementById('skills-section_title');
+                const sectionTitle = document.getElementById('skills_certs-title');
                     sectionTitle.textContent = certTitle[lang];
         
         const wrapper = document.getElementById('skills_certs-container');
@@ -190,7 +198,9 @@ translateBtn.addEventListener("click", function () {
     translateHero(defaultLang);
     translateProjects(defaultLang); 
     // Skills
+    translateSkillsTitle(defaultLang)
     translateLanguages(defaultLang);
+    translateCerts(defaultLang);
     // ++++
         switchNames(defaultLang);
 })
