@@ -1,0 +1,114 @@
+{
+    "en": [
+        {
+            "expName": "Tulane Technology Connection",
+            "expPosition": "IT Specialist",
+            "expStartMonth": "Oct",
+            "expEndMonth": "Aug",
+            "expStartDate": 2023,
+            "expEndDate": 2024,
+            "expCity": "New Orleans",
+            "expCountry": "USA",
+            "expSummary": "These are my duties",
+            "expDuties": ["Gathered and submitted Excel reports to major companies such as Apple.",
+                          "Used the PIMS POS system for sales, quotes receiving and creating purchase orders.",
+                          "Guided students and faculty in making technology purchase decisions for Mac, iPad and Dell products.",
+                          "Gained solid comprehension of various Macintosh models and Dell laptops."
+                         ]
+        },
+
+        {
+            "expName": "Pontchartrain Partners",
+            "expPosition": "Maintenance",
+            "expStartMonth": "Nov",
+            "expEndMonth": "Aug",
+            "expStartDate": 2017,
+            "expEndDate": 2022,
+            "expCity": "New Orleans",
+            "expCountry": "USA",
+            "expSummary": "These are my duties",
+            "expDuties": ["Maintained cleanliness and orderliness of both inside and outside of the building by cutting grass, collecting trash and debris around the building, cleaning restrooms, caring for plants, and mopping floors.",
+                          "Performed light maintenance such as fixing leaking toilets."
+                         ]
+        },
+
+        {
+            "expName": "Canal Street Veterinary Hospital",
+            "expPosition": "Veterinary Assistant",
+            "expStartMonth": "Aug",
+            "expEndMonth": "Apr",
+            "expStartDate": 2023,
+            "expEndDate": 2024,
+            "expCity": "New Orleans",
+            "expCountry": "USA",
+            "expSummary": "These are my duties",
+            "expDuties": ["Cared for sick and injured dogs and cats by feeding, walking, and bathing them.",
+                          "Assisted doctor in exams and surgeries."
+                         ]
+        }
+    ],
+
+    "zh": [
+        {
+            "expName": "Tulane Technology Connection",
+            "expPosition": "IT Specialist",
+            "expStartMonth": "十月",
+            "expEndMonth": "八月",
+            "expStartDate": 2023,
+            "expEndDate": 2024,
+            "expCity": "新奧爾良",
+            "expCountry": "美國",
+            "expSummary": "這些是我的職責",
+            "expDuties": [
+                        "收集並提交 Excel 報告給蘋果等大型公司。",
+                        "使用 PIMS POS 系統進行銷售、報價接收及採購訂單的建立。",
+                        "指導學生及教職員在 Mac、iPad 和 Dell 產品上的技術採購決策。",
+                        "對各種 Macintosh 型號及 Dell 筆記型電腦有紮實的了解。"
+                         ]
+        },
+
+        {
+            "expName": "Pontchartrain Partners",
+            "expPosition": "Maintenance",
+            "expStartMonth": "十一月",
+            "expEndMonth": "八月",
+            "expStartDate": 2017,
+            "expEndDate": 2022,
+            "expCity": "新奧爾良",
+            "expCountry": "美國",
+            "expSummary": "這些是我的職責",
+            "expDuties": [
+                            "透過割草、收集建築物周圍的垃圾與碎屑、清潔洗手間、照料植物及拖地，維持建築物內外的清潔與整齊。",
+                            "執行輕微維修，如修理漏水馬桶。"
+                         ]
+        },
+
+        {
+            "expName": "Canal Street Veterinary Hospital",
+            "expPosition": "Veterinary Assistant",
+            "expStartMonth": "八月",
+            "expEndMonth": "四月",
+            "expStartDate": 2023,
+            "expEndDate": 2024,
+            "expCity": "新奧爾良",
+            "expCountry": "美國",
+            "expSummary": "這些是我的職責",
+            "expDuties": [
+                            "照顧生病和受傷的狗和貓，包括餵食、遛狗和洗澡。",
+                            "協助醫生進行檢查和手術。"
+                         ]
+        }
+    ],
+
+    "expSectionTitle": 
+        {
+            "en": "Experience",
+            "zh": "工作經驗"
+        },
+
+    "expDutyButton": 
+        {
+            "en": ["Show duties", "Hide duties"],
+            "zh": ["顯示職責", "隱藏職責"]
+        }
+}
