@@ -251,13 +251,14 @@ async function translateExperience(lang) {
         // Duty toggle button
         const dutyButton = clone.querySelector('.exp_button')
         const dutyButtonText = experience.expDutyButton[lang];
+        dutyButton.textContent = dutyButtonText[0];
         dutyButton.addEventListener("click", function() {
             const card = dutyButton.closest('.experience'); // or whatever your card's class is
             const dutyCard = card.querySelector('.exp_duties');
             const currentDisplay = window.getComputedStyle(dutyCard).display;
 
             if (currentDisplay === 'none') {
-                dutyCard.style.display = 'block';
+                dutyCard.style.display = 'flex';
                 dutyButton.textContent = dutyButtonText[1];
             } else {
                 dutyCard.style.display = 'none';

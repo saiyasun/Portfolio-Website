@@ -7,16 +7,16 @@
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
         --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
-    --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 18px);
+    --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 20px);
     --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
-        --captions: clamp(12px, 2.5dvw + 1dvh, 20px)
+        --captions: clamp(16px, 2.5dvw + 1dvh, 18px);
     --headers: clamp(24px, 2dvw + 2dvh, 36px);
 }
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 body {
     position: relative;
@@ -509,31 +509,35 @@ section {
 
     /* $$ EXPERIENCE SECTION $$ */
     #experience-section {
-        border: 5px solid black;
+        background-color: rgb(139, 235, 114);
     }
         #experience_exp-wrapper {
-            border: 5px solid yellow;
             width: 100%;
+            max-height: 100%;
+            overflow-y: auto;
         }
             .experience {
-                border: 5px solid red;
+                border-radius: 15px;
+                padding: .5em;
+                background-color: rgb(216, 216, 177);
             }
                 .exp_namePosition-container {
-                    border: 2px solid green;
                     display: flex;
                         align-items: flex-start;
                         justify-content: center;
                         flex-direction: column;
                         gap: .5em;
+                    padding: .5em;
                 }
                     .exp_name {
                         margin: 0;
                     }
                     .exp_position {
                         margin: 0;
+                        font-style: italic;
+                        font-size: var(--captions);
                     }
                 .exp_summary-container {
-                    border: 3px dashed blue;
                     display: flex;
                         flex-direction: column;
                 }
@@ -541,26 +545,31 @@ section {
                         padding: .1em;
                     }
                     .exp_dateTime {
-                        border: 2px dotted orange;
                         display: flex;
                             align-items: center;
                             justify-content: space-around;
+                            flex-direction: column;
+                            gap: .5em;
+                        font-size: var(--captions);
                     }
                         .exp_date {
-                            border: 2px dotted black;
+                            font-style: italic;
                         }
                             .start-date {
-                                border: 1px dotted silver;
+                                
                             }
                             .end_date {
-                                border: 1px dotted chartreuse
+                                
                             }
                         .exp_location {
-                            border: 2px solid brown;
                             margin: 0;
+                            font-style: bold;
                         }
                     .exp_summary {
-                        border: 1px dotted pink;
+                        padding: .5em 1em;
+                        margin: .5em 0;
+                        font-size: var(--paragraph);
+                        background-color: aliceblue;
                     }
                     button.exp_button {
                         display: inline-flex;
@@ -572,12 +581,15 @@ section {
                         margin: .5em;
                     }
             .exp_duties {
-                border: 2px dotted red;
+                display: none;
+                    flex-direction: column;
+                    gap: .5em;
                 list-style-type: disc;
-                padding-left: 1em;
+                padding: 1em 1em 1em 1.5em;
+                margin: 0;
+                font-size: var(--paragraph);
             }
             .exp_separator {
-                border: 3px dotted blue;
                 display: flex;
                     align-items: center;
                     justify-content: center;
@@ -591,12 +603,13 @@ section {
                     background-color: black;
                 }
                 .exp_circle-separator {
-                    border: 3px dashed silver;
+                    border: 3px solid silver;
                     border-radius: 50%;
                     display: inline;
                     aspect-ratio: 1/1;
                     margin: .5em;
                     width: 30px;
+                    background-color: white;
                 }
     /* $$   $$ */
 
