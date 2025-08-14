@@ -273,6 +273,13 @@ async function translateExperience(lang) {
 translateExperience(defaultLang)
 // $$   $$
 
+
+// @@ EDUCATION SECTION @@
+async function translateEducation(lang) {
+    
+}
+// @@   @@
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';

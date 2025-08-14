@@ -242,6 +242,7 @@ section {
         display: flex;
             flex-direction: column;
             align-items: center;
+        overflow-y: auto;
 
         @media (max-width: 750px) {
             height: 100%;
@@ -372,7 +373,6 @@ section {
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-        overflow-y: auto;
         background-color: #9f75b8;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
@@ -612,5 +612,23 @@ section {
                     background-color: white;
                 }
     /* $$   $$ */
+
+    /* @@ EDUCATION SECTION @@ */
+    #education-section {
+        border: 5px solid black;
+    }
+    /* @@   @@ */
+
+    /* %% ABOUT SECTION %% */
+    #about-section {
+        border: 5px solid black;
+    }
+    /* %%   %% */
+
+    /* ## CONTACT SECTION ## */
+    #contact-section {
+        border: 5px solid black;
+    }
+    /* ##   ## */
 
 /* ^^   ^^ */
