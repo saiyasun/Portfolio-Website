@@ -1,0 +1,18 @@
+{
+    "bio":
+        {
+            "zh": ""
+        },
+    
+    "hobbies": 
+        {
+            "en": ["Working out", "Language learning", "Walking"],
+            "zh": ["Working out", "Language learning", "Walking"]
+        },
+    
+    "aboutSectionTitle":
+        {
+            "en": "About",
+            "zh": "關於"
+        }
+}

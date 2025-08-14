@@ -326,6 +326,106 @@ async function translateEducation(lang) {
 translateEducation(defaultLang); 
 // @@   @@
 
+// %% ABOUT SECTION %%
+async function translateAbout(lang) {
+    const response = await fetch('translations/about/about.json');
+    const education = await response.json();
+    eduLang = education[lang];
+    const sectionTitle = document.getElementById('education-section_title');
+        const titleLang = education.educationSectionTitle[lang];
+        sectionTitle.textContent = titleLang;
+
+    const wrapper = document.getElementById('education-wrapper');
+    const template = document.getElementById('education_template');
+
+    wrapper.innerHTML = '';
+
+    eduLang.forEach(edu => {
+        const clone = template.content.cloneNode(true);
+
+        const school = edu.school;
+            const schoolHTML = clone.querySelector('.education_school');
+        const degree = edu.degree;
+            const degreeHTML = clone.querySelector('.education_degree');
+        const startYear = edu.startDate;
+            const startYearHTML = clone.querySelector('.education_start-date');
+        const endYear = edu.endDate;
+            const endYearHTML = clone.querySelector('.education_end-date');
+                const graduateSection = clone.querySelector('.education_graduation');
+        const estYear = edu.estDate;
+            const estYearHTML = clone.querySelector('.education_est-date');
+            const estYearSection = clone.querySelector('.education_est-graduation');
+            const hasEstYear = 'estDate' in edu;
+        const location = edu.location;
+            const locationHTML = clone.querySelector('.education_location');
+
+        schoolHTML.textContent = school;
+        degreeHTML.textContent = degree;
+        startYearHTML.textContent = startYear;
+        endYearHTML.textContent = endYear;
+        estYearHTML.textContent = estYear;
+        locationHTML.textContent = location;
+
+        if (hasEstYear) {
+            graduateSection.style.display = 'none'
+        } else {
+            estYearSection.style.display = 'none';
+        } 
+        
+        wrapper.appendChild(clone)
+    })
+}
+
+async function translateReferences(lang) {
+    const response = await fetch('translations/about/references.json');
+    const education = await response.json();
+    eduLang = education[lang];
+    const sectionTitle = document.getElementById('education-section_title');
+        const titleLang = education.educationSectionTitle[lang];
+        sectionTitle.textContent = titleLang;
+
+    const wrapper = document.getElementById('education-wrapper');
+    const template = document.getElementById('education_template');
+
+    wrapper.innerHTML = '';
+
+    eduLang.forEach(edu => {
+        const clone = template.content.cloneNode(true);
+
+        const school = edu.school;
+            const schoolHTML = clone.querySelector('.education_school');
+        const degree = edu.degree;
+            const degreeHTML = clone.querySelector('.education_degree');
+        const startYear = edu.startDate;
+            const startYearHTML = clone.querySelector('.education_start-date');
+        const endYear = edu.endDate;
+            const endYearHTML = clone.querySelector('.education_end-date');
+                const graduateSection = clone.querySelector('.education_graduation');
+        const estYear = edu.estDate;
+            const estYearHTML = clone.querySelector('.education_est-date');
+            const estYearSection = clone.querySelector('.education_est-graduation');
+            const hasEstYear = 'estDate' in edu;
+        const location = edu.location;
+            const locationHTML = clone.querySelector('.education_location');
+
+        schoolHTML.textContent = school;
+        degreeHTML.textContent = degree;
+        startYearHTML.textContent = startYear;
+        endYearHTML.textContent = endYear;
+        estYearHTML.textContent = estYear;
+        locationHTML.textContent = location;
+
+        if (hasEstYear) {
+            graduateSection.style.display = 'none'
+        } else {
+            estYearSection.style.display = 'none';
+        } 
+        
+        wrapper.appendChild(clone)
+    })
+}
+// %%   %%
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
