@@ -13,5 +13,10 @@
             "img": "images/profile_pics/profile_pic_3.jpg",
             "reference": "This is a Chinese sample reference"
         }
-    ]
+    ],
+
+    "referenceSectionTitle":
+        {
+            "zh": ""
+        }
 }

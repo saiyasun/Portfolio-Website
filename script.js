@@ -358,11 +358,49 @@ async function translateAbout(lang) {
         })
 }
 
+const refTitle = document.getElementById('about_references-title');
+const refTitleText = refTitle.textContent;
+
 async function translateReferences(lang) {
     const response = await fetch('translations/about/references.json');
     const references = await response.json();
-    
+    const refLang = references[lang];
+    const refNum = refLang.length;
+    const refSection = document.getElementById('about_references-wrapper');
+    const titleLang = references.referenceSectionTitle[lang];
+        if (lang == 'zh') {
+            refTitle.textContent = titleLang;
+        } else {
+            refTitle.textContent = refTitleText;
+        }
+
+    if (refNum < 1) {
+        refSection.style.display = 'none';
+    }
+        
+    const wrapper = document.getElementById('references-container');
+    const template = document.getElementById('about_reference-template');
+
+    wrapper.innerHTML = '';
+
+    refLang.forEach(ref => {
+        const clone = template.content.cloneNode(true);
+
+        const refPic = ref.img;
+            const refPicHTML = clone.querySelector('.references_profile-pic');
+        const refName = ref.name;
+            const refNameHTML = clone.querySelector('.references_name')
+        const refText = ref.reference;
+            const refTextHTML = clone.querySelector('.references_bio')
+
+        refPicHTML.src = refPic;
+        refNameHTML.textContent = refName;
+        refTextHTML.textContent = refText;
+
+        wrapper.appendChild(clone);
+    })
 }
+translateReferences(defaultLang);
 // %%   %%
 
 translateBtn.addEventListener("click", function () {
@@ -386,5 +424,6 @@ translateBtn.addEventListener("click", function () {
     translateExperience(defaultLang);
     translateEducation(defaultLang);
     translateAbout(defaultLang);
+    translateReferences(defaultLang);
         switchNames(defaultLang);
 })
