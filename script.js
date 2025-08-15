@@ -403,6 +403,24 @@ async function translateReferences(lang) {
 translateReferences(defaultLang);
 // %%   %%
 
+// ## CONTACT SECTION ##
+async function translateContact(lang) {
+    const response = await fetch('translations/contact.json');
+    const contact = await response.json();
+    const contactLang = contact[lang];
+
+    const sectionTitle = document.getElementById('contact-section_title')
+    const emailTitle = document.getElementById('email_title')
+    const linkText = document.getElementById('contact_resume-link')
+    const socialsTitle = document.getElementById('socials-title')
+    
+    sectionTitle.textContent = contactLang.sectionTitle;
+    emailTitle.textContent = contactLang.contactTitle;
+    linkText.textContent = contactLang.linkText;
+    socialsTitle.textContent = contactLang.socialsTitle;
+}
+// ##   ##
+
 translateBtn.addEventListener("click", function () {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
@@ -417,7 +435,7 @@ translateBtn.addEventListener("click", function () {
     translateHero(defaultLang);
     translateProjects(defaultLang); 
     // Skills
-    translateSkillsTitle(defaultLang)
+    translateSkillsTitle(defaultLang);
     translateLanguages(defaultLang);
     translateCerts(defaultLang);
     // ++++
@@ -425,5 +443,6 @@ translateBtn.addEventListener("click", function () {
     translateEducation(defaultLang);
     translateAbout(defaultLang);
     translateReferences(defaultLang);
+    translateContact(defaultLang);
         switchNames(defaultLang);
 })
