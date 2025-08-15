@@ -1,13 +1,19 @@
 {
     "bio":
         {
-            "zh": ""
+            "zh": "This is Chinese"
         },
     
     "hobbies": 
         {
             "en": ["Working out", "Language learning", "Walking"],
-            "zh": ["Working out", "Language learning", "Walking"]
+            "zh": ["Working out", "Language learning", "Walking-zh"]
+        },
+
+    "hobbyTitle": 
+        {
+            "en": "Hobbies",
+            "zh": "Hobbies-zh"
         },
     
     "aboutSectionTitle":

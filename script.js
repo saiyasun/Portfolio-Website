@@ -237,11 +237,11 @@ async function translateExperience(lang) {
         cityHTML.textContent = expCity;
         countryHTML.textContent = expCountry;
         summaryHTML.textContent = expSummary;
-        expDuties.forEach(dutyText => {
-            const li = document.createElement('li');
-            li.textContent = dutyText;
-            dutiesHTML.appendChild(li);
-        });
+            expDuties.forEach(dutyText => {
+                const li = document.createElement('li');
+                li.textContent = dutyText;
+                dutiesHTML.appendChild(li);
+            });
 
         if (index === xpLang.length - 1) {
             const separators = clone.querySelectorAll(".exp_separator");
@@ -327,102 +327,41 @@ translateEducation(defaultLang);
 // @@   @@
 
 // %% ABOUT SECTION %%
+const bio = document.getElementById('about_bio')
+const bioText = bio.textContent;
+
 async function translateAbout(lang) {
     const response = await fetch('translations/about/about.json');
-    const education = await response.json();
-    eduLang = education[lang];
-    const sectionTitle = document.getElementById('education-section_title');
-        const titleLang = education.educationSectionTitle[lang];
-        sectionTitle.textContent = titleLang;
+    const about = await response.json();
+    const titleLang = about.aboutSectionTitle[lang];
+    const hobbyTitleLang = about.hobbyTitle[lang];
+        const aboutSectionTitle = document.getElementById('about-section_title');
+        const hobbySectionTitle = document.getElementById('about_hobbies-title');
+        aboutSectionTitle.textContent = titleLang;
+        hobbySectionTitle.textContent = hobbyTitleLang;
 
-    const wrapper = document.getElementById('education-wrapper');
-    const template = document.getElementById('education_template');
+    if (lang == 'zh') {
+        bio.textContent = about.bio[lang]
+    } else {
+        bio.textContent = bioText;
+    }
+    
+    const wrapper = document.getElementById('hobbies-list');
 
     wrapper.innerHTML = '';
 
-    eduLang.forEach(edu => {
-        const clone = template.content.cloneNode(true);
-
-        const school = edu.school;
-            const schoolHTML = clone.querySelector('.education_school');
-        const degree = edu.degree;
-            const degreeHTML = clone.querySelector('.education_degree');
-        const startYear = edu.startDate;
-            const startYearHTML = clone.querySelector('.education_start-date');
-        const endYear = edu.endDate;
-            const endYearHTML = clone.querySelector('.education_end-date');
-                const graduateSection = clone.querySelector('.education_graduation');
-        const estYear = edu.estDate;
-            const estYearHTML = clone.querySelector('.education_est-date');
-            const estYearSection = clone.querySelector('.education_est-graduation');
-            const hasEstYear = 'estDate' in edu;
-        const location = edu.location;
-            const locationHTML = clone.querySelector('.education_location');
-
-        schoolHTML.textContent = school;
-        degreeHTML.textContent = degree;
-        startYearHTML.textContent = startYear;
-        endYearHTML.textContent = endYear;
-        estYearHTML.textContent = estYear;
-        locationHTML.textContent = location;
-
-        if (hasEstYear) {
-            graduateSection.style.display = 'none'
-        } else {
-            estYearSection.style.display = 'none';
-        } 
-        
-        wrapper.appendChild(clone)
-    })
+    const hobbyList = about.hobbies[lang];
+        hobbyList.forEach(hobby => {
+            const li = document.createElement('li');
+            li.textContent = hobby;
+            wrapper.appendChild(li);
+        })
 }
 
 async function translateReferences(lang) {
     const response = await fetch('translations/about/references.json');
-    const education = await response.json();
-    eduLang = education[lang];
-    const sectionTitle = document.getElementById('education-section_title');
-        const titleLang = education.educationSectionTitle[lang];
-        sectionTitle.textContent = titleLang;
-
-    const wrapper = document.getElementById('education-wrapper');
-    const template = document.getElementById('education_template');
-
-    wrapper.innerHTML = '';
-
-    eduLang.forEach(edu => {
-        const clone = template.content.cloneNode(true);
-
-        const school = edu.school;
-            const schoolHTML = clone.querySelector('.education_school');
-        const degree = edu.degree;
-            const degreeHTML = clone.querySelector('.education_degree');
-        const startYear = edu.startDate;
-            const startYearHTML = clone.querySelector('.education_start-date');
-        const endYear = edu.endDate;
-            const endYearHTML = clone.querySelector('.education_end-date');
-                const graduateSection = clone.querySelector('.education_graduation');
-        const estYear = edu.estDate;
-            const estYearHTML = clone.querySelector('.education_est-date');
-            const estYearSection = clone.querySelector('.education_est-graduation');
-            const hasEstYear = 'estDate' in edu;
-        const location = edu.location;
-            const locationHTML = clone.querySelector('.education_location');
-
-        schoolHTML.textContent = school;
-        degreeHTML.textContent = degree;
-        startYearHTML.textContent = startYear;
-        endYearHTML.textContent = endYear;
-        estYearHTML.textContent = estYear;
-        locationHTML.textContent = location;
-
-        if (hasEstYear) {
-            graduateSection.style.display = 'none'
-        } else {
-            estYearSection.style.display = 'none';
-        } 
-        
-        wrapper.appendChild(clone)
-    })
+    const references = await response.json();
+    
 }
 // %%   %%
 
@@ -446,5 +385,6 @@ translateBtn.addEventListener("click", function () {
     // ++++
     translateExperience(defaultLang);
     translateEducation(defaultLang);
+    translateAbout(defaultLang);
         switchNames(defaultLang);
 })
