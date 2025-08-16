@@ -1,0 +1,57 @@
+{
+    "en": [
+        {
+            "school": "Yuan Ze University",
+            "degree": "Bachelor of Science in Informatics",
+            "estDate": 2028,
+            "location": "Taoyuan City, Taiwan"
+        },
+
+        {
+            "school": "New Orleans Science and Mathematics High School",
+            "degree": "High School Diploma",
+            "startDate": 2008,
+            "endDate": 2012,
+            "location": "New Orleans, USA"
+        },
+
+        {
+            "school": "New Orleans Center for Creative Arts",
+            "degree": "Certificate of Creative Writing",
+            "startDate": 2010,
+            "endDate": 2012,
+            "location": "New Orleans, USA"
+        }
+    ],
+
+    "zh": [
+        {
+            "school": "元智大學",
+            "degree": "Bachelor of Science in Informatics",
+            "estDate": 2028,
+            "location": "桃園市，台灣"
+        },
+
+        {
+            "school": "New Orleans Science and Mathematics High School",
+            "degree": "High School Diploma",
+            "startDate": 2008,
+            "endDate": 2012,
+            "location": "紐奧良市，美國"
+        },
+
+        {
+            "school": "New Orleans Center for Creative Arts",
+            "degree": "Certificate of Creative Writing",
+            "startDate": 2010,
+            "endDate": 2012,
+            "location": "紐奧良市，美國"
+        }
+    ],
+
+    "educationSectionTitle": 
+        {
+            "en": "Education",
+            "zh": "教育"
+        }
+}

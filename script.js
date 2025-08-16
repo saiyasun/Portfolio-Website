@@ -104,7 +104,7 @@ translateProjects(defaultLang);
 // ++ SKILLS SECTION ++
     // Section title
     async function translateSkillsTitle(lang) {
-        const response = await fetch('translations/skills.json/skills-title.json');
+        const response = await fetch('translations/skills/skills-title.json');
         const title = await response.json();
             const htmlTitle = document.getElementById('skills-section_title');
             htmlTitle.textContent = title.skillsSectionTitle[lang];
@@ -112,7 +112,7 @@ translateProjects(defaultLang);
 
     //Languages
     async function translateLanguages(lang) {
-        const response = await fetch("translations/skills.json/languages.json");
+        const response = await fetch("translations/skills/languages.json");
         const languages = await response.json();
             const languageList = languages[lang];
             const langSectionTitle = languages.languageSectionTitle[lang];
@@ -155,7 +155,7 @@ translateProjects(defaultLang);
 
     // Certifications
     async function translateCerts(lang) {
-        const response = await fetch("translations/skills.json/certificates.json");
+        const response = await fetch("translations/skills/certificates.json");
         const certifications = await response.json();
             const certs = certifications[lang];
             const certTitle = certifications.certSectionTitle;
@@ -237,11 +237,11 @@ async function translateExperience(lang) {
         cityHTML.textContent = expCity;
         countryHTML.textContent = expCountry;
         summaryHTML.textContent = expSummary;
-        expDuties.forEach(dutyText => {
-            const li = document.createElement('li');
-            li.textContent = dutyText;
-            dutiesHTML.appendChild(li);
-        });
+            expDuties.forEach(dutyText => {
+                const li = document.createElement('li');
+                li.textContent = dutyText;
+                dutiesHTML.appendChild(li);
+            });
 
         if (index === xpLang.length - 1) {
             const separators = clone.querySelectorAll(".exp_separator");
@@ -273,7 +273,183 @@ async function translateExperience(lang) {
 translateExperience(defaultLang)
 // $$   $$
 
-translateBtn.addEventListener("click", function () {
+
+// @@ EDUCATION SECTION @@
+async function translateEducation(lang) {
+    const response = await fetch('translations/education.json');
+    const education = await response.json();
+    eduLang = education[lang];
+    const sectionTitle = document.getElementById('education-section_title');
+        const titleLang = education.educationSectionTitle[lang];
+        sectionTitle.textContent = titleLang;
+
+    const wrapper = document.getElementById('education-wrapper');
+    const template = document.getElementById('education_template');
+
+    wrapper.innerHTML = '';
+
+    eduLang.forEach(edu => {
+        const clone = template.content.cloneNode(true);
+
+        const school = edu.school;
+            const schoolHTML = clone.querySelector('.education_school');
+        const degree = edu.degree;
+            const degreeHTML = clone.querySelector('.education_degree');
+        const startYear = edu.startDate;
+            const startYearHTML = clone.querySelector('.education_start-date');
+        const endYear = edu.endDate;
+            const endYearHTML = clone.querySelector('.education_end-date');
+                const graduateSection = clone.querySelector('.education_graduation');
+        const estYear = edu.estDate;
+            const estYearHTML = clone.querySelector('.education_est-date');
+            const estYearSection = clone.querySelector('.education_est-graduation');
+            const hasEstYear = 'estDate' in edu;
+        const location = edu.location;
+            const locationHTML = clone.querySelector('.education_location');
+
+        schoolHTML.textContent = school;
+        degreeHTML.textContent = degree;
+        startYearHTML.textContent = startYear;
+        endYearHTML.textContent = endYear;
+        estYearHTML.textContent = estYear;
+        locationHTML.textContent = location;
+
+        if (hasEstYear) {
+            graduateSection.style.display = 'none'
+        } else {
+            estYearSection.style.display = 'none';
+        } 
+        
+        wrapper.appendChild(clone)
+    })
+}
+translateEducation(defaultLang); 
+// @@   @@
+
+// %% ABOUT SECTION %%
+const originalBioText = Array.from(document.querySelectorAll('.about_bio')).map(p => p.textContent);
+
+async function translateAbout(lang) {
+    const response = await fetch('translations/about/about.json');
+    const about = await response.json();
+    const titleLang = about.aboutSectionTitle[lang];
+    const hobbyTitleLang = about.hobbyTitle[lang];
+        const aboutSectionTitle = document.getElementById('about-section_title');
+        const hobbySectionTitle = document.getElementById('about_hobbies-title');
+        aboutSectionTitle.textContent = titleLang;
+        hobbySectionTitle.textContent = hobbyTitleLang;
+
+    
+    // Update bio
+    const bioContainer = document.getElementById('about_about-me');
+    const bioElements = bioContainer.querySelectorAll('.about_bio');
+    if (lang === 'zh') {
+        // Loop over paragraphs in JSON and set each <p>
+        about.bio[lang].forEach((paragraph, index) => {
+            if (bioElements[index]) {
+                bioElements[index].textContent = paragraph;
+            }
+        });
+    } else {
+        // Restore original English text
+        bioElements.forEach((p, i) => {
+            p.textContent = originalBioText[i];
+        });
+    }
+    
+    const wrapper = document.getElementById('hobbies-list');
+
+    wrapper.innerHTML = '';
+
+    const hobbyList = about.hobbies[lang];
+        hobbyList.forEach(hobby => {
+            const li = document.createElement('li');
+            li.textContent = hobby;
+            wrapper.appendChild(li);
+        })
+}
+
+const refTitle = document.getElementById('about_references-title');
+const refTitleText = refTitle.textContent;
+
+async function translateReferences(lang) {
+    const response = await fetch('translations/about/references.json');
+    const references = await response.json();
+    const refLang = references[lang] || [];
+    const refNum = refLang.length;
+    const refSection = document.getElementById('about_references-wrapper');
+    const titleLang = references.referenceSectionTitle[lang];
+        if (lang == 'zh') {
+            refTitle.textContent = titleLang;
+        } else {
+            refTitle.textContent = refTitleText;
+        }
+
+    if (refNum < 1) {
+        refSection.style.display = 'none';
+    } else {
+        refSection.style.display = 'block'; // show if there are references
+    }
+        
+    const wrapper = document.getElementById('references-container');
+    const template = document.getElementById('about_reference-template');
+
+    wrapper.innerHTML = '';
+
+    refLang.forEach(ref => {
+        const clone = template.content.cloneNode(true);
+
+        const refPic = ref.img;
+            const refPicHTML = clone.querySelector('.references_profile-pic');
+        const refName = ref.name;
+            const refNameHTML = clone.querySelector('.references_name')
+        const refText = ref.reference;
+            const refTextHTML = clone.querySelector('.references_bio')
+
+        refPicHTML.src = refPic;
+        refNameHTML.textContent = refName;
+        refTextHTML.textContent = refText;
+
+        const showRefText = clone.querySelector('.ref_expand-button');
+        showRefText.addEventListener("click", function() {
+            const referant = showRefText.closest('.reference');
+            const refBio = referant.querySelector('.references_bio');
+            const bioDisplay = window.getComputedStyle(refBio).display;
+
+            if (bioDisplay === 'none') {
+                refBio.style.display = 'block';
+                showRefText.textContent = '-'
+            } else {
+                refBio.style.display = 'none';
+                showRefText.textContent = '+'
+            }
+        })
+
+        wrapper.appendChild(clone);
+    })
+}
+translateReferences(defaultLang);
+// %%   %%
+
+// ## CONTACT SECTION ##
+async function translateContact(lang) {
+    const response = await fetch('translations/contact.json');
+    const contact = await response.json();
+    const contactLang = contact[lang];
+
+    const sectionTitle = document.getElementById('contact-section_title')
+    const emailTitle = document.getElementById('email_title')
+    const linkText = document.getElementById('contact_resume-link')
+    const socialsTitle = document.getElementById('socials-title')
+    
+    sectionTitle.textContent = contactLang.sectionTitle;
+    emailTitle.textContent = contactLang.contactTitle;
+    linkText.textContent = contactLang.linkText;
+    socialsTitle.textContent = contactLang.socialsTitle;
+}
+// ##   ##
+
+translateBtn.addEventListener("click", function() {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
         translateBtn.textContent = "Hi!";
@@ -287,10 +463,14 @@ translateBtn.addEventListener("click", function () {
     translateHero(defaultLang);
     translateProjects(defaultLang); 
     // Skills
-    translateSkillsTitle(defaultLang)
+    translateSkillsTitle(defaultLang);
     translateLanguages(defaultLang);
     translateCerts(defaultLang);
     // ++++
     translateExperience(defaultLang);
+    translateEducation(defaultLang);
+    translateAbout(defaultLang);
+    translateReferences(defaultLang);
+    translateContact(defaultLang);
         switchNames(defaultLang);
 })

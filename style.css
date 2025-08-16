@@ -5,6 +5,7 @@
 }
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
+        --large-icons: clamp(40px, 3dvw + 1.5dvh, 60px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
         --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
     --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 20px);
@@ -242,6 +243,7 @@ section {
         display: flex;
             flex-direction: column;
             align-items: center;
+        overflow-y: auto;
 
         @media (max-width: 750px) {
             height: 100%;
@@ -372,7 +374,6 @@ section {
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-        overflow-y: auto;
         background-color: #9f75b8;
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
@@ -612,5 +613,231 @@ section {
                     background-color: white;
                 }
     /* $$   $$ */
+
+    /* @@ EDUCATION SECTION @@ */
+    #education-section {
+        background-color: rgb(248, 248, 113);
+        padding: 1em 0;
+    }
+        #education-wrapper {
+            display: flex;
+                flex-direction: column;
+                gap: .5em;
+            width: 100%;
+            padding: 1em;
+        }
+            .education {
+                border-radius: 15px;
+                padding: 0 .5em;
+                background-color: rgb(221, 207, 124);
+            }
+                .dateDegree-container {
+                    display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        gap: .5em;
+                }
+                    .education_degree {
+                        display: inline-flex;
+                            align-items: center;
+                        text-align: center;
+                        text-wrap: wrap;
+                        max-width: 50%;
+                    }
+                .location-container {
+                    display: flex;
+                        gap: .5em;
+                }
+                    .education_location-pin {
+                        max-width: 20px;
+                    }
+    /* @@   @@ */
+
+    /* %% ABOUT SECTION %% */
+    #about-section {
+        padding: 1em 0;
+        background-color: rgb(243, 173, 173);
+    }
+        .sub-section-title {
+            margin-left: .5em;
+        }
+        #about-wrapper {
+            
+        }
+            #about_about-me {
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+            }
+                #about-pic_frame {
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    padding: .5em;
+                    margin-bottom: 1em;
+                    width: 90%;
+                    background-color: rgb(139, 133, 133);
+                }
+                #about-pic_frame, #about_profile-pic {
+                        border-radius: 15px;
+                    }
+                #about_profile-pic {
+                    
+                }
+                .about_bio {
+                    padding: 1em;
+                    margin: 0;
+                }
+
+
+        #about_hobbies-wrapper {
+            overflow-x: auto;
+        }
+            #hobbies {
+                display: flex;
+                    flex-direction: column;
+                    gap: .25em;
+            }
+                #hobbies-list {
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1em;
+                    padding: .5em;
+                    overflow-x: auto;
+                    margin: 0;
+                }
+                    #hobbies-list li {
+                        border: 2px solid black;
+                        border-radius: 5px;
+                        padding: .25em;
+                        background-color: white;
+                    }
+                #hobbies-media {
+                    display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 1em;
+                    margin: 0;
+                    overflow-x: auto;
+                }
+                    #hobbies-media li {
+                        display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-shrink: 0;
+                        padding: 0;
+                    }
+        
+        #references-container {
+            display: flex;
+            padding: .5em 1em;
+            width: 100%;
+            overflow-x: auto;
+        }
+            .reference {
+                display: flex;
+                    flex-direction: column;
+            }
+                .ref-intro {
+                    
+                }
+                    .references_profile-pic {
+                        border: 2px solid black;
+                        border-radius: 15px;
+                        display: inline;
+                        width: 100px;
+                        aspect-ratio: 1/1;
+                    }
+                    .ref_expansion-div {
+                        display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                    }
+                        .references_name {
+                            margin: 0;
+                        }
+                        #about-section .ref_expand-button {
+                            display: inline;
+                            border-radius: 0;
+                            margin: 0;
+                            outline: none;
+                            background: none; /* optional */
+                            padding: .25em; /* adjust as needed */
+                        }
+                .references_bio {
+                    display: none;
+                    margin-top: .5em;
+                }
+    /* %%   %% */
+
+    /* ## CONTACT SECTION ## */
+    #contact-section {
+        border: 5px solid black;
+        padding: 1em 0;
+        background-color: rgb(238, 226, 205);
+    }
+        #contact_wrapper {
+            width: 100%;
+        }
+            #contact_emailResume-wrapper {
+                
+            }
+                #emailResume-container {
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1em;
+                }
+                    #contact_resume {
+                        display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1em;
+                    }
+                        #contact_resume-link {
+                            border: 2px solid white;
+                            border-radius: 10px;
+                            display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: .5em;
+                            color: white;
+                            padding: .5em;
+                            width: 50%;
+                            background-color: black;
+                        }
+                            #contact_resume-link img {
+                               max-width: 25px;
+                               aspect-ratio: 1/1;
+                            }
+            #contact_socials-wrapper {
+
+            }
+                #socials-container {
+                    display: grid;
+                        grid-template-columns: repeat(3, 25%);
+                        gap: .5em;
+                        align-items: center;
+                        justify-content: center;
+                    padding: .25em;
+                }
+                    .contact_social {
+                        border-radius: 15px;
+                        display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        aspect-ratio: 1/1;
+                        background-color: black;
+                    }
+                        .social-link img {
+                            width: var(--large-icons);
+                            aspect-ratio: 1/1;
+                        }
+                #emailResume-container, #socials-container {
+                    
+                }
+    /* ##   ## */
 
 /* ^^   ^^ */
