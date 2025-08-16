@@ -104,7 +104,7 @@ translateProjects(defaultLang);
 // ++ SKILLS SECTION ++
     // Section title
     async function translateSkillsTitle(lang) {
-        const response = await fetch('translations/skills.json/skills-title.json');
+        const response = await fetch('translations/skills/skills-title.json');
         const title = await response.json();
             const htmlTitle = document.getElementById('skills-section_title');
             htmlTitle.textContent = title.skillsSectionTitle[lang];
@@ -112,7 +112,7 @@ translateProjects(defaultLang);
 
     //Languages
     async function translateLanguages(lang) {
-        const response = await fetch("translations/skills.json/languages.json");
+        const response = await fetch("translations/skills/languages.json");
         const languages = await response.json();
             const languageList = languages[lang];
             const langSectionTitle = languages.languageSectionTitle[lang];
@@ -155,7 +155,7 @@ translateProjects(defaultLang);
 
     // Certifications
     async function translateCerts(lang) {
-        const response = await fetch("translations/skills.json/certificates.json");
+        const response = await fetch("translations/skills/certificates.json");
         const certifications = await response.json();
             const certs = certifications[lang];
             const certTitle = certifications.certSectionTitle;
