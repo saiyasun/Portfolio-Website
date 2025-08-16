@@ -5,6 +5,7 @@
 }
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
+        --large-icons: clamp(40px, 3dvw + 1.5dvh, 60px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
         --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
     --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 20px);
@@ -674,6 +675,7 @@ section {
                         align-items: center;
                         justify-content: center;
                     padding: .5em;
+                    margin-bottom: 1em;
                     width: 90%;
                     background-color: rgb(139, 133, 133);
                 }
@@ -683,18 +685,19 @@ section {
                 #about_profile-pic {
                     
                 }
-                #about_bio {
-                    padding: .5em;
+                .about_bio {
+                    padding: 1em;
+                    margin: 0;
                 }
 
 
         #about_hobbies-wrapper {
-            
+            overflow-x: auto;
         }
             #hobbies {
                 display: flex;
                     flex-direction: column;
-                    gap: 0;
+                    gap: .25em;
             }
                 #hobbies-list {
                     display: flex;
@@ -705,10 +708,16 @@ section {
                     overflow-x: auto;
                     margin: 0;
                 }
+                    #hobbies-list li {
+                        border: 2px solid black;
+                        border-radius: 5px;
+                        padding: .25em;
+                        background-color: white;
+                    }
                 #hobbies-media {
                     display: flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: flex-start;
                         gap: 1em;
                     margin: 0;
                     overflow-x: auto;
@@ -717,39 +726,49 @@ section {
                         display: flex;
                             align-items: center;
                             justify-content: center;
+                            flex-shrink: 0;
                         padding: 0;
                     }
         
         #references-container {
-            border: 2px solid brown; 
             display: flex;
-                
+            padding: .5em 1em;
             width: 100%;
             overflow-x: auto;
         }
             .reference {
-                border: 5px solid black;
                 display: flex;
                     flex-direction: column;
             }
                 .ref-intro {
-                    border: 2px solid yellow;
+                    
                 }
                     .references_profile-pic {
+                        border: 2px solid black;
+                        border-radius: 15px;
                         display: inline;
-                        max-width: 100px;
+                        width: 100px;
+                        aspect-ratio: 1/1;
                     }
                     .ref_expansion-div {
-                        border: 1px solid purple;
                         display: flex;
                             align-items: center;
-                            gap: .5em;
+                            justify-content: flex-start;
                     }
                         .references_name {
-                            
+                            margin: 0;
+                        }
+                        #about-section .ref_expand-button {
+                            display: inline;
+                            border-radius: 0;
+                            margin: 0;
+                            outline: none;
+                            background: none; /* optional */
+                            padding: .25em; /* adjust as needed */
                         }
                 .references_bio {
-                    border: 2px solid white;
+                    display: none;
+                    margin-top: .5em;
                 }
     /* %%   %% */
 
@@ -757,21 +776,42 @@ section {
     #contact-section {
         border: 5px solid black;
         padding: 1em 0;
+        background-color: rgb(238, 226, 205);
     }
         #contact_wrapper {
-            border: 5px solid black;
             width: 100%;
         }
             #contact_emailResume-wrapper {
-
+                
             }
                 #emailResume-container {
-                    border: 3px solid black;
                     display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 1em;
                 }
+                    #contact_resume {
+                        display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1em;
+                    }
+                        #contact_resume-link {
+                            border: 2px solid white;
+                            border-radius: 10px;
+                            display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: .5em;
+                            color: white;
+                            padding: .5em;
+                            width: 50%;
+                            background-color: black;
+                        }
+                            #contact_resume-link img {
+                               max-width: 25px;
+                               aspect-ratio: 1/1;
+                            }
             #contact_socials-wrapper {
 
             }
@@ -781,15 +821,22 @@ section {
                         gap: .5em;
                         align-items: center;
                         justify-content: center;
+                    padding: .25em;
                 }
                     .contact_social {
-                        border: 2px solid blue;
+                        border-radius: 15px;
+                        display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        aspect-ratio: 1/1;
+                        background-color: black;
                     }
                         .social-link img {
-                            width: 75%;
+                            width: var(--large-icons);
+                            aspect-ratio: 1/1;
                         }
                 #emailResume-container, #socials-container {
-                    border: 3px solid black;
+                    
                 }
     /* ##   ## */
 

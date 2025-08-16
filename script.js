@@ -327,8 +327,7 @@ translateEducation(defaultLang);
 // @@   @@
 
 // %% ABOUT SECTION %%
-const bio = document.getElementById('about_bio')
-const bioText = bio.textContent;
+const originalBioText = Array.from(document.querySelectorAll('.about_bio')).map(p => p.textContent);
 
 async function translateAbout(lang) {
     const response = await fetch('translations/about/about.json');
@@ -340,10 +339,22 @@ async function translateAbout(lang) {
         aboutSectionTitle.textContent = titleLang;
         hobbySectionTitle.textContent = hobbyTitleLang;
 
-    if (lang == 'zh') {
-        bio.textContent = about.bio[lang]
+    
+    // Update bio
+    const bioContainer = document.getElementById('about_about-me');
+    const bioElements = bioContainer.querySelectorAll('.about_bio');
+    if (lang === 'zh') {
+        // Loop over paragraphs in JSON and set each <p>
+        about.bio[lang].forEach((paragraph, index) => {
+            if (bioElements[index]) {
+                bioElements[index].textContent = paragraph;
+            }
+        });
     } else {
-        bio.textContent = bioText;
+        // Restore original English text
+        bioElements.forEach((p, i) => {
+            p.textContent = originalBioText[i];
+        });
     }
     
     const wrapper = document.getElementById('hobbies-list');
@@ -364,7 +375,7 @@ const refTitleText = refTitle.textContent;
 async function translateReferences(lang) {
     const response = await fetch('translations/about/references.json');
     const references = await response.json();
-    const refLang = references[lang];
+    const refLang = references[lang] || [];
     const refNum = refLang.length;
     const refSection = document.getElementById('about_references-wrapper');
     const titleLang = references.referenceSectionTitle[lang];
@@ -376,6 +387,8 @@ async function translateReferences(lang) {
 
     if (refNum < 1) {
         refSection.style.display = 'none';
+    } else {
+        refSection.style.display = 'block'; // show if there are references
     }
         
     const wrapper = document.getElementById('references-container');
@@ -396,6 +409,21 @@ async function translateReferences(lang) {
         refPicHTML.src = refPic;
         refNameHTML.textContent = refName;
         refTextHTML.textContent = refText;
+
+        const showRefText = clone.querySelector('.ref_expand-button');
+        showRefText.addEventListener("click", function() {
+            const referant = showRefText.closest('.reference');
+            const refBio = referant.querySelector('.references_bio');
+            const bioDisplay = window.getComputedStyle(refBio).display;
+
+            if (bioDisplay === 'none') {
+                refBio.style.display = 'block';
+                showRefText.textContent = '-'
+            } else {
+                refBio.style.display = 'none';
+                showRefText.textContent = '+'
+            }
+        })
 
         wrapper.appendChild(clone);
     })
@@ -421,7 +449,7 @@ async function translateContact(lang) {
 }
 // ##   ##
 
-translateBtn.addEventListener("click", function () {
+translateBtn.addEventListener("click", function() {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
         translateBtn.textContent = "Hi!";
