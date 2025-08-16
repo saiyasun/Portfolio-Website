@@ -236,29 +236,31 @@
         <h2 class="section-title" id="about-section_title">About</h2>
         <div id="about-wrapper">
             <div id="about_about-me">
-                <div id="about">
+                <div id="about-pic_frame">
                     <img id="about_profile-pic" src="images/profile_pics/profile_pic.jpg">
-                    <p id="about_bio">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                        Maiores, dignissimos, soluta facere quaerat ducimus ipsa qui expedita 
-                        accusamus fuga voluptatem laboriosam magnam corrupti possimus. Doloribus 
-                        voluptas possimus nesciunt numquam omnis.
-                    </p>
                 </div>
+                <p id="about_bio">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Maiores, dignissimos, soluta facere quaerat ducimus ipsa qui expedita 
+                    accusamus fuga voluptatem laboriosam magnam corrupti possimus. Doloribus 
+                    voluptas possimus nesciunt numquam omnis.
+                </p>
             </div>
 
             <div id="about_hobbies-wrapper">
                 <h3 class="sub-section-title" id="about_hobbies-title">Hobbies</h3>
-                <ul id="hobbies-list">
-                    <li>Working out</li>
-                    <li>Language learning</li>
-                    <li>Walking</li>
-                </ul>
-                <ul id="hobbies-media">
-                    <li> <img src="images/placeholder.png"> </li>
-                    <li> <img src="images/placeholder.png"> </li>
-                    <li> <img src="images/placeholder.png"> </li>
-                </ul>
+                <div id="hobbies">
+                    <ul id="hobbies-list">
+                        <li>Working out</li>
+                        <li>Language learning</li>
+                        <li>Walking</li>
+                    </ul>
+                    <ul id="hobbies-media">
+                        <li> <img src="images/placeholder.png"> </li>
+                        <li> <img src="images/placeholder.png"> </li>
+                        <li> <img src="images/placeholder.png"> </li>
+                    </ul>
+                </div>
             </div>
 
             <div id="about_references-wrapper">
@@ -271,8 +273,13 @@
 
         <template id="about_reference-template">
             <div class="reference">
-                <img class="references_profile-pic" src="images/profile_pics/profile_pic_4.jpg">
-                <h3 class="references_name">Asiah</h3>
+                <div class="ref-intro">
+                    <img class="references_profile-pic" src="images/profile_pics/profile_pic_4.jpg">
+                    <div class="ref_expansion-div">
+                        <h3 class="references_name">Asiah</h3>
+                        <button class="ref_expand-button">+</button>
+                    </div>
+                </div>
                 <p class="references_bio">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                     Autem magnam nulla earum dignissimos quaerat culpa odio cumque 
@@ -289,7 +296,7 @@
         <h2 class="section-title" id="contact-section_title">Contact</h2>
         <div id="contact_wrapper">
             <div id="contact_emailResume-wrapper">
-                <h3 id="email_title">Contact Me</h3>
+                <h3 class="sub-section-title" id="email_title">Contact Me</h3>
                 <div id="emailResume-container">
                     <a class="contact-link"> <img class="contact" src="images/logos_icons/email.svg"> </a>
                     <div class="contact-link" id="contact_resume">
@@ -302,7 +309,7 @@
             </div>
 
             <div id="contact_socials-wrapper">
-                <h3 id="socials-title">Connect with me</h3>
+                <h3 class="sub-section-title" id="socials-title">Connect with me</h3>
                 <ul id="socials-container">
                     <li class="contact_social"> 
                         <a class="contact-link social-link"> <img src="images/logos_icons/white/github_white.svg"> </a> 
@@ -325,11 +332,6 @@
                 </ul>
             </div>
         </div>
-
-        <template id="contact_template">
-
-        </template>
-
     </section>
     <!-- ##   ## -->
 </div>
