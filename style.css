@@ -719,16 +719,26 @@ section {
                         align-items: center;
                         justify-content: flex-start;
                         gap: 1em;
+                    padding: .5em;
                     margin: 0;
                     overflow-x: auto;
                 }
                     #hobbies-media li {
+                        border-radius: 25px;
                         display: flex;
                             align-items: center;
                             justify-content: center;
                             flex-shrink: 0;
                         padding: 0;
+                        outline: 3px solid black;
                     }
+                        #hobbies-media video, img {
+                            border-radius: 25px;
+                        }
+                             #hobbies-media video {
+                                max-width: 500px;
+                                max-height: 300px;
+                             }
         
         #references-container {
             display: flex;

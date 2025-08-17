@@ -9,9 +9,9 @@
 
     "zh":
         {
-            "sectionTitle": "Contact-zh",
-            "contactTitle": "Contact Me",
-            "linkText": "RESUME",
-            "socialsTitle": "Connect with me-zh"
+            "sectionTitle": "聯絡",
+            "contactTitle": "聯絡我",
+            "linkText": "履歷",
+            "socialsTitle": "與我連繫"
         }
 }

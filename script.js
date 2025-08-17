@@ -170,7 +170,7 @@ translateProjects(defaultLang);
         certs.forEach(cert => {
             const clone = template.content.cloneNode(true);
 
-            const certLink = clone.querySelector('.skills_cert');
+            const certLink = clone.querySelector('.cert-link');
             const certification = clone.querySelector('.cert');
 
             if (cert.certificateLink) {
