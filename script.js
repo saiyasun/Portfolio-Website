@@ -4,6 +4,7 @@ const translateBtn = document.getElementById("button_translate");
 // **   **
 
 // || HERO SECTION || 
+// Switch names
 function switchNames (lang) { // switch names when changing languages
     const enName = document.getElementById('hero_en-name');
     const zhName = document.getElementById('hero_zh-name');
@@ -24,27 +25,24 @@ function switchNames (lang) { // switch names when changing languages
     }
 }
 
+// Hero Intro
+const tagline = document.querySelectorAll('.tagline-item')
+const resume = document.getElementById('hero_resume')
+    const ogTagline = Array.from(tagline).map(item => item.textContent)
+    const ogResume = resume.textContent
+
 async function translateHero(lang) {
-    const resumeLink = document.getElementById("hero_resume");
+    const response = await fetch("translations/hero.json");
+    const data = await response.json();
+        const taglineItems = data["tagline-item"]
 
-    try {
-        const res = await fetch("translations/hero.json");
-        const data = await res.json();
+    // Update tagline items
+    tagline.forEach((item, i) => {
+        item.textContent = (lang === 'zh') ? taglineItems[i] : ogTagline[i];
+    });
 
-        // Update tagline items
-        const taglineItems = document.querySelectorAll("#hero_tagline .tagline-item");
-        const translations = data[lang]["tagline-item"];
-
-        taglineItems.forEach((item, i) => {
-            item.textContent = translations[i] || item.textContent;
-        });
-
-        // Update RESUME text
-        resumeLink.innerHTML = `<img class="hero_img" src="images/logos_icons/white/resume_white.svg"> ${data[lang]["hero_resume"] || "RESUME"}`;
-
-    } catch (err) {
-        console.error("Translation error:", err);
-    }
+    // Update RESUME text
+    resume.textContent = (lang === 'zh') ? data.hero_resume : ogResume;
 }
 // ||   || 
 
