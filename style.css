@@ -81,6 +81,7 @@ section {
     }
 }
     #hero_intro-wrapper {
+        border: 5px solid orange;
         min-width: 45%;
     }
     /* Name */
@@ -171,6 +172,7 @@ section {
 
     /* Socials */
     #hero_contact-wrapper {
+        border: 5px solid black;
         display: flex;
             align-items: center;
             justify-content: center;
