@@ -22,7 +22,7 @@ html, body {
 body {
     position: relative;
     height: 100dvh;
-    background: linear-gradient(0deg, #598882, #f1eba5);
+    background: linear-gradient(0deg, #446d6a, #d6e1b0); /* slightly muted teal → light green */
         background-repeat: no-repeat;
         background-attachment: fixed;
 }
@@ -64,13 +64,11 @@ section {
 
 /* || HERO SECTION || */
 #hero-section {
-    border: 5px solid black;
     padding: 0;
     display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 1em;
     height: 100dvh;
     width: 100dvw;
 
@@ -83,18 +81,17 @@ section {
     }
 }
     #hero_intro-wrapper {
-        border: 5px solid orange;
         min-width: 50%;
-        aspect-ratio: 1/1;
     }
     /* Name */
     #hero_name-wrapper {
-        border: 5px solid red;
         position: relative;
         display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        width: 100%;
+        margin: 1em;
     }
         .hero_name {
             display: flex;
@@ -154,20 +151,25 @@ section {
 
     /* Tagline */
     #hero_tagline {
-        border: 5px solid blue;
         display: flex;
             align-items: center;
             justify-content: center;
             flex: 1;
             gap: .25em;
         padding: .3em;
+        width: 100%;
         margin: 0;
-        font-size: clamp(12px, 2.5dvw + 1dvh, 20px);
+        font-size: clamp(12px, 1.2dvw + 1.2dvh, 16px);
     }
-        #hero_tagline .tagline-item:not(:last-child)::after {
-            content: " • ";
-            opacity: .7;              /* subtle */ 
-            color: currentColor;      /* matches text color */
+        .tagline-item {
+            border: 2px solid #00ffea;   /* cyan-ish neon color */
+            color: #00ffea;
+            background-color: rgba(0,0,0,0.8); /* semi-transparent black */
+            border-radius: 6px;
+            padding: 0.5em 1em;
+            text-shadow: 0 0 4px rgba(0,255,234,0.6);
+            box-shadow: 0 0 10px rgba(0,255,234,0.3);
+            transition: all 0.3s ease;
         }
     .tagline-separator {
         border: 1px solid black;
@@ -176,13 +178,21 @@ section {
     }
 
     #hero_bio {
-        border: 5px solid purple;
+        border-left: 4px solid #00ffea; /* tech cyan accent */
+        background-color: rgba(0,0,0,0.05); /* faint panel look */
+        padding: 1.5em 2em;
+        margin: 1em auto;
+        width: 80%;
+        max-width: 600px; /* keeps it readable */
+        font-family: 'Fira Mono', 'Courier New', monospace;
+        font-size: clamp(14px, 1.2vw, 16px);
+        line-height: 1.6;
+        color: #111;
     }
     /**/
 
     /* Socials */
     #hero_contact-wrapper {
-        border: 5px solid black;
         aspect-ratio: 1/1;
         display: flex;
             align-items: center;
