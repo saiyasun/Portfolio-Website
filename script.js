@@ -26,8 +26,11 @@ function switchNames (lang) { // switch names when changing languages
 }
 
 // Hero Intro
+const heroBio = document.getElementById('hero_bio')
+const taglineContainer = document.getElementById('hero_tagline')
 const tagline = document.querySelectorAll('.tagline-item')
 const resume = document.getElementById('hero_resume')
+    const ogHeroBio = heroBio.textContent
     const ogTagline = Array.from(tagline).map(item => item.textContent)
     const ogResume = resume.textContent
 
@@ -36,8 +39,11 @@ async function translateHero(lang) {
     const data = await response.json();
         const taglineItems = data["tagline-item"]
 
+    heroBio.textContent = (lang === 'zh') ? data.hero_bio : ogHeroBio;
+
     // Update tagline items
     tagline.forEach((item, i) => {
+        // Set the main text
         item.textContent = (lang === 'zh') ? taglineItems[i] : ogTagline[i];
     });
 

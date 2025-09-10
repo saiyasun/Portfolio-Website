@@ -39,6 +39,7 @@ img {
 ul {
     padding: 0;
     list-style-type: none;
+    list-style: none;
 }
 button {
     border-radius: 999px;
@@ -63,6 +64,7 @@ section {
 
 /* || HERO SECTION || */
 #hero-section {
+    border: 5px solid black;
     padding: 0;
     display: flex;
         align-items: center;
@@ -82,10 +84,12 @@ section {
 }
     #hero_intro-wrapper {
         border: 5px solid orange;
-        min-width: 45%;
+        min-width: 50%;
+        aspect-ratio: 1/1;
     }
     /* Name */
     #hero_name-wrapper {
+        border: 5px solid red;
         position: relative;
         display: flex;
             align-items: center;
@@ -150,29 +154,36 @@ section {
 
     /* Tagline */
     #hero_tagline {
+        border: 5px solid blue;
         display: flex;
             align-items: center;
             justify-content: center;
             flex: 1;
-            gap: .5em;
+            gap: .25em;
         padding: .3em;
         margin: 0;
         font-size: clamp(12px, 2.5dvw + 1dvh, 20px);
     }
-        #hero_tagline li {
-            padding: .2em;
+        #hero_tagline .tagline-item:not(:last-child)::after {
+            content: " • ";
+            opacity: .7;              /* subtle */ 
+            color: currentColor;      /* matches text color */
         }
     .tagline-separator {
         border: 1px solid black;
-        height: 1%;
-        width: 1%;
-        background-color: black;
+        font-size: 5px;
+        color: black;
+    }
+
+    #hero_bio {
+        border: 5px solid purple;
     }
     /**/
 
     /* Socials */
     #hero_contact-wrapper {
         border: 5px solid black;
+        aspect-ratio: 1/1;
         display: flex;
             align-items: center;
             justify-content: center;
