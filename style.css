@@ -22,7 +22,7 @@ html, body {
 body {
     position: relative;
     height: 100dvh;
-    background: linear-gradient(0deg, #598882, #f1eba5);
+    background: linear-gradient(0deg, #446d6a, #d6e1b0); /* slightly muted teal → light green */
         background-repeat: no-repeat;
         background-attachment: fixed;
 }
@@ -39,6 +39,7 @@ img {
 ul {
     padding: 0;
     list-style-type: none;
+    list-style: none;
 }
 button {
     border-radius: 999px;
@@ -63,12 +64,12 @@ section {
 
 /* || HERO SECTION || */
 #hero-section {
+    border: 5px solid black;
     padding: 0;
     display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 1em;
     height: 100dvh;
     width: 100dvw;
 
@@ -81,7 +82,7 @@ section {
     }
 }
     #hero_intro-wrapper {
-        min-width: 45%;
+        min-width: 50%;
     }
     /* Name */
     #hero_name-wrapper {
@@ -90,13 +91,15 @@ section {
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        width: 100%;
+        margin: 1em 0;
     }
         .hero_name {
             display: flex;
                 align-items: center;
                 justify-content: center;
             margin: 0;
-            font-size: clamp(30px, 3.5dvw + 3dvh, 75px);
+            font-size: clamp(30px, 2dvw + 2dvh, 75px);
             text-align: center;
             transition: all 0.3s ease-in-out;
 
@@ -153,24 +156,45 @@ section {
             align-items: center;
             justify-content: center;
             flex: 1;
-            gap: .5em;
+            gap: .25em;
         padding: .3em;
+        width: 100%;
         margin: 0;
-        font-size: clamp(12px, 2.5dvw + 1dvh, 20px);
+        font-size: clamp(12px, 1.2dvw + 1.2dvh, 16px);
     }
-        #hero_tagline li {
-            padding: .2em;
+        .tagline-item {
+            border: 2px solid #00ffea;   /* cyan-ish neon color */
+            color: #00ffea;
+            background-color: rgba(0,0,0,0.8); /* semi-transparent black */
+            border-radius: 6px;
+            padding: 0.5em 1em;
+            text-shadow: 0 0 4px rgba(0,255,234,0.6);
+            box-shadow: 0 0 10px rgba(0,255,234,0.3);
+            transition: all 0.3s ease;
         }
     .tagline-separator {
         border: 1px solid black;
-        height: 1%;
-        width: 1%;
-        background-color: black;
+        font-size: 5px;
+        color: black;
+    }
+
+    #hero_bio {
+        border-left: 4px solid #00ffea; /* tech cyan accent */
+        background-color: rgba(0,0,0,0.05); /* faint panel look */
+        padding: 1.5em 2em;
+        margin: 1em auto;
+        width: 80%;
+        max-width: 600px; /* keeps it readable */
+        font-family: 'Fira Mono', 'Courier New', monospace;
+        font-size: clamp(14px, 1.2vw, 16px);
+        line-height: 1.6;
+        color: #111;
     }
     /**/
 
     /* Socials */
     #hero_contact-wrapper {
+        aspect-ratio: 1/1;
         display: flex;
             align-items: center;
             justify-content: center;
