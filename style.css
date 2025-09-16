@@ -64,18 +64,23 @@ section {
 
 /* || HERO SECTION || */
 #hero-section {
-    padding: 0;
     display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
     height: 100dvh;
     width: 100dvw;
-
-    @media (min-width: 650px) and (max-height: 950px) {
-        flex-direction: row;
-    }
 }
+    #hero-page {
+        padding: 0;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+        @media (min-width: 650px) and (max-height: 950px) {
+            flex-direction: row;
+        }
+    }
     #hero_intro-wrapper {
         min-width: 50%;
     }
