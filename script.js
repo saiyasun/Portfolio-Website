@@ -3,6 +3,20 @@ let defaultLang = 'en';
 const translateBtn = document.getElementById("button_translate");
 // **   **
 
+// ~~ TITLE ~~
+const titleNameEn = 'Asiah Crutchfield'
+const titleNameZh = '孫賽亞'
+const title = document.title
+
+function switchTitle (lang) {
+    if (lang == 'zh') {
+        document.title = `${titleNameZh} | ${titleNameEn}`
+    } else {
+        document.title = title
+    }
+}
+// ~~ ~~
+
 // || HERO SECTION || 
 // Switch names
 function switchNames (lang) { // switch names when changing languages
@@ -464,6 +478,7 @@ translateBtn.addEventListener("click", function() {
         document.title = "Asiah Crutchfield";
     }
 
+    switchTitle (defaultLang);
     translateHero(defaultLang);
     translateProjects(defaultLang); 
     // Skills
