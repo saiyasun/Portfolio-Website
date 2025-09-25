@@ -669,7 +669,8 @@ section {
     /* %% ABOUT SECTION %% */
     #about-section {
         padding: 1em 0;
-        background-color: rgb(243, 173, 173);
+        background: linear-gradient(135deg, #7a5af8, #5dd9c1);
+        color: white;
     }
         .sub-section-title {
             margin-left: .5em;
@@ -701,6 +702,7 @@ section {
                 .about_bio {
                     padding: 1em;
                     margin: 0;
+                    font-family: 'Fira Mono', 'Courier New', monospace;
                 }
 
 
