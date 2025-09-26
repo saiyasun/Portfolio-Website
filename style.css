@@ -12,6 +12,7 @@
     --sub-title: clamp(16px, 2dvw + 2dvh, 24px);
         --captions: clamp(16px, 2.5dvw + 1dvh, 18px);
     --headers: clamp(24px, 2dvw + 2dvh, 36px);
+    --p_accent: 4px solid #00ffea;   /* cyan-ish neon color */
 }
 html, body {
     height: 100%;
@@ -179,7 +180,7 @@ section {
     }
 
     #hero_bio {
-        border-left: 4px solid #00ffea; /* tech cyan accent */
+        border-left: var(--p_accent);
         background-color: rgba(0,0,0,0.05); /* faint panel look */
         padding: 1.5em 2em;
         margin: 1em auto;
@@ -699,11 +700,16 @@ section {
                 #about_profile-pic {
                     
                 }
-                .about_bio {
-                    padding: 1em;
-                    margin: 0;
-                    font-family: 'Fira Mono', 'Courier New', monospace;
+                #about_bio-p {
+                    border-left: var(--p_accent);
+                    background-color: rgba(0,0,0,0.2); /* faint panel look */ 
+                    width: 90%;
                 }
+                    .about_bio {
+                        padding: 1em;
+                        margin: 0;
+                        font-family: 'Fira Mono', 'Courier New', monospace;
+                    }
 
 
         #about_hobbies-wrapper {
