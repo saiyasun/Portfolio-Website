@@ -245,7 +245,7 @@ section {
 #body-div {
     display: flex;
         align-items: stretch;
-    height: 100dvh;
+        flex-direction: column;
     overflow-x: auto;
 
     @media (min-width: 750px) {
@@ -273,7 +273,8 @@ section {
     /* !! PROJECTS !! */
     #projects-section {
         justify-content: flex-start;
-        background-color: #535c77;
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
+        linear-gradient(135deg, #1e3c72, #2a5298);
     }
         #projects-section_title {
             color: white;
@@ -388,7 +389,8 @@ section {
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
-        background-color: #9f75b8;
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
+        linear-gradient(135deg, #7b2ff7, #f107a3);
         --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
     }
         #skills-section_title {
@@ -524,7 +526,8 @@ section {
 
     /* $$ EXPERIENCE SECTION $$ */
     #experience-section {
-        background-color: rgb(139, 235, 114);
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
+        linear-gradient(135deg, #11998e, #38ef7d);
     }
         #experience_exp-wrapper {
             width: 100%;
@@ -630,7 +633,8 @@ section {
 
     /* @@ EDUCATION SECTION @@ */
     #education-section {
-        background-color: rgb(248, 248, 113);
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
+        linear-gradient(135deg, #f7971e, #ffd200);
         padding: 1em 0;
     }
         #education-wrapper {
@@ -670,7 +674,8 @@ section {
     /* %% ABOUT SECTION %% */
     #about-section {
         padding: 1em 0;
-        background: linear-gradient(135deg, #7a5af8, #5dd9c1);
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
+        linear-gradient(135deg, #7a5af8, #5dd9c1);
         color: white;
     }
         .sub-section-title {
@@ -806,7 +811,8 @@ section {
     /* ## CONTACT SECTION ## */
     #contact-section {
         padding: 1em 0;
-        background-color: rgb(238, 226, 205);
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
+        linear-gradient(135deg, #fc4a1a, #f7b733);
     }
         #contact_wrapper {
             width: 100%;
