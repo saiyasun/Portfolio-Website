@@ -43,7 +43,7 @@ function switchNames (lang) { // switch names when changing languages
 const heroBio = document.getElementById('hero_bio')
 const taglineContainer = document.getElementById('hero_tagline')
 const tagline = document.querySelectorAll('.tagline-item')
-const resume = document.getElementById('hero_resume')
+const resumeText = document.querySelector('.resume_text');
     const ogHeroBio = heroBio.textContent
     const ogTagline = Array.from(tagline).map(item => item.textContent)
     const ogResume = resume.textContent
@@ -62,7 +62,7 @@ async function translateHero(lang) {
     });
 
     // Update RESUME text
-    resume.textContent = (lang === 'zh') ? data.hero_resume : ogResume;
+    resumeText.textContent = (lang === 'zh') ? data.hero_resume : ogResume;
 }
 // ||   || 
 
