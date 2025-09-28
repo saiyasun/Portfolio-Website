@@ -45,13 +45,23 @@ const taglineContainer = document.getElementById('hero_tagline')
 const tagline = document.querySelectorAll('.tagline-item')
 const resumeText = document.querySelector('.resume_text');
     const ogHeroBio = heroBio.textContent
+        const englishHeight = heroBio.offsetHeight
     const ogTagline = Array.from(tagline).map(item => item.textContent)
-    const ogResume = resume.textContent
+    const ogResume = resumeText.textContent
 
 async function translateHero(lang) {
     const response = await fetch("translations/hero.json");
     const data = await response.json();
+        const chineseTranslation = data.hero_bio;
         const taglineItems = data["tagline-item"]
+    const zhHeroBio = data.hero_bio;
+
+    // Measure heights without affecting visible text
+    const englishHeight = measureTextHeight(ogHeroBio);
+    const chineseHeight = measureTextHeight(zhHeroBio);
+    const maxHeight = Math.max(englishHeight, chineseHeight);
+
+    heroBio.style.minHeight = maxHeight + 'px';
 
     heroBio.textContent = (lang === 'zh') ? data.hero_bio : ogHeroBio;
 
@@ -63,6 +73,20 @@ async function translateHero(lang) {
 
     // Update RESUME text
     resumeText.textContent = (lang === 'zh') ? data.hero_resume : ogResume;
+
+    // Helper function to measure text height without changing the visible content
+    function measureTextHeight(text) {
+        const clone = heroBio.cloneNode();
+        clone.style.position = 'absolute';
+        clone.style.visibility = 'hidden';
+        clone.style.height = 'auto';
+        clone.style.minHeight = '0';
+        clone.textContent = text;
+        document.body.appendChild(clone);
+        const height = clone.offsetHeight;
+        document.body.removeChild(clone);
+        return height;
+    }
 }
 // ||   || 
 
