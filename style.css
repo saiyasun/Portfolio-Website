@@ -2,6 +2,7 @@
 /* UNIVERSAL */
 * {
     box-sizing: border-box;
+    font-family: 'Fira Mono', 'Courier New', monospace;
 }
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
@@ -39,7 +40,6 @@ p {
     background-color: rgba(0,0,0,0.2); /* faint panel look */ 
     padding: 1em;
     margin: 0;
-    font-family: 'Fira Mono', 'Courier New', monospace;
   }
 img {
     max-width: 100%;
@@ -544,7 +544,6 @@ section {
             .experience {
                 border-radius: 15px;
                 padding: .5em;
-                background-color: rgb(216, 216, 177);
             }
                 .exp_namePosition-container {
                     display: flex;
@@ -556,6 +555,8 @@ section {
                 }
                     .exp_name {
                         margin: 0;
+                        border-bottom: 2px solid cyan;
+                        padding: .25em;
                     }
                     .exp_position {
                         margin: 0;
@@ -673,6 +674,9 @@ section {
                     display: flex;
                         gap: .5em;
                 }
+                    .education_location {
+                        margin: .5em .125em;
+                    }
                     .education_location-pin {
                         max-width: 20px;
                     }
@@ -689,13 +693,16 @@ section {
             margin-left: .5em;
         }
         #about-wrapper {
-            
+            display: flex;
+                flex-direction: column;
+                align-items: center;
         }
             #about_about-me {
                 display: flex;
                     align-items: center;
                     justify-content: center;
                     flex-direction: column;
+                width: 85%;
             }
                 #about-pic_frame {
                     border-radius: 15px;
@@ -714,7 +721,7 @@ section {
                     width: 98%;
                 }
                 #about_bio-p {
-                    width: 90%;
+                    
                 }
                     .about_bio {
                         
