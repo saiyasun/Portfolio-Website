@@ -713,9 +713,13 @@ section {
                     aspect-ratio: 1/1;
                     margin-bottom: 1em;
                     background-color: rgb(139, 133, 133);
+
+                    @media (min-width: 1200px) {
+                        width: 40%;
+                    }
                 }
                 #about_profile-pic {
-                    border-radius: 15px;
+                    border-radius: 10px;
                     aspect-ratio: 1/1;
                     width: 98%;
                 }
