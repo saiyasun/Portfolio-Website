@@ -56,13 +56,6 @@ async function translateHero(lang) {
         const taglineItems = data["tagline-item"]
     const zhHeroBio = data.hero_bio;
 
-    // Measure heights without affecting visible text
-    const englishHeight = measureTextHeight(ogHeroBio);
-    const chineseHeight = measureTextHeight(zhHeroBio);
-    const maxHeight = Math.max(englishHeight, chineseHeight);
-
-    heroBio.style.minHeight = maxHeight + 'px';
-
     heroBio.textContent = (lang === 'zh') ? data.hero_bio : ogHeroBio;
 
     // Update tagline items
@@ -73,20 +66,6 @@ async function translateHero(lang) {
 
     // Update RESUME text
     resumeText.textContent = (lang === 'zh') ? data.hero_resume : ogResume;
-
-    // Helper function to measure text height without changing the visible content
-    function measureTextHeight(text) {
-        const clone = heroBio.cloneNode();
-        clone.style.position = 'absolute';
-        clone.style.visibility = 'hidden';
-        clone.style.height = 'auto';
-        clone.style.minHeight = '0';
-        clone.textContent = text;
-        document.body.appendChild(clone);
-        const height = clone.offsetHeight;
-        document.body.removeChild(clone);
-        return height;
-    }
 }
 // ||   || 
 
@@ -269,6 +248,7 @@ async function translateExperience(lang) {
         const expDuties = exp.expDuties;
             const dutiesHTML = clone.querySelector('.exp_duties')
             dutiesHTML.innerHTML = '';
+        const duties_separator = clone.querySelector('.exp_line-separator')
 
         nameHTML.textContent = expName;
         positionHTML.textContent = expPosition;
@@ -279,12 +259,23 @@ async function translateExperience(lang) {
         cityHTML.textContent = expCity;
         countryHTML.textContent = expCountry;
         summaryHTML.textContent = expSummary;
+
+        // Top separator
+        const topHr = document.createElement('hr');
+        topHr.className = 'exp_line-separator';
+        dutiesHTML.appendChild(topHr);
+
             expDuties.forEach(dutyText => {
                 const li = document.createElement('li');
                 li.textContent = dutyText;
                 dutiesHTML.appendChild(li);
             });
 
+        // Bottom separator
+        const bottomHr = document.createElement('hr');
+        bottomHr.className = 'exp_line-separator';
+        dutiesHTML.appendChild(bottomHr);
+        
         if (index === xpLang.length - 1) {
             const separators = clone.querySelectorAll(".exp_separator");
             separators[separators.length - 1].style.display = 'none'; // Hide the last separator in the clone

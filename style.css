@@ -37,7 +37,7 @@ a {
 }
 p {
     border-left: var(--p_accent);
-    background-color: rgba(0,0,0,0.2); /* faint panel look */ 
+    background-color: rgba(0,0,0,0.05); /* faint panel look */
     padding: 1em;
     margin: 0;
   }
@@ -188,7 +188,6 @@ section {
 
     #hero_bio {
         border-left: var(--p_accent);
-        background-color: rgba(0,0,0,0.05); /* faint panel look */
         padding: 1.5em 2em;
         margin: 1em auto;
         width: 80%;
@@ -595,7 +594,6 @@ section {
                         padding: .5em 1em;
                         margin: .5em 0;
                         font-size: var(--paragraph);
-                        background-color: aliceblue;
                     }
                     button.exp_button {
                         display: inline-flex;
@@ -605,6 +603,7 @@ section {
                         border: 1px solid transparent;
                             outline: none;
                         margin: .5em;
+                        background-color: rgba(0,0,0,0.05)
                     }
             .exp_duties {
                 display: none;
@@ -634,7 +633,7 @@ section {
                     display: inline;
                     aspect-ratio: 1/1;
                     margin: .5em;
-                    width: 30px;
+                    width: 5px;
                     background-color: white;
                 }
     /* $$   $$ */
