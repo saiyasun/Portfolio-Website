@@ -34,6 +34,13 @@ a {
         padding: .1em;
     text-decoration: none;
 }
+p {
+    border-left: var(--p_accent);
+    background-color: rgba(0,0,0,0.2); /* faint panel look */ 
+    padding: 1em;
+    margin: 0;
+    font-family: 'Fira Mono', 'Courier New', monospace;
+  }
 img {
     max-width: 100%;
 }
@@ -691,31 +698,27 @@ section {
                     flex-direction: column;
             }
                 #about-pic_frame {
+                    border-radius: 15px;
                     display: flex;
                         align-items: center;
                         justify-content: center;
-                    padding: .5em;
+                    padding: .25em;
+                    width: 60%;
+                    aspect-ratio: 1/1;
                     margin-bottom: 1em;
-                    width: 90%;
                     background-color: rgb(139, 133, 133);
                 }
-                #about-pic_frame, #about_profile-pic {
-                        border-radius: 15px;
-                    }
                 #about_profile-pic {
-                    
+                    border-radius: 15px;
+                    aspect-ratio: 1/1;
+                    width: 98%;
                 }
                 #about_bio-p {
-                    border-left: var(--p_accent);
-                    background-color: rgba(0,0,0,0.2); /* faint panel look */ 
                     width: 90%;
                 }
                     .about_bio {
-                        padding: 1em;
-                        margin: 0;
-                        font-family: 'Fira Mono', 'Courier New', monospace;
+                        
                     }
-
 
         #about_hobbies-wrapper {
             overflow-x: auto;
