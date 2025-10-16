@@ -6,7 +6,7 @@
 }
 :root {
     --small-icons: clamp(20px, 2.5dvw + 1dvh, 40px);
-        --large-icons: clamp(40px, 3dvw + 1.5dvh, 60px);
+        --large-icons: clamp(25px, 1.5dvw + 1.5dvh, 30px);
     --preview-img: clamp(75px, 25dvw + 1dvh, 150px);
         --preview-bg: clamp(75px, 45dvw + 5dvh, 500px);
     --paragraph: clamp(12px, 1.5dvw + 1.5dvh, 20px);
@@ -894,14 +894,14 @@ section {
                                aspect-ratio: 1/1;
                             }
             #contact_socials-wrapper {
-
             }
                 #socials-container {
-                    display: grid;
+                    display: flex;
                         grid-template-columns: repeat(3, 25%);
-                        gap: .5em;
+                        place-items: center;
                         align-items: center;
                         justify-content: center;
+                        gap: .25em;
                     padding: .25em;
                 }
                     .contact_social {
@@ -909,7 +909,9 @@ section {
                         display: flex;
                             align-items: center;
                             justify-content: center;
+                        width: clamp(50px, 1.5dvw + 1.5dvh, 60px);
                         aspect-ratio: 1/1;
+                        padding: 0;
                         background-color: black;
                     }
                         .social-link {
