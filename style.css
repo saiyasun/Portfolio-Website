@@ -14,6 +14,7 @@
         --captions: clamp(16px, 2.5dvw + 1dvh, 18px);
     --headers: clamp(24px, 2dvw + 2dvh, 36px);
     --p_accent: 4px solid #00ffea;   /* cyan-ish neon color */
+        --panel-look: rgba(0,0,0,0.05);
 }
 html, body {
     height: 100%;
@@ -37,7 +38,7 @@ a {
 }
 p {
     border-left: var(--p_accent);
-    background-color: rgba(0,0,0,0.05); /* faint panel look */
+    background-color: var(--panel-look); /* faint panel look */
     padding: 1em;
     margin: 0;
   }
@@ -510,6 +511,7 @@ section {
                             align-items: center;
                             justify-content: center;
                         width: 100%;
+                        background-color: rgba(255, 255, 255, 0.1);
                     }
                         .skills_cert {
                             display: flex;
@@ -526,7 +528,8 @@ section {
                                 .cert {
                                     margin: 0;
                                     padding: .5em;
-                                    background-color: rgb(205, 233, 126);
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                    color: black;
                                 }
                                     .cert-link, .cert {
                                         
