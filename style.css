@@ -712,6 +712,7 @@ section {
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
         linear-gradient(135deg, #7a5af8, #5dd9c1);
         color: white;
+        box-sizing: border-box;
     }
         .sub-section-title {
             margin-left: .5em;
@@ -720,6 +721,8 @@ section {
             display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
+            max-width: 100%;
         }
             #about_about-me {
                 display: flex;
@@ -756,7 +759,9 @@ section {
                     }
 
         #about_hobbies-wrapper {
-            overflow-x: auto;
+            overflow-x: hidden; /* outer wrapper shouldn’t scroll */
+            max-width: 95%;
+            box-sizing: border-box;
         }
             #hobbies {
                 display: flex;
@@ -766,29 +771,33 @@ section {
                 #hobbies-list {
                     display: flex;
                         align-items: center;
-                        justify-content: center;
-                        gap: 1em;
-                    padding: .5em;
+                        justify-content: flex-start;
+                        gap: .5em;
                     overflow-x: auto;
                     margin: 0;
+                    box-sizing: border-box;
+                    padding: .1em .5em;
                 }
                     #hobbies-list li {
-                        border: 2px solid black;
-                        border-radius: 5px;
-                        padding: .25em;
-                        background-color: white;
+                        display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: .5em;
+                        padding: .5em;
+                        box-sizing: border-box;
+                        background-color: var(--panel-look);
                     }
                 #hobbies-media {
                     display: flex;
                         align-items: center;
                         justify-content: flex-start;
                         gap: 1em;
-                    padding: .5em;
+                    padding: .1em .5em;
                     margin: 0;
                     overflow-x: auto;
+                    box-sizing: border-box;
                 }
                     #hobbies-media li {
-                        border-radius: 25px;
                         display: flex;
                             align-items: center;
                             justify-content: center;
@@ -796,9 +805,6 @@ section {
                         padding: 0;
                         outline: 3px solid black;
                     }
-                        #hobbies-media video, img {
-                            border-radius: 25px;
-                        }
                              #hobbies-media video {
                                 max-width: 500px;
                                 max-height: 300px;
