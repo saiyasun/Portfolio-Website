@@ -668,15 +668,19 @@ section {
             padding: 1em;
         }
             .education {
-                border-radius: 15px;
-                padding: 0 .5em;
-                background-color: rgb(221, 207, 124);
+                background-color: rgb(221, 207, 124, 0.5);
             }
+                .education_school {
+                    background-color: rgba(255, 255, 255, 0.226);
+                    margin: 0 0 1em 0;
+                    padding: .5em;
+                }
                 .dateDegree-container {
                     display: flex;
                         align-items: center;
                         justify-content: space-around;
                         gap: .5em;
+                    padding: .25em 0;
                 }
                     .education_degree {
                         display: inline-flex;
@@ -686,14 +690,19 @@ section {
                         max-width: 50%;
                     }
                 .location-container {
-                    display: flex;
+                    display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
                         gap: .5em;
+                    padding: .01em .5em;
+                    margin: .75em .5em;
+                    background-color: rgba(236, 236, 102, 0.418);
                 }
                     .education_location {
-                        margin: .5em .125em;
+                        margin: 1em .125em;
                     }
                     .education_location-pin {
-                        max-width: 20px;
+                        max-width: 25px;
                     }
     /* @@   @@ */
 
