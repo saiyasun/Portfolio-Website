@@ -397,7 +397,7 @@ section {
             flex-direction: column;
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
         linear-gradient(135deg, #7b2ff7, #f107a3);
-        --bar-height: clamp(25px, 3dvw + 3dvh, 30px);
+        --bar-height: clamp(25px, 1.5dvw + 1.5dvh, 30px);
     }
         #skills-section_title {
             
@@ -435,17 +435,16 @@ section {
                     }
                 }
                     .skills_language {
-                        border-radius: 15px;
                         display: flex;
                             align-items: center;
                             justify-content: flex-start;
                             gap: .5em;
                         padding: .5em;
                         width: 100%;
-                        background-color: silver;
                     }
                         .language-img {
-                            width: 75px;
+                            border-radius: 0;
+                            max-width: 75px;
                             aspect-ratio: 1/1;
                         }
                         .language-name_wrapper {
@@ -455,14 +454,19 @@ section {
                                 flex-direction: column;
                                 width: 100%;
                         }
+                            .language_name-image {
+                                display: flex;
+                                    align-items: center;
+                                    gap: .5em;
+                                    width: 100%;
+                            }
                             .language-name {
                                 margin: 0;
                                 padding: .2em;
                                 font-size: var(--captions);
                             }
                             .language-progress_container {
-                                outline: 2px solid black;
-                                    border-radius: 999px;
+                                outline: 1px solid #00ffea;;
                                 display: flex;
                                     align-items: center;
                                     justify-content: flex-start;
@@ -485,7 +489,6 @@ section {
 
             /* Certificates */
             #skills_certs-wrapper {
-                border-radius: 15px;
                 display: flex;
                     align-items: center;
                     justify-content: center;
@@ -500,7 +503,6 @@ section {
                         align-self: flex-start;
                 }
                     #skills_certs-container {
-                        border-radius: 0 0 15px 15px;
                         display: flex;
                             align-items: center;
                             justify-content: center;
@@ -520,7 +522,6 @@ section {
                                 padding: 0;
                             }
                                 .cert {
-                                    border-radius: 15px;
                                     margin: 0;
                                     padding: .5em;
                                     background-color: rgb(126, 233, 162);
