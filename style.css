@@ -489,25 +489,27 @@ section {
 
             /* Certificates */
             #skills_certs-wrapper {
+                outline: 2px solid black;
                 display: flex;
                     align-items: center;
                     justify-content: center;
                     flex-direction: column;
                 width: 100%;
-                background-color: rgb(170, 164, 158);
             }
                 #skills_certs-title {
-                    margin: .3em;
+                    outline: 1px solid black;
+                    margin: 0;
+                    width: 100%;
                     padding: .3em;
                     display: flex;
                         align-self: flex-start;
+                    background-color: rgb(170, 164, 158);
                 }
                     #skills_certs-container {
                         display: flex;
                             align-items: center;
                             justify-content: center;
                         width: 100%;
-                        background-color: rgb(156, 207, 223);
                     }
                         .skills_cert {
                             display: flex;
@@ -524,10 +526,10 @@ section {
                                 .cert {
                                     margin: 0;
                                     padding: .5em;
-                                    background-color: rgb(126, 233, 162);
+                                    background-color: rgb(205, 233, 126);
                                 }
                                     .cert-link, .cert {
-                                        border-radius: 15px;
+                                        
                                     }
     /* ++   ++ */
 
