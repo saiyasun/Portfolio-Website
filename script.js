@@ -392,14 +392,15 @@ async function translateAbout(lang) {
     
     const wrapper = document.getElementById('hobbies-list');
 
-    wrapper.innerHTML = '';
+    const hobbyList = about.hobbies[lang];  // e.g., ["Working out", "Language learning", "Walking"]
 
-    const hobbyList = about.hobbies[lang];
-        hobbyList.forEach(hobby => {
-            const li = document.createElement('li');
-            li.textContent = hobby;
-            wrapper.appendChild(li);
-        })
+    wrapper.querySelectorAll('.hobby_text').forEach((span, i) => {
+        // Make sure there is a corresponding hobby
+        if (hobbyList[i]) {
+            span.textContent = hobbyList[i];
+        }
+    });
+
 }
 
 const refTitle = document.getElementById('about_references-title');
