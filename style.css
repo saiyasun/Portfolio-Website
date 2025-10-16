@@ -554,6 +554,7 @@ section {
                 }
                     .exp_name {
                         margin: 0;
+                        width: 100%;
                         border-bottom: 2px solid cyan;
                         padding: .25em;
                     }
@@ -586,10 +587,19 @@ section {
                             .end_date {
                                 
                             }
-                        .exp_location {
-                            margin: 0;
-                            font-style: bold;
+                        .exp_location-container {
+                            display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: .25em;
                         }
+                            .exp_location {
+                                margin: 0;
+                                font-style: bold;
+                            }
+                            .exp_location-img {
+                                max-width: 25px;
+                            }
                     .exp_summary {
                         padding: .5em 1em;
                         margin: .5em 0;
