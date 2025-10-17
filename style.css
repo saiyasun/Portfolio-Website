@@ -766,7 +766,7 @@ section {
             #hobbies {
                 display: flex;
                     flex-direction: column;
-                    gap: .25em;
+                    gap: .5em;
             }
                 #hobbies-list {
                     display: flex;
