@@ -400,7 +400,36 @@ async function translateAbout(lang) {
             span.textContent = hobbyList[i];
         }
     });
+}
 
+async function showYoutubeVideos() {
+    const youtubeAPI = "AIzaSyAhz5U5uitUrt_I0nCTyPsP3m1v1dJbm_0";
+    const channelID = "UCQlqj15bBd8Ah6kAgw0IyGA";
+    const maxResults = 5;
+
+    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPI}&channelId=${channelID}&part=snippet,id&order=date&maxResults=${maxResults}`;
+
+    const youtubeResponse = await fetch(apiURL);
+    const data = await youtubeResponse.json();
+
+    const mediaList = document.getElementById("hobbies-media");
+        mediaList.innerHTML = ''
+
+    data.items.forEach(item => {
+      if (item.id.kind === "youtube#video") {
+        const videoId = item.id.videoId;
+        const li = document.createElement("li");
+        li.classList.add("youtube-vid")
+
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+
+        li.appendChild(iframe);
+        mediaList.appendChild(li);
+      }
+    });
 }
 
 const refTitle = document.getElementById('about_references-title');
@@ -463,6 +492,7 @@ async function translateReferences(lang) {
     })
 }
 translateReferences(defaultLang);
+showYoutubeVideos()
 // %%   %%
 
 // ## CONTACT SECTION ##
@@ -473,7 +503,7 @@ async function translateContact(lang) {
 
     const sectionTitle = document.getElementById('contact-section_title')
     const emailTitle = document.getElementById('email_title')
-    const linkText = document.getElementById('contact_resume-link')
+    const linkText = document.getElementById('contact_resume-text')
     const socialsTitle = document.getElementById('socials-title')
     
     sectionTitle.textContent = contactLang.sectionTitle;

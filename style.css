@@ -805,10 +805,14 @@ section {
                         padding: 0;
                         outline: 3px solid black;
                     }
-                             #hobbies-media video {
-                                max-width: 500px;
-                                max-height: 300px;
-                             }
+                        #hobbies-media video {
+                        max-width: 500px;
+                        max-height: 300px;
+                        }
+                        .youtube-vid {
+                            max-width: 300px;
+                            max-height: 500px;
+                        }
         
         #references-container {
             display: flex;
