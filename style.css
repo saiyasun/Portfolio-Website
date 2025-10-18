@@ -732,7 +732,6 @@ section {
                 width: 85%;
             }
                 #about-pic_frame {
-                    border-radius: 15px;
                     display: flex;
                         align-items: center;
                         justify-content: center;
@@ -740,16 +739,15 @@ section {
                     width: 60%;
                     aspect-ratio: 1/1;
                     margin-bottom: 1em;
-                    background-color: rgb(139, 133, 133);
+                    background-color: rgba(0,0,0,0.15);
 
                     @media (min-width: 1200px) {
                         width: 40%;
                     }
                 }
                 #about_profile-pic {
-                    border-radius: 10px;
                     aspect-ratio: 1/1;
-                    width: 98%;
+                    width: 99%;
                 }
                 #about_bio-p {
                     
