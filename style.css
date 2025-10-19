@@ -397,7 +397,7 @@ section {
             justify-content: flex-start;
             flex-direction: column;
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), /* overlay */
-        linear-gradient(135deg, #7b2ff7, #f107a3);
+        linear-gradient(135deg, #7c2ff742, #f107a371);
         --bar-height: clamp(25px, 1.5dvw + 1.5dvh, 30px);
     }
         #skills-section_title {
@@ -464,6 +464,7 @@ section {
                             .language-name {
                                 margin: 0;
                                 padding: .2em;
+                                font-weight: bold;
                                 font-size: var(--captions);
                             }
                             .language-progress_container {
@@ -483,6 +484,7 @@ section {
                                 }
                                 .language-fluency {
                                     position: absolute;
+                                    font-weight: bold;
                                         left: 50%;
                                         transform: translate(-50%);
                                     font-size: var(--captions);
@@ -498,13 +500,12 @@ section {
                 width: 100%;
             }
                 #skills_certs-title {
-                    outline: 1px solid black;
                     margin: 0;
                     width: 100%;
                     padding: .3em;
                     display: flex;
                         align-self: flex-start;
-                    background-color: rgb(170, 164, 158);
+                    background-color: rgba(170, 164, 158, 0.418);
                 }
                     #skills_certs-container {
                         display: flex;
