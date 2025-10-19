@@ -411,6 +411,20 @@ section {
                 gap: 1em;
             width: 100%;
         }
+            #skills_technologies-wrapper {
+                width: 100%;
+            }
+                #skills_technologies-container {
+                    padding: .25em .5em;
+                }
+                    #programming-languages, #frameworks, #tools {
+                        display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            gap: 1em;
+                        overflow-x: auto;
+                        list-style-type: none;
+                    }
             #skills_language-wrapper {
                 width: 100%;
             }
