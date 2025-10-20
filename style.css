@@ -415,16 +415,35 @@ section {
                 width: 100%;
             }
                 #skills_technologies-container {
+                        border-radius: 15px;
                     padding: .25em .5em;
+                    background-color: rgba(245, 222, 179, 0.151);
                 }
-                    #programming-languages, #frameworks, #tools {
+                    .tech-list-container {
+                        
+                    }
+                    .tech-title {
+                        border-bottom: 3px solid #00ffea;
+                        width: fit-content;
+                        margin: .5em .25em;
+                    }
+                    .technology-list {
                         display: flex;
                             align-items: center;
                             justify-content: flex-start;
                             gap: 1em;
+                        padding: .25em;
                         overflow-x: auto;
                         list-style-type: none;
                     }
+                        .technology-list li {
+                            display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                text-align: center;
+                            padding: .25em;
+                            background-color: rgba(144, 248, 239, 0.76);
+                        }
             #skills_language-wrapper {
                 width: 100%;
             }
@@ -482,7 +501,7 @@ section {
                                 font-size: var(--captions);
                             }
                             .language-progress_container {
-                                outline: 1px solid #00ffea;;
+                                outline: 1px solid #00ffea;
                                 display: flex;
                                     align-items: center;
                                     justify-content: flex-start;
