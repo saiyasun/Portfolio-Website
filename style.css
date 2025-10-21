@@ -117,14 +117,20 @@ section {
             }
         } 
         #hero_zh-name {
-            writing-mode: vertical-lr;
+            display: inline-flex;
+                justify-content: center;
+                align-items: center;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
             min-height: max-content;
             padding: .3em .1em;
             opacity: 0.50;
+            transform-origin: center;
             z-index: 0;
             mix-blend-mode: overlay;
             color: white;
             background-color: black;
+            font-family: 'Noto Serif TC', serif;
         }
         #hero_en-name {
             position: absolute;
