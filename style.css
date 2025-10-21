@@ -415,9 +415,8 @@ section {
                 width: 100%;
             }
                 #skills_technologies-container {
-                        border-radius: 15px;
                     padding: .25em .5em;
-                    background-color: rgba(245, 222, 179, 0.151);
+                    background-color: rgba(0,0,0,0.15);
                 }
                     .tech-list-container {
                         
@@ -442,7 +441,7 @@ section {
                                 justify-content: center;
                                 text-align: center;
                             padding: .25em;
-                            background-color: rgba(144, 248, 239, 0.76);
+                            background-color: rgba(144, 248, 239, 0.521);
                         }
             #skills_language-wrapper {
                 width: 100%;
@@ -525,7 +524,6 @@ section {
 
             /* Certificates */
             #skills_certs-wrapper {
-                outline: 2px solid black;
                 display: flex;
                     align-items: center;
                     justify-content: center;
