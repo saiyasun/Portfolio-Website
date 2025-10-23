@@ -422,7 +422,7 @@ section {
             }
                 #skills_technologies-container {
                     padding: .25em .5em;
-                    background-color: rgba(0,0,0,0.15);
+                    background-color: rgba(0,0,0,0.1);
                 }
                     .tech-list-container {
                         
@@ -442,13 +442,24 @@ section {
                         list-style-type: none;
                     }
                         .technology-list li {
+                            outline: 1px solid #00ffea;
                             display: flex;
                                 align-items: center;
                                 justify-content: center;
                                 text-align: center;
-                            padding: .25em;
-                            background-color: rgba(144, 248, 239, 0.521);
+                            padding: .5em;
+                            background-color: rgb(0, 0, 0);
+                            color: white;
                         }
+                            #frameworks li {
+                                border-radius: 5px;
+                            }
+                            #tools li {
+                                border-radius: 50%;
+                                aspect-ratio: 1/1;
+                                width: 20%;
+                                text-wrap: wrap;
+                            }
             #skills_language-wrapper {
                 width: 100%;
             }
