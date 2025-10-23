@@ -131,6 +131,30 @@ translateProjects(defaultLang);
             htmlTitle.textContent = title.skillsSectionTitle[lang];
     }
 
+    //Technologies
+    const technologyTitle = document.querySelector('#skills_technologies-title');
+        const languageTitle = document.querySelector('#lang-title');
+        const frameworkTitle = document.querySelector('#framework-title');
+        const toolTitle = document.querySelector('#tool-title');
+
+        const ogTechTitle = technologyTitle.textContent;
+        const ogLangTitle = languageTitle.textContent;
+        const ogFrameworkTitle = frameworkTitle.textContent;
+        const ogToolTitle = toolTitle.textContent;
+    
+
+    async function translateTechnologies(lang) {
+        const response = await fetch("translations/skills/technologies.json");
+        const technologies = await response.json();
+        
+        const techTitle = technologies.technologiesSectionTitle[lang];
+        
+        technologyTitle.textContent = (lang === 'zh') ? techTitle : ogTechTitle;
+        languageTitle.textContent = (lang === 'zh') ? technologies.techSection.languages : ogLangTitle;
+        toolTitle.textContent = (lang === 'zh') ? technologies.techSection.tools : ogToolTitle;
+        frameworkTitle.textContent = (lang === 'zh') ? technologies.techSection.frameworks : ogFrameworkTitle;
+    };
+
     //Languages
     async function translateLanguages(lang) {
         const response = await fetch("translations/skills/languages.json");
@@ -516,11 +540,11 @@ async function translateContact(lang) {
 translateBtn.addEventListener("click", function() {
     if (defaultLang === 'en') {
         defaultLang = 'zh';
-        translateBtn.textContent = "Hi!";
+        translateBtn.textContent = "Hi! (en)";
         document.title = "孫賽亞"
     } else {
         defaultLang = 'en';
-        translateBtn.textContent = "你好!";
+        translateBtn.textContent = "你好! (中)";
         document.title = "Asiah Crutchfield";
     }
 
