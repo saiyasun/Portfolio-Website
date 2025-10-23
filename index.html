@@ -78,7 +78,84 @@
 
 <!-- ^^ BODY DIV ^^ -->
 <div id="body-div">
+    <!-- %% ABOUT SECTION %% -->
+    <section id="about-section">
+        <h2 class="section-title" id="about-section_title">About</h2>
+        <div id="about-wrapper">
+            <div id="about_about-me">
+                <div id="about-pic_frame">
+                    <img id="about_profile-pic" src="images/profile_pics/profile_pic.jpg">
+                </div>
+                <div id="about_bio-p">
+                    <p class="about_bio">
+                        I’m Asiah Crutchfield (孫賽亞) — a computer science student passionate 
+                        about exploring the intersection of learning, technology, and 
+                        creativity. I create digital projects and videos that experiment with 
+                        new ways of understanding the world and sharing knowledge.
+                    </p>
+                    <p class="about_bio">
+                        Originally from the U.S. (⚜️🎺 New Orleans 🐊⚜️), I moved to Taiwan to pursue 
+                        my degree in computer science and to immerse myself in a different culture. This 
+                        leap has challenged me, but it’s also given me invaluable experiences 
+                        and insights. One of my long-term goals is developing an innovative 
+                        language-learning project designed to change how people approach 
+                        foreign languages.
+                    </p>
+                    <p class="about_bio">
+                        Outside of school and programming, I’m dedicated to strength training and 
+                        constantly testing my limits both in and out of the gym. I’m also improving my 
+                        Mandarin Chinese, with the ultimate goal of native-like proficiency. I also 
+                        create YouTube videos and other digital content on the side to share my ideas and 
+                        interests on topics such as language, fitness and personal growth.
+                    </p>
+                </div>
+            </div>
+
+            <div id="about_hobbies-wrapper">
+                <h3 class="sub-section-title" id="about_hobbies-title">Hobbies</h3>
+                <div id="hobbies">
+                    <ul id="hobbies-list">
+                        <li><div class="hobby_icon">🏋️</div><span class="hobby_text">Working out</span></li>
+                        <li><div class="hobby_icon">🔤</div><span class="hobby_text">Language learning</span></li>
+                        <li><div class="hobby_icon">✍️</div><span class="hobby_text">Creative writing</span></li>
+                    </ul>
+                    <ul id="hobbies-media">
+                        <li> <video controls> <source src="videos/workout.mp4"> </video> </li>
+                        <li> <img src="images/placeholder.png"> </li>
+                        <li> <img src="images/placeholder.png"> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="about_references-wrapper">
+                <h3 class="sub-section-title" id="about_references-title">References</h3>
+                <div id="references-container">
+                    
+                </div>
+            </div>
+        </div>
+
+        <template id="about_reference-template">
+            <div class="reference">
+                <div class="ref-intro">
+                    <img class="references_profile-pic" src="images/profile_pics/profile_pic_4.jpg">
+                    <div class="ref_expansion-div">
+                        <h3 class="references_name">Asiah</h3>
+                        <button class="ref_expand-button">+</button>
+                    </div>
+                </div>
+                <p class="references_bio">
+                    Sample
+                </p>
+            </div>
+        </template>
+
+    </section>
+    <!-- %%   %% -->
+
+
     <!-- !! PROJECTS !! -->
+    <!-- 
     <section id="projects-section">
         <h2 class="section-title" id="projects-section_title">Projects</h2>
         <div class="projects_projects-wrapper">
@@ -86,31 +163,42 @@
         </div>
 
         <template id="projects_template">
-            <div class="projects_project">
-                <!-- Image -->
+            <div class="projects_project"> 
+                -->
+                <!-- Image 
                 <a class="project-link project_img-link"> <div class="project-img"></div> </a>
-                <!---->
+                -->
+                <!--
                 <div class="projects_project-info-wrapper">
-                    <!-- Title -->
+                -->
+                    <!-- Title 
                     <h3 class="project-title">Title</h3>
+                    -->
                     <!---->
-                    <!-- Description -->
+                    <!-- Description 
                     <p class="project-description">Description</p>
-                    <!---->
+                    -->
+                    <!--
                     <div class="projects_project-status-wrapper">
-                        <!-- Link -->
+                    -->
+                        <!-- Link 
                         <a class="project-link">link</a>
+                        -->
                         <!---->
-                        <!-- Status -->
+                        <!-- Status 
                         <span class="project-status">under development</span>
-                        <!---->
+                        -->
+                        <!--
                     </div>
                 </div>
             </div>
         </template>
 
     </section>
+    -->
     <!-- !!   !! -->
+
+
     <!-- ++  SKILLS SECTION ++ -->
     <section id="skills-section">
         <h2 class="section-title" id="skills-section_title">Skills</h2>
@@ -275,80 +363,6 @@
 
     </section>
     <!-- @@   @@ -->
-    <!-- %% ABOUT SECTION %% -->
-    <section id="about-section">
-        <h2 class="section-title" id="about-section_title">About</h2>
-        <div id="about-wrapper">
-            <div id="about_about-me">
-                <div id="about-pic_frame">
-                    <img id="about_profile-pic" src="images/profile_pics/profile_pic.jpg">
-                </div>
-                <div id="about_bio-p">
-                    <p class="about_bio">
-                        I’m Asiah Crutchfield (孫賽亞) — a computer science student passionate 
-                        about exploring the intersection of learning, technology, and 
-                        creativity. I create digital projects and videos that experiment with 
-                        new ways of understanding the world and sharing knowledge.
-                    </p>
-                    <p class="about_bio">
-                        Originally from the U.S. (⚜️🎺 New Orleans 🐊⚜️), I moved to Taiwan to pursue 
-                        my degree in computer science and to immerse myself in a different culture. This 
-                        leap has challenged me, but it’s also given me invaluable experiences 
-                        and insights. One of my long-term goals is developing an innovative 
-                        language-learning project designed to change how people approach 
-                        foreign languages.
-                    </p>
-                    <p class="about_bio">
-                        Outside of school and programming, I’m dedicated to strength training and 
-                        constantly testing my limits both in and out of the gym. I’m also improving my 
-                        Mandarin Chinese, with the ultimate goal of native-like proficiency. I also 
-                        create YouTube videos and other digital content on the side to share my ideas and 
-                        interests on topics such as language, fitness and personal growth.
-                    </p>
-                </div>
-            </div>
-
-            <div id="about_hobbies-wrapper">
-                <h3 class="sub-section-title" id="about_hobbies-title">Hobbies</h3>
-                <div id="hobbies">
-                    <ul id="hobbies-list">
-                        <li><div class="hobby_icon">🏋️</div><span class="hobby_text">Working out</span></li>
-                        <li><div class="hobby_icon">🔤</div><span class="hobby_text">Language learning</span></li>
-                        <li><div class="hobby_icon">✍️</div><span class="hobby_text">Creative writing</span></li>
-                    </ul>
-                    <ul id="hobbies-media">
-                        <li> <video controls> <source src="videos/workout.mp4"> </video> </li>
-                        <li> <img src="images/placeholder.png"> </li>
-                        <li> <img src="images/placeholder.png"> </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="about_references-wrapper">
-                <h3 class="sub-section-title" id="about_references-title">References</h3>
-                <div id="references-container">
-                    
-                </div>
-            </div>
-        </div>
-
-        <template id="about_reference-template">
-            <div class="reference">
-                <div class="ref-intro">
-                    <img class="references_profile-pic" src="images/profile_pics/profile_pic_4.jpg">
-                    <div class="ref_expansion-div">
-                        <h3 class="references_name">Asiah</h3>
-                        <button class="ref_expand-button">+</button>
-                    </div>
-                </div>
-                <p class="references_bio">
-                    Sample
-                </p>
-            </div>
-        </template>
-
-    </section>
-    <!-- %%   %% -->
     <!-- ## CONTACT SECTION ## -->
     <section id="contact-section">
         <h2 class="section-title" id="contact-section_title">Contact</h2>
