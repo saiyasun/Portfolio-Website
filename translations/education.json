@@ -27,14 +27,14 @@
     "zh": [
         {
             "school": "元智大學",
-            "degree": "Bachelor of Science in Informatics",
+            "degree": "資訊學學士",
             "estDate": 2028,
             "location": "桃園市，台灣"
         },
 
         {
             "school": "New Orleans Science and Mathematics High School",
-            "degree": "High School Diploma",
+            "degree": "高中畢業證書",
             "startDate": 2008,
             "endDate": 2012,
             "location": "紐奧良市，美國"
@@ -42,7 +42,7 @@
 
         {
             "school": "New Orleans Center for Creative Arts",
-            "degree": "Certificate of Creative Writing",
+            "degree": "創意寫作證書",
             "startDate": 2010,
             "endDate": 2012,
             "location": "紐奧良市，美國"
