@@ -1,6 +1,7 @@
 // ** UNIVERSAL **
 let defaultLang = 'en';
 const translateBtn = document.getElementById("button_translate");
+const ogTranslateText = translateBtn.textContent
 // **   **
 
 // ~~ TITLE ~~
@@ -196,6 +197,7 @@ translateProjects(defaultLang);
         })
     }
     translateLanguages(defaultLang)
+    translateTechnologies(defaultLang)
     //++++
 
     // Certifications
@@ -544,7 +546,7 @@ translateBtn.addEventListener("click", function() {
         document.title = "孫賽亞"
     } else {
         defaultLang = 'en';
-        translateBtn.textContent = "你好! (中)";
+        translateBtn.textContent = ogTranslateText;
         document.title = "Asiah Crutchfield";
     }
 
@@ -553,8 +555,9 @@ translateBtn.addEventListener("click", function() {
     translateProjects(defaultLang); 
     // Skills
     translateSkillsTitle(defaultLang);
-    translateLanguages(defaultLang);
+    translateTechnologies(defaultLang);
     translateCerts(defaultLang);
+    translateLanguages(defaultLang)
     // ++++
     translateExperience(defaultLang);
     translateEducation(defaultLang);
