@@ -23,6 +23,10 @@
   --w-medium: 500;
   --w-semibold: 600;
   --w-bold: 700;
+  --border-soft: rgba(0, 0, 0, 0.25);
+
+  /* Icons */
+  --icon: 28px;
 
   /* Tracking */
   --track-nav: 0.10em;
@@ -42,7 +46,7 @@ body {
 }
 a {
     padding: .125em;
-    display: flex;
+    display: inline-flex;
         align-items: center;
         justify-content: center;
 } 
@@ -54,6 +58,10 @@ img {
 }
 .icon {
     max-width: 50px;
+}
+ul {
+    margin: 0;
+    padding: 0;  
 }
 nav {
     padding: 0;
@@ -73,13 +81,17 @@ nav {
     z-index: 1000;
 }
     #main-nav ul {
-            border-radius: 7px;
+        border-radius: 7px;
         margin: 0;
         padding: .25em .5em;
-        font-size: 16px;
         flex-direction: row;
             gap: .75em;
             align-items: center;
+
+        font-size: var(--text-xs);
+        letter-spacing: var(--track-nav);
+        font-weight: var(--w-medium);
+        text-transform: uppercase;
     }
     #main-nav a:hover {
         font-weight: bold;
@@ -91,12 +103,138 @@ nav {
         height: 25px;
     }
     #main-nav img {
-        max-width: 28px;
+        max-width: var(--icon);
         display: block;
     }
         #main-nav img:hover {
             background-color: rgb(97, 95, 95);
         }
+
+/* SECTIONS */
+/* !Hero! */
+#hero {
+    min-height: 90dvh;
+    display: flex;
+        align-items: center;
+}
+    #hero-container {
+        padding: 2em;
+        display: flex;
+            justify-content: space-around;
+    }
+        #hero-intro1_container, #hero-intro2_container {
+            width: min(600px, 40%);
+            display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+        }
+        /* ~names~ */
+        #hero-name_container {
+            position: relative;
+            padding-block: calc(var(--text-hero) * 1.2);
+        }
+            .intro-name {
+                font-size: var(--text-hero);
+            }
+            /* English */
+            #en-name{
+                display: inline-block;
+            }
+
+            /* Chinese vertical, still in flow */
+            #zh-name{
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+
+                position: absolute; /* you can keep this absolute for overlap */
+                left: .3em;
+                top: 25%;
+                transform: translateY(calc(-50% + 0.8em)); /* nudge downwards */
+                font-size: var(--text-hero);
+                opacity: 50%;
+                z-index: 0;
+
+                line-height: 1;     /* makes vertical spacing clean */
+            }
+            /* ~intro paragraph~ */
+            #hero-intro2_container p {
+                font-size: var(--text-lg);
+                padding: 1em;
+                margin: 10px 0;
+            }
+            #intro2-name {
+                font-weight: var(--w-bold);
+            }
+            /* ~hero tags~ */
+            #hero-tag_container ul {
+                padding: .25em;
+                list-style: none;
+                display: flex;
+                    gap: 1em;
+            }
+                #hero-tag_container ul li {
+                    outline: 1px solid var(--border-soft);
+                    border-radius: 5px;
+                    padding: .25em;
+                    display: flex;
+                        gap: 1em;
+                }
+            /* ~hero links~ */
+            #hero-links {
+                padding: .25em 1em;
+                display: flex;
+                    align-items: center;
+                    align-self: flex-start;
+                    gap: 2em;
+            }
+                #hero-links ul {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                        justify-content: center;
+                        gap: .5em;
+                    padding: 0;
+                }
+                #hero-links ul img {
+                    max-width: var(--icon);
+                }
+
+                /* ~intro resume link~ */
+                .resume-label {
+                    position: relative;
+                    font-size: var(--text-xs);
+                    letter-spacing: var(--track-nav);
+                    font-weight: var(--w-medium);
+                    text-transform: uppercase;
+
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    padding: 0.25em 0;
+                }
+
+
+                .resume-label::before,
+                .resume-label::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+
+                    height: 1px;
+                    background-color: rgba(0, 0, 0, 0.25);
+                }
+
+                .resume-label::before {
+                    top: -0.4em;
+                }
+
+                .resume-label::after {
+                    bottom: -0.4em;
+                }
+
 
 /* Aぁ translation button ぁA */
 #translator {
