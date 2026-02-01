@@ -108,7 +108,7 @@ nav {
         right: 28px;
         z-index: 1000;
 
-    outline: 2px solid black;
+    outline: 1px solid black;
     padding: .125em;
     display: inline-flex;
         align-items: center;
