@@ -1,0 +1,145 @@
+/* **UNIVERSAL** */
+:root {
+  /* Fonts */
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Base */
+  --text-base: 16px;
+  --lh-body: 1.6;
+  --lh-tight: 1.1;
+  --lh-ui: 1.4;
+
+  /* Scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px; /* page titles (optional) */
+  --text-hero: clamp(36px, 5vw, 48px);
+
+  /* Weights */
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+
+  /* Tracking */
+  --track-nav: 0.10em;
+  --track-label: 0.08em;
+}
+
+html {
+  font-size: 16px; /* baseline */
+}
+body {
+    background-color: #F7F6F3;
+    margin: 0px;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--lh-body);
+    font-weight: var(--w-regular);
+}
+a {
+    padding: .125em;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+} 
+section {
+    padding: 0 28px;
+}
+img {
+    max-width: 100px;
+}
+.icon {
+    max-width: 50px;
+}
+nav {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+    nav ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+/* •nav• */
+#main-nav {
+  position: fixed;
+    top: 24px;
+    right: 28px;
+    z-index: 1000;
+}
+    #main-nav ul {
+            border-radius: 7px;
+        margin: 0;
+        padding: .25em .5em;
+        font-size: 16px;
+        flex-direction: row;
+            gap: .75em;
+            align-items: center;
+    }
+    #main-nav a:hover {
+        font-weight: bold;
+    }
+    #main-nav_hr {
+        border: .25px solid black;
+        background-color: black;
+        width: .25px;
+        height: 25px;
+    }
+    #main-nav img {
+        max-width: 28px;
+        display: block;
+    }
+        #main-nav img:hover {
+            background-color: rgb(97, 95, 95);
+        }
+
+/* Aぁ translation button ぁA */
+#translator {
+    --lang-active: rgba(80, 180, 120, 0.35);
+    --lang-glow: rgba(80, 180, 120, 0.4);
+
+    position: fixed;
+        bottom: 24px;
+        right: 28px;
+        z-index: 1000;
+
+    outline: 2px solid black;
+    padding: .125em;
+    display: inline-flex;
+        align-items: center;
+        gap: 0.25em;
+}
+    .lang-btn {
+        position: relative; /* required for pseudo-element */
+        background: none;
+        border: none;
+        padding: 0.25em 0.4em;
+
+        font-size: var(--text-xs);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+    }
+        .lang-btn.active::before {
+            content: "";
+            position: absolute;
+            inset: -0.35em; /* controls circle size */
+            background: var(--lang-active); /* soft green */
+            border-radius: 50%;
+            z-index: -1;
+            box-shadow:
+                0 0 8px var(--lang-glow),
+                0 0 16px var(--lang-glow);
+        }
+        .lang-btn:not(.active) {
+            opacity: 0.5;
+        }
+
+        .lang-btn:hover {
+            opacity: 0.85;
+        }
