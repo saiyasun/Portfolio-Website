@@ -16,7 +16,7 @@
   --text-md: 16px;
   --text-lg: 20px;
   --text-xl: 28px; /* page titles (optional) */
-  --text-hero: clamp(36px, 5vw, 48px);
+  --text-hero: clamp(28px, 6vw, 48px);
 
   /* Weights */
   --w-regular: 400;
@@ -49,10 +49,17 @@ a {
     display: inline-flex;
         align-items: center;
         justify-content: center;
+    text-decoration: none;
 } 
 section {
     padding: 0 28px;
 }
+    /*📱 section (mobile) 📱*/
+    @media (max-width: 768px) {
+        section {
+            padding: .5em;
+        }
+    }
 img {
     max-width: 100px;
 }
@@ -74,12 +81,16 @@ nav {
     }
 
 /* •nav• */
+#mobile-nav {
+    display: none;
+}
 #main-nav {
   position: fixed;
     top: 24px;
     right: 28px;
     z-index: 1000;
 }
+
     #main-nav ul {
         border-radius: 7px;
         margin: 0;
@@ -109,6 +120,18 @@ nav {
         #main-nav img:hover {
             background-color: rgb(97, 95, 95);
         }
+    /* 📱  •nav•-mobile 📱 */
+    @media (max-width: 768px) {
+        #main-nav {
+            display: none;
+        }
+        #mobile-nav {
+            border: 5px solid black;
+            position: fixed;
+                bottom: 5%;
+            display: inline-flex;
+        }
+    }
 
 /* SECTIONS */
 /* !Hero! */
@@ -150,7 +173,7 @@ nav {
                 position: absolute; /* you can keep this absolute for overlap */
                 left: .3em;
                 top: 25%;
-                transform: translateY(calc(-50% + 0.8em)); /* nudge downwards */
+                transform: translateY(-50%) translateY(0.9em); /* optical nudge */
                 font-size: var(--text-hero);
                 opacity: 50%;
                 z-index: 0;
@@ -234,7 +257,21 @@ nav {
                 .resume-label::after {
                     bottom: -0.4em;
                 }
-
+    /* 📱 !Hero!-mobile 📱 */
+    @media (max-width: 768px) {
+        #hero-container {
+            border: 5px solid blue;
+            padding: .5em;
+            flex-direction: column;
+        }
+        #hero-intro1_container, #hero-intro2_container {
+            border: 2px solid red;
+            width: 100%;
+        }
+        #hero-intro2_container p {
+            font-size: var(--text-md); /* 16px */
+        }
+    }            
 
 /* Aぁ translation button ぁA */
 #translator {
@@ -281,3 +318,10 @@ nav {
         .lang-btn:hover {
             opacity: 0.85;
         }
+    /* 📱 Aぁ translation button ぁA 📱 */
+    @media (max-width: 768px) {
+        #translator {
+            top: 5%;
+            bottom: auto;
+        }
+    }
