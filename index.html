@@ -15,12 +15,12 @@
     <!--SITE NAV BAR-->
     <nav id="main-nav" aria-label="Primary navigation">
         <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a>ABOUT</a></li>
-            <li><a>EXPERIENCE</a></li>
-            <li><a>SKILLS</a></li>
-            <li><a>PROJECTS</a></li>
-            <li><a>CONTACT</a></li>
+            <li><a href="#" data-i18n="nav.home">HOME</a></li>
+            <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
+            <li><a data-i18n="nav.exp">EXPERIENCE</a></li>
+            <li><a data-i18n="nav.skills">SKILLS</a></li>
+            <li><a data-i18n="nav.projects">PROJECTS</a></li>
+            <li><a data-i18n="nav.contact">CONTACT</a></li>
             <hr id="main-nav_hr">
             <li><a href="docs/Asiah Crutchfield - Resume.pdf"><img class="icon" src="images/icons/resume-blk.svg" alt="resume"></a></li>
         </ul>
@@ -28,12 +28,12 @@
         <!--~mobile nav bar~-->
         <nav id="mobile-nav" aria-label="Mobile navigation">
             <ul class="nav-rail">
-                <li><a class="is-active" href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a class="is-active" href="#hero" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" data-i18n="nav.exp">Experience</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </nav>
 
@@ -49,34 +49,267 @@
                 </div>
                     <div id="hero-tag_container">
                         <ul>
-                            <li>Builder</li>
-                            <li>Creator</li>
+                            <li data-i18n="tag.builder">Builder</li>
+                            <li data-i18n="tag.creator">Creator</li>
                         </ul>
                     </div>
             </div>
 
             <div id="hero-intro2_container">
-                <p>
-                    My name is <span id="intro2-name">Asiah Crutchfield</span>. A 
+                <p data-i18n="hero.intro.prefix">
+                    My name is <span id="intro2-name" data-i18n="hero.intro.name">Asiah Crutchfield</span>. <span data-i18n="hero.intro.suffix">A 
                     computer science student creating digital projects and videos that 
-                    experiment with learning, technology, and creative ideas.
+                    experiment with learning, technology, and creative ideas.</span>
                 </p>
                     <div id="hero-links">
                         <ul>
                             <li><a href="https://github.com/asiahcrutchfield"><img src="images/icons/github-blk.svg"></a></li>
                             <li><a href="https://www.linkedin.com/in/asiahcrutchfield/"><img src="images/icons/linkedin-blk.svg"></a></li>
                         </ul>
-                        <a class="resume-label" href="docs/Asiah Crutchfield - Resume.pdf">RESUME</a>
+                        <a class="resume-label" href="docs/Asiah Crutchfield - Resume.pdf" data-i18n="hero.resume">RESUME</a>
                     </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ??About?? -->
+    <section id="about">
+        <div id="about-container">
+            <!-- ~bio~ -->
+            <!-- about nav -->
+            <div id="bio-container">
+                <nav>
+                    <ul>
+                        <li><a data-i18n="aboutNav.about">about</a></li>
+                        <li><a data-i18n="aboutNav.interests">interests</a></li>
+                        <li><a data-i18n="aboutNav.media">media</a></li>
+                    </ul>
+                </nav>
+                    <!-- pic & location -->
+                    <div>
+                        <img>
+                            <div id="info-container">
+                                <div class="info-container" id="location">
+                                    <img>
+                                    <span> 
+                                        <span data-i18n="about.city" id="city">Taoyuan</span>, 
+                                        <span data-i18n="about.country" id="country">Taiwan</span> 
+                                    </span>
+                                </div>
+                                <div class="info-container" id="about-email">
+                                    <img>
+                                    <span id="email"><a>asiah@asiahcrutchfield.com</a></span>
+                                </div>
+                            </div>
+                    </div>
+                <!-- bio -->
+                <p data-i18n="about.bio">
+                    I’m Asiah Crutchfield (孫賽亞) — a computer science student 
+                    passionate about exploring the intersection of learning, technology, 
+                    and creativity. I create digital projects and videos that experiment 
+                    with new ways of understanding the world and sharing knowledge.
+                </p>
+            </div>
+        
+            <!-- ~interests~ -->
+            <div id="interests-sections">
+                <div id="interest-container">
+
+                    <div id="interest-circle"></div>
+                        <div class="interest">
+                            <img>
+                            <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                        </div>
+                            <div class="interest">
+                                <img>
+                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                            </div>
+                        <div class="interest">
+                            <img>
+                            <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                        </div>
+                            <div class="interest">
+                                <img>
+                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                            </div>
+                </div>
+            </div>
+
+            <!-- ~pics & vids~ -->
+            <div id="media-section">
+                <div id="media-container">
+                    <div id="vids">
+                        <h3 class="media-title" data-i18n="about.vidTitle">YouTube</h3>
+                    </div>
+                        <div id="pics">
+                            <h3 class="media-title" data-i18n="about.picTitle">Pics</h3>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 🤹Skills🤹 -->
+    <section id="skills">
+        <!-- ~human languages~ -->
+        <div id="hLanguages">
+            <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
+            <div id="languages">
+                <template></template> <!--ADD LATER!!!!-->
+                <div class="lang-progress">
+                    <div class="lang">
+                        <!-- ~name & flag~ -->
+                        <div class="lang-name-container">
+                            <span class="lang-name" data-i18n="skills.lang"></span>
+                            <img class="lang-flag">
+                        </div>
+                        <!-- ~fluency~ -->
+                        <span class="fluency"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ~technologies~ -->
+        <div id="technologies">
+            <h3 class="skills-title" data-i18n="skills.tech-title">Technologies</h3>
+                <nav id="tech-nav">
+                    <ul>
+                        <li data-i18n="skills.category">by category</li>
+                            <hr>
+                        <li data-i18n="skills.all">all</li>
+                    </ul>
+                </nav>
+                <!-- ~unordered tech stack~ -->
+                <div id="tech-container-u">
+                    <ul class="tech_stack" id="tech_stack-u">
+                        <template></template> <!--ADD LATER!!!!-->
+                        <li data-tech.category="design">
+                            <img class="tech-img">
+                            <span class="tech-name">Figma</span>
+                        </li>
+                        <li data-tech.category="frotend">
+                            <img class="tech-img">
+                            <span class="tech-name">HTML</span>
+                        </li>
+                        <li data-tech.category="backend">
+                            <img class="tech-img">
+                            <span class="tech-name">Javascript</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ~ordered tech stack~ -->
+                <div id="tech-container-o">
+                    <template></template> <!--ADD LATER!!!!-->
+                    <div class="tech_cat-container" data-tech_cat-container="frontend">
+                        <div class="tech_cat-title"><span class="tech-title-o"></span><img></div>
+                        <ul class="tech_stack tech_stack-o">
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
+        <!-- ~certifications~ -->
+        <div id="certifications">
+            <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
+                <div id="cert-container">
+                    <template></template> <!--ADD LATER!!!!-->
+                    <div class="cert">
+                        <span class="cert-name"></span>
+                        <span class="cert-date"></span>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- 🛠️Projects🛠️ -->
+    <section id="projects">
+        <div id="projects-container">
+            <template></template> <!--ADD LATER!!!!-->
+            <div class="project">
+                <img class="project-img">
+                <div class="project-info">
+                    <h4 class="project-title"></h4>
+                    <p class="project-desc" data-i18n="project.desc"></p>
+                </div>
+                <div class="project-link-container">
+                    <ul class="project-links">
+                        <li></li>
+                    </ul>
+                    <span class="project-extra"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎓👷Experience/Education🎓👷 -->
+    <section id="experience">
+        <div id="exp-container">
+            <template></template> <!--ADD LATER!!!!-->
+            <div class="exp">
+                <h4 class="exp-title" data-i18n="exp.job"></h4>
+                <div class="date-location">
+                    <div class="exp-date"> 
+                        <span class="start-date"></span>-<span class="end-date"></span> 
+                    </div>
+                    <div class="location-container">
+                        <img> <span class="location" data-i18n="exp.location"></span>
+                    </div>
+                </div>
+                <!-- ~summary & duties~ -->
+                <div class="duties-container">
+                    <p class="exp-summary"></p>
+                    <button class="duties-btn"></button>
+                    <ul class="duties-list">
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="edu-container">
+            <template></template> <!--ADD LATER!!!!-->
+            <div class="education">
+                <h4 class="edu-title" data-i18n="edu.title"></h4>
+                <span class="edu-degree" data-i18n="edu.degree"></span>
+                <div class="edu-date">
+                    <span class="edu-start_date"></span>-<span class="edu-end_date"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✉️Contact✉️ -->
+    <section id="contact">
+        <div id="contact-container">
+            <!-- ~email & resume~ -->
+            <div id="reach-out">
+                <h4 id="reach-out_title" data-i18n="contact.reach-out-title">Reach Out</h4>
+                <div id="reach-out-container">
+                    <div id="contact-email"><a><img></a></div>
+                    <div id="contact-resume-cotainer">
+                        <img>
+                        <span id="contact-resume" data-i18n="contact.resume">Resume</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ~social media~ -->
+            <div id="connect">
+                <h4 id="connect-title" data-i18n="contact.connect-title">Connect</h4>
+                <template></template> <!--ADD LATER!!!!-->
+                <div id="connect-links-container">
+                    <div class="connect-link"><a><img></a></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!--TRANSLATION-->
     <div id="translator">
-        <button class="lang-btn active">EN</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
         <span>|</span>
-        <button class="lang-btn">中</button>
+        <button class="lang-btn" data-lang="zh">中</button>
     </div>
 </body>
 </html>

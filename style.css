@@ -69,6 +69,7 @@ img {
 ul {
     margin: 0;
     padding: 0;  
+    text-transform: uppercase;
 }
 nav {
     padding: 0;
@@ -102,7 +103,6 @@ nav {
         font-size: var(--text-xs);
         letter-spacing: var(--track-nav);
         font-weight: var(--w-medium);
-        text-transform: uppercase;
     }
     #main-nav a:hover {
         font-weight: bold;
@@ -156,7 +156,6 @@ nav {
             font-size: var(--text-s);
             letter-spacing: var(--track-nav);
             font-weight: var(--w-medium);
-            text-transform: uppercase;
         }
     /* 📱  •nav•-mobile 📱 */
     @media (max-width: 600px) {
@@ -348,7 +347,12 @@ nav {
             transform: translateY(-55%); /* little gap + vertically centered */
             white-space: nowrap;
         }
-    }               
+    }
+    
+/* ??About?? */
+#about {
+    border: 5px solid black;
+}
 
 /* Aぁ translation button ぁA */
 #translator {
