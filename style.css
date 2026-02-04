@@ -245,6 +245,9 @@ span {
                 padding: 1em;
                 margin: 10px 0;
             }
+            #hero-intro2_container span {
+                padding: 0;
+            }
             #intro2-name {
                 font-weight: var(--w-bold);
             }
@@ -329,7 +332,7 @@ span {
             font-size: var(--text-md); /* 16px */
         }
     }
-    @media (min-width: 769px) and (max-width: 1302px) {
+    @media (min-width: 769px) and (max-width: 1406px) {
         /* English */
         #en-name{
             text-align: center;
