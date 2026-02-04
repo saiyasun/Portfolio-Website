@@ -23,10 +23,14 @@
   --w-medium: 500;
   --w-semibold: 600;
   --w-bold: 700;
+  --w-italics: italic;
   --border-soft: rgba(0, 0, 0, 0.25);
 
   /* Icons */
   --icon: 28px;
+
+  /* Images */
+  --pics: 300px;
 
   /* Tracking */
   --track-nav: 0.10em;
@@ -69,6 +73,8 @@ img {
 ul {
     margin: 0;
     padding: 0;  
+}
+h1, h2, h3, h4, ul {
     text-transform: uppercase;
 }
 nav {
@@ -80,6 +86,9 @@ nav {
         display: flex;
         list-style-type: none;
     }
+span {
+    padding: .25em;
+}
 
 /* •nav• */
 #mobile-nav {
@@ -350,9 +359,179 @@ nav {
     }
     
 /* ??About?? */
+/* ~bio~ */
 #about {
-    border: 5px solid black;
+    display: flex;
+        justify-content: center;
+        gap: 2em;
 }
+.about-subsection {
+    padding: 2em;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+#bio-navigation {
+    outline: 2px solid black;
+    height: 50%;
+    display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    padding: 1em .5em;
+    letter-spacing: var(--track-nav);
+}
+.bio_nav-is_active {
+    position: relative;
+    font-weight: var(--w-medium);
+}
+    .bio_nav-is_active::before,
+    .bio_nav-is_active::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        background-color: black;
+        width: 50%;
+    }
+        .bio_nav-is_active::before {
+            top: 0em;
+        }
+        .bio_nav-is_active::after {
+            bottom: 0em;
+        }
+#about-container {
+    padding: 1em 2em;
+    width: 60%;
+}
+#bio-container {
+    gap: 2em;
+}
+    #bio-section {
+        padding: 1em .75em;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+    }
+        #profile-pic {
+            outline: 3px solid black;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            max-width: none;
+            width: var(--pics);
+        }
+        #info-container {
+            padding: .25em;
+            display: flex;
+                flex-direction: column;
+        }
+            .info-container {
+                padding: .25em;
+                display: flex;
+                    align-items: center;
+            }
+                .info-container img {
+                    width: var(--icon);
+                }
+                .info-container span {
+                    padding: .25em;
+                }
+    #bio {
+        width: 50%;
+        align-self: flex-start;
+        margin: 0;
+        padding: .5em;
+    }
+        #bio-intro {
+            font-weight: var(--w-medium);
+        }
+/* ~interest/hobbies~ */
+#interests-sections {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+#interest-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+    #interest-circle {
+        border-radius: 50%;
+        position: relative;
+        background-color: grey;
+        width: 100%;
+        max-width: 75px;
+        aspect-ratio: 1/1;
+    }
+        .interest {
+            outline: 2px solid black;
+            border-radius: 15px;
+            position: absolute;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1em;
+            width: 225px;
+            padding: .25em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            --radius-horizontal: 200px;
+            --radius-vertical: 125px;
+        }   
+            .interest img {
+                max-width: 50px;
+            }
+            .interest-name {
+                font-style: italic;
+            }
+                #hiking {
+                    transform:
+                        translate(-50%, -50%) 
+                        rotate(0deg)
+                        translate(var(--radius-horizontal))
+                        rotate(0deg);
+                }
+                #workout {
+                    transform:
+                        translate(-50%, -50%) 
+                        rotate(90deg)
+                        translate(var(--radius-vertical))
+                        rotate(-90deg);
+                }
+                #eating {
+                    transform: 
+                        translate(-50%, -50%)
+                        rotate(180deg)
+                        translate(var(--radius-horizontal))
+                        rotate(-180deg);
+                }
+                #gaming {
+                    transform: 
+                        translate(-50%, -50%)
+                        rotate(270deg)
+                        translate(var(--radius-vertical))
+                        rotate(-270deg);
+                }
+/* ~media~ */
+#media-container {
+    width: 100%;
+    padding: 1em;
+}
+    .media {
+        display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        min-height: 150px;
+        padding: .5em;
+        overflow-x: auto;
+    }
 
 /* Aぁ translation button ぁA */
 #translator {

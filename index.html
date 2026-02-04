@@ -56,8 +56,8 @@
             </div>
 
             <div id="hero-intro2_container">
-                <p data-i18n="hero.intro.prefix">
-                    My name is <span id="intro2-name" data-i18n="hero.intro.name">Asiah Crutchfield</span>. <span data-i18n="hero.intro.suffix">A 
+                <p>
+                    <span data-i18n="hero.intro.prefix">My name is</span> <span id="intro2-name" data-i18n="hero.intro.name">Asiah Crutchfield</span>. <span data-i18n="hero.intro.suffix">A 
                     computer science student creating digital projects and videos that 
                     experiment with learning, technology, and creative ideas.</span>
                 </p>
@@ -74,75 +74,79 @@
 
     <!-- ??About?? -->
     <section id="about">
+        <!-- about nav -->
+        <nav>
+            <ul id="bio-navigation">
+                <li><a  href="#bio-section" class="bio_nav-is_active" data-i18n="aboutNav.about">about</a></li>
+                <li><a data-i18n="aboutNav.interests" href="#interests-section">interests</a></li>
+                <li><a data-i18n="aboutNav.media" href="#media-section">media</a></li>
+            </ul>
+        </nav>
         <div id="about-container">
             <!-- ~bio~ -->
-            <!-- about nav -->
-            <div id="bio-container">
-                <nav>
-                    <ul>
-                        <li><a data-i18n="aboutNav.about">about</a></li>
-                        <li><a data-i18n="aboutNav.interests">interests</a></li>
-                        <li><a data-i18n="aboutNav.media">media</a></li>
-                    </ul>
-                </nav>
-                    <!-- pic & location -->
-                    <div>
-                        <img>
-                            <div id="info-container">
-                                <div class="info-container" id="location">
-                                    <img>
-                                    <span> 
-                                        <span data-i18n="about.city" id="city">Taoyuan</span>, 
-                                        <span data-i18n="about.country" id="country">Taiwan</span> 
-                                    </span>
-                                </div>
-                                <div class="info-container" id="about-email">
-                                    <img>
-                                    <span id="email"><a>asiah@asiahcrutchfield.com</a></span>
-                                </div>
-                            </div>
+            <div id="bio-container" class="about-subsection">
+            <!-- pic & location -->
+            <div id="bio-section">
+                <img id="profile-pic" src="images/profile_pics/tulane_profile.jpg" alt="profile picture">
+                <div id="info-container">
+                    <div class="info-container" id="location">
+                        <img src="images/icons/location_pin-blk.svg" alt="location pin">
+                        <span> 
+                            <span data-i18n="about.city" id="city">Taoyuan</span>, 
+                            <span data-i18n="about.country" id="country">Taiwan</span> 
+                        </span>
                     </div>
+                    <div class="info-container" id="about-email">
+                        <img src="images/icons/email-black.svg">
+                        <span id="email"><a>asiah@asiahcrutchfield.com</a></span>
+                    </div>
+                </div>
+            </div>
                 <!-- bio -->
-                <p data-i18n="about.bio">
-                    I’m Asiah Crutchfield (孫賽亞) — a computer science student 
+                <p id="bio">
+                    <span data-i18n="about.bio.intro" id="bio-intro">I’m Asiah Crutchfield (孫賽亞)</span> — 
+                    <span data-i18n="about.bio.suffix">a computer science student 
                     passionate about exploring the intersection of learning, technology, 
                     and creativity. I create digital projects and videos that experiment 
-                    with new ways of understanding the world and sharing knowledge.
+                    with new ways of understanding the world and sharing knowledge.</span>
                 </p>
             </div>
         
             <!-- ~interests~ -->
-            <div id="interests-sections">
+            <div id="interests-sections" class="about-subsection">
                 <div id="interest-container">
 
-                    <div id="interest-circle"></div>
-                        <div class="interest">
-                            <img>
+                    <div id="interest-circle">
+                        <div id="workout" class="interest">
+                            <img src="images/icons/dumbbell.svg">
+                            <span class="interest-name" data-i18n="about.interest.workout">Working Out</span>
+                        </div>
+                            <div id="gaming" class="interest">
+                                <img src="images/icons/gaming.svg">
+                                <span class="interest-name" data-i18n="about.interest.gaming">Gaming</span>
+                            </div>
+                        <div id="eating" class="interest">
+                            <img src="images/icons/eating-blk.svg">
                             <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
                         </div>
-                            <div class="interest">
-                                <img>
-                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                            <div id="hiking" class="interest">
+                                <img src="images/icons/hiking-blk.svg">
+                                <span class="interest-name" data-i18n="about.interest.hiking">Hiking</span>
                             </div>
-                        <div class="interest">
-                            <img>
-                            <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
-                        </div>
-                            <div class="interest">
-                                <img>
-                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
-                            </div>
+                    </div>
                 </div>
             </div>
 
             <!-- ~pics & vids~ -->
-            <div id="media-section">
+            <div id="media-section" class="about-subsection">
                 <div id="media-container">
                     <div id="vids">
                         <h3 class="media-title" data-i18n="about.vidTitle">YouTube</h3>
+                        <div class="media" id="vid-container"></div>
                     </div>
                         <div id="pics">
                             <h3 class="media-title" data-i18n="about.picTitle">Pics</h3>
+                            <div class="media" id="pic-container"></div>
                         </div>
                 </div>
             </div>
