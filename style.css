@@ -453,6 +453,9 @@ nav {
                 .info-container span {
                     padding: .25em;
                 }
+            #city, #country {
+                padding: 0;
+            }
     #bio {
         width: 50%;
         align-self: flex-start;
@@ -789,6 +792,193 @@ nav {
                 padding: .125em;
                 font-size: var(--text-xs);
             }
+
+/* 🎓👷Experience/Education🎓👷 */
+#experience {
+    display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2em;
+}
+.exp_edu-container {
+}
+#exp-container {
+    display: flex;
+        flex-direction: column;
+}
+    .exp {
+        position: relative;
+        padding: .75em;
+    }
+        .exp::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            top: 5%;
+            bottom: 5%;
+            left: -1%;
+            right: 100%;
+            background-color: black;
+        }
+        /* ⏪.exp-reverse⏪ */
+        .exp-reverse::before {
+            left: auto;
+            right: -1%;
+        }
+    .exp-title {
+        margin-bottom: .25em;
+    }
+    /* ⏪.exp-reverse⏪ */
+    .exp-reverse > .exp-title {
+        text-align: end;
+    }
+    .date-location {
+        display: flex;
+            gap: 2em;
+        padding: .25em;
+    }
+    /* ⏪.exp-reverse⏪ */
+    .exp-reverse > .date-location {
+        justify-content: flex-end;
+    }
+    .location-container {
+        display: flex;
+            gap: .5em;
+    }
+        .exp_city {
+        }
+        .location-container img {
+            max-width: var(--icon);
+        }
+    .duties-container {
+        padding: .75em;
+        min-width: 425px;
+        max-width: 425px;
+    }
+        .exp-summary {
+            position: relative;
+            padding: .25em 0;
+            text-wrap: wrap;
+        }
+        /* ⏪.exp-reverse⏪ */
+        .exp-reverse .exp-summary {
+            text-align: right;
+        }
+            .exp-summary::before,
+            .exp-summary::after {
+                content: "";
+                position: absolute;
+                right: 85%;
+                left: 0;
+                height: 1px;
+                background-color: black;
+            }
+                .exp-summary::before {
+                    top: 3%;
+                }
+                .exp-summary::after {
+                    bottom: 5%;
+                }
+            /* ⏪.exp-reverse⏪ */
+            .exp-reverse .exp-summary::before,
+            .exp-reverse .exp-summary::after {
+                right: 0;
+                left: 85%;
+            }
+        .duties-btn {
+            border: none;
+            margin-bottom: 1em;
+            padding: .125em;
+            font-weight: bold;
+            font-size: var(--text-md);
+        }
+        /* ⏪.exp-reverse⏪ */
+        .exp-reverse .duties-btn {
+            display: block;
+            margin-left: auto;
+        }
+        .duties-list {
+            list-style-type: none;
+            padding: .25em;
+            font-style: italic;
+        }
+        /* ⏪.exp-reverse⏪ */
+        .exp-reverse .duties-list {
+            display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+        }
+            .duties-list li {
+                position: relative;
+                text-transform: none;
+            }
+            .duties-list li:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 95%;
+                bottom: -1%;
+                height: 1px;
+                background-color: black;
+            }
+            /* ⏪.exp-reverse⏪ */
+            .exp-reverse .duties-list li:not(:last-child)::after {
+                left: 85%;
+                right: 0;
+            }
+/* ~education~ */
+#edu-container {
+    padding: .5em;
+    display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    max-height: 600px;
+    overflow-y: auto;
+}
+    .education {
+        border: 1px solid var(--border-soft);
+        border-radius: 15px;
+        display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+        padding: .5em;
+        width: 375px;
+    }
+        .edu-title {
+            display: inline-flex;
+            margin: .25em;
+            padding: .25em;
+            position: relative;
+        }
+            .edu-title::before,
+            .edu-title::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                left: 10%;
+                right: 10%;
+                max-width: 75%;
+                background-color: black;
+            }
+                .edu-title::before {
+                    top: 5%;
+                }
+                .edu-title::after {
+                    bottom: 5%;
+                }
+        .edu-degree {
+            text-decoration: underline;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            text-wrap: wrap;
+        }
+        .edu-date {
+            font-style: italic;
+            font-size: var(--text-xs);
+        }
 
 /* Aぁ translation button ぁA */
 #translator {
