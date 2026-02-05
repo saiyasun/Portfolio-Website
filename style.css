@@ -99,7 +99,6 @@ nav {
     right: 28px;
     z-index: 1000;
 }
-
     #main-nav ul {
         border-radius: 7px;
         margin: 0;
@@ -112,6 +111,20 @@ nav {
         letter-spacing: var(--track-nav);
         font-weight: var(--w-medium);
     }
+    .main-nav_active {
+        position: relative;
+    }
+        .main-nav_active::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%);
+            bottom: 5%;
+            height: 1px;
+            width: 75%;
+            background-color: black;
+        }
     #main-nav a:hover {
         font-weight: bold;
     }
