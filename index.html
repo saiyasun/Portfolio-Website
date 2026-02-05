@@ -157,7 +157,7 @@
     <!-- 🤹Skills🤹 -->
     <section id="skills">
         <!-- ~human languages~ -->
-        <div id="hLanguages">
+        <div id="hLanguages" class="skills-subsection">
             <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
             <div id="languages">
                 <template></template> <!--ADD LATER!!!!-->
@@ -165,63 +165,86 @@
                     <div class="lang">
                         <!-- ~name & flag~ -->
                         <div class="lang-name-container">
-                            <span class="lang-name" data-i18n="skills.lang"></span>
-                            <img class="lang-flag">
+                            <span class="lang-name" data-i18n="skills.lang">mandarin chinese</span>
+                            <img class="lang-flag" src="images/icons/taiwan_flag.svg">
                         </div>
                         <!-- ~fluency~ -->
-                        <span class="fluency"></span>
+                        <span class="fluency">beginner</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ~technologies~ -->
-        <div id="technologies">
-            <h3 class="skills-title" data-i18n="skills.tech-title">Technologies</h3>
+        <div id="technologies" class="skills-subsection">
+            <h3 class="skills-title" id="tech-subtitle" data-i18n="skills.tech-title">Technologies</h3>
                 <nav id="tech-nav">
                     <ul>
-                        <li data-i18n="skills.category">by category</li>
-                            <hr>
-                        <li data-i18n="skills.all">all</li>
+                        <li class="tech-nav_active" data-i18n="skills.all"><a href="#tech-container-u">all</a></li>
+                        <li data-i18n="skills.category"><a href="#tech-container-o">by category</a></li>
                     </ul>
                 </nav>
                 <!-- ~unordered tech stack~ -->
-                <div id="tech-container-u">
+                <template></template> <!--ADD LATER!!!!-->
+                <div class="tech-container" id="tech-container-u">
                     <ul class="tech_stack" id="tech_stack-u">
-                        <template></template> <!--ADD LATER!!!!-->
-                        <li data-tech.category="design">
-                            <img class="tech-img">
+                        <li class="tech-item" data-tech.category="design">
+                            <img class="tech-img" src="images/icons/tech/figma.svg">
                             <span class="tech-name">Figma</span>
                         </li>
-                        <li data-tech.category="frotend">
-                            <img class="tech-img">
+                        <li class="tech-item" data-tech.category="frotend">
+                            <img class="tech-img" src="images/icons/tech/html.svg">
                             <span class="tech-name">HTML</span>
                         </li>
-                        <li data-tech.category="backend">
-                            <img class="tech-img">
+                        <li class="tech-item" data-tech.category="backend">
+                            <img class="tech-img" src="images/icons/tech/javascript.svg">
+                            <span class="tech-name">Javascript</span>
+                        </li>
+                        <li class="tech-item" data-tech.category="backend">
+                            <img class="tech-img" src="images/icons/tech/javascript.svg">
                             <span class="tech-name">Javascript</span>
                         </li>
                     </ul>
                 </div>
                 <!-- ~ordered tech stack~ -->
-                <div id="tech-container-o">
-                    <template></template> <!--ADD LATER!!!!-->
+                <template></template> <!--ADD LATER!!!!-->
+                <div class="tech-container" id="tech-container-o">
                     <div class="tech_cat-container" data-tech_cat-container="frontend">
-                        <div class="tech_cat-title"><span class="tech-title-o"></span><img></div>
+                        <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
                         <ul class="tech_stack tech_stack-o">
+                            <li class="tech-item" data-tech.category="design">
+                                <img class="tech-img" src="images/icons/tech/figma.svg">
+                                <span class="tech-name">Figma</span>
+                            </li>
+                            <li class="tech-item" data-tech.category="frotend">
+                                <img class="tech-img" src="images/icons/tech/html.svg">
+                                <span class="tech-name">HTML</span>
+                            </li>
+                            <li class="tech-item" data-tech.category="backend">
+                                <img class="tech-img" src="images/icons/tech/javascript.svg">
+                                <span class="tech-name">Javascript</span>
+                            </li>
+                            <li class="tech-item" data-tech.category="backend">
+                                <img class="tech-img" src="images/icons/tech/javascript.svg">
+                                <span class="tech-name">Javascript</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
         </div>
 
         <!-- ~certifications~ -->
-        <div id="certifications">
+        <template></template> <!--ADD LATER!!!!-->
+        <div id="certifications" class="skills-subsection">
             <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
                 <div id="cert-container">
-                    <template></template> <!--ADD LATER!!!!-->
                     <div class="cert">
-                        <span class="cert-name"></span>
-                        <span class="cert-date"></span>
+                        <div class="cert-frame"><span class="cert-name">my cert</span></div>
+                        <span class="cert-date">2026</span>
+                    </div>
+                    <div class="cert cert-reverse">
+                        <div class="cert-frame"><span class="cert-name">my cert</span></div>
+                        <span class="cert-date">2026</span>
                     </div>
                 </div>
 
