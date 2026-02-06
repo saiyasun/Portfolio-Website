@@ -17,10 +17,10 @@
         <ul>
             <li><a class="main-nav_active" href="#" data-i18n="nav.home">HOME</a></li>
             <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
-            <li><a data-i18n="nav.exp">EXPERIENCE</a></li>
-            <li><a data-i18n="nav.skills">SKILLS</a></li>
-            <li><a data-i18n="nav.projects">PROJECTS</a></li>
-            <li><a data-i18n="nav.contact">CONTACT</a></li>
+            <li><a href="#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">PROJECTS</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
             <hr id="main-nav_hr">
             <li><a href="docs/Asiah Crutchfield - Resume.pdf"><img class="icon" src="images/icons/resume-blk.svg" alt="resume"></a></li>
         </ul>
@@ -63,8 +63,8 @@
                 </p>
                     <div id="hero-links">
                         <ul>
-                            <li><a href="https://github.com/asiahcrutchfield"><img src="images/icons/github-blk.svg"></a></li>
-                            <li><a href="https://www.linkedin.com/in/asiahcrutchfield/"><img src="images/icons/linkedin-blk.svg"></a></li>
+                            <li><a href="https://github.com/asiahcrutchfield"><img src="images/icons/socials/github-blk.svg"></a></li>
+                            <li><a href="https://www.linkedin.com/in/asiahcrutchfield/"><img src="images/icons/socials/linkedin-blk.svg"></a></li>
                         </ul>
                         <a class="resume-label" href="docs/Asiah Crutchfield - Resume.pdf" data-i18n="hero.resume">RESUME</a>
                     </div>
@@ -74,144 +74,123 @@
 
     <!-- ??About?? -->
     <section id="about">
-        <!-- about nav -->
-        <nav>
-            <ul id="bio-navigation">
-                <li><a  href="#bio-section" class="bio_nav-is_active" data-i18n="aboutNav.about">about</a></li>
-                <li><a data-i18n="aboutNav.interests" href="#interests-section">interests</a></li>
-                <li><a data-i18n="aboutNav.media" href="#media-section">media</a></li>
-            </ul>
-        </nav>
-        <div id="about-container">
-            <!-- ~bio~ -->
-            <div id="bio-container" class="about-subsection">
-            <!-- pic & location -->
-            <div id="bio-section">
-                <img id="profile-pic" src="images/profile_pics/tulane_profile.jpg" alt="profile picture">
-                <div id="info-container">
-                    <div class="info-container" id="location">
-                        <img src="images/icons/location_pin-blk.svg" alt="location pin">
-                        <span> 
-                            <span data-i18n="about.city" id="city">Taoyuan</span>, 
-                            <span data-i18n="about.country" id="country">Taiwan</span> 
-                        </span>
-                    </div>
-                    <div class="info-container" id="about-email">
-                        <img src="images/icons/email-black.svg">
-                        <span id="email"><a>asiah@asiahcrutchfield.com</a></span>
+        <div class="section-inner" id="inner-about">
+            <!-- about nav -->
+            <nav>
+                <ul id="bio-navigation">
+                    <li><a  href="#bio-section" class="bio_nav-is_active" data-i18n="aboutNav.about">about</a></li>
+                    <li><a data-i18n="aboutNav.interests" href="#interests-section">interests</a></li>
+                    <li><a data-i18n="aboutNav.media" href="#media-section">media</a></li>
+                </ul>
+            </nav>
+            <div id="about-container">
+                <!-- ~bio~ -->
+                <div id="bio-container" class="about-subsection">
+                <!-- pic & location -->
+                <div id="bio-section">
+                    <img id="profile-pic" src="images/profile_pics/tulane_profile.jpg" alt="profile picture">
+                    <div id="info-container">
+                        <div class="info-container" id="location">
+                            <img src="images/icons/location_pin-blk.svg" alt="location pin">
+                            <span> 
+                                <span data-i18n="about.city" id="city">Taoyuan</span>, 
+                                <span data-i18n="about.country" id="country">Taiwan</span> 
+                            </span>
+                        </div>
+                        <div class="info-container" id="about-email">
+                            <img src="images/icons/email-black.svg">
+                            <span id="email"><a>asiah@asiahcrutchfield.com</a></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-                <!-- bio -->
-                <p id="bio">
-                    <span data-i18n="about.bio.intro" id="bio-intro">I’m Asiah Crutchfield (孫賽亞)</span> — 
-                    <span data-i18n="about.bio.suffix">a computer science student 
-                    passionate about exploring the intersection of learning, technology, 
-                    and creativity. I create digital projects and videos that experiment 
-                    with new ways of understanding the world and sharing knowledge.</span>
-                </p>
-            </div>
-        
-            <!-- ~interests~ -->
-            <div id="interests-sections" class="about-subsection">
-                <div id="interest-container">
+                    <!-- bio -->
+                    <p id="bio">
+                        <span data-i18n="about.bio.intro" id="bio-intro">I’m Asiah Crutchfield (孫賽亞)</span> — 
+                        <span data-i18n="about.bio.suffix">a computer science student 
+                        passionate about exploring the intersection of learning, technology, 
+                        and creativity. I create digital projects and videos that experiment 
+                        with new ways of understanding the world and sharing knowledge.</span>
+                    </p>
+                </div>
+            
+                <!-- ~interests~ -->
+                <div id="interests-sections" class="about-subsection">
+                    <div id="interest-container">
 
-                    <div id="interest-circle">
-                        <div id="workout" class="interest">
-                            <img src="images/icons/dumbbell.svg">
-                            <span class="interest-name" data-i18n="about.interest.workout">Working Out</span>
-                        </div>
-                            <div id="gaming" class="interest">
-                                <img src="images/icons/gaming.svg">
-                                <span class="interest-name" data-i18n="about.interest.gaming">Gaming</span>
+                        <div id="interest-circle">
+                            <div id="workout" class="interest">
+                                <img src="images/icons/dumbbell.svg">
+                                <span class="interest-name" data-i18n="about.interest.workout">Working Out</span>
                             </div>
-                        <div id="eating" class="interest">
-                            <img src="images/icons/eating-blk.svg">
-                            <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                                <div id="gaming" class="interest">
+                                    <img src="images/icons/gaming.svg">
+                                    <span class="interest-name" data-i18n="about.interest.gaming">Gaming</span>
+                                </div>
+                            <div id="eating" class="interest">
+                                <img src="images/icons/eating-blk.svg">
+                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                            </div>
+                                <div id="hiking" class="interest">
+                                    <img src="images/icons/hiking-blk.svg">
+                                    <span class="interest-name" data-i18n="about.interest.hiking">Hiking</span>
+                                </div>
                         </div>
-                            <div id="hiking" class="interest">
-                                <img src="images/icons/hiking-blk.svg">
-                                <span class="interest-name" data-i18n="about.interest.hiking">Hiking</span>
+                    </div>
+                </div>
+
+                <!-- ~pics & vids~ -->
+                <div id="media-section" class="about-subsection">
+                    <div id="media-container">
+                        <div id="vids">
+                            <h3 class="media-title" data-i18n="about.vidTitle">YouTube</h3>
+                            <div class="media" id="vid-container"></div>
+                        </div>
+                            <div id="pics">
+                                <h3 class="media-title" data-i18n="about.picTitle">Pics</h3>
+                                <div class="media" id="pic-container"></div>
                             </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ~pics & vids~ -->
-            <div id="media-section" class="about-subsection">
-                <div id="media-container">
-                    <div id="vids">
-                        <h3 class="media-title" data-i18n="about.vidTitle">YouTube</h3>
-                        <div class="media" id="vid-container"></div>
-                    </div>
-                        <div id="pics">
-                            <h3 class="media-title" data-i18n="about.picTitle">Pics</h3>
-                            <div class="media" id="pic-container"></div>
-                        </div>
-                </div>
             </div>
-
         </div>
     </section>
 
     <!-- 🤹Skills🤹 -->
     <section id="skills">
-        <!-- ~human languages~ -->
-        <div id="hLanguages" class="skills-subsection">
-            <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
-            <div id="languages">
-                <template></template> <!--ADD LATER!!!!-->
-                <div class="lang-progress">
-                    <div class="lang">
-                        <!-- ~name & flag~ -->
-                        <div class="lang-name-container">
-                            <span class="lang-name" data-i18n="skills.lang">mandarin chinese</span>
-                            <img class="lang-flag" src="images/icons/taiwan_flag.svg">
+        <div class="section-inner">
+            <!-- ~human languages~ -->
+            <div id="hLanguages" class="skills-subsection">
+                <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
+                <div id="languages">
+                    <template></template> <!--ADD LATER!!!!-->
+                    <div class="lang-progress">
+                        <div class="lang">
+                            <!-- ~name & flag~ -->
+                            <div class="lang-name-container">
+                                <span class="lang-name" data-i18n="skills.lang">mandarin chinese</span>
+                                <img class="lang-flag" src="images/icons/taiwan_flag.svg">
+                            </div>
+                            <!-- ~fluency~ -->
+                            <span class="fluency">beginner</span>
                         </div>
-                        <!-- ~fluency~ -->
-                        <span class="fluency">beginner</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- ~technologies~ -->
-        <div id="technologies" class="skills-subsection">
-            <h3 class="skills-title" id="tech-subtitle" data-i18n="skills.tech-title">Technologies</h3>
-                <nav id="tech-nav">
-                    <ul>
-                        <li class="tech-nav_active" data-i18n="skills.all"><a href="#tech-container-u">all</a></li>
-                        <li data-i18n="skills.category"><a href="#tech-container-o">by category</a></li>
-                    </ul>
-                </nav>
-                <!-- ~unordered tech stack~ -->
-                <template></template> <!--ADD LATER!!!!-->
-                <div class="tech-container" id="tech-container-u">
-                    <ul class="tech_stack" id="tech_stack-u">
-                        <li class="tech-item" data-tech.category="design">
-                            <img class="tech-img" src="images/icons/tech/figma.svg">
-                            <span class="tech-name">Figma</span>
-                        </li>
-                        <li class="tech-item" data-tech.category="frotend">
-                            <img class="tech-img" src="images/icons/tech/html.svg">
-                            <span class="tech-name">HTML</span>
-                        </li>
-                        <li class="tech-item" data-tech.category="backend">
-                            <img class="tech-img" src="images/icons/tech/javascript.svg">
-                            <span class="tech-name">Javascript</span>
-                        </li>
-                        <li class="tech-item" data-tech.category="backend">
-                            <img class="tech-img" src="images/icons/tech/javascript.svg">
-                            <span class="tech-name">Javascript</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- ~ordered tech stack~ -->
-                <template></template> <!--ADD LATER!!!!-->
-                <div class="tech-container" id="tech-container-o">
-                    <div class="tech_cat-container" data-tech_cat-container="frontend">
-                        <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
-                        <ul class="tech_stack tech_stack-o">
+            <!-- ~technologies~ -->
+            <div id="technologies" class="skills-subsection">
+                <h3 class="skills-title" id="tech-subtitle" data-i18n="skills.tech-title">Technologies</h3>
+                    <nav id="tech-nav">
+                        <ul>
+                            <li class="tech-nav_active" data-i18n="skills.all"><a href="#tech-container-u">all</a></li>
+                            <li data-i18n="skills.category"><a href="#tech-container-o">by category</a></li>
+                        </ul>
+                    </nav>
+                    <!-- ~unordered tech stack~ -->
+                    <template></template> <!--ADD LATER!!!!-->
+                    <div class="tech-container" id="tech-container-u">
+                        <ul class="tech_stack" id="tech_stack-u">
                             <li class="tech-item" data-tech.category="design">
                                 <img class="tech-img" src="images/icons/tech/figma.svg">
                                 <span class="tech-name">Figma</span>
@@ -230,31 +209,56 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-        </div>
-
-        <!-- ~certifications~ -->
-        <template></template> <!--ADD LATER!!!!-->
-        <div id="certifications" class="skills-subsection">
-            <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
-                <div id="cert-container">
-                    <div class="cert">
-                        <div class="cert-frame"><span class="cert-name">my cert</span></div>
-                        <span class="cert-date">2026</span>
+                    <!-- ~ordered tech stack~ -->
+                    <template></template> <!--ADD LATER!!!!-->
+                    <div class="tech-container" id="tech-container-o">
+                        <div class="tech_cat-container" data-tech_cat-container="frontend">
+                            <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
+                            <ul class="tech_stack tech_stack-o">
+                                <li class="tech-item" data-tech.category="design">
+                                    <img class="tech-img" src="images/icons/tech/figma.svg">
+                                    <span class="tech-name">Figma</span>
+                                </li>
+                                <li class="tech-item" data-tech.category="frotend">
+                                    <img class="tech-img" src="images/icons/tech/html.svg">
+                                    <span class="tech-name">HTML</span>
+                                </li>
+                                <li class="tech-item" data-tech.category="backend">
+                                    <img class="tech-img" src="images/icons/tech/javascript.svg">
+                                    <span class="tech-name">Javascript</span>
+                                </li>
+                                <li class="tech-item" data-tech.category="backend">
+                                    <img class="tech-img" src="images/icons/tech/javascript.svg">
+                                    <span class="tech-name">Javascript</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="cert cert-reverse">
-                        <div class="cert-frame"><span class="cert-name">my cert</span></div>
-                        <span class="cert-date">2026</span>
-                    </div>
-                </div>
+            </div>
 
+            <!-- ~certifications~ -->
+            <template></template> <!--ADD LATER!!!!-->
+            <div id="certifications" class="skills-subsection">
+                <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
+                    <div id="cert-container">
+                        <div class="cert">
+                            <div class="cert-frame"><span class="cert-name">my cert</span></div>
+                            <span class="cert-date">2026</span>
+                        </div>
+                        <div class="cert cert-reverse">
+                            <div class="cert-frame"><span class="cert-name">my cert</span></div>
+                            <span class="cert-date">2026</span>
+                        </div>
+                    </div>
+
+            </div>
         </div>
     </section>
 
     <!-- 🛠️Projects🛠️ -->
     <template></template> <!--ADD LATER!!!!-->
     <section id="projects">
-        <div id="projects-container">
+        <div class="section-inner" id="projects-container">
             <div class="project">
                 <div class="project_info-container">
                     <a class="p_img-link" href="www.github.com">
@@ -306,67 +310,69 @@
     <!-- 🎓👷Experience/Education🎓👷 -->
     <template></template> <!--ADD LATER!!!!-->
     <section id="experience">
-        <div class="exp_edu-container" id="exp-container">
-            <div class="exp">
-                <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
-                <div class="date-location">
-                    <div class="exp-date"> 
-                        <span class="start-date">2023</span>-<span class="end-date">2024</span> 
-                    </div>
-                    <div class="location-container">
-                        <img src="images/icons/location_pin-red.svg"> 
-                        <div class="exp_location">
-                            <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
-                            <span data-i18n="exp.country" class="exp_country">USA</span>
+        <div class="section-inner">
+            <div class="exp_edu-container" id="exp-container">
+                <div class="exp">
+                    <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
+                    <div class="date-location">
+                        <div class="exp-date"> 
+                            <span class="start-date">2023</span>-<span class="end-date">2024</span> 
+                        </div>
+                        <div class="location-container">
+                            <img src="images/icons/location_pin-red.svg"> 
+                            <div class="exp_location">
+                                <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
+                                <span data-i18n="exp.country" class="exp_country">USA</span>
+                            </div>
                         </div>
                     </div>
+                    <!-- ~summary & duties~ -->
+                    <div class="duties-container">
+                        <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
+                        <button class="duties-btn">+</button>
+                        <ul class="duties-list">
+                            <li data-i18n="exp.duty">This was one of my duties.</li>
+                            <li data-i18n="exp.duty">This was two of my duties.</li>
+                            <li data-i18n="exp.duty">This was three of my duties.</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- ~summary & duties~ -->
-                <div class="duties-container">
-                    <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
-                    <button class="duties-btn">+</button>
-                    <ul class="duties-list">
-                        <li data-i18n="exp.duty">This was one of my duties.</li>
-                        <li data-i18n="exp.duty">This was two of my duties.</li>
-                        <li data-i18n="exp.duty">This was three of my duties.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="exp exp-reverse">
-                <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
-                <div class="date-location">
-                    <div class="exp-date"> 
-                        <span class="start-date">2023</span>-<span class="end-date">2024</span> 
-                    </div>
-                    <div class="location-container">
-                        <img src="images/icons/location_pin-red.svg"> 
-                        <div class="exp_location">
-                            <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
-                            <span data-i18n="exp.country" class="exp_country">USA</span>
+                <div class="exp exp-reverse">
+                    <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
+                    <div class="date-location">
+                        <div class="exp-date"> 
+                            <span class="start-date">2023</span>-<span class="end-date">2024</span> 
+                        </div>
+                        <div class="location-container">
+                            <img src="images/icons/location_pin-red.svg"> 
+                            <div class="exp_location">
+                                <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
+                                <span data-i18n="exp.country" class="exp_country">USA</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- ~summary & duties~ -->
-                <div class="duties-container">
-                    <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
-                    <button class="duties-btn">+</button>
-                    <ul class="duties-list">
-                        <li data-i18n="exp.duty">This was one of my duties.</li>
-                        <li data-i18n="exp.duty">This was two of my duties.</li>
-                        <li data-i18n="exp.duty">This was three of my duties.</li>
-                    </ul>
+                    <!-- ~summary & duties~ -->
+                    <div class="duties-container">
+                        <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
+                        <button class="duties-btn">+</button>
+                        <ul class="duties-list">
+                            <li data-i18n="exp.duty">This was one of my duties.</li>
+                            <li data-i18n="exp.duty">This was two of my duties.</li>
+                            <li data-i18n="exp.duty">This was three of my duties.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="exp_edu-container" id="edu-container">
-            <template></template> <!--ADD LATER!!!!-->
-            <div class="education">
-                <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
-                <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
-                <div class="edu-date">
-                    <span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span>
-                    <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+            <div class="exp_edu-container" id="edu-container">
+                <template></template> <!--ADD LATER!!!!-->
+                <div class="education">
+                    <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
+                    <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
+                    <div class="edu-date">
+                        <span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span>
+                        <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -374,24 +380,48 @@
 
     <!-- ✉️Contact✉️ -->
     <section id="contact">
-        <div id="contact-container">
+        <div class="section-inner" id="contact-container">
             <!-- ~email & resume~ -->
-            <div id="reach-out">
-                <h4 id="reach-out_title" data-i18n="contact.reach-out-title">Reach Out</h4>
+            <div class="reach_connect" id="reach-out">
+                <div class="contact_title-container">
+                    <h4 class="reach_connect-title" id="reach-out_title" data-i18n="contact.reach-out-title">Reach Out</h4>
+                    <img src="images/icons/contact.svg">
+                </div>
                 <div id="reach-out-container">
-                    <div id="contact-email"><a><img></a></div>
-                    <div id="contact-resume-cotainer">
-                        <img>
-                        <span id="contact-resume" data-i18n="contact.resume">Resume</span>
+                    <div id="contact-email">
+                        <a href="mailto: asiah@asiahcrutchfield.com">
+                            <img src="images/icons/email-black.svg"></a>
                     </div>
+                    <a id="contact_resume-link" href="docs/Asiah Crutchfield - Resume.pdf">
+                        <div id="contact-resume-cotainer">
+                            <img src="images/icons/resume-blk.svg">
+                            <span id="contact-resume" data-i18n="contact.resume">Resume</span>
+                        </div>
+                    </a>
                 </div>
             </div>
             <!-- ~social media~ -->
-            <div id="connect">
-                <h4 id="connect-title" data-i18n="contact.connect-title">Connect</h4>
+            <div class="reach_connect" id="connect">
+                <div class="contact_title-container">
+                    <h4 class="reach_connect-title" id="connect-title" data-i18n="contact.connect-title">Connect</h4>
+                    <img src="images/icons/social_media-1.svg">
+                </div>
                 <template></template> <!--ADD LATER!!!!-->
-                <div id="connect-links-container">
-                    <div class="connect-link"><a><img></a></div>
+                <div id="link_position-container">
+                    <div id="connect-links-container">
+                        <a class="connect-link">
+                            <img src="images/icons/socials/github-blk.svg">
+                        </a>
+                        <a class="connect-link">
+                            <img src="images/icons/socials/linkedin-blk.svg">
+                        </a>
+                        <a class="connect-link">
+                            <img src="images/icons/socials/youtube.svg">
+                        </a>
+                        <a class="connect-link">
+                            <img src="images/icons/socials/twitter-x.svg">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

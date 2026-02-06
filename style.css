@@ -29,6 +29,7 @@
   --icon: 28px;
   --icon-med: 32px;
   --icon-lg: 40px;
+  --icon-xl: 48px;
 
   /* Images */
   --pics: 300px;
@@ -38,6 +39,9 @@
   --track-label: 0.08em;
 }
 
+* {
+    box-sizing: border-box;
+}
 html {
   font-size: 16px; /* baseline */
 }
@@ -57,7 +61,7 @@ a {
     text-decoration: none;
 } 
 section {
-    padding: 28px;
+    padding: 3em 28px;
 }
     /*📱 section (mobile) 📱*/
     @media (max-width: 768px) {
@@ -65,6 +69,13 @@ section {
             padding: .5em;
         }
     }
+.section-inner {
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+        justify-content: center;
+}
 img {
     max-width: 100px;
 }
@@ -343,7 +354,7 @@ nav {
             font-size: var(--text-md); /* 16px */
         }
     }
-    @media (min-width: 769px) and (max-width: 1406px) {
+    @media (min-width: 769px) and (max-width: 1287px) {
         /* English */
         #en-name{
             text-align: center;
@@ -377,10 +388,11 @@ nav {
 #about {
     display: flex;
         justify-content: center;
-        gap: 2em;
 }
+    #inner-about {
+        gap: 5em;
+    }
 .about-subsection {
-    padding: 2em;
     display: flex;
         align-items: center;
         justify-content: center;
@@ -823,12 +835,12 @@ nav {
             padding: .25em;
         }
             .p_img-link {
-                border: 2px solid blue;
                 display: flex;
                     align-items: center;
                     justify-content: center;
             }
                 .project-img {
+                    outline: 2px solid rgba(60, 60, 252, 0.75);
                     max-width: 200px;
                     aspect-ratio: 1/1;
                     border-radius: 50%;
@@ -1072,6 +1084,158 @@ nav {
             font-style: italic;
             font-size: var(--text-xs);
         }
+
+/* ✉️Contact✉️ */
+#contact {
+    
+}
+#contact-container {
+    padding: .5em;
+    display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2em;
+}
+    .reach_connect {
+        padding: .5em;
+        min-width: 200px;
+        display: flex;
+            flex-direction: column;
+            gap: .5em;
+    }
+        .contact_title-container {
+            width: 100%;
+            display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: .5em;
+            margin-bottom: 1em;
+        }
+            .contact_title-container img {
+                width: var(--icon);
+            }
+            .reach_connect-title {
+                display: inline;
+                padding: .25em .25em .25em 0;
+                position: relative;
+                margin: 0;
+                width: fit-content;
+            }
+                .reach_connect-title::after {
+                    content: "";
+                    position: absolute;
+                    right: 50%;
+                    left: 0;
+                    height: 1px;
+                    background-color: black;
+                    bottom: 5%;
+                }
+    #reach-out-container {
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+        padding: .5em;
+    }
+        #contact-email {
+            border: 1px solid black;
+            border-radius: 50%;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+            aspect-ratio: 1/1;
+            width: calc(var(--icon-xl) + 2em);
+        }
+            #contact-email img {
+                width: var(--icon-xl);
+            }
+            #contact-email a {
+                border-radius: 50%;
+                width: 100%;
+                aspect-ratio: 1/1;
+            }
+        #contact-resume-cotainer {
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .5em 1em;
+            gap: .5em;
+        }
+            #contact-resume-cotainer img {
+                width: var(--icon);
+            }
+            #contact_resume-link {
+                border-radius: 10px;
+                padding: 0;
+            }
+/* ~socials~ */
+#connect {
+    display: flex;
+        align-items: center;
+    width: var(--contact-width);
+    aspect-ratio: 1/1;
+    --contact-width: 300px;
+    --circle-size: 100px;
+    --icon-radius: calc(var(--icon)/2);
+    --circle-radius: calc(var(--circle-size)/2);
+}
+#link_position-container {
+    display: flex;
+     align-items: center;
+     justify-content: center;
+    width: var(--contact-width);
+    padding: .5em;
+}
+    #connect-links-container {
+        --radius: calc(var(--circle-radius) - 3px);
+        border-radius: 50%;
+        position: relative;
+        width: var(--circle-size);
+        aspect-ratio: 1/1;
+    }
+        .connect-link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--icon);
+            aspect-ratio: 1/1;
+            padding: 0;
+            transform-origin: center;
+        }
+            .connect-link:nth-child(1) {
+                transform: 
+                    translate(-50%, -50%)
+                    rotate(0deg)
+                    translate(var(--radius))
+                    rotate(0deg);
+            }
+            .connect-link:nth-child(2) {
+                transform: 
+                    translate(-50%, -50%)
+                    rotate(180deg)
+                    translateX(var(--radius))
+                    rotate(-180deg);
+            }
+            .connect-link:nth-child(3) {
+                transform: 
+                    translate(-50%, -50%)
+                    rotate(270deg)
+                    translateX(var(--radius))
+                    rotate(-270deg);
+            }
+            .connect-link:nth-child(4) {
+                transform: 
+                    translate(-50%, -50%)
+                    rotate(90deg)
+                    translateX(var(--radius))
+                    rotate(-90deg);
+            }
+            .connect-link img {
+                width: 100%;
+                box-sizing: border-box;
+            }
 
 /* Aぁ translation button ぁA */
 #translator {
