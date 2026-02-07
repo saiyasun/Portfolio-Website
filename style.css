@@ -79,12 +79,19 @@ section {
         justify-content: center;
 }
     /*📱 .section-inner (mobile) 📱*/
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         .section-inner {
             padding: 2em .5em;
             flex-direction: column;
                 justify-content: center;
                 align-items: center;
+            max-width: 550px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .section-inner {
+            width: 100%;
+            max-width: 700px;
         }
     }
 img {
@@ -224,7 +231,7 @@ nav {
 /* SECTIONS */
 /* !Hero! */
 #hero {
-    min-height: 60dvh;
+    min-height: 80dvh;
     display: flex;
         align-items: center;
 }
@@ -356,6 +363,7 @@ nav {
         #hero-container {
             padding: .5em;
             flex-direction: column;
+            max-width: 675px;
         }
         #hero-intro1_container, #hero-intro2_container {
             width: 100%;
@@ -602,7 +610,7 @@ nav {
             width: var(--icon);
         }
 /* 📱 👨🏾About👨🏾-mobile/tablet 📱 */
-@media (min-width: 750px) and (max-width: 1024px) {
+@media (min-width: 700px) and (max-width: 1024px) {
     .about-subsection {
         flex-direction: column;
         padding: .25em .5em;
@@ -610,7 +618,7 @@ nav {
         width: 100%;
     }
 }
-@media (max-width: 650px) {
+@media (max-width: 699px) {
     .about-subsection {
         flex-direction: column;
         padding: .25em .5em;
@@ -774,6 +782,7 @@ nav {
     }
 .skills-subsection {
     padding: .5em;
+    width: 100%;
 }
 .skills-title {
     padding: .25em;
@@ -892,6 +901,12 @@ nav {
                 width: 75%;
                 background-color: black;
             }
+    #u_o_tech-container {
+        display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+    }
     .tech_stack {
         list-style-type: none;
     }
@@ -986,8 +1001,6 @@ nav {
                     align-items: center;
                     justify-content: center;
                 padding: .25em .125em;
-                min-width: 100px;
-                max-width: 175px;
                 text-wrap: wrap;
             }
                 .cert-name::before,
@@ -1009,7 +1022,13 @@ nav {
                 }
             .cert-frame {
                 outline: 1px solid black;
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
                 padding: .25em .125em;
+                min-width: 100px;
+                max-width: 250px;
+                width: 100%;
             }
             .cert-date {
                 display: flex;
@@ -1019,29 +1038,34 @@ nav {
                 font-size: var(--text-xs);
             }
 /* 📱 🤹Skills🤹-mobile/tablet 📱 */
-@media (max-width: 768px) {
+@media (min-width: 700px) and (max-width: 1024px) {
+    .tech-container {
+        max-width: 650px;
+        width: 100%;
+    }
+}
+@media (max-width: 699px) {
+    .tech-container {
+        max-width: 375px;
+        width: 100%
+    }
+}
+@media (max-width: 1024px) {
     #skills {
         padding: 0;
     }
         #skills-inner {
             gap: 1.5em;
+            flex-direction: column;
         }
     #technologies {
         
-    }
-    .tech-container {
-        width: 100%;
-        max-width: 100%;
     }
     .skills-subsection {
         width: 100%;
         padding: .5em;
     }
     .tech_stack-o {
-        width: 100%;
-        max-width: 100%;
-    }
-    #tech-container-u {
         width: 100%;
         max-width: 100%;
     }
@@ -1332,8 +1356,9 @@ nav {
             align-items: flex-start;
             justify-content: center;
             flex-direction: column;
-        padding: .5em;
+        padding: .5em 1em;
         width: 375px;
+        max-width: 400px;
     }
         .edu-title {
             display: inline-flex;
@@ -1428,10 +1453,17 @@ nav {
                 align-items: flex-start;
                 justify-content: center;
                 flex-direction: column;
-            padding: .5em;
-            width: 100%;
-            max-width: 100%;
         }
+}
+@media (max-width: 1024px) {
+    #exp-inner {
+        flex-direction: column;
+    }
+}
+@media (max-width: 350px) {
+    .education {
+        max-width: 275px;
+    }
 }
 
 /* ✉️Contact✉️ */
@@ -1590,7 +1622,7 @@ nav {
                 box-sizing: border-box;
             }
 /* 📱 ✉️Contact✉️-mobile/tablet 📱 */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #contact {
         
     }
