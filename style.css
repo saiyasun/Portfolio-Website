@@ -261,6 +261,7 @@ nav {
         }
             .intro-name {
                 font-size: var(--text-hero);
+                text-transform: uppercase;
             }
             /* English */
             #en-name{
