@@ -41,6 +41,14 @@
   --track-label: 0.08em;
 }
 
+/* Classes */
+.is_hidden {
+    display: none !important; 
+}
+.is_active {
+    display: block;
+}
+
 * {
     box-sizing: border-box;
 }

@@ -24,7 +24,7 @@
             <li><a href="#projects" data-i18n="nav.projects">PROJECTS</a></li>
             <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
             <hr id="main-nav_hr">
-            <li><a href="docs/Asiah Crutchfield - Resume.pdf"><img class="icon" src="images/icons/resume-blk.svg" alt="resume"></a></li>
+            <li><a href="docs/Asiah Crutchfield - Resume.pdf" data-static><img class="icon" src="images/icons/resume-blk.svg" alt="resume"></a></li>
         </ul>
     </nav>
         <!--~mobile nav bar~-->
@@ -79,14 +79,14 @@
             <!-- about nav -->
             <nav>
                 <ul id="bio-navigation" class="glass-nav">
-                    <li><a  href="#bio-section" class="nav_active" data-i18n="aboutNav.about">about</a></li>
+                    <li><a href="#bio-container" class="nav_active" data-i18n="aboutNav.about">about</a></li>
                     <li><a data-i18n="aboutNav.interests" href="#interests-section">interests</a></li>
                     <li><a data-i18n="aboutNav.media" href="#media-section">media</a></li>
                 </ul>
             </nav>
-            <div id="about-container">
+            <div id="about-container" class="about-subsection">
                 <!-- ~bio~ -->
-                <div id="bio-container" class="about-subsection">
+                <div id="bio-container">
                 <!-- pic & location -->
                 <div id="bio-section">
                     <div id="profile_pic-container">
@@ -127,7 +127,7 @@
                 </div>
             
                 <!-- ~interests~ -->
-                <div id="interests-sections" class="about-subsection">
+                <div id="interests-section" class="about-subsection is_hidden">
                     <div id="interest-container">
 
                         <div id="interest-circle">
@@ -152,7 +152,7 @@
                 </div>
 
                 <!-- ~pics & vids~ -->
-                <div id="media-section" class="about-subsection">
+                <div id="media-section" class="about-subsection is_hidden">
                     <div id="media-container">
                         <div id="vids">
                             <div class="media_title-container">
@@ -231,7 +231,7 @@
                         </div>
                         <!-- ~ordered tech stack~ -->
                         <template></template> <!--ADD LATER!!!!-->
-                        <div class="tech-container" id="tech-container-o">
+                        <div class="tech-container is_hidden" id="tech-container-o">
                             <div class="tech_cat-container" data-tech_cat-container="frontend">
                                 <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
                                 <ul class="tech_stack tech_stack-o">
@@ -323,9 +323,9 @@
                 </div>
                 <div class="project_link-container">
                     <ul class="project-links">
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/github-blk.svg"></a></li>
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/github-blk.svg"></a></li>
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/github-blk.svg"></a></li>
+                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
+                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
+                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
                     </ul>
                 </div>
             </div>
