@@ -1,0 +1,99 @@
+{
+    "skills": 
+    {
+        "languages": 
+        [
+            {
+            "lang": "English",
+            "fluency": 4,
+            "flag": "american_flag.svg"
+            },
+            {
+            "lang": "Mandarin Chinese",
+            "fluency": 0,
+            "flag": "taiwan_flag.svg"
+            }
+        ],
+
+        "technologies":
+        [
+            {
+            "img": "figma.svg",
+            "name": "Figma",
+            "category": 0
+            },
+            {
+            "img": "html.svg",
+            "name": "HTML",
+            "category": 2
+            }
+        ],
+
+        "certifications":
+        [
+            
+        ]
+    },
+
+    "projects": 
+    {
+
+    },
+
+    "exp_edu":
+    {
+        "experience":
+        [
+            {
+            "title": "Tulane Technology Connection",
+            "start_date": 2023,
+            "end_date": 2024,
+            "city": "New Orleans",
+            "country": "USA",
+            "summary": "",
+            "duties": 
+                [
+                "Gathered and submitted Excel reports to major companies such as Apple.",
+                "Used the PIMS POS system for sales, quotes receiving and creating purchase orders.",
+                "Guided students and faculty in making technology purchase decisions for Mac, iPad and Dell products.",
+                "Gained solid comprehension of various Macintosh models and Dell laptops."
+                ]
+            },
+            {
+            "title": "Pontchartrain Partners",
+            "start_date": 2017,
+            "end_date": 2022,
+            "city": "New Orleans",
+            "country": "USA",
+            "summary": "",
+            "duties": 
+                [
+                "Maintained cleanliness and orderliness of both inside and outside of the building by cutting grass, collecting trash and debris around the building, cleaning restrooms, caring for plants, and mopping floors.",
+                "Performed light maintenance such as fixing leaking toilets."
+                ]
+            },
+            {
+            "title": "Canal Street Veterinary Hospital",
+            "start_date": 2015,
+            "end_date": 2017,
+            "city": "New Orleans",
+            "country": "USA",
+            "summary": "",
+            "duties": 
+                [
+                "Cared for sick and injured dogs and cats by feeding, walking, and bathing them.",
+                "Assisted doctor in exams and surgeries."
+                ]
+            }
+        ],
+
+        "education":
+        [
+            {
+            "title": "Yuan Ze University",
+            "degree": "International Bachelor's of Informatics",
+            "est_date": 2028
+            }
+        ]
+    }
+}

@@ -38,6 +38,12 @@ function toggleSection(nav, div) {
     })
 }
 
+// clones template
+function mkTemplate(template, container) {
+    const content = template.content.cloneNode(true)
+    container.appendChild(content)
+}
+
 // •nav•
 const mainNav = document.querySelectorAll("#main-nav a:not([data-static])")
 const mobileNav = document.querySelectorAll(".nav-rail a")
@@ -59,15 +65,34 @@ activeSelect(aboutNav, activeLink); // make clicked link active
 toggleSection(aboutNav, aboutSubSections); 
 
 // 🤹Skills🤹
+// ~languages~
+const fluencyLevels = ["beginner", "intermediate", "advanced", "native"]
+// !~language template~!
+const langTemplate = document.getElementById("lang_template")
+const langContainer = document.getElementById("languages")
+
 // ~tech~
 const techNav = document.querySelectorAll("#tech-nav a")
 const techSubSections = document.querySelectorAll(".tech-container")
 const activeTechLink = "tech-nav_active"
+const techCats = ["design", "backend", "frontend"]
 
 activeSelect(techNav, activeTechLink); // make clicked link active
 toggleSection(techNav, techSubSections); 
 
+// !~tech template~!
+const techTemplate = document.getElementById("tech_template")
+const techContainerU = document.getElementById("tech_stack-u") // unordered
+const techContainerO = document.querySelectorAll(".tech_cat-container") // ordered
+
+// !~certs template~!
+const certTemplate = document.getElementById("cert_template")
+const certContainer = document.getElementById("cert-container")
+
 // 🛠️Projects🛠️
+// !~projects template~!
+const projTemplate = document.getElementById("project_template")
+const projContainer = document.getElementById("projects-container")
 
 // 🎓👷Experience/Education🎓👷
 const dutyBtn = document.querySelectorAll(".duties-btn")
@@ -81,6 +106,14 @@ dutyBtn.forEach(btn => {
         list.classList.toggle(hideClass)
     })
 })
-    
+
+// !~experience template~!
+const expjTemplate = document.getElementById("exp_template")
+const expContainer = document.getElementById("exp-container")
+const expReverseClass = "exp-reverse"
+
+// !~education template~!
+const eduTemplate = document.getElementById("edu_template")
+const eduContainer = document.getElementById("edu-container")
 
 // ✉️Contact✉️

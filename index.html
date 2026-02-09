@@ -180,19 +180,23 @@
             <!-- ~human languages~ -->
             <div id="hLanguages" class="skills-subsection">
                 <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
-                <div id="languages">
-                    <template></template> <!--ADD LATER!!!!-->
-                    <div class="lang-progress">
-                        <div class="lang">
-                            <!-- ~name & flag~ -->
-                            <div class="lang-name-container">
-                                <span class="lang-name" data-i18n="skills.lang">mandarin chinese</span>
-                                <img class="lang-flag" src="images/icons/taiwan_flag.svg">
+
+                <!--LANG TEMPLATE-->
+                    <template id="lang_template">
+                        <div class="lang-progress">
+                            <div class="lang">
+                                <!-- ~name & flag~ -->
+                                <div class="lang-name-container">
+                                    <span class="lang-name" data-i18n="skills.lang"></span>
+                                    <img class="lang-flag" src='#'>
+                                </div>
+                                <!-- ~fluency~ -->
+                                <span class="fluency"></span>
                             </div>
-                            <!-- ~fluency~ -->
-                            <span class="fluency">beginner</span>
                         </div>
-                    </div>
+                    </template> 
+                <div id="languages">
+                    <!-- append here -->
                 </div>
             </div>
 
@@ -205,116 +209,69 @@
                             <li data-i18n="skills.category"><a href="#tech-container-o">by category</a></li>
                         </ul>
                     </nav>
-                    <template></template> <!--ADD LATER!!!!-->
+
+                        <!--TECH TEMPLATE-->
+                            <template id="tech_template">
+                                <li class="tech-item" id="" data-tech.category="">
+                                    <img class="tech-img" src="">
+                                    <span class="tech-name"></span>
+                                </li>
+                            </template> 
                     <div id="u_o_tech-container">
                         <!-- ~unordered tech stack~ -->
                         <div class="tech-container" id="tech-container-u">
                             <ul class="tech_stack" id="tech_stack-u">
-                                <li class="tech-item" data-tech.category="design">
-                                    <img class="tech-img" src="images/icons/tech/figma.svg">
-                                    <span class="tech-name">Figma</span>
-                                </li>
-                                <li class="tech-item" data-tech.category="frotend">
-                                    <img class="tech-img" src="images/icons/tech/html.svg">
-                                    <span class="tech-name">HTML</span>
-                                </li>
-                                <li class="tech-item" data-tech.category="backend">
-                                    <img class="tech-img" src="images/icons/tech/javascript.svg">
-                                    <span class="tech-name">Javascript</span>
-                                </li>
-                                <li class="tech-item" data-tech.category="backend">
-                                    <img class="tech-img" src="images/icons/tech/javascript.svg">
-                                    <span class="tech-name">Javascript</span>
-                                </li>
+                                <!-- append here -->
                             </ul>
                         </div>
                         <!-- ~ordered tech stack~ -->
-                        <template></template> <!--ADD LATER!!!!-->
                         <div class="tech-container is_hidden" id="tech-container-o">
                             <div class="tech_cat-container" data-tech_cat-container="frontend">
                                 <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
-                                <ul class="tech_stack tech_stack-o">
-                                    <li class="tech-item" data-tech.category="design">
-                                        <img class="tech-img" src="images/icons/tech/figma.svg">
-                                        <span class="tech-name">Figma</span>
-                                    </li>
-                                    <li class="tech-item" data-tech.category="frotend">
-                                        <img class="tech-img" src="images/icons/tech/html.svg">
-                                        <span class="tech-name">HTML</span>
-                                    </li>
-                                    <li class="tech-item" data-tech.category="backend">
-                                        <img class="tech-img" src="images/icons/tech/javascript.svg">
-                                        <span class="tech-name">Javascript</span>
-                                    </li>
-                                    <li class="tech-item" data-tech.category="backend">
-                                        <img class="tech-img" src="images/icons/tech/javascript.svg">
-                                        <span class="tech-name">Javascript</span>
-                                    </li>
-                                </ul>
+                                    <ul class="tech_stack tech_stack-o" id="tech-design">
+                                        <!-- append here -->
+                                    </ul>
+                            </div>
+
+                            <div class="tech_cat-title"><span class="tech-title-o">backend</span><img src="images/icons/tech/design.svg"></div>
+                                    <ul class="tech_stack tech_stack-o" id="tech-design">
+                                        <!-- append here -->
+                                    </ul>
                             </div>
                         </div>
                     </div>
-            </div>
 
             <!-- ~certifications~ -->
-            <template></template> <!--ADD LATER!!!!-->
+             
+            <!--CERT TEMPLATE-->
+                <template id="cert_template">
+                    <div class="cert">
+                        <div class="cert-frame"><span class="cert-name">my cert</span></div>
+                        <span class="cert-date">2026</span>
+                    </div>
+                </template> 
             <div id="certifications" class="skills-subsection">
                 <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
                     <div id="cert-container">
-                        <div class="cert">
-                            <div class="cert-frame"><span class="cert-name">my cert</span></div>
-                            <span class="cert-date">2026</span>
-                        </div>
-                        <div class="cert cert-reverse">
-                            <div class="cert-frame"><span class="cert-name">my cert</span></div>
-                            <span class="cert-date">2026</span>
-                        </div>
+                        <!-- append here -->
                     </div>
-
             </div>
         </div>
     </section>
 
     <!-- 🛠️Projects🛠️ -->
-    <template></template> <!--ADD LATER!!!!-->
-    <section id="projects">
-        <div class="section-inner" id="projects-container">
+
+    <!--PROJECT TEMPLATE-->
+        <template id="project_template">
             <div class="project">
                 <div class="project_info-container">
-                    <a class="p_img-link" href="www.github.com">
-                        <img class="project-img" src="https://placehold.co/600x400/000000/FFFFFF/png">
+                    <a class="p_img-link" href="">
+                        <img class="project-img" src="">
                     </a>
                     <div class="project-info">
-                        <h4 class="project-title">My Project</h4>
+                        <h4 class="project-title"></h4>
                         <div class="desc-container">
                             <p class="project-desc" data-i18n="project.desc">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Esse perferendis vero maxime cumque. Rem dolores aspernatur, 
-                                distinctio omnis doloremque similique blanditiis nam mollitia. 
-                                Sunt tempore eveniet laborum repellendus vel odit?
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project_link-container">
-                    <ul class="project-links">
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
-                    </ul>
-                    <span class="project-extra"></span>
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project_info-container">
-                    <img class="project-img" src="https://placehold.co/600x400/000000/FFFFFF/png">
-                    <div class="project-info">
-                        <h4 class="project-title">My Project</h4>
-                        <div class="desc-container">
-                            <p class="project-desc" data-i18n="project.desc">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                                Esse perferendis vero maxime cumque. Rem dolores aspernatur, 
                                 
                             </p>
                         </div>
@@ -322,20 +279,24 @@
                 </div>
                 <div class="project_link-container">
                     <ul class="project-links">
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
-                        <li><a href="www.github.com"><img class="p_link-img" src="images/icons/socials/github-blk.svg"></a></li>
+                        <li><a href=""><img class="p_link-img" src="i"></a></li>
                     </ul>
+                    <span class="project-extra"></span>
                 </div>
             </div>
+        </template> 
+    <section id="projects">
+        <div class="section-inner" id="projects-container">
+            <!-- append here -->
         </div>
     </section>
 
     <!-- 🎓👷Experience/Education🎓👷 -->
-    <template></template> <!--ADD LATER!!!!-->
     <section id="experience">
         <div class="section-inner" id="exp-inner">
-            <div class="exp_edu-container" id="exp-container">
+
+        <!--EXPERIENCE TEMPLATE-->
+            <template id="exp_template">
                 <div class="exp">
                     <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
                     <div class="date-location">
@@ -361,43 +322,24 @@
                         </ul>
                     </div>
                 </div>
-
-                <div class="exp exp-reverse">
-                    <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
-                    <div class="date-location">
-                        <div class="exp-date"> 
-                            <span class="start-date">2023</span>-<span class="end-date">2024</span> 
-                        </div>
-                        <div class="location-container">
-                            <img src="images/icons/location_pin-red.svg"> 
-                            <div class="exp_location">
-                                <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
-                                <span data-i18n="exp.country" class="exp_country">USA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ~summary & duties~ -->
-                    <div class="duties-container">
-                        <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
-                        <button class="duties-btn">+</button>
-                        <ul class="duties-list is_hidden">
-                            <li data-i18n="exp.duty">This was one of my duties.</li>
-                            <li data-i18n="exp.duty">This was two of my duties.</li>
-                            <li data-i18n="exp.duty">This was three of my duties.</li>
-                        </ul>
-                    </div>
-                </div>
+            </template> 
+            <div class="exp_edu-container" id="exp-container">
+                <!-- append here -->
             </div>
-            <div class="exp_edu-container" id="edu-container">
-                <template></template> <!--ADD LATER!!!!-->
-                <div class="education">
-                    <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
-                    <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
-                    <div class="edu-date">
-                        <span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span>
-                        <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+
+            <!--EXPERIENCE TEMPLATE-->
+                <template id="edu_template">
+                    <div class="education">
+                        <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
+                        <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
+                        <div class="edu-date">
+                            <span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span>
+                            <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+                        </div>
                     </div>
-                </div>
+                </template>
+            <div class="exp_edu-container" id="edu-container">
+                <!-- append here -->
             </div>
         </div>
     </section>
