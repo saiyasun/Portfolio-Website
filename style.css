@@ -884,6 +884,12 @@ nav {
             text-transform: lowercase;
             padding: .25em;
         }
+        #tech-nav li {
+            
+        }
+        #tech-nav ul {
+            position: relative;
+        }
         #tech-nav a {
             padding: 0;
         }
@@ -891,7 +897,6 @@ nav {
                 content: "|";
                 position: absolute;
                 left: 22%;
-                right: 0;
             }
             .tech-nav_active {
                 position: relative;
@@ -900,8 +905,9 @@ nav {
                 content: "";
                 position: absolute;
                 bottom: 1%;
+                left: 0;
+                right: 25%;
                 height: 1px;
-                width: 75%;
                 background-color: black;
             }
     #u_o_tech-container {
