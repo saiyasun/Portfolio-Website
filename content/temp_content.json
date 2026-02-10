@@ -5,7 +5,7 @@
         [
             {
             "lang": "English",
-            "fluency": 4,
+            "fluency": 3,
             "flag": "american_flag.svg"
             },
             {
@@ -36,9 +36,9 @@
     },
 
     "projects": 
-    {
-
-    },
+    [
+        
+    ],
 
     "exp_edu":
     {

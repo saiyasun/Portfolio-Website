@@ -813,6 +813,8 @@ nav {
         display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            gap: 1em;
         padding: .5em;
         width: 100%;
     }
@@ -845,6 +847,7 @@ nav {
                 gap: .5em;
             width: 100%;
             margin-bottom: .5em;
+            margin-top: .25em;
             box-sizing: border-box;
         }
             .lang-name {
@@ -955,6 +958,7 @@ nav {
         display: flex;
             align-items: flex-start;
             flex-direction: column;
+            gap: 1em;
         max-height: 500px;
         overflow-y: auto;
     }
@@ -1045,6 +1049,7 @@ nav {
                     justify-content: center;
                 padding: .125em;
                 font-size: var(--text-xs);
+                text-align: center;
             }
 /* 📱 🤹Skills🤹-mobile/tablet 📱 */
 @media (min-width: 700px) and (max-width: 1024px) {
