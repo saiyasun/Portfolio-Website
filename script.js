@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // UNIVERSAL
 const htmlTitle = document.title;
 const zhName = document.querySelector(".zh-name").textContent;
@@ -5,10 +6,52 @@ let enName = document.querySelector("#en-name").textContent;
     const firstLast = enName.split(" ")
     if (enName.includes(zhName)) {
         enName = enName.replace(zhName, "").trim()
+=======
+// ** UNIVERSAL **
+let defaultLang = 'en';
+const translateBtn = document.getElementById("button_translate");
+const ogTranslateText = translateBtn.textContent
+// **   **
+
+// ~~ TITLE ~~
+const titleNameEn = 'Asiah Crutchfield'
+const titleNameZh = '孫賽亞'
+const title = document.title
+
+function switchTitle (lang) {
+    if (lang == 'zh') {
+        document.title = `${titleNameZh} | ${titleNameEn}`
+    } else {
+        document.title = title
+    }
+}
+// ~~ ~~
+
+// || HERO SECTION || 
+// Switch names
+function switchNames (lang) { // switch names when changing languages
+    const enName = document.getElementById('hero_en-name');
+    const zhName = document.getElementById('hero_zh-name');
+    const langName = lang.toLowerCase();
+
+    if (langName.startsWith('en')) {
+        enName.classList.add('name-active');
+        enName.classList.remove('name-inactive');
+
+        zhName.classList.add('name-inactive');
+        zhName.classList.remove('name-active');
+    } else if (langName.startsWith('zh')) {
+        zhName.classList.add('name-active');
+        zhName.classList.remove('name-inactive');
+
+        enName.classList.add('name-inactive');
+        enName.classList.remove('name-active');
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8
     }
 const hideClass = "is_hidden"
 const activeLink = "nav_active"
 
+<<<<<<< HEAD
 // adds active class to currently clicked link
 function activeSelect(navbar, active) {
     navbar.forEach(link => {
@@ -17,12 +60,270 @@ function activeSelect(navbar, active) {
             // 1. remove active class from all
             navbar.forEach(l => {
                 l.classList.remove(active)
+=======
+// Hero Intro
+const heroBio = document.getElementById('hero_bio')
+const taglineContainer = document.getElementById('hero_tagline')
+const tagline = document.querySelectorAll('.tagline-item')
+const resumeText = document.querySelector('.resume_text');
+    const ogHeroBio = heroBio.textContent
+        const englishHeight = heroBio.offsetHeight
+    const ogTagline = Array.from(tagline).map(item => item.textContent)
+    const ogResume = resumeText.textContent
+
+async function translateHero(lang) {
+    const response = await fetch("translations/hero.json");
+    const data = await response.json();
+        const chineseTranslation = data.hero_bio;
+        const taglineItems = data["tagline-item"]
+    const zhHeroBio = data.hero_bio;
+
+    heroBio.textContent = (lang === 'zh') ? data.hero_bio : ogHeroBio;
+
+    // Update tagline items
+    tagline.forEach((item, i) => {
+        // Set the main text
+        item.textContent = (lang === 'zh') ? taglineItems[i] : ogTagline[i];
+    });
+
+    // Update RESUME text
+    resumeText.textContent = (lang === 'zh') ? data.hero_resume : ogResume;
+}
+// ||   || 
+
+
+// !! PROJECTS SECTION !! 
+async function translateProjects(lang) {
+    const response = await fetch("translations/projects.json");
+    const projects = await response.json();
+        const projectsList = projects[lang];
+        const linkText = projects.viewProjectLang[lang];
+        const statusText = projects.projectStatusLang[lang];
+        const sectionTitle = projects.projectSectionTitle[lang];
+            const mainTitle = document.querySelector("#projects-section_title")
+            mainTitle.textContent = sectionTitle;
+
+    const wrapper = document.querySelector(".projects_projects-wrapper");
+    const template = document.getElementById("projects_template");
+
+    wrapper.innerHTML = "";
+
+    projectsList.forEach(project => {
+        const clone = template.content.cloneNode(true);
+
+        const title = clone.querySelector(".project-title");
+        const desc = clone.querySelector(".project-description");
+        const img = clone.querySelector(".project-img");
+        const link = clone.querySelectorAll(".project-link");
+        const status = clone.querySelector(".project-status");
+        const textLink = clone.querySelector(".projects_project-status-wrapper a.project-link");
+
+        title.textContent = project.projectTitle.toUpperCase();
+        desc.textContent = project.projectDescription;
+        img.style.backgroundImage = `url(${project.projectImg})`;
+        img.alt = project.projectTitle;
+        link.forEach(a => {
+            a.href = project.projectLink;
+        })
+        
+
+        textLink.textContent = linkText;
+
+        if (project.projectStatus) {
+            status.textContent = statusText;
+            status.style.display = "block";
+        } else {
+            status.style.display = "none";
+        }
+
+        // Append updated node after populating
+        wrapper.appendChild(clone);
+    });
+
+}
+translateProjects(defaultLang);
+// !!   !!
+
+// ++ SKILLS SECTION ++
+    // Section title
+    async function translateSkillsTitle(lang) {
+        const response = await fetch('translations/skills/skills-title.json');
+        const title = await response.json();
+            const htmlTitle = document.getElementById('skills-section_title');
+            htmlTitle.textContent = title.skillsSectionTitle[lang];
+    }
+
+    //Technologies
+    const technologyTitle = document.querySelector('#skills_technologies-title');
+        const languageTitle = document.querySelector('#lang-title');
+        const frameworkTitle = document.querySelector('#framework-title');
+        const toolTitle = document.querySelector('#tool-title');
+
+        const ogTechTitle = technologyTitle.textContent;
+        const ogLangTitle = languageTitle.textContent;
+        const ogFrameworkTitle = frameworkTitle.textContent;
+        const ogToolTitle = toolTitle.textContent;
+    
+
+    async function translateTechnologies(lang) {
+        const response = await fetch("translations/skills/technologies.json");
+        const technologies = await response.json();
+        
+        const techTitle = technologies.technologiesSectionTitle[lang];
+        
+        technologyTitle.textContent = (lang === 'zh') ? techTitle : ogTechTitle;
+        languageTitle.textContent = (lang === 'zh') ? technologies.techSection.languages : ogLangTitle;
+        toolTitle.textContent = (lang === 'zh') ? technologies.techSection.tools : ogToolTitle;
+        frameworkTitle.textContent = (lang === 'zh') ? technologies.techSection.frameworks : ogFrameworkTitle;
+    };
+
+    //Languages
+    async function translateLanguages(lang) {
+        const response = await fetch("translations/skills/languages.json");
+        const languages = await response.json();
+            const languageList = languages[lang];
+            const langSectionTitle = languages.languageSectionTitle[lang];
+            const zhLangFluency = ["初學者", "會話程度", "中級", "精通", "流利","母語者"];
+            const enLangFluency = ["beginner", "conversational", "intermediate", "proficient", "fluent", "native"];
+                const titleHTML = document.querySelector("#skills_language-title");
+                    titleHTML.textContent = langSectionTitle;
+
+        const wrapper = document.querySelector("#skills_language-container");
+        const languageTemplate = document.querySelector("#language-template")
+
+        wrapper.innerHTML = "";
+
+        languageList.forEach(language => {
+            const clone = languageTemplate.content.cloneNode(true);
+
+            const img = clone.querySelector(".language-img");
+            const languageName = clone.querySelector(".language-name");
+            const languageProgress = clone.querySelector(".language-progress");
+                const languageProgressPercent = [10, 25, 50, 65, 80, 100];
+            const fluency = clone.querySelector(".language-fluency");
+                const fluencyColors = ["red", "blue", "purple", "yellow", "green", "gold"];
+                const fluencyLevel = language.languageFluency - 1;
+            
+            img.src = language.languageImg;
+            languageName.textContent = language.languageName;
+            if (lang === 'zh') {
+                fluency.textContent = zhLangFluency[fluencyLevel]
+            } else {
+                fluency.textContent = enLangFluency[fluencyLevel]
+            }
+                languageProgress.style.backgroundColor = fluencyColors[fluencyLevel];
+                languageProgress.style.width = `${languageProgressPercent[fluencyLevel]}%`;
+            
+            wrapper.appendChild(clone);
+        })
+    }
+    translateLanguages(defaultLang)
+    translateTechnologies(defaultLang)
+    //++++
+
+    // Certifications
+    async function translateCerts(lang) {
+        const response = await fetch("translations/skills/certificates.json");
+        const certifications = await response.json();
+            const certs = certifications[lang];
+            const certTitle = certifications.certSectionTitle;
+                const sectionTitle = document.getElementById('skills_certs-title');
+                    sectionTitle.textContent = certTitle[lang];
+        
+        const wrapper = document.getElementById('skills_certs-container');
+        const template = document.getElementById('cert-template');
+
+        wrapper.innerHTML = '';
+
+        certs.forEach(cert => {
+            const clone = template.content.cloneNode(true);
+
+            const certLink = clone.querySelector('.cert-link');
+            const certification = clone.querySelector('.cert');
+
+            if (cert.certificateLink) {
+                certLink.href = cert.certificateLink;
+            } else {
+                certLink.style.display = 'none'
+            };
+
+            certification.textContent = cert.certificate;
+
+            wrapper.append(clone);
+        })
+    }
+    translateCerts(defaultLang);
+    //++++
+// ++   ++
+
+
+// $$ EXPERIENCE SECTION $$
+async function translateExperience(lang) {
+    const response = await fetch("translations/experience.json");
+    const experience = await response.json();
+        const xpLang = experience[lang];
+        const expTitle = experience.expSectionTitle[lang];
+            const htmlTitle = document.getElementById('experience-section_title');
+                htmlTitle.textContent = expTitle;
+    
+    const wrapper = document.getElementById('experience_exp-wrapper');
+    const template = document.getElementById('experience_template');
+
+    wrapper.innerHTML = '';
+
+    xpLang.forEach((exp, index) => {
+        const clone = template.content.cloneNode(true);
+
+        const expName = exp.expName;
+            const nameHTML = clone.querySelector('.exp_name')
+        const expPosition = exp.expPosition;
+            const positionHTML = clone.querySelector('.exp_position')
+        const expStartMonth = exp.expStartMonth;
+            const startMonthHTML = clone.querySelector('.start-month')
+            const expStartDate = exp.expStartDate;
+                const startDateHTML = clone.querySelector('.start-date')
+        const expEndMonth = exp.expEndMonth;
+            const endMonthHTML = clone.querySelector('.end-month')
+            const expEndDate = exp.expEndDate;
+                const endDateHTML = clone.querySelector('.end-date')
+        const expCity = exp.expCity;
+            const cityHTML = clone.querySelector('.exp_city')
+        const expCountry = exp.expCountry;
+            const countryHTML = clone.querySelector('.exp_country')
+        const expSummary = exp.expSummary;
+            const summaryHTML = clone.querySelector('.exp_summary')
+        const expDuties = exp.expDuties;
+            const dutiesHTML = clone.querySelector('.exp_duties')
+            dutiesHTML.innerHTML = '';
+        const duties_separator = clone.querySelector('.exp_line-separator')
+
+        nameHTML.textContent = expName;
+        positionHTML.textContent = expPosition;
+        startMonthHTML.textContent = expStartMonth;
+        startDateHTML.textContent = expStartDate;
+        endMonthHTML.textContent = expEndMonth;
+        endDateHTML.textContent = expEndDate;
+        cityHTML.textContent = expCity;
+        countryHTML.textContent = expCountry;
+        summaryHTML.textContent = expSummary;
+
+        // Top separator
+        const topHr = document.createElement('hr');
+        topHr.className = 'exp_line-separator';
+        dutiesHTML.appendChild(topHr);
+
+            expDuties.forEach(dutyText => {
+                const li = document.createElement('li');
+                li.textContent = dutyText;
+                dutiesHTML.appendChild(li);
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8
             });
         link.classList.add(active)
         });
     });
 }
 
+<<<<<<< HEAD
 // toggles which sections get hidden or shown
 function toggleSection(nav, div) {
     nav.forEach(link => {
@@ -183,6 +484,16 @@ async function buildCerts() {
         const cloneEl = clone.querySelector(".cert")
         if (index % 2 === 1) {
             cloneEl.classList.add("cert-reverse")
+=======
+        // Bottom separator
+        const bottomHr = document.createElement('hr');
+        bottomHr.className = 'exp_line-separator';
+        dutiesHTML.appendChild(bottomHr);
+        
+        if (index === xpLang.length - 1) {
+            const separators = clone.querySelectorAll(".exp_separator");
+            separators[separators.length - 1].style.display = 'none'; // Hide the last separator in the clone
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8
         }
 
         const certName = clone.querySelector(".cert-name")
@@ -208,6 +519,7 @@ async function buildProjects() {
     projects.forEach(proj => {
         const clone = projTemplate.content.cloneNode(true)
 
+<<<<<<< HEAD
         const title = clone.querySelector(".project-title")
         const img = clone.querySelector("project-img")
         const imgLink = clone.querySelector(".p_img-link")
@@ -239,6 +551,46 @@ async function buildProjects() {
         })
         projContainer.append(proj)
     })
+=======
+    const hobbyList = about.hobbies[lang];  // e.g., ["Working out", "Language learning", "Walking"]
+
+    wrapper.querySelectorAll('.hobby_text').forEach((span, i) => {
+        // Make sure there is a corresponding hobby
+        if (hobbyList[i]) {
+            span.textContent = hobbyList[i];
+        }
+    });
+}
+
+async function showYoutubeVideos() {
+    const youtubeAPI = "AIzaSyAhz5U5uitUrt_I0nCTyPsP3m1v1dJbm_0";
+    const channelID = "UCQlqj15bBd8Ah6kAgw0IyGA";
+    const maxResults = 5;
+
+    const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPI}&channelId=${channelID}&part=snippet,id&order=date&maxResults=${maxResults}`;
+
+    const youtubeResponse = await fetch(apiURL);
+    const data = await youtubeResponse.json();
+
+    const mediaList = document.getElementById("hobbies-media");
+        mediaList.innerHTML = ''
+
+    data.items.forEach(item => {
+      if (item.id.kind === "youtube#video") {
+        const videoId = item.id.videoId;
+        const li = document.createElement("li");
+        li.classList.add("youtube-vid")
+
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+
+        li.appendChild(iframe);
+        mediaList.appendChild(li);
+      }
+    });
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8
 }
 
 // 🎓👷Experience/Education🎓👷
@@ -301,12 +653,19 @@ async function buildExperience() {
         expContainer.append(clone)
     })
 }
+<<<<<<< HEAD
+=======
+translateReferences(defaultLang);
+showYoutubeVideos()
+// %%   %%
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8
 
 // !~education template~!
 const eduTemplate = document.getElementById("edu_template")
 const eduContainer = document.getElementById("edu-container")
 const eduSection = document.getElementById("edu-container")
 
+<<<<<<< HEAD
 async function buildEducation() {
     const eduData = await fetchContent(templateContent)
     const education = eduData.exp_edu.education
@@ -335,8 +694,20 @@ async function buildEducation() {
 
         eduContainer.append(clone)
     })
+=======
+    const sectionTitle = document.getElementById('contact-section_title')
+    const emailTitle = document.getElementById('email_title')
+    const linkText = document.getElementById('contact_resume-text')
+    const socialsTitle = document.getElementById('socials-title')
+    
+    sectionTitle.textContent = contactLang.sectionTitle;
+    emailTitle.textContent = contactLang.contactTitle;
+    linkText.textContent = contactLang.linkText;
+    socialsTitle.textContent = contactLang.socialsTitle;
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8
 }
 
+<<<<<<< HEAD
 // ✉️Contact✉️
 
 // function to visualize accessing json content
@@ -382,3 +753,32 @@ async function loadContent(filePath) {
 }
 
 loadContent(templateContent)
+=======
+translateBtn.addEventListener("click", function() {
+    if (defaultLang === 'en') {
+        defaultLang = 'zh';
+        translateBtn.textContent = "Hi! (en)";
+        document.title = "孫賽亞"
+    } else {
+        defaultLang = 'en';
+        translateBtn.textContent = ogTranslateText;
+        document.title = "Asiah Crutchfield";
+    }
+
+    switchTitle (defaultLang);
+    translateHero(defaultLang);
+    translateProjects(defaultLang); 
+    // Skills
+    translateSkillsTitle(defaultLang);
+    translateTechnologies(defaultLang);
+    translateCerts(defaultLang);
+    translateLanguages(defaultLang)
+    // ++++
+    translateExperience(defaultLang);
+    translateEducation(defaultLang);
+    translateAbout(defaultLang);
+    translateReferences(defaultLang);
+    translateContact(defaultLang);
+        switchNames(defaultLang);
+})
+>>>>>>> d4f93fb28ab3f4a5b3df255d52ed76a73a8cfdf8

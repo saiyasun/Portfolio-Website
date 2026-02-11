@@ -1,0 +1,13 @@
+{
+    "technologiesSectionTitle":
+        {
+            "zh": "開發技術"
+        },
+
+    "techSection":
+     {
+        "tools": "工具",
+        "languages": "程式語言",
+        "frameworks": "框架"
+     }
+}
