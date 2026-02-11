@@ -3,129 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asiah Crutchfield</title>
-    <link rel="stylesheet" href="style.css"> <!-- Load shared CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+    <title>Asiah Crutchfield | 孫賽亞</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
     <script src="script.js" defer></script>
 </head>
 <body>
-
-<!-- || HERO SECTION || -->
-<section id="hero-section">
-    <!-- Name and tagline -->
-    <div id="hero_intro-wrapper">
-        <!-- Name -->
-        <div id="hero_name-wrapper">
-            <h1 lang="en" class="hero_name" id="hero_en-name">Asiah Crutchfield</h1>
-            <h1 lang="zh" class="hero_name" id="hero_zh-name">孫賽亞</h1>
-        </div>
-        <!---->
-
-        <!-- Tagline -->
-        <ul id="hero_tagline">
-            <li class="tagline-item">CS Student</li>
-            <li class="tagline-item">Digital Creator & Builder</li>
+    <!--SITE NAV BAR-->
+    <nav id="main-nav" class="glass-nav" aria-label="Primary navigation">
+        <ul>
+            <li><a class="nav_active" href="#" data-i18n="nav.home">HOME</a></li>
+            <li><a href="#about" data-i18n="nav.about">ABOUT</a></li>
+            <li><a href="#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">SKILLS</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">PROJECTS</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">CONTACT</a></li>
+            <hr id="main-nav_hr">
+            <li><a href="docs/Asiah Crutchfield - Resume.pdf" data-static><img class="icon" src="images/icons/resume-blk.svg" alt="resume"></a></li>
         </ul>
-        <!---->
+    </nav>
+        <!--~mobile nav bar~-->
+        <nav id="mobile-nav" class="glass-nav" aria-label="Mobile navigation">
+            <ul class="nav-rail">
+                <li><a href="#about" class="nav_active" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" data-i18n="nav.exp">Experience</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+        </nav>
 
-        <!-- Hero bio -->
-        <p id="hero_bio">
-            A computer science student creating digital projects and videos that 
-            experiment with learning, technology, and creative ideas.
-        </p>
-        <!---->
-    </div>
-    <!-- -->
+    <!-- SITE SECTIONS -->
+    <!-- !Hero! -->
+    <section id="hero">
+        <div class="section-inner" id="hero-container">
+            <div id="hero-intro1_container">
+                <div id="hero-name_container">
+                    <span class="intro-name" id="en-name">
+                        Asiah <span class="anchor-name">Crutchfield<span class="intro-name zh-tablet">孫賽亞</span></span></span>
+                    <span class="intro-name zh-default zh-name">孫賽亞</span>
+                </div>
+                    <div id="hero-tag_container">
+                        <ul>
+                            <li data-i18n="tag.builder">Builder</li>
+                            <li data-i18n="tag.creator">Creator</li>
+                        </ul>
+                    </div>
+            </div>
 
-    <!-- Socials, resume and email -->
-    <div id="hero_contact-wrapper">
-        <!-- Socials -->
-        <div class="hero_contact" id="hero_socials">
-            <a class="hero_contact-link" href="https://github.com/asiahcrutchfield"> 
-                <img class="hero_img" src="images/logos_icons/white/github_white.svg"> 
-            </a>
-            <a class="hero_contact-link" href="https://www.linkedin.com/in/asiahcrutchfield"> 
-                <img class="hero_img" src="images/logos_icons/white/linkedin_white.svg"> 
-            </a>
-            <a class="hero_contact-link" href="https://www.youtube.com/@AsiahCrutchfield?sub_confirmation=1"> 
-                <img class="hero_img" src="images/logos_icons/white/youtube_white.svg"> 
-            </a>
+            <div id="hero-intro2_container">
+                <p>
+                    <span data-i18n="hero.intro.suffix">Building digital experiments
+                        at the intersection of learning and technology.
+                    </span>
+                </p>
+                    <div id="hero-links">
+                        <ul>
+                            <li><a href="https://github.com/asiahcrutchfield"><img src="images/icons/socials/github-blk.svg"></a></li>
+                            <li><a href="https://www.linkedin.com/in/asiahcrutchfield/"><img src="images/icons/socials/linkedin-blk.svg"></a></li>
+                        </ul>
+                        <a class="resume-label" href="docs/Asiah Crutchfield - Resume.pdf" data-i18n="hero.resume">RESUME</a>
+                    </div>
+            </div>
         </div>
-        <!---->
-        <!-- Resume and email -->
-        <div class="hero_contact" id="hero_resume-email">
-            <a class="hero_contact-link" id="hero_email" href="mailto: asiah@asiahcrutchfield.com"> 
-                <img class="hero_img" id="hero_email-img" src="images/logos_icons/white/email_white.svg"> 
-            </a>
-            <a class="hero_contact-link" id="hero_resume" href="docs/Asiah Crutchfield - Resume.pdf"> 
-                <img class="hero_img" src="images/logos_icons/white/resume_white.svg"> RESUME 
-            </a>
-        </div>
-        <!---->
-    </div>
-    <!-- -->
-</section>
-<!-- ||   || -->
+    </section>
 
-
-<!-- ^^ BODY DIV ^^ -->
-<div id="body-div">
-    <!-- !! PROJECTS !! -->
-    <section id="projects-section">
-        <h2 class="section-title" id="projects-section_title">Projects</h2>
-        <div class="projects_projects-wrapper">
-
-        </div>
-
-        <template id="projects_template">
-            <div class="projects_project">
-                <!-- Image -->
-                <a class="project-link project_img-link"> <div class="project-img"></div> </a>
-                <!---->
-                <div class="projects_project-info-wrapper">
-                    <!-- Title -->
-                    <h3 class="project-title">Title</h3>
-                    <!---->
-                    <!-- Description -->
-                    <p class="project-description">Description</p>
-                    <!---->
-                    <div class="projects_project-status-wrapper">
-                        <!-- Link -->
-                        <a class="project-link">link</a>
-                        <!---->
-                        <!-- Status -->
-                        <span class="project-status">under development</span>
-                        <!---->
+    <!-- 👨🏾About👨🏾 -->
+    <section id="about">
+        <div class="section-inner" id="inner-about">
+            <!-- about nav -->
+            <nav>
+                <ul id="bio-navigation" class="glass-nav">
+                    <li><a href="#bio-container" class="nav_active" data-i18n="aboutNav.about">about</a></li>
+                    <li><a data-i18n="aboutNav.interests" href="#interests-section">interests</a></li>
+                    <!--<li><a data-i18n="aboutNav.media" href="#media-section">media</a></li>-->
+                </ul>
+            </nav>
+            <div id="about-container">
+                <!-- ~bio~ -->
+                <div id="bio-container" class="about-subsection">
+                <!-- pic & location -->
+                <div id="bio-section">
+                    <div id="profile_pic-container">
+                        <img id="profile-pic" src="images/profile_pics/tulane_profile.jpg" alt="profile picture">
+                        <div id="profile_icon-container">
+                            <div class="bio-quick_info">
+                                <img class="profile-icon" src="images/icons/laptop.svg">
+                                <span class="quick_info">CS Student 🎓</span>
+                            </div>
+                            <div class="bio-quick_info">
+                                <img class="profile-icon" src="images/icons/learning-brain.svg">
+                                <span class="quick_info">Learner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="info-container">
+                        <div class="info-container" id="location">
+                            <img src="images/icons/location_pin-red.svg" alt="location pin">
+                            <span> 
+                                <span data-i18n="about.city" id="city">Taoyuan</span>, 
+                                <span data-i18n="about.country" id="country">Taiwan</span> 
+                            </span>
+                        </div>
+                        <div class="info-container" id="about-email">
+                            <img src="images/icons/email-color_red.svg">
+                            <a id="email" href="mailto:asiah@asiahcrutchfield.com">asiah@asiahcrutchfield.com</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </template>
-
-    </section>
-    <!-- !!   !! -->
-    <!-- ++  SKILLS SECTION ++ -->
-    <section id="skills-section">
-        <h2 class="section-title" id="skills-section_title">Skills</h2>
-        <div id="skills_skills-container">
-            <!-- Languages -->
-            <div id="skills_language-wrapper">
-                <h3 class="sub-section-title" id="skills_language-title">Languages</h3>
-                <div id="skills_language-container">
-
+                    <!-- bio -->
+                    <p id="bio">
+                        <span data-i18n="about.bio.intro" id="bio-intro" class="bold_info">I’m Asiah Crutchfield (孫賽亞)</span> — 
+                        <span data-i18n="about.bio.suffix">a computer science student 
+                        exploring different ways to learn and how technology can improve that 
+                        process. I'm on a mission to expand my domains of knowledge in regards to
+                        both tech and my everyday life so I can reach my fullest potential.
+                    
+                        Outside of code, I enjoy both weight training and calisthenics, creating
+                        videos, and going for a nice mountain hikes.</span>
+                    </p>
                 </div>
-                
-                <template id="language-template">
-                    <div class="skills_language">
-                        <!-- Image -->
-                        <img class="language-img" src="images/logos_icons/languages/mandarin.svg"> 
-                        <!---->
-                        <div class="language-name_wrapper">
-                            <p class="language-name">Chinese</p>
-                            <!-- Progress bar -->
-                            <div class="language-progress_container"> 
-                                <div class="language-progress"></div>
-                                <p class="language-fluency">fluent</p> 
+            
+                <!-- ~interests~ -->
+                <div id="interests-section" class="about-subsection is_hidden">
+                    <div id="interest-container">
+
+                        <div id="interest-circle">
+                            <div id="workout" class="interest">
+                                <div class="int_img-container"><img src="images/icons/dumbbell.svg"></div>
+                                <span class="interest-name" data-i18n="about.interest.workout">Working Out</span>
+                            </div>
+                                <div id="gaming" class="interest">
+                                    <div class="int_img-container"><img src="images/icons/gaming.svg"></div>
+                                    <span class="interest-name" data-i18n="about.interest.gaming">Gaming</span>
+                                </div>
+                            <div id="eating" class="interest">
+                                <div class="int_img-container"><img src="images/icons/eating-blk.svg"></div>
+                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
                             </div>
                                 <div id="hiking" class="interest">
                                     <div class="int_img-container"><img src="images/icons/hiking-blk.svg"></div>
@@ -135,11 +154,15 @@
                     </div>
                 </div>
 
-                    <template id="cert-template">
-                        <div class="skills_cert">
-                            <a class="cert-link">
-                                <p class="cert">Certificate</p>
-                            </a>
+                <!-- ~pics & vids~ -->
+                <div id="media-section" class="about-subsection is_hidden">
+                    <div id="media-container">
+                        <div id="vids">
+                            <div class="media_title-container">
+                                <h3 class="media-title" data-i18n="about.vidTitle">YouTube</h3>
+                                <img class="media_title-img" src="images/icons/socials/youtube.svg">
+                            </div>
+                            <div class="media" id="vid-container"></div>
                         </div>
                             <div id="pics">
                                 <div class="media_title-container">
@@ -153,63 +176,76 @@
             </div>
         </div>
     </section>
-    <!-- ++   ++ -->
-    <!-- $$ EXPERIENCE SECTION $$ -->
-    <section id="experience-section">
-        <h2 class="section-title" id="experience-section_title">Experience</h2>
-        <div id="experience_exp-wrapper">
-            
-        </div>
 
-        <template id="experience_template">
-            <div class="experience">
-                <!--Name and position-->
-                <div class="exp_namePosition-container">
-                    <h3 class="exp_name">Work</h3>
-                    <p class="exp_position">Position</p>
+    <!-- 🤹Skills🤹 -->
+    <section id="skills">
+        <div class="section-inner" id="skills-inner">
+            <!-- ~human languages~ -->
+            <div id="hLanguages" class="skills-subsection">
+                <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
+
+                <!--LANG TEMPLATE-->
+                    <template id="lang_template">
+                        <div class="lang-progress">
+                            <div class="lang">
+                                <!-- ~name & flag~ -->
+                                <div class="lang-name-container">
+                                    <span class="lang-name" data-i18n="skills.lang"></span>
+                                    <img class="lang-flag" src='#'>
+                                </div>
+                                <!-- ~fluency~ -->
+                                <span class="fluency"></span>
+                            </div>
+                        </div>
+                    </template> 
+                <div id="languages">
+                    <!-- append here -->
                 </div>
-                <!---->
-                <!--Date, place, summary-->
-                <div class="exp_summary-container">
-                    <div class="exp_dateTime">
-                        <!--Date-->
-                        <span class="exp_date">
-                            <span class="start-month">Oct</span><span class="start-date">2000</span> -
-                            <span class="end-month">Aug</span><span class="end-date">2004</span>
-                        </span>
-                        <!---->
-                        <!--Place-->
-                        <span class="exp_location"> <span class="exp_city">City</span>, <span class="exp_country">Country</span> </span>
-                        <!---->
-                    </div>
-                    <!--Summary-->
-                    <p class="exp_summary">This is a summary of what I did at this job. hafdkjhfkjhfklj hkdjghdkjhsfdh gkjdhfsjadhjh sjd ghsdkljglk sjgjhkjsdhl gharj</p>
-                    <!---->
-                </div>
-
-                <!--Duties button-->
-                <div class="exp_separator"><hr class="exp_line-separator"> <button class="exp_button">Show duties</button> <hr class="exp_line-separator"></div>
-                <!---->
-
-                <!--Duties-->
-                <ul class="exp_duties">
-                    <li>Duty 1</li>
-                    <li>Duty 2</li>
-                    <li>Duty 3</li>
-                </ul>
-                <!---->
             </div>
-            <div class="exp_separator"><hr class="exp_line-separator"> <div class="exp_circle-separator"></div> <hr class="exp_line-separator"></div>
-        </template>
 
-    </section>
-    <!-- $$   $$ -->
-    <!-- @@ EDUCATION SECTION @@ -->
-    <section id="education-section">
-        <h2 class="section-title" id="education-section_title">Education</h2>
-        <div id="education-wrapper">
-            
-        </div>
+            <!-- ~technologies~ -->
+            <div id="technologies" class="skills-subsection">
+                <h3 class="skills-title" id="tech-subtitle" data-i18n="skills.tech-title">Technologies</h3>
+                    <nav id="tech-nav">
+                        <ul>
+                            <li data-i18n="skills.all"><a class="tech-nav_active" href="#tech-container-u">all</a></li>
+                            <li data-i18n="skills.category"><a href="#tech-container-o">by category</a></li>
+                        </ul>
+                    </nav>
+
+                        <!--TECH TEMPLATE-->
+                            <template id="tech_template">
+                                <li class="tech-item" id="" data-tech.category="">
+                                    <img class="tech-img" src="">
+                                    <span class="tech-name"></span>
+                                </li>
+                            </template> 
+                    <div id="u_o_tech-container">
+                        <!-- ~unordered tech stack~ -->
+                        <div class="tech-container" id="tech-container-u">
+                            <ul class="tech_stack" id="tech_stack-u">
+                                <!-- append here -->
+                            </ul>
+                        </div>
+                        <!-- ~ordered tech stack~ -->
+                        <div class="tech-container is_hidden" id="tech-container-o">
+                            
+                            <div class="tech_cat-container" data-tech_cat-container="frontend">
+                                <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
+                                    <ul class="tech_stack tech_stack-o" data-tech_cat="frontend">
+                                        <!-- append here -->
+                                    </ul>
+                            </div>
+
+                            <div class="tech_cat-container" data-tech_cat-container="frontend">
+                                <div class="tech_cat-title"><span class="tech-title-o">design</span><img src="images/icons/tech/design.svg"></div>
+                                    <ul class="tech_stack tech_stack-o" data-tech_cat="design">
+                                        <!-- append here -->
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
 
             <!-- ~certifications~ -->
              
@@ -219,97 +255,120 @@
                         <div class="cert-frame"><span class="cert-name">my cert</span></div>
                         <span class="cert-date">2026</span>
                     </div>
-                    <div class="education_est-graduation"> 
-                        <span>Est. <span class="education_est-date">2000</span></span>
+                </template> 
+            <div id="certifications" class="skills-subsection">
+                <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
+                    <div id="cert-container">
+                        <!-- append here -->
                     </div>
-                    <p class="education_degree">Diploma</p>
-                </div>
-                <div class="location-container">
-                    <img class="education_location-pin" src="images/logos_icons/location-pin.svg">
-                    <p class="education_location">Earth</p>
-                </div>
             </div>
         </div>
     </section>
-    <!-- @@   @@ -->
-    <!-- %% ABOUT SECTION %% -->
-    <section id="about-section">
-        <h2 class="section-title" id="about-section_title">About</h2>
-        <div id="about-wrapper">
-            <div id="about_about-me">
-                <div id="about-pic_frame">
-                    <img id="about_profile-pic" src="images/profile_pics/profile_pic.jpg">
-                </div>
-                <p class="about_bio">
-                    I'm Asiah Crutchfield, a student, creator, and thinker passionate about 
-                    expanding my knowledge both inside and outside the classroom. I avoid 
-                    complacency, continually striving for self-improvement in both my personal 
-                    and professional life. This drive led me to take the leap from the US to 
-                    Taiwan to pursue a degree in computer science. While it has been challenging 
-                    at times, the experiences and lessons I’ve gained over the past year have been 
-                    invaluable. Currently, I am developing a language project designed to transform 
-                    how people learn and experience foreign languages.
-                </p>
-                <p class="about_bio">
-                    Outside of school and programming, I enjoyed lifting weights and always strive
-                    to go heavier. I enjoy studying Mandarin Chinese and am working to get to a 
-                    working proficiency. And I enjoy exploring Taiwan and learning about all the 
-                    things it has to offer.
-                </p>
-            </div>
 
-            <div id="about_hobbies-wrapper">
-                <h3 class="sub-section-title" id="about_hobbies-title">Hobbies</h3>
-                <div id="hobbies">
-                    <ul id="hobbies-list">
-                        <li>Working out</li>
-                        <li>Language learning</li>
-                        <li>Walking</li>
-                    </ul>
-                    <ul id="hobbies-media">
-                        <li> <img src="images/placeholder.png"> </li>
-                        <li> <img src="images/placeholder.png"> </li>
-                        <li> <img src="images/placeholder.png"> </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- 🛠️Projects🛠️ -->
 
-            <div id="about_references-wrapper">
-                <h3 class="sub-section-title" id="about_references-title">References</h3>
-                <div id="references-container">
-                    
-                </div>
-            </div>
-        </div>
-
-        <template id="about_reference-template">
-            <div class="reference">
-                <div class="ref-intro">
-                    <img class="references_profile-pic" src="images/profile_pics/profile_pic_4.jpg">
-                    <div class="ref_expansion-div">
-                        <h3 class="references_name">Asiah</h3>
-                        <button class="ref_expand-button">+</button>
+    <!--PROJECT TEMPLATE-->
+        <template id="project_template">
+            <div class="project">
+                <div class="project_info-container">
+                    <a class="p_img-link" href="">
+                        <img class="project-img" src="">
+                    </a>
+                    <div class="project-info">
+                        <h4 class="project-title"></h4>
+                        <div class="desc-container">
+                            <p class="project-desc" data-i18n="project.desc">
+                                
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <p class="references_bio">
-                    Sample
-                </p>
+                <div class="project_link-container">
+                    <ul class="project-links">
+                        <li><a class="p_link" href=""><img class="p_link-img" src="i"></a></li>
+                    </ul>
+                    <span class="project-extra"></span>
+                </div>
             </div>
-        </template>
-
+        </template> 
+    <section id="projects">
+        <div class="section-inner" id="projects-container">
+            <!-- append here -->
+        </div>
     </section>
-    <!-- %%   %% -->
-    <!-- ## CONTACT SECTION ## -->
-    <section id="contact-section">
-        <h2 class="section-title" id="contact-section_title">Contact</h2>
-        <div id="contact_wrapper">
-            <div id="contact_emailResume-wrapper">
-                <h3 class="sub-section-title" id="email_title">Contact Me</h3>
-                <div id="emailResume-container">
-                    <a class="contact-link" href="mailto: asiah@asiahcrutchfield.com"> <img class="contact" src="images/logos_icons/email.svg"> </a>
+
+    <!-- 🎓👷Experience/Education🎓👷 -->
+    <section id="experience">
+        <div class="section-inner" id="exp-inner">
+
+        <!--EXPERIENCE TEMPLATE-->
+            <template id="exp_template">
+                <div class="exp">
+                    <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
+                    <div class="date-location">
+                        <div class="exp-date"> 
+                            <span class="start-date">2023</span>-<span class="end-date">2024</span> 
+                        </div>
+                        <div class="location-container">
+                            <img src="images/icons/location_pin-red.svg"> 
+                            <div class="exp_location">
+                                <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
+                                <span data-i18n="exp.country" class="exp_country">USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ~summary & duties~ -->
+                    <div class="duties-container">
+                        <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
+                        <button class="duties-btn">+</button>
+                        <ul class="duties-list is_hidden">
+                            <li data-i18n="exp.duty">This was one of my duties.</li>
+                            <li data-i18n="exp.duty">This was two of my duties.</li>
+                            <li data-i18n="exp.duty">This was three of my duties.</li>
+                        </ul>
+                    </div>
+                </div>
+            </template> 
+            <div class="exp_edu-container" id="exp-container">
+                <!-- append here -->
+            </div>
+
+            <!--EDUCATION TEMPLATE-->
+                <template id="edu_template">
+                    <div class="education">
+                        <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
+                        <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
+                        <div class="edu-date">
+                            <div class="edu-start_end_date"><span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span></div>
+                            <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+                        </div>
+                    </div>
+                </template>
+            <div class="exp_edu-container" id="edu-container">
+                <!-- append here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ✉️Contact✉️ -->
+    <section id="contact">
+        <div class="section-inner" id="contact-container">
+            <!-- ~email & resume~ -->
+            <div class="reach_connect" id="reach-out">
+                <div class="contact_title-container">
+                    <h4 class="reach_connect-title" id="reach-out_title" data-i18n="contact.reach-out-title">Reach Out</h4>
+                    <img src="images/icons/contact.svg">
+                </div>
+                <div id="reach-out-container">
+                    <div id="contact-email">
+                        <a href="mailto: asiah@asiahcrutchfield.com">
+                            <img src="images/icons/email-black.svg"></a>
+                    </div>
                     <a id="contact_resume-link" href="docs/Asiah Crutchfield - Resume.pdf">
-                        <img src="images/logos_icons/white/resume_white.svg">
-                        RESUME
+                        <div id="contact-resume-cotainer">
+                            <img src="images/icons/resume-blk.svg">
+                            <span id="contact-resume" data-i18n="contact.resume">Resume</span>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -339,11 +398,12 @@
             </div>
         </div>
     </section>
-    <!-- ##   ## -->
-</div>
-<!-- ^^   ^^ -->
 
-<!-- == TRANSLATE BUTTON == -->
- <button id="button_translate" aria-label="Toggle language">你好!</button>
-<!-- ==   == -->
+    <!--TRANSLATION-->
+    <div id="translator">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span>|</span>
+        <button class="lang-btn" data-lang="zh">中</button>
+    </div>
 </body>
+</html>
