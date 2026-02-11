@@ -41,12 +41,15 @@
   --track-label: 0.08em;
 }
 
-/* Classes */
+/* Classes/Styles */
 .is_hidden {
     display: none !important; 
 }
 .is_active {
     display: block;
+}
+.bold_info {
+    font-weight: var(--w-medium);
 }
 
 * {
@@ -246,7 +249,7 @@ nav {
 /* SECTIONS */
 /* !Hero! */
 #hero {
-    min-height: 80dvh;
+    min-height: 90dvh;
     display: flex;
         align-items: center;
 }
@@ -503,9 +506,6 @@ nav {
         margin: 0;
         padding: .5em;
     }
-        #bio-intro {
-            font-weight: var(--w-medium);
-        }
 /* ~interest/hobbies~ */
 #interests-sections {
     display: flex;
