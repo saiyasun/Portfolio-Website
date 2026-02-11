@@ -821,20 +821,24 @@ nav {
     .lang-progress {
         position: relative;
         border: 1px solid black;
-        height: 90px;
+        height: var(--lang-height);
         max-width: 275px;
         width: 100%;
+
+        --lang-height: 90px;
+        --bar-w: 0%;
+        --bar-color: #999;
     }
         .lang-progress::before {
             content: "";
             position: absolute;
-            top: 90%;
+            height: calc(var(--lang-height)*.1);
             bottom: 0;
             left: 0;
-            right: 0;
+            right: auto;
             max-width: 100%;
-            width: 90%;
-            background-color: green;
+            width: var(--bar-w);
+            background-color: var(--bar-color);
         }
         .lang {
             width: 100%;
@@ -1223,6 +1227,8 @@ nav {
         align-items: flex-start;
         justify-content: center;
         gap: 2em;
+    
+    --exp-width: 450px;
 }
 #exp-inner {
     gap: 4em;
@@ -1241,11 +1247,11 @@ nav {
             flex-direction: column;
             justify-content: center;
         padding: .75em;
-        max-width: 450px;
+        max-width: var(--exp-width);
         width: 100%;
     }
     .exp-reverse {
-        align-items: flex-end;
+        
     }
         .exp::before {
             content: "";
@@ -1288,7 +1294,7 @@ nav {
         .exp_city {
         }
         .location-container img {
-            max-width: var(--icon);
+            max-width: var(--icon-xs);
         }
     .duties-container {
         padding: .75em;
@@ -1301,6 +1307,7 @@ nav {
             position: relative;
             padding: .25em 0;
             text-wrap: wrap;
+            width: 100%;
         }
         /* ⏪.exp-reverse⏪ */
         .exp-reverse .exp-summary {
@@ -1340,15 +1347,17 @@ nav {
             margin-left: auto;
         }
         .duties-list {
+            display: flex;
+                flex-direction: column;
+                gap: .5em;
             list-style-type: none;
             padding: .25em;
             font-style: italic;
+            max-width: var(--exp-width);
         }
         /* ⏪.exp-reverse⏪ */
         .exp-reverse .duties-list {
-            display: flex;
-                flex-direction: column;
-                align-items: flex-end;
+            text-align: right;
         }
             .duties-list li {
                 position: relative;
@@ -1359,13 +1368,13 @@ nav {
                 position: absolute;
                 left: 0;
                 right: 95%;
-                bottom: -1%;
+                bottom: -5%;
                 height: 1px;
                 background-color: black;
             }
             /* ⏪.exp-reverse⏪ */
             .exp-reverse .duties-list li:not(:last-child)::after {
-                left: 85%;
+                left: 95%;
                 right: 0;
             }
 /* ~education~ */
@@ -1489,6 +1498,9 @@ nav {
                 align-items: flex-start;
                 justify-content: center;
                 flex-direction: column;
+        }
+        .edu-date {
+            margin-top: .5em;
         }
 }
 @media (max-width: 1024px) {
@@ -1682,7 +1694,7 @@ nav {
                 display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: 0;
+                    gap: .25em;
                 padding: .5em;
                 border-radius: 0;
                 position: static;
@@ -1692,7 +1704,9 @@ nav {
                 aspect-ratio: auto;
             }
                 .connect-link {
-                    outline: 1px solid rgba(0, 81, 255, 0.5);
+                    outline: 2px solid rgb(218, 216, 216);
+                    background: rgba(247, 246, 243, 0.6);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.267);
                     position: static;
                     width: calc(var(--icon-lg) * 1.2);
                     aspect-ratio: 1/1;
@@ -1714,6 +1728,7 @@ nav {
 
 /* Aぁ translation button ぁA */
 #translator {
+    display: none;
     --lang-active: rgba(80, 180, 120, 0.35);
     --lang-glow: rgba(80, 180, 120, 0.4);
 

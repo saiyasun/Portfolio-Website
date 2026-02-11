@@ -60,7 +60,6 @@ async function fetchContent(filePath) {
     return data
 }
 
-
 // •nav•
 const mainNav = document.querySelectorAll("#main-nav a:not([data-static])")
 const mobileNav = document.querySelectorAll(".nav-rail a")
@@ -84,6 +83,12 @@ toggleSection(aboutNav, aboutSubSections);
 // 🤹Skills🤹
 // ~languages~
 const fluencyLevels = ["beginner", "intermediate", "advanced", "native"]
+const fluencyStyles = [
+    {w: 25, color: "red"}, // beginner
+    {w: 50, color: "yellow"}, // intermediate
+    {w: 75, color: "blue"}, // advanced
+    {w: 100, color: "green"}, // native
+]
 // !~language template~!
 const langTemplate = document.getElementById("lang_template")
 const langContainer = document.getElementById("languages")
@@ -99,10 +104,15 @@ async function buildLanguages() {
         const langName = clone.querySelector(".lang-name")
         const langFlag = clone.querySelector(".lang-flag")
         const langFluency = clone.querySelector(".fluency")
+        const progress = clone.querySelector(".lang-progress")
 
         langName.textContent = lang.lang
         langFlag.src = `images/icons/${lang.flag}`
         langFluency.textContent = fluencyLevels[lang.fluency]
+
+        const {w, color} = fluencyStyles[lang.fluency] ?? {w: 0, color: "#999"};
+        progress.style.setProperty("--bar-w", `${w}%`);
+        progress.style.setProperty("--bar-color", color)
 
         langContainer.append(clone)
     })
@@ -189,11 +199,52 @@ async function buildCerts() {
 // !~projects template~!
 const projTemplate = document.getElementById("project_template")
 const projContainer = document.getElementById("projects-container")
-const expSection = document.getElementById('experience')
+const projectsSection = document.getElementById('projects')
+
+async function buildProjects() {
+    const projData = fetchContent(templateContent)
+    const projects = projData.projects
+
+    projects.forEach(proj => {
+        const clone = projTemplate.content.cloneNode(true)
+
+        const title = clone.querySelector(".project-title")
+        const img = clone.querySelector("project-img")
+        const imgLink = clone.querySelector(".p_img-link")
+        const description = clone.querySelector(".project-desc")
+        const linkList = clone.querySelector(".project-links")
+        const pLinks = clone.querySelector(".p_links")
+            const pLinkItems = proj.pLinks
+        const linkImg = clone.querySelector(".p_link-img")
+
+        title.textContent = proj.name
+        img.src = `images/icons/projects/${proj.img}`
+        imgLink.href = !proj.imgLink || proj.imgLink == "" ? "" : proj.imgLink
+        description.textContent = proj.description
+
+        linkList.innerHTML = ""
+        pLinkItems.forEach(links => {
+            const li = document.createElement('li')
+            const a = document.createElement('a')
+            const img = document.createElement('img')
+            a.classList.add('p_link')
+            img.classList.add('p_link-img')
+
+            a.href = links[0]
+            img.src = `images/icons/socials/${links[1]}`
+
+            a.append(img)
+            li.append(a)
+            linkList.append(li)
+        })
+        projContainer.append(proj)
+    })
+}
 
 // 🎓👷Experience/Education🎓👷
 const dutyBtn = document.querySelectorAll(".duties-btn")
 const dutiesList = document.querySelectorAll(".duties-list")
+const expSection = document.getElementById('experience')
 
 expSection.addEventListener("click", (e) => {
     const btn = e.target.closest(".duties-btn")
@@ -202,6 +253,8 @@ expSection.addEventListener("click", (e) => {
     const list = btn.nextElementSibling;
 
     if (!list || !list.classList.contains("duties-list")) return;
+
+    btn.textContent = btn.textContent == "+" ? "-" : "+"
 
     list.classList.toggle(hideClass)
 })
@@ -252,6 +305,37 @@ async function buildExperience() {
 // !~education template~!
 const eduTemplate = document.getElementById("edu_template")
 const eduContainer = document.getElementById("edu-container")
+const eduSection = document.getElementById("edu-container")
+
+async function buildEducation() {
+    const eduData = await fetchContent(templateContent)
+    const education = eduData.exp_edu.education
+
+    education.forEach(edu => {
+        const clone = eduTemplate.content.cloneNode(true)
+
+        const eduName = clone.querySelector(".edu-title")
+        const eduDegree = clone.querySelector(".edu-degree")
+        const eduStartDate = clone.querySelector(".edu-start_date")
+        const eduEndDate = clone.querySelector(".edu-end_date")
+        const eduEstDate = clone.querySelector(".est-date")
+        const eduStartEndDate = clone.querySelector(".edu-start_end_date")
+
+        eduName.textContent = edu.title
+        eduDegree.textContent = edu.degree
+        eduStartDate.textContent = edu.start_date
+        eduEndDate.textContent = edu.end_date
+        eduEstDate.textContent = edu.est_date
+
+        if (education.start_date && education.end_date) {
+            eduEstDate.style.display = "none"
+        } else {
+            eduStartEndDate.style.display = "none"
+        }
+
+        eduContainer.append(clone)
+    })
+}
 
 // ✉️Contact✉️
 
@@ -262,7 +346,9 @@ async function loadContent(filePath) {
 
     const {languages, technologies, certifications} = data.skills
     const {experience, education} = data.exp_edu
+    const {projects} = data.projects
 
+    // Skills
     if (!ifEmpty(langSection, languages)) {
         buildLanguages();
     }
@@ -275,8 +361,22 @@ async function loadContent(filePath) {
         buildCerts();
     }
 
+    // Projects
+    if (!ifEmpty(projectsSection, projects)) {
+        buildProjects();
+    } else {
+        document.querySelectorAll('a[href="#projects"]').forEach(link =>
+            link.closest("li")?.remove()
+        )
+    }
+
+    // Education & experience
     if (!ifEmpty(expSection, experience)) {
         buildExperience();
+    }
+
+    if (!ifEmpty(eduSection, education)) {
+        buildEducation();
     }
     console.log(data)
 }
