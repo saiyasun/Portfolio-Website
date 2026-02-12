@@ -490,6 +490,7 @@ nav {
                 padding: .25em;
                 display: flex;
                     align-items: center;
+                gap: .5em;
             }
                 .info-container img {
                     width: var(--icon);
@@ -962,12 +963,15 @@ nav {
         display: flex;
             align-items: flex-start;
             flex-direction: column;
-            gap: 1em;
+            gap: 1.5em;
         max-height: 500px;
         overflow-y: auto;
     }
         .tech_cat-container {
             width: 100%;
+            display: flex;
+                flex-direction: column;
+                gap: .5em;
         }
         .tech_cat-title {
             display: flex;
@@ -1303,40 +1307,52 @@ nav {
     .exp-reverse .duties-container {
         
     }
-        .exp-summary {
+        .summary-container {
             position: relative;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+            padding: .5em;
+            max-height: var(--summary-height);
+
+            --summary-height: 175px;
+        }
+        .exp-summary {
             padding: .25em 0;
             text-wrap: wrap;
             width: 100%;
+            max-height: calc(var(--summary-height) * 0.90);
+            overflow-y: auto;
+            margin: 0;
         }
         /* ⏪.exp-reverse⏪ */
         .exp-reverse .exp-summary {
             text-align: right;
         }
-            .exp-summary::before,
-            .exp-summary::after {
+            .summary-container::before,
+            .summary-container::after {
                 content: "";
                 position: absolute;
                 right: 85%;
-                left: 0;
+                left: .5em;
                 height: 1px;
                 background-color: black;
             }
-                .exp-summary::before {
-                    top: 3%;
+                .summary-container::before {
+                    top: 5%;
                 }
-                .exp-summary::after {
-                    bottom: 5%;
+                .summary-container::after {
+                    bottom: 2%;
                 }
             /* ⏪.exp-reverse⏪ */
-            .exp-reverse .exp-summary::before,
-            .exp-reverse .exp-summary::after {
-                right: 0;
+            .exp-reverse .summary-container::before,
+            .exp-reverse .summary-container::after {
+                right: .5em;
                 left: 85%;
             }
         .duties-btn {
             border: none;
-            margin-bottom: 1em;
+            margin: .5em;
             padding: .125em;
             font-weight: bold;
             font-size: var(--text-md);
@@ -1426,11 +1442,47 @@ nav {
             text-align: center;
             box-sizing: border-box;
             text-wrap: wrap;
+            padding: .125em .5em;
         }
-        .edu-date {
-            font-style: italic;
-            font-size: var(--text-xs);
+        .edu-date_location {
+            display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .5em;
+                gap: .5em;
         }
+            .edu-date {
+                font-style: italic;
+                font-size: var(--text-xs);
+            }
+                .edu-start_end_date, .est_date-con {
+                    display: flex;
+                        align-items: center;
+                        justify-content: center;
+                }
+            .edu_location-img {
+                max-width: var(--icon-s);
+            }
+            .edu-location {
+                position: relative;
+                display: flex;
+                    align-items: center;
+                    gap: .125em;
+                padding: .25em;
+            }
+                .edu-location::before {
+                    content: "|";
+                    position: absolute;
+                    left: -.025em;
+                    width: 1px;
+                    height: 0;
+                    bottom: 1.65em;
+                    background-color: black;
+                }
+            .edu_location {
+                font-style: italic;
+                font-size: var(--text-xs);
+            }
 /* 📱 🎓👷Experience/Education🎓👷-mobile/tablet 📱 */
 @media (max-width: 768px) {
     #experience {
@@ -1691,9 +1743,11 @@ nav {
             padding: .25em;
         }
             #connect-links-container {
-                display: flex;
+                display: grid;
+                    grid-template-columns: repeat(4, calc(var(--icon-lg) * 1.1));
                     align-items: center;
-                    justify-content: center;
+                    justify-items: center;
+                    place-content: center;
                     gap: .25em;
                 padding: .5em;
                 border-radius: 0;
@@ -1704,9 +1758,9 @@ nav {
                 aspect-ratio: auto;
             }
                 .connect-link {
-                    outline: 2px solid rgb(218, 216, 216);
+                    outline: 1px solid rgb(240, 238, 238);
                     background: rgba(247, 246, 243, 0.6);
-                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.267);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.014);
                     position: static;
                     width: calc(var(--icon-lg) * 1.2);
                     aspect-ratio: 1/1;

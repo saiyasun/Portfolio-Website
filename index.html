@@ -90,7 +90,7 @@
                 <!-- pic & location -->
                 <div id="bio-section">
                     <div id="profile_pic-container">
-                        <img id="profile-pic" src="images/profile_pics/tulane_profile.jpg" alt="profile picture">
+                        <img id="profile-pic" src="images/profile_pics/profile_pic-2.png" alt="profile picture">
                         <div id="profile_icon-container">
                             <div class="bio-quick_info">
                                 <img class="profile-icon" src="images/icons/laptop.svg">
@@ -231,7 +231,7 @@
                         <div class="tech-container is_hidden" id="tech-container-o">
                             
                             <div class="tech_cat-container" data-tech_cat-container="frontend">
-                                <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
+                                <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/frontend.svg"></div>
                                     <ul class="tech_stack tech_stack-o" data-tech_cat="frontend">
                                         <!-- append here -->
                                     </ul>
@@ -319,7 +319,9 @@
                     </div>
                     <!-- ~summary & duties~ -->
                     <div class="duties-container">
-                        <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
+                        <div class="summary-container">
+                            <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
+                        </div>
                         <button class="duties-btn">+</button>
                         <ul class="duties-list is_hidden">
                             <li data-i18n="exp.duty">This was one of my duties.</li>
@@ -338,9 +340,17 @@
                     <div class="education">
                         <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
                         <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
-                        <div class="edu-date">
-                            <div class="edu-start_end_date"><span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span></div>
-                            <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+                        <div class="edu-date_location">
+                            <div class="edu-date">
+                                <div class="edu-start_end_date"><span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span></div>
+                                <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+                            </div>
+                            <div class="edu-location">
+                                <img class="edu_location-img" src="images/icons/location_pin-2.svg">
+                                <div class="edu_location">
+                                    <span class="edu_city" data-i18n="edu.city">Taoyuan</span>, <span class="edu_country" data-i18n="edu.country">Taiwan</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </template>
@@ -378,7 +388,6 @@
                     <h4 class="reach_connect-title" id="connect-title" data-i18n="contact.connect-title">Connect</h4>
                     <img src="images/icons/social_media-1.svg">
                 </div>
-                <template></template> <!--ADD LATER!!!!-->
                 <div id="link_position-container">
                     <div id="connect-links-container">
                         <a class="connect-link" href="https://github.com/asiahcrutchfield">
