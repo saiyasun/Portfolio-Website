@@ -129,7 +129,12 @@ nav {
         list-style-type: none;
         font-weight: var(--w-bold);
     }
-
+button {
+    border: none;
+    border-radius: 1%;
+    padding: .25em;
+    outline: 2px solid rgba(226, 223, 223, 0.555);;
+}
 /* •nav• */
 .glass-nav {
     outline: 1px solid rgba(255, 255, 255, 0.3);
@@ -521,11 +526,11 @@ nav {
         justify-content: center;
 }
     #interest-circle {
+        outline: 1px solid rgba(0, 0, 0, 0.473);
         border-radius: 50%;
         position: relative;
-        background-color: grey;
         width: 100%;
-        max-width: 75px;
+        max-width: 50px;
         aspect-ratio: 1/1;
     }
         .interest {
@@ -1244,6 +1249,10 @@ nav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    max-height: var(--exp-height);
+    overflow-y: auto;
+
+    --exp-height: calc(390px * 4);
 }
     .exp {
         position: relative;
@@ -1279,27 +1288,43 @@ nav {
     .exp-reverse > .exp-title {
         text-align: end;
     }
-    .date-location {
+    .exp-quick_info {
         display: flex;
-            gap: 2em;
+            flex-direction: column;
+            gap: .25em;
         padding: .25em;
     }
-        .exp-date {
+    /* ⏪.exp-reverse⏪ */
+    .exp-reverse > .exp-quick_info {
+        align-items: flex-end;
+    }
+        .position {
+            width: 100%;
+            padding: .25em;
+            text-decoration: underline;
             font-style: italic;
         }
-    /* ⏪.exp-reverse⏪ */
-    .exp-reverse > .date-location {
-        justify-content: flex-end;
-    }
-    .location-container {
-        display: flex;
-            gap: .25em;
-    }
-        .exp_city {
+        .date-location {
+            display: flex;
+                gap: 2em;
+            padding: .25em;
         }
-        .location-container img {
-            max-width: var(--icon-xs);
+            .exp-date {
+                font-style: italic;
+            }
+        /* ⏪.exp-reverse⏪ */
+        .exp-reverse > .date-location {
+            justify-content: flex-end;
         }
+        .location-container {
+            display: flex;
+                gap: .25em;
+        }
+            .exp_city {
+            }
+            .location-container img {
+                max-width: var(--icon-xs);
+            }
     .duties-container {
         padding: .75em;
     }
@@ -1393,6 +1418,9 @@ nav {
                 left: 95%;
                 right: 0;
             }
+    #more_exp-btn {
+        margin-top: 1em;
+    }
 /* ~education~ */
 #edu-container {
     padding: .5em;
@@ -1476,7 +1504,7 @@ nav {
                     left: -.025em;
                     width: 1px;
                     height: 0;
-                    bottom: 1.65em;
+                    bottom: 1.75em;
                     background-color: black;
                 }
             .edu_location {
@@ -1501,7 +1529,7 @@ nav {
                 max-width: 375px;
                 position: relative;
             }
-                #exp-container > .exp:not(:last-child)::after {
+                #exp-container > .exp:has(~ .exp:not(.is_hidden))::after {
                     content: "";
                     position: absolute;
                     width: 7px;

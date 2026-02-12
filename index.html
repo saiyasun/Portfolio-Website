@@ -305,16 +305,21 @@
             <template id="exp_template">
                 <div class="exp">
                     <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
-                    <div class="date-location">
-                        <div class="exp-date"> 
-                            <span class="start-date">2023</span>-<span class="end-date">2024</span> 
-                        </div>
-                        <div class="location-container">
-                            <img src="images/icons/location_pin-red.svg"> 
-                            <div class="exp_location">
-                                <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
-                                <span data-i18n="exp.country" class="exp_country">USA</span>
+                    <div class="exp-quick_info">
+                        <div class="date-location">
+                            <div class="exp-date"> 
+                                <span class="start-date">2023</span>-<span class="end-date">2024</span> 
                             </div>
+                            <div class="location-container">
+                                <img src="images/icons/location_pin-red.svg"> 
+                                <div class="exp_location">
+                                    <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
+                                    <span data-i18n="exp.country" class="exp_country">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-container">
+                            <span class="position"></span>
                         </div>
                     </div>
                     <!-- ~summary & duties~ -->
@@ -334,6 +339,7 @@
             <div class="exp_edu-container" id="exp-container">
                 <!-- append here -->
             </div>
+            <button class="is_hidden" id="more_exp-btn"><span id="more-text">More</span> <span id="more_exp-+">+</span></button>
 
             <!--EDUCATION TEMPLATE-->
                 <template id="edu_template">

@@ -282,12 +282,14 @@ async function buildExperience() {
         const expCountry = clone.querySelector(".exp_country")
         const expSummary = clone.querySelector(".exp-summary")
         const expDuties = clone.querySelector(".duties-list")
+        const expPosition = clone.querySelector(".position")
 
         expTitle.textContent = exp.title
         expStartDate.textContent = exp.start_date
         expEndDate.textContent = exp.end_date == 0 ? "present" : exp.end_date
         expCity.textContent = exp.city
         expCountry.textContent = exp.country
+        expPosition.textContent = exp.position
         expSummary.textContent = exp.summary
         // clear list
         expDuties.innerHTML = ""
@@ -299,6 +301,30 @@ async function buildExperience() {
         })
 
         expContainer.append(clone)
+    })
+    const expCards = expContainer.querySelectorAll(".exp")
+    const moreExpBtn = document.getElementById("more_exp-btn")
+    const expBtnPlus = document.getElementById("more_exp-+")
+    const expBtnText = document.getElementById("more-text")
+    
+    if (expCards.length <= 3) return
+
+    // 1. show the button 
+    moreExpBtn.classList.remove(hideClass)
+
+    // 2. hide everything after the first 3
+    expCards.forEach((card, i) => {
+        card.classList.toggle(hideClass, i >= 3)
+    })
+
+    moreExpBtn.addEventListener("click", () => {
+        const isHidden = expCards[3].classList.contains(hideClass) // current state
+
+        expBtnPlus.textContent = isHidden ? "-" : "+"
+        expBtnText.textContent = isHidden ? "Less" : "More"
+        expCards.forEach((card, i) => {
+            if (i >= 3) card.classList.toggle(hideClass)
+        })
     })
 }
 
