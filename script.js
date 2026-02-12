@@ -1,6 +1,6 @@
 // UNIVERSAL
 const htmlTitle = document.title;
-const zhName = document.querySelector(".zh-name").textContent;
+const zhName = document.querySelector("#zh-name").textContent;
 let enName = document.querySelector("#en-name").textContent;
     const firstLast = enName.split(" ")
     if (enName.includes(zhName)) {
@@ -422,6 +422,23 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
   }
 });
 
+function swapNames(lang) {
+    const engName = document.getElementById("en-name")
+    const zhongName = document.getElementById("zh-name")
+
+    if (lang == 'zh') {
+        engName.classList.remove("active-name")
+        zhongName.classList.remove("passive-name")
+        engName.classList.add("passive-name")
+        zhongName.classList.add("active-name")
+    } else {
+        engName.classList.remove("passive-name")
+        zhongName.classList.remove("active-name")
+        engName.classList.add("active-name")
+        zhongName.classList.add("passive-name")
+    }
+}
+
 function getNested(obj, path) {
   return path.split(".").reduce((acc, key) => acc?.[key], obj);
 }
@@ -467,5 +484,6 @@ langButtons.forEach(btn => {
     const lang = btn.dataset.lang;
     
     await applyUI(lang);
+    swapNames(lang);
   });
 });
