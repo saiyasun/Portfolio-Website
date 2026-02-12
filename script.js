@@ -8,6 +8,8 @@ let enName = document.querySelector("#en-name").textContent;
     }
 const hideClass = "is_hidden"
 const activeLink = "nav_active"
+const currentLang = document.documentElement.lang
+console.log(currentLang)
 
 // adds active class to currently clicked link
 function activeSelect(navbar, active) {
@@ -51,6 +53,8 @@ function ifEmpty(container, dataArray) {
 // ~file paths~
 const templateContent = "content/temp_content.json"
 const translationContent = "content/translations.json"
+const templateTranslations = "translations/trans_temp_content.json"
+const uiTranslations = "translations/ui_trans.json"
 
 // fetch content
 async function fetchContent(filePath) {
@@ -202,14 +206,14 @@ const projContainer = document.getElementById("projects-container")
 const projectsSection = document.getElementById('projects')
 
 async function buildProjects() {
-    const projData = fetchContent(templateContent)
+    const projData = await fetchContent(templateContent)
     const projects = projData.projects
 
     projects.forEach(proj => {
         const clone = projTemplate.content.cloneNode(true)
 
         const title = clone.querySelector(".project-title")
-        const img = clone.querySelector("project-img")
+        const img = clone.querySelector(".project-img")
         const imgLink = clone.querySelector(".p_img-link")
         const description = clone.querySelector(".project-desc")
         const linkList = clone.querySelector(".project-links")
@@ -237,7 +241,7 @@ async function buildProjects() {
             li.append(a)
             linkList.append(li)
         })
-        projContainer.append(proj)
+        projContainer.append(clone)
     })
 }
 
@@ -372,7 +376,7 @@ async function loadContent(filePath) {
 
     const {languages, technologies, certifications} = data.skills
     const {experience, education} = data.exp_edu
-    const {projects} = data.projects
+    const projects = data.projects
 
     // Skills
     if (!ifEmpty(langSection, languages)) {
@@ -408,3 +412,60 @@ async function loadContent(filePath) {
 }
 
 loadContent(templateContent)
+
+// LANGUAGE TOGGLE
+const langButtons = document.querySelectorAll(".lang-btn");
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  if (!el.dataset.i18nDefault) {
+    el.dataset.i18nDefault = el.textContent;
+  }
+});
+
+function getNested(obj, path) {
+  return path.split(".").reduce((acc, key) => acc?.[key], obj);
+}
+
+async function applyUI(lang) {
+  document.documentElement.lang = lang;
+
+  // ✅ if English, restore original HTML text and stop
+  if (lang === "en") {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      if (el.dataset.i18nDefault) el.textContent = el.dataset.i18nDefault;
+    });
+    return;
+  }
+
+  // otherwise load translations (zh)
+  const ui = await fetchContent(uiTranslations);
+  const dict = ui[lang];
+  if (!dict) return;
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    const value = getNested(dict, key);
+    if (value === undefined) return;
+
+    if (Array.isArray(value)) {
+      const idx = Number(el.dataset.i18nIndex || 0);
+      el.textContent = value[idx] ?? el.textContent;
+    } else {
+      el.textContent = value;
+    }
+  });
+}
+
+langButtons.forEach(btn => {
+  btn.addEventListener("click", async () => {
+    // 1) remove active from all
+    langButtons.forEach(b => b.classList.remove("active"));
+    // 2) add active to clicked
+    btn.classList.add("active");
+
+    // 3) read chosen lang
+    const lang = btn.dataset.lang;
+    
+    await applyUI(lang);
+  });
+});

@@ -131,9 +131,9 @@ nav {
     }
 button {
     border: none;
-    border-radius: 1%;
     padding: .25em;
-    outline: 2px solid rgba(226, 223, 223, 0.555);;
+    outline: 2px solid rgba(226, 223, 223, 0.555);
+    appearance: none;
 }
 /* •nav• */
 .glass-nav {
@@ -1810,61 +1810,47 @@ button {
 
 /* Aぁ translation button ぁA */
 #translator {
-    display: none;
     --lang-active: rgba(80, 180, 120, 0.35);
     --lang-glow: rgba(80, 180, 120, 0.4);
+    --btn-width: 100px;
 
-    position: fixed;
-        bottom: 24px;
-        right: 28px;
-        z-index: 1000;
-
+    position: sticky;
+        bottom: 3%;
+        left: 85%;
+        z-index: 2000;
     outline: 1px solid black;
+    border-radius: 999px;
     padding: .125em;
     display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.25em;
+    width: calc(var(--text-xs) * 6.5);
 }
     .lang-btn {
-        position: relative; /* required for pseudo-element */
         background: none;
         border: none;
-        padding: 0.25em 0.4em;
+        padding: 0.25em;
 
         font-size: var(--text-xs);
         font-weight: 500;
         letter-spacing: 0.08em;
         cursor: pointer;
     }
-        .lang-btn.active::before {
-            content: "";
-            position: absolute;
-            inset: -0.35em; /* controls circle size */
-            background: var(--lang-active); /* soft green */
-            border-radius: 50%;
-            z-index: -1;
-            box-shadow:
-                0 0 8px var(--lang-glow),
-                0 0 16px var(--lang-glow);
-        }
-        .lang-btn:not(.active) {
-            opacity: 0.5;
-        }
+        .lang-btn.active {
+            font-weight: 700;
+            opacity: 1;
 
-        .lang-btn:hover {
-            opacity: 0.85;
+            text-shadow:
+                0 0 4px rgba(80, 180, 120, 0.6),
+                0 0 8px rgba(80, 180, 120, 0.4);
         }
     /* 📱 Aぁ translation button ぁA 📱 */
-    @media (max-width: 600px) {
+    @media (max-width: 767px) {
         #translator {
-            top: 5%;
-            bottom: auto;
-            display: none;
-        }
-    }
-    @media (max-width: 925px) and (min-height: 325px) and (max-height: 550px) {
-        #translator {
-            top: 5%;
-            bottom: auto;
+            position: sticky;
+            bottom: 93%;
+            left: 77%;
+            z-index: 2000;
         }
     }

@@ -1,0 +1,67 @@
+{
+  "zh": 
+  {
+    "skills": {
+      "languages": [
+        { "lang": "英文" },
+        { "lang": "中文（普通話）" }
+      ],
+      "technologies": [
+        { "name": "Figma" },
+        { "name": "HTML" }
+      ],
+      "certifications": []
+    },
+
+    "projects": [],
+
+    "exp_edu": {
+      "experience": [
+        {
+          "title": "Tulane Technology Connection",
+          "city": "新奧爾良",
+          "country": "美國",
+          "position": "IT 技術專員",
+          "summary": "直接與學生和教職員合作，協助他們選擇最適合需求的科技產品，把規格與價格轉成「現實世界的決策」。這份工作同時鍛鍊了我的技術理解、溝通能力，以及在高單價選購時建立信任的能力。",
+          "duties": [
+            "彙整並提交 Excel 報表給 Apple 等公司。",
+            "使用 PIMS POS 系統處理銷售、報價、收貨與採購單。",
+            "協助學生與教職員在 Mac、iPad、Dell 等產品上做出購買決策。",
+            "熟悉多種 Mac 與 Dell 筆電型號與差異。"
+          ]
+        },
+        {
+          "title": "Pontchartrain Partners",
+          "city": "新奧爾良",
+          "country": "美國",
+          "position": "維護／管理",
+          "summary": "多年來負責一處物業的日常維護與整理，從環境整潔到小型修繕都親手處理。這份工作讓我學會穩定、負責，以及把一件事長期做好其實很有成就感。",
+          "duties": [
+            "維持室內外環境整潔：整理草地、清理垃圾雜物、清潔洗手間、照顧植栽、拖地等。",
+            "進行簡易維修，例如修理漏水馬桶。"
+          ]
+        },
+        {
+          "title": "Canal Street Veterinary Hospital",
+          "city": "新奧爾良",
+          "country": "美國",
+          "position": "獸醫助理",
+          "summary": "在臨床環境中協助照護動物與支援醫療流程，包含恢復期照顧、檢查與手術協助。這份經驗很早就訓練了我的細心、冷靜與同理心。",
+          "duties": [
+            "照顧生病或受傷的狗與貓：餵食、遛狗、洗澡等。",
+            "在檢查與手術過程中協助獸醫。"
+          ]
+        }
+      ],
+
+      "education": [
+        {
+          "title": "元智大學",
+          "degree": "資訊學士（國際班）",
+          "city": "桃園",
+          "country": "台灣"
+        }
+      ]
+    }
+  }
+}
