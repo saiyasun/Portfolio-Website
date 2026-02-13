@@ -369,6 +369,20 @@ async function buildEducation() {
 
 // ✉️Contact✉️
 
+
+function isInsideTemplate(el) {
+  return !!el.closest("template");
+}
+
+function cacheDefaults(root = document) {
+  root.querySelectorAll("[data-i18n]").forEach(el => {
+    if (isInsideTemplate(el)) return;
+    if (!el.dataset.i18nDefault) {
+      el.dataset.i18nDefault = el.textContent;
+    }
+  });
+}
+
 // function to visualize accessing json content
 async function loadContent(filePath) {
     const response = await fetch(filePath);
@@ -409,6 +423,8 @@ async function loadContent(filePath) {
         buildEducation();
     }
     console.log(data)
+
+     cacheDefaults();
 }
 
 loadContent(templateContent)
@@ -416,11 +432,7 @@ loadContent(templateContent)
 // LANGUAGE TOGGLE
 const langButtons = document.querySelectorAll(".lang-btn");
 
-document.querySelectorAll("[data-i18n]").forEach(el => {
-  if (!el.dataset.i18nDefault) {
-    el.dataset.i18nDefault = el.textContent;
-  }
-});
+cacheDefaults();
 
 function swapNames(lang) {
     const engName = document.getElementById("en-name")
@@ -446,13 +458,17 @@ function getNested(obj, path) {
 async function applyUI(lang) {
   document.documentElement.lang = lang;
 
-  // ✅ if English, restore original HTML text and stop
-  if (lang === "en") {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      if (el.dataset.i18nDefault) el.textContent = el.dataset.i18nDefault;
-    });
-    return;
-  }
+  // English restore
+if (lang === "en") {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    if (isInsideTemplate(el)) return;
+    if (el.dataset.i18nDefault) el.textContent = el.dataset.i18nDefault;
+  });
+  return;
+}
+
+  // ✅ switching to zh: FIRST make sure defaults exist (captures English text)
+  cacheDefaults();
 
   // otherwise load translations (zh)
   const ui = await fetchContent(uiTranslations);
@@ -460,17 +476,19 @@ async function applyUI(lang) {
   if (!dict) return;
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    const value = getNested(dict, key);
-    if (value === undefined) return;
+  if (isInsideTemplate(el)) return;
 
-    if (Array.isArray(value)) {
-      const idx = Number(el.dataset.i18nIndex || 0);
-      el.textContent = value[idx] ?? el.textContent;
-    } else {
-      el.textContent = value;
-    }
-  });
+  const key = el.dataset.i18n;
+  const value = getNested(dict, key);
+  if (value === undefined) return;
+
+  if (Array.isArray(value)) {
+    const idx = Number(el.dataset.i18nIndex || 0);
+    el.textContent = value[idx] ?? el.textContent;
+  } else {
+    el.textContent = value;
+  }
+});
 }
 
 langButtons.forEach(btn => {

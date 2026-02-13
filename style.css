@@ -1287,11 +1287,12 @@ button {
         }
         .date-location {
             display: flex;
-                gap: 2em;
+                gap: .5em;
             padding: .25em;
         }
             .exp-date {
                 font-style: italic;
+                display: flex;
             }
         /* ⏪.exp-reverse⏪ */
         .exp-reverse > .date-location {
@@ -1540,6 +1541,10 @@ button {
                 .exp-reverse > .date-location {
                     justify-content: center;
                     align-items: flex-end;
+                }
+                /* ⏪.exp-reverse⏪ */
+                .exp-reverse .exp-date {
+                    justify-content: flex-end;
                 }
     /* 📱~education~📱 */
     #edu-container {
