@@ -1,6 +1,6 @@
 // UNIVERSAL
 const htmlTitle = document.title;
-const zhName = document.querySelector(".zh-name").textContent;
+const zhName = document.querySelector("#zh-name").textContent;
 let enName = document.querySelector("#en-name").textContent;
     const firstLast = enName.split(" ")
     if (enName.includes(zhName)) {
@@ -8,6 +8,7 @@ let enName = document.querySelector("#en-name").textContent;
     }
 const hideClass = "is_hidden"
 const activeLink = "nav_active"
+let currentLang = document.documentElement.lang
 
 // adds active class to currently clicked link
 function activeSelect(navbar, active) {
@@ -51,6 +52,8 @@ function ifEmpty(container, dataArray) {
 // ~file paths~
 const templateContent = "content/temp_content.json"
 const translationContent = "content/translations.json"
+const templateTranslations = "translations/trans_temp_content.json"
+const uiTranslations = "translations/ui_trans.json"
 
 // fetch content
 async function fetchContent(filePath) {
@@ -202,14 +205,14 @@ const projContainer = document.getElementById("projects-container")
 const projectsSection = document.getElementById('projects')
 
 async function buildProjects() {
-    const projData = fetchContent(templateContent)
+    const projData = await fetchContent(templateContent)
     const projects = projData.projects
 
     projects.forEach(proj => {
         const clone = projTemplate.content.cloneNode(true)
 
         const title = clone.querySelector(".project-title")
-        const img = clone.querySelector("project-img")
+        const img = clone.querySelector(".project-img")
         const imgLink = clone.querySelector(".p_img-link")
         const description = clone.querySelector(".project-desc")
         const linkList = clone.querySelector(".project-links")
@@ -237,7 +240,7 @@ async function buildProjects() {
             li.append(a)
             linkList.append(li)
         })
-        projContainer.append(proj)
+        projContainer.append(clone)
     })
 }
 
@@ -282,12 +285,14 @@ async function buildExperience() {
         const expCountry = clone.querySelector(".exp_country")
         const expSummary = clone.querySelector(".exp-summary")
         const expDuties = clone.querySelector(".duties-list")
+        const expPosition = clone.querySelector(".position")
 
         expTitle.textContent = exp.title
         expStartDate.textContent = exp.start_date
         expEndDate.textContent = exp.end_date == 0 ? "present" : exp.end_date
         expCity.textContent = exp.city
         expCountry.textContent = exp.country
+        expPosition.textContent = exp.position
         expSummary.textContent = exp.summary
         // clear list
         expDuties.innerHTML = ""
@@ -299,6 +304,30 @@ async function buildExperience() {
         })
 
         expContainer.append(clone)
+    })
+    const expCards = expContainer.querySelectorAll(".exp")
+    const moreExpBtn = document.getElementById("more_exp-btn")
+    const expBtnPlus = document.getElementById("more_exp-+")
+    const expBtnText = document.getElementById("more-text")
+    
+    if (expCards.length <= 3) return
+
+    // 1. show the button 
+    moreExpBtn.classList.remove(hideClass)
+
+    // 2. hide everything after the first 3
+    expCards.forEach((card, i) => {
+        card.classList.toggle(hideClass, i >= 3)
+    })
+
+    moreExpBtn.addEventListener("click", () => {
+        const isHidden = expCards[3].classList.contains(hideClass) // current state
+
+        expBtnPlus.textContent = isHidden ? "-" : "+"
+        expBtnText.textContent = isHidden ? "Less" : "More"
+        expCards.forEach((card, i) => {
+            if (i >= 3) card.classList.toggle(hideClass)
+        })
     })
 }
 
@@ -339,6 +368,7 @@ async function buildEducation() {
 
 // ✉️Contact✉️
 
+
 // function to visualize accessing json content
 async function loadContent(filePath) {
     const response = await fetch(filePath);
@@ -346,7 +376,7 @@ async function loadContent(filePath) {
 
     const {languages, technologies, certifications} = data.skills
     const {experience, education} = data.exp_edu
-    const {projects} = data.projects
+    const projects = data.projects
 
     // Skills
     if (!ifEmpty(langSection, languages)) {
@@ -382,3 +412,48 @@ async function loadContent(filePath) {
 }
 
 loadContent(templateContent)
+
+// LANGUAGE TOGGLE
+const langButtons = document.querySelectorAll(".lang-btn");
+
+function swapNames(lang) {
+    const engName = document.getElementById("en-name")
+    const zhongName = document.getElementById("zh-name")
+
+    if (lang == 'zh') {
+        engName.classList.remove("active-name")
+        zhongName.classList.remove("passive-name")
+        engName.classList.add("passive-name")
+        zhongName.classList.add("active-name")
+    } else {
+        engName.classList.remove("passive-name")
+        zhongName.classList.remove("active-name")
+        engName.classList.add("active-name")
+        zhongName.classList.add("passive-name")
+    }
+}
+
+function translatePage(lang) {
+
+
+    // swap hero name based on language
+    swapNames(lang)
+}
+
+// change the current language based on what button is clicked
+langButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        // 1. update language variable
+        currentLang = btn.dataset.lang
+
+        // 2. update the html lang <html lang="">
+        document.documentElement.lang = currentLang
+
+        // 3. update active button
+        langButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // 4. call translate function
+        translatePage(currentLang)
+    })
+})
