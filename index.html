@@ -44,21 +44,21 @@
         <div class="section-inner" id="hero-container">
             <div id="hero-intro1_container">
                 <div id="hero-name_container">
-                    <span class="intro-name" id="en-name">
-                        Asiah <span class="anchor-name">Crutchfield<span class="intro-name zh-tablet">孫賽亞</span></span></span>
-                    <span class="intro-name zh-default zh-name">孫賽亞</span>
+                    <span class="intro-name active-name" id="en-name">
+                        Asiah Crutchfield</span>
+                    <span class="intro-name zh-default passive-name" id="zh-name">孫賽亞</span>
                 </div>
                     <div id="hero-tag_container">
                         <ul>
-                            <li data-i18n="tag.builder">Builder</li>
-                            <li data-i18n="tag.creator">Creator</li>
+                            <li data-i18n="hero.tag.builder">Builder</li>
+                            <li data-i18n="hero.tag.creator">Creator</li>
                         </ul>
                     </div>
             </div>
 
             <div id="hero-intro2_container">
                 <p>
-                    <span data-i18n="hero.intro.suffix">Building digital experiments
+                    <span data-i18n="hero.intro">Building digital experiments
                         at the intersection of learning and technology.
                     </span>
                 </p>
@@ -90,15 +90,15 @@
                 <!-- pic & location -->
                 <div id="bio-section">
                     <div id="profile_pic-container">
-                        <img id="profile-pic" src="images/profile_pics/tulane_profile.jpg" alt="profile picture">
+                        <img id="profile-pic" src="images/profile_pics/profile_pic-2.png" alt="profile picture">
                         <div id="profile_icon-container">
                             <div class="bio-quick_info">
                                 <img class="profile-icon" src="images/icons/laptop.svg">
-                                <span class="quick_info">CS Student 🎓</span>
+                                <span class="quick_info" data-i18n="about.quickInfo">CS Student 🎓</span>
                             </div>
                             <div class="bio-quick_info">
                                 <img class="profile-icon" src="images/icons/learning-brain.svg">
-                                <span class="quick_info">Learner</span>
+                                <span class="quick_info" data-i18n="about.quickInfo">Learner</span>
                             </div>
                         </div>
                     </div>
@@ -136,19 +136,19 @@
                         <div id="interest-circle">
                             <div id="workout" class="interest">
                                 <div class="int_img-container"><img src="images/icons/dumbbell.svg"></div>
-                                <span class="interest-name" data-i18n="about.interest.workout">Working Out</span>
+                                <span class="interest-name" data-i18n="about.interests.workout">Working Out</span>
                             </div>
                                 <div id="gaming" class="interest">
                                     <div class="int_img-container"><img src="images/icons/gaming.svg"></div>
-                                    <span class="interest-name" data-i18n="about.interest.gaming">Gaming</span>
+                                    <span class="interest-name" data-i18n="about.interests.gaming">Gaming</span>
                                 </div>
                             <div id="eating" class="interest">
                                 <div class="int_img-container"><img src="images/icons/eating-blk.svg"></div>
-                                <span class="interest-name" data-i18n="about.interest.eating">Eating</span>
+                                <span class="interest-name" data-i18n="about.interests.eating">Eating</span>
                             </div>
                                 <div id="hiking" class="interest">
                                     <div class="int_img-container"><img src="images/icons/hiking-blk.svg"></div>
-                                    <span class="interest-name" data-i18n="about.interest.hiking">Hiking</span>
+                                    <span class="interest-name" data-i18n="about.interests.hiking">Hiking</span>
                                 </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
         <div class="section-inner" id="skills-inner">
             <!-- ~human languages~ -->
             <div id="hLanguages" class="skills-subsection">
-                <h3 class="skills-title" data-i18n="skills.lang-title">Languages (Human)</h3>
+                <h3 class="skills-title" data-i18n="skills.langTitle">Languages (Human)</h3>
 
                 <!--LANG TEMPLATE-->
                     <template id="lang_template">
@@ -194,7 +194,7 @@
                                     <img class="lang-flag" src='#'>
                                 </div>
                                 <!-- ~fluency~ -->
-                                <span class="fluency"></span>
+                                <span class="fluency" data-i18n="skills.fluency"></span>
                             </div>
                         </div>
                     </template> 
@@ -205,11 +205,11 @@
 
             <!-- ~technologies~ -->
             <div id="technologies" class="skills-subsection">
-                <h3 class="skills-title" id="tech-subtitle" data-i18n="skills.tech-title">Technologies</h3>
+                <h3 class="skills-title" id="tech-subtitle" data-i18n="skills.techTitle">Technologies</h3>
                     <nav id="tech-nav">
                         <ul>
-                            <li data-i18n="skills.all"><a class="tech-nav_active" href="#tech-container-u">all</a></li>
-                            <li data-i18n="skills.category"><a href="#tech-container-o">by category</a></li>
+                            <li><a class="tech-nav_active" href="#tech-container-u" data-i18n="skills.nav.all">all</a></li>
+                            <li><a href="#tech-container-o" data-i18n="skills.nav.category">by category</a></li>
                         </ul>
                     </nav>
 
@@ -231,7 +231,7 @@
                         <div class="tech-container is_hidden" id="tech-container-o">
                             
                             <div class="tech_cat-container" data-tech_cat-container="frontend">
-                                <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/design.svg"></div>
+                                <div class="tech_cat-title"><span class="tech-title-o">frontend</span><img src="images/icons/tech/frontend.svg"></div>
                                     <ul class="tech_stack tech_stack-o" data-tech_cat="frontend">
                                         <!-- append here -->
                                     </ul>
@@ -257,7 +257,7 @@
                     </div>
                 </template> 
             <div id="certifications" class="skills-subsection">
-                <h3 class="skills-title" data-i18n="skills.cert-title">Certifications</h3>
+                <h3 class="skills-title" data-i18n="skills.certTitle">Certifications</h3>
                     <div id="cert-container">
                         <!-- append here -->
                     </div>
@@ -285,7 +285,7 @@
                 </div>
                 <div class="project_link-container">
                     <ul class="project-links">
-                        <li><a class="p_link" href=""><img class="p_link-img" src="i"></a></li>
+                        <li><a class="p_link" href=""><img class="p_link-img" src=""></a></li>
                     </ul>
                     <span class="project-extra"></span>
                 </div>
@@ -305,26 +305,31 @@
             <template id="exp_template">
                 <div class="exp">
                     <h4 class="exp-title" data-i18n="exp.job">Tulane University</h4>
-                    <div class="date-location">
-                        <div class="exp-date"> 
-                            <span class="start-date">2023</span>-<span class="end-date">2024</span> 
-                        </div>
-                        <div class="location-container">
-                            <img src="images/icons/location_pin-red.svg"> 
-                            <div class="exp_location">
-                                <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
-                                <span data-i18n="exp.country" class="exp_country">USA</span>
+                    <div class="exp-quick_info">
+                        <div class="date-location">
+                            <div class="exp-date"> 
+                                <span class="start-date">2023</span>-<span class="end-date">2024</span> 
                             </div>
+                            <div class="location-container">
+                                <img src="images/icons/location_pin-red.svg"> 
+                                <div class="exp_location">
+                                    <span data-i18n="exp.city" class="exp_city">New Orleans</span>,
+                                    <span data-i18n="exp.country" class="exp_country">USA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-container">
+                            <span class="position"></span>
                         </div>
                     </div>
                     <!-- ~summary & duties~ -->
                     <div class="duties-container">
-                        <p class="exp-summary" data-i18n="exp.summary">This is a summary of my job. But it is what it is</p>
+                        <div class="summary-container">
+                            <p class="exp-summary" data-i18n="exp.summary"></p>
+                        </div>
                         <button class="duties-btn">+</button>
                         <ul class="duties-list is_hidden">
-                            <li data-i18n="exp.duty">This was one of my duties.</li>
-                            <li data-i18n="exp.duty">This was two of my duties.</li>
-                            <li data-i18n="exp.duty">This was three of my duties.</li>
+                            <li data-i18n="exp.duty"></li>
                         </ul>
                     </div>
                 </div>
@@ -332,15 +337,24 @@
             <div class="exp_edu-container" id="exp-container">
                 <!-- append here -->
             </div>
+            <button class="is_hidden" id="more_exp-btn"><span id="more-text" data-i18n="exp.button">More</span> <span id="more_exp-+">+</span></button>
 
             <!--EDUCATION TEMPLATE-->
                 <template id="edu_template">
                     <div class="education">
-                        <h4 class="edu-title" data-i18n="edu.title">Yuanze University</h4>
-                        <span class="edu-degree" data-i18n="edu.degree">International Bachelor's of Informatics</span>
-                        <div class="edu-date">
-                            <div class="edu-start_end_date"><span class="edu-start_date">2024</span>-<span class="edu-end_date">2028</span></div>
-                            <div class="est_date-con">Est. <span class="est-date">2028</span></div>
+                        <h4 class="edu-title" data-i18n="edu.title"></h4>
+                        <span class="edu-degree" data-i18n="edu.degree"></span>
+                        <div class="edu-date_location">
+                            <div class="edu-date">
+                                <div class="edu-start_end_date"><span class="edu-start_date"></span>-<span class="edu-end_date"></span></div>
+                                <div class="est_date-con"> <span class="est-date"></span></div>
+                            </div>
+                            <div class="edu-location">
+                                <img class="edu_location-img" src="images/icons/location_pin-2.svg">
+                                <div class="edu_location">
+                                    <span class="edu_city" data-i18n="edu.city"></span> <span class="edu_country" data-i18n="edu.country"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </template>
@@ -356,7 +370,7 @@
             <!-- ~email & resume~ -->
             <div class="reach_connect" id="reach-out">
                 <div class="contact_title-container">
-                    <h4 class="reach_connect-title" id="reach-out_title" data-i18n="contact.reach-out-title">Reach Out</h4>
+                    <h4 class="reach_connect-title" id="reach-out_title" data-i18n="contact.reachOutTitle">Reach Out</h4>
                     <img src="images/icons/contact.svg">
                 </div>
                 <div id="reach-out-container">
@@ -375,10 +389,9 @@
             <!-- ~social media~ -->
             <div class="reach_connect" id="connect">
                 <div class="contact_title-container">
-                    <h4 class="reach_connect-title" id="connect-title" data-i18n="contact.connect-title">Connect</h4>
+                    <h4 class="reach_connect-title" id="connect-title" data-i18n="contact.connectTitle">Connect</h4>
                     <img src="images/icons/social_media-1.svg">
                 </div>
-                <template></template> <!--ADD LATER!!!!-->
                 <div id="link_position-container">
                     <div id="connect-links-container">
                         <a class="connect-link" href="https://github.com/asiahcrutchfield">
@@ -401,9 +414,9 @@
 
     <!--TRANSLATION-->
     <div id="translator">
-        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn active" id="lang_btn-en" data-lang="en">EN</button>
         <span>|</span>
-        <button class="lang-btn" data-lang="zh">中</button>
+        <button class="lang-btn" id="lang_btn-zh" data-lang="zh">中</button>
     </div>
 </body>
 </html>
