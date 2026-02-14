@@ -8,8 +8,7 @@ let enName = document.querySelector("#en-name").textContent;
     }
 const hideClass = "is_hidden"
 const activeLink = "nav_active"
-const currentLang = document.documentElement.lang
-console.log(currentLang)
+let currentLang = document.documentElement.lang
 
 // adds active class to currently clicked link
 function activeSelect(navbar, active) {
@@ -370,19 +369,6 @@ async function buildEducation() {
 // ✉️Contact✉️
 
 
-function isInsideTemplate(el) {
-  return !!el.closest("template");
-}
-
-function cacheDefaults(root = document) {
-  root.querySelectorAll("[data-i18n]").forEach(el => {
-    if (isInsideTemplate(el)) return;
-    if (!el.dataset.i18nDefault) {
-      el.dataset.i18nDefault = el.textContent;
-    }
-  });
-}
-
 // function to visualize accessing json content
 async function loadContent(filePath) {
     const response = await fetch(filePath);
@@ -423,16 +409,12 @@ async function loadContent(filePath) {
         buildEducation();
     }
     console.log(data)
-
-     cacheDefaults();
 }
 
 loadContent(templateContent)
 
 // LANGUAGE TOGGLE
 const langButtons = document.querySelectorAll(".lang-btn");
-
-cacheDefaults();
 
 function swapNames(lang) {
     const engName = document.getElementById("en-name")
@@ -451,57 +433,27 @@ function swapNames(lang) {
     }
 }
 
-function getNested(obj, path) {
-  return path.split(".").reduce((acc, key) => acc?.[key], obj);
+function translatePage(lang) {
+
+
+    // swap hero name based on language
+    swapNames(lang)
 }
 
-async function applyUI(lang) {
-  document.documentElement.lang = lang;
-
-  // English restore
-if (lang === "en") {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    if (isInsideTemplate(el)) return;
-    if (el.dataset.i18nDefault) el.textContent = el.dataset.i18nDefault;
-  });
-  return;
-}
-
-  // ✅ switching to zh: FIRST make sure defaults exist (captures English text)
-  cacheDefaults();
-
-  // otherwise load translations (zh)
-  const ui = await fetchContent(uiTranslations);
-  const dict = ui[lang];
-  if (!dict) return;
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-  if (isInsideTemplate(el)) return;
-
-  const key = el.dataset.i18n;
-  const value = getNested(dict, key);
-  if (value === undefined) return;
-
-  if (Array.isArray(value)) {
-    const idx = Number(el.dataset.i18nIndex || 0);
-    el.textContent = value[idx] ?? el.textContent;
-  } else {
-    el.textContent = value;
-  }
-});
-}
-
+// change the current language based on what button is clicked
 langButtons.forEach(btn => {
-  btn.addEventListener("click", async () => {
-    // 1) remove active from all
-    langButtons.forEach(b => b.classList.remove("active"));
-    // 2) add active to clicked
-    btn.classList.add("active");
+    btn.addEventListener("click", () => {
+        // 1. update language variable
+        currentLang = btn.dataset.lang
 
-    // 3) read chosen lang
-    const lang = btn.dataset.lang;
-    
-    await applyUI(lang);
-    swapNames(lang);
-  });
-});
+        // 2. update the html lang <html lang="">
+        document.documentElement.lang = currentLang
+
+        // 3. update active button
+        langButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // 4. call translate function
+        translatePage(currentLang)
+    })
+})
