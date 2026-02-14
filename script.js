@@ -433,8 +433,72 @@ function swapNames(lang) {
     }
 }
 
-function translatePage(lang) {
+/// helper: true if el is inside a <template>
+const inTemplate = (el) => el.closest("template") !== null;
 
+// helper: read nested keys like "nav.home"
+// function getNested(obj, path) {
+//  return path.split(".").reduce((acc, key) => acc && acc[key], obj);
+// }
+
+// beginner friendly getNested() function
+function getNested(obj, path) {
+  const keys = path.split(".");
+  let current = obj;
+
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+
+    if (current === undefined || current === null) {
+      return undefined;
+    }
+
+    current = current[key];
+  }
+
+  return current;
+}
+
+// function to translate html elements/ui (NOT templates)
+async function translateUI(lang) {
+  // get all [data-i18n] that are NOT inside templates
+  const uiElements = [...document.querySelectorAll("[data-i18n]")]
+    .filter(el => !inTemplate(el));
+
+  // 1) store original English text ONCE
+  uiElements.forEach(el => {
+    if (!el.dataset.i18nDefault) {
+      el.dataset.i18nDefault = el.textContent;
+    }
+  });
+
+  // 2) if English, restore originals and stop (NO json needed)
+  if (lang === "en") {
+    uiElements.forEach(el => {
+      el.textContent = el.dataset.i18nDefault;
+    });
+    return;
+  }
+
+  // 3) otherwise load translations (zh)
+  const translations = await fetchContent(uiTranslations);
+  const dict = translations[lang];
+  if (!dict) return;
+
+  // 4) apply translations
+  uiElements.forEach(el => {
+    const key = el.dataset.i18n;        // "nav.home"
+    const value = getNested(dict, key);
+
+    if (value !== undefined) {
+      el.textContent = value;
+    }
+  });
+}
+
+
+function translatePage(lang) {
+     translateUI(lang)
 
     // swap hero name based on language
     swapNames(lang)
