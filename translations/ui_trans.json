@@ -48,8 +48,6 @@
 
         "skills": {
             "langTitle": "語言（人類）",
-            "lang": "語言",
-            "fluency": "熟練度",
             "techTitle": "技術",
             "nav": {
             "all": "全部",

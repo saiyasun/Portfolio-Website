@@ -95,7 +95,9 @@
             {
             "title": "Yuan Ze University",
             "degree": "International Bachelor's of Informatics",
-            "est_date": 2028
+            "est_date": 2028,
+            "city": "Taoyuan",
+            "country": "Taiwan"
             }
         ]
     }
