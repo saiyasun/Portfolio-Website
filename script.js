@@ -101,7 +101,7 @@ async function buildLanguages() {
     const langData = await fetchContent(templateContent)
     const languages = langData.skills.languages
 
-    languages.forEach(lang => {
+    languages.forEach((lang, index) => {
         const clone = langTemplate.content.cloneNode(true);
 
         const langName = clone.querySelector(".lang-name")
@@ -110,8 +110,14 @@ async function buildLanguages() {
         const progress = clone.querySelector(".lang-progress")
 
         langName.textContent = lang.lang
+            langName.dataset.i18n = `skills.languages.${index}.lang`
         langFlag.src = `images/icons/${lang.flag}`
         langFluency.textContent = fluencyLevels[lang.fluency]
+            langFluency.dataset.i18n = `skills.languages.${index}.fluency`
+
+        // store default English
+        langName.dataset.i18nDefault = lang.lang
+        langFluency.dataset.i18nDefault = lang.fluency
 
         const {w, color} = fluencyStyles[lang.fluency] ?? {w: 0, color: "#999"};
         progress.style.setProperty("--bar-w", `${w}%`);
@@ -145,14 +151,18 @@ async function buildTech() {
     const techData = await fetchContent(templateContent)
     const technology = techData.skills.technologies
 
-    technology.forEach(tech => {
+    technology.forEach((tech, index) => {
         const cloneU = techTemplate.content.cloneNode(true);
 
         const techName = cloneU.querySelector(".tech-name")
         const techImg = cloneU.querySelector(".tech-img")
 
         techName.textContent = tech.name
+            techName.dataset.i18n = `skills.technologies.${index}.name`
         techImg.src = `images/icons/tech/${tech.img}`
+
+        // save English default
+        techName.dataset.i18nDefault = tech.name
 
         // always append to unordered list
         techContainerU.append(cloneU)
@@ -192,7 +202,11 @@ async function buildCerts() {
         const certDate = clone.querySelector(".cert-date")
 
         certName.textContent = cert.name
+            certName.dataset.i18n = `skills.certifications.${index}.name`
         certDate.textContent = cert.year != 0 ? cert.year : "in progress"
+
+        // save English defaults
+        certName.dataset.i18nDefault = cert.name
         
         certContainer.append(clone)
     })
@@ -208,7 +222,7 @@ async function buildProjects() {
     const projData = await fetchContent(templateContent)
     const projects = projData.projects
 
-    projects.forEach(proj => {
+    projects.forEach((proj, index) => {
         const clone = projTemplate.content.cloneNode(true)
 
         const title = clone.querySelector(".project-title")
@@ -221,9 +235,11 @@ async function buildProjects() {
         const linkImg = clone.querySelector(".p_link-img")
 
         title.textContent = proj.name
+            title.dataset.i18n = `projects.${index}.title`
         img.src = `images/icons/projects/${proj.img}`
         imgLink.href = !proj.imgLink || proj.imgLink == "" ? "" : proj.imgLink
         description.textContent = proj.description
+            description.dataset.i18n = `projects.${index}.description`
 
         linkList.innerHTML = ""
         pLinkItems.forEach(links => {
@@ -240,6 +256,11 @@ async function buildProjects() {
             li.append(a)
             linkList.append(li)
         })
+
+        // get English default
+        title.dataset.i18nDefault = proj.name
+        description.dataset.i18nDefault = proj.description
+
         projContainer.append(clone)
     })
 }
@@ -288,20 +309,37 @@ async function buildExperience() {
         const expPosition = clone.querySelector(".position")
 
         expTitle.textContent = exp.title
+            expTitle.dataset.i18n = `exp_edu.experience.${index}.title`
         expStartDate.textContent = exp.start_date
         expEndDate.textContent = exp.end_date == 0 ? "present" : exp.end_date
         expCity.textContent = exp.city
+            expCity.dataset.i18n = `exp_edu.experience.${index}.city`
         expCountry.textContent = exp.country
+            expCountry.dataset.i18n = `exp_edu.experience.${index}.country`
         expPosition.textContent = exp.position
+            expPosition.dataset.i18n = `exp_edu.experience.${index}.position`
         expSummary.textContent = exp.summary
+            expSummary.dataset.i18n = `exp_edu.experience.${index}.summary`
         // clear list
         expDuties.innerHTML = ""
         const expDutiesList = exp.duties
-        expDutiesList.forEach(duty => {
+        expDutiesList.forEach((duty, i) => {
             const li = document.createElement('li')
             li.textContent = duty
             expDuties.append(li)
+
+            li.dataset.i18n = `exp_edu.experience.${i}.duties`
+
+            // store default English
+            li.dataset.i18nDefault = duty
         })
+
+        // store default English
+        expTitle.dataset.i18nDefault = exp.title
+        expCity.dataset.i18nDefault = exp.city
+        expCountry.dataset.i18nDefault = exp.country
+        expPosition.dataset.i18nDefault = exp.position
+        expSummary.dataset.i18nDefault = exp.summary
 
         expContainer.append(clone)
     })
@@ -340,7 +378,7 @@ async function buildEducation() {
     const eduData = await fetchContent(templateContent)
     const education = eduData.exp_edu.education
 
-    education.forEach(edu => {
+    education.forEach((edu, index) => {
         const clone = eduTemplate.content.cloneNode(true)
 
         const eduName = clone.querySelector(".edu-title")
@@ -349,18 +387,32 @@ async function buildEducation() {
         const eduEndDate = clone.querySelector(".edu-end_date")
         const eduEstDate = clone.querySelector(".est-date")
         const eduStartEndDate = clone.querySelector(".edu-start_end_date")
+        const eduCity = clone.querySelector(".edu_city")
+        const eduCountry = clone.querySelector(".edu_country")
 
         eduName.textContent = edu.title
+            eduName.dataset.i18n = `exp_edu.education.${index}.title`
         eduDegree.textContent = edu.degree
+            eduDegree.dataset.i18n = `exp_edu.education.${index}.degree`
         eduStartDate.textContent = edu.start_date
         eduEndDate.textContent = edu.end_date
         eduEstDate.textContent = edu.est_date
+        eduCity.textContent = edu.city
+            eduCity.dataset.i18n = `exp_edu.education.${index}.city`
+        eduCountry.textContent = edu.country
+            eduCountry.dataset.i18n = `exp_edu.education.${index}.city`
 
         if (education.start_date && education.end_date) {
             eduEstDate.style.display = "none"
         } else {
             eduStartEndDate.style.display = "none"
         }
+
+        // save English defaults
+        eduName.dataset.i18nDefault = edu.title
+        eduDegree.dataset.i18nDefault = edu.degree
+        eduCity.dataset.i18nDefault = edu.city
+        eduCountry.dataset.i18nDefault = edu.country
 
         eduContainer.append(clone)
     })
@@ -468,32 +520,34 @@ async function translateUI(lang) {
   // 1) store original English text ONCE
   uiElements.forEach(el => {
     if (!el.dataset.i18nDefault) {
-      el.dataset.i18nDefault = el.textContent;
+      el.dataset.i18nDefault = el.textContent; // ex: creates <li data-i18n-default="Builder"></li>
     }
   });
 
   // 2) if English, restore originals and stop (NO json needed)
   if (lang === "en") {
     uiElements.forEach(el => {
-      el.textContent = el.dataset.i18nDefault;
+      el.textContent = el.dataset.i18nDefault; 
     });
     return;
   }
 
   // 3) otherwise load translations (zh)
   const translations = await fetchContent(uiTranslations);
+  const tempTranslations = await fetchContent(templateTranslations)
   const dict = translations[lang];
+  const tempDict = tempTranslations[lang]
   if (!dict) return;
 
   // 4) apply translations
   uiElements.forEach(el => {
-    const key = el.dataset.i18n;        // "nav.home"
-    const value = getNested(dict, key);
+        const key = el.dataset.i18n;        // "nav.home"
+        const value = getNested(dict, key) ?? getNested(tempDict, key);
 
-    if (value !== undefined) {
-      el.textContent = value;
-    }
-  });
+        if (value !== undefined) {
+            el.textContent = value;
+        }
+    });
 }
 
 
