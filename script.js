@@ -85,7 +85,6 @@ toggleSection(aboutNav, aboutSubSections);
 
 // 🤹Skills🤹
 // ~languages~
-const fluencyLevels = ["beginner", "intermediate", "advanced", "native"]
 const fluencyStyles = [
     {w: 25, color: "red"}, // beginner
     {w: 50, color: "yellow"}, // intermediate
@@ -100,6 +99,7 @@ const langSection = document.getElementById('hLanguages')
 async function buildLanguages() {
     const langData = await fetchContent(templateContent)
     const languages = langData.skills.languages
+    const fluencyLevels = langData.skills.fluencyLevels
 
     languages.forEach((lang, index) => {
         const clone = langTemplate.content.cloneNode(true);
@@ -113,11 +113,10 @@ async function buildLanguages() {
             langName.dataset.i18n = `skills.languages.${index}.lang`
         langFlag.src = `images/icons/${lang.flag}`
         langFluency.textContent = fluencyLevels[lang.fluency]
-            langFluency.dataset.i18n = `skills.languages.${index}.fluency`
-
+            langFluency.dataset.i18n = `skills.fluencyLevels.${lang.fluency}`
         // store default English
         langName.dataset.i18nDefault = lang.lang
-        langFluency.dataset.i18nDefault = lang.fluency
+        langFluency.dataset.i18nDefault = fluencyLevels[lang.fluency]
 
         const {w, color} = fluencyStyles[lang.fluency] ?? {w: 0, color: "#999"};
         progress.style.setProperty("--bar-w", `${w}%`);
@@ -529,6 +528,7 @@ async function translateUI(lang) {
     uiElements.forEach(el => {
       el.textContent = el.dataset.i18nDefault; 
     });
+
     return;
   }
 

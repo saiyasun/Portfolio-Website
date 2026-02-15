@@ -1,6 +1,7 @@
 {
     "skills": 
     {
+        "fluencyLevels": ["beginner", "intermediate", "advanced", "native"], 
         "languages": 
         [
             {

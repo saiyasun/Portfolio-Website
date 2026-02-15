@@ -2,10 +2,18 @@
   "zh": 
   {
     "skills": {
-      "languages": [
-        { "lang": "英文" },
-        { "lang": "中文（普通話）" }
-      ],
+      "fluencyLevels": ["初學", "中級", "進階", "母語"],
+      "languages": 
+        [
+            {
+            "lang": "英文",
+            "fluency": 3
+            },
+            {
+            "lang": "中文（普通話）",
+            "fluency": 0
+            }
+        ],
       "technologies": [
         { "name": "Figma" },
         { "name": "HTML" }
