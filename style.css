@@ -134,6 +134,10 @@ button {
     padding: .25em;
     outline: 2px solid rgba(226, 223, 223, 0.555);
     outline: none;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
 }
 /* •nav• */
 .glass-nav {
@@ -461,7 +465,8 @@ button {
             display: none;
         }
         #profile-pic {
-            outline: 3px solid black;
+            outline: 1px solid #fffcfc52;
+            box-shadow: 0em .25em 2em #868686b4;;
             aspect-ratio: 1/1;
             border-radius: 50%;
             max-width: none;
@@ -1242,7 +1247,7 @@ button {
             justify-content: center;
         padding: .75em;
         max-width: var(--exp-width);
-        width: 100%;
+        width: 95%;
     }
     .exp-reverse {
         
@@ -1308,7 +1313,8 @@ button {
                 max-width: var(--icon-xs);
             }
     .duties-container {
-        padding: .75em;
+        padding: .75em 0;
+        width: 100%;
     }
     /* ⏪.exp-reverse⏪ */
     .exp-reverse .duties-container {
@@ -1319,13 +1325,15 @@ button {
             display: flex;
                 align-items: center;
                 justify-content: center;
-            padding: .5em;
+            padding: .5em 0;
+            margin: 0;
+            width: 100%;
             max-height: var(--summary-height);
 
             --summary-height: 175px;
         }
         .exp-summary {
-            padding: .25em 0;
+            padding: .25em;
             text-wrap: wrap;
             width: 100%;
             max-height: calc(var(--summary-height) * 0.90);
