@@ -484,6 +484,14 @@ function swapNames(lang) {
     }
 }
 
+function titleSwap(lang) {
+    if (lang == 'zh') {
+        document.title = `${zhName} | ${enName}`
+    } else {
+        document.title = htmlTitle
+    }
+}
+
 /// helper: true if el is inside a <template>
 const inTemplate = (el) => el.closest("template") !== null;
 
@@ -556,6 +564,9 @@ function translatePage(lang) {
 
     // swap hero name based on language
     swapNames(lang)
+
+    // swap page title
+    titleSwap(lang)
 }
 
 // change the current language based on what button is clicked
