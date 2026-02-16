@@ -143,7 +143,7 @@ button {
 .glass-nav {
     outline: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(247, 246, 243, 0.6);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.027);
 }
 #mobile-nav {
     display: none;
@@ -465,8 +465,13 @@ button {
             display: none;
         }
         #profile-pic {
+<<<<<<< HEAD
             outline: 1px solid #fffcfc52;
             box-shadow: 0em .25em 2em #868686b4;;
+=======
+            outline: 1px solid #faf5f552;
+            box-shadow: 0em .25em .5em #86868610;
+>>>>>>> f57c8de4b06dd4b8446010dcf79773b37e6e5df4
             aspect-ratio: 1/1;
             border-radius: 50%;
             max-width: none;

@@ -484,6 +484,17 @@ function swapNames(lang) {
     }
 }
 
+<<<<<<< HEAD
+=======
+function titleSwap(lang) {
+    if (lang == 'zh') {
+        document.title = `${zhName} | ${enName}`
+    } else {
+        document.title = htmlTitle
+    }
+}
+
+>>>>>>> f57c8de4b06dd4b8446010dcf79773b37e6e5df4
 /// helper: true if el is inside a <template>
 const inTemplate = (el) => el.closest("template") !== null;
 
@@ -556,6 +567,12 @@ function translatePage(lang) {
 
     // swap hero name based on language
     swapNames(lang)
+<<<<<<< HEAD
+=======
+
+    // swap page title
+    titleSwap(lang)
+>>>>>>> f57c8de4b06dd4b8446010dcf79773b37e6e5df4
 }
 
 // change the current language based on what button is clicked
