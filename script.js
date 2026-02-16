@@ -492,6 +492,13 @@ function titleSwap(lang) {
     }
 }
 
+function faviconSwap(lang) {
+    const favicon = document.getElementById("favicon")
+    let faviconPath = "images/favicon"
+
+    favicon.href = `${faviconPath}/favicon-${lang}.svg`
+}
+
 // helper: true if el is inside a <template>
 const inTemplate = (el) => el.closest("template") !== null;
 
@@ -567,6 +574,9 @@ function translatePage(lang) {
 
     // swap page title
     titleSwap(lang)
+
+    // swap favicon
+    faviconSwap(lang)
 }
 
 // change the current language based on what button is clicked
