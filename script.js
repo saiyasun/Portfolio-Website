@@ -71,6 +71,24 @@ const mobileNav = document.querySelectorAll(".nav-rail a")
 activeSelect(mainNav, activeLink);
 activeSelect(mobileNav, activeLink);
 
+// get length of nav elements. If width exceeds nav then center them
+function centerMobileNav() {
+    const mNavUL = document.querySelector(".nav-rail")
+    const navWidth = mNavUL.getBoundingClientRect().width
+    const items = mNavUL.querySelectorAll("li")
+    let navElLength = 0
+
+    items.forEach(li => {
+        navElLength += li.getBoundingClientRect().width
+    })
+
+    if (navElLength < navWidth) {
+        mNavUL.style.justifyContent = "center"
+    } else {
+        mNavUL.style.justifyContent = ""
+    }
+}
+
 // !Hero!
 
 // 👨🏾About👨🏾
@@ -566,8 +584,8 @@ async function translateUI(lang) {
 }
 
 
-function translatePage(lang) {
-     translateUI(lang)
+async function translatePage(lang) {
+    await translateUI(lang)
 
     // swap hero name based on language
     swapNames(lang)
@@ -577,6 +595,9 @@ function translatePage(lang) {
 
     // swap favicon
     faviconSwap(lang)
+
+    // get proper style for mobile nav
+    centerMobileNav()
 }
 
 // change the current language based on what button is clicked
@@ -588,9 +609,8 @@ langButtons.forEach(btn => {
         // 2. update the html lang <html lang="">
         document.documentElement.lang = currentLang
 
-        // 3. update active button
-        langButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+        // 3. update hidden button
+        langButtons.forEach(b => b.classList.toggle("is_hidden"));
 
         // 4. call translate function
         translatePage(currentLang)
