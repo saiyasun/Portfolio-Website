@@ -1437,7 +1437,7 @@ button {
             flex-direction: column;
         padding: .5em 1em;
         width: 100%;
-        max-width: 400px;
+        width: 325px;
     }
         .edu-title {
             display: inline-flex;
@@ -1479,6 +1479,10 @@ button {
             .edu-date {
                 font-style: italic;
                 font-size: var(--text-xs);
+            }
+            .est_date-con {
+                display: flex;
+                    gap: .25em;
             }
                 .edu-start_end_date, .est_date-con {
                     display: flex;
