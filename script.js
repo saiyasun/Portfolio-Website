@@ -510,7 +510,7 @@ function titleSwap(lang) {
 
 function faviconSwap(lang) {
     const favicon = document.getElementById("favicon")
-    let faviconPath = "images/favicon"
+    let faviconPath = "images/meta/favicon"
 
     favicon.href = `${faviconPath}/favicon-${lang}.svg`
 }
