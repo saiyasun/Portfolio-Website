@@ -14,10 +14,15 @@
             "fluency": 0
             }
         ],
-      "technologies": [
-        { "name": "Figma" },
-        { "name": "HTML" }
-      ],
+      "technologies": 
+      {
+        "techNames":
+        {
+          "Figma": "Figma",
+          "HTML": "HTML",
+          "Javascript": "Javascript"
+        }
+      },
       "certifications": []
     },
 

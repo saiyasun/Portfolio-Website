@@ -21,12 +21,17 @@
             {
             "img": "figma.svg",
             "name": "Figma",
-            "category": 0
+            "category": "design"
             },
             {
             "img": "html.svg",
             "name": "HTML",
-            "category": 2
+            "category": "frontend"
+            },
+            {
+            "img": "javascript.svg",
+            "name": "Javascript",
+            "category": "backend"
             }
         ],
 

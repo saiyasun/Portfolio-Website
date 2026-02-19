@@ -148,7 +148,6 @@ async function buildLanguages() {
 const techNav = document.querySelectorAll("#tech-nav a")
 const techSubSections = document.querySelectorAll(".tech-container")
 const activeTechLink = "tech-nav_active"
-const techCats = ["design", "backend", "frontend"]
 
 activeSelect(techNav, activeTechLink); // make clicked link active
 toggleSection(techNav, techSubSections); 
@@ -159,7 +158,7 @@ const techContainerU = document.getElementById("tech_stack-u") // unordered
 const techContainerO = document.querySelectorAll(".tech_stack-o") // ordered
     const techCategoryMap = {}
     techContainerO.forEach(list => {
-        const cat = list.dataset.tech_cat; // "frotend", "backend", etc (eg: frontend: <ul data-tech_cat="frontend"></ul>)
+        const cat = list.dataset.tech_cat; // "frontend", "backend", etc (eg: frontend: <ul data-tech_cat="frontend"></ul>)
         techCategoryMap[cat] = list
     })
 const techSection = document.getElementById("technologies")
@@ -190,8 +189,7 @@ async function buildTech() {
         cloneO.querySelector(".tech-name").textContent = tech.name
         cloneO.querySelector(".tech-img").src = `images/icons/tech/${tech.img}`
 
-        const categoryName = techCats[tech.category]
-        const targetList = techCategoryMap[categoryName]
+        const targetList = techCategoryMap[tech.category]
 
         if (targetList) {
             targetList.appendChild(cloneO)
@@ -417,7 +415,7 @@ async function buildEducation() {
         eduCity.textContent = edu.city
             eduCity.dataset.i18n = `exp_edu.education.${index}.city`
         eduCountry.textContent = edu.country
-            eduCountry.dataset.i18n = `exp_edu.education.${index}.city`
+            eduCountry.dataset.i18n = `exp_edu.education.${index}.country`
 
         if (education.start_date && education.end_date) {
             eduEstDate.style.display = "none"
