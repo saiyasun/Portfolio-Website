@@ -475,13 +475,13 @@ button {
         }
         #profile-pic {
             outline: 1px solid #fffcfc52;
-            box-shadow: 0em .25em 2em #868686b4;;
+            box-shadow: 0em .25em .25em #868686b4;;
             aspect-ratio: 1/1;
-            border-radius: 50%;
             max-width: none;
             width: var(--pics);
         }
         #info-container {
+            width: 100%;
             padding: .25em;
             display: flex;
                 flex-direction: column;
@@ -967,6 +967,8 @@ button {
             align-items: flex-start;
             flex-direction: column;
             gap: 1.5em;
+        padding: .25em .5em;
+        width: 100%;
         max-height: 500px;
         overflow-y: auto;
     }
