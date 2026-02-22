@@ -39,6 +39,12 @@
   /* Tracking */
   --track-nav: 0.10em;
   --track-label: 0.08em;
+
+  /* Colors */
+  --bg-color: #F7F6F3;
+  --txt-color: #000000;
+    --dark-bg-color: #1d1d1d;
+    --dark-txt-color: #eeeeee;
 }
 
 /* Classes/Styles */
@@ -60,13 +66,24 @@ html {
   scroll-behavior: smooth;
 }
 body {
-    background-color: #F7F6F3;
     margin: 0px;
     font-family: var(--font-body);
     font-size: var(--text-base);
     line-height: var(--lh-body);
     font-weight: var(--w-regular);
+
+    /* Light theme */
+    background-color: var(--bg-color);
+    color: var(--txt-color);
 }
+    /* Dark theme */
+    body.dark {
+        background-color: var(--dark-bg-color);
+        color: var(--dark-txt-color);
+    }
+    @media (prefers-color-scheme: dark) {
+        
+    }
 a {
     padding: .125em;
     display: inline-flex;
