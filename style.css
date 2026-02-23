@@ -45,6 +45,10 @@
   --txt-color: #000000;
     --dark-bg-color: #1d1d1d;
     --dark-txt-color: #eeeeee;
+
+  /* Styles */
+  --outline: 1px solid rgba(0, 0, 0, 0.25);
+  --outline-hard: 1px solid black;
 }
 
 /* Classes/Styles */
@@ -149,7 +153,6 @@ nav {
 button {
     border: none;
     padding: .25em;
-    outline: 2px solid rgba(226, 223, 223, 0.555);
     outline: none;
     display: flex;
         align-items: center;
@@ -359,7 +362,7 @@ button {
                     gap: 1em;
             }
                 #hero-tag_container ul li {
-                    outline: 1px solid var(--border-soft);
+                    outline: var(--outline);
                     border-radius: 5px;
                     padding: .25em;
                     display: flex;
@@ -491,8 +494,6 @@ button {
             display: none;
         }
         #profile-pic {
-            outline: 1px solid #fffcfc52;
-            box-shadow: 0em .25em .25em #868686b4;;
             aspect-ratio: 1/1;
             max-width: none;
             width: var(--pics);
@@ -839,7 +840,7 @@ button {
     }
     .lang-progress {
         position: relative;
-        border: 1px solid black;
+        outline: var(--outline-hard);
         height: var(--lang-height);
         max-width: 275px;
         width: 100%;
@@ -965,7 +966,7 @@ button {
             padding: .25em;
         }
             .tech-item {
-                outline: 1px solid black;
+                outline: var(--outline-hard);
                 border-radius: 5px;
                 display: flex;
                     align-items: center;
@@ -1064,7 +1065,7 @@ button {
                     bottom: 10%;
                 }
             .cert-frame {
-                outline: 1px solid black;
+                outline: var(--outline-hard);
                 display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1131,7 +1132,7 @@ button {
     overflow-x: auto;
 }
     .project {
-        border: 1px solid var(--border-soft);
+        outline: var(--outline);
         border-radius: 15px;
         display: flex;
         width: 375px;
@@ -1676,7 +1677,7 @@ button {
         padding: .5em;
     }
         #contact-email {
-            border: 1px solid black;
+            outline: var(--outline-hard);
             border-radius: 50%;
             display: flex;
                 align-items: center;
@@ -1693,7 +1694,7 @@ button {
                 aspect-ratio: 1/1;
             }
         #contact-resume-cotainer {
-            border: 1px solid var(--border-soft);
+            outline: var(--outline);
             border-radius: 10px;
             display: flex;
                 align-items: center;
