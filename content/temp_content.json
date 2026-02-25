@@ -32,6 +32,11 @@
             "img": "javascript.svg",
             "name": "Javascript",
             "category": "backend"
+            },
+            {
+            "img": "typescript.svg",
+            "name": "Typescript",
+            "category": "backend"
             }
         ],
 
