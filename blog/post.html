@@ -11,7 +11,64 @@
     <script src="/blog/blog.js"></script>
 </head>
 <body>
-    
+    <main id="post-container">
+        <div class="blog_post">
+            <div class="blog_post-intro">
+                <img class="blog_post-img">
+                <div class="blog_post-title_container">
+                    <h2 class="blog_post-title"  data-i18n="blog_post.title"></h2>
+                    <div class="blog_item-date">
+                        <span class="blog_item-month" data-i18n="blog_item.month"></span><span class="blog_item-day"></span><span class="blog_item-year"></span>
+                    </div>
+                    <div class="blog_post-reading_time">
+                        <span class="reading_time-text" data-i18n="reading_time.text"></span>:
+                        <span class="reading_time-time"></span>
+                        <span class="reading_time-marker" data-i18n="reading_time.marker"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog_post-article">
+                <div class="blog_post-post">
+                    <div class="post_edit">
+                        <span class="post_edit-text" data-i18n="post_edit.text"></span>
+                        <div class="blog_item-date">
+                            <span class="blog_item-month" data-i18n="blog_item.month"></span><span class="blog_item-day"></span><span class="blog_item-year"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog_post-end">
+                    <div class="previous-article article-ender article-suggestion">
+                        <span class="previous-arrow article-arrow"></span>
+                        <h5 class="blog_post-end_title"></h5>
+                    </div>
+                    <div class="random-article article-ender article-suggestion"></div>
+                    <div class="next-article article-ender article-suggestion">
+                        <span class="next-arrow article-arrow"></span>
+                        <h5 class="blog_post-end_title"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="more_articles-container">
+            <h4 id="more_articles-title" data-i18n="more_articles.title"></h4>
+            <ul id="related-articles">
+                <li><!--append here--></li>
+            </ul>
+            <div class="related_article">
+                <h5 class="related_article-title" data-i18n="related_article.title"></h5>
+                <div class="related_article-date">
+                    <div class="blog_item-date">
+                        <span class="blog_item-month"></span><span class="blog_item-day"></span><span class="blog_item-year"></span>
+                    </div>
+                    <div class="blog-day_tracker">
+                        <span class="day-counter"></span><span class="day-marker"data-i18n="day.marker"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!--TRANSLATION-->
     <div id="translator">
