@@ -17,6 +17,8 @@
   --text-lg: 20px;
   --text-xl: 28px; /* page titles (optional) */
   --text-hero: clamp(28px, 6vw, 48px);
+  --btn-width: calc(var(--text-xs) * 3.5);
+
 
   /* Weights */
   --w-regular: 400;
@@ -222,7 +224,7 @@ button {
         padding: .5em;
     }
     /* 📱  •nav•-mobile 📱 */
-    @media (max-width: 500px) {
+    @media (max-width: 550px) {
         #main-nav {
             display: none;
         }
@@ -230,6 +232,7 @@ button {
             display: flex;
                 gap: 1em;
                 align-items: center;
+                justify-content: center;
             width: 90dvw;
             position: fixed;
                 bottom: 5%;
@@ -246,7 +249,7 @@ button {
                     gap: 1em;
                 overflow-y: auto;
 
-                font-size: var(--text-s);
+                font-size: var(--text-sm);
                 letter-spacing: var(--track-nav);
                 font-weight: var(--w-medium);
             }
@@ -257,7 +260,7 @@ button {
     }
     @media (max-width: 767px) {
         #mobile-nav ul {
-            width: 80%;
+            width: calc(95% - var(--btn-width));
         }
     }
     @media (max-width: 950px) and (max-height: 600px) {
@@ -1840,8 +1843,6 @@ button {
 
 /* Aぁ translation button ぁA */
 #translator {
-    --btn-width: calc(var(--text-xs) * 3.5);
-
     position: fixed;
         bottom: 1rem;
         right: 1rem;

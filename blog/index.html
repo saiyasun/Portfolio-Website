@@ -35,6 +35,11 @@
                 <li><a href="/blog/index.html" data-i18n="nav.blog">BLOG</a></li>
                 <li><a href="/index.html#contact" data-i18n="nav.contact">CONTACT</a></li>
             </ul>
+            <!--TRANSLATION-->
+            <div id="mobile-translator">
+                <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
+                <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
+            </div>
         </nav>
     <main id="blog_homepage">
         <!--Blog title and intro-->
@@ -52,13 +57,9 @@
             <li class="blog-tag main-tag">programming</li>
             <li class="blog-tag main-tag">language</li>
         </ul>
-        <!--blog selection container-->
+        
         <template id="blog-template">
-
-        </template>
-        <div id="blog_selection">
-            <!--append here-->
-            <a class="blog_item" href="/blog/post.html">
+            <a class="blog_item">
                 <div class="blog_item-intro_container">
                     <div class="blog_item-img_container">
                         <img class="blog_item-img">
@@ -75,6 +76,11 @@
                     <li class="blog_item-tag blog-tag"><span>[</span>language<span>]</span></li>
                 </ul>
             </a>
+        </template>
+
+        <!--blog selection container-->
+        <div id="blog_selection">
+            <!--append here-->
         </div>
     </main>
 
