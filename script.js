@@ -73,19 +73,22 @@ activeSelect(mobileNav, activeLink);
 
 // get length of nav elements. If width exceeds nav then center them
 function centerMobileNav() {
-    const mNavUL = document.querySelector(".nav-rail")
+    const mNavUL = document.querySelector("#mobile-nav")
+        const navRail = document.querySelector(".nav-rail")
     const navWidth = mNavUL.getBoundingClientRect().width
-    const items = mNavUL.querySelectorAll("li")
+        const railWidth = navRail.getBoundingClientRect().width
+    const items = navRail.querySelectorAll("li")
     let navElLength = 0
 
     items.forEach(li => {
         navElLength += li.getBoundingClientRect().width
     })
-
-    if (navElLength < navWidth) {
-        mNavUL.style.justifyContent = "center"
+    console.log("navEl", navElLength)
+    console.log(mNavUL)
+    if (navElLength < mNavUL) {
+        navRail.style.justifyContent = "center"
     } else {
-        mNavUL.style.justifyContent = ""
+        navRail.style.justifyContent = ""
     }
 }
 
@@ -475,7 +478,6 @@ async function loadContent(filePath) {
     if (!ifEmpty(eduSection, education)) {
         buildEducation();
     }
-    console.log(data)
 }
 
 loadContent(templateContent)

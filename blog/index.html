@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | 部落格</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/blog/blog.css">
+
+    <script src="/blog/blog.js" defer></script>
+</head>
+<body>
+    <!--SITE NAV BAR-->
+    <nav id="main-nav" class="glass-nav" aria-label="Primary navigation">
+        <ul>
+            <li><a class="nav_active" href="#" data-i18n="nav.home">HOME</a></li>
+            <li><a href="/index.html#about" data-i18n="nav.about">ABOUT</a></li>
+            <li><a href="/index.html#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+            <li><a href="/index.html#skills" data-i18n="nav.skills">SKILLS</a></li>
+            <li><a href="/index.html#projects" data-i18n="nav.projects">PROJECTS</a></li>
+            <li><a href="/blog/index.html" data-i18n="nav.blog">BLOG</a></li>
+            <li><a href="/index.html#contact" data-i18n="nav.contact">CONTACT</a></li>
+            <hr id="main-nav_hr">
+            <li><a href="/docs/Asiah Crutchfield - Resume.pdf" data-static><img class="icon" src="/images/icons/resume-blk.svg" alt="resume"></a></li>
+        </ul>
+    </nav>
+        <!--~mobile nav bar~-->
+        <nav id="mobile-nav" class="glass-nav" aria-label="Mobile navigation">
+            <ul class="nav-rail">
+                <li><a href="/index.html#about" data-i18n="nav.about">ABOUT</a></li>
+                <li><a href="/index.html#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+                <li><a href="/index.html#skills" data-i18n="nav.skills">SKILLS</a></li>
+                <li><a href="/index.html#projects" data-i18n="nav.projects">PROJECTS</a></li>
+                <li><a href="/blog/index.html" data-i18n="nav.blog">BLOG</a></li>
+                <li><a href="/index.html#contact" data-i18n="nav.contact">CONTACT</a></li>
+            </ul>
+            <!--TRANSLATION-->
+            <div id="mobile-translator">
+                <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
+                <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
+            </div>
+        </nav>
+    <main id="blog_homepage">
+        <!--Blog title and intro-->
+        <div id="blog_intro">
+            <h1 id="blog_homepage-title" class="blog_homepage-header" data-i18n="blog_homepage.title">
+                My Blog
+            </h1>
+            <h3 id="blog_homepage-subtitle" class="blog_homepage-header" data-i18n="blog_homepage.subtitle">
+                a blog of my ideas
+            </h3>
+        </div>
+        <!--article categories-->
+        <ul id="blog_homepage-tags">
+            <li class="blog-tag main-tag">code</li>
+            <li class="blog-tag main-tag">programming</li>
+            <li class="blog-tag main-tag">language</li>
+        </ul>
+        
+        <template id="blog-template">
+            <a class="blog_item">
+                <div class="blog_item-intro_container">
+                    <div class="blog_item-img_container">
+                        <img class="blog_item-img">
+                        <h4 class="blog_item-title" data-i18n="blog_item.title">Title</Title></h4>
+                    </div>
+                    <div class="blog_item-date">
+                        <span class="blog_item-month" data-i18n="blog_item.month">mar</span><span class="blog_item-day">17</span><span class="blog_item-year">2026</span>
+                    </div>
+                </div>
+                <p class="blog_item-p"  data-i18n="blog_item.p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam ad ratione repellendus? Aperiam sapiente illo adipisci illum veritatis expedita sint quas!</p>
+                <ul class="blog_item-tag_container">
+                    <li class="blog_item-tag blog-tag"><span>[</span>code<span>]</span></li>
+                    <li class="blog_item-tag blog-tag"><span>[</span>programming<span>]</span></li>
+                    <li class="blog_item-tag blog-tag"><span>[</span>language<span>]</span></li>
+                </ul>
+            </a>
+        </template>
+
+        <!--blog selection container-->
+        <div id="blog_selection">
+            <!--append here-->
+        </div>
+    </main>
+
+    <!--TRANSLATION-->
+    <div id="translator">
+        <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
+        <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
+    </div>
+</body>
+</html>

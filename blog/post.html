@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/blog/post.css">
+
+    <script src="/blog/blog.js" defer></script>
+</head>
+<body>
+    <!--SITE NAV BAR-->
+    <nav id="main-nav" class="glass-nav" aria-label="Primary navigation">
+        <ul>
+            <li><a class="nav_active" href="#" data-i18n="nav.home">HOME</a></li>
+            <li><a href="/index.html#about" data-i18n="nav.about">ABOUT</a></li>
+            <li><a href="/index.html#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+            <li><a href="/index.html#skills" data-i18n="nav.skills">SKILLS</a></li>
+            <li><a href="/index.html#projects" data-i18n="nav.projects">PROJECTS</a></li>
+            <li><a href="/blog/index.html" data-i18n="nav.blog">BLOG</a></li>
+            <li><a href="/index.html#contact" data-i18n="nav.contact">CONTACT</a></li>
+            <hr id="main-nav_hr">
+            <li><a href="/docs/Asiah Crutchfield - Resume.pdf" data-static><img class="icon" src="/images/icons/resume-blk.svg" alt="resume"></a></li>
+        </ul>
+    </nav>
+        <!--~mobile nav bar~-->
+        <nav id="mobile-nav" class="glass-nav" aria-label="Mobile navigation">
+            <ul class="nav-rail">
+                <li><a href="/index.html#about" data-i18n="nav.about">ABOUT</a></li>
+                <li><a href="/index.html#experience" data-i18n="nav.exp">EXPERIENCE</a></li>
+                <li><a href="/index.html#skills" data-i18n="nav.skills">SKILLS</a></li>
+                <li><a href="/index.html#projects" data-i18n="nav.projects">PROJECTS</a></li>
+                <li><a href="/blog/index.html" data-i18n="nav.blog">BLOG</a></li>
+                <li><a href="/index.html#contact" data-i18n="nav.contact">CONTACT</a></li>
+            </ul>
+            <!--TRANSLATION-->
+            <div id="mobile-translator">
+                <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
+                <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
+            </div>
+        </nav>
+    <main id="post-container">
+        <div class="blog">
+            <!--append blog post here-->
+        </div>
+            <template id="blog-template">
+                <div class="blog_post">
+                    <img class="blog_post-img">
+                    <div class="blog_post-intro">
+                        <h2 class="blog_post-title">This is the title</h2>
+                        <div class="reading_date-container">
+                            <div class="blog_item-date">
+                                <span class="blog_item-month" data-i18n="blog_item.month">mar</span>
+                                <span class="blog_item-day">18</span>
+                                <span class="blog_item-year">2026</span>
+                            </div>
+                            <span>|</span>
+                            <div class="blog_post-reading_time">
+                                <span class="reading_time-text" data-i18n="reading_time.text">reading time</span>:
+                                <span class="reading_time-time">5</span>
+                                <span class="reading_time-marker" data-i18n="reading_time.marker">minutes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post_article-container">
+                        <div class="blog_post-post">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores optio sint similique placeat consectetur, ipsum debitis ab atque perspiciatis vel excepturi dolorum et recusandae sit a non molestiae sunt accusamus.
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, inventore nam! Iusto, modi possimus provident optio qui omnis dolorem, quos est itaque doloribus consequuntur quam in hic commodi, ullam sed.
+                            </p>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, inventore nam! Iusto, modi possimus provident optio qui omnis dolorem, quos est itaque doloribus consequuntur quam in hic commodi, ullam sed.
+                            </p>
+                            <div class="post_edit">
+                                <div class="edit"><span class="post_edit-text" data-i18n="post_edit.text">edited</span>:</div>
+                                <div class="blog_item-date">
+                                    <span class="blog_item-month" data-i18n="blog_item.month">mar</span>
+                                    <span class="blog_item-day">18</span>
+                                    <span class="blog_item-year">2026</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog_post-end">
+                            <div class="previous-article article-ender article-suggestion">
+                                <span class="previous-arrow article-arrow">←</span>
+                                <a class="blog_post-link previous-link"><h5 class="blog_post-end_title">This is the previous article</h5></a>
+                            </div>
+                            <div class="random-article article-ender article-suggestion">Random Article</div>
+                            <div class="next-article article-ender article-suggestion">
+                                <a class="blog_post-link next-link"><h5 class="blog_post-end_title">This is the next article</h5></a>
+                                <span class="next-arrow article-arrow">→</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+        <div id="more_articles-container">
+            <h4 id="more_articles-title">more articles</h4>
+            <ul id="related-articles">
+                <!--append list item here-->
+            </ul>
+                <template id="article-list_item-template">
+                    <li class="article-list_item">
+                        <div class="related_article">
+                            <h5 class="related_article-title">The greatest article in history</h5>
+                            <div class="related_article-date">
+                                <div class="blog_item-date">
+                                    <span class="blog_item-month">mar</span><span class="blog_item-day">18</span><span class="blog_item-year">2026</span>
+                                </div>
+                                <span>•</span>
+                                <div class="blog-day_tracker">
+                                    <span class="day-counter">1</span><span class="day-marker"data-i18n="day.marker">day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+        </div>
+    </main>
+
+    <!--TRANSLATION-->
+    <div id="translator">
+        <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
+        <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
+    </div>
+</body>
+</html>
