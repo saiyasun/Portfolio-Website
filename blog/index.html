@@ -53,10 +53,11 @@
         </div>
         <!--article categories-->
         <ul id="blog_homepage-tags">
-            <li class="blog-tag main-tag">code</li>
-            <li class="blog-tag main-tag">programming</li>
-            <li class="blog-tag main-tag">language</li>
+            <!--append tags here-->
         </ul>
+            <template class="main-tag-template">
+                <li class="blog-tag main-tag"></li>
+            </template>
         
         <template id="blog-template">
             <a class="blog_item">
@@ -83,6 +84,12 @@
             <!--append here-->
         </div>
     </main>
+
+    <div id="coming-soon" class="hidden">
+        <p data-i18n="coming-soon">
+            Posts coming soon.
+        </p>
+    </div>
 
     <!--TRANSLATION-->
     <div id="translator">
