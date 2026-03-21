@@ -143,7 +143,6 @@ body {
     max-width: 175px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    background: var(--blog-placeholder);
 }
 
 /* title OVER image (your design) */
@@ -241,7 +240,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    font-size: 2.5rem;
+    font-size: clamp(24px, 5vw, 46px);
 }
 
 #coming-soon p {
