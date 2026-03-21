@@ -240,5 +240,10 @@ body {
     display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
     font-size: 2.5rem;
+}
+
+#coming-soon p {
+    margin: 0;
 }
