@@ -2,7 +2,6 @@ const lang = document.documentElement.lang
 const blogTitle = document.title
 const comingSoon = document.getElementById("coming-soon") // display if there are no posts
 const blogHomepage = document.getElementById("blog_homepage")
-const postsPath = "/blog/posts/"
 const postsMetadata = "/blog/metadata/"
 
 async function fetchContent(path, file) {
@@ -53,7 +52,7 @@ async function populateSelection() {
         const selectLink = clone.querySelector(".blog_item")
             const slug = post.slug
             // add slug to url
-            selectLink.href = `/blog/post.html?post=${slug}`
+            selectLink.href = `/blog/post.html?slug=${slug}`
 
         // 2. add preview image
         const previewImage = clone.querySelector(".blog_item-img")
@@ -108,7 +107,7 @@ async function populateSelection() {
                     <span class="blog-tag_text">${tag}</span>
                     <span class="tag-bracket tag-bracket_right">]</span>
                     `;
-                    tagContainer.append(li);
+                   tagContainer.append(li);
                 })
     selectionContainer.append(clone)
     })

@@ -240,7 +240,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-    font-size: clamp(24px, 5vw, 46px);
+    font-size: clamp(24px, 5vw, 34px);
 }
 
 #coming-soon p {
