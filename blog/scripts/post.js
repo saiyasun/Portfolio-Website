@@ -112,7 +112,6 @@ function formatReadingTime(minutes, lang) {
     }
 }
 
-
 // 5. add timestamp
 function timeUploaded(metadata, scope = document) {
     const uploadedIso = metadata?.published?.uploaded;
@@ -135,9 +134,9 @@ function timeUploaded(metadata, scope = document) {
     }
 
     // main published date
-    const publishedMonthEl = scope.querySelector(".reading_date-container .blog_item-month");
-    const publishedDayEl = scope.querySelector(".reading_date-container .blog_item-day");
-    const publishedYearEl = scope.querySelector(".reading_date-container .blog_item-year");
+    const publishedMonthEl = scope.querySelector(".publish-date .blog_item-month");
+    const publishedDayEl = scope.querySelector(".publish-date .blog_item-day");
+    const publishedYearEl = scope.querySelector(".publish-date .blog_item-year");
 
     if (publishedMonthEl && publishedDayEl && publishedYearEl) {
         fillDateElements(uploadedDate, publishedMonthEl, publishedDayEl, publishedYearEl);
@@ -267,55 +266,94 @@ function elapsedTime(isoDate) {
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
 
     if (diffDays < 0) {
-        return postLang === "zh" ? "未來" : "future"
+        return {
+            counter: "",
+            marker: postLang === "zh" ? "未來" : "future"
+        }
     }
 
     if (diffDays < 30) {
         if (postLang === "zh") {
-            if (diffDays === 0) return "今天"
-            if (diffDays === 1) return "1 天前"
-            return `${diffDays} 天前`
+            if (diffDays === 0) return {
+                counter: "",
+                marker: "今天"
+            }
+            if (diffDays === 1) return {
+                counter: diffDays, 
+                marker: "天前"
+            }
+            return {
+                counter: diffDays,
+                marker: "天前"
+            }
         }
 
-        if (diffDays === 0) return "today"
-        if (diffDays === 1) return "1 day ago"
-        return `${diffDays} days ago`
+        if (diffDays === 0) return {
+            counter: "",
+            marker: "today"
+        }
+        if (diffDays === 1) return {
+            counter: diffDays,
+            marker: "day ago"
+        }
+        return {
+            counter: diffDays,
+            marker: "days ago"
+        }
     }
 
     const diffMonths = Math.floor(diffDays / 30)
 
     if (diffMonths < 12) {
         if (postLang === "zh") {
-            return `${diffMonths} 個月前`
+            return {
+                counter: diffMonths,
+                marker: "個月前"
+            }
         }
 
-        return `${diffMonths} ${diffMonths === 1 ? "month" : "months"} ago`
+        return {
+            counter: diffMonths,
+            marker: `${diffMonths === 1 ? "month" : "months"} ago`
+        }
     }
 
     const diffYears = Math.floor(diffMonths / 12)
 
     if (diffYears < 10) {
         if (postLang === "zh") {
-            return `${diffYears} 年前`
+            return {
+                counter: diffYears,
+                marker: "年前"
+            }
         }
 
-        return `${diffYears} ${diffYears === 1 ? "year" : "years"} ago`
+        return {
+            counter: diffYears,
+            marker: `${diffYears === 1 ? "year" : "years"} ago`
+        }
     }
 
     const diffDecades = Math.floor(diffYears / 10)
 
     if (postLang === "zh") {
-        return `${diffDecades} 個十年以前`
+        return {
+            counter: diffDecades,
+            marker: "個十年以前"
+        }
     }
 
-    return `${diffDecades} ${diffDecades === 1 ? "decade" : "decades"} ago`
+    return {
+        counter: diffDecades,
+        marker: `${diffDecades === 1 ? "decade" : "decades"} ago`
+    }
 }
 
 async function setupSuggestions() {
     const metadata = await getPublishedMetadata();
     const currentIndex = metadata.findIndex(post => post.slug === articleSlug);
 
-    if (metadata.length < 2 || currentIndex === -1) {
+    if (metadata.length < 3 || currentIndex === -1) {
         const suggestionBar = document.querySelector(".blog_post-end");
         if (suggestionBar) suggestionBar.classList.add("hidden");
         return;
@@ -371,7 +409,67 @@ async function populateSuggestions() {
     await hideSuggestions()
 }
 
+async function populateRelated() {
+    const metadata = await getPublishedMetadata();
+    const articleListTemplate = document.querySelector("#article-list_item-template")
+    const relatedArticleContainer = document.querySelector("#related-articles")
+
+    const filtered = metadata.filter(post => post.slug !== articleSlug)
+
+    if (filtered.length < 1) {
+        const suggestionBar = document.querySelector("#more_articles-container");
+        if (suggestionBar) suggestionBar.classList.add("hidden");
+        return;
+    }
+
+    const count = Math.min(5, filtered.length)
+    relatedArticleContainer.innerHTML = ""
+
+    // avoid duplicates
+    const shuffled = [...filtered].sort(() => 0.5 - Math.random()).slice(0, count)
+
+    shuffled.forEach(post => {
+        const clone = articleListTemplate.content.cloneNode(true)
+
+        const dayCounterEl = clone.querySelector(".day-counter")
+        const dayMarkerEl = clone.querySelector(".day-marker")
+        const relatedTitleEl = clone.querySelector(".related_article-title")
+        const relatedLinkEl = clone.querySelector(".related_link")
+        const separator = clone.querySelector(".blog_item-separator")
+
+        // title
+        relatedTitleEl.textContent = post.title[postLang]
+
+        // link
+        relatedLinkEl.href = `/blog/post.html?slug=${post.slug}`
+
+        // published date
+        const dateObj = new Date(post.published.uploaded)
+
+        const monthEl = clone.querySelector(".related_article-date .blog_item-date .blog_item-month")
+        const dayEl = clone.querySelector(".related_article-date .blog_item-date .blog_item-day")
+        const yearEl = clone.querySelector(".related_article-date .blog_item-date .blog_item-year")  
+        
+        fillDateElements(dateObj, monthEl, dayEl, yearEl)
+
+        // elapsed time
+        const date = post.published.uploaded
+        const elapsed = elapsedTime(date)
+
+        if (elapsed.counter === "") {
+           dayCounterEl.classList.add("hidden") 
+           separator.classList.add("hidden")
+        } else {
+            dayCounterEl.textContent = String(elapsed.counter)
+        }
+        dayMarkerEl.textContent = elapsed.marker
+
+        relatedArticleContainer.append(clone)
+    })
+}
+
 async function initPosts() {
     await showArticle()
     await populateSuggestions()
+    await populateRelated()
 }
