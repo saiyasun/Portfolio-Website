@@ -8,7 +8,6 @@ let enName = document.querySelector("#en-name").textContent;
     }
 const hideClass = "is_hidden"
 const activeLink = "nav_active"
-let currentLang = document.documentElement.lang
 
 // adds active class to currently clicked link
 function activeSelect(navbar, active) {
@@ -483,8 +482,6 @@ async function loadContent(filePath) {
 loadContent(templateContent)
 
 // LANGUAGE TOGGLE
-const langButtons = document.querySelectorAll(".lang-btn");
-
 function swapNames(lang) {
     const engName = document.getElementById("en-name")
     const zhongName = document.getElementById("zh-name")
@@ -583,7 +580,6 @@ async function translateUI(lang) {
     });
 }
 
-
 async function translatePage(lang) {
     await translateUI(lang)
 
@@ -599,20 +595,3 @@ async function translatePage(lang) {
     // get proper style for mobile nav
     centerMobileNav()
 }
-
-// change the current language based on what button is clicked
-langButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        // 1. update language variable
-        currentLang = btn.dataset.lang
-
-        // 2. update the html lang <html lang="">
-        document.documentElement.lang = currentLang
-
-        // 3. update hidden button
-        langButtons.forEach(b => b.classList.toggle("is_hidden"));
-
-        // 4. call translate function
-        translatePage(currentLang)
-    })
-})

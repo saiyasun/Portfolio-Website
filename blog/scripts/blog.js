@@ -1,1 +1,0 @@
-let blogLang = document.documentElement.lang

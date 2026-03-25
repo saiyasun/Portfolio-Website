@@ -1,4 +1,3 @@
-const postLang = document.documentElement.lang
 let blogTitle = document.title
 const postsMetadata = "/blog/metadata/"
 const postsPath = "/blog/posts/"

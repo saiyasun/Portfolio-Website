@@ -247,7 +247,7 @@ button {
                     align-items: center;
                     justify-content: flex-start;
                     gap: 1em;
-                overflow-y: auto;
+                overflow-x: auto;
 
                 font-size: var(--text-sm);
                 letter-spacing: var(--track-nav);
@@ -256,6 +256,7 @@ button {
                 #mobile-nav ul li {
                     text-align: center;
                     padding: 0;
+                    flex-shrink: 0;
                 }
     }
     @media (max-width: 767px) {
