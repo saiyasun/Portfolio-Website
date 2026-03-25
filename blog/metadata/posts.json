@@ -5,7 +5,6 @@
             "en": "",
             "zh": ""
         },
-        "iso_date": "",
         "description": {
             "en": "",
             "zh": ""
@@ -15,7 +14,10 @@
             "zh": []
         },
         "preview_image": "",
-        "published": false,
+        "published": {
+            "uploaded": "",
+            "edited":""
+        },
         "featured": false
     }
 ]

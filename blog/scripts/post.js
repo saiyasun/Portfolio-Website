@@ -44,10 +44,15 @@ const findMetadata = async () => {
 
     return metadata
 }
+// helper for metadata
+async function getPublishedMetadata() {
+    const metadata = await findMetadata();
+    return metadata.filter(post => isPublished(post?.published?.uploaded));
+}
 
 // 3. get correct metadata
 const getMetadata = async () => {
-    const data = await findMetadata()
+    const data = await getPublishedMetadata()
     
     const postMeta = data.find(post => post.slug === articleSlug)
 
@@ -84,97 +89,164 @@ function formatReadingTime(minutes, lang) {
             }
         }
 
-        const hours = Math.floor(minutes/60)
-        const min = minutes % 60
-        if (min === 0) {
-            return {
-                value: String(hours),
-                marker: "小時"
-            }
+        const hours = Math.ceil(minutes / 60)
+
+        return {
+            value: String(hours),
+            marker: "小時"
         }
     }
 
     if (minutes < 60) {
         return {
             value: String(minutes),
-            marker: minutes <= 1? "minute":"minutes"
+            marker: minutes === 1 ? "minute" : "minutes"
         }
     }
 
-    const h = Math.floor(minutes/60)
-    const m = minutes % 60
-    if (m === 0) {
-        return {
-            value: h,
-            marker: h > 1? "hours":"hour"
-        }
+    const hours = Math.ceil(minutes / 60)
+
+    return {
+        value: String(hours),
+        marker: hours === 1 ? "hour" : "hours"
     }
 }
 
-// 5. populate article
+
+// 5. add timestamp
+function timeUploaded(metadata, scope = document) {
+    const uploadedIso = metadata?.published?.uploaded;
+    const editedIso = metadata?.published?.edited;
+
+    if (!uploadedIso) {
+        return { canDisplay: false };
+    }
+
+    const uploadedDate = new Date(uploadedIso);
+
+    if (isNaN(uploadedDate.getTime())) {
+        return { canDisplay: false };
+    }
+
+    const canDisplay = isPublished(uploadedIso);
+
+    if (!canDisplay) {
+        return { canDisplay: false };
+    }
+
+    // main published date
+    const publishedMonthEl = scope.querySelector(".reading_date-container .blog_item-month");
+    const publishedDayEl = scope.querySelector(".reading_date-container .blog_item-day");
+    const publishedYearEl = scope.querySelector(".reading_date-container .blog_item-year");
+
+    if (publishedMonthEl && publishedDayEl && publishedYearEl) {
+        fillDateElements(uploadedDate, publishedMonthEl, publishedDayEl, publishedYearEl);
+    }
+
+    // edited date block
+    const editBlock = scope.querySelector(".post_edit");
+
+    if (editedIso) {
+        const editedDate = new Date(editedIso);
+
+        // only show edited if valid and later than uploaded
+        if (!isNaN(editedDate.getTime()) && editedDate > uploadedDate && editBlock) {
+            const editedMonthEl = editBlock.querySelector(".blog_item-month");
+            const editedDayEl = editBlock.querySelector(".blog_item-day");
+            const editedYearEl = editBlock.querySelector(".blog_item-year");
+
+            fillDateElements(editedDate, editedMonthEl, editedDayEl, editedYearEl);
+            editBlock.classList.remove("hidden");
+        } else if (editBlock) {
+            editBlock.classList.add("hidden");
+        }
+    } else if (editBlock) {
+        editBlock.classList.add("hidden");
+    }
+
+    return { canDisplay: true, uploadedDate };
+}
+
+// helper functions for timeuploaded
+function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
+    monthEl.textContent = dateObj
+        .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
+        .toLowerCase();
+
+    dayEl.textContent = String(dateObj.getDate());
+    yearEl.textContent = String(dateObj.getFullYear());
+}
+
+function getTaiwanNow() {
+    const now = new Date();
+    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
+    return new Date(taiwanString);
+}
+
+function isPublished(uploadedIso) {
+    if (!uploadedIso) return false;
+
+    const uploadedDate = new Date(uploadedIso);
+    if (isNaN(uploadedDate.getTime())) return false;
+
+    const taiwanNow = getTaiwanNow();
+
+    return uploadedDate <= taiwanNow;
+}
+
+// 6. populate article
 async function showArticle() {
-    const article = await getArticle()
-        const metadata = await getMetadata()
-    const blogContainer = document.querySelector(".blog")
-    const articleTemplate = document.querySelector("#blog-template")
+    const article = await getArticle();
+    const metadata = await getMetadata();
+
+    const blogContainer = document.querySelector(".blog");
+    const articleTemplate = document.querySelector("#blog-template");
 
     if (!metadata) {
-        blogContainer.innerHTML = "<p>Post not found</p>"
-        return
+        blogContainer.innerHTML = "<p>Post not found</p>";
+        return;
     }
 
-    const clone = articleTemplate.content.cloneNode(true)
-    const blogArticleContainer = clone.querySelector(".blog_post-article")
-        blogArticleContainer.innerHTML = marked.parse(article)
-    const blogTitle = clone.querySelector(".blog_post-title")
-        blogTitle.textContent = metadata.title[postLang]
+    const clone = articleTemplate.content.cloneNode(true);
 
-    // populate date
-    const timestamp = Date.parse(metadata.iso_date);
-    const monthEl = clone.querySelector(".blog_item-month");
-    const dayEl = clone.querySelector(".blog_item-day");
-    const yearEl = clone.querySelector(".blog_item-year");
+    // check publish timestamp + fill dates
+    const publishState = timeUploaded(metadata, clone);
 
-    if (metadata.iso_date && !isNaN(timestamp)) {
-        const dateObj = new Date(timestamp);
-        
-        // Get month name (e.g., "mar")
-        monthEl.textContent = dateObj.
-            toLocaleString(postLang === "zh" ? "zh-TW" : "en-US",
-            { month: "short" }).toLowerCase()
-        dayEl.textContent = dateObj.getDate();
-        yearEl.textContent = dateObj.getFullYear();
-    } else {
-        // FALLBACK: If date is missing/invalid
-        monthEl.textContent = "---";
-        dayEl.textContent = "--";
-        yearEl.textContent = "TBD";
+    if (!publishState.canDisplay) {
+        blogContainer.innerHTML = `<p>${postLang === "zh" ? "文章尚未發布" : "This article is not published yet."}</p>`;
+        return;
     }
 
-    // populate reading time
-    const readingTimeEl = clone.querySelector(".reading_time-time")
-    const timeMarkerEl = clone.querySelector(".reading_time-marker")
-    const readingTime = calculateReadingTime(article)
-    const timeDisplay = formatReadingTime(readingTime, postLang)
+    const blogArticleContainer = clone.querySelector(".blog_post-article");
+    blogArticleContainer.innerHTML = marked.parse(article);
 
-    readingTimeEl.textContent = timeDisplay.value
-    timeMarkerEl.textContent = timeDisplay.marker
+    const blogTitleEl = clone.querySelector(".blog_post-title");
+    blogTitleEl.textContent = metadata.title[postLang];
 
-    // update page title
-    document.title = `${metadata.title[postLang]}`
+    // reading time
+    const readingTimeEl = clone.querySelector(".reading_time-time");
+    const timeMarkerEl = clone.querySelector(".reading_time-marker");
+    const readingTime = calculateReadingTime(article);
+    const timeDisplay = formatReadingTime(readingTime, postLang);
 
-    blogContainer.innerHTML = ""
-    blogContainer.append(clone)
+    readingTimeEl.textContent = timeDisplay.value;
+    timeMarkerEl.textContent = timeDisplay.marker;
+
+    // page title
+    document.title = metadata.title[postLang];
+
+    blogContainer.innerHTML = "";
+    blogContainer.append(clone);
 }
 
 async function hideSuggestions() {
-    const metadata = await findMetadata()
+    const metadata = await getPublishedMetadata()
 
     const postLen = metadata.length
 
     if (postLen < 3) {
-        document.querySelector(".blog_post-end").classList.add("hidden")
-        document.querySelector("#more_articles-container").classList.add("hidden")
+        document.querySelector(".blog_post-end")?.classList.add("hidden")
+        document.querySelector("#more_articles-container")?.classList.add("hidden")
     }
 }
 
@@ -186,7 +258,7 @@ function elapsedTime(isoDate) {
     }
 
     const published = new Date(isoDate)
-    const today = new Date()
+    const today = getTaiwanNow()
 
     published.setHours(0, 0, 0, 0)
     today.setHours(0, 0, 0, 0)
@@ -237,65 +309,61 @@ function elapsedTime(isoDate) {
     }
 
     return `${diffDecades} ${diffDecades === 1 ? "decade" : "decades"} ago`
-
 }
 
 async function setupSuggestions() {
-    const metadata = await findMetadata()
-    const currentIndex = metadata.findIndex(post => post.slug === articleSlug)
+    const metadata = await getPublishedMetadata();
+    const currentIndex = metadata.findIndex(post => post.slug === articleSlug);
 
     if (metadata.length < 2 || currentIndex === -1) {
-        const suggestionBar = document.querySelector(".blog_post-end")
-        if (suggestionBar) suggestionBar.classList.add("hidden")
-        return
+        const suggestionBar = document.querySelector(".blog_post-end");
+        if (suggestionBar) suggestionBar.classList.add("hidden");
+        return;
     }
 
-    const previousContainer = document.querySelector(".previous-article")
-    const previousLink = document.querySelector(".previous-link")
-    const previousTitle = document.querySelector(".previous-link .blog_post-end_title")
+    const previousContainer = document.querySelector(".previous-article");
+    const previousLink = document.querySelector(".previous-link");
+    const previousTitle = document.querySelector(".previous-link .blog_post-end_title");
 
-    const nextContainer = document.querySelector(".next-article")
-    const nextLink = document.querySelector(".next-link")
-    const nextTitle = document.querySelector(".next-link .blog_post-end_title")
+    const nextContainer = document.querySelector(".next-article");
+    const nextLink = document.querySelector(".next-link");
+    const nextTitle = document.querySelector(".next-link .blog_post-end_title");
 
-    const randomLink = document.querySelector(".random-article a")
+    const randomLink = document.querySelector(".random-article a");
 
-    // previous
     if (currentIndex > 0) {
-        const previousPost = metadata[currentIndex - 1]
-        previousLink.href = `/blog/post.html?slug=${previousPost.slug}`
-        previousTitle.textContent = previousPost.title[postLang]
+        const previousPost = metadata[currentIndex - 1];
+        previousLink.href = `/blog/post.html?slug=${previousPost.slug}`;
+        previousTitle.textContent = previousPost.title[postLang];
     } else {
-        previousContainer.classList.add("hidden")
+        previousContainer.classList.add("hidden");
     }
 
-    // next
     if (currentIndex < metadata.length - 1) {
-        const nextPost = metadata[currentIndex + 1]
-        nextLink.href = `/blog/post.html?slug=${nextPost.slug}`
-        nextTitle.textContent = nextPost.title[postLang]
+        const nextPost = metadata[currentIndex + 1];
+        nextLink.href = `/blog/post.html?slug=${nextPost.slug}`;
+        nextTitle.textContent = nextPost.title[postLang];
     } else {
-        nextContainer.classList.add("hidden")
+        nextContainer.classList.add("hidden");
     }
 
-    // random
     if (randomLink) {
-        let randomIndex = Math.floor(Math.random() * metadata.length)
+        let randomIndex = Math.floor(Math.random() * metadata.length);
 
         if (metadata.length > 1) {
             while (metadata[randomIndex].slug === articleSlug) {
-                randomIndex = Math.floor(Math.random() * metadata.length)
+                randomIndex = Math.floor(Math.random() * metadata.length);
             }
         }
 
-        const randomPost = metadata[randomIndex]
-        randomLink.href = `/blog/post.html?slug=${randomPost.slug}`
-        randomLink.textContent = postLang === "zh" ? "隨機文章" : "Random Article"
+        const randomPost = metadata[randomIndex];
+        randomLink.href = `/blog/post.html?slug=${randomPost.slug}`;
+        randomLink.textContent = postLang === "zh" ? "隨機文章" : "Random Article";
     }
 }
 
 async function populateSuggestions() {
-    const metadata = await findMetadata()
+    const metadata = await getPublishedMetadata()
 
     if (metadata.length >= 3) {
         await setupSuggestions()
