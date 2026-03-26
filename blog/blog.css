@@ -143,6 +143,7 @@ body {
     max-width: 175px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    opacity: .5;
 }
 
 /* title OVER image (your design) */

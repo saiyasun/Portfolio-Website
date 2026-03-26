@@ -1,4 +1,6 @@
-const lang = document.documentElement.lang
+function getCurrentLang() {
+    return document.documentElement.lang
+}
 const blogTitle = document.title
 const comingSoon = document.getElementById("coming-soon") // display if there are no posts
 const blogHomepage = document.getElementById("blog_homepage")
@@ -35,6 +37,12 @@ async function initBlog() {
         document.body.style.alignItems = "center";
         document.body.style.height = "100dvh";
     }
+
+    comingSoon.classList.add("hidden");
+    blogHomepage.classList.remove("hidden");
+    document.body.style.display = "";
+    document.body.style.alignItems = "";
+    document.body.style.height = "";
 }
 initBlog()
 
@@ -62,6 +70,7 @@ function isPublished(uploadedIso) {
 // populate post card
 async function populateSelection() {
     const posts = await getPublishedPosts();
+    const selectLang = getCurrentLang()
 
     const blogTemplate = document.getElementById("blog-template");
     const selectionContainer = document.querySelector("#blog_selection");
@@ -79,11 +88,11 @@ async function populateSelection() {
         // 2. add preview image
         const previewImage = clone.querySelector(".blog_item-img");
         previewImage.src = `/blog/assets/images/preview_images/${post.preview_image}`;
-        previewImage.alt = post.title[lang];
+        previewImage.alt = post.title[selectLang];
 
         // 3. get title
         const selectTitleEl = clone.querySelector(".blog_item-title");
-        const selectTitle = post.title[lang];
+        const selectTitle = post.title[selectLang];
         selectTitleEl.textContent = selectTitle.toUpperCase();
 
         // 4. get date
@@ -96,7 +105,7 @@ async function populateSelection() {
             const dateObj = new Date(timestamp);
 
             monthEl.textContent = dateObj
-                .toLocaleString(lang === "zh" ? "zh-TW" : "en-US", { month: "short" })
+                .toLocaleString(selectLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
                 .toLowerCase();
 
             dayEl.textContent = dateObj.getDate();
@@ -110,13 +119,13 @@ async function populateSelection() {
 
         // 5. get description
         const selectDescription = clone.querySelector(".blog_item-description");
-        selectDescription.textContent = post.description[lang];
+        selectDescription.textContent = post.description[selectLang];
 
         // 6. append tags
         const tagContainer = clone.querySelector(".blog_item-tag_container");
         tagContainer.innerHTML = "";
 
-        const selectTags = post.tags[lang];
+        const selectTags = post.tags[selectLang];
         selectTags.forEach(tag => {
             const li = document.createElement("li");
             li.className = "blog_item-tag blog-tag";
@@ -131,4 +140,14 @@ async function populateSelection() {
         selectionContainer.append(clone);
     });
 }
-populateSelection();
+
+async function renderBlogSelection() {
+    await initBlog()
+    await populateSelection()
+}
+
+document.addEventListener("languagechange", async (event) => {
+    await renderBlogSelection(event.detail.lang)
+})
+
+renderBlogSelection()

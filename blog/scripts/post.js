@@ -1,5 +1,7 @@
 let blogTitle = document.title
-const postLang = document.documentElement.lang
+function getCurrentLang() {
+    return document.documentElement.lang
+}
 const postsMetadata = "/blog/metadata/"
 const postsPath = "/blog/posts/"
 
@@ -33,6 +35,7 @@ async function fetchText(path, language, file) {
 
 // 2. fetch the post
 const getArticle = async () => {
+    const postLang = getCurrentLang()
     const article = await fetchText(postsPath, postLang,`${articleSlug}.md`)
 
     return article
@@ -184,6 +187,8 @@ function timeUploaded(metadata, scope = document) {
 
 // helper functions for timeuploaded
 function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
+    const postLang = getCurrentLang()
+
     monthEl.textContent = dateObj
         .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
         .toLowerCase();
@@ -196,6 +201,7 @@ function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
 async function showArticle() {
     const article = await getArticle();
     const metadata = await getMetadata();
+    const postLang = getCurrentLang()
 
     const blogContainer = document.querySelector(".blog");
     const articleTemplate = document.querySelector("#blog-template");
@@ -477,4 +483,9 @@ async function initPosts() {
     await populateSuggestions()
     await populateRelated()
 }
+
+document.addEventListener("languagechange", async (event) => {
+    await initPosts(event.detail.lang)
+})
+
 initPosts()

@@ -1,5 +1,10 @@
 // UNIVERSAL
 const htmlTitle = document.title;
+// get current lang
+function getCurrentLang() {
+    return document.documentElement.lang
+}
+const pageLang = getCurrentLang()
 const zhName = document.querySelector("#zh-name").textContent;
 let enName = document.querySelector("#en-name").textContent;
     const firstLast = enName.split(" ")
@@ -82,8 +87,6 @@ function centerMobileNav() {
     items.forEach(li => {
         navElLength += li.getBoundingClientRect().width
     })
-    console.log("navEl", navElLength)
-    console.log(mNavUL)
     if (navElLength < mNavUL) {
         navRail.style.justifyContent = "center"
     } else {
@@ -584,14 +587,20 @@ async function translatePage(lang) {
     await translateUI(lang)
 
     // swap hero name based on language
-    swapNames(lang)
+    swapNames(pageLang)
 
     // swap page title
-    titleSwap(lang)
+    titleSwap(pageLang)
 
     // swap favicon
-    faviconSwap(lang)
+    faviconSwap(pageLang)
 
     // get proper style for mobile nav
     centerMobileNav()
 }
+
+document.addEventListener("languagechange", async (event) => {
+    await translatePage(event.detail.lang)
+})
+
+translatePage(pageLang)

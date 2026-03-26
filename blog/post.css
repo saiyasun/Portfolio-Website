@@ -47,7 +47,7 @@ body {
     margin-top: 7.5em;
     display: flex;
         justify-content: center;
-    padding: 0 5em;
+    padding: 2em 5em;
 }
 
 .hidden {
@@ -85,6 +85,9 @@ body {
     background: var(--post-placeholder);
     aspect-ratio: 1/1;
     width: var(--post-image-w);
+}
+.blog_post-article {
+    
 }
 .post_article-container {
     grid-column: 2;
@@ -164,7 +167,7 @@ body {
         display: flex;
             flex-direction: column;
             justify-content: center;
-        padding: .125em;
+        padding: .125em .125em calc(var(--text-sm)*7) .125em;
     }
     .blog_post {
         display: flex;
@@ -172,6 +175,9 @@ body {
     }
     .post_article-container {
         width: 100%;
+    }
+    .blog_post-article {
+        
     }
     .blog_post-end {
         display: flex;
