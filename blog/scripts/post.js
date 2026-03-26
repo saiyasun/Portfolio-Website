@@ -1,4 +1,5 @@
 let blogTitle = document.title
+const postLang = document.documentElement.lang
 const postsMetadata = "/blog/metadata/"
 const postsPath = "/blog/posts/"
 
@@ -23,8 +24,8 @@ async function fetchJSON(path, file) {
     return JSON.parse(data)
 }
 
-async function fetchText(path, file) {
-    const response = await fetch(`${path}${file}`)
+async function fetchText(path, language, file) {
+    const response = await fetch(`${path}${language}/${file}`)
     const data = await response.text()
 
     return data
@@ -32,7 +33,7 @@ async function fetchText(path, file) {
 
 // 2. fetch the post
 const getArticle = async () => {
-    const article = await fetchText(postsPath, `${articleSlug}.md`)
+    const article = await fetchText(postsPath, postLang,`${articleSlug}.md`)
 
     return article
 }
@@ -56,6 +57,22 @@ const getMetadata = async () => {
     const postMeta = data.find(post => post.slug === articleSlug)
 
     return postMeta || null
+}
+
+function getTaiwanNow() {
+    const now = new Date();
+    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
+    return new Date(taiwanString);
+}
+
+function isPublished(uploadedIso) {
+    if (!uploadedIso) return false;
+
+    const uploadedDate = new Date(uploadedIso);
+    if (isNaN(uploadedDate.getTime())) return false;
+
+    const taiwanNow = getTaiwanNow();
+    return uploadedDate <= taiwanNow;
 }
 
 // 3. calculate reading time
@@ -175,23 +192,6 @@ function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
     yearEl.textContent = String(dateObj.getFullYear());
 }
 
-function getTaiwanNow() {
-    const now = new Date();
-    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
-    return new Date(taiwanString);
-}
-
-function isPublished(uploadedIso) {
-    if (!uploadedIso) return false;
-
-    const uploadedDate = new Date(uploadedIso);
-    if (isNaN(uploadedDate.getTime())) return false;
-
-    const taiwanNow = getTaiwanNow();
-
-    return uploadedDate <= taiwanNow;
-}
-
 // 6. populate article
 async function showArticle() {
     const article = await getArticle();
@@ -220,6 +220,11 @@ async function showArticle() {
 
     const blogTitleEl = clone.querySelector(".blog_post-title");
     blogTitleEl.textContent = metadata.title[postLang];
+
+    // image
+    const blogImageEl = clone.querySelector(".blog_post-img");
+    blogImageEl.src = `/blog/assets/images/preview_images/${metadata.preview_image}`;
+    blogImageEl.alt = metadata.title[postLang];
 
     // reading time
     const readingTimeEl = clone.querySelector(".reading_time-time");
@@ -472,3 +477,4 @@ async function initPosts() {
     await populateSuggestions()
     await populateRelated()
 }
+initPosts()

@@ -1,9 +1,9 @@
 [
     {
-        "slug": "",
+        "slug": "learning-chinese-in-slow-motion",
         "title": {
-            "en": "",
-            "zh": ""
+            "en": "Learning Chinese in Slow Motion",
+            "zh": "用慢動作學中文"
         },
         "description": {
             "en": "",
@@ -13,9 +13,9 @@
             "en": [],
             "zh": []
         },
-        "preview_image": "",
+        "preview_image": "mandarin-in-slow-motion.jpg",
         "published": {
-            "uploaded": "",
+            "uploaded": "2026-03-26T23:40:00+08:00",
             "edited":""
         },
         "featured": false
