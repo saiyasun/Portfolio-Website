@@ -6,8 +6,8 @@
             "zh": "用慢動作學中文"
         },
         "description": {
-            "en": "",
-            "zh": ""
+            "en": "I slowed Mandarin down to 0.25x speed for 28 days. I expected clarity. Instead, I got something else and it changed how I think about language.",
+            "zh": "我用0.25x倍速聽中文28天，原本想得道「清溪理解」卻得到完全不同的結果，也改變了我對語言的看法。"
         },
         "tags": {
             "en": [],
@@ -16,8 +16,12 @@
         "preview_image": "mandarin-in-slow-motion.jpg",
         "published": {
             "uploaded": "2026-03-26T23:40:00+08:00",
-            "edited":""
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
         },
         "featured": false
     }
+      
 ]

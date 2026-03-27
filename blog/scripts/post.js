@@ -133,8 +133,10 @@ function formatReadingTime(minutes, lang) {
 
 // 5. add timestamp
 function timeUploaded(metadata, scope = document) {
+    const postLang = getCurrentLang()
+
     const uploadedIso = metadata?.published?.uploaded;
-    const editedIso = metadata?.published?.edited;
+    const editedIso = metadata?.published?.edited?.[postLang];
 
     if (!uploadedIso) {
         return { canDisplay: false };
@@ -172,7 +174,7 @@ function timeUploaded(metadata, scope = document) {
             const editedMonthEl = editBlock.querySelector(".blog_item-month");
             const editedDayEl = editBlock.querySelector(".blog_item-day");
             const editedYearEl = editBlock.querySelector(".blog_item-year");
-
+            
             fillDateElements(editedDate, editedMonthEl, editedDayEl, editedYearEl);
             editBlock.classList.remove("hidden");
         } else if (editBlock) {
