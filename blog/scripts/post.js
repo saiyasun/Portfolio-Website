@@ -4,6 +4,7 @@ function getCurrentLang() {
 }
 const postsMetadata = "/blog/metadata/"
 const postsPath = "/blog/posts/"
+const translationFiles = ["/translations/universal_ui.json"]
 
 // 1. get the slug
 function getSlug() {
@@ -195,8 +196,16 @@ function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
         .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
         .toLowerCase();
 
-    dayEl.textContent = String(dateObj.getDate());
-    yearEl.textContent = String(dateObj.getFullYear());
+    dayEl.textContent = ` ${dateObj.getDate()}`;
+    yearEl.textContent = `, ${dateObj.getFullYear()}`;
+
+    if (postLang === "zh") {
+        monthEl.textContent = `${dateObj
+        .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
+        .toLowerCase()}`;
+        yearEl.textContent = `，${dateObj.getFullYear()}`
+        dayEl.textContent = `${dateObj.getDate()}日`;
+    }
 }
 
 // 6. populate article
@@ -484,6 +493,7 @@ async function initPosts() {
     await showArticle()
     await populateSuggestions()
     await populateRelated()
+    await translateUI(document.documentElement.lang, translationFiles)
 }
 
 document.addEventListener("languagechange", async (event) => {

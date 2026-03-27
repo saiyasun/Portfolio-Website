@@ -162,7 +162,7 @@ body {
 
 /* date */
 .blog_item-date {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     font-size: 0.7rem;
     color: var(--blog-muted);
 }

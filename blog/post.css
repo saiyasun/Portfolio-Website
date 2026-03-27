@@ -35,11 +35,19 @@ body {
     padding: 0 1em;
 }
 
-.reading_date-container, .post_edit, .related_article-date, 
-.blog_item-date, .blog-day_tracker {
+.reading_date-container, .post_edit, .related_article-date, .blog-day_tracker {
     display: flex;
         gap: .25em;
     font-style: italic;
+}
+
+
+.blog_item-date {
+    display: flex;
+}
+
+.blog_item-month {
+    margin-right: .25em;
 }
 
 #post-container {
