@@ -57,7 +57,8 @@ function ifEmpty(container, dataArray) {
 const templateContent = "content/temp_content.json"
 const translationContent = "content/translations.json"
 const templateTranslations = "translations/trans_temp_content.json"
-const uiTranslations = "translations/ui_trans.json"
+const universalTranslation = "/translations/universal_ui.json"
+const uiTranslations = ["translations/ui_trans.json", templateTranslations, universalTranslation]
 
 // fetch content
 async function fetchContent(filePath) {
@@ -543,48 +544,8 @@ function getNested(obj, path) {
   return current;
 }
 
-// function to translate html elements/ui (NOT templates)
-async function translateUI(lang) {
-  // get all [data-i18n] that are NOT inside templates
-  const uiElements = [...document.querySelectorAll("[data-i18n]")]
-    .filter(el => !inTemplate(el));
-
-  // 1) store original English text ONCE
-  uiElements.forEach(el => {
-    if (!el.dataset.i18nDefault) {
-      el.dataset.i18nDefault = el.textContent; // ex: creates <li data-i18n-default="Builder"></li>
-    }
-  });
-
-  // 2) if English, restore originals and stop (NO json needed)
-  if (lang === "en") {
-    uiElements.forEach(el => {
-      el.textContent = el.dataset.i18nDefault; 
-    });
-
-    return;
-  }
-
-  // 3) otherwise load translations (zh)
-  const translations = await fetchContent(uiTranslations);
-  const tempTranslations = await fetchContent(templateTranslations)
-  const dict = translations[lang];
-  const tempDict = tempTranslations[lang]
-  if (!dict) return;
-
-  // 4) apply translations
-  uiElements.forEach(el => {
-        const key = el.dataset.i18n;        // "nav.home"
-        const value = getNested(dict, key) ?? getNested(tempDict, key);
-
-        if (value !== undefined) {
-            el.textContent = value;
-        }
-    });
-}
-
 async function translatePage(lang) {
-    await translateUI(lang)
+    await translateUI(lang, uiTranslations)
 
     // swap hero name based on language
     swapNames(pageLang)

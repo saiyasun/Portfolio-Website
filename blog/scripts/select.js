@@ -5,6 +5,8 @@ const blogTitle = document.title
 const comingSoon = document.getElementById("coming-soon") // display if there are no posts
 const blogHomepage = document.getElementById("blog_homepage")
 const postsMetadata = "/blog/metadata/"
+const uiTranslations = "/blog/translations/"
+const translationFiles = ["/blog/translations/ui_translations.json", "/translations/universal_ui.json"]
 
 async function fetchContent(path, file) {
     const response = await fetch(`${path}${file}`)
@@ -152,6 +154,7 @@ async function populateSelection() {
 async function renderBlogSelection() {
     await initBlog()
     await populateSelection()
+    await translateUI(document.documentElement.lang, translationFiles)
 }
 
 document.addEventListener("languagechange", async (event) => {
