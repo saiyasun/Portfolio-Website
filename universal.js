@@ -106,6 +106,25 @@ function deepMerge(target, source) {
   return target;
 }
 
+window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
+    const postLang = getCurrentLang()
+
+    monthEl.textContent = dateObj
+        .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
+        .toLowerCase();
+
+    dayEl.textContent = ` ${dateObj.getDate()}`;
+    yearEl.textContent = `, ${dateObj.getFullYear()}`;
+
+    if (postLang === "zh") {
+        monthEl.textContent = `${dateObj
+        .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
+        .toLowerCase()}`;
+        yearEl.textContent = `，${dateObj.getFullYear()}`
+        dayEl.textContent = `${dateObj.getDate()}日`;
+    }
+}
+
 langButtons.forEach(btn => {
     btn.addEventListener("click", async () => {
         await applyLanguage(btn.dataset.lang);

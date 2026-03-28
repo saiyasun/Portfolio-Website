@@ -106,19 +106,8 @@ async function populateSelection() {
         if (post.published?.uploaded && !isNaN(timestamp)) {
             const dateObj = new Date(timestamp);
 
-            monthEl.textContent = `${dateObj
-                .toLocaleString(selectLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
-                .toLowerCase()} `;
-
-            dayEl.textContent = dateObj.getDate();
-            yearEl.textContent = `, ${dateObj.getFullYear()}`;
-
-            if (selectLang === "zh") {
-                monthEl.textContent = `${dateObj
-                .toLocaleString(selectLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
-                .toLowerCase()}`;
-                yearEl.textContent = `，${dateObj.getFullYear()}`
-                dayEl.textContent = `${dateObj.getDate()}日`;
+            if (monthEl && dayEl && yearEl) {
+                fillDateElements(dateObj, monthEl, dayEl, yearEl);
             }
         } else {
             monthEl.textContent = "---";

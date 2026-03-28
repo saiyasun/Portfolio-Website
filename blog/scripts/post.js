@@ -188,26 +188,6 @@ function timeUploaded(metadata, scope = document) {
     return { canDisplay: true, uploadedDate };
 }
 
-// helper functions for timeuploaded
-function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
-    const postLang = getCurrentLang()
-
-    monthEl.textContent = dateObj
-        .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
-        .toLowerCase();
-
-    dayEl.textContent = ` ${dateObj.getDate()}`;
-    yearEl.textContent = `, ${dateObj.getFullYear()}`;
-
-    if (postLang === "zh") {
-        monthEl.textContent = `${dateObj
-        .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
-        .toLowerCase()}`;
-        yearEl.textContent = `，${dateObj.getFullYear()}`
-        dayEl.textContent = `${dateObj.getDate()}日`;
-    }
-}
-
 // 6. populate article
 async function showArticle() {
     const article = await getArticle();
