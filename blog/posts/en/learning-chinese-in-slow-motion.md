@@ -1,18 +1,16 @@
-Core engaged. Bar loaded. Breathing getting heavier. 
+**Core engaged. Bar loaded. Breathing getting heavier.**
 
-My arms shake as every muscle fiber fires to move the weight. The outside world fades as all my focus goes into finishing this rep. 
+My arms shake as I push through the final rep.
 
-As I clear the final few inches, I can only hear: 
+In my ears: 
 
-A Mandarin podcast, slowed to a crawl, playing through my earbuds.
+A Mandarin podcast, slowed to a crawl.
 
-That was my reality for about a month. And I thought it might change everything.
-
-So I tried something different.
-
-I started listening to native Mandarin Chinese content at 0.25x speed. 
+For 28 days, this was my routine — listening to native Mandarin Chinese content at 0.25x speed. 
 
 No subtitles. No pausing. No repeating. Just letting the sound wash over me as I went about my day.
+
+I thought it might finally fix my ability to understand natural spoken Mandarin in real time.
 
 I got this idea through an email from Idahosa Ness, the founder of a program called *The Mimic Method*. In it, he shared the story of a woman who used this method to essentially "slow down" Portuguese speech. 
 
@@ -24,9 +22,9 @@ At least, that was the idea.
 
 Up until that point, I had been living here in Taiwan for nearly 1<sup>1/2</sup> years. Even though I was surrounded by Mandarin every day, I struggled to understand naturally spoken Chinese in real time. The experience mirrored my exact problem, but the method had never crossed my mind.
 
-I tried so many other things with limited success. 
+I tried a lot of different approaches with limited success. 
 
-So I figured that it couldn't hurt to test it.
+So I figured it was worth testing.
 
 Starting from the morning after the email, I began listening almost exclusively to content designed for native Mandarin speakers.
 
@@ -60,12 +58,16 @@ Fatigue. Stress. Exams. Inconsistent input. The difference between passive and a
 
 It wasn't a clean experiment. And maybe it wasn't going to be.
 
-But even without clear improvement, I still walked away with valuable insights.
+Even without noticeable improvement though, I still walked away with this:
 
-But what I noticed points to something deeper. 
+Maybe slowing the input alone wasn't enough to improve my comprehension. Not because the method itself is poor.
 
-Not only about Chinese, but about how we perceive language in general.
+It might be that I don't yet know exactly how to listen effectively.
 
-That's something I'll break down in another post. 
+Not just hearing the sounds, but actually processing them in real time.
+
+And that's something I want to explore more. 
+
+Because the issue may not be purely the speed of the language, but how I'm listening to it.
 
 👉 For now, if you are interested in a more detailed description of my experiment, you can find the full results [here](https://docs.google.com/document/d/1bUTBxvqFl7_DtgB5H_HwyRKGcv5MCpL7-xM_eFUfRhk/edit?usp=drive_link).
