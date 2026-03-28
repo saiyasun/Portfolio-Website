@@ -41,6 +41,9 @@ body {
     font-style: italic;
 }
 
+.reading_date-container {
+    margin-bottom: 1rem;
+}
 
 .blog_item-date {
     display: flex;

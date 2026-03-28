@@ -4,7 +4,7 @@ function getCurrentLang() {
 }
 const postsMetadata = "/blog/metadata/"
 const postsPath = "/blog/posts/"
-const translationFiles = ["/translations/universal_ui.json"]
+const translationFiles = ["/translations/universal_ui.json", "/blog/translations/ui_translations.json"]
 
 // 1. get the slug
 function getSlug() {

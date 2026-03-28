@@ -1,5 +1,3 @@
-# Learning Chinese in Slow Motion
-
 Core engaged. Bar loaded. Breathing getting heavier. 
 
 My arms shake as every muscle fiber fires to move the weight. The outside world fades as all my focus goes into finishing this rep. 
