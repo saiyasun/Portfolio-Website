@@ -21,7 +21,13 @@
                 "zh": ""
             }
         },
-        "featured": false
+        "featured": false,
+        "series": {
+            "is_series": false,
+            "id": "",
+            "order": "",
+            "name": ""
+        }
     }
       
 ]
