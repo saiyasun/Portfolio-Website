@@ -1,21 +1,21 @@
 [
     {
-        "slug": "learning-chinese-in-slow-motion",
+        "slug": "",
         "title": {
-            "en": "Learning Chinese in Slow Motion",
-            "zh": "用慢動作學中文"
+            "en": "",
+            "zh": ""
         },
         "description": {
-            "en": "I slowed Mandarin down to 0.25x speed for 28 days. I expected clarity. Instead, I got something else and it changed how I think about language.",
-            "zh": "我用 0.25 倍速聽中文 28 天。本以為能獲得「清晰理解」，結果卻完全不同，也改變了我對語言的看法。"
+            "en": "",
+            "zh": ""
         },
         "tags": {
             "en": [],
             "zh": []
         },
-        "preview_image": "mandarin-in-slow-motion.jpg",
+        "preview_image": "",
         "published": {
-            "uploaded": "2026-03-26T23:40:00+08:00",
+            "uploaded": "",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -25,9 +25,7 @@
         "series": {
             "is_series": false,
             "id": "",
-            "order": "",
-            "name": ""
+            "order": ""
         }
     }
-      
 ]
