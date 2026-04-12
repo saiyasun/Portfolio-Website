@@ -13,13 +13,13 @@
   },
   "s002": {
     "name": {
-        "en": "",
-        "zh": ""
+        "en": "Vibe Coding",
+        "zh": "隨感編程"
     },
-    "slug": "",
+    "slug": "vibe-coding",
     "description": {
-        "en": "",
-        "zh": ""
+        "en": "Documenting my attempt to build a game from scratch with little experience. Learning by doing, experimenting in real time, and figuring things out along the way.",
+        "zh": "記錄我從零開始做遊戲的過程。在經驗不足的情況下，一邊做一邊學，透過實驗與嘗試逐步摸索方向。"
     },
     "status": "active"
   },
