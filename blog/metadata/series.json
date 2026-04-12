@@ -1,8 +1,38 @@
 {
-    "s001": {
-        "name": "",
-        "slug": "",
-        "description": "",
-        "status": ""
-    }
+  "s001": {
+    "name": {
+      "en": "Ground Level Language",
+      "zh": "語言基礎"
+    },
+    "slug": "ground-level-language",
+    "description": {
+      "en": "Exploring how language is actually learned, and building a system from the ground up focused on perception and real understanding.",
+      "zh": "探索語言實際是如何被學習的，並從最底層建立一個以感知與真實理解為核心的學習系統。"
+    },
+    "status": "active"
+  },
+  "s002": {
+    "name": {
+        "en": "",
+        "zh": ""
+    },
+    "slug": "",
+    "description": {
+        "en": "",
+        "zh": ""
+    },
+    "status": "active"
+  },
+  "s003": {
+    "name": {
+        "en": "",
+        "zh": ""
+    },
+    "slug": "",
+    "description": {
+        "en": "",
+        "zh": ""
+    },
+    "status": "active"
+  }
 }
