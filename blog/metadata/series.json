@@ -25,13 +25,13 @@
   },
   "s003": {
     "name": {
-        "en": "",
-        "zh": ""
+      "en": "Rebuild",
+      "zh": "重建"
     },
-    "slug": "",
+    "slug": "rebuild",
     "description": {
-        "en": "",
-        "zh": ""
+      "en": "Documenting my attempt to improve my body from the ground up—fixing weaknesses in movement, building strength, and developing a more complete physique.",
+      "zh": "記錄我從基礎開始重新打造身體的過程，修正動作上的弱點、提升力量，並建立更完整且均衡的體態。"
     },
     "status": "active"
   }
