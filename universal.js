@@ -1,10 +1,14 @@
 let currentLang = document.documentElement.lang;
 
-const langButtons = document.querySelectorAll(".lang-btn");
+function getLangButtons() {
+    return document.querySelectorAll(".lang-btn")
+}
 
 async function applyLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = currentLang;
+
+    const langButtons = getLangButtons()
 
     langButtons.forEach(btn => {
         btn.classList.toggle("is_hidden", btn.dataset.lang === currentLang);
@@ -125,8 +129,36 @@ window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
     }
 }
 
-langButtons.forEach(btn => {
-    btn.addEventListener("click", async () => {
-        await applyLanguage(btn.dataset.lang);
+async function loadHTMLComponents(targetId, filePath) {
+    const target = document.getElementById(targetId);
+    if (!target) return
+    
+    try {
+        const response = await fetch(filePath)
+        if (!response.ok) {
+            throw new Error(`Failed to load component: ${filePath}`)
+        }
+        const html = await response.text()
+        target.innerHTML = html
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+function initLanguageButtons() {
+    const langButtons = getLangButtons()
+
+    langButtons.forEach(btn => {
+        btn.addEventListener("click", async () => {
+            await applyLanguage(btn.dataset.lang);
+        });
     });
-});
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadHTMLComponents("navbar-component", "/components/navbar.html")
+
+    initLanguageButtons()
+
+    await applyLanguage(currentLang)
+})
