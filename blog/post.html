@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
 
-    <link rel="stylesheet" href="/style.css">
+    <title>Blog Post | Asiah Crutchfield</title>
+
     <link rel="stylesheet" href="/components/components.css">
     <link rel="stylesheet" href="/blog/post.css">
 
-    <script src="/components/navbar/navbar.js"></script>
+    <link rel="canonical" href="">
+
+    <script type="application/ld+json" id="post-schema">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "",
+            "url": "",
+            "author": {
+                "@type": "Person",
+                "name": "Asiah Crutchfield",
+                "alternateName": "孫賽亞",
+                "url": "https://asiahcrutchfield.com/"
+            },
+            "datePublished": "",
+            "image": ""
+        }
+    </script>
+
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/translator/translator.js" defer></script>
     <script src="/blog/scripts/post.js" defer></script>
     <script src="/universal.js" defer></script>
 
@@ -101,9 +131,6 @@
     </main>
 
     <!--TRANSLATION-->
-    <div id="translator">
-        <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
-        <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
-    </div>
+    <site-translator></site-translator>
 </body>
 </html>

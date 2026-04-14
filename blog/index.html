@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | 部落格</title>
+
+    <meta property="og:title" content="Asiah's Notes">
+    <meta property="og:description" content="Thinking through language, learning, tech, and life.">
+    <meta property="og:image" content="https://asiahcrutchfield.com/images/meta/og_image/og_image.png">
+    <meta property="og:url" content="https://asiahcrutchfield.com/blog/index.html">
+    <meta property="og:type" content="website">
+
+    <title>Blog | Asiah Crutchfield</title>
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/components/components.css">
     <link rel="stylesheet" href="/blog/blog.css">
 
-    <script src="/components/navbar/navbar.js"></script>
+    <link rel="canonical" href="https://asiahcrutchfield.com/blog/index.html">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Asiah Crutchfield Blog",
+            "url": "https://asiahcrutchfield.com/blog/index.html",
+            "description": "Thoughts on language learning, technology, and personal 
+            development.",
+            "author": {
+                "@type": "Person",
+                "name": "Asiah Crutchfield",
+                "alternateName": "孫賽亞",
+                "url": "https://asiahcrutchfield.com/"
+            }
+        }
+    </script>
+
+
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/translator/translator.js" defer></script>
     <script src="/blog/scripts/select.js" defer></script>
     <script src="/universal.js" defer></script>
 </head>
@@ -28,7 +56,7 @@
             </h4>
         </div>
         <!--article categories-->
-        <ul id="blog_homepage-tags hidden">
+        <ul id="blog_homepage-tags" class="hidden">
             <!--append tags here-->
         </ul>
             <template class="main-tag-template">
@@ -40,10 +68,10 @@
                 <div class="blog_item-intro_container">
                     <div class="blog_item-img_container">
                         <img class="blog_item-img">
-                        <h4 class="blog_item-title" data-i18n="blog_item.title">Title</Title></h4>
+                        <h4 class="blog_item-title" data-i18n="blog_item.title">Title</h4>
                     </div>
                     <div class="blog_item-date">
-                        <span class="blog_item-month" data-i18n="blog_item.month">mar</span><span class="blog_item-day">17</span><span class="blog_item-year">2026</span>
+                        <span class="blog_item-month" data-i18n="blog_item.month"></span><span class="blog_item-day"></span><span class="blog_item-year"></span>
                     </div>
                 </div>
                 <p class="blog_item-description" data-i18n="blog_item.description"></p>
@@ -66,9 +94,6 @@
     </div>
 
     <!--TRANSLATION-->
-    <div id="translator">
-        <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
-        <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
-    </div>
+    <site-translator></site-translator>
 </body>
 </html>

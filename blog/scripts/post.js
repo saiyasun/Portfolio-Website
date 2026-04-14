@@ -202,6 +202,8 @@ async function showArticle() {
         return;
     }
 
+    updatePostMeta(metadata)
+
     const clone = articleTemplate.content.cloneNode(true);
 
     // check publish timestamp + fill dates
@@ -468,6 +470,79 @@ async function populateRelated() {
         relatedArticleContainer.append(clone)
     })
 }
+
+function absoluteUrl(path = "") {
+    if (!path) return "";
+    return new URL(path, window.location.origin).href;
+}
+
+function updatePostMeta(metadata) {
+    if (!metadata) return;
+
+    const postLang = getCurrentLang();
+    const title = metadata.title?.[postLang] || metadata.title?.en || "";
+    const description =
+        metadata.description?.[postLang] ||
+        metadata.description?.en ||
+        "";
+    const image = absoluteUrl(`/blog/assets/images/preview_images/${metadata.preview_image}`);
+    const url = window.location.href;
+    const published = metadata.published?.uploaded || "";
+
+    // title tag
+    postLang === "en"? document.title = `${title} | Asiah Crutchfield`:`${title} | 孫賽亞` ;
+
+    // canonical
+    const canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.href = url;
+
+    // Open Graph
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+
+    if (ogTitle) ogTitle.content = title;
+    if (ogDescription) ogDescription.content = description;
+    if (ogImage) ogImage.content = image;
+    if (ogUrl) ogUrl.content = url;
+
+    // Twitter
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+
+    if (twitterTitle) twitterTitle.content = title;
+    if (twitterDescription) twitterDescription.content = description;
+    if (twitterImage) twitterImage.content = image;
+
+    // JSON-LD
+    const schemaEl = document.getElementById("post-schema");
+    if (schemaEl) {
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": title,
+            "url": url,
+            "author": {
+                "@type": "Person",
+                "name": "Asiah Crutchfield",
+                "alternateName": "孫賽亞",
+                "url": "https://asiahcrutchfield.com/"
+            },
+            "datePublished": published,
+            "image": image,
+            "description": description,
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": url
+            }
+        };
+
+        schemaEl.textContent = JSON.stringify(schema, null, 2);
+    }
+}
+
 
 async function initPosts() {
     await showArticle()

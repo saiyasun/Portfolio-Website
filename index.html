@@ -26,13 +26,14 @@
         {
             "@context": "https://schema.org",
             "@type": "Person",
+            "id": "https://asiahcrutchfield.com/#person",
             "name": "Asiah Crutchfield",
             "gender": "Male",
             "image": "https://asiahcrutchfield.com/images/profile_pics/profile_pic-2.png",
             "alternateName": "孫賽亞",
             "url": "https://asiahcrutchfield.com/",
-            "jobTitle": "Computer Science Student",
-            "knowsAbout": ["Web Development", "Full Stack Development"],
+            "knowsAbout": ["Web Development", "Full Stack Development", 
+                "Language Learning Technology"],
             "knowsLanguage": [
                 {
                     "@type": "Language",
@@ -46,11 +47,17 @@
                     "alternateName": "zh-TW"
                 }
             ],
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Yuan Ze University"
+            },
             "sameAs": 
             [
                 "https://github.com/asiahcrutchfield",
                 "https://www.linkedin.com/in/asiahcrutchfield/",
-                "https://www.instagram.com/asiahcrutchfield/"
+                "https://www.instagram.com/asiahcrutchfield/",
+                "https://x.com/AsiahCrutch",
+                "https://www.douyin.com/user/MS4wLjABAAAALsE5okv65xcul48vgkw9Qs05ue1iLdSCRJa0rQlReHY"
             ]
         }
     </script>
@@ -64,7 +71,8 @@
     <link rel="stylesheet" href="/components/components.css">
     <link rel="stylesheet" href="style.css">
     
-    <script src="/components/navbar/navbar.js"></script>
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/translator/translator.js" defer></script>
     <script src="/universal.js" defer></script>
     <script src="/script.js" defer></script>
 </head>
@@ -463,9 +471,6 @@
     </section>
 
     <!--TRANSLATION-->
-    <div id="translator">
-        <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
-        <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
-    </div>
+    <site-translator></site-translator>
 </body>
 </html>

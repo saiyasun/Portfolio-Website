@@ -15,7 +15,7 @@
         },
         "preview_image": "s001-01.jpg",
         "published": {
-            "uploaded": "2026-04-16T00:00:00.000",
+            "uploaded": "2026-04-16T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -44,7 +44,7 @@
         },
         "preview_image": "s002-01.png",
         "published": {
-            "uploaded": "2026-04-14T00:00:00.000",
+            "uploaded": "2026-04-14T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -73,7 +73,7 @@
         },
         "preview_image": "s003-01.jpg",
         "published": {
-            "uploaded": "2026-04-17T00:00:00.000",
+            "uploaded": "2026-04-17T00:00:00+08:00",
             "edited": {
             "en": "",
             "zh": ""
