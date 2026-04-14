@@ -22,7 +22,7 @@
 }
 
 ul {
-    list-style-type: none;
+    all: revert;
 }
 
 img {
@@ -178,7 +178,7 @@ body {
         display: flex;
             flex-direction: column;
             justify-content: center;
-        padding: .125em .125em calc(var(--text-sm)*7) .125em;
+        padding: .125em .125em calc(var(--text-sm)*9) .125em;
     }
     .blog_post {
         display: flex;
@@ -251,6 +251,7 @@ body {
 }
 @media (min-width: 850px) and (max-height: 500px) {
     .blog_post-end {
+        border: 3px solid blue;
         margin: 1.5em 0 calc(var(--text-sm)*7);
     }
     #post-container {
