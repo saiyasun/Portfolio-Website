@@ -1,3 +1,91 @@
+:root {
+  /* Fonts */
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Base */
+  --text-base: 16px;
+  --lh-body: 1.6;
+  --lh-tight: 1.1;
+  --lh-ui: 1.4;
+
+  /* Scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px; /* page titles (optional) */
+  --text-hero: clamp(28px, 6vw, 48px);
+  --btn-width: calc(var(--text-xs) * 3.5);
+
+
+  /* Weights */
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+  --border-soft: rgba(0, 0, 0, 0.25);
+
+  /* Icons */
+  --icon-xs: 20px;
+  --icon-s: 24px;
+  --icon: 28px;
+  --icon-med: 32px;
+  --icon-lg: 40px;
+  --icon-xl: 48px;
+
+  /* Images */
+  --pics: clamp(125px, 30vw, 300px);
+
+  /* Tracking */
+  --track-nav: 0.10em;
+  --track-label: 0.08em;
+
+  /* Colors */
+  --bg-color: #F7F6F3;
+  --txt-color: #000000;
+    --dark-bg-color: #1d1d1d;
+    --dark-txt-color: #eeeeee;
+
+  /* Styles */
+  --outline: 1px solid rgba(0, 0, 0, 0.25);
+  --outline-hard: 1px solid black;
+}
+
+.is_hidden {
+    display: none !important; 
+}
+.is_active {
+    display: block;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+    nav ul, nav li {
+        display: flex;
+        list-style-type: none;
+        font-weight: var(--w-bold);
+    }
+a {
+    padding: .125em;
+    display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    text-decoration: none;
+}
+button {
+    border: none;
+    padding: .25em;
+    outline: none;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+}
+
 /* •nav• */
 .glass-nav {
     outline: 1px solid rgba(255, 255, 255, 0.3);
@@ -14,6 +102,7 @@
     right: 28px;
     z-index: 1000;
   padding: .5em;
+  text-transform: uppercase;
 }
     #main-nav ul {
         margin: 0;

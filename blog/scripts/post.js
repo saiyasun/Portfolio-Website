@@ -253,6 +253,8 @@ async function hideSuggestions() {
 }
 
 function elapsedTime(isoDate) {
+    const postLang = getCurrentLang()
+
     if (!isoDate) {
         const dateEl = document.querySelector(".related_article-date")
         if (dateEl) dateEl.classList.add("hidden")
@@ -355,6 +357,7 @@ function elapsedTime(isoDate) {
 async function setupSuggestions() {
     const metadata = await getPublishedMetadata();
     const currentIndex = metadata.findIndex(post => post.slug === articleSlug);
+    const postLang = getCurrentLang()
 
     if (metadata.length < 3 || currentIndex === -1) {
         const suggestionBar = document.querySelector(".blog_post-end");
@@ -416,6 +419,7 @@ async function populateRelated() {
     const metadata = await getPublishedMetadata();
     const articleListTemplate = document.querySelector("#article-list_item-template")
     const relatedArticleContainer = document.querySelector("#related-articles")
+    const postLang = getCurrentLang()
 
     const filtered = metadata.filter(post => post.slug !== articleSlug)
 
