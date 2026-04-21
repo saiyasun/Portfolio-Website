@@ -1,12 +1,15 @@
 class Translator extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-        <div id="translator">
-            <button class="lang-btn is_hidden glass-nav" id="lang_btn-en" data-lang="en">EN</button>
-            <button class="lang-btn glass-nav" id="lang_btn-zh" data-lang="zh">中</button>
-        </div>
-        `
+    async connectedCallback() {
+        const response = await fetch("/components/translator/translator.html");
+        const html = await response.text();
+
+        this.innerHTML = html;
+
+        // re-init buttons AFTER they exist
+        if (typeof initLanguageButtons === "function") {
+            initLanguageButtons();
+        }
     }
 }
 
-customElements.define("site-translator", Translator)
+customElements.define("site-translator", Translator);

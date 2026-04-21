@@ -39,10 +39,9 @@ function getLangFromURL() {
     return "en"
 }
 function addLangToURL(url, lang = document.documentElement.lang) {
-    const fullURL = new URL(url, window.location.origin)
-
-    fullURL.searchParams.set("lang", lang)
-    return fullURL.pathname + fullURL.search
+    const fullURL = new URL(url, window.location.origin);
+    fullURL.searchParams.set("lang", lang);
+    return fullURL.pathname + fullURL.search + fullURL.hash;
 }
 function updateLocalizedLinks(scope = document) {
     const currentLang = document.documentElement.lang || "en";
@@ -57,10 +56,19 @@ function updateLocalizedLinks(scope = document) {
         if (href.startsWith("tel:")) return;
         if (href.startsWith("http") && !href.includes(window.location.hostname)) return;
 
+        const fullURL = new URL(href, window.location.origin);
+        const currentPath = window.location.pathname;
+        const targetPath = fullURL.pathname;
+
+        // if this points to the current page + a section, keep just the hash
+        if (targetPath === currentPath && fullURL.hash) {
+            link.setAttribute("href", fullURL.hash);
+            return;
+        }
+
         link.setAttribute("href", addLangToURL(href, currentLang));
     });
 }
-
 
 async function fetchAllJSON(files = []) {
     try {
@@ -169,6 +177,19 @@ window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
     }
 }
 
+function scrollToHashTarget() {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
 // async function loadHTMLComponents(targetId, filePath) {
 //     const target = document.getElementById(targetId);
 //     if (!target) return
@@ -186,18 +207,31 @@ window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
 // }
 
 function initLanguageButtons() {
-    const langButtons = getLangButtons()
+    const langButtons = getLangButtons();
 
     langButtons.forEach(btn => {
+        if (btn.dataset.bound) return; // prevent duplicate listeners
+
         btn.addEventListener("click", async () => {
             await applyLanguage(btn.dataset.lang);
         });
+
+        btn.dataset.bound = "true";
     });
 }
+
+window.addEventListener("hashchange", () => {
+    scrollToHashTarget()
+})
 
 document.addEventListener("DOMContentLoaded", async () => {
     const initialLang = getLangFromURL()
 
     initLanguageButtons()
     await applyLanguage(initialLang)
+
+    // wait so layout/components settle
+    setTimeout(() => {
+        scrollToHashTarget()
+    }, 50);
 })
