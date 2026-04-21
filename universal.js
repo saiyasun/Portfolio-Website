@@ -14,6 +14,13 @@ async function applyLanguage(lang) {
         btn.classList.toggle("is_hidden", btn.dataset.lang === currentLang);
     });
 
+    // update URL
+    const url = new URL(window.location)
+        url.searchParams.set("lang", lang)
+        window.history.replaceState({}, "", url)
+
+    updateLocalizedLinks()
+
     // universal custom event
     document.dispatchEvent(
         new CustomEvent("languagechange", {
@@ -21,6 +28,39 @@ async function applyLanguage(lang) {
         })
     );
 }
+function getLangFromURL() {
+    const params = new URLSearchParams(window.location.search)
+    const lang = params.get("lang")
+
+    if (lang === "en" || lang === "zh") {
+        return lang
+    }
+
+    return "en"
+}
+function addLangToURL(url, lang = document.documentElement.lang) {
+    const fullURL = new URL(url, window.location.origin)
+
+    fullURL.searchParams.set("lang", lang)
+    return fullURL.pathname + fullURL.search
+}
+function updateLocalizedLinks(scope = document) {
+    const currentLang = document.documentElement.lang || "en";
+    const links = scope.querySelectorAll("a[href]");
+
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+        if (href.startsWith("#")) return;
+        if (href.startsWith("mailto:")) return;
+        if (href.startsWith("tel:")) return;
+        if (href.startsWith("http") && !href.includes(window.location.hostname)) return;
+
+        link.setAttribute("href", addLangToURL(href, currentLang));
+    });
+}
+
 
 async function fetchAllJSON(files = []) {
     try {
@@ -129,21 +169,21 @@ window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
     }
 }
 
-async function loadHTMLComponents(targetId, filePath) {
-    const target = document.getElementById(targetId);
-    if (!target) return
+// async function loadHTMLComponents(targetId, filePath) {
+//     const target = document.getElementById(targetId);
+//     if (!target) return
     
-    try {
-        const response = await fetch(filePath)
-        if (!response.ok) {
-            throw new Error(`Failed to load component: ${filePath}`)
-        }
-        const html = await response.text()
-        target.innerHTML = html
-    } catch (error) {
-        console.error(error)
-    }
-}
+//     try {
+//         const response = await fetch(filePath)
+//         if (!response.ok) {
+//             throw new Error(`Failed to load component: ${filePath}`)
+//         }
+//         const html = await response.text()
+//         target.innerHTML = html
+//     } catch (error) {
+//         console.error(error)
+//     }
+// }
 
 function initLanguageButtons() {
     const langButtons = getLangButtons()
@@ -156,9 +196,8 @@ function initLanguageButtons() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await loadHTMLComponents("navbar-component", "/components/navbar.html")
+    const initialLang = getLangFromURL()
 
     initLanguageButtons()
-
-    await applyLanguage(currentLang)
+    await applyLanguage(initialLang)
 })
