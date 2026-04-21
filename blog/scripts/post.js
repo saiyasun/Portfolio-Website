@@ -235,7 +235,9 @@ async function showArticle() {
     timeMarkerEl.textContent = timeDisplay.marker;
 
     // page title
-    document.title = metadata.title[postLang];
+    const siteName = postLang === "zh"? "孫賽亞" : "Asiah Crutchfield"
+
+    document.title = `${metadata.title[postLang]} | ${siteName}`; 
 
     blogContainer.innerHTML = "";
     blogContainer.append(clone);
