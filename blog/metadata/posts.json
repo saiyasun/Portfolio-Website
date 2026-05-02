@@ -10,8 +10,20 @@
             "zh": "為什麼語言學習常常比想像中更困難，以及「知道」和「實際聽到」之間的落差。"
         },
         "tags": {
-            "en": ["language learning", "mandarin", "listening", "perception", "learning systems"],
-            "zh": ["語言學習", "中文", "聽力", "感知", "學習方法"]
+            "en": [
+                "language learning",
+                "mandarin",
+                "listening",
+                "perception",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "中文",
+                "聽力",
+                "感知",
+                "學習方法"
+            ]
         },
         "preview_image": "s001-01.jpg",
         "published": {
@@ -39,8 +51,20 @@
             "zh": "從小時候想做遊戲的念頭，到現在真正開始嘗試，即使經驗不足、也沒有明確計畫。"
         },
         "tags": {
-            "en": ["game development", "beginner", "learning by doing", "ai", "personal project"],
-            "zh": ["遊戲開發", "初學者", "邊做邊學", "AI", "個人專案"]
+            "en": [
+                "game development",
+                "beginner",
+                "learning by doing",
+                "ai",
+                "personal project"
+            ],
+            "zh": [
+                "遊戲開發",
+                "初學者",
+                "邊做邊學",
+                "AI",
+                "個人專案"
+            ]
         },
         "preview_image": "s002-01.png",
         "published": {
@@ -58,6 +82,129 @@
         }
     },
     {
+        "slug": "from-too-big-to-something-i-can-actually-build",
+        "title": {
+            "en": "From Too Big to Something I Can Actually Build",
+            "zh": "From Too Big to Something I Can Actually Build"
+        },
+        "description": {
+            "en": "How looking at Vibe Jam submissions helped me shrink a huge game idea into something simple, playable, and possible to start.",
+            "zh": "How looking at Vibe Jam submissions helped me shrink a huge game idea into something simple, playable, and possible to start."
+        },
+        "tags": {
+            "en": [
+                "game development",
+                "vibe coding",
+                "ai",
+                "as one",
+                "scope"
+            ],
+            "zh": [
+                "game development",
+                "vibe coding",
+                "AI",
+                "AS ONE",
+                "scope"
+            ]
+        },
+        "preview_image": "s002-01.png",
+        "published": {
+            "uploaded": "2027-01-01T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s002",
+            "order": 2
+        }
+    },
+    {
+        "slug": "getting-something-to-actually-work",
+        "title": {
+            "en": "Getting Something to Actually Work",
+            "zh": "Getting Something to Actually Work"
+        },
+        "description": {
+            "en": "How a gray box prototype, explicit rules, and messy asset experiments helped AS ONE move from an idea into something real.",
+            "zh": "How a gray box prototype, explicit rules, and messy asset experiments helped AS ONE move from an idea into something real."
+        },
+        "tags": {
+            "en": [
+                "game development",
+                "vibe coding",
+                "ai",
+                "as one",
+                "prototyping"
+            ],
+            "zh": [
+                "game development",
+                "vibe coding",
+                "AI",
+                "AS ONE",
+                "prototyping"
+            ]
+        },
+        "preview_image": "s002-01.png",
+        "published": {
+            "uploaded": "2027-01-02T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s002",
+            "order": 3
+        }
+    },
+    {
+        "slug": "what-ai-did-and-did-not-replace",
+        "title": {
+            "en": "What AI Did and Did Not Replace",
+            "zh": "What AI Did and Did Not Replace"
+        },
+        "description": {
+            "en": "What building AS ONE taught me about AI, fear of replacement, technical understanding, and learning how to direct instead of only execute.",
+            "zh": "What building AS ONE taught me about AI, fear of replacement, technical understanding, and learning how to direct instead of only execute."
+        },
+        "tags": {
+            "en": [
+                "game development",
+                "vibe coding",
+                "ai",
+                "as one",
+                "reflection"
+            ],
+            "zh": [
+                "game development",
+                "vibe coding",
+                "AI",
+                "AS ONE",
+                "reflection"
+            ]
+        },
+        "preview_image": "s002-01.png",
+        "published": {
+            "uploaded": "2027-01-03T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s002",
+            "order": 4
+        }
+    },
+    {
         "slug": "strong-but-limited",
         "title": {
             "en": "Strong, But Limited",
@@ -68,15 +215,27 @@
             "zh": "一次在山上的經驗讓我看見力量與動作能力之間的落差，也讓我重新思考訓練方向與自身的基礎弱點。"
         },
         "tags": {
-            "en": ["fitness", "mobility", "strength", "calisthenics", "self-improvement"],
-            "zh": ["健身", "活動度", "力量", "自體重訓練", "自我提升"]
+            "en": [
+                "fitness",
+                "mobility",
+                "strength",
+                "calisthenics",
+                "self-improvement"
+            ],
+            "zh": [
+                "健身",
+                "活動度",
+                "力量",
+                "自體重訓練",
+                "自我提升"
+            ]
         },
         "preview_image": "s003-01.jpg",
         "published": {
             "uploaded": "2026-04-17T00:00:00+08:00",
             "edited": {
-            "en": "",
-            "zh": ""
+                "en": "",
+                "zh": ""
             }
         },
         "featured": false,
