@@ -96,6 +96,28 @@ body {
         5rem;
 }
 
+.post-back-link {
+    position: absolute;
+        top: calc(var(--post-padding-top) - 2.5rem);
+        left: var(--post-padding-x);
+    display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+    width: fit-content;
+    border: 1px solid var(--post-border);
+    border-radius: 999px;
+    padding: .35rem .7rem;
+    color: var(--post-muted);
+    font-size: .85rem;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.post-back-link:hover {
+    border-color: var(--post-accent);
+    color: var(--post-accent);
+}
+
 .hidden {
     display: none !important;
 }
@@ -304,6 +326,10 @@ body {
             flex-direction: column;
             justify-content: center;
         padding: 6rem .125em calc(var(--text-sm)*9) .125em;
+    }
+    .post-back-link {
+        position: static;
+        margin: 0 0 1.25rem .65rem;
     }
     .blog_post {
         display: flex;

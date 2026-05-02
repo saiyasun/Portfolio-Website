@@ -8,6 +8,7 @@ const blogHomepage = document.getElementById("blog_homepage");
 const postsMetadata = "/blog/metadata/";
 const uiTranslations = "/blog/translations/";
 const translationFiles = ["/blog/translations/ui_translations.json", "/translations/universal_ui.json"];
+const postsPerPage = 6;
 async function fetchContent(path, file) {
     const response = await fetch(`${path}${file}`);
     const data = await response.text();
@@ -45,7 +46,42 @@ async function initBlog() {
 initBlog();
 async function getPublishedPosts() {
     const posts = await getPosts();
-    return posts.filter(post => isPublished(post?.published?.uploaded));
+    return posts
+        .filter(post => isPublished(post?.published?.uploaded))
+        .sort((a, b) => Date.parse(b.published?.uploaded || "") - Date.parse(a.published?.uploaded || ""));
+}
+function getBlogPage() {
+    const params = new URLSearchParams(window.location.search);
+    const page = Number(params.get("page") || "1");
+    if (!Number.isInteger(page) || page < 1)
+        return 1;
+    return page;
+}
+function blogPageUrl(page) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("page", String(page));
+    return `${url.pathname}${url.search}${url.hash}`;
+}
+function renderPagination(totalPosts, currentPage) {
+    const pagination = document.getElementById("blog-pagination");
+    const prevLink = document.getElementById("blog-page-prev");
+    const nextLink = document.getElementById("blog-page-next");
+    const status = document.getElementById("blog-page-status");
+    const totalPages = Math.ceil(totalPosts / postsPerPage);
+    if (!pagination || !prevLink || !nextLink || !status)
+        return;
+    if (totalPages <= 1) {
+        pagination.classList.add("hidden");
+        return;
+    }
+    pagination.classList.remove("hidden");
+    status.textContent = `${currentPage} / ${totalPages}`;
+    prevLink.classList.toggle("is-disabled", currentPage <= 1);
+    nextLink.classList.toggle("is-disabled", currentPage >= totalPages);
+    prevLink.setAttribute("aria-disabled", String(currentPage <= 1));
+    nextLink.setAttribute("aria-disabled", String(currentPage >= totalPages));
+    prevLink.href = currentPage > 1 ? blogPageUrl(currentPage - 1) : "";
+    nextLink.href = currentPage < totalPages ? blogPageUrl(currentPage + 1) : "";
 }
 function getTaiwanNow() {
     const now = new Date();
@@ -65,10 +101,14 @@ function isPublished(uploadedIso) {
 async function populateSelection() {
     const posts = await getPublishedPosts();
     const selectLang = getCurrentLang();
+    const totalPages = Math.max(1, Math.ceil(posts.length / postsPerPage));
+    const currentPage = Math.min(getBlogPage(), totalPages);
+    const start = (currentPage - 1) * postsPerPage;
+    const visiblePosts = posts.slice(start, start + postsPerPage);
     const blogTemplate = document.getElementById("blog-template");
     const selectionContainer = document.querySelector("#blog_selection");
     selectionContainer.innerHTML = "";
-    posts.forEach(post => {
+    visiblePosts.forEach(post => {
         const clone = blogTemplate.content.cloneNode(true);
         // 1. add link
         const selectLink = clone.querySelector(".blog_item");
@@ -118,6 +158,7 @@ async function populateSelection() {
         });
         selectionContainer.append(clone);
     });
+    renderPagination(posts.length, currentPage);
 }
 async function renderBlogSelection() {
     await initBlog();

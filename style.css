@@ -1125,8 +1125,7 @@ button {
     }
         .project {
             flex-direction: column;
-            width: 100%;
-            max-width: 350px;
+            width: 400px;
             height: auto;
             gap: 1.5em;
         }
@@ -1905,6 +1904,12 @@ button {
 @media (max-width: 768px) {
         #projects {
             padding-bottom: 6em;
+        }
+        #project-list {
+            display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1em;
         }
         .project_info-container {
             flex-direction: column;

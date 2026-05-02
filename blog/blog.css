@@ -60,12 +60,33 @@ body {
    ========================= */
 
 #blog_homepage {
+    position: relative;
     max-width: var(--blog-max-width);
     margin: 0 auto;
     padding:
         var(--blog-padding-top)
         var(--blog-padding-x)
         5rem;
+}
+
+.blog-back-link {
+    display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+    width: fit-content;
+    border: 1px solid var(--blog-border);
+    border-radius: 999px;
+    padding: .35rem .7rem;
+    margin-bottom: 2rem;
+    color: var(--blog-muted);
+    font-size: .85rem;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.blog-back-link:hover {
+    border-color: var(--blog-accent);
+    color: var(--blog-accent);
 }
 
 
@@ -205,7 +226,6 @@ body {
     width: var(--blog-title-image-size);
     max-width: var(--blog-title-image-size);
     aspect-ratio: 1 / 1;
-    object-fit: cover;
     opacity: .46;
     filter: saturate(.82) contrast(1.04);
     transition: transform 220ms ease, opacity 220ms ease, filter 220ms ease;
@@ -287,6 +307,38 @@ body {
     padding: .125em;
 }
 
+#blog-pagination {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    margin: 2.5rem auto 0;
+}
+
+.blog-page-link {
+    border: 1px solid var(--blog-border);
+    border-radius: 999px;
+    padding: .4rem .75rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.blog-page-link:not(.is-disabled):hover {
+    border-color: var(--blog-accent);
+    color: var(--blog-accent);
+}
+
+.blog-page-link.is-disabled {
+    opacity: .35;
+    pointer-events: none;
+}
+
+#blog-page-status {
+    color: var(--blog-muted);
+    font-size: .85rem;
+    font-style: italic;
+}
+
 
 /* =========================
    RESPONSIVE
@@ -300,9 +352,6 @@ body {
         max-width: none;
         align-self: stretch;
     }
-    .blog_item:not(:first-child) .blog_item-img {
-        aspect-ratio: 16 / 10;
-    }
     .blog_item-description {
         min-height: 0;
     }
@@ -313,10 +362,6 @@ body {
         padding-inline: 1rem;
         margin: 1em 0;
         padding: 1em 1em calc(var(--text-sm)*9);
-    }
-
-    #blog_intro {
-        margin-top: 4.5rem;
     }
 
     #blog_selection {
