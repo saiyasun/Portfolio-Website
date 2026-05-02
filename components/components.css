@@ -44,12 +44,40 @@
   /* Colors */
   --bg-color: #F7F6F3;
   --txt-color: #000000;
-    --dark-bg-color: #1d1d1d;
-    --dark-txt-color: #eeeeee;
+  --surface-color: rgba(255, 255, 255, 0.38);
+  --surface-soft-color: rgba(211, 211, 211, 0.3);
+  --muted-txt-color: #5d5751;
+  --accent-color: #b33424;
+  --rule-color: #000000;
+  --nav-bg-color: rgba(247, 246, 243, 0.72);
+  --nav-outline-color: rgba(255, 255, 255, 0.3);
+  --translator-bg-color: rgba(250, 202, 202, 0.75);
+  --translator-mobile-bg-color: rgba(250, 202, 202, 0.75);
 
   /* Styles */
   --outline: 1px solid rgba(0, 0, 0, 0.25);
-  --outline-hard: 1px solid black;
+  --outline-hard: 1px solid var(--rule-color);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #151515;
+        --txt-color: #eeeeee;
+        --surface-color: rgba(255, 255, 255, 0.06);
+        --surface-soft-color: rgba(255, 255, 255, 0.08);
+        --muted-txt-color: #c7c0b8;
+        --accent-color: #ff8b75;
+        --rule-color: #eeeeee;
+        --border-soft: rgba(255, 255, 255, 0.28);
+        --outline: 1px solid rgba(255, 255, 255, 0.24);
+        --outline-hard: 1px solid rgba(255, 255, 255, 0.78);
+        --nav-bg-color: rgba(26, 26, 26, 0.78);
+        --nav-outline-color: rgba(255, 255, 255, 0.18);
+        --translator-bg-color: rgba(102, 42, 42, 0.88);
+        --translator-mobile-bg-color: rgba(102, 42, 42, 0.88);
+        color-scheme: dark;
+    }
 }
 
 .is_hidden {
@@ -75,6 +103,7 @@ a {
         align-items: center;
         justify-content: center;
     text-decoration: none;
+    color: inherit;
 }
 button {
     border: none;
@@ -88,9 +117,10 @@ button {
 
 /* •nav• */
 .glass-nav {
-    outline: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(247, 246, 243, 0.6);
+    outline: 1px solid var(--nav-outline-color);
+    background: var(--nav-bg-color);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(12px);
 }
 #mobile-nav {
     display: none;
@@ -127,14 +157,14 @@ button {
             bottom: 5%;
             height: 1px;
             width: 75%;
-            background-color: black;
+            background-color: var(--rule-color);
         }
     #main-nav a:hover {
         font-weight: bold;
     }
     #main-nav_hr {
-        border: .25px solid black;
-        background-color: black;
+        border: .25px solid var(--rule-color);
+        background-color: var(--rule-color);
         width: .25px;
         height: 25px;
     }
@@ -228,7 +258,7 @@ button {
         justify-content: center;
     width: var(--btn-width);
 
-    background: rgba(250, 202, 202, 0.75);
+    background: var(--translator-bg-color);
     backdrop-filter: blur(10px);
 }
 #mobile-translator {
@@ -240,7 +270,7 @@ button {
     width: 40px;
     aspect-ratio: 1/1;
 
-    background: rgba(250, 202, 202, 0.75);
+    background: var(--translator-mobile-bg-color);
     backdrop-filter: blur(10px);
 }
     .lang-btn {
@@ -269,3 +299,11 @@ button {
             display: none;
         }
     }
+
+@media (prefers-color-scheme: dark) {
+    img[src$="-blk.svg"],
+    img[src$="github-blk.svg"],
+    img[src$="email-black.svg"] {
+        filter: invert(1);
+    }
+}

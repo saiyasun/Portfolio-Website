@@ -1,0 +1,96 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "portfolio": "https://asiahcrutchfield.com/ns/portfolio#",
+    "uiCategory": "portfolio:uiCategory",
+    "featured": "portfolio:featured",
+    "localImage": "portfolio:localImage",
+    "mobileImage": "portfolio:mobileImage",
+    "imageAlt": "portfolio:imageAlt",
+    "featureList": "portfolio:featureList",
+    "links": "portfolio:links",
+    "label": "portfolio:label",
+    "icon": "portfolio:icon"
+  },
+  "@type": "CollectionPage",
+  "@id": "https://asiahcrutchfield.com/#projects",
+  "name": "Projects | Asiah Crutchfield",
+  "url": "https://asiahcrutchfield.com/#projects",
+  "description": "Featured software, game, and interactive projects by Asiah Crutchfield.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://asiahcrutchfield.com/#website",
+    "name": "Asiah Crutchfield",
+    "url": "https://asiahcrutchfield.com/"
+  },
+  "about": {
+    "@id": "https://asiahcrutchfield.com/#person"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Featured Projects",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "VideoGame",
+          "@id": "https://asiahcrutchfield.com/#as-one",
+          "name": "AS ONE",
+          "alternateName": "three-as-one",
+          "uiCategory": "Turn-Based Battle Game / Vibe Jam 2026",
+          "featured": true,
+          "url": "https://asiahcrutchfield.itch.io/as-one",
+          "description": "A cinematic turn-based battle game where three unlikely allies fight as one through timing, counters, and teamwork to survive a street-fantasy gauntlet.",
+          "genre": [
+            "Turn-based battle game",
+            "Cinematic game",
+            "Street fantasy"
+          ],
+          "keywords": [
+            "timing-based counters",
+            "team switching",
+            "assists",
+            "enemy intent reading",
+            "gallery",
+            "tutorial",
+            "translations",
+            "final results screen"
+          ],
+          "featureList": [
+            "Timing-based counters",
+            "Team switching and assists",
+            "Enemy intent reading",
+            "Gallery",
+            "Tutorial",
+            "Translations",
+            "Final results screen"
+          ],
+          "image": "https://asiahcrutchfield.com/images/projects/as-one-cover.png",
+          "thumbnailUrl": "https://asiahcrutchfield.com/images/projects/as-one-social.png",
+          "localImage": "images/projects/as-one-cover.png",
+          "mobileImage": "images/projects/as-one-social.png",
+          "imageAlt": "AS ONE cover art showing three allies across fantasy, Taipei, and New Orleans scenes.",
+          "creator": {
+            "@id": "https://asiahcrutchfield.com/#person"
+          },
+          "gamePlatform": "Web browser",
+          "applicationCategory": "Game",
+          "isAccessibleForFree": true,
+          "inLanguage": [
+            "en",
+            "zh"
+          ],
+          "dateCreated": "2026",
+          "links": [
+            {
+              "url": "https://asiahcrutchfield.itch.io/as-one",
+              "label": "Play on itch.io",
+              "icon": ""
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
