@@ -162,18 +162,18 @@ function deepMerge(target, source) {
 window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
     const postLang = getCurrentLang()
 
-    monthEl.textContent = dateObj
+    monthEl.textContent = `${dateObj
         .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
-        .toLowerCase();
+        .toLowerCase()}\u00A0`;
 
-    dayEl.textContent = ` ${dateObj.getDate()}`;
-    yearEl.textContent = `, ${dateObj.getFullYear()}`;
+    dayEl.textContent = `${dateObj.getDate()},\u00A0`;
+    yearEl.textContent = `${dateObj.getFullYear()}`;
 
     if (postLang === "zh") {
         monthEl.textContent = `${dateObj
         .toLocaleString(postLang === "zh" ? "zh-TW" : "en-US", { month: "short" })
         .toLowerCase()}`;
-        yearEl.textContent = `，${dateObj.getFullYear()}`
+        yearEl.textContent = `${dateObj.getFullYear()}`
         dayEl.textContent = `${dateObj.getDate()}日`;
     }
 }

@@ -69,9 +69,32 @@ function getBlogPage() {
     return page
 }
 
+function getSelectedTag() {
+    const params = new URLSearchParams(window.location.search)
+    return params.get("tag") || ""
+}
+
+function normalizeTag(tag = "") {
+    return tag.trim().toLowerCase()
+}
+
 function blogPageUrl(page) {
     const url = new URL(window.location.href)
     url.searchParams.set("page", String(page))
+
+    return `${url.pathname}${url.search}${url.hash}`
+}
+
+function tagPageUrl(tag = "") {
+    const url = new URL(window.location.href)
+
+    url.searchParams.delete("page")
+
+    if (tag) {
+        url.searchParams.set("tag", tag)
+    } else {
+        url.searchParams.delete("tag")
+    }
 
     return `${url.pathname}${url.search}${url.hash}`
 }
@@ -123,18 +146,102 @@ function getPreviewImagePath(previewImage) {
     return `/blog/assets/images/preview_images/${previewImage.trim()}`
 }
 
+function updateTitleLineClasses(scope = document) {
+    const titles = scope.querySelectorAll(".blog_item-title")
+
+    titles.forEach(title => {
+        title.classList.remove("is-multiline")
+
+        const styles = window.getComputedStyle(title)
+        const lineHeight = parseFloat(styles.lineHeight)
+        const titleHeight = title.getBoundingClientRect().height
+
+        if (!lineHeight || !titleHeight) return
+
+        title.classList.toggle("is-multiline", titleHeight > lineHeight * 1.35)
+    })
+}
+
+function getPostTags(post, lang) {
+    return post.tags?.[lang] || post.tags?.en || []
+}
+
+function getFilteredPosts(posts, lang) {
+    const selectedTag = normalizeTag(getSelectedTag())
+
+    if (!selectedTag) return posts
+
+    return posts.filter(post => {
+        const tags = getPostTags(post, lang)
+        return tags.some(tag => normalizeTag(tag) === selectedTag)
+    })
+}
+
+function renderTagFilters(posts, lang) {
+    const tagContainer = document.getElementById("blog_homepage-tags")
+    const tagTemplate = document.querySelector(".main-tag-template")
+    const selectedTag = normalizeTag(getSelectedTag())
+
+    if (!tagContainer || !tagTemplate) return
+
+    const tags = [...new Set(posts.flatMap(post => getPostTags(post, lang)).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, lang === "zh" ? "zh-TW" : "en-US"))
+
+    tagContainer.innerHTML = ""
+
+    if (tags.length === 0) {
+        tagContainer.classList.add("hidden")
+        return
+    }
+
+    const allLabel = lang === "zh" ? "全部" : "all"
+    const allItem = createTagFilterItem(tagTemplate, allLabel, "", selectedTag === "")
+    tagContainer.append(allItem)
+
+    tags.forEach(tag => {
+        const normalized = normalizeTag(tag)
+        tagContainer.append(createTagFilterItem(tagTemplate, tag, tag, selectedTag === normalized))
+    })
+
+    tagContainer.classList.remove("hidden")
+}
+
+function createTagFilterItem(template, label, tag, isActive) {
+    const clone = template.content.cloneNode(true)
+    const item = clone.querySelector(".main-tag")
+    const button = document.createElement("button")
+
+    button.type = "button"
+    button.className = "main-tag-btn"
+    button.textContent = label
+    button.setAttribute("aria-pressed", String(isActive))
+
+    if (isActive) item.classList.add("is-active")
+
+    button.addEventListener("click", () => {
+        window.history.pushState({}, "", tagPageUrl(tag))
+        populateSelection()
+    })
+
+    item.append(button)
+
+    return clone
+}
+
 // populate post card
 async function populateSelection() {
     const posts = await getPublishedPosts();
     const selectLang = getCurrentLang()
-    const totalPages = Math.max(1, Math.ceil(posts.length / postsPerPage))
+    const filteredPosts = getFilteredPosts(posts, selectLang)
+    const totalPages = Math.max(1, Math.ceil(filteredPosts.length / postsPerPage))
     const currentPage = Math.min(getBlogPage(), totalPages)
     const start = (currentPage - 1) * postsPerPage
-    const visiblePosts = posts.slice(start, start + postsPerPage)
+    const visiblePosts = filteredPosts.slice(start, start + postsPerPage)
 
     const blogTemplate = document.getElementById("blog-template");
     const selectionContainer = document.querySelector("#blog_selection");
 
+    renderTagFilters(posts, selectLang)
     selectionContainer.innerHTML = "";
 
     visiblePosts.forEach(post => {
@@ -207,7 +314,8 @@ async function populateSelection() {
         selectionContainer.append(clone);
     });
 
-    renderPagination(posts.length, currentPage)
+    requestAnimationFrame(() => updateTitleLineClasses(selectionContainer))
+    renderPagination(filteredPosts.length, currentPage)
 }
 
 async function renderBlogSelection() {
