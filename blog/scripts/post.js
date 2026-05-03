@@ -44,6 +44,14 @@ async function getPublishedMetadata() {
     const metadata = await findMetadata();
     return metadata.filter(post => isPublished(post?.published?.uploaded));
 }
+function getLocalizedPostTitle(post, lang) {
+    return post?.title?.[lang] || post?.title?.en || post?.slug || "";
+}
+function getPreviewImagePath(previewImage) {
+    if (!previewImage || typeof previewImage !== "string" || !previewImage.trim())
+        return "";
+    return `/blog/assets/images/preview_images/${previewImage.trim()}`;
+}
 // 3. get correct metadata
 const getMetadata = async () => {
     const data = await getPublishedMetadata();
@@ -154,6 +162,7 @@ function timeUploaded(metadata, scope = document) {
 async function showArticle() {
     const article = await getArticle();
     const metadata = await getMetadata();
+    const allMetadata = await findMetadata();
     const postLang = getCurrentLang();
     const blogContainer = document.querySelector(".blog");
     const articleTemplate = document.querySelector("#blog-template");
@@ -171,12 +180,22 @@ async function showArticle() {
     }
     const blogArticleContainer = clone.querySelector(".blog_post-article");
     blogArticleContainer.innerHTML = marked.parse(article);
+    populateSeriesLinks(metadata, clone, allMetadata);
     const blogTitleEl = clone.querySelector(".blog_post-title");
-    blogTitleEl.textContent = metadata.title[postLang];
+    blogTitleEl.textContent = getLocalizedPostTitle(metadata, postLang);
     // image
     const blogImageEl = clone.querySelector(".blog_post-img");
-    blogImageEl.src = `/blog/assets/images/preview_images/${metadata.preview_image}`;
-    blogImageEl.alt = metadata.title[postLang];
+    const previewImagePath = getPreviewImagePath(metadata.preview_image);
+    if (previewImagePath) {
+        blogImageEl.src = previewImagePath;
+        blogImageEl.alt = getLocalizedPostTitle(metadata, postLang);
+    }
+    else {
+        blogImageEl.removeAttribute("src");
+        blogImageEl.alt = "";
+        blogImageEl.classList.add("is-placeholder");
+        blogImageEl.setAttribute("aria-hidden", "true");
+    }
     // reading time
     const readingTimeEl = clone.querySelector(".reading_time-time");
     const timeMarkerEl = clone.querySelector(".reading_time-marker");
@@ -186,9 +205,47 @@ async function showArticle() {
     timeMarkerEl.textContent = timeDisplay.marker;
     // page title
     const siteName = postLang === "zh" ? "孫賽亞" : "Asiah Crutchfield";
-    document.title = `${metadata.title[postLang]} | ${siteName}`;
+    document.title = `${getLocalizedPostTitle(metadata, postLang)} | ${siteName}`;
     blogContainer.innerHTML = "";
     blogContainer.append(clone);
+}
+function populateSeriesLinks(metadata, scope, allMetadata) {
+    const seriesContainer = scope.querySelector(".series-container");
+    const postLang = getCurrentLang();
+    if (!seriesContainer || !metadata?.series?.is_series || !metadata?.series?.id)
+        return;
+    const seriesPosts = allMetadata
+        .filter(post => post.series?.id === metadata.series.id)
+        .sort((a, b) => (a.series?.order || 0) - (b.series?.order || 0));
+    if (seriesPosts.length <= 1) {
+        seriesContainer.classList.add("hidden");
+        return;
+    }
+    seriesContainer.innerHTML = "";
+    seriesPosts.forEach(post => {
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        const published = isPublished(post?.published?.uploaded);
+        link.textContent = getLocalizedPostTitle(post, postLang);
+        if (published) {
+            link.href = `/blog/post.html?slug=${post.slug}`;
+        }
+        else {
+            link.removeAttribute("href");
+            link.setAttribute("aria-disabled", "true");
+        }
+        if (post.slug === articleSlug) {
+            link.setAttribute("aria-current", "page");
+        }
+        li.append(link);
+        if (!published) {
+            const comingSoon = document.createElement("span");
+            comingSoon.className = "series-coming-soon";
+            comingSoon.textContent = postLang === "zh" ? "[即將發布]" : "[coming soon]";
+            li.append(comingSoon);
+        }
+        seriesContainer.append(li);
+    });
 }
 async function hideSuggestions() {
     const metadata = await getPublishedMetadata();
@@ -308,7 +365,7 @@ async function setupSuggestions() {
     if (currentIndex > 0) {
         const previousPost = metadata[currentIndex - 1];
         previousLink.href = `/blog/post.html?slug=${previousPost.slug}`;
-        previousTitle.textContent = previousPost.title[postLang];
+        previousTitle.textContent = getLocalizedPostTitle(previousPost, postLang);
     }
     else {
         previousContainer.classList.add("hidden");
@@ -316,7 +373,7 @@ async function setupSuggestions() {
     if (currentIndex < metadata.length - 1) {
         const nextPost = metadata[currentIndex + 1];
         nextLink.href = `/blog/post.html?slug=${nextPost.slug}`;
-        nextTitle.textContent = nextPost.title[postLang];
+        nextTitle.textContent = getLocalizedPostTitle(nextPost, postLang);
     }
     else {
         nextContainer.classList.add("hidden");
@@ -364,7 +421,7 @@ async function populateRelated() {
         const relatedLinkEl = clone.querySelector(".related_link");
         const separator = clone.querySelector(".blog_item-separator");
         // title
-        relatedTitleEl.textContent = post.title[postLang];
+        relatedTitleEl.textContent = getLocalizedPostTitle(post, postLang);
         // link
         relatedLinkEl.href = `/blog/post.html?slug=${post.slug}`;
         // published date
@@ -400,7 +457,8 @@ function updatePostMeta(metadata) {
     const description = metadata.description?.[postLang] ||
         metadata.description?.en ||
         "";
-    const image = absoluteUrl(`/blog/assets/images/preview_images/${metadata.preview_image}`);
+    const previewImagePath = getPreviewImagePath(metadata.preview_image);
+    const image = previewImagePath ? absoluteUrl(previewImagePath) : "";
     const url = window.location.href;
     const published = metadata.published?.uploaded || "";
     // title tag

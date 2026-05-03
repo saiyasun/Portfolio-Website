@@ -97,6 +97,11 @@ function isPublished(uploadedIso) {
     const taiwanNow = getTaiwanNow();
     return uploadedDate <= taiwanNow;
 }
+function getPreviewImagePath(previewImage) {
+    if (!previewImage || typeof previewImage !== "string" || !previewImage.trim())
+        return "";
+    return `/blog/assets/images/preview_images/${previewImage.trim()}`;
+}
 // populate post card
 async function populateSelection() {
     const posts = await getPublishedPosts();
@@ -116,11 +121,21 @@ async function populateSelection() {
         selectLink.href = `/blog/post.html?slug=${slug}`;
         // 2. add preview image
         const previewImage = clone.querySelector(".blog_item-img");
-        previewImage.src = `/blog/assets/images/preview_images/${post.preview_image}`;
-        previewImage.alt = post.title[selectLang];
+        const previewImagePath = getPreviewImagePath(post.preview_image);
+        const previewTitle = post.title?.[selectLang] || post.title?.en || post.slug || "";
+        if (previewImagePath) {
+            previewImage.src = previewImagePath;
+            previewImage.alt = previewTitle;
+        }
+        else {
+            previewImage.removeAttribute("src");
+            previewImage.alt = "";
+            previewImage.classList.add("is-placeholder");
+            previewImage.setAttribute("aria-hidden", "true");
+        }
         // 3. get title
         const selectTitleEl = clone.querySelector(".blog_item-title");
-        const selectTitle = post.title[selectLang];
+        const selectTitle = previewTitle;
         selectTitleEl.textContent = selectTitle.toUpperCase();
         // 4. get date
         const timestamp = Date.parse(post.published?.uploaded);

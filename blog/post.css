@@ -162,6 +162,9 @@ body {
     border-radius: 8px;
     box-shadow: var(--post-shadow);
 }
+.blog_post-img.is-placeholder {
+    object-fit: contain;
+}
 .post_article-container {
     grid-column: 2;
     grid-row: 2;
@@ -226,6 +229,97 @@ body {
     border-radius: 8px;
     padding: 1rem;
     background: var(--post-surface-strong);
+}
+
+.series-container {
+    counter-reset: series;
+    display: flex;
+        flex-direction: column;
+        gap: .55rem;
+    margin: 2rem 0 0;
+    padding: 1rem 0 0;
+    border-top: 1px solid var(--post-border);
+    color: var(--post-muted);
+    list-style: none;
+}
+
+.series-container li {
+    counter-increment: series;
+    display: flex;
+        align-items: center;
+        gap: .55rem;
+        flex-wrap: wrap;
+    margin: 0;
+    min-height: 2.35rem;
+    padding: .35rem .5rem .35rem .4rem;
+    border-radius: 8px;
+    background: transparent;
+}
+
+.series-container li::before {
+    content: counter(series, decimal-leading-zero);
+    display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    flex: 0 0 auto;
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--post-border);
+    border-radius: 999px;
+    color: var(--post-muted);
+    background: var(--post-surface-strong);
+    font-size: .72rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.series-container a {
+    display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+    min-width: 0;
+    color: var(--post-text);
+    text-decoration: none;
+    line-height: 1.25;
+}
+
+.series-container a[aria-current="page"] {
+    color: var(--post-accent);
+    font-weight: 700;
+}
+
+.series-container a[aria-disabled="true"] {
+    color: var(--post-muted);
+    cursor: default;
+    text-decoration: none;
+}
+
+.series-container a:not([aria-disabled="true"]):hover {
+    color: var(--post-accent);
+    text-decoration: underline;
+    text-underline-offset: .18em;
+}
+
+.series-container li:has(a[aria-current="page"]) {
+    background: color-mix(in srgb, var(--post-accent) 7%, transparent);
+}
+
+.series-container li:has(a[aria-current="page"])::before {
+    border-color: var(--post-accent);
+    color: var(--post-accent);
+}
+
+.series-coming-soon {
+    display: inline-flex;
+        align-items: center;
+    border: 1px solid color-mix(in srgb, var(--post-accent) 42%, transparent);
+    border-radius: 999px;
+    padding: .12rem .45rem;
+    color: var(--post-accent);
+    background: color-mix(in srgb, var(--post-accent) 8%, transparent);
+    font-size: .76rem;
+    font-style: italic;
+    line-height: 1.2;
 }
 
 .blog_post-end {

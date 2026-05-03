@@ -226,10 +226,17 @@ body {
     width: var(--blog-title-image-size);
     max-width: var(--blog-title-image-size);
     aspect-ratio: 1 / 1;
+    background: var(--blog-placeholder, #d9d9d9);
+    object-fit: cover;
     opacity: .46;
     filter: saturate(.82) contrast(1.04);
     transition: transform 220ms ease, opacity 220ms ease, filter 220ms ease;
 }
+    .blog_item-img.is-placeholder {
+        border: 1px solid var(--blog-border);
+        opacity: .55;
+        filter: none;
+    }
     .blog_item:not(:first-child) .blog_item-img {
         aspect-ratio: 1 / 1;
     }

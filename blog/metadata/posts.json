@@ -82,14 +82,14 @@
         }
     },
     {
-        "slug": "from-too-big-to-something-i-can-actually-build",
+        "slug": "narrowing-my-options",
         "title": {
-            "en": "From Too Big to Something I Can Actually Build",
-            "zh": "From Too Big to Something I Can Actually Build"
+            "en": "Narrowing My Options",
+            "zh": "縮小選擇範圍"
         },
         "description": {
-            "en": "How looking at Vibe Jam submissions helped me shrink a huge game idea into something simple, playable, and possible to start.",
-            "zh": "How looking at Vibe Jam submissions helped me shrink a huge game idea into something simple, playable, and possible to start."
+            "en": "How playing Vibe Jam submissions helped me shrink an oversized game idea into something simple, clear, and possible to start.",
+            "zh": "我如何透過試玩 Vibe Jam 投稿，把一個過大的遊戲想法縮小成簡單、清楚，而且真的能開始做的東西。"
         },
         "tags": {
             "en": [
@@ -100,16 +100,16 @@
                 "scope"
             ],
             "zh": [
-                "game development",
+                "遊戲開發",
                 "vibe coding",
                 "AI",
                 "AS ONE",
-                "scope"
+                "範圍控制"
             ]
         },
         "preview_image": "s002-01.png",
         "published": {
-            "uploaded": "2027-01-01T00:00:00+08:00",
+            "uploaded": "2026-05-03T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -123,14 +123,14 @@
         }
     },
     {
-        "slug": "getting-something-to-actually-work",
+        "slug": "making-a-game-in-real-time",
         "title": {
-            "en": "Getting Something to Actually Work",
-            "zh": "Getting Something to Actually Work"
+            "en": "Making a Game in Real Time",
+            "zh": "即時把遊戲做出來"
         },
         "description": {
-            "en": "How a gray box prototype, explicit rules, and messy asset experiments helped AS ONE move from an idea into something real.",
-            "zh": "How a gray box prototype, explicit rules, and messy asset experiments helped AS ONE move from an idea into something real."
+            "en": "How a gray box prototype, written rules, pixel art, and messy animation experiments helped AS ONE become something real.",
+            "zh": "我如何透過 gray box 原型、規則文件、pixel art 和混亂的動畫實驗，讓 AS ONE 變成真正存在的東西。"
         },
         "tags": {
             "en": [
@@ -141,16 +141,16 @@
                 "prototyping"
             ],
             "zh": [
-                "game development",
+                "遊戲開發",
                 "vibe coding",
                 "AI",
                 "AS ONE",
-                "prototyping"
+                "原型製作"
             ]
         },
         "preview_image": "s002-01.png",
         "published": {
-            "uploaded": "2027-01-02T00:00:00+08:00",
+            "uploaded": "2026-05-04T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -164,14 +164,14 @@
         }
     },
     {
-        "slug": "what-ai-did-and-did-not-replace",
+        "slug": "lessons-from-my-first-video-game",
         "title": {
-            "en": "What AI Did and Did Not Replace",
-            "zh": "What AI Did and Did Not Replace"
+            "en": "Lessons From My First Video Game",
+            "zh": "我第一款遊戲教會我的事"
         },
         "description": {
-            "en": "What building AS ONE taught me about AI, fear of replacement, technical understanding, and learning how to direct instead of only execute.",
-            "zh": "What building AS ONE taught me about AI, fear of replacement, technical understanding, and learning how to direct instead of only execute."
+            "en": "What finishing AS ONE taught me about AI, technical understanding, debugging, and learning to direct instead of only execute.",
+            "zh": "完成 AS ONE 讓我學到關於 AI、技術理解、debug，以及從執行者轉變成導演式思考的事。"
         },
         "tags": {
             "en": [
@@ -182,16 +182,16 @@
                 "reflection"
             ],
             "zh": [
-                "game development",
+                "遊戲開發",
                 "vibe coding",
                 "AI",
                 "AS ONE",
-                "reflection"
+                "反思"
             ]
         },
         "preview_image": "s002-01.png",
         "published": {
-            "uploaded": "2027-01-03T00:00:00+08:00",
+            "uploaded": "2026-05-05T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
