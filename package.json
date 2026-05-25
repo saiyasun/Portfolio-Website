@@ -1,8 +1,10 @@
 {
   "scripts": {
     "prebuild": "npm run generate:posts",
-    "build": "tsc -p tsconfig.json",
+    "build": "npm run generate:blog-pages && npm run generate:sitemap && tsc -p tsconfig.json",
+    "generate:blog-pages": "node scripts/generate-blog-pages.mjs",
     "generate:posts": "node scripts/generate-posts-json.mjs",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "watch": "tsc -w -p tsconfig.json"
   },
   "devDependencies": {

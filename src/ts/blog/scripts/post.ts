@@ -74,6 +74,10 @@ const findMetadata = async () => {
 
     return metadata
 }
+
+const getSeries = async () => {
+    return await fetchJSON(postsMetadata, "series.json")
+}
 // helper for metadata
 async function getPublishedMetadata() {
     const metadata = await findMetadata();
@@ -88,6 +92,11 @@ function getPreviewImagePath(previewImage) {
     if (!previewImage || typeof previewImage !== "string" || !previewImage.trim()) return ""
 
     return `/blog/assets/images/preview_images/${previewImage.trim()}`
+}
+
+function getPostUrl(post, seriesMetadata = {}) {
+    const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts"
+    return `/blog/${seriesSlug}/${post.slug}/`
 }
 
 // 3. get correct metadata
@@ -228,6 +237,7 @@ function timeUploaded(metadata, scope = document) {
 async function showArticle() {
     const metadata = await getMetadata();
     const allMetadata = await findMetadata();
+    const seriesMetadata = await getSeries();
     const postLang = getCurrentLang()
 
     const blogContainer = document.querySelector(".blog");
@@ -240,7 +250,7 @@ async function showArticle() {
 
     const article = stripFrontmatter(await getArticle(metadata));
 
-    updatePostMeta(metadata)
+    updatePostMeta(metadata, seriesMetadata)
 
     const clone = articleTemplate.content.cloneNode(true);
 
@@ -255,7 +265,7 @@ async function showArticle() {
     const blogArticleContainer = clone.querySelector(".blog_post-article");
     blogArticleContainer.innerHTML = marked.parse(article);
 
-    populateSeriesLinks(metadata, clone, allMetadata)
+    populateSeriesLinks(metadata, clone, allMetadata, seriesMetadata)
 
     const blogTitleEl = clone.querySelector(".blog_post-title");
     blogTitleEl.textContent = getLocalizedPostTitle(metadata, postLang);
@@ -292,7 +302,7 @@ async function showArticle() {
     blogContainer.append(clone);
 }
 
-function populateSeriesLinks(metadata, scope, allMetadata) {
+function populateSeriesLinks(metadata, scope, allMetadata, seriesMetadata = {}) {
     const seriesContainer = scope.querySelector(".series-container")
     const postLang = getCurrentLang()
 
@@ -317,7 +327,7 @@ function populateSeriesLinks(metadata, scope, allMetadata) {
         link.textContent = getLocalizedPostTitle(post, postLang)
 
         if (published) {
-            link.href = `/blog/post.html?slug=${post.slug}`
+            link.href = getPostUrl(post, seriesMetadata)
         } else {
             link.removeAttribute("href")
             link.setAttribute("aria-disabled", "true")
@@ -455,6 +465,7 @@ function elapsedTime(isoDate) {
 
 async function setupSuggestions() {
     const metadata = await getPublishedMetadata();
+    const seriesMetadata = await getSeries();
     const currentIndex = metadata.findIndex(post => post.slug === articleSlug);
     const postLang = getCurrentLang()
 
@@ -476,7 +487,7 @@ async function setupSuggestions() {
 
     if (currentIndex > 0) {
         const previousPost = metadata[currentIndex - 1];
-        previousLink.href = `/blog/post.html?slug=${previousPost.slug}`;
+        previousLink.href = getPostUrl(previousPost, seriesMetadata);
         previousTitle.textContent = getLocalizedPostTitle(previousPost, postLang);
     } else {
         previousContainer.classList.add("hidden");
@@ -484,7 +495,7 @@ async function setupSuggestions() {
 
     if (currentIndex < metadata.length - 1) {
         const nextPost = metadata[currentIndex + 1];
-        nextLink.href = `/blog/post.html?slug=${nextPost.slug}`;
+        nextLink.href = getPostUrl(nextPost, seriesMetadata);
         nextTitle.textContent = getLocalizedPostTitle(nextPost, postLang);
     } else {
         nextContainer.classList.add("hidden");
@@ -500,7 +511,7 @@ async function setupSuggestions() {
         }
 
         const randomPost = metadata[randomIndex];
-        randomLink.href = `/blog/post.html?slug=${randomPost.slug}`;
+        randomLink.href = getPostUrl(randomPost, seriesMetadata);
         randomLink.textContent = postLang === "zh" ? "隨機文章" : "Random Article";
     }
 }
@@ -516,6 +527,7 @@ async function populateSuggestions() {
 
 async function populateRelated() {
     const metadata = await getPublishedMetadata();
+    const seriesMetadata = await getSeries();
     const articleListTemplate = document.querySelector("#article-list_item-template")
     const relatedArticleContainer = document.querySelector("#related-articles")
     const postLang = getCurrentLang()
@@ -547,7 +559,7 @@ async function populateRelated() {
         relatedTitleEl.textContent = getLocalizedPostTitle(post, postLang)
 
         // link
-        relatedLinkEl.href = `/blog/post.html?slug=${post.slug}`
+        relatedLinkEl.href = getPostUrl(post, seriesMetadata)
 
         // published date
         const dateObj = new Date(post.published.uploaded)
@@ -579,7 +591,7 @@ function absoluteUrl(path = "") {
     return new URL(path, window.location.origin).href;
 }
 
-function updatePostMeta(metadata) {
+function updatePostMeta(metadata, seriesMetadata = {}) {
     if (!metadata) return;
 
     const postLang = getCurrentLang();
@@ -590,11 +602,11 @@ function updatePostMeta(metadata) {
         "";
     const previewImagePath = getPreviewImagePath(metadata.preview_image)
     const image = previewImagePath ? absoluteUrl(previewImagePath) : "";
-    const url = window.location.href;
+    const url = absoluteUrl(getPostUrl(metadata, seriesMetadata));
     const published = metadata.published?.uploaded || "";
 
     // title tag
-    postLang === "en"? document.title = `${title} | Asiah Crutchfield`:`${title} | 孫賽亞` ;
+    document.title = postLang === "en" ? `${title} | Asiah Crutchfield` : `${title} | 孫賽亞`;
 
     // canonical
     const canonicalEl = document.querySelector('link[rel="canonical"]');

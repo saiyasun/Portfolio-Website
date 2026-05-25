@@ -25,6 +25,9 @@ const getPosts = async () => {
     const postsResponse = await fetchContent(postsMetadata, "posts.json");
     return postsResponse;
 };
+const getSeries = async () => {
+    return await fetchContent(postsMetadata, "series.json");
+};
 // hide blog homepage if there are no posts
 async function initBlog() {
     const posts = await getPublishedPosts();
@@ -135,6 +138,10 @@ function updateTitleLineClasses(scope = document) {
 function getPostTags(post, lang) {
     return post.tags?.[lang] || post.tags?.en || [];
 }
+function getPostUrl(post, seriesMetadata = {}) {
+    const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts";
+    return `/blog/${seriesSlug}/${post.slug}/`;
+}
 function getFilteredPosts(posts, lang) {
     const selectedTag = normalizeTag(getSelectedTag());
     if (!selectedTag)
@@ -186,6 +193,7 @@ function createTagFilterItem(template, label, tag, isActive) {
 // populate post card
 async function populateSelection() {
     const posts = await getPublishedPosts();
+    const seriesMetadata = await getSeries();
     const selectLang = getCurrentLang();
     const filteredPosts = getFilteredPosts(posts, selectLang);
     const totalPages = Math.max(1, Math.ceil(filteredPosts.length / postsPerPage));
@@ -200,8 +208,7 @@ async function populateSelection() {
         const clone = blogTemplate.content.cloneNode(true);
         // 1. add link
         const selectLink = clone.querySelector(".blog_item");
-        const slug = post.slug;
-        selectLink.href = `/blog/post.html?slug=${slug}`;
+        selectLink.href = getPostUrl(post, seriesMetadata);
         // 2. add preview image
         const previewImage = clone.querySelector(".blog_item-img");
         const previewImagePath = getPreviewImagePath(post.preview_image);
