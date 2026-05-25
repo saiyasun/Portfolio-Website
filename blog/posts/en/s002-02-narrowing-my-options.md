@@ -1,3 +1,47 @@
+---
+{
+    "slug": "narrowing-my-options",
+    "title": {
+        "en": "Narrowing My Options",
+        "zh": "縮小選擇範圍"
+    },
+    "description": {
+        "en": "How playing Vibe Jam submissions helped me shrink an oversized game idea into something simple, clear, and possible to start.",
+        "zh": "我如何透過試玩 Vibe Jam 投稿，把一個過大的遊戲想法縮小成簡單、清楚，而且真的能開始做的東西。"
+    },
+    "tags": {
+        "en": [
+            "game development",
+            "vibe coding",
+            "ai",
+            "as one",
+            "scope"
+        ],
+        "zh": [
+            "遊戲開發",
+            "vibe coding",
+            "AI",
+            "AS ONE",
+            "範圍控制"
+        ]
+    },
+    "preview_image": "s002-01.png",
+    "published": {
+        "uploaded": "2026-05-03T00:00:00+08:00",
+        "edited": {
+            "en": "",
+            "zh": ""
+        }
+    },
+    "featured": false,
+    "series": {
+        "is_series": true,
+        "id": "s002",
+        "order": 2
+    }
+}
+---
+
 **I think the saying is true: less is more.**
 
 I thought I needed to build something big. Something original, something deep, something that felt like a real game. That’s where my mind went immediately.

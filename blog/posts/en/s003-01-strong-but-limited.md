@@ -1,3 +1,47 @@
+---
+{
+    "slug": "strong-but-limited",
+    "title": {
+        "en": "Strong, But Limited",
+        "zh": "看起來很強，但其實有限"
+    },
+    "description": {
+        "en": "A moment on a mountain exposed the gap between strength and movement, leading me to rethink my training and focus on fundamental weaknesses.",
+        "zh": "一次在山上的經驗讓我看見力量與動作能力之間的落差，也讓我重新思考訓練方向與自身的基礎弱點。"
+    },
+    "tags": {
+        "en": [
+            "fitness",
+            "mobility",
+            "strength",
+            "calisthenics",
+            "self-improvement"
+        ],
+        "zh": [
+            "健身",
+            "活動度",
+            "力量",
+            "自體重訓練",
+            "自我提升"
+        ]
+    },
+    "preview_image": "s003-01.jpg",
+    "published": {
+        "uploaded": "2026-04-17T00:00:00+08:00",
+        "edited": {
+            "en": "",
+            "zh": ""
+        }
+    },
+    "featured": false,
+    "series": {
+        "is_series": true,
+        "id": "s003",
+        "order": 1
+    }
+}
+---
+
 **I didn’t expect a moment on a mountain to make me question my physical fitness.**
 
 There was a woman there, older than me, sitting comfortably in a deep squat, feeding her dog.

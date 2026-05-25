@@ -1,3 +1,47 @@
+---
+{
+    "slug": "its-not-what-you-know-its-what-you-hear",
+    "title": {
+        "en": "It's Not What You Know, It's What You Hear",
+        "zh": "重點不是你知道什麼，而是你聽到什麼"
+    },
+    "description": {
+        "en": "Why language learning feels harder than it should, and the gap between knowing words and actually hearing them in real speech.",
+        "zh": "為什麼語言學習常常比想像中更困難，以及「知道」和「實際聽到」之間的落差。"
+    },
+    "tags": {
+        "en": [
+            "language learning",
+            "mandarin",
+            "listening",
+            "perception",
+            "learning systems"
+        ],
+        "zh": [
+            "語言學習",
+            "中文",
+            "聽力",
+            "感知",
+            "學習方法"
+        ]
+    },
+    "preview_image": "s001-01.jpg",
+    "published": {
+        "uploaded": "2026-04-16T00:00:00+08:00",
+        "edited": {
+            "en": "",
+            "zh": ""
+        }
+    },
+    "featured": false,
+    "series": {
+        "is_series": true,
+        "id": "s001",
+        "order": 1
+    }
+}
+---
+
 **haʊ ɑːr juː ˈduːɪŋ?**
 
 If you aren’t familiar with the international phonetic alphabet (IPA), that sentence probably looks like an alien language. But if you’re a native or fluent English speaker, you already know exactly what it means.

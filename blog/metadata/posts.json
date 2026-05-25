@@ -41,6 +41,211 @@
         }
     },
     {
+        "slug": "building-from-sound-first",
+        "title": {
+            "en": "Building From Sound First",
+            "zh": "先從聲音開始建立"
+        },
+        "description": {
+            "en": "Why Ground Level Languages starts with listening, perception, natural-speed audio, and stories before translation or explanation.",
+            "zh": "為什麼 Ground Level Languages 先從聆聽、感知、自然語速音訊和故事開始，而不是先從翻譯或解釋開始。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "mandarin",
+                "listening",
+                "sound-first",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "中文",
+                "聽力",
+                "聲音優先",
+                "學習方法"
+            ]
+        },
+        "preview_image": "s001-02.jpg",
+        "published": {
+            "uploaded": "2026-05-28T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s001",
+            "order": 2
+        }
+    },
+    {
+        "slug": "translation-is-not-the-ground-level",
+        "title": {
+            "en": "Translation Is Not the Ground Level",
+            "zh": "翻譯不是最底層"
+        },
+        "description": {
+            "en": "A look at why translation is useful but unstable as a foundation, and how learners can build meaning through sound, images, repetition, and story.",
+            "zh": "探討為什麼翻譯雖然有用，卻不是穩固的基礎，以及學習者如何透過聲音、圖像、重複和故事建立意義。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "mandarin",
+                "translation",
+                "perception",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "中文",
+                "翻譯",
+                "感知",
+                "學習方法"
+            ]
+        },
+        "preview_image": "s001-03.jpg",
+        "published": {
+            "uploaded": "2026-05-30T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s001",
+            "order": 3
+        }
+    },
+    {
+        "slug": "simple-does-not-have-to-mean-childish",
+        "title": {
+            "en": "Simple Does Not Have to Mean Childish",
+            "zh": "簡單不代表幼稚"
+        },
+        "description": {
+            "en": "How concrete stories, physical needs, and a stray cat helped clarify beginner language content that is simple without insulting adult learners.",
+            "zh": "具體故事、身體需求和一個簡單角色如何幫助釐清：初學內容可以簡單，但不必把成人學習者當成小孩。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "mandarin",
+                "stories",
+                "beginner input",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "中文",
+                "故事",
+                "初學輸入",
+                "學習方法"
+            ]
+        },
+        "preview_image": "s001-04.jpg",
+        "published": {
+            "uploaded": "2026-06-01T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s001",
+            "order": 4
+        }
+    },
+    {
+        "slug": "mystery-is-good-confusion-is-not",
+        "title": {
+            "en": "Mystery Is Good. Confusion Is Not.",
+            "zh": "神秘感很好，困惑不行"
+        },
+        "description": {
+            "en": "The design challenge of making a quiet, sound-first language app feel discoverable, responsive, and clear without turning it into a manual.",
+            "zh": "設計安靜、聲音優先的語言學習 app 時，如何讓它可探索、有回應、清楚，卻不變成一本說明書。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "mandarin",
+                "interaction design",
+                "sound-first",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "中文",
+                "互動設計",
+                "聲音優先",
+                "學習方法"
+            ]
+        },
+        "preview_image": "s001-05.jpg",
+        "published": {
+            "uploaded": "2026-06-03T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s001",
+            "order": 5
+        }
+    },
+    {
+        "slug": "the-first-real-session",
+        "title": {
+            "en": "The First Real Session",
+            "zh": "第一次真正的錄音與測試"
+        },
+        "description": {
+            "en": "What happened when Ground Level Languages got its first real Mandarin voice, first outside feedback, and first uncomfortable contact with reality.",
+            "zh": "Ground Level Languages 第一次有了真正的中文聲音、外部回饋，以及第一次不太舒服但很有用的現實碰撞。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "mandarin",
+                "audio recording",
+                "user feedback",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "中文",
+                "錄音",
+                "使用者回饋",
+                "學習方法"
+            ]
+        },
+        "preview_image": "s001-06.jpg",
+        "published": {
+            "uploaded": "2026-06-05T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s001",
+            "order": 6
+        }
+    },
+    {
         "slug": "paper-disc-real-code",
         "title": {
             "en": "Paper Disc to Real Code",

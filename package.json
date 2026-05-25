@@ -1,6 +1,8 @@
 {
   "scripts": {
+    "prebuild": "npm run generate:posts",
     "build": "tsc -p tsconfig.json",
+    "generate:posts": "node scripts/generate-posts-json.mjs",
     "watch": "tsc -w -p tsconfig.json"
   },
   "devDependencies": {

@@ -1,3 +1,47 @@
+---
+{
+    "slug": "paper-disc-real-code",
+    "title": {
+        "en": "Paper Disc to Real Code",
+        "zh": "從紙片光碟到真正的程式碼"
+    },
+    "description": {
+        "en": "How a childhood idea of making games turned into a real attempt. Despite having little experience and no clear plan.",
+        "zh": "從小時候想做遊戲的念頭，到現在真正開始嘗試，即使經驗不足、也沒有明確計畫。"
+    },
+    "tags": {
+        "en": [
+            "game development",
+            "beginner",
+            "learning by doing",
+            "ai",
+            "personal project"
+        ],
+        "zh": [
+            "遊戲開發",
+            "初學者",
+            "邊做邊學",
+            "AI",
+            "個人專案"
+        ]
+    },
+    "preview_image": "s002-01.png",
+    "published": {
+        "uploaded": "2026-04-14T00:00:00+08:00",
+        "edited": {
+            "en": "",
+            "zh": ""
+        }
+    },
+    "featured": false,
+    "series": {
+        "is_series": true,
+        "id": "s002",
+        "order": 1
+    }
+}
+---
+
 **My first attempt at making a video game was as a kid cutting a piece of paper into the shape of a disc and scribbling a title across it.**
 
 I don’t remember exactly how old I was. But I was definitely old enough to know that putting a piece of loose leaf into a PS2 wouldn’t magically turn it into a game.

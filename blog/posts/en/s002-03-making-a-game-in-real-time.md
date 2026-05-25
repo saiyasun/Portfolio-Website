@@ -1,3 +1,47 @@
+---
+{
+    "slug": "making-a-game-in-real-time",
+    "title": {
+        "en": "Making a Game in Real Time",
+        "zh": "即時把遊戲做出來"
+    },
+    "description": {
+        "en": "How a gray box prototype, written rules, pixel art, and messy animation experiments helped AS ONE become something real.",
+        "zh": "我如何透過 gray box 原型、規則文件、pixel art 和混亂的動畫實驗，讓 AS ONE 變成真正存在的東西。"
+    },
+    "tags": {
+        "en": [
+            "game development",
+            "vibe coding",
+            "ai",
+            "as one",
+            "prototyping"
+        ],
+        "zh": [
+            "遊戲開發",
+            "vibe coding",
+            "AI",
+            "AS ONE",
+            "原型製作"
+        ]
+    },
+    "preview_image": "s002-01.png",
+    "published": {
+        "uploaded": "2026-05-04T00:00:00+08:00",
+        "edited": {
+            "en": "",
+            "zh": ""
+        }
+    },
+    "featured": false,
+    "series": {
+        "is_series": true,
+        "id": "s002",
+        "order": 3
+    }
+}
+---
+
 **A journey of 1,000 miles starts with a single step. Figuring out the direction is where it gets hard.**
 
 ## Turning an Idea Into Something That Actually Works

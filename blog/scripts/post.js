@@ -25,14 +25,34 @@ async function fetchJSON(path, file) {
 }
 async function fetchText(path, language, file) {
     const response = await fetch(`${path}${language}/${file}`);
+    if (!response.ok)
+        return null;
     const data = await response.text();
     return data;
 }
+function getArticleFilename(metadata) {
+    const slug = metadata?.slug || articleSlug;
+    const series = metadata?.series;
+    if (series?.is_series && series?.id && series?.order) {
+        const order = String(series.order).padStart(2, "0");
+        return `${series.id}-${order}-${slug}.md`;
+    }
+    return `${slug}.md`;
+}
+function stripFrontmatter(markdown) {
+    return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
+}
 // 2. fetch the post
-const getArticle = async () => {
+const getArticle = async (metadata) => {
     const postLang = getCurrentLang();
-    const article = await fetchText(postsPath, postLang, `${articleSlug}.md`);
-    return article;
+    const articleFile = getArticleFilename(metadata);
+    const article = await fetchText(postsPath, postLang, articleFile);
+    if (article !== null)
+        return article;
+    if (articleFile !== `${articleSlug}.md`) {
+        return await fetchText(postsPath, postLang, `${articleSlug}.md`) || "";
+    }
+    return "";
 };
 // 2a. get json file
 const findMetadata = async () => {
@@ -160,7 +180,6 @@ function timeUploaded(metadata, scope = document) {
 }
 // 6. populate article
 async function showArticle() {
-    const article = await getArticle();
     const metadata = await getMetadata();
     const allMetadata = await findMetadata();
     const postLang = getCurrentLang();
@@ -170,6 +189,7 @@ async function showArticle() {
         blogContainer.innerHTML = "<p>Post not found</p>";
         return;
     }
+    const article = stripFrontmatter(await getArticle(metadata));
     updatePostMeta(metadata);
     const clone = articleTemplate.content.cloneNode(true);
     // check publish timestamp + fill dates

@@ -1,3 +1,47 @@
+---
+{
+    "slug": "lessons-from-my-first-video-game",
+    "title": {
+        "en": "Lessons From My First Video Game",
+        "zh": "我第一款遊戲教會我的事"
+    },
+    "description": {
+        "en": "What finishing AS ONE taught me about AI, technical understanding, debugging, and learning to direct instead of only execute.",
+        "zh": "完成 AS ONE 讓我學到關於 AI、技術理解、debug，以及從執行者轉變成導演式思考的事。"
+    },
+    "tags": {
+        "en": [
+            "game development",
+            "vibe coding",
+            "ai",
+            "as one",
+            "reflection"
+        ],
+        "zh": [
+            "遊戲開發",
+            "vibe coding",
+            "AI",
+            "AS ONE",
+            "反思"
+        ]
+    },
+    "preview_image": "s002-01.png",
+    "published": {
+        "uploaded": "2026-05-05T00:00:00+08:00",
+        "edited": {
+            "en": "",
+            "zh": ""
+        }
+    },
+    "featured": false,
+    "series": {
+        "is_series": true,
+        "id": "s002",
+        "order": 4
+    }
+}
+---
+
 ## I Built My First Game With AI
 
 I just built my first ever game almost entirely with AI.
