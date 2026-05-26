@@ -1,13 +1,10 @@
 {
     "zh": {
-        "blog_homepage":
-        {
-            "title": "賽亞的筆記",
-            "subtitle": "關於語言，學習，科技與生活的思考"
+        "blog_homepage": {
+            "title": "Asides",
+            "subtitle": "thinking through language, learning, tech, and life"
         },
-        
-        "reading_time":
-        {
+        "reading_time": {
             "text": "閱讀時間"
         }
     }

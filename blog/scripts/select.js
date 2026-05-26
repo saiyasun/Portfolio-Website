@@ -32,7 +32,7 @@ const getSeries = async () => {
 async function initBlog() {
     const posts = await getPublishedPosts();
     const currentLang = getCurrentLang();
-    currentLang === "en" ? document.title = "Blog | Asiah Crutchfield" : document.title = "孫賽亞 | 部落格";
+    currentLang === "en" ? document.title = "Asides | Asiah Crutchfield" : document.title = "Asides | 孫賽亞";
     if (!posts || posts.length === 0) {
         comingSoon.classList.remove("hidden");
         blogHomepage.classList.add("hidden");
