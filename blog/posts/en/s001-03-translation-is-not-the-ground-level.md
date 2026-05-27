@@ -44,21 +44,23 @@
 
 **A hammer is a useful tool. But I wouldn't use it to shape glass.**
 
+To me, translation is like that hammer.
+
 I want to say that first because it is easy for this kind of argument to sound more extreme than it actually is.
 
 I am not against translation.
 
 I currently live in Taiwan and use translation daily. I need translation. Anyone learning a language as an adult will probably use translation at some point.
 
-The problem is not translation itself.
+The problem is not translation itself. 
 
-The problem is making translation the ground level.
+The problem is treating translation like the only tool.
 
 ### The Shortcut That Becomes the Path
 
 Translation is powerful because it gives quick meaning.
 
-A learner sees a word. They see the English (or their native language) definition. They understand.
+A learner sees a word. They see the English or their native language definition. They understand.
 
 At least, they feel like they understand.
 
@@ -98,15 +100,15 @@ Ground Level Languages is trying to do something different.
 
 I want to create a system where a learner never has to leave their target language to understand anything.
 
-### Removing the Obstacle
+### Moving Translation Later
 
-I want to be able to remove the crutch entirely.
+My goal is to be able to remove the crutch entirely.
 
-The idea is to start at the root of a language. Using no translation, the learner picks up simple vocabulary and grammar through sound, images, repetition, and story.
+The idea is to start at the root of language. Using no translation, the learner picks up simple vocabulary and grammar through sound, images, repetition, and stories.
 
 Slowly, they build up a foundation of the basics. 
 
-And once they have taken root, they can use those to learn unfamiliar concepts through repetition.
+And once they have taken root, they can use those to learn unfamiliar concepts through repetition. All without once touching a translation dictionary.
 
 I want to create a self-reinforcing feedback loop through repetition.
 
@@ -123,24 +125,6 @@ They may not understand everything immediately. But over time with enough repeti
 The story gives the word context and gives the brain a reason to remember it.
 
 That attachment feels different from memorizing a definition.
-
-### Why This Matters for Stories
-
-This is one reason I am interested in using small stories for the app.
-
-Stories let meaning unfold.
-
-A phrase can appear before the learner knows what it means. Then it can appear again in a slightly different context. Then the learner can start to get a feeling for it.
-
-Maybe a character keeps saying something when they want food.
-
-Maybe a sound always appears before an action.
-
-Maybe the learner hears a line in the preview, then works through the lesson until that line finally becomes understandable.
-
-I've personally used a similar approach with graded readers in Chinese. 
-
-It is a powerful technique to acquire language.
 
 ### What Translation Can Hide
 
@@ -168,15 +152,13 @@ Ask:
 
 “Can you recognize this sound again?”
 
-That is the ground level.
+That is what I consider the root of spoken language.
 
 ### The Balance I Want
 
-I do not want Ground Level Languages to demonize translation.
+I do not want Ground Level Languages to demonize translation. It has its place after a good foundation has been built.
 
-It has its place after a good foundation has been built.
-
-But I want those tools to come after the learner has internalized the sound and meaning.
+But I want those tools to come ***after*** the learner has internalized the sound and meaning.
 
 ### Where This Goes
 

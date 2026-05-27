@@ -1,9 +1,9 @@
 ---
 {
-    "slug": "simple-does-not-have-to-mean-childish",
+    "slug": "learning-language-from-a-cat",
     "title": {
-        "en": "Simple Does Not Have to Mean Childish",
-        "zh": "簡單不代表幼稚"
+        "en": "Learning Language From a Cat",
+        "zh": "跟貓學語言"
     },
     "description": {
         "en": "How concrete stories, physical needs, and a stray cat helped clarify beginner language content that is simple without insulting adult learners.",
@@ -131,6 +131,24 @@ But they do not need the material to insult their intelligence.
 That is the bridge I started looking for.
 
 How do you make something simple enough for a beginner without making it feel babyish?
+
+### My Learning Journey
+
+I have tried many apps, programs and methods in my Chinese learning journey. When it came to comprehensible input, I had varying levels of success.
+
+Then, one day, I discovered the concept of graded readers and found a series called Mandarin Companion. 
+
+At first, I thought it was yet another series of "simple" books for learners. I quickly found out it was different. The books used limited vocabulary, lots of repetition, and plots that managed to be simple without being childish. And I really enjoyed that there were audiobook versions of each story.
+
+I managed to learn and retain many grammar and vocabulary concepts that I struggled with before. All with almost no explicit explanations. I found it so useful that I started looking for more resources that were just like it.
+
+I found a few resources that were similar. 
+
+There were YouTube channels that advertised comprehensible input in Mandarin but they didn't have the same depth of material. 
+
+The closest I could find was a YouTube channel for Japanese which used comprehensible input. Japanese is a language I do want to learn in the future so I bookmarked it but, unfortunately, it's not what I need now.
+
+It showed me just how much true beginner material is missing. It inspired me to want to contribute to the lack of true beginner input, but also improve on what resources like Mandarin Companion are already doing.
 
 ### The Cat at My University
 
