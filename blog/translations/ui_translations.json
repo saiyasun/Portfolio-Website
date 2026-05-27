@@ -2,7 +2,8 @@
     "zh": {
         "blog_homepage": {
             "title": "Asides",
-            "subtitle": "thinking through language, learning, tech, and life"
+            "subtitle": "thinking through language, learning, tech, and life",
+            "description": "Asides 是我的個人部落格，記錄語言學習、程式設計、AI 輔助專案、健身，以及公開打造作品的過程。"
         },
         "reading_time": {
             "text": "閱讀時間"
