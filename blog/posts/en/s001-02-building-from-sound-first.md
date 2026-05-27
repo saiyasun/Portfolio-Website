@@ -68,9 +68,7 @@ But real speech is not that tidy.
 
 When I hear an unfamiliar word in my mother tongue, English, rarely do I ever take the time to break down what I'm hearing into raw sound. English is so ingrained into me that all I need to worry about is the concept I'm hearing and its meaning. And this process is the same for all of us in our native languages.
 
-We then project this to our target language thinking it will be the same.
-
-But the learner eventually has to hear the word in a sentence, at natural speed, from a real person, surrounded by other sounds.
+We then project this to our target language thinking it will be the same. But the learner eventually has to hear the word in a sentence, at natural speed, from a real person, surrounded by other sounds.
 
 The result is that they know a word conceptually but not practically.
 
@@ -78,23 +76,19 @@ The instincts that work automatically in a native language do not always work wh
 
 That is what I mean by starting too high.
 
-The first layer should not be “What does this word mean?”
-
-The first layer should be “What does this sound like?”
+The first layer should not be “What does this word mean?” but “What does this sound like?”
 
 ### What Sound-First Means
 
-Sound-first does not mean meaning never matters.
-
-It does not mean grammar is useless or text is bad. Of course it isn't otherwise I couldn't be writing this article.
+Sound-first doesn't mean meaning never matters, grammar is useless or text is bad. Of course not. Otherwise I couldn't be writing this article.
 
 It just means instead of:
 
-word → translation → sentence → audio
+> word → translation → sentence → audio
 
 I think it should be something closer to:
 
-sound → patterns → comprehensible input → understanding → explanation
+> sound → patterns → comprehensible input → understanding → explanation
 
 In my view, hearing should come before any explanation. A learner should be able to listen to a sound on its own terms before being told what it is “supposed” to mean.
 
@@ -106,23 +100,13 @@ I just want the sound to speak for itself first.
 
 ### The Lowest Layer
 
-Ground Level Languages is my attempt at a solution to this problem.
-
-To me, it means the lowest usable layer of language.
+Ground Level Languages is my attempt at a solution to this problem. To me, it means the lowest usable layer of language.
 
 For spoken language, that layer is not vocabulary.
 
 It's sound perception.
 
-Can the learner hear the rhythm?
-
-Can they hear the difference between similar sounds?
-
-Can they notice tone, stress, or length?
-
-Can they recognize that two sounds are the same even when spoken by different people?
-
-Can they hear a phrase more clearly the third time than the first time?
+Can the learner hear the rhythm? Can they hear the difference between similar sounds?Can they notice tone, stress, or length? Can they recognize that two sounds are the same even when spoken by different people? Can they hear a phrase more clearly the third time than the first time?
 
 That is the kind of progress I want the app to care about.
 
@@ -134,7 +118,7 @@ Slow audio can help. The problem is when learners only ever hear the clean versi
 
 Real speech has texture. It has speed. It has rhythm. It has reductions. It has personality.
 
-If the app only trains people on artificial audio, then it may prepare them for the app more than the language.
+If the app only trains people on artificial audio, then it might prepare them for the app more than the language.
 
 That is why I want natural-speed audio to appear early, even if the learner is not expected to understand everything.
 
@@ -142,51 +126,39 @@ That is why I want natural-speed audio to appear early, even if the learner is n
 
 Sound-first could easily become boring.
 
-A screen full of tone drills and phoneme exercises might be useful, but it does not feel like a world.
+A screen full of tone drills and phoneme exercises might be useful, but it doesn't feel like a world.
 
 I want the app to feel more alive than that.
 
-For me, one of the biggest hurdles in learning math or programming is not just the density of the material. It is the disconnect from what feels practical, useful, or interesting. It's all well and good to know that the Chinese "zhi, chi, shi" sounds are different from the English "j, ch, sh" sounds, but why should I care?
+For me, one of the biggest hurdles in learning math or programming is not just the density of the material. It is the disconnect from what feels practical, useful, or interesting. And I feel like there is a similar issue with most language learning tools. 
+
+It's all well and good to know that the Chinese "zhi, chi, shi" sounds are different from the English "j, ch, sh" sounds, but why should I care?
 
 That is why stories are important.
 
-No doubt targeted exercises can be useful. But, stories give sound a reason to exist.
+No doubt targeted exercises can be useful. But, stories give sound a reason to exist. A sound is not just a sound. It belongs to a character, a scene, a problem, or an action.
 
-A sound is not just a sound. It belongs to a character, a scene, a problem, or an action.
-
-The learner can hear something before fully understanding it, then slowly return to it with more context.
-
-That creates curiosity.
+The learner can hear something before fully understanding it, then slowly return to it with more context. And I think that creates curiosity.
 
 Instead of asking the learner to memorize a word, the app can make them wonder:
 
-“What did that character say?”
+- “What did that character say?”
+- “What does that sound mean?”
+- “Why did the scene change?”
 
-“What does that sound mean?”
-
-“Why did the scene change?”
-
-That kind of curiosity feels much stronger than a quiz.
+That kind of curiosity feels much stronger than drills.
 
 ### The Garden Metaphor
 
-The garden idea helps me think about the structure.
+The garden idea helps me think about the structure because a language is not just a list of words. It is something that grows.
 
-A language is not just a list of words. It is something that grows.
+Seeds can represent entry points. A seed can be tapped, heard, and explored before it is labeled.
 
-Seeds can represent entry points.
+The Sound Garden can focus on the raw listening layer and be a place to hone your ear. Almost like a gym for listening comprehension.
 
-A seed can be tapped, heard, and explored before it is labeled.
+The Meaning Tree can focus on stories and comprehensible input.
 
-The Sound Garden can focus on the raw listening layer and be a place to hone your ear.
-
-The Meaning Tree can focus on story, scene, and understanding.
-
-It also reminds me that learning does not need to feel like sitting in a classroom lecture.
-
-You plant something.
-
-You notice growth.
+It also reminds me that learning does not need to feel like sitting in a classroom lecture. You plant something and watch it grow over time.
 
 ### What This Changes in Design
 
@@ -203,9 +175,7 @@ That means:
 
 This also means I have to be careful.
 
-If I make the interface too mysterious, people will get confused.
-
-If I explain too much, I kill the point.
+If I make the interface too mysterious, people will get confused. If I explain too much, I kill the point.
 
 That balance is hard.
 
@@ -213,9 +183,7 @@ But it is also what makes the project interesting.
 
 ### Where This Goes
 
-Building from sound first is still an experiment.
-
-I do not know exactly how well it will work.
+Building from sound first is still an experiment. I don't know exactly how well it will work.
 
 But I do know the usual path leaves a lot of learners stuck. They collect words, pass app lessons, and still stutter when asking for directions.
 
