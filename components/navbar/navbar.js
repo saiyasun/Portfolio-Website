@@ -24,6 +24,7 @@ class SiteNavbar extends HTMLElement {
             updateLocalizedLinks(this);
         }
         this.setupActiveState();
+        this.scrollActiveLinkIntoView();
         // if translations exist, re-apply to navbar
         if (window.translateUI) {
             document.dispatchEvent(new CustomEvent("languagechange", {
@@ -92,10 +93,11 @@ class SiteNavbar extends HTMLElement {
                 link.setAttribute("aria-current", "page");
             }
         });
+        this.scrollActiveLinkIntoView();
     }
     updatePageActive() {
         const path = window.location.pathname;
-        if (path.startsWith("/blog/")) {
+        if (path === "/blog" || path.startsWith("/blog/")) {
             this.setActiveByPage("/blog/index.html");
             return;
         }
@@ -114,6 +116,7 @@ class SiteNavbar extends HTMLElement {
                 link.setAttribute("aria-current", "page");
             }
         });
+        this.scrollActiveLinkIntoView();
     }
     updateSectionActive() {
         let activeSection = "hero";
@@ -143,6 +146,17 @@ class SiteNavbar extends HTMLElement {
                 link.classList.add(this.activeLinkClass);
                 link.setAttribute("aria-current", "page");
             }
+        });
+        this.scrollActiveLinkIntoView();
+    }
+    scrollActiveLinkIntoView() {
+        const activeLink = this.querySelector(`#mobile-nav .${this.activeLinkClass}`);
+        if (!activeLink)
+            return;
+        activeLink.scrollIntoView({
+            behavior: "auto",
+            block: "nearest",
+            inline: "center"
         });
     }
 }

@@ -2,9 +2,16 @@
     "zh": {
         "blog_homepage": {
             "title": "Asides",
-            "subtitle": "thinking through language, learning, tech, and life",
-            "description": "Asides 是我的個人部落格，記錄語言學習、程式設計、AI 輔助專案、健身，以及公開打造作品的過程。"
+            "subtitle": "思考語言、學習、科技與生活",
+            "description": "Asides 是我的個人部落格，記錄語言學習、程式設計、AI 輔助專案、健身，以及公開打造作品的過程。",
+            "back_home": "← 首頁"
         },
+        "pagination": {
+            "previous": "上一頁",
+            "next": "下一頁"
+        },
+        "coming-soon": "文章即將發布。",
+        "coming-soon-back": "← 返回",
         "reading_time": {
             "text": "閱讀時間"
         }

@@ -213,15 +213,19 @@ async function populateSelection() {
         const previewImage = clone.querySelector(".blog_item-img");
         const previewImagePath = getPreviewImagePath(post.preview_image);
         const previewTitle = post.title?.[selectLang] || post.title?.en || post.slug || "";
-        if (previewImagePath) {
-            previewImage.src = previewImagePath;
-            previewImage.alt = previewTitle;
-        }
-        else {
+        const setPreviewPlaceholder = () => {
             previewImage.removeAttribute("src");
             previewImage.alt = "";
             previewImage.classList.add("is-placeholder");
             previewImage.setAttribute("aria-hidden", "true");
+        };
+        if (previewImagePath) {
+            previewImage.src = previewImagePath;
+            previewImage.alt = previewTitle;
+            previewImage.addEventListener("error", setPreviewPlaceholder, { once: true });
+        }
+        else {
+            setPreviewPlaceholder();
         }
         // 3. get title
         const selectTitleEl = clone.querySelector(".blog_item-title");

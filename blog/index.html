@@ -45,7 +45,7 @@
     <site-navbar></site-navbar>
 
     <main id="blog_homepage">
-        <a class="blog-back-link" href="/index.html" data-nosnippet>← Home</a>
+        <a class="blog-back-link" href="/index.html" data-nosnippet data-i18n="blog_homepage.back_home">← Home</a>
         <!--Blog title and intro-->
         <div id="blog_intro">
             <h1 id="blog_homepage-title" class="blog_homepage-header" data-i18n="blog_homepage.title">
@@ -71,13 +71,13 @@
                 <div class="blog_item-intro_container">
                     <div class="blog_item-img_container">
                         <img class="blog_item-img">
-                        <h4 class="blog_item-title" data-i18n="blog_item.title">Title</h4>
+                        <h4 class="blog_item-title">Title</h4>
                     </div>
                     <div class="blog_item-date">
-                        <span class="blog_item-month" data-i18n="blog_item.month"></span><span class="blog_item-day"></span><span class="blog_item-year"></span>
+                        <span class="blog_item-month"></span><span class="blog_item-day"></span><span class="blog_item-year"></span>
                     </div>
                 </div>
-                <p class="blog_item-description" data-i18n="blog_item.description"></p>
+                <p class="blog_item-description"></p>
                 <ul class="blog_item-tag_container">
                 </ul>
             </a>
@@ -88,9 +88,9 @@
             <!--append here-->
         </div>
         <nav id="blog-pagination" class="hidden" aria-label="Blog pagination">
-            <a id="blog-page-prev" class="blog-page-link" href="">Previous</a>
+            <a id="blog-page-prev" class="blog-page-link" href="" data-i18n="pagination.previous">Previous</a>
             <span id="blog-page-status"></span>
-            <a id="blog-page-next" class="blog-page-link" href="">Next</a>
+            <a id="blog-page-next" class="blog-page-link" href="" data-i18n="pagination.next">Next</a>
         </nav>
     </main>
 
@@ -98,7 +98,7 @@
         <p data-i18n="coming-soon">
             Posts coming soon.
         </p>
-        <a href="/index.html">← back</a>
+        <a href="/index.html" data-i18n="coming-soon-back">← back</a>
     </div>
 
     <!--TRANSLATION-->
