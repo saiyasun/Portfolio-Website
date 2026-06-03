@@ -27,7 +27,7 @@
     },
     "preview_image": "s001-06.jpg",
     "published": {
-        "uploaded": "2026-06-05T00:00:00+08:00",
+        "uploaded": "2026-06-03T23:00:00+08:00",
         "edited": {
             "en": "",
             "zh": ""

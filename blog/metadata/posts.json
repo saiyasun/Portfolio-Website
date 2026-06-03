@@ -232,7 +232,7 @@
         },
         "preview_image": "s001-06.jpg",
         "published": {
-            "uploaded": "2026-06-05T00:00:00+08:00",
+            "uploaded": "2026-06-03T23:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -243,6 +243,47 @@
             "is_series": true,
             "id": "s001",
             "order": 6
+        }
+    },
+    {
+        "slug": "testing-it-out",
+        "title": {
+            "en": "Testing It Out",
+            "zh": "開始測試"
+        },
+        "description": {
+            "en": "Why I’m launching an early Ground Level Languages demo before the app feels finished.",
+            "zh": "為什麼我在 Ground Level Languages 還沒完成之前，就先推出早期 demo 來收集回饋。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "prototype",
+                "user feedback",
+                "demo",
+                "learning systems"
+            ],
+            "zh": [
+                "語言學習",
+                "原型",
+                "使用者回饋",
+                "demo",
+                "學習系統"
+            ]
+        },
+        "preview_image": "s001-07.jpg",
+        "published": {
+            "uploaded": "2026-06-04T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s001",
+            "order": 7
         }
     },
     {
