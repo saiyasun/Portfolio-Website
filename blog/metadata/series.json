@@ -13,13 +13,13 @@
   },
   "s002": {
     "name": {
-        "en": "Vibe Coding",
-        "zh": "隨感編程"
+      "en": "Vibe Coding",
+      "zh": "隨感編程"
     },
     "slug": "vibe-coding",
     "description": {
-        "en": "Documenting my attempt to build a game from scratch with little experience. Learning by doing, experimenting in real time, and figuring things out along the way.",
-        "zh": "記錄我從零開始做遊戲的過程。在經驗不足的情況下，一邊做一邊學，透過實驗與嘗試逐步摸索方向。"
+      "en": "Documenting my attempt to build a game from scratch with little experience. Learning by doing, experimenting in real time, and figuring things out along the way.",
+      "zh": "記錄我從零開始做遊戲的過程。在經驗不足的情況下，一邊做一邊學，透過實驗與嘗試逐步摸索方向。"
     },
     "status": "active"
   },
@@ -32,6 +32,30 @@
     "description": {
       "en": "Documenting my attempt to improve my body from the ground up—fixing weaknesses in movement, building strength, and developing a more complete physique.",
       "zh": "記錄我從基礎開始重新打造身體的過程，修正動作上的弱點、提升力量，並建立更完整且均衡的體態。"
+    },
+    "status": "active"
+  },
+  "s004": {
+    "name": {
+      "en": "Mandarin in the Wild",
+      "zh": "野外中文"
+    },
+    "slug": "mandarin-in-the-wild",
+    "description": {
+      "en": "Documenting my attempt to improve my Mandarin through real life in Taiwan: listening, speaking, pronunciation, accent, reading, and closing the gap between study and actual use.",
+      "zh": "記錄我在台灣透過真實生活提升中文的過程：聽力、口說、發音、口音、閱讀，以及縮短學習與實際使用之間的落差。"
+    },
+    "status": "active"
+  },
+  "s005": {
+    "name": {
+      "en": "Finding My Voice",
+      "zh": "尋找我的聲音"
+    },
+    "slug": "finding-my-voice",
+    "description": {
+      "en": "Improving my speaking and singing voice through breath, resonance, articulation, pitch, control, and expression.",
+      "zh": "記錄我透過呼吸、共鳴、咬字、音高、控制與表達來改善說話與唱歌聲音的過程。"
     },
     "status": "active"
   }
