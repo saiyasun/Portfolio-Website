@@ -33,6 +33,10 @@ function seriesSlugFor(post, series) {
 }
 
 function postUrl(post, series) {
+    if (post.series?.is_series === false) {
+        return `${siteUrl}/blog/${post.slug}/`;
+    }
+
     return `${siteUrl}/blog/${seriesSlugFor(post, series)}/${post.slug}/`;
 }
 

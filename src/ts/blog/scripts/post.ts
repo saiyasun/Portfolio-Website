@@ -95,6 +95,10 @@ function getPreviewImagePath(previewImage) {
 }
 
 function getPostUrl(post, seriesMetadata = {}) {
+    if (post?.series?.is_series === false) {
+        return `/blog/${post.slug}/`
+    }
+
     const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts"
     return `/blog/${seriesSlug}/${post.slug}/`
 }

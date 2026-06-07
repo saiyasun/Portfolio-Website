@@ -52,21 +52,28 @@ function validatePost(post, file) {
     requireString(post, "description.zh", file);
     requireString(post, "preview_image", file);
     requireString(post, "published.uploaded", file);
-    requireString(post, "series.id", file);
-    requireNumber(post, "series.order", file);
 
     if (post.featured === undefined) {
         errors.push(`${file}: missing featured`);
     }
 
-    if (post.series?.is_series !== true) {
-        errors.push(`${file}: series.is_series must be true`);
+    if (post.series?.is_series === true) {
+        validateSeriesPost(post, file);
+    } else if (post.series?.is_series === false) {
+        validateStandalonePost(post, file);
+    } else {
+        errors.push(`${file}: series.is_series must be true or false`);
     }
 
     const uploaded = Date.parse(post.published?.uploaded || "");
     if (Number.isNaN(uploaded)) {
         errors.push(`${file}: invalid published.uploaded date`);
     }
+}
+
+function validateSeriesPost(post, file) {
+    requireString(post, "series.id", file);
+    requireNumber(post, "series.order", file);
 
     const expectedFilename = `${post.series?.id}-${String(post.series?.order).padStart(2, "0")}-${post.slug}.md`;
     if (file !== expectedFilename) {
@@ -78,6 +85,36 @@ function validatePost(post, file) {
     }
 
     const zhPath = path.join(zhPostsDir, expectedFilename);
+    if (!existsSync(zhPath)) {
+        warnings.push(`${file}: no matching zh post found`);
+    }
+}
+
+function validateStandalonePost(post, file) {
+    const match = file.match(/^(a\d{3})-(.+)\.md$/);
+
+    if (!match) {
+        errors.push(`${file}: standalone filename should be a###-${post.slug}.md`);
+        return;
+    }
+
+    const [, articleId, filenameSlug] = match;
+
+    if (filenameSlug !== post.slug) {
+        errors.push(`${file}: filename slug should match ${post.slug}`);
+    }
+
+    if (post.series?.id || post.series?.order !== undefined) {
+        errors.push(`${file}: standalone posts must not set series.id or series.order`);
+    }
+
+    if (post.preview_image && !existsSync(path.join(previewImagesDir, post.preview_image))) {
+        warnings.push(`${file}: preview image not found (${post.preview_image})`);
+    }
+
+    const expectedFilename = `${articleId}-${post.slug}.md`;
+    const zhPath = path.join(zhPostsDir, expectedFilename);
+
     if (!existsSync(zhPath)) {
         warnings.push(`${file}: no matching zh post found`);
     }
@@ -108,11 +145,13 @@ for (const post of posts) {
     }
     slugs.add(post.slug);
 
-    const seriesKey = `${post.series?.id}:${post.series?.order}`;
-    if (seriesOrders.has(seriesKey)) {
-        errors.push(`duplicate series order: ${seriesKey}`);
+    if (post.series?.is_series === true) {
+        const seriesKey = `${post.series?.id}:${post.series?.order}`;
+        if (seriesOrders.has(seriesKey)) {
+            errors.push(`duplicate series order: ${seriesKey}`);
+        }
+        seriesOrders.add(seriesKey);
     }
-    seriesOrders.add(seriesKey);
 }
 
 if (errors.length > 0) {
@@ -128,6 +167,14 @@ if (errors.length > 0) {
 }
 
 posts.sort((a, b) => {
+    if (a.series?.is_series !== b.series?.is_series) {
+        return a.series?.is_series ? -1 : 1;
+    }
+
+    if (a.series?.is_series === false) {
+        return Date.parse(a.published?.uploaded || "") - Date.parse(b.published?.uploaded || "");
+    }
+
     const seriesCompare = String(a.series.id).localeCompare(String(b.series.id));
     if (seriesCompare !== 0) return seriesCompare;
 

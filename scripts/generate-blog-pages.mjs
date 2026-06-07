@@ -152,6 +152,10 @@ function seriesSlugFor(post, series) {
 }
 
 function postPath(post, series) {
+    if (post.series?.is_series === false) {
+        return `/blog/${post.slug}/`;
+    }
+
     return `/blog/${seriesSlugFor(post, series)}/${post.slug}/`;
 }
 
@@ -178,8 +182,10 @@ function jsonScript(value) {
 }
 
 function seriesLinks(currentPost, posts, series) {
+    if (currentPost.series?.is_series !== true) return "";
+
     const matching = posts
-        .filter((post) => post.series?.id === currentPost.series?.id)
+        .filter((post) => post.series?.is_series === true && post.series?.id === currentPost.series?.id)
         .sort((a, b) => (a.series?.order || 0) - (b.series?.order || 0));
 
     if (matching.length <= 1) return "";
@@ -321,7 +327,19 @@ for (const file of files) {
     bodies.set(metadata.slug, body);
 }
 
-const generatedDirs = new Set(posts.map((post) => seriesSlugFor(post, series)));
+function postOutputDir(post, series) {
+    if (post.series?.is_series === false) {
+        return path.join(blogDir, post.slug);
+    }
+
+    return path.join(blogDir, seriesSlugFor(post, series), post.slug);
+}
+
+const generatedDirs = new Set(posts.map((post) => {
+    if (post.series?.is_series === false) return post.slug;
+
+    return seriesSlugFor(post, series);
+}));
 
 for (const dir of generatedDirs) {
     await rm(path.join(blogDir, dir), { recursive: true, force: true });
@@ -329,7 +347,7 @@ for (const dir of generatedDirs) {
 
 for (const post of posts) {
     const body = bodies.get(post.slug);
-    const outputDir = path.join(blogDir, seriesSlugFor(post, series), post.slug);
+    const outputDir = postOutputDir(post, series);
     const bodyHtml = markdownToHtml(body);
     await mkdir(outputDir, { recursive: true });
     await writeFile(path.join(outputDir, "index.html"), renderPostPage(post, bodyHtml, body, posts, series), "utf8");
