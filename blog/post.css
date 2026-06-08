@@ -162,8 +162,21 @@ body {
     border-radius: 8px;
     box-shadow: var(--post-shadow);
 }
-.blog_post-img.is-placeholder {
-    object-fit: contain;
+
+.blog_post.has-no-image {
+    grid-template-columns: minmax(0, var(--post-article-width));
+}
+
+.blog_post.has-no-image .blog_post-img {
+    display: none;
+}
+
+.blog_post.has-no-image .post_article-container {
+    grid-column: 1;
+}
+
+.blog_post.has-no-image .blog_post-intro {
+    justify-self: stretch;
 }
 .post_article-container {
     grid-column: 2;

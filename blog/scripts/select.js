@@ -214,21 +214,32 @@ async function populateSelection() {
         selectLink.href = getPostUrl(post, seriesMetadata);
         // 2. add preview image
         const previewImage = clone.querySelector(".blog_item-img");
+        const previewContainer = clone.querySelector(".blog_item-img_container");
         const previewImagePath = getPreviewImagePath(post.preview_image);
         const previewTitle = post.title?.[selectLang] || post.title?.en || post.slug || "";
-        const setPreviewPlaceholder = () => {
+        const hidePreviewImage = () => {
             previewImage.removeAttribute("src");
             previewImage.alt = "";
-            previewImage.classList.add("is-placeholder");
+            previewImage.hidden = true;
             previewImage.setAttribute("aria-hidden", "true");
+            selectLink.classList.add("has-no-image");
+            previewContainer?.classList.add("has-no-image");
+        };
+        const showPreviewImage = () => {
+            previewImage.hidden = false;
+            previewImage.removeAttribute("aria-hidden");
+            selectLink.classList.remove("has-no-image");
+            previewContainer?.classList.remove("has-no-image");
         };
         if (previewImagePath) {
+            previewImage.hidden = false;
             previewImage.src = previewImagePath;
             previewImage.alt = previewTitle;
-            previewImage.addEventListener("error", setPreviewPlaceholder, { once: true });
+            previewImage.addEventListener("error", hidePreviewImage, { once: true });
+            previewImage.addEventListener("load", showPreviewImage, { once: true });
         }
         else {
-            setPreviewPlaceholder();
+            hidePreviewImage();
         }
         // 3. get title
         const selectTitleEl = clone.querySelector(".blog_item-title");

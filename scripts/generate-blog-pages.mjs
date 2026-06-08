@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,6 +8,7 @@ const siteUrl = "https://asiahcrutchfield.com";
 const postsDir = path.join(rootDir, "blog", "posts", "en");
 const seriesPath = path.join(rootDir, "blog", "metadata", "series.json");
 const blogDir = path.join(rootDir, "blog");
+const previewImagesDir = path.join(rootDir, "blog", "assets", "images", "preview_images");
 
 function escapeHtml(value = "") {
     return String(value)
@@ -168,6 +170,12 @@ function imageUrl(post) {
     return `${siteUrl}/blog/assets/images/preview_images/${post.preview_image}`;
 }
 
+function hasPreviewImage(post) {
+    if (!post.preview_image || typeof post.preview_image !== "string" || !post.preview_image.trim()) return false;
+
+    return existsSync(path.join(previewImagesDir, post.preview_image.trim()));
+}
+
 function formatDateParts(iso) {
     const date = new Date(iso);
     return {
@@ -228,7 +236,8 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     const title = post.title?.en || post.slug;
     const description = post.description?.en || "";
     const canonical = absolutePostUrl(post, series);
-    const image = imageUrl(post);
+    const hasImage = hasPreviewImage(post);
+    const image = hasImage ? imageUrl(post) : "";
     const date = formatDateParts(post.published.uploaded);
     const edited = post.published?.edited?.en || "";
     const schema = {
@@ -242,7 +251,7 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
         },
         "datePublished": post.published.uploaded,
         ...(edited ? { "dateModified": edited } : {}),
-        "image": image,
+            ...(image ? { "image": image } : {}),
         "url": canonical,
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -261,12 +270,12 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     <meta property="og:type" content="article">
     <meta property="og:title" content="${escapeHtml(title)}">
     <meta property="og:description" content="${escapeHtml(description)}">
-    <meta property="og:image" content="${image}">
+    ${image ? `<meta property="og:image" content="${image}">` : ""}
     <meta property="og:url" content="${canonical}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(title)}">
     <meta name="twitter:description" content="${escapeHtml(description)}">
-    <meta name="twitter:image" content="${image}">
+    ${image ? `<meta name="twitter:image" content="${image}">` : ""}
     <script type="application/ld+json">${jsonScript(schema)}</script>
     <link rel="stylesheet" href="/components/components.css">
     <link rel="stylesheet" href="/blog/post.css">
@@ -279,8 +288,8 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     <main id="post-container">
         <a class="post-back-link" href="/blog/">← Blog</a>
         <article class="blog">
-            <div class="blog_post">
-                <img class="blog_post-img" src="/blog/assets/images/preview_images/${escapeHtml(post.preview_image)}" alt="${escapeHtml(title)}">
+            <div class="blog_post${hasImage ? "" : " has-no-image"}">
+                ${hasImage ? `<img class="blog_post-img" src="/blog/assets/images/preview_images/${escapeHtml(post.preview_image)}" alt="${escapeHtml(title)}" onerror="this.hidden=true;this.setAttribute('aria-hidden','true');this.closest('.blog_post')?.classList.add('has-no-image');">` : ""}
                 <div class="blog_post-intro">
                     <h1 class="blog_post-title">${escapeHtml(title)}</h1>
                     <div class="reading_date-container">

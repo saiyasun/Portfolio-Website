@@ -46,6 +46,12 @@ function getArticleFilename(metadata) {
         return `${series.id}-${order}-${slug}.md`
     }
 
+    const articleId = metadata?.preview_image?.match(/^(a\d{3})\./)?.[1]
+
+    if (series?.is_series === false && articleId) {
+        return `${articleId}-${slug}.md`
+    }
+
     return `${slug}.md`
 }
 
@@ -276,16 +282,31 @@ async function showArticle() {
 
     // image
     const blogImageEl = clone.querySelector(".blog_post-img");
+    const blogPostEl = clone.querySelector(".blog_post")
     const previewImagePath = getPreviewImagePath(metadata.preview_image)
-
-    if (previewImagePath) {
-        blogImageEl.src = previewImagePath;
-        blogImageEl.alt = getLocalizedPostTitle(metadata, postLang);
-    } else {
+    const hidePostImage = () => {
         blogImageEl.removeAttribute("src")
         blogImageEl.alt = ""
-        blogImageEl.classList.add("is-placeholder")
+        blogImageEl.hidden = true
         blogImageEl.setAttribute("aria-hidden", "true")
+        blogPostEl?.classList.add("has-no-image")
+        document.body.classList.add("post-has-no-image")
+    }
+    const showPostImage = () => {
+        blogImageEl.hidden = false
+        blogImageEl.removeAttribute("aria-hidden")
+        blogPostEl?.classList.remove("has-no-image")
+        document.body.classList.remove("post-has-no-image")
+    }
+
+    if (previewImagePath) {
+        blogImageEl.hidden = false;
+        blogImageEl.src = previewImagePath;
+        blogImageEl.alt = getLocalizedPostTitle(metadata, postLang);
+        blogImageEl.addEventListener("error", hidePostImage, { once: true })
+        blogImageEl.addEventListener("load", showPostImage, { once: true })
+    } else {
+        hidePostImage()
     }
 
     // reading time
