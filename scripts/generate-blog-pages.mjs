@@ -8,7 +8,6 @@ const siteUrl = "https://asiahcrutchfield.com";
 const postsDir = path.join(rootDir, "blog", "posts", "en");
 const seriesPath = path.join(rootDir, "blog", "metadata", "series.json");
 const blogDir = path.join(rootDir, "blog");
-const previewImagesDir = path.join(rootDir, "blog", "assets", "images", "preview_images");
 
 function escapeHtml(value = "") {
     return String(value)
@@ -30,6 +29,34 @@ function parseFrontmatter(markdown, file) {
         metadata: JSON.parse(match[1]),
         body: markdown.slice(match[0].length),
     };
+}
+
+async function markdownFiles(dir) {
+    const files = [];
+
+    async function walk(currentDir) {
+        const entries = await readdir(currentDir, { withFileTypes: true });
+
+        for (const entry of entries) {
+            if (entry.name.startsWith(".")) continue;
+
+            const entryPath = path.join(currentDir, entry.name);
+
+            if (entry.isDirectory()) {
+                await walk(entryPath);
+                continue;
+            }
+
+            if (!entry.isFile()) continue;
+            if (!entry.name.endsWith(".md")) continue;
+            if (/^readme\.md$/i.test(entry.name)) continue;
+
+            files.push(entryPath);
+        }
+    }
+
+    await walk(dir);
+    return files.sort((a, b) => path.basename(a).localeCompare(path.basename(b)));
 }
 
 function inlineMarkdown(value = "") {
@@ -165,15 +192,23 @@ function absolutePostUrl(post, series) {
     return `${siteUrl}${postPath(post, series)}`;
 }
 
+function publicPathToFsPath(publicPath) {
+    return path.join(rootDir, publicPath.replace(/^\//, ""));
+}
+
 function imageUrl(post) {
     if (!post.preview_image) return "";
-    return `${siteUrl}/blog/assets/images/preview_images/${post.preview_image}`;
+    return `${siteUrl}${post.preview_image}`;
 }
 
 function hasPreviewImage(post) {
     if (!post.preview_image || typeof post.preview_image !== "string" || !post.preview_image.trim()) return false;
 
-    return existsSync(path.join(previewImagesDir, post.preview_image.trim()));
+    const previewImage = post.preview_image.trim();
+
+    if (!previewImage.startsWith("/") || previewImage.includes("\\") || previewImage.includes("..")) return false;
+
+    return existsSync(publicPathToFsPath(previewImage));
 }
 
 function formatDateParts(iso) {
@@ -289,7 +324,7 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
         <a class="post-back-link" href="/blog/">← Blog</a>
         <article class="blog">
             <div class="blog_post${hasImage ? "" : " has-no-image"}">
-                ${hasImage ? `<img class="blog_post-img" src="/blog/assets/images/preview_images/${escapeHtml(post.preview_image)}" alt="${escapeHtml(title)}" onerror="this.hidden=true;this.setAttribute('aria-hidden','true');this.closest('.blog_post')?.classList.add('has-no-image');">` : ""}
+                ${hasImage ? `<img class="blog_post-img" src="${escapeHtml(post.preview_image)}" alt="${escapeHtml(title)}" onerror="this.hidden=true;this.setAttribute('aria-hidden','true');this.closest('.blog_post')?.classList.add('has-no-image');">` : ""}
                 <div class="blog_post-intro">
                     <h1 class="blog_post-title">${escapeHtml(title)}</h1>
                     <div class="reading_date-container">
@@ -325,13 +360,13 @@ ${bodyHtml}
 }
 
 const series = JSON.parse(await readFile(seriesPath, "utf8"));
-const files = (await readdir(postsDir)).filter((file) => file.endsWith(".md")).sort();
+const files = await markdownFiles(postsDir);
 const posts = [];
 const bodies = new Map();
 
-for (const file of files) {
-    const markdown = await readFile(path.join(postsDir, file), "utf8");
-    const { metadata, body } = parseFrontmatter(markdown, file);
+for (const filePath of files) {
+    const markdown = await readFile(filePath, "utf8");
+    const { metadata, body } = parseFrontmatter(markdown, path.relative(rootDir, filePath));
     posts.push(metadata);
     bodies.set(metadata.slug, body);
 }

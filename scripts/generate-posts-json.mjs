@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const postsDir = path.join(rootDir, "blog", "posts", "en");
 const zhPostsDir = path.join(rootDir, "blog", "posts", "zh");
-const previewImagesDir = path.join(rootDir, "blog", "assets", "images", "preview_images");
+const articleMediaBasePath = "/blog/assets/media/";
 const outputPath = path.join(rootDir, "blog", "metadata", "posts.json");
 
 const errors = [];
@@ -28,6 +28,39 @@ function parseFrontmatter(markdown, file) {
     }
 }
 
+async function markdownFiles(dir) {
+    const files = [];
+
+    async function walk(currentDir) {
+        const entries = await readdir(currentDir, { withFileTypes: true });
+
+        for (const entry of entries) {
+            if (entry.name.startsWith(".")) continue;
+
+            const entryPath = path.join(currentDir, entry.name);
+
+            if (entry.isDirectory()) {
+                await walk(entryPath);
+                continue;
+            }
+
+            if (!entry.isFile()) continue;
+            if (!entry.name.endsWith(".md")) continue;
+            if (/^readme\.md$/i.test(entry.name)) continue;
+
+            files.push(entryPath);
+        }
+    }
+
+    await walk(dir);
+    return files.sort((a, b) => path.basename(a).localeCompare(path.basename(b)));
+}
+
+async function markdownFileMap(dir) {
+    const files = await markdownFiles(dir);
+    return new Map(files.map((filePath) => [path.basename(filePath), filePath]));
+}
+
 function requireString(post, field, file) {
     const value = field.split(".").reduce((current, key) => current?.[key], post);
 
@@ -44,14 +77,59 @@ function requireNumber(post, field, file) {
     }
 }
 
-function validatePost(post, file) {
+function articleIdFromFilename(file) {
+    const match = file.match(/^(s\d{3}-\d{2}|a\d{3})-/);
+    return match?.[1] || "";
+}
+
+function publicPathToFsPath(publicPath) {
+    return path.join(rootDir, publicPath.replace(/^\//, ""));
+}
+
+function validatePreviewImage(post, file, articleId) {
+    const previewImage = post.preview_image;
+
+    if (previewImage === undefined || previewImage === "") return;
+
+    if (typeof previewImage !== "string") {
+        errors.push(`${file}: preview_image must be a string when present`);
+        return;
+    }
+
+    if (!previewImage.startsWith("/")) {
+        errors.push(`${file}: preview_image must be a root-relative public path`);
+        return;
+    }
+
+    if (previewImage.includes("\\") || previewImage.includes("..")) {
+        errors.push(`${file}: preview_image must not contain Windows separators or parent-directory segments`);
+        return;
+    }
+
+    if (!previewImage.startsWith(articleMediaBasePath)) {
+        warnings.push(`${file}: preview image should live under ${articleMediaBasePath}${articleId}/ (${previewImage})`);
+    } else if (!previewImage.startsWith(`${articleMediaBasePath}${articleId}/`)) {
+        warnings.push(`${file}: preview image is outside this article's media folder (${previewImage})`);
+    }
+
+    if (!existsSync(publicPathToFsPath(previewImage))) {
+        warnings.push(`${file}: preview image not found (${previewImage})`);
+    }
+}
+
+function validatePost(post, file, articleId) {
     requireString(post, "slug", file);
     requireString(post, "title.en", file);
     requireString(post, "title.zh", file);
     requireString(post, "description.en", file);
     requireString(post, "description.zh", file);
-    requireString(post, "preview_image", file);
     requireString(post, "published.uploaded", file);
+
+    if (!articleId) {
+        errors.push(`${file}: filename must start with s###-## or a###`);
+    }
+
+    validatePreviewImage(post, file, articleId);
 
     if (post.featured === undefined) {
         errors.push(`${file}: missing featured`);
@@ -80,12 +158,7 @@ function validateSeriesPost(post, file) {
         errors.push(`${file}: filename should be ${expectedFilename}`);
     }
 
-    if (post.preview_image && !existsSync(path.join(previewImagesDir, post.preview_image))) {
-        warnings.push(`${file}: preview image not found (${post.preview_image})`);
-    }
-
-    const zhPath = path.join(zhPostsDir, expectedFilename);
-    if (!existsSync(zhPath)) {
+    if (!zhFilesByName.has(expectedFilename)) {
         warnings.push(`${file}: no matching zh post found`);
     }
 }
@@ -108,32 +181,27 @@ function validateStandalonePost(post, file) {
         errors.push(`${file}: standalone posts must not set series.id or series.order`);
     }
 
-    if (post.preview_image && !existsSync(path.join(previewImagesDir, post.preview_image))) {
-        warnings.push(`${file}: preview image not found (${post.preview_image})`);
-    }
-
     const expectedFilename = `${articleId}-${post.slug}.md`;
-    const zhPath = path.join(zhPostsDir, expectedFilename);
-
-    if (!existsSync(zhPath)) {
+    if (!zhFilesByName.has(expectedFilename)) {
         warnings.push(`${file}: no matching zh post found`);
     }
 }
 
-const files = (await readdir(postsDir))
-    .filter((file) => file.endsWith(".md"))
-    .sort();
+const zhFilesByName = await markdownFileMap(zhPostsDir);
+const files = await markdownFiles(postsDir);
 
 const posts = [];
 
-for (const file of files) {
-    const markdown = await readFile(path.join(postsDir, file), "utf8");
-    const post = parseFrontmatter(markdown, file);
+for (const filePath of files) {
+    const file = path.basename(filePath);
+    const markdown = await readFile(filePath, "utf8");
+    const post = parseFrontmatter(markdown, path.relative(rootDir, filePath));
 
     if (!post) continue;
 
-    validatePost(post, file);
-    posts.push(post);
+    const articleId = articleIdFromFilename(file);
+    validatePost(post, file, articleId);
+    posts.push({ ...post, article_id: articleId });
 }
 
 const slugs = new Set();

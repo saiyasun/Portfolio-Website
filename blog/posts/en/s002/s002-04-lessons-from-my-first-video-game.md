@@ -25,7 +25,7 @@
             "反思"
         ]
     },
-    "preview_image": "s002-01.png",
+    "preview_image": "/blog/assets/media/s002-01/preview.png",
     "published": {
         "uploaded": "2026-05-05T00:00:00+08:00",
         "edited": {

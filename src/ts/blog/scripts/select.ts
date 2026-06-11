@@ -147,7 +147,9 @@ function isPublished(uploadedIso) {
 function getPreviewImagePath(previewImage) {
     if (!previewImage || typeof previewImage !== "string" || !previewImage.trim()) return ""
 
-    return `/blog/assets/images/preview_images/${previewImage.trim()}`
+    const path = previewImage.trim()
+
+    return path.startsWith("/") ? path : ""
 }
 
 function updateTitleLineClasses(scope = document) {

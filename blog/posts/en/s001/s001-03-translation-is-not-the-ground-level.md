@@ -25,7 +25,7 @@
             "學習方法"
         ]
     },
-    "preview_image": "s001-03.jpg",
+    "preview_image": "/blog/assets/media/s001-03/preview.png",
     "published": {
         "uploaded": "2026-05-30T00:00:00+08:00",
         "edited": {
@@ -179,4 +179,3 @@ It can support.
 But if the goal is to understand spoken language, the learner eventually has to stop standing on translation and start standing inside the target language.
 
 That is why translation isn't the ground level.
-

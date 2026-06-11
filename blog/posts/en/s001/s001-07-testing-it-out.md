@@ -25,7 +25,6 @@
             "學習系統"
         ]
     },
-    "preview_image": "s001-07.jpg",
     "published": {
         "uploaded": "2026-06-04T00:00:00+08:00",
         "edited": {

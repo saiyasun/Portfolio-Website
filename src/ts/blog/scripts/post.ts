@@ -43,13 +43,11 @@ function getArticleFilename(metadata) {
 
     if (series?.is_series && series?.id && series?.order) {
         const order = String(series.order).padStart(2, "0")
-        return `${series.id}-${order}-${slug}.md`
+        return `${series.id}/${series.id}-${order}-${slug}.md`
     }
 
-    const articleId = metadata?.preview_image?.match(/^(a\d{3})\./)?.[1]
-
-    if (series?.is_series === false && articleId) {
-        return `${articleId}-${slug}.md`
+    if (series?.is_series === false && metadata?.article_id) {
+        return `standalone/${metadata.article_id}-${slug}.md`
     }
 
     return `${slug}.md`
@@ -67,8 +65,10 @@ const getArticle = async (metadata) => {
 
     if (article !== null) return article
 
-    if (articleFile !== `${articleSlug}.md`) {
-        return await fetchText(postsPath, postLang, `${articleSlug}.md`) || ""
+    const flatFilename = articleFile.split("/").pop()
+
+    if (flatFilename && articleFile !== flatFilename) {
+        return await fetchText(postsPath, postLang, flatFilename) || ""
     }
 
     return ""
@@ -97,7 +97,9 @@ function getLocalizedPostTitle(post, lang) {
 function getPreviewImagePath(previewImage) {
     if (!previewImage || typeof previewImage !== "string" || !previewImage.trim()) return ""
 
-    return `/blog/assets/images/preview_images/${previewImage.trim()}`
+    const path = previewImage.trim()
+
+    return path.startsWith("/") ? path : ""
 }
 
 function getPostUrl(post, seriesMetadata = {}) {

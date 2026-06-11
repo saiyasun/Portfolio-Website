@@ -25,7 +25,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "s001-01.jpg",
+        "preview_image": "/blog/assets/media/s001-01/preview.jpg",
         "published": {
             "uploaded": "2026-04-16T00:00:00+08:00",
             "edited": {
@@ -38,7 +38,8 @@
             "is_series": true,
             "id": "s001",
             "order": 1
-        }
+        },
+        "article_id": "s001-01"
     },
     {
         "slug": "building-from-sound-first",
@@ -66,7 +67,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "s001-02.jpg",
+        "preview_image": "/blog/assets/media/s001-02/preview.png",
         "published": {
             "uploaded": "2026-05-28T00:00:00+08:00",
             "edited": {
@@ -79,7 +80,8 @@
             "is_series": true,
             "id": "s001",
             "order": 2
-        }
+        },
+        "article_id": "s001-02"
     },
     {
         "slug": "translation-is-not-the-ground-level",
@@ -107,7 +109,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "s001-03.jpg",
+        "preview_image": "/blog/assets/media/s001-03/preview.png",
         "published": {
             "uploaded": "2026-05-30T00:00:00+08:00",
             "edited": {
@@ -120,7 +122,8 @@
             "is_series": true,
             "id": "s001",
             "order": 3
-        }
+        },
+        "article_id": "s001-03"
     },
     {
         "slug": "learning-language-from-a-cat",
@@ -148,7 +151,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "s001-04.jpg",
+        "preview_image": "/blog/assets/media/s001-04/preview.png",
         "published": {
             "uploaded": "2026-06-01T00:00:00+08:00",
             "edited": {
@@ -161,7 +164,8 @@
             "is_series": true,
             "id": "s001",
             "order": 4
-        }
+        },
+        "article_id": "s001-04"
     },
     {
         "slug": "mystery-is-good-confusion-is-not",
@@ -189,7 +193,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "s001-05.jpg",
+        "preview_image": "/blog/assets/media/s001-05/preview.png",
         "published": {
             "uploaded": "2026-06-03T00:00:00+08:00",
             "edited": {
@@ -202,7 +206,8 @@
             "is_series": true,
             "id": "s001",
             "order": 5
-        }
+        },
+        "article_id": "s001-05"
     },
     {
         "slug": "the-first-real-session",
@@ -230,7 +235,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "s001-06.jpg",
+        "preview_image": "/blog/assets/media/s001-06/preview.png",
         "published": {
             "uploaded": "2026-06-03T23:00:00+08:00",
             "edited": {
@@ -243,7 +248,8 @@
             "is_series": true,
             "id": "s001",
             "order": 6
-        }
+        },
+        "article_id": "s001-06"
     },
     {
         "slug": "testing-it-out",
@@ -271,7 +277,6 @@
                 "學習系統"
             ]
         },
-        "preview_image": "s001-07.jpg",
         "published": {
             "uploaded": "2026-06-04T00:00:00+08:00",
             "edited": {
@@ -284,7 +289,8 @@
             "is_series": true,
             "id": "s001",
             "order": 7
-        }
+        },
+        "article_id": "s001-07"
     },
     {
         "slug": "paper-disc-real-code",
@@ -312,7 +318,7 @@
                 "個人專案"
             ]
         },
-        "preview_image": "s002-01.png",
+        "preview_image": "/blog/assets/media/s002-01/preview.png",
         "published": {
             "uploaded": "2026-04-14T00:00:00+08:00",
             "edited": {
@@ -325,7 +331,8 @@
             "is_series": true,
             "id": "s002",
             "order": 1
-        }
+        },
+        "article_id": "s002-01"
     },
     {
         "slug": "narrowing-my-options",
@@ -353,7 +360,7 @@
                 "範圍控制"
             ]
         },
-        "preview_image": "s002-01.png",
+        "preview_image": "/blog/assets/media/s002-01/preview.png",
         "published": {
             "uploaded": "2026-05-03T00:00:00+08:00",
             "edited": {
@@ -366,7 +373,8 @@
             "is_series": true,
             "id": "s002",
             "order": 2
-        }
+        },
+        "article_id": "s002-02"
     },
     {
         "slug": "making-a-game-in-real-time",
@@ -394,7 +402,7 @@
                 "原型製作"
             ]
         },
-        "preview_image": "s002-01.png",
+        "preview_image": "/blog/assets/media/s002-01/preview.png",
         "published": {
             "uploaded": "2026-05-04T00:00:00+08:00",
             "edited": {
@@ -407,7 +415,8 @@
             "is_series": true,
             "id": "s002",
             "order": 3
-        }
+        },
+        "article_id": "s002-03"
     },
     {
         "slug": "lessons-from-my-first-video-game",
@@ -435,7 +444,7 @@
                 "反思"
             ]
         },
-        "preview_image": "s002-01.png",
+        "preview_image": "/blog/assets/media/s002-01/preview.png",
         "published": {
             "uploaded": "2026-05-05T00:00:00+08:00",
             "edited": {
@@ -448,7 +457,8 @@
             "is_series": true,
             "id": "s002",
             "order": 4
-        }
+        },
+        "article_id": "s002-04"
     },
     {
         "slug": "strong-but-limited",
@@ -476,7 +486,7 @@
                 "自我提升"
             ]
         },
-        "preview_image": "s003-01.jpg",
+        "preview_image": "/blog/assets/media/s003-01/preview.jpg",
         "published": {
             "uploaded": "2026-04-17T00:00:00+08:00",
             "edited": {
@@ -489,7 +499,8 @@
             "is_series": true,
             "id": "s003",
             "order": 1
-        }
+        },
+        "article_id": "s003-01"
     },
     {
         "slug": "my-first-time-at-computex-2026",
@@ -517,7 +528,6 @@
                 "學生"
             ]
         },
-        "preview_image": "a001.jpg",
         "published": {
             "uploaded": "2026-06-08T00:00:00+08:00",
             "edited": {
@@ -528,6 +538,7 @@
         "featured": false,
         "series": {
             "is_series": false
-        }
+        },
+        "article_id": "a001"
     }
 ]
