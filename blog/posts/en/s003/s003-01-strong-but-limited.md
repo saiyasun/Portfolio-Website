@@ -25,7 +25,7 @@
             "自我提升"
         ]
     },
-    "preview_image": "/blog/assets/media/s003-01/preview.jpg",
+    "preview_image": "/blog/assets/media/s003/s003-01/preview.jpg",
     "published": {
         "uploaded": "2026-04-17T00:00:00+08:00",
         "edited": {

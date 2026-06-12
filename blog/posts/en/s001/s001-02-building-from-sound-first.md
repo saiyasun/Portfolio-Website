@@ -25,7 +25,7 @@
             "學習方法"
         ]
     },
-    "preview_image": "/blog/assets/media/s001-02/preview.png",
+    "preview_image": "/blog/assets/media/s001/s001-02/preview.png",
     "published": {
         "uploaded": "2026-05-28T00:00:00+08:00",
         "edited": {

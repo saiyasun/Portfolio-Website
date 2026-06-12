@@ -25,7 +25,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "/blog/assets/media/s001-01/preview.jpg",
+        "preview_image": "/blog/assets/media/s001/s001-01/preview.jpg",
         "published": {
             "uploaded": "2026-04-16T00:00:00+08:00",
             "edited": {
@@ -67,7 +67,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "/blog/assets/media/s001-02/preview.png",
+        "preview_image": "/blog/assets/media/s001/s001-02/preview.png",
         "published": {
             "uploaded": "2026-05-28T00:00:00+08:00",
             "edited": {
@@ -109,7 +109,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "/blog/assets/media/s001-03/preview.png",
+        "preview_image": "/blog/assets/media/s001/s001-03/preview.png",
         "published": {
             "uploaded": "2026-05-30T00:00:00+08:00",
             "edited": {
@@ -151,7 +151,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "/blog/assets/media/s001-04/preview.png",
+        "preview_image": "/blog/assets/media/s001/s001-04/preview.png",
         "published": {
             "uploaded": "2026-06-01T00:00:00+08:00",
             "edited": {
@@ -193,7 +193,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "/blog/assets/media/s001-05/preview.png",
+        "preview_image": "/blog/assets/media/s001/s001-05/preview.png",
         "published": {
             "uploaded": "2026-06-03T00:00:00+08:00",
             "edited": {
@@ -235,7 +235,7 @@
                 "學習方法"
             ]
         },
-        "preview_image": "/blog/assets/media/s001-06/preview.png",
+        "preview_image": "/blog/assets/media/s001/s001-06/preview.png",
         "published": {
             "uploaded": "2026-06-03T23:00:00+08:00",
             "edited": {
@@ -318,7 +318,7 @@
                 "個人專案"
             ]
         },
-        "preview_image": "/blog/assets/media/s002-01/preview.png",
+        "preview_image": "/blog/assets/media/s002/s002-01/preview.png",
         "published": {
             "uploaded": "2026-04-14T00:00:00+08:00",
             "edited": {
@@ -360,7 +360,7 @@
                 "範圍控制"
             ]
         },
-        "preview_image": "/blog/assets/media/s002-01/preview.png",
+        "preview_image": "/blog/assets/media/s002/s002-01/preview.png",
         "published": {
             "uploaded": "2026-05-03T00:00:00+08:00",
             "edited": {
@@ -402,7 +402,7 @@
                 "原型製作"
             ]
         },
-        "preview_image": "/blog/assets/media/s002-01/preview.png",
+        "preview_image": "/blog/assets/media/s002/s002-01/preview.png",
         "published": {
             "uploaded": "2026-05-04T00:00:00+08:00",
             "edited": {
@@ -444,7 +444,7 @@
                 "反思"
             ]
         },
-        "preview_image": "/blog/assets/media/s002-01/preview.png",
+        "preview_image": "/blog/assets/media/s002/s002-01/preview.png",
         "published": {
             "uploaded": "2026-05-05T00:00:00+08:00",
             "edited": {
@@ -486,7 +486,7 @@
                 "自我提升"
             ]
         },
-        "preview_image": "/blog/assets/media/s003-01/preview.jpg",
+        "preview_image": "/blog/assets/media/s003/s003-01/preview.jpg",
         "published": {
             "uploaded": "2026-04-17T00:00:00+08:00",
             "edited": {
@@ -501,44 +501,5 @@
             "order": 1
         },
         "article_id": "s003-01"
-    },
-    {
-        "slug": "my-first-time-at-computex-2026",
-        "title": {
-            "en": "My First Time at COMPUTEX 2026",
-            "zh": "第一次參加 COMPUTEX 2026"
-        },
-        "description": {
-            "en": "What my first COMPUTEX taught me about confusion, preparation, and the gap between studying technology and seeing it in the real world.",
-            "zh": "第一次參加 COMPUTEX 讓我看見準備、困惑，以及在課堂上學科技和親眼看見真實產業之間的落差。"
-        },
-        "tags": {
-            "en": [
-                "computex",
-                "taiwan",
-                "technology",
-                "reflection",
-                "student"
-            ],
-            "zh": [
-                "COMPUTEX",
-                "台灣",
-                "科技",
-                "反思",
-                "學生"
-            ]
-        },
-        "published": {
-            "uploaded": "2026-06-08T00:00:00+08:00",
-            "edited": {
-                "en": "",
-                "zh": ""
-            }
-        },
-        "featured": false,
-        "series": {
-            "is_series": false
-        },
-        "article_id": "a001"
     }
 ]

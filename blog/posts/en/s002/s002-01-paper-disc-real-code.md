@@ -25,7 +25,7 @@
             "個人專案"
         ]
     },
-    "preview_image": "/blog/assets/media/s002-01/preview.png",
+    "preview_image": "/blog/assets/media/s002/s002-01/preview.png",
     "published": {
         "uploaded": "2026-04-14T00:00:00+08:00",
         "edited": {

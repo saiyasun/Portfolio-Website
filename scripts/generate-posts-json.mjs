@@ -88,6 +88,9 @@ function publicPathToFsPath(publicPath) {
 
 function validatePreviewImage(post, file, articleId) {
     const previewImage = post.preview_image;
+    const expectedMediaPath = post.series?.is_series === true && post.series?.id
+        ? `${articleMediaBasePath}${post.series.id}/${articleId}/`
+        : `${articleMediaBasePath}standalone/${articleId}/`;
 
     if (previewImage === undefined || previewImage === "") return;
 
@@ -107,8 +110,8 @@ function validatePreviewImage(post, file, articleId) {
     }
 
     if (!previewImage.startsWith(articleMediaBasePath)) {
-        warnings.push(`${file}: preview image should live under ${articleMediaBasePath}${articleId}/ (${previewImage})`);
-    } else if (!previewImage.startsWith(`${articleMediaBasePath}${articleId}/`)) {
+        warnings.push(`${file}: preview image should live under ${expectedMediaPath} (${previewImage})`);
+    } else if (!previewImage.startsWith(expectedMediaPath)) {
         warnings.push(`${file}: preview image is outside this article's media folder (${previewImage})`);
     }
 

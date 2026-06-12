@@ -12,7 +12,7 @@ Visual system for this set: clean editorial blog cover images for the personal w
 - Article title: Building From Sound First
 - Slug: `building-from-sound-first`
 - Scheduled date: `2026-05-28T00:00:00+08:00`
-- Preview image: `/blog/assets/media/s001-02/preview.png`
+- Preview image: `/blog/assets/media/s001/s001-02/preview.png`
 - Concept: Sound as the foundation beneath language, before vocabulary, grammar, translation, or explanation.
 - Prompt:
 
@@ -26,7 +26,7 @@ Create a clean editorial blog cover image for a personal website article titled 
 - Article title: Translation Is Not the Ground Level
 - Slug: `translation-is-not-the-ground-level`
 - Scheduled date: `2026-05-30T00:00:00+08:00`
-- Preview image: `/blog/assets/media/s001-03/preview.png`
+- Preview image: `/blog/assets/media/s001/s001-03/preview.png`
 - Concept: Translation as a useful bridge above the surface, while sound, perception, and meaning form the deeper foundation.
 - Prompt:
 
@@ -40,7 +40,7 @@ Create a clean editorial blog cover image for a personal website article titled 
 - Article title: Simple Does Not Have to Mean Childish
 - Slug: `simple-does-not-have-to-mean-childish`
 - Scheduled date: `2026-06-01T00:00:00+08:00`
-- Preview image: `/blog/assets/media/s001-04/preview.png`
+- Preview image: `/blog/assets/media/s001/s001-04/preview.png`
 - Concept: Adult-friendly simplicity through concrete animal life, physical needs, and grounded beginner stories.
 - Prompt:
 
@@ -54,7 +54,7 @@ Create a clean editorial blog cover image for a personal website article titled 
 - Article title: Mystery Is Good. Confusion Is Not.
 - Slug: `mystery-is-good-confusion-is-not`
 - Scheduled date: `2026-06-03T00:00:00+08:00`
-- Preview image: `/blog/assets/media/s001-05/preview.png`
+- Preview image: `/blog/assets/media/s001/s001-05/preview.png`
 - Concept: Discovery, guidance, and clear interaction in a quiet sound-first learning world.
 - Prompt:
 
@@ -68,7 +68,7 @@ Create a clean editorial blog cover image for a personal website article titled 
 - Article title: The First Real Session
 - Slug: `the-first-real-session`
 - Scheduled date: `2026-06-05T00:00:00+08:00`
-- Preview image: `/blog/assets/media/s001-06/preview.png`
+- Preview image: `/blog/assets/media/s001/s001-06/preview.png`
 - Concept: The first real recording and feedback session, with real voice, nervous testing, and the app idea meeting reality.
 - Prompt:
 
@@ -78,26 +78,26 @@ Create a clean editorial blog cover image for a personal website article titled 
 
 Expected preview image paths:
 
-- `/blog/assets/media/s001-02/preview.png`
-- `/blog/assets/media/s001-03/preview.png`
-- `/blog/assets/media/s001-04/preview.png`
-- `/blog/assets/media/s001-05/preview.png`
-- `/blog/assets/media/s001-06/preview.png`
+- `/blog/assets/media/s001/s001-02/preview.png`
+- `/blog/assets/media/s001/s001-03/preview.png`
+- `/blog/assets/media/s001/s001-04/preview.png`
+- `/blog/assets/media/s001/s001-05/preview.png`
+- `/blog/assets/media/s001/s001-06/preview.png`
 
 Image files currently present in the project:
 
-- `blog/assets/media/s001-02/preview.png`
-- `blog/assets/media/s001-03/preview.png`
-- `blog/assets/media/s001-04/preview.png`
-- `blog/assets/media/s001-05/preview.png`
-- `blog/assets/media/s001-06/preview.png`
+- `blog/assets/media/s001/s001-02/preview.png`
+- `blog/assets/media/s001/s001-03/preview.png`
+- `blog/assets/media/s001/s001-04/preview.png`
+- `blog/assets/media/s001/s001-05/preview.png`
+- `blog/assets/media/s001/s001-06/preview.png`
 
 Recommended folder path for storing generated images:
 
-- `blog/assets/media/<article-id>/`
+- `blog/assets/media/<series-id>/<article-id>/`
 
 Current metadata preview image path used by the site:
 
-- `/blog/assets/media/<article-id>/preview.<ext>`
+- `/blog/assets/media/<series-id>/<article-id>/preview.<ext>`
 
-Note: article-specific media should stay inside the matching `blog/assets/media/<article-id>/` folder. Shared media used by multiple posts belongs in `blog/assets/shared/`.
+Note: series article media should stay inside the matching `blog/assets/media/<series-id>/<article-id>/` folder. Shared media used by multiple posts belongs in `blog/assets/shared/`.
