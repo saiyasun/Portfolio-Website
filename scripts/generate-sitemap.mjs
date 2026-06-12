@@ -6,8 +6,8 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const siteUrl = "https://asiahcrutchfield.com";
 const postsPath = path.join(rootDir, "blog", "metadata", "posts.json");
 const seriesPath = path.join(rootDir, "blog", "metadata", "series.json");
-const outputPath = path.join(rootDir, "sitemap.xml");
-const robotsPath = path.join(rootDir, "robots.txt");
+const outputPath = path.join(rootDir, "dist", "sitemap.xml");
+const robotsPath = path.join(rootDir, "dist", "robots.txt");
 
 function escapeXml(value = "") {
     return String(value)

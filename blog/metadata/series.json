@@ -58,5 +58,17 @@
       "zh": "記錄我透過呼吸、共鳴、咬字、音高、控制與表達來改善說話與唱歌聲音的過程。"
     },
     "status": "active"
+  },
+  "s006": {
+    "name": {
+      "en": "Rebuilding the Stack",
+      "zh": "重建技術基礎"
+    },
+    "slug": "rebuilding-the-stack",
+    "description": {
+      "en": "Documenting my attempt to close the gaps between the programs I can build, the mathematics I have studied, and what I actually understand.",
+      "zh": "記錄我如何補上程式實作、學過的數學，以及真正理解之間的落差，重新建立更扎實的技術基礎。"
+    },
+    "status": "active"
   }
 }

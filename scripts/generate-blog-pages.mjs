@@ -7,7 +7,7 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const siteUrl = "https://asiahcrutchfield.com";
 const postsDir = path.join(rootDir, "blog", "posts", "en");
 const seriesPath = path.join(rootDir, "blog", "metadata", "series.json");
-const blogDir = path.join(rootDir, "blog");
+const blogDir = path.join(rootDir, "dist", "blog");
 
 function escapeHtml(value = "") {
     return String(value)

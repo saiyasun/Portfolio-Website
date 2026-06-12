@@ -1,10 +1,11 @@
 {
   "scripts": {
-    "prebuild": "npm run generate:posts",
-    "build": "npm run generate:blog-pages && npm run generate:sitemap && tsc -p tsconfig.json",
+    "clean": "node scripts/clean-dist.mjs",
+    "build": "npm run clean && npm run generate:posts && tsc -p tsconfig.json && npm run copy:static && npm run generate:blog-pages && npm run generate:sitemap",
     "generate:blog-pages": "node scripts/generate-blog-pages.mjs",
     "generate:posts": "node scripts/generate-posts-json.mjs",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "copy:static": "node scripts/copy-static-assets.mjs",
     "watch": "tsc -w -p tsconfig.json"
   },
   "devDependencies": {
