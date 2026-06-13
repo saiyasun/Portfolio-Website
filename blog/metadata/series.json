@@ -70,5 +70,17 @@
       "zh": "記錄我如何補上程式實作、學過的數學，以及真正理解之間的落差，重新建立更扎實的技術基礎。"
     },
     "status": "active"
+  },
+  "s007": {
+    "name": {
+      "en": "From Prototype to Game",
+      "zh": "從原型到遊戲"
+    },
+    "slug": "from-prototype-to-game",
+    "description": {
+      "en": "Rebuilding rough game prototypes into more intentional games, starting with AS ONE v2.",
+      "zh": "記錄我如何把粗糙的遊戲原型重建成更有方向的作品，從 AS ONE v2 開始。"
+    },
+    "status": "active"
   }
 }
