@@ -75,6 +75,7 @@ body {
 
 .blog_item-date {
     display: flex;
+    gap: 0.25em;
     color: var(--post-muted);
 }
 
