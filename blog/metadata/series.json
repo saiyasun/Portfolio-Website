@@ -82,5 +82,17 @@
       "zh": "記錄我如何把粗糙的遊戲原型重建成更有方向的作品，從 AS ONE v2 開始。"
     },
     "status": "active"
+  },
+  "s008": {
+    "name": {
+      "en": "Rebuilding Ground Level",
+      "zh": "重建 Ground Level"
+    },
+    "slug": "rebuilding-ground-level",
+    "description": {
+      "en": "Rebuilding my sound-first language-learning app into a more modular, intuitive system after realizing the first prototype was not clear enough for users or flexible enough to grow.",
+      "zh": "記錄我如何在發現第一版原型對使用者不夠直覺、架構也不夠模組化之後，重新打造一個更清楚、更能擴展的聲音優先語言學習系統。"
+    },
+    "status": "active"
   }
 }
