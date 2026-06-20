@@ -73,15 +73,23 @@
   },
   "s007": {
     "name": {
-      "en": "From Prototype to Game",
+      "en": "From Prototype to Playable",
       "zh": "從原型到遊戲"
     },
-    "slug": "from-prototype-to-game",
+    "slug": "from-prototype-to-playable",
     "description": {
       "en": "Rebuilding rough game prototypes into more intentional games, starting with AS ONE v2.",
       "zh": "記錄我如何把粗糙的遊戲原型重建成更有方向的作品，從 AS ONE v2 開始。"
     },
-    "status": "active"
+    "status": "active",
+    "arcs": [
+      {
+        "id": "arc001",
+        "slug": "as-one-v2",
+        "title": "AS ONE v2",
+        "description": "Rebuilding AS ONE into a clearer playable game with stronger characters, story, and mechanics."
+      }
+    ]
   },
   "s008": {
     "name": {

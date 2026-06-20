@@ -39,7 +39,8 @@
             "id": "s001",
             "order": 1
         },
-        "article_id": "s001-01"
+        "article_id": "s001-01",
+        "source_path": "s001/s001-01-its-not-what-you-know-its-what-you-hear.md"
     },
     {
         "slug": "building-from-sound-first",
@@ -81,7 +82,8 @@
             "id": "s001",
             "order": 2
         },
-        "article_id": "s001-02"
+        "article_id": "s001-02",
+        "source_path": "s001/s001-02-building-from-sound-first.md"
     },
     {
         "slug": "translation-is-not-the-ground-level",
@@ -123,7 +125,8 @@
             "id": "s001",
             "order": 3
         },
-        "article_id": "s001-03"
+        "article_id": "s001-03",
+        "source_path": "s001/s001-03-translation-is-not-the-ground-level.md"
     },
     {
         "slug": "learning-language-from-a-cat",
@@ -165,7 +168,8 @@
             "id": "s001",
             "order": 4
         },
-        "article_id": "s001-04"
+        "article_id": "s001-04",
+        "source_path": "s001/s001-04-learning-language-from-a-cat.md"
     },
     {
         "slug": "mystery-is-good-confusion-is-not",
@@ -207,7 +211,8 @@
             "id": "s001",
             "order": 5
         },
-        "article_id": "s001-05"
+        "article_id": "s001-05",
+        "source_path": "s001/s001-05-mystery-is-good-confusion-is-not.md"
     },
     {
         "slug": "the-first-real-session",
@@ -249,7 +254,8 @@
             "id": "s001",
             "order": 6
         },
-        "article_id": "s001-06"
+        "article_id": "s001-06",
+        "source_path": "s001/s001-06-the-first-real-session.md"
     },
     {
         "slug": "testing-it-out",
@@ -290,7 +296,8 @@
             "id": "s001",
             "order": 7
         },
-        "article_id": "s001-07"
+        "article_id": "s001-07",
+        "source_path": "s001/s001-07-testing-it-out.md"
     },
     {
         "slug": "paper-disc-real-code",
@@ -332,7 +339,8 @@
             "id": "s002",
             "order": 1
         },
-        "article_id": "s002-01"
+        "article_id": "s002-01",
+        "source_path": "s002/s002-01-paper-disc-real-code.md"
     },
     {
         "slug": "narrowing-my-options",
@@ -374,7 +382,8 @@
             "id": "s002",
             "order": 2
         },
-        "article_id": "s002-02"
+        "article_id": "s002-02",
+        "source_path": "s002/s002-02-narrowing-my-options.md"
     },
     {
         "slug": "making-a-game-in-real-time",
@@ -416,7 +425,8 @@
             "id": "s002",
             "order": 3
         },
-        "article_id": "s002-03"
+        "article_id": "s002-03",
+        "source_path": "s002/s002-03-making-a-game-in-real-time.md"
     },
     {
         "slug": "lessons-from-my-first-video-game",
@@ -458,37 +468,38 @@
             "id": "s002",
             "order": 4
         },
-        "article_id": "s002-04"
+        "article_id": "s002-04",
+        "source_path": "s002/s002-04-lessons-from-my-first-video-game.md"
     },
     {
-        "slug": "strong-but-limited",
+        "slug": "starting-fresh-with-as-one",
         "title": {
-            "en": "Strong, But Limited",
-            "zh": "看起來很強，但其實有限"
+            "en": "Starting Fresh With AS ONE",
+            "zh": "重新開始《AS ONE》"
         },
         "description": {
-            "en": "A moment on a mountain exposed the gap between strength and movement, leading me to rethink my training and focus on fundamental weaknesses.",
-            "zh": "一次在山上的經驗讓我看見力量與動作能力之間的落差，也讓我重新思考訓練方向與自身的基礎弱點。"
+            "en": "Why I’m returning to AS ONE after Vibe Jam 2026, what outside feedback showed me, and how I plan to rebuild it into my original vision.",
+            "zh": "我為什麼在 Vibe Jam 2026 之後重新回到《AS ONE》、外部回饋讓我看見了什麼，以及我打算如何把它重建成原本想像中的樣子。"
         },
         "tags": {
             "en": [
-                "fitness",
-                "mobility",
-                "strength",
-                "calisthenics",
-                "self-improvement"
+                "game development",
+                "AS ONE",
+                "prototype",
+                "game design",
+                "devlog"
             ],
             "zh": [
-                "健身",
-                "活動度",
-                "力量",
-                "自體重訓練",
-                "自我提升"
+                "遊戲開發",
+                "AS ONE",
+                "原型",
+                "遊戲設計",
+                "開發日誌"
             ]
         },
-        "preview_image": "/blog/assets/media/s003/s003-01/preview.jpg",
+        "preview_image": "",
         "published": {
-            "uploaded": "2026-04-17T00:00:00+08:00",
+            "uploaded": "2026-07-01T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -497,10 +508,18 @@
         "featured": false,
         "series": {
             "is_series": true,
-            "id": "s003",
-            "order": 1
+            "id": "s007",
+            "order": 1,
+            "arc": {
+                "id": "arc001",
+                "order": 1
+            }
         },
-        "article_id": "s003-01"
+        "arc": "arc001",
+        "arcSlug": "as-one-v2",
+        "arcTitle": "AS ONE v2",
+        "article_id": "s007-arc001-01",
+        "source_path": "s007/arc001/s007-arc001-01-starting-fresh-with-as-one.md"
     },
     {
         "slug": "my-first-time-at-computex-2026",
@@ -539,6 +558,7 @@
         "series": {
             "is_series": false
         },
-        "article_id": "a001"
+        "article_id": "a001",
+        "source_path": "standalone/a001-my-first-time-at-computex-2026.md"
     }
 ]

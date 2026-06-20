@@ -144,7 +144,32 @@ function getPostUrl(post, seriesMetadata = {}) {
         return `/blog/${post.slug}/`;
     }
     const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts";
+    const arcSlug = getArcSlug(post, seriesMetadata);
+    if (arcSlug) {
+        return `/blog/${seriesSlug}/${arcSlug}/${post.slug}/`;
+    }
     return `/blog/${seriesSlug}/${post.slug}/`;
+}
+function getPostArc(post) {
+    if (typeof post?.arc === "string" && post.arc.trim())
+        return post.arc.trim();
+    if (typeof post?.series?.arc?.id === "string" && post.series.arc.id.trim())
+        return post.series.arc.id.trim();
+    return "";
+}
+function findArc(seriesMetadata = {}, seriesId = "", arcId = "") {
+    if (!seriesId || !arcId)
+        return null;
+    const arcs = seriesMetadata?.[seriesId]?.arcs || [];
+    return arcs.find(item => item?.id === arcId) || null;
+}
+function getArcSlug(post, seriesMetadata = {}) {
+    if (typeof post?.arcSlug === "string" && post.arcSlug.trim())
+        return post.arcSlug.trim();
+    const arcId = getPostArc(post);
+    const seriesId = post?.series?.id;
+    const arc = findArc(seriesMetadata, seriesId, arcId);
+    return typeof arc?.slug === "string" ? arc.slug : "";
 }
 function getFilteredPosts(posts, lang) {
     const selectedTag = normalizeTag(getSelectedTag());

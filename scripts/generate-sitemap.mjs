@@ -32,9 +32,31 @@ function seriesSlugFor(post, series) {
     return series?.[post.series?.id]?.slug || post.series?.id || "posts";
 }
 
+function findArc(series, seriesId, arcId) {
+    if (!seriesId || !arcId) return null;
+
+    const arcs = series?.[seriesId]?.arcs;
+    if (!Array.isArray(arcs)) return null;
+
+    return arcs.find((arc) => arc?.id === arcId) || null;
+}
+
+function arcSlugFor(post, series) {
+    if (typeof post.arcSlug === "string" && post.arcSlug.trim()) return post.arcSlug.trim();
+
+    const arcId = typeof post.arc === "string" && post.arc.trim() ? post.arc.trim() : "";
+    const arc = findArc(series, post.series?.id, arcId);
+    return typeof arc?.slug === "string" ? arc.slug : "";
+}
+
 function postUrl(post, series) {
     if (post.series?.is_series === false) {
         return `${siteUrl}/blog/${post.slug}/`;
+    }
+
+    const arcSlug = arcSlugFor(post, series);
+    if (arcSlug) {
+        return `${siteUrl}/blog/${seriesSlugFor(post, series)}/${arcSlug}/${post.slug}/`;
     }
 
     return `${siteUrl}/blog/${seriesSlugFor(post, series)}/${post.slug}/`;

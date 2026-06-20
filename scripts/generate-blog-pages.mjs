@@ -180,9 +180,36 @@ function seriesSlugFor(post, series) {
     return series?.[post.series?.id]?.slug || post.series?.id || "posts";
 }
 
+function findArc(series, seriesId, arcId) {
+    if (!seriesId || !arcId) return null;
+
+    const arcs = series?.[seriesId]?.arcs;
+    if (!Array.isArray(arcs)) return null;
+
+    return arcs.find((arc) => arc?.id === arcId) || null;
+}
+
+function arcIdFor(post) {
+    if (typeof post.arc === "string" && post.arc.trim()) return post.arc.trim();
+    if (typeof post.series?.arc?.id === "string" && post.series.arc.id.trim()) return post.series.arc.id.trim();
+    return "";
+}
+
+function arcSlugFor(post, series) {
+    if (typeof post.arcSlug === "string" && post.arcSlug.trim()) return post.arcSlug.trim();
+
+    const arc = findArc(series, post.series?.id, arcIdFor(post));
+    return typeof arc?.slug === "string" ? arc.slug : "";
+}
+
 function postPath(post, series) {
     if (post.series?.is_series === false) {
         return `/blog/${post.slug}/`;
+    }
+
+    const arcSlug = arcSlugFor(post, series);
+    if (arcSlug) {
+        return `/blog/${seriesSlugFor(post, series)}/${arcSlug}/${post.slug}/`;
     }
 
     return `/blog/${seriesSlugFor(post, series)}/${post.slug}/`;
@@ -199,6 +226,17 @@ function publicPathToFsPath(publicPath) {
 function imageUrl(post) {
     if (!post.preview_image) return "";
     return `${siteUrl}${post.preview_image}`;
+}
+
+function arcTitleFor(post, series) {
+    if (typeof post.arcTitle === "string" && post.arcTitle.trim()) return post.arcTitle.trim();
+
+    const arcId = arcIdFor(post);
+    const arc = findArc(series, post.series?.id, arcId);
+    const title = arc?.title;
+
+    if (typeof title === "string") return title;
+    return title?.en || arcId;
 }
 
 function hasPreviewImage(post) {
@@ -275,6 +313,7 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     const image = hasImage ? imageUrl(post) : "";
     const date = formatDateParts(post.published.uploaded);
     const edited = post.published?.edited?.en || "";
+    const arcTitle = arcTitleFor(post, series);
     const schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -327,6 +366,7 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
                 ${hasImage ? `<img class="blog_post-img" src="${escapeHtml(post.preview_image)}" alt="${escapeHtml(title)}" onerror="this.hidden=true;this.setAttribute('aria-hidden','true');this.closest('.blog_post')?.classList.add('has-no-image');">` : ""}
                 <div class="blog_post-intro">
                     <h1 class="blog_post-title">${escapeHtml(title)}</h1>
+                    ${arcTitle ? `<div class="blog_post-arc">${escapeHtml(arcTitle)}</div>` : ""}
                     <div class="reading_date-container">
                         <div class="blog_item-date publish-date">
                             <span class="blog_item-month">${date.month}</span>
@@ -374,6 +414,11 @@ for (const filePath of files) {
 function postOutputDir(post, series) {
     if (post.series?.is_series === false) {
         return path.join(blogDir, post.slug);
+    }
+
+    const arcSlug = arcSlugFor(post, series);
+    if (arcSlug) {
+        return path.join(blogDir, seriesSlugFor(post, series), arcSlug, post.slug);
     }
 
     return path.join(blogDir, seriesSlugFor(post, series), post.slug);

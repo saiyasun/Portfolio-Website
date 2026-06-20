@@ -31,6 +31,9 @@ async function fetchText(path, language, file) {
     return data;
 }
 function getArticleFilename(metadata) {
+    if (typeof metadata?.source_path === "string" && metadata.source_path.trim()) {
+        return metadata.source_path;
+    }
     const slug = metadata?.slug || articleSlug;
     const series = metadata?.series;
     if (series?.is_series && series?.id && series?.order) {
@@ -85,7 +88,43 @@ function getPostUrl(post, seriesMetadata = {}) {
         return `/blog/${post.slug}/`;
     }
     const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts";
+    const arcSlug = getArcSlug(post, seriesMetadata);
+    if (arcSlug) {
+        return `/blog/${seriesSlug}/${arcSlug}/${post.slug}/`;
+    }
     return `/blog/${seriesSlug}/${post.slug}/`;
+}
+function getPostArc(post) {
+    if (typeof post?.arc === "string" && post.arc.trim())
+        return post.arc.trim();
+    if (typeof post?.series?.arc?.id === "string" && post.series.arc.id.trim())
+        return post.series.arc.id.trim();
+    return "";
+}
+function findArc(seriesMetadata = {}, seriesId = "", arcId = "") {
+    if (!seriesId || !arcId)
+        return null;
+    const arcs = seriesMetadata?.[seriesId]?.arcs || [];
+    return arcs.find(item => item?.id === arcId) || null;
+}
+function getArcSlug(post, seriesMetadata = {}) {
+    if (typeof post?.arcSlug === "string" && post.arcSlug.trim())
+        return post.arcSlug.trim();
+    const arcId = getPostArc(post);
+    const seriesId = post?.series?.id;
+    const arc = findArc(seriesMetadata, seriesId, arcId);
+    return typeof arc?.slug === "string" ? arc.slug : "";
+}
+function getArcTitle(post, seriesMetadata = {}, lang = "en") {
+    if (typeof post?.arcTitle === "string" && post.arcTitle.trim())
+        return post.arcTitle.trim();
+    const arcId = getPostArc(post);
+    const seriesId = post?.series?.id;
+    const arc = findArc(seriesMetadata, seriesId, arcId);
+    const title = arc?.title;
+    if (typeof title === "string")
+        return title;
+    return title?.[lang] || title?.en || arcId;
 }
 // 3. get correct metadata
 const getMetadata = async () => {
@@ -219,6 +258,12 @@ async function showArticle() {
     populateSeriesLinks(metadata, clone, allMetadata, seriesMetadata);
     const blogTitleEl = clone.querySelector(".blog_post-title");
     blogTitleEl.textContent = getLocalizedPostTitle(metadata, postLang);
+    const arcLabelEl = clone.querySelector(".blog_post-arc");
+    const arcTitle = getArcTitle(metadata, seriesMetadata, postLang);
+    if (arcLabelEl && arcTitle) {
+        arcLabelEl.textContent = arcTitle;
+        arcLabelEl.classList.remove("hidden");
+    }
     // image
     const blogImageEl = clone.querySelector(".blog_post-img");
     const blogPostEl = clone.querySelector(".blog_post");

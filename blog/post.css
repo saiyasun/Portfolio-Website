@@ -153,6 +153,22 @@ body {
     text-transform: uppercase;
     overflow-wrap: anywhere;
 }
+
+.blog_post-arc {
+    display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+    width: fit-content;
+    border: 1px solid color-mix(in srgb, var(--post-accent) 36%, var(--post-border));
+    border-radius: 999px;
+    padding: .22rem .55rem;
+    color: var(--post-accent);
+    background: color-mix(in srgb, var(--post-accent) 7%, transparent);
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
 .blog_post-img {
     background: var(--post-placeholder);
     aspect-ratio: 1/1;
