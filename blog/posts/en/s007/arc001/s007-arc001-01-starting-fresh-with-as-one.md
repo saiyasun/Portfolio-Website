@@ -80,7 +80,9 @@ It caught my attention because despite how unfinished and rushed it was, he coul
 
 As of the time of writing, it's been about 2 months since that tweet. The semester is over and summer vacation has begun. I have a lot more free time to dedicate to refining and implementing things I didn't have the chance to before. Trust me, there is a lot. 
 
-The [game jam version](https://asiahcrutchfield.itch.io/as-one) of AS ONE was a heavily simplified version of what I originally envisioned. I wanted to add a story, levels, a grading system, different endings, and many other things that just weren't feasible for a vibe jam game. Honestly, I probably should have just gone with something simpler. I would have had a higher chance of finishing and maybe even winning. But I just feel so strongly about this one that I had to let it out.
+The [game jam version](https://asiahcrutchfield.itch.io/as-one) of AS ONE was a heavily simplified version of what I originally envisioned. At its core, AS ONE is about people who do not naturally belong together coming together to overcome a greater enemy. The game jam version had pieces of that idea, but it did not have enough room to make the characters, story, and mechanics support that theme properly.
+
+I wanted to add a story, levels, a grading system, different endings, and many other things that just weren't feasible for a vibe jam game. Honestly, I probably should have just gone with something simpler. I would have had a higher chance of finishing and maybe even winning. But I just feel so strongly about this one that I had to let it out.
 
 ## Plan
 
