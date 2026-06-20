@@ -86,7 +86,7 @@ I wanted to add a story, levels, a grading system, different endings, and many o
 
 ## Plan
 
-Over the next few months, I will work on AS ONE and make it everything it should have been for the contest. In no particular order, I want to work on:
+Over the next few months, I will work on AS ONE and make it make it closer to what I originally imagined. In no particular order, I want to work on:
 
 - story and prologue structure
 - character identities and roles
