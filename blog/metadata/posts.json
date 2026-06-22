@@ -499,7 +499,7 @@
         },
         "preview_image": "",
         "published": {
-            "uploaded": "2026-07-01T00:00:00+08:00",
+            "uploaded": "2026-07-03T00:00:00+08:00",
             "edited": {
                 "en": "",
                 "zh": ""
@@ -520,6 +520,49 @@
         "arcTitle": "AS ONE v2",
         "article_id": "s007-arc001-01",
         "source_path": "s007/arc001/s007-arc001-01-starting-fresh-with-as-one.md"
+    },
+    {
+        "slug": "rebuilding-ground-level-languages",
+        "title": {
+            "en": "Rebuilding Ground Level Languages",
+            "zh": "重建 Ground Level"
+        },
+        "description": {
+            "en": "Starting the rebuild of Ground Level into a clearer, more modular language-learning app built around sound, meaning, stories, and better lesson flow.",
+            "zh": "開始重建 Ground Level，把它整理成一個更清楚、更模組化的語言學習 App，並以聲音、意義、故事和更好的課程流程為核心。"
+        },
+        "tags": {
+            "en": [
+                "language learning",
+                "Ground Level",
+                "app design",
+                "UI design",
+                "devlog"
+            ],
+            "zh": [
+                "語言學習",
+                "Ground Level",
+                "App 設計",
+                "介面設計",
+                "開發日誌"
+            ]
+        },
+        "preview_image": "",
+        "published": {
+            "uploaded": "2026-07-04T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s008",
+            "order": 1
+        },
+        "article_id": "s008-01",
+        "source_path": "s008/s008-01-rebuilding-ground-level-languages.md"
     },
     {
         "slug": "my-first-time-at-computex-2026",
