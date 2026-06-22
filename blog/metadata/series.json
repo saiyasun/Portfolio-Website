@@ -66,8 +66,8 @@
     },
     "slug": "rebuilding-the-stack",
     "description": {
-      "en": "Documenting my attempt to close the gaps between the programs I can build, the mathematics I have studied, and what I actually understand.",
-      "zh": "記錄我如何補上程式實作、學過的數學，以及真正理解之間的落差，重新建立更扎實的技術基礎。"
+      "en": "Documenting my attempt to rebuild weak fundamentals in math, programming, and computer science so I can understand and build things on a stronger foundation.",
+      "zh": "記錄我如何重新補強數學、程式設計和資訊工程的薄弱基礎，讓自己能在更扎實的基礎上理解和建構東西。"
     },
     "status": "active"
   },
