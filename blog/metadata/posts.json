@@ -472,6 +472,49 @@
         "source_path": "s002/s002-04-lessons-from-my-first-video-game.md"
     },
     {
+        "slug": "updating-my-technical-foundation",
+        "title": {
+            "en": "Refactoring My Technical Foundation",
+            "zh": "重構我的技術基礎"
+        },
+        "description": {
+            "en": "Starting a series about fixing my weak fundamentals in math, programming, and computer science so I can build and understand things with a stronger foundation.",
+            "zh": "開始記錄我如何補強數學、程式設計和資訊工程基礎，讓自己能在更扎實的基礎上理解和建構東西。"
+        },
+        "tags": {
+            "en": [
+                "computer science",
+                "programming",
+                "math",
+                "fundamentals",
+                "learning"
+            ],
+            "zh": [
+                "資訊工程",
+                "程式設計",
+                "數學",
+                "基礎",
+                "學習"
+            ]
+        },
+        "preview_image": "",
+        "published": {
+            "uploaded": "2026-07-05T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s006",
+            "order": 1
+        },
+        "article_id": "s006-01",
+        "source_path": "s006/s006-01-updating-my-technical-foundation.md"
+    },
+    {
         "slug": "starting-fresh-with-as-one",
         "title": {
             "en": "Starting Fresh With AS ONE",
