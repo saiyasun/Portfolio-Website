@@ -472,6 +472,49 @@
         "source_path": "s002/s002-04-lessons-from-my-first-video-game.md"
     },
     {
+        "slug": "beyond-survival-mandarin",
+        "title": {
+            "en": "Beyond Survival Mandarin",
+            "zh": "不只是生存中文"
+        },
+        "description": {
+            "en": "Starting a series about moving my Mandarin beyond survival level so I can communicate more fully, create more options, and build a deeper life in Taiwan.",
+            "zh": "開始記錄我如何讓中文不只停留在生存程度，而是能更完整地溝通、創造更多選擇，並在台灣建立更深入的生活。"
+        },
+        "tags": {
+            "en": [
+                "Mandarin",
+                "Taiwan",
+                "language learning",
+                "speaking",
+                "real life"
+            ],
+            "zh": [
+                "中文",
+                "台灣",
+                "語言學習",
+                "口說",
+                "真實生活"
+            ]
+        },
+        "preview_image": "",
+        "published": {
+            "uploaded": "2026-07-07T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s004",
+            "order": 1
+        },
+        "article_id": "s004-01",
+        "source_path": "s004/s004-01-beyond-survival-mandarin.md"
+    },
+    {
         "slug": "updating-my-technical-foundation",
         "title": {
             "en": "Refactoring My Technical Foundation",
