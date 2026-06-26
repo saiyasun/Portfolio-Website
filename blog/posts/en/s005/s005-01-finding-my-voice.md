@@ -78,7 +78,7 @@ I want a voice that can not only convey information, but express it.
 
 My voice is part of almost everything I want to do.
 
-I use it in presentations, conversations, videos, interviews, friendships, dating, language learning, and everyday life. If I want to explain ideas better, connect with people better, and share my work more confidently, I can't only think about the words I choose. I also have to think about how those words sound when they leave my mouth.
+I use it in presentations, conversations, videos, interviews, friendships, language learning, and everyday life. If I want to explain ideas better, connect with people better, and share my work more confidently, I can't only think about the words I choose. I also have to think about how those words sound when they leave my mouth.
 
 It matters for Mandarin too.
 
