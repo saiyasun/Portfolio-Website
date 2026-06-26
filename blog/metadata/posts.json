@@ -472,6 +472,49 @@
         "source_path": "s002/s002-04-lessons-from-my-first-video-game.md"
     },
     {
+        "slug": "a-year-to-rebuild",
+        "title": {
+            "en": "A Year to Rebuild",
+            "zh": "用一年重建自己"
+        },
+        "description": {
+            "en": "Starting a year-long fitness rebuild focused on strength, mobility, physique, conditioning, discipline, and building a body that feels as capable as it looks.",
+            "zh": "開始一個為期一年的健身重建計畫，專注於力量、活動度、體態、體能、自律，以及打造一個不只看起來強、也真正能用的身體。"
+        },
+        "tags": {
+            "en": [
+                "fitness",
+                "strength training",
+                "mobility",
+                "physique",
+                "self improvement"
+            ],
+            "zh": [
+                "健身",
+                "重量訓練",
+                "活動度",
+                "體態",
+                "自我提升"
+            ]
+        },
+        "preview_image": "",
+        "published": {
+            "uploaded": "2026-07-06T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s003",
+            "order": 1
+        },
+        "article_id": "s003-01",
+        "source_path": "s003/s003-01-a-year-to-rebuild.md"
+    },
+    {
         "slug": "beyond-survival-mandarin",
         "title": {
             "en": "Beyond Survival Mandarin",
@@ -513,6 +556,49 @@
         },
         "article_id": "s004-01",
         "source_path": "s004/s004-01-beyond-survival-mandarin.md"
+    },
+    {
+        "slug": "finding-my-voice",
+        "title": {
+            "en": "Finding My Voice",
+            "zh": "尋找我的聲音"
+        },
+        "description": {
+            "en": "Starting a series about improving my speaking and singing voice, building confidence, and learning how to sound more expressive, controlled, and fully like myself.",
+            "zh": "開始記錄我如何改善說話和唱歌的聲音、建立自信，並學習讓自己的聲音更有表達力、更受控制，也更像真正的自己。"
+        },
+        "tags": {
+            "en": [
+                "voice",
+                "speaking",
+                "singing",
+                "confidence",
+                "self improvement"
+            ],
+            "zh": [
+                "聲音",
+                "說話",
+                "唱歌",
+                "自信",
+                "自我提升"
+            ]
+        },
+        "preview_image": "",
+        "published": {
+            "uploaded": "2026-07-08T00:00:00+08:00",
+            "edited": {
+                "en": "",
+                "zh": ""
+            }
+        },
+        "featured": false,
+        "series": {
+            "is_series": true,
+            "id": "s005",
+            "order": 1
+        },
+        "article_id": "s005-01",
+        "source_path": "s005/s005-01-finding-my-voice.md"
     },
     {
         "slug": "updating-my-technical-foundation",
