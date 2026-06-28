@@ -472,14 +472,14 @@
         "source_path": "s002/s002-04-lessons-from-my-first-video-game.md"
     },
     {
-        "slug": "a-year-to-rebuild",
+        "slug": "strengthening-my-weaknesses",
         "title": {
-            "en": "A Year to Rebuild",
-            "zh": "用一年重建自己"
+            "en": "Strengthening My Weaknesses",
+            "zh": "補強我的弱點"
         },
         "description": {
-            "en": "Starting a year-long fitness rebuild focused on strength, mobility, physique, conditioning, discipline, and building a body that feels as capable as it looks.",
-            "zh": "開始一個為期一年的健身重建計畫，專注於力量、活動度、體態、體能、自律，以及打造一個不只看起來強、也真正能用的身體。"
+            "en": "Realizing that strength alone is not enough, and starting a year-long fitness rebuild focused on mobility, conditioning, physique, and building a body that feels as capable as it looks.",
+            "zh": "意識到光有力量還不夠，並開始一個為期一年的健身重建計畫，專注於活動度、體能、體態，以及打造一個不只看起來強、也真正能用的身體。"
         },
         "tags": {
             "en": [
@@ -512,7 +512,7 @@
             "order": 1
         },
         "article_id": "s003-01",
-        "source_path": "s003/s003-01-a-year-to-rebuild.md"
+        "source_path": "s003/s003-01-strengthening-my-weaknesses.md"
     },
     {
         "slug": "beyond-survival-mandarin",
