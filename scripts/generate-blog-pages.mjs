@@ -258,6 +258,21 @@ function formatDateParts(iso) {
     };
 }
 
+function getTaiwanNow() {
+    const now = new Date();
+    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
+    return new Date(taiwanString);
+}
+
+function isPublished(uploadedIso) {
+    if (!uploadedIso) return false;
+
+    const uploadedDate = new Date(uploadedIso);
+    if (Number.isNaN(uploadedDate.getTime())) return false;
+
+    return uploadedDate <= getTaiwanNow();
+}
+
 function jsonScript(value) {
     return JSON.stringify(value, null, 2).replace(/</g, "\\u003c");
 }
@@ -267,6 +282,7 @@ function seriesLinks(currentPost, posts, series) {
 
     const matching = posts
         .filter((post) => post.series?.is_series === true && post.series?.id === currentPost.series?.id)
+        .filter((post) => post.slug === currentPost.slug || isPublished(post.published?.uploaded))
         .sort((a, b) => (a.series?.order || 0) - (b.series?.order || 0));
 
     if (matching.length <= 1) return "";
@@ -283,6 +299,7 @@ function seriesLinks(currentPost, posts, series) {
 function relatedPosts(currentPost, posts, series) {
     const related = posts
         .filter((post) => post.slug !== currentPost.slug)
+        .filter((post) => isPublished(post.published?.uploaded))
         .sort((a, b) => Date.parse(b.published?.uploaded || "") - Date.parse(a.published?.uploaded || ""))
         .slice(0, 5);
 

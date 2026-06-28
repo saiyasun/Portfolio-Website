@@ -9,6 +9,7 @@ const postsMetadata = "/blog/metadata/"
 const uiTranslations = "/blog/translations/"
 const translationFiles = ["/blog/translations/ui_translations.json", "/translations/universal_ui.json"]
 const postsPerPage = 6
+const relaunchStartIso = "2026-07-01T00:00:00+08:00"
 
 async function fetchContent(path, file) {
     const response = await fetch(`${path}${file}`)
@@ -144,6 +145,15 @@ function isPublished(uploadedIso) {
     return uploadedDate <= taiwanNow;
 }
 
+function isArchivePost(post) {
+    if (post?.archive === true || post?.era === "pre-relaunch") return true
+
+    const uploaded = Date.parse(post?.published?.uploaded || "")
+    const relaunchStart = Date.parse(relaunchStartIso)
+
+    return !Number.isNaN(uploaded) && uploaded < relaunchStart
+}
+
 function getPreviewImagePath(previewImage) {
     if (!previewImage || typeof previewImage !== "string" || !previewImage.trim()) return ""
 
@@ -221,6 +231,24 @@ function getFilteredPosts(posts, lang) {
     })
 }
 
+function createArchiveIntro(lang) {
+    const section = document.createElement("section")
+    section.className = "blog-archive-intro"
+    section.setAttribute("aria-label", lang === "zh" ? "早期文章" : "Earlier posts")
+
+    const title = document.createElement("h2")
+    title.textContent = lang === "zh" ? "早期文章" : "Earlier Posts"
+
+    const description = document.createElement("p")
+    description.textContent = lang === "zh"
+        ? "在 2026 年 7 月 soft relaunch 之前，我比較自由地用這個 blog 記錄專案、實驗和一些想法。這些文章仍然會保留在這裡，當作早期 archive。"
+        : "Before the July 2026 soft relaunch, I used this blog more loosely to document projects, experiments, and stray thoughts. These posts are still part of the archive."
+
+    section.append(title, description)
+
+    return section
+}
+
 function renderTagFilters(posts, lang) {
     const tagContainer = document.getElementById("blog_homepage-tags")
     const tagTemplate = document.querySelector(".main-tag-template")
@@ -289,7 +317,11 @@ async function populateSelection() {
     renderTagFilters(posts, selectLang)
     selectionContainer.innerHTML = "";
 
-    visiblePosts.forEach(post => {
+    visiblePosts.forEach((post, index) => {
+        if (isArchivePost(post) && (index === 0 || !isArchivePost(visiblePosts[index - 1]))) {
+            selectionContainer.append(createArchiveIntro(selectLang))
+        }
+
         const clone = blogTemplate.content.cloneNode(true);
 
         // 1. add link

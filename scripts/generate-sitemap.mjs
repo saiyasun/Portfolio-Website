@@ -28,6 +28,21 @@ function dateOnly(isoOrDate) {
     return date.toISOString().slice(0, 10);
 }
 
+function getTaiwanNow() {
+    const now = new Date();
+    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
+    return new Date(taiwanString);
+}
+
+function isPublished(uploadedIso) {
+    if (!uploadedIso) return false;
+
+    const uploadedDate = new Date(uploadedIso);
+    if (Number.isNaN(uploadedDate.getTime())) return false;
+
+    return uploadedDate <= getTaiwanNow();
+}
+
 function seriesSlugFor(post, series) {
     return series?.[post.series?.id]?.slug || post.series?.id || "posts";
 }
@@ -64,7 +79,7 @@ function postUrl(post, series) {
 
 const posts = JSON.parse(await readFile(postsPath, "utf8"));
 const series = JSON.parse(await readFile(seriesPath, "utf8"));
-const sitemapPosts = posts.filter((post) => post?.published?.uploaded);
+const sitemapPosts = posts.filter((post) => isPublished(post?.published?.uploaded));
 
 const urls = [
     {

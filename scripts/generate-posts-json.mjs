@@ -9,6 +9,7 @@ const zhPostsDir = path.join(rootDir, "blog", "posts", "zh");
 const articleMediaBasePath = "/blog/assets/media/";
 const outputPath = path.join(rootDir, "blog", "metadata", "posts.json");
 const seriesPath = path.join(rootDir, "blog", "metadata", "series.json");
+const relaunchStart = Date.parse("2026-07-01T00:00:00+08:00");
 
 const errors = [];
 const warnings = [];
@@ -124,6 +125,16 @@ function arcMetadataFor(post) {
         arc: arcId,
         arcSlug: arc.slug,
         arcTitle: arc.title,
+    };
+}
+
+function eraMetadataFor(post) {
+    const uploaded = Date.parse(post.published?.uploaded || "");
+    const isArchive = Number.isFinite(uploaded) && uploaded < relaunchStart;
+
+    return {
+        era: isArchive ? "pre-relaunch" : "relaunch",
+        ...(isArchive ? { archive: true } : {}),
     };
 }
 
@@ -288,7 +299,13 @@ for (const filePath of files) {
 
     const articleId = articleIdFromFilename(file);
     validatePost(post, file, articleId, relativeFile);
-    posts.push({ ...post, ...arcMetadataFor(post), article_id: articleId, source_path: relativeFile });
+    posts.push({
+        ...post,
+        ...arcMetadataFor(post),
+        ...eraMetadataFor(post),
+        article_id: articleId,
+        source_path: relativeFile,
+    });
 }
 
 const slugs = new Set();
