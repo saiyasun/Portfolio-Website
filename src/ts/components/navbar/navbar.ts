@@ -24,6 +24,9 @@ class SiteNavbar extends HTMLElement {
         if (typeof updateLocalizedLinks === "function") {
             updateLocalizedLinks(this);
         }
+        if (typeof updateResumeLinks === "function") {
+            updateResumeLinks(this);
+        }
 
         this.setupActiveState();
         this.scrollActiveLinkIntoView();

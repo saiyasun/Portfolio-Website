@@ -1,7 +1,24 @@
 // @ts-nocheck
 let currentLang = document.documentElement.lang;
+const resumePaths = {
+    en: "/docs/Asiah_Crutchfield_Resume.pdf",
+    zh: "/docs/Asiah_Crutchfield_Resume_ZH.pdf"
+};
 function getLangButtons() {
     return document.querySelectorAll(".lang-btn");
+}
+function getResumePath(lang = document.documentElement.lang) {
+    return resumePaths[lang] || resumePaths.en;
+}
+function updateResumeLinks(scope = document) {
+    const currentLang = document.documentElement.lang || "en";
+    const resumePath = getResumePath(currentLang);
+    scope.querySelectorAll("[data-resume-default]").forEach(link => {
+        link.setAttribute("href", resumePath);
+    });
+    scope.querySelectorAll(".resume-lang-option").forEach(option => {
+        option.classList.toggle("is-current", option.dataset.lang === currentLang);
+    });
 }
 async function applyLanguage(lang) {
     currentLang = lang;
@@ -14,6 +31,7 @@ async function applyLanguage(lang) {
     const url = new URL(window.location);
     url.searchParams.set("lang", lang);
     window.history.replaceState({}, "", url);
+    updateResumeLinks();
     updateLocalizedLinks();
     // universal custom event
     document.dispatchEvent(new CustomEvent("languagechange", {
@@ -49,6 +67,8 @@ function updateLocalizedLinks(scope = document) {
         if (href.startsWith("http") && !href.includes(window.location.hostname))
             return;
         const fullURL = new URL(href, window.location.origin);
+        if (fullURL.pathname.endsWith(".pdf"))
+            return;
         const currentPath = window.location.pathname;
         const targetPath = fullURL.pathname;
         // if this points to the current page + a section, keep just the hash
