@@ -521,11 +521,11 @@ function getNested(obj, path) {
 async function translatePage(lang) {
     await translateUI(lang, uiTranslations);
     // swap hero name based on language
-    swapNames(pageLang);
+    swapNames(lang);
     // swap page title
-    titleSwap(pageLang);
+    titleSwap(lang);
     // swap favicon
-    faviconSwap(pageLang);
+    faviconSwap(lang);
     // get proper style for mobile nav
     centerMobileNav();
 }
