@@ -181,6 +181,10 @@ function isPublished(uploadedIso) {
     return uploadedDate <= taiwanNow;
 }
 
+function isArchivePost(post) {
+    return post?.archive === true || post?.era === "pre-july-2026"
+}
+
 // 3. calculate reading time
 function calculateReadingTime(text, wpm = 200) {
     if (!text) return 1
@@ -335,6 +339,12 @@ async function showArticle() {
         arcLabelEl.classList.remove("hidden")
     }
 
+    const archiveLabelEl = clone.querySelector(".blog_post-archive")
+    if (archiveLabelEl && isArchivePost(metadata)) {
+        archiveLabelEl.textContent = "Archived"
+        archiveLabelEl.classList.remove("hidden")
+    }
+
     // image
     const blogImageEl = clone.querySelector(".blog_post-img");
     const blogPostEl = clone.querySelector(".blog_post")
@@ -424,6 +434,13 @@ function populateSeriesLinks(metadata, scope, allMetadata, seriesMetadata = {}) 
             comingSoon.className = "series-coming-soon"
             comingSoon.textContent = postLang === "zh" ? "[即將發布]" : "[coming soon]"
             li.append(comingSoon)
+        }
+
+        if (isArchivePost(post)) {
+            const archiveLabel = document.createElement("span")
+            archiveLabel.className = "series-archive-label"
+            archiveLabel.textContent = "Archived"
+            li.append(archiveLabel)
         }
 
         seriesContainer.append(li)

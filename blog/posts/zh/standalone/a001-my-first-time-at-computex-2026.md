@@ -35,7 +35,9 @@
     "featured": false,
     "series": {
         "is_series": false
-    }
+    },
+    "archive": true,
+    "era": "pre-july-2026"
 }
 ---
 

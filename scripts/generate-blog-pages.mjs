@@ -273,6 +273,10 @@ function isPublished(uploadedIso) {
     return uploadedDate <= getTaiwanNow();
 }
 
+function isArchivePost(post) {
+    return post?.archive === true || post?.era === "pre-july-2026";
+}
+
 function jsonScript(value) {
     return JSON.stringify(value, null, 2).replace(/</g, "\\u003c");
 }
@@ -290,7 +294,8 @@ function seriesLinks(currentPost, posts, series) {
     const items = matching.map((post) => {
         const title = escapeHtml(post.title?.en || post.slug);
         const current = post.slug === currentPost.slug ? ' aria-current="page"' : "";
-        return `<li><a href="${postPath(post, series)}"${current}>${title}</a></li>`;
+        const archiveLabel = isArchivePost(post) ? '<span class="series-archive-label">Archived</span>' : "";
+        return `<li><a href="${postPath(post, series)}"${current}>${title}</a>${archiveLabel}</li>`;
     });
 
     return `<ol class="series-container">\n${items.join("\n")}\n</ol>`;
@@ -331,6 +336,7 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     const date = formatDateParts(post.published.uploaded);
     const edited = post.published?.edited?.en || "";
     const arcTitle = arcTitleFor(post, series);
+    const archiveLabel = isArchivePost(post) ? '<div class="blog_post-archive">Archived</div>' : "";
     const schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -384,6 +390,7 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
                 <div class="blog_post-intro">
                     <h1 class="blog_post-title">${escapeHtml(title)}</h1>
                     ${arcTitle ? `<div class="blog_post-arc">${escapeHtml(arcTitle)}</div>` : ""}
+                    ${archiveLabel}
                     <div class="reading_date-container">
                         <div class="blog_item-date publish-date">
                             <span class="blog_item-month">${date.month}</span>

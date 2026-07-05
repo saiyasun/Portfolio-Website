@@ -169,6 +169,31 @@ body {
     line-height: 1.2;
 }
 
+.blog_post-archive,
+.series-archive-label {
+    display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+    width: fit-content;
+    border: 1px solid var(--post-border);
+    border-radius: 999px;
+    padding: .2rem .5rem;
+    color: var(--post-muted);
+    background: var(--post-surface-strong);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.series-archive-label {
+    margin-left: .45rem;
+    padding: .12rem .4rem;
+    font-size: .62rem;
+    vertical-align: middle;
+}
+
 .blog_post-img {
     background: var(--post-placeholder);
     aspect-ratio: 1/1;

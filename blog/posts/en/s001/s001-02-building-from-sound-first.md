@@ -38,7 +38,9 @@
         "is_series": true,
         "id": "s001",
         "order": 2
-    }
+    },
+    "archive": true,
+    "era": "pre-july-2026"
 }
 ---
 

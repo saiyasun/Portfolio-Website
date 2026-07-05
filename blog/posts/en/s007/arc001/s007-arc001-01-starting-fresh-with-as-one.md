@@ -42,7 +42,9 @@
             "id": "arc001",
             "order": 1
         }
-    }
+    },
+    "archive": false,
+    "era": "july-2026"
 }
 ---
 

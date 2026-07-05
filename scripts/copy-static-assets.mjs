@@ -43,6 +43,7 @@ const blogFiles = [
 ];
 
 const blogDirs = [
+    "blog/archive",
     "blog/assets",
     "blog/metadata",
     "blog/posts",

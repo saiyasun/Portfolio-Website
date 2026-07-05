@@ -39,8 +39,8 @@
             "id": "s001",
             "order": 1
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-01",
         "source_path": "s001/s001-01-its-not-what-you-know-its-what-you-hear.md"
     },
@@ -84,8 +84,8 @@
             "id": "s001",
             "order": 2
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-02",
         "source_path": "s001/s001-02-building-from-sound-first.md"
     },
@@ -129,8 +129,8 @@
             "id": "s001",
             "order": 3
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-03",
         "source_path": "s001/s001-03-translation-is-not-the-ground-level.md"
     },
@@ -174,8 +174,8 @@
             "id": "s001",
             "order": 4
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-04",
         "source_path": "s001/s001-04-learning-language-from-a-cat.md"
     },
@@ -219,8 +219,8 @@
             "id": "s001",
             "order": 5
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-05",
         "source_path": "s001/s001-05-mystery-is-good-confusion-is-not.md"
     },
@@ -264,8 +264,8 @@
             "id": "s001",
             "order": 6
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-06",
         "source_path": "s001/s001-06-the-first-real-session.md"
     },
@@ -308,8 +308,8 @@
             "id": "s001",
             "order": 7
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s001-07",
         "source_path": "s001/s001-07-testing-it-out.md"
     },
@@ -353,8 +353,8 @@
             "id": "s002",
             "order": 1
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s002-01",
         "source_path": "s002/s002-01-paper-disc-real-code.md"
     },
@@ -398,8 +398,8 @@
             "id": "s002",
             "order": 2
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s002-02",
         "source_path": "s002/s002-02-narrowing-my-options.md"
     },
@@ -443,8 +443,8 @@
             "id": "s002",
             "order": 3
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s002-03",
         "source_path": "s002/s002-03-making-a-game-in-real-time.md"
     },
@@ -488,8 +488,8 @@
             "id": "s002",
             "order": 4
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "s002-04",
         "source_path": "s002/s002-04-lessons-from-my-first-video-game.md"
     },
@@ -533,7 +533,8 @@
             "id": "s003",
             "order": 1
         },
-        "era": "relaunch",
+        "archive": false,
+        "era": "july-2026",
         "article_id": "s003-01",
         "source_path": "s003/s003-01-strengthening-my-weaknesses.md"
     },
@@ -577,7 +578,8 @@
             "id": "s004",
             "order": 1
         },
-        "era": "relaunch",
+        "archive": false,
+        "era": "july-2026",
         "article_id": "s004-01",
         "source_path": "s004/s004-01-beyond-survival-mandarin.md"
     },
@@ -621,7 +623,8 @@
             "id": "s005",
             "order": 1
         },
-        "era": "relaunch",
+        "archive": false,
+        "era": "july-2026",
         "article_id": "s005-01",
         "source_path": "s005/s005-01-finding-my-voice.md"
     },
@@ -665,7 +668,8 @@
             "id": "s006",
             "order": 1
         },
-        "era": "relaunch",
+        "archive": false,
+        "era": "july-2026",
         "article_id": "s006-01",
         "source_path": "s006/s006-01-updating-my-technical-foundation.md"
     },
@@ -713,10 +717,11 @@
                 "order": 1
             }
         },
+        "archive": false,
+        "era": "july-2026",
         "arc": "arc001",
         "arcSlug": "as-one-v2",
         "arcTitle": "AS ONE v2",
-        "era": "relaunch",
         "article_id": "s007-arc001-01",
         "source_path": "s007/arc001/s007-arc001-01-starting-fresh-with-as-one.md"
     },
@@ -760,7 +765,8 @@
             "id": "s008",
             "order": 1
         },
-        "era": "relaunch",
+        "archive": false,
+        "era": "july-2026",
         "article_id": "s008-01",
         "source_path": "s008/s008-01-rebuilding-ground-level-languages.md"
     },
@@ -801,8 +807,8 @@
         "series": {
             "is_series": false
         },
-        "era": "pre-relaunch",
         "archive": true,
+        "era": "pre-july-2026",
         "article_id": "a001",
         "source_path": "standalone/a001-my-first-time-at-computex-2026.md"
     }

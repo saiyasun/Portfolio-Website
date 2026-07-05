@@ -90,6 +90,10 @@ const urls = [
         loc: `${siteUrl}/blog/`,
         lastmod: dateOnly(),
     },
+    {
+        loc: `${siteUrl}/blog/archive/`,
+        lastmod: dateOnly(),
+    },
 ];
 
 sitemapPosts.forEach((post) => {

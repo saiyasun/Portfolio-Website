@@ -207,6 +207,33 @@ site-navbar a[href^="/blog/index.html"]::before {
     color: var(--blog-accent);
 }
 
+.blog-view-links {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .6rem;
+    margin-top: 1rem;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.blog-view-links a {
+    border: 1px solid var(--blog-border);
+    border-radius: 999px;
+    padding: .35rem .7rem;
+    color: var(--blog-muted);
+    text-decoration: none;
+}
+
+.blog-view-links a:hover,
+.blog-view-links a[aria-current] {
+    border-color: var(--blog-accent);
+    color: var(--blog-accent);
+    background: var(--blog-surface-strong);
+}
+
 
 /* =========================
    GRID

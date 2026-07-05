@@ -10,6 +10,10 @@ const uiTranslations = "/blog/translations/";
 const translationFiles = ["/blog/translations/ui_translations.json", "/translations/universal_ui.json"];
 const postsPerPage = 6;
 const relaunchStartIso = "2026-07-01T00:00:00+08:00";
+function isArchivePage() {
+    const path = window.location.pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+    return path === "/blog/archive";
+}
 async function fetchContent(path, file) {
     const response = await fetch(`${path}${file}`);
     const data = await response.text();
@@ -31,9 +35,9 @@ const getSeries = async () => {
 };
 // hide blog homepage if there are no posts
 async function initBlog() {
-    const posts = await getPublishedPosts();
+    const posts = await getVisiblePosts();
     const currentLang = getCurrentLang();
-    currentLang === "en" ? document.title = "Asides | Asiah Crutchfield" : document.title = "Asides | 孫賽亞";
+    updateBlogViewText(currentLang);
     if (!posts || posts.length === 0) {
         comingSoon.classList.remove("hidden");
         blogHomepage.classList.add("hidden");
@@ -53,6 +57,10 @@ async function getPublishedPosts() {
     return posts
         .filter(post => isPublished(post?.published?.uploaded))
         .sort((a, b) => Date.parse(b.published?.uploaded || "") - Date.parse(a.published?.uploaded || ""));
+}
+async function getVisiblePosts() {
+    const posts = await getPublishedPosts();
+    return posts.filter(post => isArchivePage() ? isArchivePost(post) : !isArchivePost(post));
 }
 function getBlogPage() {
     const params = new URLSearchParams(window.location.search);
@@ -83,6 +91,28 @@ function tagPageUrl(tag = "") {
         url.searchParams.delete("tag");
     }
     return `${url.pathname}${url.search}${url.hash}`;
+}
+function updateBlogViewText(lang) {
+    const archivePage = isArchivePage();
+    const title = document.getElementById("blog_homepage-title");
+    const subtitle = document.getElementById("blog_homepage-subtitle");
+    const description = document.querySelector(".blog_homepage-description");
+    const mainLink = document.querySelector('[data-blog-view="main"]');
+    const archiveLink = document.querySelector('[data-blog-view="archive"]');
+    if (archivePage) {
+        document.title = lang === "zh" ? "Archive | 孫賽亞" : "Archive | Asiah Crutchfield";
+        if (title)
+            title.textContent = "Archive";
+        if (subtitle)
+            subtitle.textContent = "";
+        if (description)
+            description.textContent = "Older posts from before the current version of this blog.";
+    }
+    else {
+        document.title = lang === "en" ? "Asides | Asiah Crutchfield" : "Asides | 孫賽亞";
+    }
+    mainLink?.toggleAttribute("aria-current", !archivePage);
+    archiveLink?.toggleAttribute("aria-current", archivePage);
 }
 function renderPagination(totalPosts, currentPage) {
     const pagination = document.getElementById("blog-pagination");
@@ -120,7 +150,7 @@ function isPublished(uploadedIso) {
     return uploadedDate <= taiwanNow;
 }
 function isArchivePost(post) {
-    if (post?.archive === true || post?.era === "pre-relaunch")
+    if (post?.archive === true || post?.era === "pre-july-2026")
         return true;
     const uploaded = Date.parse(post?.published?.uploaded || "");
     const relaunchStart = Date.parse(relaunchStartIso);
@@ -188,19 +218,6 @@ function getFilteredPosts(posts, lang) {
         return tags.some(tag => normalizeTag(tag) === selectedTag);
     });
 }
-function createArchiveIntro(lang) {
-    const section = document.createElement("section");
-    section.className = "blog-archive-intro";
-    section.setAttribute("aria-label", lang === "zh" ? "早期文章" : "Earlier posts");
-    const title = document.createElement("h2");
-    title.textContent = lang === "zh" ? "早期文章" : "Earlier Posts";
-    const description = document.createElement("p");
-    description.textContent = lang === "zh"
-        ? "在 2026 年 7 月 soft relaunch 之前，我比較自由地用這個 blog 記錄專案、實驗和一些想法。這些文章仍然會保留在這裡，當作早期 archive。"
-        : "Before the July 2026 soft relaunch, I used this blog more loosely to document projects, experiments, and stray thoughts. These posts are still part of the archive.";
-    section.append(title, description);
-    return section;
-}
 function renderTagFilters(posts, lang) {
     const tagContainer = document.getElementById("blog_homepage-tags");
     const tagTemplate = document.querySelector(".main-tag-template");
@@ -242,7 +259,7 @@ function createTagFilterItem(template, label, tag, isActive) {
 }
 // populate post card
 async function populateSelection() {
-    const posts = await getPublishedPosts();
+    const posts = await getVisiblePosts();
     const seriesMetadata = await getSeries();
     const selectLang = getCurrentLang();
     const filteredPosts = getFilteredPosts(posts, selectLang);
@@ -254,10 +271,7 @@ async function populateSelection() {
     const selectionContainer = document.querySelector("#blog_selection");
     renderTagFilters(posts, selectLang);
     selectionContainer.innerHTML = "";
-    visiblePosts.forEach((post, index) => {
-        if (isArchivePost(post) && (index === 0 || !isArchivePost(visiblePosts[index - 1]))) {
-            selectionContainer.append(createArchiveIntro(selectLang));
-        }
+    visiblePosts.forEach((post) => {
         const clone = blogTemplate.content.cloneNode(true);
         // 1. add link
         const selectLink = clone.querySelector(".blog_item");
@@ -338,6 +352,7 @@ async function renderBlogSelection() {
     await initBlog();
     await populateSelection();
     await translateUI(document.documentElement.lang, translationFiles);
+    updateBlogViewText(document.documentElement.lang);
 }
 document.addEventListener("languagechange", async (event) => {
     await renderBlogSelection(event.detail.lang);

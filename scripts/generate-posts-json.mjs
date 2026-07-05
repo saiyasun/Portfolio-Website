@@ -133,8 +133,8 @@ function eraMetadataFor(post) {
     const isArchive = Number.isFinite(uploaded) && uploaded < relaunchStart;
 
     return {
-        era: isArchive ? "pre-relaunch" : "relaunch",
-        ...(isArchive ? { archive: true } : {}),
+        archive: isArchive,
+        era: isArchive ? "pre-july-2026" : "july-2026",
     };
 }
 
