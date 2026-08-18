@@ -19,6 +19,11 @@ class SiteNavbar extends HTMLElement {
         this.innerHTML = html;
 
         this.setupLinks();
+        this.setupMenu();
+
+        if (typeof initLanguageButtons === "function") {
+            initLanguageButtons();
+        }
 
         // make sure language param logic runs AFTER links exist
         if (typeof updateLocalizedLinks === "function") {
@@ -41,6 +46,34 @@ class SiteNavbar extends HTMLElement {
     disconnectedCallback() {
         window.removeEventListener("scroll", this.handleScroll)
         window.removeEventListener("hashchange", this.handleScroll)
+    }
+
+    setupMenu() {
+        const toggle = this.querySelector(".menu-toggle")
+        const nav = this.querySelector("#main-nav")
+
+        if (!toggle || !nav) return
+
+        const closeMenu = () => {
+            toggle.setAttribute("aria-expanded", "false")
+            nav.classList.remove("is-open")
+            document.body.classList.remove("nav-open")
+        }
+
+        toggle.addEventListener("click", () => {
+            const willOpen = toggle.getAttribute("aria-expanded") !== "true"
+            toggle.setAttribute("aria-expanded", String(willOpen))
+            nav.classList.toggle("is-open", willOpen)
+            document.body.classList.toggle("nav-open", willOpen)
+        })
+
+        nav.querySelectorAll("a, .lang-btn").forEach(control => {
+            control.addEventListener("click", closeMenu)
+        })
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") closeMenu()
+        })
     }
 
     setupLinks() {
@@ -191,15 +224,7 @@ class SiteNavbar extends HTMLElement {
     }
 
     scrollActiveLinkIntoView() {
-        const activeLink = this.querySelector(`#mobile-nav .${this.activeLinkClass}`)
-
-        if (!activeLink) return
-
-        activeLink.scrollIntoView({
-            behavior: "auto",
-            block: "nearest",
-            inline: "center"
-        })
+        return
     }
 }
 
