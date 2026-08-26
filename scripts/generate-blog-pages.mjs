@@ -8,6 +8,29 @@ const siteUrl = "https://asiahcrutchfield.com";
 const postsDir = path.join(rootDir, "blog", "posts", "en");
 const seriesPath = path.join(rootDir, "blog", "metadata", "series.json");
 const blogDir = path.join(rootDir, "dist", "blog");
+const viteManifestPath = path.join(rootDir, "dist", ".vite", "manifest.json");
+
+const viteManifest = JSON.parse(await readFile(viteManifestPath, "utf8"));
+const staticPostRuntime = viteManifest["src/pages/static-post.ts"];
+
+if (!staticPostRuntime?.file) {
+    throw new Error("Vite static-post entry was not found in the build manifest.");
+}
+
+function collectViteCss(entryKey, visited = new Set()) {
+    if (visited.has(entryKey)) return [];
+    visited.add(entryKey);
+
+    const entry = viteManifest[entryKey];
+    if (!entry) return [];
+
+    return [
+        ...(entry.css || []),
+        ...(entry.imports || []).flatMap((importKey) => collectViteCss(importKey, visited)),
+    ];
+}
+
+const staticPostStyles = [...new Set(collectViteCss("src/pages/static-post.ts"))];
 
 function escapeHtml(value = "") {
     return String(value)
@@ -312,11 +335,9 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     <meta name="twitter:description" content="${escapeHtml(description)}">
     ${image ? `<meta name="twitter:image" content="${image}">` : ""}
     <script type="application/ld+json">${jsonScript(schema)}</script>
-    <link rel="stylesheet" href="/components/components.css">
+    ${staticPostStyles.map((file) => `<link rel="stylesheet" href="/${file}">`).join("\n    ")}
     <link rel="stylesheet" href="/blog/post.css">
-    <script src="/components/navbar/navbar.js" defer></script>
-    <script src="/components/translator/translator.js" defer></script>
-    <script src="/universal.js" defer></script>
+    <script type="module" src="/${staticPostRuntime.file}"></script>
 </head>
 <body>
     <site-navbar></site-navbar>

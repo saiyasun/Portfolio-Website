@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { fillDateElements, translateUI } from "../../universal";
+import { getPostUrl, getPreviewImagePath, getTaiwanNow, isPublished } from "../../../components/blog/post-utils";
 let blogTitle = document.title
 function getCurrentLang() {
     return document.documentElement.lang
@@ -94,23 +96,6 @@ function getLocalizedPostTitle(post, lang) {
     return post?.title?.[lang] || post?.title?.en || post?.slug || ""
 }
 
-function getPreviewImagePath(previewImage) {
-    if (!previewImage || typeof previewImage !== "string" || !previewImage.trim()) return ""
-
-    const path = previewImage.trim()
-
-    return path.startsWith("/") ? path : ""
-}
-
-function getPostUrl(post, seriesMetadata = {}) {
-    if (post?.series?.is_series === false) {
-        return `/blog/${post.slug}/`
-    }
-
-    const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts"
-    return `/blog/${seriesSlug}/${post.slug}/`
-}
-
 // 3. get correct metadata
 const getMetadata = async () => {
     const data = await getPublishedMetadata()
@@ -118,22 +103,6 @@ const getMetadata = async () => {
     const postMeta = data.find(post => post.slug === articleSlug)
 
     return postMeta || null
-}
-
-function getTaiwanNow() {
-    const now = new Date();
-    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
-    return new Date(taiwanString);
-}
-
-function isPublished(uploadedIso) {
-    if (!uploadedIso) return false;
-
-    const uploadedDate = new Date(uploadedIso);
-    if (isNaN(uploadedDate.getTime())) return false;
-
-    const taiwanNow = getTaiwanNow();
-    return uploadedDate <= taiwanNow;
 }
 
 // 3. calculate reading time

@@ -1,0 +1,71 @@
+:root {
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-body);
+  --text-base: 16px;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+  --text-hero: clamp(28px, 6vw, 48px);
+  --lh-body: 1.6;
+  --lh-tight: 1.1;
+  --lh-ui: 1.4;
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+  --border-soft: rgba(0, 0, 0, .25);
+  --icon-xs: 20px;
+  --icon-s: 24px;
+  --icon: 28px;
+  --icon-med: 32px;
+  --icon-lg: 40px;
+  --icon-xl: 48px;
+  --pics: clamp(125px, 30vw, 300px);
+  --track-nav: .1em;
+  --track-label: .08em;
+  --bg-color: #f7f6f3;
+  --txt-color: #000;
+  --surface-color: rgba(255, 255, 255, .38);
+  --surface-soft-color: rgba(211, 211, 211, .3);
+  --muted-txt-color: #5d5751;
+  --accent-color: #b33424;
+  --rule-color: #000;
+  --nav-bg-color: rgba(247, 246, 243, .72);
+  --nav-outline-color: rgba(255, 255, 255, .3);
+  --translator-bg-color: rgba(250, 202, 202, .75);
+  --outline: 1px solid rgba(0, 0, 0, .25);
+  --outline-hard: 1px solid var(--rule-color);
+  --btn-width: calc(var(--text-xs) * 3.5);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #151515;
+    --txt-color: #eee;
+    --surface-color: rgba(255, 255, 255, .06);
+    --surface-soft-color: rgba(255, 255, 255, .08);
+    --muted-txt-color: #c7c0b8;
+    --accent-color: #ff8b75;
+    --rule-color: #eee;
+    --border-soft: rgba(255, 255, 255, .28);
+    --outline: 1px solid rgba(255, 255, 255, .24);
+    --outline-hard: 1px solid rgba(255, 255, 255, .78);
+    --nav-bg-color: rgba(26, 26, 26, .78);
+    --nav-outline-color: rgba(255, 255, 255, .18);
+    --translator-bg-color: rgba(102, 42, 42, .88);
+    color-scheme: dark;
+  }
+
+  img[src$="-blk.svg"], img[src$="github-blk.svg"], img[src$="email-black.svg"] { filter: invert(1); }
+}
+
+nav { display: inline-flex; margin: 0; padding: 0; }
+nav ul, nav li { display: flex; font-weight: var(--w-bold); list-style: none; }
+a { align-items: center; color: inherit; display: inline-flex; justify-content: center; padding: .125em; text-decoration: none; }
+button { align-items: center; border: 0; display: flex; justify-content: center; outline: 0; padding: .25em; text-align: center; }
+.is_hidden { display: none !important; }
+.is_active { display: block; }
+.glass-nav { background: var(--nav-bg-color); backdrop-filter: blur(12px); box-shadow: 0 8px 10px rgba(0, 0, 0, .027); outline: 1px solid var(--nav-outline-color); }

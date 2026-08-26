@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { fillDateElements, translateUI } from "../../universal";
+import { getPostUrl, getPreviewImagePath, getTaiwanNow, isPublished } from "../../../components/blog/post-utils";
 function getCurrentLang() {
     return document.documentElement.lang
 }
@@ -128,30 +130,6 @@ function renderPagination(totalPosts, currentPage) {
     nextLink.href = currentPage < totalPages ? blogPageUrl(currentPage + 1) : ""
 }
 
-function getTaiwanNow() {
-    const now = new Date();
-    const taiwanString = now.toLocaleString("en-US", { timeZone: "Asia/Taipei" });
-    return new Date(taiwanString);
-}
-
-function isPublished(uploadedIso) {
-    if (!uploadedIso) return false;
-
-    const uploadedDate = new Date(uploadedIso);
-    if (isNaN(uploadedDate.getTime())) return false;
-
-    const taiwanNow = getTaiwanNow();
-    return uploadedDate <= taiwanNow;
-}
-
-function getPreviewImagePath(previewImage) {
-    if (!previewImage || typeof previewImage !== "string" || !previewImage.trim()) return ""
-
-    const path = previewImage.trim()
-
-    return path.startsWith("/") ? path : ""
-}
-
 function updateTitleLineClasses(scope = document) {
     const titles = scope.querySelectorAll(".blog_item-title")
 
@@ -170,15 +148,6 @@ function updateTitleLineClasses(scope = document) {
 
 function getPostTags(post, lang) {
     return post.tags?.[lang] || post.tags?.en || []
-}
-
-function getPostUrl(post, seriesMetadata = {}) {
-    if (post?.series?.is_series === false) {
-        return `/blog/${post.slug}/`
-    }
-
-    const seriesSlug = seriesMetadata?.[post.series?.id]?.slug || post.series?.id || "posts"
-    return `/blog/${seriesSlug}/${post.slug}/`
 }
 
 function getFilteredPosts(posts, lang) {

@@ -1,10 +1,7 @@
 // @ts-nocheck
+import { getCurrentLang, translateUI } from "./universal";
 // UNIVERSAL
 const htmlTitle = document.title;
-// get current lang
-function getCurrentLang() {
-    return document.documentElement.lang
-}
 const pageLang = getCurrentLang()
 const zhName = document.querySelector("#zh-name").textContent;
 let enName = document.querySelector("#en-name").textContent;

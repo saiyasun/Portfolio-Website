@@ -1,11 +1,15 @@
 // @ts-nocheck
 let currentLang = document.documentElement.lang;
 
+export function getCurrentLang() {
+    return document.documentElement.lang;
+}
+
 function getLangButtons() {
     return document.querySelectorAll(".lang-btn")
 }
 
-async function applyLanguage(lang) {
+export async function applyLanguage(lang) {
     currentLang = lang;
     document.documentElement.lang = currentLang;
 
@@ -44,7 +48,7 @@ function addLangToURL(url, lang = document.documentElement.lang) {
     fullURL.searchParams.set("lang", lang);
     return fullURL.pathname + fullURL.search + fullURL.hash;
 }
-function updateLocalizedLinks(scope = document) {
+export function updateLocalizedLinks(scope = document) {
     const currentLang = document.documentElement.lang || "en";
     const links = scope.querySelectorAll("a[href]");
 
@@ -102,7 +106,7 @@ function getNested(obj, path) {
   return current;
 }
 
-window.translateUI =  async function (lang, files = []) {
+export async function translateUI(lang, files = []) {
     const uiElements = [...document.querySelectorAll("[data-i18n]")]
     
     // 1) store original English text ONCE
@@ -159,7 +163,7 @@ function deepMerge(target, source) {
   return target;
 }
 
-window.fillDateElements = function(dateObj, monthEl, dayEl, yearEl) {
+export function fillDateElements(dateObj, monthEl, dayEl, yearEl) {
     const postLang = getCurrentLang()
 
     monthEl.textContent = `${dateObj
@@ -207,7 +211,7 @@ function scrollToHashTarget() {
 //     }
 // }
 
-function initLanguageButtons() {
+export function initLanguageButtons() {
     const langButtons = getLangButtons();
 
     langButtons.forEach(btn => {

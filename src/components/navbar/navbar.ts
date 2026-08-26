@@ -1,4 +1,7 @@
 // @ts-nocheck
+import { initLanguageButtons, updateLocalizedLinks } from "../../ts/universal";
+import navbarTemplate from "./navbar.html?raw";
+import "./navbar.css";
 class SiteNavbar extends HTMLElement {
     activeLinkClass = "nav_active"
     sectionIds = ["hero", "about", "experience", "skills", "projects", "contact"]
@@ -13,22 +16,15 @@ class SiteNavbar extends HTMLElement {
     }
 
     async connectedCallback() {
-        const response = await fetch("/components/navbar/navbar.html");
-        const html = await response.text();
-
-        this.innerHTML = html;
+        this.innerHTML = navbarTemplate;
 
         this.setupLinks();
         this.setupMenu();
 
-        if (typeof initLanguageButtons === "function") {
-            initLanguageButtons();
-        }
+        initLanguageButtons();
 
         // make sure language param logic runs AFTER links exist
-        if (typeof updateLocalizedLinks === "function") {
-            updateLocalizedLinks(this);
-        }
+        updateLocalizedLinks(this);
 
         this.setupActiveState();
         this.scrollActiveLinkIntoView();

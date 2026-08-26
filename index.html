@@ -70,13 +70,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/components/components.css">
     <link rel="stylesheet" href="style.css">
     
-    <script src="/components/navbar/navbar.js" defer></script>
-    <script src="/components/translator/translator.js" defer></script>
-    <script src="/universal.js" defer></script>
-    <script src="/script.js" defer></script>
+    <script type="module" src="/src/pages/home.ts"></script>
 </head>
 <body>
     <!--SITE NAV BAR-->
@@ -268,7 +264,7 @@
 
                         <!--TECH TEMPLATE-->
                             <template id="tech_template">
-                                <li class="tech-item" id="" data-tech.category="">
+                                <li class="tech-item" id="" data-tech-category="">
                                     <img class="tech-img" src="">
                                     <span class="tech-name"></span>
                                 </li>
@@ -291,7 +287,7 @@
                             </div>
 
                             <div class="tech_cat-container" data-tech_cat-container="frontend">
-                                <div class="tech_cat-title"><span class="tech-title-o"data-i18n="skills.catTitles.design">design</span><img src="images/icons/tech/design.svg"></div>
+                                <div class="tech_cat-title"><span class="tech-title-o" data-i18n="skills.catTitles.design">design</span><img src="images/icons/tech/design.svg"></div>
                                     <ul class="tech_stack tech_stack-o" data-tech_cat="design">
                                         <!-- append here -->
                                     </ul>

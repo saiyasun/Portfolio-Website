@@ -19,15 +19,10 @@ async function copyIfExists(source, destination = source) {
 await mkdir(distDir, { recursive: true });
 
 const rootFiles = [
-    "index.html",
-    "style.css",
-    "script.js",
-    "universal.js",
     "CNAME",
 ];
 
 const rootDirs = [
-    "components",
     "content",
     "docs",
     "images",
@@ -36,10 +31,8 @@ const rootDirs = [
 ];
 
 const blogFiles = [
-    "blog/index.html",
     "blog/blog.css",
     "blog/post.css",
-    "blog/post.html",
 ];
 
 const blogDirs = [
