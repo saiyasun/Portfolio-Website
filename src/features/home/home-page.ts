@@ -1,45 +1,8 @@
 // @ts-nocheck
-import { getCurrentLang, translateUI } from "./universal";
-// UNIVERSAL
-const htmlTitle = document.title;
-const pageLang = getCurrentLang()
-const zhName = document.querySelector("#zh-name").textContent;
-let enName = document.querySelector("#en-name").textContent;
-    const firstLast = enName.split(" ")
-    if (enName.includes(zhName)) {
-        enName = enName.replace(zhName, "").trim()
-    }
+import { fetchJson } from "../../lib/data";
+import { initializeHomeTabs } from "./home-tabs";
+import { initializeHomeLocalization } from "./home-localization";
 const hideClass = "is_hidden"
-const activeLink = "nav_active"
-
-// adds active class to currently clicked link
-function activeSelect(navbar, active) {
-    navbar.forEach(link => {
-        link.addEventListener("click", () => {
-
-            // 1. remove active class from all
-            navbar.forEach(l => {
-                l.classList.remove(active)
-            });
-        link.classList.add(active)
-        });
-    });
-}
-
-// toggles which sections get hidden or shown
-function toggleSection(nav, div) {
-    nav.forEach(link => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-
-            const targetID = link.getAttribute("href").slice(1); // removes "#"
-
-            div.forEach(section => {
-                section.classList.toggle(hideClass, section.id !== targetID);
-            })
-        })
-    })
-}
 
 // hides section if json array has no content
 function ifEmpty(container, dataArray) {
@@ -52,60 +15,14 @@ function ifEmpty(container, dataArray) {
 }
 
 // ~file paths~
-const templateContent = "content/temp_content.json"
+const homeContent = "content/home-content.json"
 const projectsContent = "content/projects.jsonld"
-const translationContent = "content/translations.json"
-const templateTranslations = "translations/trans_temp_content.json"
-const universalTranslation = "/translations/universal_ui.json"
-const uiTranslations = ["translations/ui_trans.json", templateTranslations, universalTranslation]
+const homeContentTranslations = "translations/home-content.json"
+const homeUiTranslations = "translations/home-ui.json"
+const sharedUiTranslations = "/translations/shared-ui.json"
+const uiTranslations = [homeUiTranslations, homeContentTranslations, sharedUiTranslations]
 
-// fetch content
-async function fetchContent(filePath) {
-    const response = await fetch(filePath);
-    const data = await response.json()
-
-    return data
-}
-
-// •nav•
-const mainNav = document.querySelectorAll("#main-nav a:not([data-static])")
-const mobileNav = document.querySelectorAll(".nav-rail a")
-
-// make clicked link active
-activeSelect(mainNav, activeLink);
-activeSelect(mobileNav, activeLink);
-
-// get length of nav elements. If width exceeds nav then center them
-function centerMobileNav() {
-    const mNavUL = document.querySelector("#mobile-nav")
-        const navRail = document.querySelector(".nav-rail")
-    if (!mNavUL || !navRail) return
-
-    const railWidth = navRail.getBoundingClientRect().width
-    const items = navRail.querySelectorAll("li")
-    let navElLength = 0
-
-    items.forEach(li => {
-        navElLength += li.getBoundingClientRect().width
-    })
-    if (navElLength < railWidth) {
-        navRail.style.justifyContent = "center"
-    } else {
-        navRail.style.justifyContent = ""
-    }
-}
-
-// !Hero!
-
-// 👨🏾About👨🏾
-const aboutSection = document.getElementById("about-container") // container for all subsections
-const aboutNav = document.querySelectorAll("#bio-navigation a")
-const aboutSubSections = document.querySelectorAll(".about-subsection")
-
-activeSelect(aboutNav, activeLink); // make clicked link active
-
-// Get the href attribute for each subsection to decide which to hide
-toggleSection(aboutNav, aboutSubSections); 
+initializeHomeTabs()
 
 // 🤹Skills🤹
 // ~languages~
@@ -121,7 +38,7 @@ const langContainer = document.getElementById("languages")
 const langSection = document.getElementById('hLanguages')
 
 async function buildLanguages() {
-    const langData = await fetchContent(templateContent)
+    const langData = await fetchJson(homeContent)
     const languages = langData.skills.languages
     const fluencyLevels = langData.skills.fluencyLevels
 
@@ -150,14 +67,6 @@ async function buildLanguages() {
     })
 }
 
-// ~tech~
-const techNav = document.querySelectorAll("#tech-nav a")
-const techSubSections = document.querySelectorAll(".tech-container")
-const activeTechLink = "tech-nav_active"
-
-activeSelect(techNav, activeTechLink); // make clicked link active
-toggleSection(techNav, techSubSections); 
-
 // !~tech template~!
 const techTemplate = document.getElementById("tech_template")
 const techContainerU = document.getElementById("tech_stack-u") // unordered
@@ -170,7 +79,7 @@ const techContainerO = document.querySelectorAll(".tech_stack-o") // ordered
 const techSection = document.getElementById("technologies")
 
 async function buildTech() {
-    const techData = await fetchContent(templateContent)
+    const techData = await fetchJson(homeContent)
     const technology = techData.skills.technologies
 
     technology.forEach((tech, index) => {
@@ -209,7 +118,7 @@ const certContainer = document.getElementById("cert-container")
 const certSection = document.getElementById("certifications")
 
 async function buildCerts() {
-    const certData = await fetchContent(templateContent)
+    const certData = await fetchJson(homeContent)
     const certifications = certData.skills.certifications
 
     certifications.forEach((cert, index) => {
@@ -263,7 +172,7 @@ function projectFromJsonLd(item) {
 }
 
 async function getProjects() {
-    const projectJsonLd = await fetchContent(projectsContent)
+    const projectJsonLd = await fetchJson(projectsContent)
     const projectsJsonLdScript = document.getElementById("projects-jsonld")
 
     if (projectsJsonLdScript) {
@@ -385,7 +294,7 @@ const expContainer = document.getElementById("exp-container")
 const expReverseClass = "exp-reverse"
 
 async function buildExperience() {
-    const expData = await fetchContent(templateContent)
+    const expData = await fetchJson(homeContent)
     const experience = expData.exp_edu.experience
 
     experience.forEach((exp, index) => {
@@ -471,7 +380,7 @@ const eduContainer = document.getElementById("edu-container")
 const eduSection = document.getElementById("edu-container")
 
 async function buildEducation() {
-    const eduData = await fetchContent(templateContent)
+    const eduData = await fetchJson(homeContent)
     const education = eduData.exp_edu.education
 
     education.forEach((edu, index) => {
@@ -519,8 +428,7 @@ async function buildEducation() {
 
 // function to visualize accessing json content
 async function loadContent(filePath) {
-    const response = await fetch(filePath);
-    const data = await response.json()
+    const data = await fetchJson(filePath)
 
     const {languages, technologies, certifications} = data.skills
     const {experience, education} = data.exp_edu
@@ -558,85 +466,6 @@ async function loadContent(filePath) {
     }
 }
 
-loadContent(templateContent)
+loadContent(homeContent)
 
-// LANGUAGE TOGGLE
-function swapNames(lang) {
-    const engName = document.getElementById("en-name")
-    const zhongName = document.getElementById("zh-name")
-
-    if (lang == 'zh') {
-        engName.classList.remove("active-name")
-        zhongName.classList.remove("passive-name")
-        engName.classList.add("passive-name")
-        zhongName.classList.add("active-name")
-    } else {
-        engName.classList.remove("passive-name")
-        zhongName.classList.remove("active-name")
-        engName.classList.add("active-name")
-        zhongName.classList.add("passive-name")
-    }
-}
-
-function titleSwap(lang) {
-    if (lang == 'zh') {
-        document.title = `${zhName} | ${enName}`
-    } else {
-        document.title = htmlTitle
-    }
-}
-
-function faviconSwap(lang) {
-    const favicon = document.getElementById("favicon")
-    let faviconPath = "images/meta/favicon"
-
-    favicon.href = `${faviconPath}/favicon-${lang}.svg`
-}
-
-// helper: true if el is inside a <template>
-const inTemplate = (el) => el.closest("template") !== null;
-
-// helper: read nested keys like "nav.home"
-// function getNested(obj, path) {
-//  return path.split(".").reduce((acc, key) => acc && acc[key], obj);
-// }
-
-// beginner friendly getNested() function
-function getNested(obj, path) {
-  const keys = path.split(".");
-  let current = obj;
-
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-
-    if (current === undefined || current === null) {
-      return undefined;
-    }
-
-    current = current[key];
-  }
-
-  return current;
-}
-
-async function translatePage(lang) {
-    await translateUI(lang, uiTranslations)
-
-    // swap hero name based on language
-    swapNames(pageLang)
-
-    // swap page title
-    titleSwap(pageLang)
-
-    // swap favicon
-    faviconSwap(pageLang)
-
-    // get proper style for mobile nav
-    centerMobileNav()
-}
-
-document.addEventListener("languagechange", async (event) => {
-    await translatePage(event.detail.lang)
-})
-
-translatePage(pageLang)
+initializeHomeLocalization(uiTranslations)

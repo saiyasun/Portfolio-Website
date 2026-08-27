@@ -1,25 +1,14 @@
 // @ts-nocheck
-import { fillDateElements, translateUI } from "../../universal";
-import { getPostUrl, getPreviewImagePath, getTaiwanNow, isPublished } from "../../../components/blog/post-utils";
-function getCurrentLang() {
-    return document.documentElement.lang
-}
+import { fillDateElements, getCurrentLang, translateUI } from "../../lib/i18n";
+import { fetchJson } from "../../lib/data";
+import { getPostUrl, getPreviewImagePath, getTaiwanNow, isPublished } from "../../components/blog/post-utils";
 const blogTitle = document.title
 const comingSoon = document.getElementById("coming-soon") // display if there are no posts
 const blogHomepage = document.getElementById("blog_homepage")
 const postsMetadata = "/blog/metadata/"
 const uiTranslations = "/blog/translations/"
-const translationFiles = ["/blog/translations/ui_translations.json", "/translations/universal_ui.json"]
+const translationFiles = ["/blog/translations/ui_translations.json", "/translations/shared-ui.json"]
 const postsPerPage = 6
-
-async function fetchContent(path, file) {
-    const response = await fetch(`${path}${file}`)
-    const data = await response.text()
-    
-    if (!data.trim()) return []
-
-    return JSON.parse(data)
-}
 
 /*
 ===========
@@ -27,13 +16,13 @@ Fetch posts
 =========== 
 */ 
 const getPosts = async () => {
-    const postsResponse = await fetchContent(postsMetadata, "posts.json")
+    const postsResponse = await fetchJson(`${postsMetadata}posts.json`)
 
     return postsResponse
 }
 
 const getSeries = async () => {
-    return await fetchContent(postsMetadata, "series.json")
+    return await fetchJson(`${postsMetadata}series.json`)
 }
 
 // hide blog homepage if there are no posts

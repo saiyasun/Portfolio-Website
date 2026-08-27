@@ -336,7 +336,6 @@ function renderPostPage(post, bodyHtml, bodyMarkdown, posts, series) {
     ${image ? `<meta name="twitter:image" content="${image}">` : ""}
     <script type="application/ld+json">${jsonScript(schema)}</script>
     ${staticPostStyles.map((file) => `<link rel="stylesheet" href="/${file}">`).join("\n    ")}
-    <link rel="stylesheet" href="/blog/post.css">
     <script type="module" src="/${staticPostRuntime.file}"></script>
 </head>
 <body>

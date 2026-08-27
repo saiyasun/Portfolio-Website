@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { initLanguageButtons, updateLocalizedLinks } from "../../ts/universal";
+import { initLanguageButtons, updateLocalizedLinks } from "../../lib/i18n";
 import navbarTemplate from "./navbar.html?raw";
 import "./navbar.css";
 class SiteNavbar extends HTMLElement {

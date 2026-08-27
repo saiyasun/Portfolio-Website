@@ -1,5 +1,6 @@
 import "../styles/global.css";
+import "../styles/pages/home.css";
 import "../components/navbar/navbar";
 import "../components/translator/translator";
-import "../ts/universal";
-import "../ts/script";
+import "../lib/i18n";
+import "../features/home/home-page";

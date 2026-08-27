@@ -8,8 +8,7 @@
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "copy:static": "node scripts/copy-static-assets.mjs",
     "dev": "vite",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
-    "watch": "vite"
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "devDependencies": {
     "typescript": "^5.9.3",

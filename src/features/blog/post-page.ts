@@ -1,13 +1,11 @@
 // @ts-nocheck
-import { fillDateElements, translateUI } from "../../universal";
-import { getPostUrl, getPreviewImagePath, getTaiwanNow, isPublished } from "../../../components/blog/post-utils";
+import { fillDateElements, getCurrentLang, translateUI } from "../../lib/i18n";
+import { fetchJson } from "../../lib/data";
+import { getPostUrl, getPreviewImagePath, getTaiwanNow, isPublished } from "../../components/blog/post-utils";
 let blogTitle = document.title
-function getCurrentLang() {
-    return document.documentElement.lang
-}
 const postsMetadata = "/blog/metadata/"
 const postsPath = "/blog/posts/"
-const translationFiles = ["/translations/universal_ui.json", "/blog/translations/ui_translations.json"]
+const translationFiles = ["/translations/shared-ui.json", "/blog/translations/ui_translations.json"]
 
 // 1. get the slug
 function getSlug() {
@@ -21,15 +19,6 @@ function getSlug() {
 const articleSlug = getSlug()
 
 // 1a. get content
-async function fetchJSON(path, file) {
-    const response = await fetch(`${path}${file}`)
-    const data = await response.text()
-    
-    if (!data.trim()) return []
-
-    return JSON.parse(data)
-}
-
 async function fetchText(path, language, file) {
     const response = await fetch(`${path}${language}/${file}`)
     if (!response.ok) return null
@@ -78,13 +67,13 @@ const getArticle = async (metadata) => {
 
 // 2a. get json file
 const findMetadata = async () => {
-    const metadata = await fetchJSON(postsMetadata, "posts.json")
+    const metadata = await fetchJson(`${postsMetadata}posts.json`)
 
     return metadata
 }
 
 const getSeries = async () => {
-    return await fetchJSON(postsMetadata, "series.json")
+    return await fetchJson(`${postsMetadata}series.json`)
 }
 // helper for metadata
 async function getPublishedMetadata() {

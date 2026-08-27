@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { initLanguageButtons } from "../../ts/universal";
+import { initLanguageButtons } from "../../lib/i18n";
 import translatorTemplate from "./translator.html?raw";
 import "./translator.css";
 class Translator extends HTMLElement {

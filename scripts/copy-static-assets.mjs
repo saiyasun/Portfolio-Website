@@ -30,15 +30,9 @@ const rootDirs = [
     "translations",
 ];
 
-const blogFiles = [
-    "blog/blog.css",
-    "blog/post.css",
-];
-
 const blogDirs = [
     "blog/assets",
     "blog/metadata",
-    "blog/scripts",
     "blog/translations",
 ];
 
@@ -48,10 +42,6 @@ for (const file of rootFiles) {
 
 for (const dir of rootDirs) {
     await copyIfExists(dir);
-}
-
-for (const file of blogFiles) {
-    await copyIfExists(file);
 }
 
 for (const dir of blogDirs) {
